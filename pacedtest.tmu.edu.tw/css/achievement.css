@@ -11,28 +11,28 @@
     --bg-duty-focus: #558f0f;      
     --text-duty-focus: #2d460e;    
     --bg-digital: #039fda;         /*數位學習*/
-    --bg-digital-focus: #039fda;
+    --bg-digital-focus: #008abd;
     --text-digital-focus: #0e526b;    
     --bg-auto: #e10c5c;            /*自主學習*/
-    --bg-auto-focus: #e10c5c;
+    --bg-auto-focus: #c00a50;
     --text-auto-focus: #661232;    
     --bg-civic: #d74200;           /*國際公民*/
-    --bg-civic-focus: #d74200;
+    --bg-civic-focus: #b43600;
     --text-civic-focus: #5f2810;    
     --bg-edu: #ff4e4e;             /*專業教育*/
-    --bg-edu-focus: #ff4e4e;
+    --bg-edu-focus: #e93434;
     --text-edu-focus: #7a2020;    
     --bg-industry: #00ae97;        /*產業銜接*/
-    --bg-industry-focus: #00ae97;
+    --bg-industry-focus: #00e0c2;
     --text-industry-focus: #0e534a;    
     --bg-syntrend: #ca0000;        /*三創教育*/
-    --bg-syntrend-focus: #ca0000;
+    --bg-syntrend-focus: #eb0000;
     --text-syntrend-focus: #5c0f0f;    
     --bg-art: #7d38ee;             /*人文藝術*/
-    --bg-art-focus: #7d38ee;
+    --bg-art-focus: #9d64f8;
     --text-art-focus: #391574;    
     --bg-cross: #ef9201;           /*跨域學習*/
-    --bg-cross-focus: #ef9201;
+    --bg-cross-focus: #cc7e00;
     --text-cross-focus: #6d480d;    
 }
 .page {
@@ -200,14 +200,13 @@
     width: 45vw;
 }
 .score__group {
-    display: flex;
     margin: 2rem 0 1rem;
     text-align: center;
 }
 .score__group .item {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
+    width: 50%;
+    float: left;
+    margin-bottom: 2rem;
 }
 
 .score__group .item .cont {    
@@ -316,15 +315,17 @@
     /* width: 45vw; */ 
     height: 600px;
 }
+.cont__item--milestone .container {
+    width: 100%;
+}
 .milestone__group {
-    display: flex;
     margin: 2rem 0 1rem;
     text-align: center;
 }
 .milestone__group .item {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
+    float: left;
+    width: 50%;
+    margin-bottom: 2rem;
 }
 .milestone__group .item .item__inner{
     padding: 0 10px;
@@ -334,7 +335,7 @@
     border: #fc5d64 solid 20px;
     background: #8c2b22;
     border-radius: 50%;
-    margin: 20px auto;
+    margin: 20px 10px;
     padding: 25px 0;
 }
 .milestone__group .item .item__inner--score img {
@@ -355,7 +356,6 @@
     bottom: 3px;
     right: -18px;
 }
-
 .milestone__group .item .item__inner--caption .title {
     color: #8c2b22;
 }
@@ -363,7 +363,7 @@
     margin: 0 auto;
     text-align: center;
     width: 100%;
-    height: 60px;
+    height: 70px;
     line-height: 50px;
     color: #fff;
     position: relative;
@@ -389,12 +389,10 @@
     line-height: initial;
 }
 
-@media (min-width:1240px) {
+@media (min-width:1024px) {
     .score__group .item,
     .milestone__group .item {
-        -ms-flex: 0 0 25%;
-        flex: 0 0 25%;
-        max-width: 25%;
+        width: 25%;
     }
 }
 @media (max-width:1640px) {
@@ -411,18 +409,25 @@
     .milestone__group .item .item__inner{
         padding: 0 20px;
     }
+    .milestone__group .item .item__inner--score {
+        margin: 20px 0px;
+    }
 }
 @media (max-width:1440px) {
     .cont__item--score .container {
         width: 70vw;
     }
 }
-@media (max-width: 1023px){
-    .header__wrapper {
-        height: 535px;
-    }
-}
 @media (max-width:1366px) {
+    .cont__item--milestone {
+        height: auto;
+    }
+    .cont__item--milestone .container {
+        width: 70vw;
+    }
+    .milestone__group .item {
+        width: 33.333333%;
+    }
     .achievement-wrap {
         width: 100%;
         margin: auto;
@@ -431,6 +436,35 @@
         float: left;
         width: 20%;
     }    
+}
+@media (max-width:1280px) {
+    .cont__item--score .container {
+        width: 100%;
+    }
+    .cont__item--milestone .container {
+        width: 75vw;
+    }
+}
+@media (max-width:1199px) {
+    .cont__item--milestone .container {
+        width: 100%;
+    }
+    .milestone__group .item .item__inner--score {
+        margin: 20px;
+    }
+}
+@media (max-width:1130px) {
+    .milestone__group .item .item__inner--score {
+        margin: 20px 10px;
+    }
+}
+@media (max-width: 1023px){
+    .header__wrapper {
+        height: 535px;
+    }
+    .score__group .item  {
+        width: 33.333%;
+    }
 }
 @media (max-width:991px) {
     .icon__group {
