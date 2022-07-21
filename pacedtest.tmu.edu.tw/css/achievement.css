@@ -480,6 +480,11 @@
         margin: 20px 10px;
     }
 }
+@media (max-width:1045px) {
+    .milestone__group .item .item__inner {
+        padding: 0 10px;
+    }
+}
 @media (max-width: 1023px){
     .header__wrapper {
         height: 535px;
@@ -527,11 +532,23 @@
         background-size: contain;
     }
 }
-@media (max-width:767px) {
-    .achievement-wrap {
-        position: absolute;
-        left: 0;
+@media (max-width:910px) {
+    .cont__item--milestone .container {
+        width: 80%;
     }
+    .milestone__group .item {
+        width: 50%;
+    }
+    .milestone__group .item .item__inner {
+        padding: 0 20px;
+    }
+}
+@media (max-width:835px) {
+    .cont__item--milestone .container {
+        width: 90%;
+    }
+}
+@media (max-width:767px) {
     .icon__group li.icon a {
         margin: 5px;
     }
@@ -540,5 +557,57 @@
     }
     .icon__group li.icon a span {
         font-size: 1rem;
+    }
+    .milestone__group .item .item__inner {
+        padding: 0 10px;
+    }
+    .milestone__group .item .item__inner--caption .describe:after {
+        transform: perspective(1.2em) rotateX(5deg) scaleY(2);
+    }
+}
+@media (max-width:700px) {
+    .cont__item--milestone .container {
+        width: 100%;
+    }
+}
+@media (max-width:640px) {
+    .milestone__group .item .item__inner--score {
+        padding: 15px 0;
+    }
+}
+@media (max-width:625px) {
+    .score__group .item:not(:first-child) .cont {        
+        width: 140px;
+        padding: 30px 0;
+    }
+}
+@media (max-width:580px) {
+    .milestone__group .item .item__inner--score .score-info {        
+        margin-top: -15px;
+    }
+}
+@media (max-width:545px) {
+    .score__group .item:not(:first-child) .cont {        
+        width: 110px;
+        padding: 15px 0;
+    }
+    .milestone__group .item .item__inner--score {
+        border: #fc5d64 solid 15px;
+        padding: 10px 0;
+    }
+}
+@media (max-width:480px) {
+    .milestone__group .item .item__inner--score .num {
+        font-size: 3.5rem;
+    }
+}
+@media (max-width:460px) {
+    .milestone__group .item .item__inner--score .num {
+        font-size: 3rem;
+    }
+}
+@media (max-width:440px) {
+    .milestone__group .item .item__inner--score img {
+        width: 70%;
     }
 }

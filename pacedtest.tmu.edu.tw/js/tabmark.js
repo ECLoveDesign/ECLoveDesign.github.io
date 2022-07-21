@@ -1,6 +1,6 @@
 $(function(){
     // smooth scroll 
-    $('a[href*=#]:not([href=#])').click(function() {
+    $('a[href*=#]:not([href=#])not(.icon__link)').click(function() {
 	$("#SUBMENU").hide(100);
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);
