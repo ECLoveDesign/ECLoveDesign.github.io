@@ -1,0 +1,275 @@
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-13 {
+  font-size: 13px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-15 {
+  font-size: 15px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-17 {
+  font-size: 17px;
+}
+
+.font-size-18 {
+  font-size: 18px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+.p-5 {
+  padding: 5px;
+}
+
+.px-5 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.px-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.px-30 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.pt-25 {
+  padding-top: 25px;
+}
+
+.pt-35 {
+  padding-top: 35px;
+}
+
+.pt-60 {
+  padding-top: 60px;
+}
+
+.pb-15 {
+  padding-bottom: 15px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.pb-50 {
+  padding-bottom: 40px;
+}
+
+.pb-80 {
+  padding-bottom: 80px;
+}
+
+.py-15 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.py-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.relative {
+  position: relative;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.display-none {
+  display: none;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.col {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+
+.justify-content-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justify-content-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.justify-content-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.wrap-reverse {
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer {
+  width: 100%;
+  position: relative;
+  bottom: 0px;
+  background-color: #e8e8e8;
+  height: 265px;
+}
+
+.footer__Wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 560px;
+  background-image: url(../images/img/BG-Footer.png);
+  background-position: right -170px bottom;
+  background-size: 2500px auto;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1297px) {
+  .footer__Wrapper {
+    background-position: right -300px bottom;
+  }
+}
+
+@media (max-width: 1023px) {
+  .footer__Wrapper {
+    background-position: right -400px bottom;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__Wrapper {
+    background-position: right -450px bottom;
+  }
+}
+
+.footer__inner {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.2)), color-stop(20%, rgba(255, 255, 255, 0.4)), color-stop(40%, rgba(255, 255, 255, 0.2)), color-stop(60%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.4) 20%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
+}
+
+.footer__inner--photo .schoolLogo {
+  width: 500px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 1023px) {
+  .footer__inner--photo .schoolLogo {
+    width: 300px;
+  }
+}
+
+.footer__inner--notice {
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+
+.footer__inner--teacher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__inner--teacher h2 {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.footer__inner--teacher span {
+  padding: 0 10px;
+}
+
+@media (max-width: 1023px) {
+  .footer__inner--teacher {
+    display: block;
+  }
+  .footer__inner--teacher h2 {
+    margin-bottom: 0px;
+    line-height: 1.5;
+  }
+  .footer__inner--teacher span {
+    display: none;
+  }
+}
+
+.footer__inner--copyright {
+  margin-bottom: 60px;
+  font-size: 12px;
+}
+
+@media (max-width: 1023px) {
+  .footer__inner--copyright {
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

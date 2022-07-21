@@ -1,0 +1,151 @@
+.home {
+  background: url(../images/img/homeBG.jpg) no-repeat center top #f0f0f0;
+  font-family: Arial, Helvetica, sans-serif, "微軟正黑體";
+  padding: 0 0 100px 0;
+}
+
+#loginZone {
+  width: 96%;
+  max-width: 1260px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.clear {
+  clear: both;
+}
+
+img.homeTMU {
+  margin: 150px 50px 0 0;
+  display: block;
+  float: right;
+  clear: both;
+}
+
+img.homeLOGO {
+  margin: 175px 50px 0 0;
+  display: block;
+  float: right;
+  clear: both;
+  width: 90%;
+  max-width: 756px;
+}
+
+a.login {
+  background: url(../images/img/Btn-login.png) no-repeat center top;
+  width: 298px;
+  height: 85px;
+  float: right;
+  clear: both;
+  margin: 70px 50px 0 0;
+  display: block;
+}
+
+a.login:hover {
+  background-position: center bottom;
+}
+
+#homeTel {
+  font-size: 15px;
+  color: #333;
+  margin: -50px 0 0 30px;
+  clear: both;
+}
+
+#homeTel b {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  line-height: 30px;
+}
+
+#homeCopy {
+  font-size: 13px;
+  color: #999;
+  margin: 100px 50px 0 0;
+  text-align: right;
+  display: block;
+}
+
+/* --平板版型------------------------------------- */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .home {
+    background-size: 1700px auto;
+  }
+
+  img.homeTMU {
+    margin: 120px 20px 0 0;
+  }
+
+  img.homeLOGO {
+    margin: 190px 20px 0 0;
+  }
+
+  a.login {
+    margin: 50px 20px 0 0;
+  }
+
+  a.login:hover {
+    background-position: center bottom;
+  }
+
+  #homeCopy {
+    font-size: 13px;
+    color: #999;
+    margin: 100px 0 0 0;
+    text-align: center;
+    display: block;
+  }
+
+}
+
+/* --手機版型------------------------------------- */
+
+@media screen and (max-width: 767px) {
+
+  .home {
+    background-size: 1000px auto;
+    background-position: center -80px;
+  }
+
+  img.homeTMU {
+    margin: 70px 3% 0 0;
+    width: 50%;
+  }
+
+  img.homeLOGO {
+    margin: 80px 3% 0 0;
+    width: 94%;
+  }
+
+  a.login {
+    margin: 120px 5% 60px 0;
+    display: block;
+    clear: both;
+    width: 210px;
+    height: 60px;
+    background-size: 210px auto;
+  }
+
+  a.login:hover {
+    background-position: center bottom;
+  }
+
+  #homeTel {
+    font-size: 15px;
+    color: #333;
+    margin: 100px 0 0 3%;
+    clear: both;
+  }
+
+  #homeCopy {
+    font-size: 13px;
+    color: #999;
+    margin: 50px 0 0 0;
+    text-align: center;
+    display: block;
+  }
+
+}

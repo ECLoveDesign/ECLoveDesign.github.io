@@ -1,0 +1,109 @@
+@import "./variable";
+
+
+// ----- footer -S ----- //
+.footer {
+    //outline: 1px solid orange;
+    width: 100%;
+    position: relative;
+    bottom: 0px;
+
+    background-color: #e8e8e8;
+    height: 265px;
+
+    &__Wrapper {
+        //outline: 1px solid orange;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 560px;
+        //background-image: url(../public/images/img/BG-Footer.png);
+        background-image: url(../images/img/BG-Footer.png);
+        background-position: right -170px bottom;
+        background-size: 2500px auto;
+        background-repeat: no-repeat;
+
+        @include desktop {
+            //outline: 1px solid green;
+            background-position: right -300px bottom;
+        }
+        @include tablet {
+           //outline: 1px solid deepskyblue;
+            background-position: right -400px bottom;
+        }
+        @include mobile {
+            background-position: right -600px bottom;
+        }
+    }
+
+    &__inner {
+        //outline: 1px solid orange;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+        background: linear-gradient(
+            to top,
+            rgba($color: white, $alpha: 0.2) 0%,
+            rgba($color: white, $alpha: 0.4) 20%,
+            rgba($color: white, $alpha: 0.2) 40%,
+            rgba($color: white, $alpha: 0) 60%,
+            rgba($color: white, $alpha: 0) 100%
+        );
+
+        &--photo {
+            //outline: 1px solid orange;
+            .schoolLogo {
+                width: 500px;
+                margin: auto;
+                margin-top: 30px;
+                margin-bottom: 18px;
+                @include tablet {
+                    width: 300px;
+                }
+            }
+        }
+
+        &--notice {
+            //outline: 1px solid orange;
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+        &--teacher {
+            //outline: 1px solid orange;
+            display: flex;
+            h2 {
+                font-weight: 400;
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+            span{
+                padding: 0 10px;
+            }
+            @include tablet {
+                display: block;
+                h2 {
+                    margin-bottom: 0px;
+                    line-height: 1.5;
+                }
+                span {
+                    display: none;
+                }
+            }
+        }
+        &--copyright {
+            //outline: 1px solid orange;
+            margin-bottom: 60px;
+            font-size: 12px;
+            //margin-top: 50px;
+            @include tablet {
+                margin-top: 20px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+// ----- footer -F ----- //

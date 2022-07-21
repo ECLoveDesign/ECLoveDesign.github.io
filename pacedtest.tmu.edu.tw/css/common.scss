@@ -1,0 +1,296 @@
+// @import "./header";
+// @import "./footer";
+
+// --- rwd --- //
+@mixin desktop {//小螢幕桌機
+    @media(max-width:1297px) {
+        @content;
+    }//
+}
+
+@mixin tablet {//平板
+    @media(max-width:1023px) {
+        @content;
+    }
+}
+
+@mixin mobile {//手機
+    @media(max-width:767px) {
+        @content;
+    }
+}
+
+@mixin lastMedia {//iphone se
+    @media(max-width:320px) {
+        @content;
+    }
+}
+
+
+
+
+// --- basic --- //
+* {
+    //font-family: arial, Helvetica, sans-serif;
+    font-family: Noto Sans TC, 黑體-繁, Apple LiGothic Medium, PingFang, 微軟正黑體,
+        Microsoft JhengHei, WenQuanYi Zen Hei, helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+body {
+    background-color: #fff;
+}
+
+.body__full {
+    @include tablet {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+button {
+    border: 0;
+    outline: 0;
+    appearance: none;
+    cursor: pointer;
+}
+
+a {
+    // &:hover, &:active {  color: orange; }
+    text-decoration: none;
+    color: black;
+    transition: color 0.15s ease 0s, background-color 0.25s ease 0s;
+    cursor: pointer;
+    &:hover {
+        color: lighten($color: orange, $amount: 6);
+        transition: color 0.15s ease 0s, background-color 0.25s ease 0s;
+    }
+    &:active {
+        transition: color 0.15s ease 0s, background-color 0.25s ease 0s;
+    }
+}
+
+input {
+    transition: outline 0.15s ease 0s, background-color 0.25s ease 0s, color 0.25s ease 0s;
+    &:focus {
+        transition: outline 0.15s ease 0s, background-color 0.25s ease 0s;
+    }
+    &:hover {
+        transition: color 0.25s ease 0s, background-color 0.25s ease 0s;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+main {
+    width: 100%;
+}
+
+picture {
+    border-radius: 3px;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+
+
+// --- common --- //
+.page {
+
+    display: block;
+    margin: 0 auto;
+    margin-bottom: -150px;
+    //margin-bottom: -272px;
+    overflow: hidden;
+
+
+    // transform: translateY(-290px);
+    transform: translateY(-295px);
+    background-color: rgba($color: #ccc, $alpha: 0);
+
+    @include tablet {
+        transform: translateY(-260px);
+        margin-bottom: -150px;
+    }
+}
+
+
+.container {
+    width: 90%;
+    min-height: 800px;
+    margin: 0 auto 0;
+    outline: 2px solid rgba($color: #ccc, $alpha: 0.6);
+    border-radius: 3px;
+
+    p {
+        // template semple
+        font-size: 50px;
+        line-height: 1.5;
+        color: rgba($color: #ccc, $alpha: 0.6);
+    }
+}
+
+
+
+// --- public --- //
+
+.linking__group--fixed {
+    //outline: 1px solid rgba($color: #ff7f00, $alpha: 0.6);
+    z-index: 5;
+    position: fixed;
+    top: 360px;
+    left: 30px;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+
+    @include tablet {
+        height: 50px;
+        width: 250px;
+        margin: 0 auto;
+        flex-direction: row;
+        align-items: center;
+
+        top: auto;
+        bottom: 10px;
+        right: 0;
+        left: 0;
+    }
+
+    p, h2 {
+        color: #fff;
+        white-space: nowrap;
+    }
+
+    .link {
+        flex-shrink: 0;
+        flex-grow: 0;
+
+        position: relative;
+        margin-bottom: 3px;
+        &:hover {
+            .side {
+                z-index: 1;
+                width: 280px;
+                transition: all 0.5s ease;
+            }
+        }
+
+        @include tablet {
+            margin: 0 3px;
+            &:hover {
+                .side {
+                    z-index: 1;
+                    width: 45px;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+
+
+    .circle {
+        position: absolute;
+        z-index: 2;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__P {
+            background-color: #c68175;
+        }
+        &__A {
+            background-color: #75beab;
+        }
+        &__C {
+            background-color: #e2bf66;
+        }
+        &__E {
+            background-color: #96cfd4;
+        }
+        &__D {
+            background-color: #bf97b1;
+        }
+    }
+
+    .side {
+        //outline: 1px solid orange;
+        z-index: -1;
+        width: 45px;
+        height: 45px;
+
+        display: flex;
+        align-items: center;
+
+        border-radius: 45px;
+        //margin-bottom: 3px;
+        transition: all 0.5s ease;
+        overflow: hidden;
+
+        p {
+            margin-left: 50px;
+        }
+
+        &__P {
+            background-color: #d4a198;
+        }
+        &__A {
+            background-color: #98cec0;
+        }
+        &__C {
+            background-color: #e6cc89;
+        }
+        &__E {
+            background-color: #acd7db;
+        }
+        &__D {
+            background-color: #cfb1c5;
+        }
+    }
+
+}
+
+.animate {
+    transition: all 0.3s ease;
+    width: 280px;
+}

@@ -1,0 +1,38 @@
+body.resume-1 #resume { width:90%; max-width:1250px; margin: 30px auto; border:#CCC 1px solid; position:relative; padding-bottom:60px;}
+
+body.resume-1 {}
+
+body.resume-1 .Resume-name { background:#263741; padding: 80px 0 20px 420px; color:#fff; font-size:48px; font-weight:bold; height:100%;}
+body.resume-1 .Resume-name b { font-size:36px; display:inline-block; margin-left: 30px;}
+body.resume-1 .Rssume-basic { background:#e5e5e7; font-size:18px; width:300px; box-sizing:border-box; padding: 80px 20px 50px 20px; height:100%; position:absolute; left:60px; top:0; bottom:0;}
+body.resume-1 .Rssume-basic .photo {}
+body.resume-1 .Rssume-basic img { border-radius:300px; width:90%; display:block; margin: 0 auto 50px auto;}
+body.resume-1 .Rssume-basic ul li { display:block; font-size:20px; margin-bottom:40px;}
+body.resume-1 .Rssume-basic ul li b { display:block; font-weight: bold; margin-bottom:15px; padding-bottom:10px; border-bottom:#CCC 2px solid;}
+body.resume-1 .Resume-Content { padding: 50px 30px 0 420px; font-size:20px; line-height:40px; color:#333;}
+body.resume-1 .Resume-Content ul li.Resume-subTitle { color:#263741; font-size:36px; font-weight:bold; margin:50px 0 15px 0; padding-bottom:15px; border-bottom:#CCC 2px solid;}
+body.resume-1 .Resume-Content ul li b { font-weight:bold; color:#666; display:block;}
+
+body.resume-2 #resume { width:90%; max-width:1250px; margin: 30px auto; border:#CCC 1px solid; position:relative; padding-bottom:60px;}
+body.resume-2 .Resume-name { padding: 60px 0 20px 420px; color:#333; font-size:48px; font-weight:bold;}
+body.resume-2 .Resume-name b { font-size:36px; display:inline-block; margin-left: 30px;}
+body.resume-2 .Rssume-basic { background: #ECECEC; font-size:18px; width:360px; box-sizing:border-box; padding: 80px 50px 50px 50px; height:100%; position:absolute; left:0; top:0; bottom:0;}
+body.resume-2 .Rssume-basic img { border-radius:300px; width:90%; display:block; margin: 0 auto 50px auto;}
+body.resume-2 .Rssume-basic .photo {}
+body.resume-2 .Rssume-basic ul li { display:block; font-size:20px; margin-bottom:40px;}
+body.resume-2 .Rssume-basic ul li b { display:block; font-weight: bold; margin-bottom:15px; padding-bottom:10px; border-bottom:#CCC 2px solid;}
+body.resume-2 .Resume-Content { padding: 0 30px 0 420px; font-size:20px; line-height:40px; color:#333;}
+body.resume-2 .Resume-Content ul li.Resume-subTitle { color:#263741; font-size:36px; font-weight:bold; margin:50px 0 15px 0; padding-bottom:15px; border-bottom:#CCC 2px solid;}
+body.resume-2 .Resume-Content ul li b { font-weight:bold; color:#666; display:block;}
+
+body.resume-3 #resume { width:90%; max-width:1250px; margin: 30px auto; border:#33383c 30px solid;; position:relative; padding-bottom:60px;}
+body.resume-3 .Resume-name { padding: 240px 0 20px 500px; color:#333; font-size:80px; font-weight:bold;}
+body.resume-3 .Resume-name b { font-size:36px; display:block; background:#dbb756; color:#fff; padding: 15px 20px; width:90%;}
+body.resume-3 .Rssume-basic { font-size:18px; width:430px; box-sizing:border-box; padding: 500px 0 0 30px; height:100%; position:absolute; left:0; top:0; bottom:0;}
+body.resume-3 .Rssume-basic .photo { background: url(../images/img/resumePhoto_BG.gif) no-repeat left top; background-size: 350px 350px; z-index:9999; position:absolute; left:-30px; top:-30px; width:60%; padding: 60px 0 0 60px; height:400px;}
+body.resume-3 .Rssume-basic img { width:400px; display:block; position:absolute;}
+body.resume-3 .Rssume-basic ul li { display:block; font-size:20px; margin-bottom:40px;}
+body.resume-3 .Rssume-basic ul li b { display:block; font-weight: bold; margin-bottom:15px; padding-bottom:10px; border-bottom:#CCC 2px solid;}
+body.resume-3 .Resume-Content { padding: 0 30px 0 500px; font-size:20px; line-height:40px; color:#333;}
+body.resume-3 .Resume-Content ul li.Resume-subTitle { color:#263741; font-size:36px; font-weight:bold; margin:50px 0 15px 0; padding-bottom:15px; border-bottom:#CCC 2px solid;}
+body.resume-3 .Resume-Content ul li b { font-weight:bold; color:#666; display:block;}
