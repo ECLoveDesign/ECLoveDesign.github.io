@@ -606,8 +606,60 @@
         font-size: 3rem;
     }
 }
-@media (max-width:440px) {
+@media (max-width:445px) {
     .milestone__group .item .item__inner--score img {
         width: 70%;
     }
+    .milestone__group .item .item__inner--caption .describe {
+        height: 60px;
+    }
+    .milestone__group .item .item__inner--caption .describe:after {
+        top: 10px;
+    }
+    .milestone__group .item .item__inner--caption .describe ul {
+        margin: 5px 0;
+    }
+    .milestone__group .item .item__inner--caption .describe__inner {
+        width: 73%;
+        top: 2px;
+        font-size: .8rem;
+    }
+    .milestone__group .item .item__inner--caption .describe:after {
+        transform: perspective(1.8em) rotateX(8deg) scaleY(2);
+    }
+}
+@media (max-width:414px) {
+    .milestone__group .item .item__inner--score .score-info {
+        margin-top: -20px;
+    }
+    .milestone__group .item .item__inner--score {
+        border: #fc5d64 solid 10px;
+        padding: 15px 0;
+    }
+    .milestone__group .item .item__inner--score img {
+        width: 50%;
+        margin: 0 auto 10px;
+    }
+    .score__group .item:not(:first-child) .cont {
+        width: 95px;
+        padding: 10px 0;
+    }
+    .cont__item--score, 
+    .cont__item--score::before {
+        height: 520px;
+    }
+    .score__group .item .cont span {
+        font-size: 1rem;
+    }
+    #design .score__group .item:not(.item__total) .cont .title {
+        font-weight: bold;
+    }
+}
+@media (max-width:375px) {
+    .milestone__group .item:nth-child(odd) .item__inner {
+        padding-left: 0;
+    } 
+    .milestone__group .item:nth-child(even) .item__inner {
+        padding-right: 0;
+    } 
 }
