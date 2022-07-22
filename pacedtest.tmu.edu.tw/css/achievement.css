@@ -198,6 +198,7 @@
 }
 .cont__item--score .container {
     width: 45vw;
+    height: auto;
 }
 .score__group {
     margin: 2rem 0 1rem;
