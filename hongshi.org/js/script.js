@@ -2,12 +2,6 @@
 | Author Email: elaine.love.design@gmail.com                       |
 | Front-end design: Elaine Chu                                             |
 ==================================================================*/
-// include
-$(function(){
-  $('header').load('../header.html'); 
-  $('footer').load('../footer.html'); 
-});
-
 
 // kv-slider
 var swiper = new Swiper('.kv-slider .swiper-container', {
