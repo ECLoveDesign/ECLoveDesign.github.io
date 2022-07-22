@@ -594,7 +594,7 @@ footer .btn-social.yt {
         top: 38%;
     }
 }
-@media (max-width:1090px) {
+@media (max-width:1105px) {
     .nav-fill .nav-item, .nav-fill>.nav-link {
         -ms-flex: 0 0 16.666667%;
         flex: 0 0 16.666667%;
