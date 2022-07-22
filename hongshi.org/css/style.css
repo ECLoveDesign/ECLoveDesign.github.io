@@ -637,10 +637,8 @@ footer .btn-social.yt {
         flex-wrap: wrap;
     }
     #subNav {
-        display: -webkit-inline-box;
-        display: -ms-flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+        display: flex;
+        flex-direction: inherit;
     }
     header .navbar-nav .nav-item,
     header .navbar-brand+.navbar-nav .nav-item,
