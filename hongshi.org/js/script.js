@@ -14,7 +14,7 @@ var swiper = new Swiper('.news-slider .swiper-container', {
         slidesPerView: 1,
         spaceBetween: 20,
       },
-      640: {
+      435: {
         slidesPerGroup: 1,
         slidesPerView: 1,
         spaceBetween: 40,
