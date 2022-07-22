@@ -670,7 +670,10 @@
     }
     .cont__item--score, 
     .cont__item--score::before {
-        height: 465px;
+        height: 490px;
+    }
+    .cont__item--score {
+        overflow: auto;
     }
     .score__group .item .cont span {
         font-size: 1rem;
@@ -680,14 +683,19 @@
     }
     .score__group {
         margin: 0 0 1rem;
+        overflow: auto;
     }
     .score__group .item .cont {
         margin: 15px auto;
     }
 }
 @media (max-width:390px) {
+    .icon__group {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
     .icon__group li.icon__fame a {
-        padding: 10px 0 23px;
+        padding: 10px 0 6px;
     }
 }
 @media (max-width:375px) {
@@ -697,4 +705,34 @@
     .milestone__group .item:nth-child(even) .item__inner {
         padding-right: 0;
     } 
+}
+@media (max-width:360px) {
+    .icon__group li.icon img {
+        max-width: 80%;
+    }
+    .icon__group li.icon a {
+        padding: 10px 0px 5px;
+    }
+    .icon__group li.icon__fame a {
+        padding: 15px 0 18px;
+    }
+    .achievement-wrap {
+        margin-top: 1rem;
+    }
+    .score__group .item .cont {
+        padding: 50px 0;
+    }
+    .score__group .item .cont .num {
+        font-size: 2rem;
+    }
+    .score__group .item:not(:first-child) .cont {
+        width: 80px;
+        border: #fff solid 2px
+    }
+    .milestone__group .item .item__inner--score .num {
+        font-size: 2.5rem;
+    }
+    .milestone__group .item .item__inner--score {
+        padding: 10px 0;
+    }
 }
