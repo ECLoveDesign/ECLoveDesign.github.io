@@ -1,4 +1,7 @@
-
+/*==================================================================
+| Author Email: elaine.love.design@gmail.com                       |
+| Front-end design: Elaine Chu                                             |
+==================================================================*/
 
 // kv-slider
 var swiper = new Swiper('.kv-slider .swiper-container', {
