@@ -1,10 +1,20 @@
 
+
+// kv-slider
+var swiper = new Swiper('.kv-slider .swiper-container', {
+  pagination: '.kv-slider .swiper-pagination',
+  paginationClickable: '.kv-slider .swiper-pagination',
+  nextButton: '.kv-slider .swiper-button-next',
+  prevButton: '.kv-slider .swiper-button-prev',
+  spaceBetween: 0,    
+  slidesPerView: 1,
+  loop: true,
+});
+
 // news-slider
 var swiper = new Swiper('.news-slider .swiper-container', {
-    pagination: '.swiper-pagination',
-    // paginationClickable: '.swiper-pagination',
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
+    nextButton: '.news-slider .swiper-button-next',
+    prevButton: '.news-slider .swiper-button-prev',
     spaceBetween: 30,    
     slidesPerView: 3,
     loop: true,
