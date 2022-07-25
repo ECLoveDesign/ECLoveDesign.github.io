@@ -735,11 +735,6 @@ footer .btn-social.yt i {
     .news-slider .swiper-button-prev {
         top: 200px;
     }
-    .foot-info .col-md-9>.row>div[class*="col-"] {
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
 }
 @media (max-width:363px) {
     .news-slider .swiper-button-next, 
