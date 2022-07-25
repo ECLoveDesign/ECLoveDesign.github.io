@@ -490,20 +490,39 @@ footer .foot-title a {
 .social-link {
     display: flex;
 }
+footer .btn-social {
+    display: flex;
+    margin-right: 5px;
+}
+footer .btn-social:hover {
+    text-decoration: none;
+}
+footer .btn-social i {
+    margin-right: 5px;
+}
+footer .btn-social span {
+    font-size: 1rem;
+    line-height: 35px;
+}
 footer .btn-social.fb {
-    padding: 8px 13px;
+    margin-right: 10px;
+}
+footer .btn-social.fb i {
+    padding: 8px 13px 2px 11px;
     background: #d3d1c2;
     color: #64615b;
     display: block;
     border-radius: 50%;
-    margin-right: 15px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    width: 33px;
+    display: block;
+    height: 34px;
 }
-footer .btn-social.fb:hover {
+footer .btn-social.fb:hover i {
     background: #b4b2a1;
 }
-footer .btn-social.yt {
-    font-size: 2.6rem;
+footer .btn-social.yt i {
+    font-size: 2.2rem;
 }
 @media (min-width:1280px) {
         
@@ -581,6 +600,9 @@ footer .btn-social.yt {
     .news-slider .swiper-button-next, 
     .news-slider .swiper-button-prev {
         top: 23%;
+    }
+    footer>.container {
+        max-width: 100%;
     }
 }
 @media (max-width:1190px) {
@@ -668,6 +690,13 @@ footer .btn-social.yt {
         width: 220px;
     }
 }
+@media (min-width:768px) and (max-width:1199px) {
+    .foot-info>.row>div[class*="col-"] {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
 @media (max-width:767px) {
     .swiper-button-next, 
     .swiper-button-prev {
@@ -702,6 +731,11 @@ footer .btn-social.yt {
     .news-slider .swiper-button-next, 
     .news-slider .swiper-button-prev {
         top: 200px;
+    }
+    .foot-info .col-md-9>.row>div[class*="col-"] {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
 @media (max-width:363px) {
