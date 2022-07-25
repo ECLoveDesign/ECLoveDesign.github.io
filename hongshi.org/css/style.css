@@ -707,6 +707,9 @@ footer .btn-social.yt i {
     .news-slider .swiper-button-prev {
         top: 21%;
     }
+    .social-link span {
+        display: none;
+    }
 }
 @media (max-width:510px) {
     .news-slider .swiper-button-next, 
