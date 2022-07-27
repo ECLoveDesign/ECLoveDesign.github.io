@@ -189,7 +189,7 @@
     display: block;
     position: absolute;
     width: 100%;
-    height: 460px;
+    height: 45vh;
     left: 0;
     z-index: 0;
 }
@@ -299,8 +299,7 @@
     color: #000;
     font-size: 1.2rem;
     display: block;
-    width: 88%;
-    margin: auto;
+    width: 100%;
 }
 .score__group .item .cont span:first-child {
     margin-top: 40px;
@@ -454,14 +453,14 @@
     border: #fc5d64 solid 20px;
     background: #8c2b22;
     border-radius: 50%;
-    margin: 20px auto;
-    height: 210px;
-    width: 210px;
+    margin: 20px 10px;
+    width: 235px;
+    height: 235px;
 }
 
 .milestone__group .item .item__inner--score img {
     display: block;
-    margin: auto;
+    margin: 30px auto 0;
 }
 
 .milestone__group .item .item__inner--score .score-info {
@@ -531,14 +530,14 @@
     box-shadow: #d5b268 0px 0px 5px;
 } */
 .milestone__group .item .item__inner--caption .describe__inner {
-    height: 80%;
-    width: 70%;
+    height: 95%;
+    width: 65%;
     overflow: auto;
     position: absolute;
     margin: auto;
     left: 0;
     right: 0;
-    top: 15px;
+    top: 2px;
 }
 
 .milestone__group .item .item__inner--caption .describe__inner::-webkit-scrollbar {
@@ -563,9 +562,8 @@
 
 .milestone__group .item .item__inner--caption .describe ul li {
     color: #000;
-    line-height: 20px;
+    line-height: initial;
     text-align: left;
-    margin-bottom: 10px;
 }
 
 @media (min-width:1024px) {
@@ -592,6 +590,10 @@
 
     .milestone__group .item .item__inner {
         padding: 0 20px;
+    }
+
+    .milestone__group .item .item__inner--score {
+        margin: 20px 0px;
     }
 }
 
@@ -624,7 +626,25 @@
         width: 20%;
     }
 }
-
+@media (max-width:1365px) {
+    .icon__group li.icon {
+        width: 16%;
+    }
+}
+@media (max-width:1355px) {
+    .icon__group li.icon {
+        width: 16.5%;
+    }
+    .icon__group li.icon a {
+        height: 130px;
+    }
+    .icon__group li.icon:not(:first-child) a img {
+        max-width: 70%;
+    }
+    .icon__group li.icon:first-child a img {
+        max-width: 95%;
+    }
+}
 @media (max-width:1280px) {
     .cont__item--score .container {
         width: 100%;
@@ -640,6 +660,18 @@
         width: 100%;
     }
 
+    .milestone__group .item .item__inner--score {
+        margin: 20px;
+    }
+    .icon__group li.icon a {
+        margin: 5px;
+    }
+}
+
+@media (max-width:1130px) {
+    .milestone__group .item .item__inner--score {
+        margin: 20px 10px;
+    }
 }
 
 @media (max-width:1100px) {
@@ -668,6 +700,9 @@
     .achievement-wrap {
         margin-top: 6rem;
     }
+    .icon__group li.icon a {
+        height: 120px;
+    }
 }
 
 @media (max-width: 1023px) {
@@ -687,6 +722,10 @@
     .cont__item--score::before {
         height: 625px;
         width: 100%;
+    }
+
+    .milestone__group .item .item__inner--score {
+        margin: 0 0 20px;
     }
 
     .icon__group li.icon a span {
@@ -732,12 +771,23 @@
     .icon__group li.icon a span {
         font-size: 2.2rem;
     }
-
+    .milestone__group .item .item__inner--score {
+        width: 215px;
+        height: 215px;
+    }
+    .milestone__group .item .item__inner--score img {
+        margin: 20px auto 0;
+    }
     /* .icon__group li.icon__fame a {
         padding: 10px 0 6px;
     } */
 }
-
+@media (max-width:990px) {
+    .icon__group li.icon a {
+        height: 150px;
+        margin: 15px;
+    }
+}
 @media (max-width:910px) {
     .cont__item--milestone .container {
         width: 80%;
@@ -766,7 +816,11 @@
         font-size: 2rem;
     }
 }
-
+@media (max-width:855px) {
+    .icon__group li.icon a {
+        height: 130px;
+    }
+}
 @media (max-width:850px) {
     /* .icon__group li.icon__fame a {
         padding: 15px 0 13px;
@@ -786,7 +840,16 @@
         font-size: 1.8rem;
     }
 }
-
+@media (max-width:780px) {
+    .icon__group li.icon a {
+        height: 120px;
+    }
+}
+@media (max-width:768px) {
+    .icon__group li.icon a {
+        height: 140px;
+    }
+}
 @media (max-width:767px) {
     .icon__group li.icon a {
         margin: 5px;
@@ -812,18 +875,30 @@
         padding: 4px 0 6px;
     } */
 }
-
+@media (max-width:750px) {
+    .icon__group li.icon a {
+        height: 130px;
+    }
+}
 @media (max-width:700px) {
     .cont__item--milestone .container {
         width: 100%;
+    }
+    .icon__group li.icon a {
+        height: 115px;
+    }
+    .icon__group li.icon:not(:first-child) a img {
+        max-width: 60%;
     }
 }
 @media (max-width:685px) {    
     .icon__group li.icon {
         width: 33.333%;
     }
+    .icon__group li.icon a {
+        height: 150px;
+    }
 }
-
 @media (max-width:625px) {
     .score__group .item:not(:first-child) .cont {
         height: 175px;
@@ -844,7 +919,14 @@
         padding: 13px 0 7px;
     } */
 }
-
+@media (max-width:590px) {
+    .icon__group li.icon a {
+        height: 135px;
+    }
+    .icon__group li.icon:not(:first-child) a img {
+        max-width: 80%;
+    }
+}
 @media (max-width:580px) {
     .milestone__group .item .item__inner--score .score-info {
         margin-top: -15px;
@@ -877,23 +959,11 @@
     }
 }
 
-@media (max-width:545px) {    
+@media (max-width:545px) {
+
     .milestone__group .item .item__inner--score {
-        height: 200px;
-        width: 200px;
         border: #fc5d64 solid 15px;
     }
-    .milestone__group .item .item__inner--caption .describe__inner {
-        height: 70%;
-        width: 70%;
-        overflow: auto;
-        position: absolute;
-        margin: auto;
-        left: 0;
-        right: 0;
-        top: 25px;
-    }
-
     .score__group .item:not(:first-child) .cont {
         height: 140px;
         width: 140px;
@@ -901,23 +971,34 @@
     .score__group .item:not(:first-child) .cont .title {
         margin-top: 20px;
     }
+    .milestone__group .item .item__inner--score {
+        width: 195px;
+        height: 195px;
+    }
 
     /* .icon__group li.icon__fame a {
         padding: 11px 0 9px;
     } */
 }
-@media (max-width:525px) {
-    .milestone__group .item {
-        width: 100%;
-    }
-}
 @media (max-width:495px) {
     /* .icon__group li.icon__fame a {
         padding: 14px 0 16px;
     } */
+    .milestone__group .item .item__inner--score {
+        width: 175px;
+        height: 175px;
+    }
+    .milestone__group .item .item__inner--score img {
+        margin: 0 auto;
+    }
 }
 
 @media (max-width:480px) {
+    .milestone__group .item .item__inner--score .num {
+        font-size: 3.5rem;
+    }.icon__group li.icon a {
+        height: 110px;
+    }
 
     .icon__group li.icon a span {
         font-size: 1.5rem;
@@ -932,7 +1013,7 @@
     .score__group .item:not(:first-child) .cont .title {
         margin-top: 25px;
     }
-    .score__group .item:not(:first-child) .cont .num {
+    .score__group .item .cont .num {
         font-size: 2rem;
     }
 }
@@ -944,8 +1025,14 @@
     .score__group .item:not(:first-child) .cont .title {
         margin-top: 30px;
     }
+    .score__group .item .cont span:first-child {
+        margin-top: 55px;
+    }
 }
 @media (max-width:460px) {
+    .milestone__group .item .item__inner--score .num {
+        font-size: 3rem;
+    }
     .icon__group li.icon a {
         height: 120px;
     }
@@ -973,7 +1060,6 @@
 
     .milestone__group .item .item__inner--caption .describe__inner {
         width: 73%;
-        height: 50px;
         top: 2px;
         font-size: .8rem;
     }
@@ -994,56 +1080,71 @@
     .icon__group:not(.slick-slider) li.icon a {
         height: 120px;
     }
+    .score__group .item .cont .num {
+        font-size: 1.5rem;
+    }
+    .score__group .item .cont span:first-child {
+        margin-top: 50px;
+    }
 }
 
 @media (max-width:414px) {
-    .icon__cont {
-        margin-left: 0;
-        margin-right: 0;
-    }
     .achievement-wrap {
         width: calc(100% + 30px);
         margin-left: -15px;
         margin-right: -15px;
     }
+    .icon__cont {
+        margin-left: 0;
+        margin-right: 0;
+    }
     .milestone__group .item .item__inner--score .score-info {
         margin-top: -20px;
     }
 
+    .milestone__group .item .item__inner--score {
+        border: #fc5d64 solid 10px;
+        width: 145px;
+        height: 145px;
+    }
+
     .milestone__group .item .item__inner--score img {
         width: 50%;
-        margin: 0 auto 10px;
-    }
-    .score__group .item:not(:first-child) {
-        width: 100%;
+        margin: 20px auto 10px;
     }
 
     .score__group .item:not(:first-child) .cont {
-        height: 165px;
-        width: 165px;
-        margin-bottom: 100px;    
+        width: 95px;
+        height: 95px;
     }
-    .score__group .item:not(:first-child) .cont .title {
-        margin-top: 45px;
-    }
+
     .cont__item--score,
     .cont__item--score::before {
-        height: 1200px;
+        height: 490px;
     }
 
     .cont__item--score {
         overflow: auto;
     }
-
+    .score__group .item .cont .member {
+        bottom: -35px;
+    }    
     .score__group .item .cont span {
-        font-size: 1.2rem;
+        font-size: .75rem;
     }
+
+    #design .score__group .item:not(.item__total) .cont span:not(.num) {
+        font-weight: bold;
+    }
+
     .score__group {
         margin: 0 0 1rem;
     }
 
     .score__group .item .cont {
-        margin: 15px auto;
+        margin: 15px auto;    
+        height: 145px;
+        width: 145px;
     }
 }
 
@@ -1098,13 +1199,31 @@
         margin-top: 1rem;
     }
 
-    .score__group .item .cont .num {
-        font-size: 2rem;
-    }
     .score__group .item:not(:first-child) .cont {
         border: #fff solid 2px
     }
 
+    .milestone__group .item .item__inner--score .num {
+        font-size: 2.5rem;
+    }
+
+    .milestone__group .item .item__inner--score {
+        width: 145px;
+        height: 145px;
+    }
+}
+@media (max-width:345px) {
+    .milestone__group .item .item__inner--score{
+        height: 140px;
+        width: 140px;
+    }
+    .milestone__group .item .item__inner--score .unit {
+        font-size: .8rem;
+        position: absolute;
+        bottom: -8px;
+        right: -5px;
+        width: 17px;
+    }
 }
 @media (max-width:336px) {
     .icon__group li.icon a {
