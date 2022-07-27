@@ -638,8 +638,9 @@
     .icon__group li.icon a {
         height: 130px;
     }
+    
     .icon__group li.icon:not(:first-child) a img {
-        max-width: 70%;
+        max-width: 65%;
     }
     .icon__group li.icon:first-child a img {
         max-width: 95%;
@@ -654,7 +655,11 @@
         width: 75vw;
     }
 }
-
+@media (max-width:1240px) {
+    .icon__group li.icon a span {
+        font-size: 2rem;
+    }
+}
 @media (max-width:1199px) {
     .cont__item--milestone .container {
         width: 100%;
