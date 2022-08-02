@@ -388,7 +388,7 @@
 .score__member {
     text-align: center;
 }
-#paced .score__group .item:not(.item__total) .cont span:not(.num),
+#paced .score__group .item .cont span:not(.num),
 #paced .score__member {
     color: var(--text-paced-focus);
 }
