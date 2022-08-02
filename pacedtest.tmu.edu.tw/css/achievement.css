@@ -57,7 +57,9 @@
 .page {
     position: relative;
 }
-
+.d-none {
+    display: none !important;
+}
 .achievement-wrap {
     width: 100%;
 }
