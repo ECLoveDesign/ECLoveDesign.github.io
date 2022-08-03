@@ -7,17 +7,17 @@
     --text-P-focus: #532f11; 
     --bg-A: #2736cf;                /*A*/
     --bg-A-focus:#1420a7;       
-    --text-A-focus: #0a0d2c; 
+    --text-A-focus: #6f75af; 
     --bg-C: #ab0c93;                /*C*/
     --bg-C-focus:#860c74;       
-    --text-C-focus: #11040f; 
+    --text-C-focus: #ed56d6; 
     --bg-E: #e8cd00;                /*E*/
     --bg-E-focus:#bea906;       
-    --text-E-focus: #4b4309;    
+    --text-E-focus: #773f0a;    
     --bg-D: #009174;                /*D*/
     --bg-D-focus:#0a705c;       
     --text-D-focus: #081d19;  
-    --bg-design: #c49b49;           /*設計思考*/
+    --bg-design: #6e5521;           /*設計思考*/
     --bg-design-focus: #ac8841;    
     --text-design-focus: #342609;    
     --bg-solve: #d601a7;            /*問題解決*/
@@ -235,7 +235,7 @@
     display: block;
     position: absolute;
     width: 100%;
-    height: 45vh;
+    height: 470px;
     left: 0;
     z-index: 0;
 }
@@ -390,7 +390,7 @@
 .score__member {
     text-align: center;
 }
-#paced .score__group .item .cont span:not(.num),
+#paced .score__group .item:not(.item__total) .cont span:not(.num),
 #paced .score__member {
     color: var(--text-paced-focus);
 }
@@ -399,6 +399,50 @@
     background: var(--bg-paced-focus);
 }
 
+#P .score__group .item:not(.item__total) .cont span:not(.num),
+#P .score__member {
+    color: var(--text-P-focus);
+}
+
+#P .score__group .item__total .cont {
+    background: var(--bg-P-focus);
+}
+
+#A .score__group .item:not(.item__total) .cont span:not(.num),
+#A .score__member {
+    color: var(--text-A-focus);
+}
+
+#A .score__group .item__total .cont {
+    background: var(--bg-A-focus);
+}
+
+#C .score__group .item:not(.item__total) .cont span:not(.num),
+#C .score__member {
+    color: var(--text-C-focus);
+}
+
+#C .score__group .item__total .cont {
+    background: var(--bg-C-focus);
+}
+
+#E .score__group .item:not(.item__total) .cont span:not(.num),
+#E .score__member {
+    color: var(--text-E-focus);
+}
+
+#E .score__group .item__total .cont {
+    background: var(--bg-E-focus);
+}
+
+#D .score__group .item:not(.item__total) .cont span:not(.num),
+#D .score__member {
+    color: var(--text-D-focus);
+}
+
+#D .score__group .item__total .cont {
+    background: var(--bg-D-focus);
+}
 #design .score__group .item:not(.item__total) .cont span:not(.num),
 #design .score__member {
     color: var(--text-design-focus);
