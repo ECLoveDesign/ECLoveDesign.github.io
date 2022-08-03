@@ -712,7 +712,7 @@
         height: 130px;
     }
     
-    .icon__group li.icon:not(.icon__paced) a img {
+    .icon__group li.icon:not(.icon__paced,.icon__P,.icon__A,.icon__C,.icon__E,.icon__D) a img {
         max-width: 65%;
     }
     .icon__group li.icon:first-child a img {
@@ -970,7 +970,7 @@
     .icon__group:not(.slick-slider) li.icon a {
         height: 115px;
     }
-    .icon__group li.icon:not(.icon__paced) a img {
+    .icon__group li.icon:not(.icon__paced,.icon__P,.icon__A,.icon__C,.icon__E,.icon__D) a img {
         max-width: 60%;
     }
     .slick-slider.icon__group li.icon a {
@@ -1013,7 +1013,7 @@
     .icon__group:not(.slick-slider) li.icon a {
         height: 135px;
     }
-    .icon__group li.icon:not(.icon__paced) a img {
+    .icon__group li.icon:not(.icon__paced,.icon__P,.icon__A,.icon__C,.icon__E,.icon__D) a img {
         max-width: 80%;
         margin: 30px auto 10px;
     }
@@ -1041,7 +1041,7 @@
     .icon__group:not(.slick-slider) li.icon a {
         height: 130px;
     }
-    .icon__group li.icon:not(.icon__paced) a img {
+    .icon__group li.icon:not(.icon__paced,.icon__P,.icon__A,.icon__C,.icon__E,.icon__D) a img {
         margin: 25px auto 10px;
     }
     .score__group .item:not(:first-child) .cont .title {
@@ -1263,7 +1263,7 @@
     .icon__group li.icon a {
         height: 100px;
     }
-    .icon__group li.icon:not(.icon__paced) a img {
+    .icon__group li.icon:not(.icon__paced,.icon__P,.icon__A,.icon__C,.icon__E,.icon__D) a img {
         max-width: 90%;
     }
 }
@@ -1283,7 +1283,7 @@
     .slick-slider.icon__group li.icon a {
         height: 90px;
     }
-    .icon__group li.icon:not(.icon__paced) a img {
+    .icon__group li.icon:not(.icon__paced,.icon__P,.icon__A,.icon__C,.icon__E,.icon__D) a img {
         max-width: 74%;
     }
     /* .icon__group li.icon__paced a {
@@ -1295,7 +1295,7 @@
     .icon__group li.icon img {
         max-width: 80%;
     }
-    .icon__group li.icon:not(.icon__paced) a img {
+    .icon__group li.icon:not(.icon__paced,.icon__P,.icon__A,.icon__C,.icon__E,.icon__D) a img {
         max-width: 70%;
         margin: 20px auto 10px;
     }
