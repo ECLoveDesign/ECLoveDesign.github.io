@@ -1,0 +1,496 @@
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="keywords" content="國軍醫院聯合掛號系統">
+    <meta name="description" content="國軍醫院聯合掛號系統" />
+    <meta property="og:title" content="國軍醫院聯合掛號系統" />
+    <meta property="og:description" content="國軍醫院聯合掛號系統" />
+    <meta property="og:url" content="https://www.google.com.tw/" />
+    <meta property="og:image" content="https://www.google.com.tw//images/og-image.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="國軍醫院聯合掛號系統" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>科別掛號 │ 國軍醫院聯合掛號系統</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
+                    <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Nav"
+                    aria-controls="Nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="Nav">
+                    <div class="container">
+                        <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
+                            <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁">
+                        </a>
+                        <ul id="mainNav" class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">科別掛號</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="doctor.html">醫生掛號</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="search.html">掛號查詢/取消</a>
+                            </li>
+                            <!--<li class="nav-item">
+                                <a class="nav-link" href="rest.html">停/代診資訊</a>
+                            </li>-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="info.html">院區資訊</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topNav">
+                        <div class="container">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link btn-language" href="#">
+                                        <i class="fa fa-globe"></i> English
+                                    </a>
+                                </li>
+                                <li class="nav-item fontset">
+                                    <span>字級設定</span>
+                                    <a href="#" class="nav-link font-s">小</a>
+                                    <a href="#" class="nav-link font-m">中</a>
+                                    <a href="#" class="nav-link font-l">大</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="jumbotron">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">科別掛號</li>
+                </ol>
+            </nav>
+            <h1>科別掛號</h1>
+
+            <div class="step-wrap">
+                <ol class="step-cont">
+                    <li class="finish">
+                        <a href="index.html">
+                            <span class="icon">1</span>
+                            <div class="title">選擇科別/醫師</div>
+                        </a>
+                    </li>
+                    <li class="finish">
+                        <a href="register-step2.html">
+                            <span class="icon">2</span>
+                            <div class="title">選擇日期時段</div>
+                        </a>
+                    </li>
+                    <li class="current">
+                        <a href="javascript:void(0)">
+                            <span class="icon">3</span>
+                            <div class="title">建立預約掛號</div>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="formArea">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-5">
+
+                            <h2>掛號資料</h2>
+                            <small class="text-danger notice">(尚未完成掛號，請填妥資料)</small>
+
+                            <ul>
+                                <li>預約院別：國軍高雄總醫院左營分院</li>
+                                <li>預約日期：2022/08/03(三)</li>
+                                <li>預約時段：上午</li>
+                                <li>預約科別：一般外科</li>
+                                <li>預約醫師：蘇明山</li>
+                                <li>診室：一般外科5診室</li>
+                                <li>預估診號：32</li>
+                            </ul>
+
+                            <small class="text-danger notice">(此號為估算，不代表正式掛號可掛到此號)</small>
+
+                        </div>
+                        <div class="col-md-7">
+
+                            <form class="form" id="needs-validation" novalidate>
+
+                                <fieldset class="form-group">
+                                    <legend class="col-form-label">證件類型<span class="text-danger">*</span></legend>
+                                    <div class="form-row">
+                                        <div class="col-6 col-md-3">                                                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="idtype" id="id" value="id">
+                                                <label class="form-check-label" for="id">身分證字號</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-3">  
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="idtype" id="MedicalNo"
+                                                    value="MedicalNo">
+                                                <label class="form-check-label" for="MedicalNo">病歷號碼</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-3">  
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="idtype" id="passport"
+                                                    value="passport">
+                                                <label class="form-check-label" for="passport">護照號碼</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-3">  
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="idtype" id="ResidentID"
+                                                    value="ResidentID">
+                                                <label class="form-check-label" for="ResidentID">居留證號碼</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                
+                                <div class="form-group">
+                                    <label for="IDnumber">證件號碼<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="IDnumber" placeholder="請輸入證件號碼"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        請輸入證件號碼
+                                    </div>
+                                </div>
+
+                                <div class="form-group birthToggle">
+                                    <div class="birth d-none">
+                                        <div class="form-group">
+                                            <label for="birth">生日
+                                                <span class="text-danger">*</span>
+                                                <span class="text-primary">點此切換輸入方式</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="birth" placeholder="YYYMMDD"
+                                                required>
+                                            <small id="birDescrib" class="form-text text-danger text-muted">(例.出生日期為民國70年1月20日，請輸入700120)</small>
+                                            <div class="invalid-feedback">
+                                                請輸入生日
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="birth2">
+                                        <label for="birth2">生日
+                                            <span class="text-danger">*</span>
+                                            <span class="text-primary">點此切換輸入方式</span>
+                                        </label>
+                                        <div class="form-row input-group">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <select class="form-control selectpicker" title="請輸入年份" required>
+                                                        <option value="民國111年 (西元2022年)">民國111年 (西元2022年)</option>
+                                                        <option value="民國110年 (西元2021年)">民國110年 (西元2021年)</option>
+                                                        <option value="民國109年 (西元2020年)">民國109年 (西元2020年)</option>
+                                                        <option value="民國108年 (西元2019年)">民國108年 (西元2019年)</option>
+                                                        <option value="民國107年 (西元2018年)">民國107年 (西元2018年)</option>
+                                                        <option value="民國106年 (西元2017年)">民國106年 (西元2017年)</option>
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <select class="form-control selectpicker" title="請輸入月份" required>
+                                                        <option value="1月">1月</option>
+                                                        <option value="2月">2月</option>
+                                                        <option value="3月">3月</option>
+                                                        <option value="4月">4月</option>
+                                                        <option value="5月">5月</option>
+                                                        <option value="6月">6月</option>
+                                                        <option value="7月">7月</option>
+                                                        <option value="8月">8月</option>
+                                                        <option value="9月">9月</option>
+                                                        <option value="10月">10月</option>
+                                                        <option value="11月">11月</option>
+                                                        <option value="12月">12月</option>
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <select class="form-control selectpicker" title="請輸入日期" required>
+                                                        <option value="1日">1日</option>
+                                                        <option value="2日">2日</option>
+                                                        <option value="3日">3日</option>
+                                                        <option value="4日">4日</option>
+                                                        <option value="5日">5日</option>
+                                                        <option value="6日">6日</option>
+                                                        <option value="7日">7日</option>
+                                                        <option value="8日">8日</option>
+                                                        <option value="9日">9日</option>
+                                                        <option value="10日">10日</option>
+                                                        <option value="11日">11日</option>
+                                                        <option value="12日">12日</option>
+                                                        <option value="13日">13日</option>
+                                                        <option value="14日">14日</option>
+                                                        <option value="15日">15日</option>
+                                                        <option value="16日">16日</option>
+                                                        <option value="17日">17日</option>
+                                                        <option value="18日">18日</option>
+                                                        <option value="19日">19日</option>
+                                                        <option value="20日">20日</option>
+                                                        <option value="21日">21日</option>
+                                                        <option value="22日">22日</option>
+                                                        <option value="23日">23日</option>
+                                                        <option value="24日">24日</option>
+                                                        <option value="25日">25日</option>
+                                                        <option value="26日">26日</option>
+                                                        <option value="27日">27日</option>
+                                                        <option value="28日">28日</option>
+                                                        <option value="29日">29日</option>
+                                                        <option value="30日">30日</option>
+                                                        <option value="31日">31日</option>
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="firstPatinent d-none">
+
+
+                                    <h3 class="form-section"><span>初診基本資料</span></h3>
+
+                                    <div class="form-group">
+                                        <label for="name">姓名<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="name" placeholder="初診必填"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            請輸入姓名
+                                        </div>
+                                    </div>
+
+                                        
+                                    <fieldset class="form-group">
+                                        <legend class="col-form-label">性別<span class="text-danger">*</span></legend>
+                                        <div class="form-row">
+                                            <div class="col-6">                                                        
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                                    <label class="form-check-label" for="male">男</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">  
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                                    <label class="form-check-label" for="female">女</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    
+                                    <div class="form-group">
+                                        <label for="phone">住家電話<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="phone" placeholder="初診必填"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            請輸入住家電話
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="mobile">行動電話<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="mobile" placeholder="初診必填"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            請輸入行動電話
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="census">戶籍地址<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="census" placeholder="初診必填"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            請輸入戶籍地址
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="address">通訊地址<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="address" placeholder="初診必填"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            請輸入通訊地址
+                                        </div>
+                                    </div>
+
+                                    <h3 class="form-section"><span>緊急聯絡人</span></h3>
+
+                                    <div class="form-group">
+                                        <label for="contact">姓名<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="contact" placeholder="初診必填"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            請輸入姓名
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="contactNumber">電話<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="contactNumber" placeholder="初診必填"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            請輸入電話
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="contactRelation">關係<span class="text-danger">*</span></label>
+                                        <div class="form-group">
+                                            <select class="form-control selectpicker" title="請選擇" required>
+                                                <option value="配偶">配偶</option>
+                                                <option value="父子">父子</option>
+                                                <option value="母子">母子</option>
+                                                <option value="婆媳">婆媳</option>
+                                                <option value="親戚">親戚</option>
+                                                <option value="兄弟">兄弟</option>
+                                                <option value="姐妹">姐妹</option>
+                                                <option value="祖孫">祖孫</option>
+                                                <option value="朋友">朋友</option>
+                                                <option value="翁婿">翁婿</option>
+                                                <option value="雇主">雇主</option>
+                                                <option value="父女">父女</option>
+                                                <option value="母女">母女</option>
+                                                <option value="兄妹">兄妹</option>
+                                                <option value="姐弟">姐弟</option>
+                                                <option value="妯娌">妯娌</option>
+                                                <option value="其他">其他</option>
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            請選擇關係
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="vcode">驗證碼<span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="vcode" placeholder="請輸入驗證碼" required>
+                                        <div class="input-group-append" id="button-addon4">
+                                            <img src="images/captcha-img.png">
+                                            <button class="btn btn-outline-secondary btn-refresh" type="button">
+                                                <i class="fa fa-refresh" aria-hidden="true"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-vocie" type="button">
+                                                <i class="fa fa-volume-up" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            請輸入證件號碼
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 下方兩個 button 為展示用，程式化可移除-->                                
+                                <button type="submit" class="btn btn-primary btn-block btn-first">確認掛號</button>
+                                <button type="submit" class="btn btn-primary btn-block btn-submit" onclick="window.location.href='register-step3-form2.html';">確認掛號(前往成功頁)</button>
+
+
+                                <button type="submit" class="btn btn-primary btn-block btn-submit">確認掛號</button>
+
+                            </form>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="images/foot-logo.png">
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>
+                            <a href="#">網站隱私權政策</a>
+                        </li>
+                        <li>
+                            <a href="#">網站安全政策宣告</a>
+                        </li>
+                        <li>
+                            <a href="#">政府網站資料開放宣告</a>
+                        </li>
+                        <li>
+                            <a href="#">個資法保護聲明</a>
+                        </li>
+                    </ul>
+                    <p>Copyright © 國軍醫院. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+    <script src='js/jquery-3.5.1.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/datatables/jquery.dataTables.min.js'></script>
+    <script src="assets/datatables/dataTables.fixedColumns.min.js"></script>
+    <script src="assets/datatables/dataTables.responsive.min.js"></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js?3"></script>
+    <script>
+
+    // demo 用
+    $('.btn-submit').addClass('d-none');
+    $('.btn-first').click(function(e){
+        e.preventDefault();        
+        $('.firstPatinent').removeClass('d-none');
+        $(this).addClass('d-none');
+        $('.btn-submit').removeClass('d-none');
+    });
+
+    </script>
+</body>
+
+</html>

@@ -99,8 +99,6 @@ if ($(document).width() > 767) {
     bInfo: false,
     columnDefs: [
         { targets: [1,2,3], orderable: false },
-        // { width: 20, targets: [1,2,3] },
-        // { width: 40, targets: [0] },
     ],
     responsive: {
         details: {
@@ -125,9 +123,7 @@ if ($(document).width() > 767) {
     searching: false,
     bInfo: false,
     columnDefs: [
-        { targets: [2,3], orderable: false },
-        // { width: 20, targets: [1,2,3] },
-        // { width: 40, targets: [0] },
+        { targets: [2], orderable: false },
     ],
     responsive: {
         details: {
@@ -153,8 +149,6 @@ if ($(document).width() > 767) {
     bInfo: false,
     columnDefs: [
         { targets: [4,6,7], orderable: false },
-        // { width: 20, targets: [1,2,3] },
-        // { width: 40, targets: [0] },
     ],
     responsive: {
         details: {

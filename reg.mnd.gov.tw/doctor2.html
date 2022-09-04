@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>科別掛號 │ 國軍醫院聯合掛號系統</title>
+    <title>醫生掛號 │ 國軍醫院聯合掛號系統</title>
 </head>
 
 <body>
@@ -37,10 +37,10 @@
                             <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁">
                         </a>
                         <ul id="mainNav" class="navbar-nav">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="index.html">科別掛號</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="doctor.html">醫生掛號</a>
                             </li>
                             <li class="nav-item">
@@ -83,10 +83,10 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">首頁</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">科別掛號</li>
+                    <li class="breadcrumb-item active" aria-current="page">醫生掛號</li>
                 </ol>
             </nav>
-            <h1>科別掛號</h1>
+            <h1>醫生掛號</h1>
 
             <div class="step-wrap">
                 <ol class="step-cont">
@@ -110,7 +110,6 @@
                     </li>
                 </ol>
             </div>
-
         </div>
     </div>
 
@@ -121,7 +120,7 @@
 
                 <div class="searchbar">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <select class="form-control selectpicker" data-live-search="true" title="請選擇科別">
                                     <optgroup label="內科">
@@ -132,7 +131,7 @@
                                         <option value="神經內科">神經內科</option>
                                     </optgroup>
                                     <optgroup label="外科">
-                                        <option value="一般外科">一般外科</option>
+                                        <option value="一般外科" selected>一般外科</option>
                                         <option value="神經外科">神經外科</option>
                                         <option value="胸腔外科">胸腔外科</option>
                                         <option value="整形外科">整形外科</option>
@@ -157,14 +156,12 @@
                                         <option value="減肥門診">減肥門診</option>
                                         <option value="中醫科">中醫科</option>
                                     </optgroup>
-
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <select class="form-control selectpicker" data-live-search="true" multiple
-                                    title="全部院區">
+                                <select class="form-control selectpicker" data-live-search="true" multiple title="全部院區">
                                     <option value="三軍總醫院(內湖院區、汀州院區)">三軍總醫院(內湖院區、汀州院區)</option>
                                     <option value="三軍總醫院北投分院(院本部、中和街門診)">三軍總醫院北投分院(院本部、中和街門診)</option>
                                     <option value="三軍總醫院澎湖分院">三軍總醫院澎湖分院</option>
@@ -183,128 +180,184 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <select class="form-control selectpicker" data-live-search="true" multiple title="全部醫生">
+                                        <option value="徐國峯">徐國峯</option>
+                                        <option value="陳登偉">陳登偉</option>
+                                        <option value="張浩銘">張浩銘</option>
+                                        <option value="張浩銘">施銘朗</option>                                        
+                                        <option value="廖國秀">廖國秀</option>
+                                        <option value="伍希元">伍希元</option>
+                                        <option value="張子明">張子明</option>
+                                        <option value="許聖德">許聖德</option>
+                                        <option value="謝宗保">謝宗保</option>
+                                        <option value="洪志杰">洪志杰</option>
+                                        <option value="陳正榮">陳正榮</option>
+                                        <option value="梁家銘">梁家銘</option>
+                                        <option value="李定穎">李定穎</option>
+                                        <option value="沈國樑">沈國樑</option>
+                                        <option value="何孟興">何孟興</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-1">
-                            <button type="button" class="btn btn-dark btn-search"
-                                onclick="window.location.href='register-step2.html';">
+                            <button type="button" class="btn btn-dark btn-search" onclick="window.location.href='doctor-step2.html';">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <ul class="anchorNav">
-                    <li><a href="#sec1" class="btn btn-outline-dark btn-anchor">內科</a></li>
-                    <li><a href="#sec2" class="btn btn-outline-dark btn-anchor">外科</a></li>
-                    <li><a href="#sec3" class="btn btn-outline-dark btn-anchor">其他專科</a></li>
-                </ul>
+            </div>               
 
-            </div>
+            <div class="table-responsive">
+                <table class="table table-hover doctorTable infoTable table-rwd" cellspacing="0" width="100%" 
+                summary="此為醫生掛號列表，第一欄為醫師名稱，第二欄為該醫師服務院區，第三欄為該醫師現任職位，第四欄為該醫師掛號功能">
+                <caption>醫生掛號列表</caption>
+                    <thead>
+                        <tr>
+                            <th width="20%">醫師</th>
+                            <th width="60%">服務院區-科別</th>
+                            <th width="20%">掛號</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">徐國峯</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區)-一般外科</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)-一般外科</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">詹德全</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)-一般外科主治醫師</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">張浩銘</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)-一般外科</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">廖國秀</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)-一般外科</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">施銘朗</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)-一般外科</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">何孟興</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)-一般外科</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">謝宗保</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區)-一般外科</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">伍希元</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)-一般外科</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">洪志杰</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區)-一般外科</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">沈國樑</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區)-一般外科</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">
+                                <span class="name">陳正榮</span>
+                            </td>
+                            <td width="60%">
+                                <span class="hospital">三軍總醫院(內湖院區)-一般外科</span>
+                            </td>
+                            <td width="20%">
+                                <a href="doctor-step2.html" class="btn btn-outline-dark btn-block btn-register">掛號</a>
+                            </td>
+                        </tr>
 
-            <div id="sec1" class="anchorSec">
-                <h2>內科</h2>
-                <div class="card">
-                    <div class="row">
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">一般內科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">腸胃內科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">心臟內科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">胸腔內科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">神經內科</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div id="sec2" class="anchorSec">
-                <h2>外科</h2>
-                <div class="card">
-                    <div class="row">
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">一般外科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">神經外科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">胸腔外科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">整形外科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">直腸外科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">心臟血管外科</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="sec3" class="anchorSec">
-                <h2>其他專科</h2>
-                <div class="card">
-                    <div class="row">
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">家醫科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">感染科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">骨科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">身心醫學科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">復健科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">婦產科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">小兒科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">耳鼻喉科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">眼科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">牙科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">腎臟科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">新陳代謝科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">泌尿科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">血液腫瘤科</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">減肥門診</a>
-                        </div>
-                        <div class="col-xs-6 col-md-4">
-                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">中醫科</a>
-                        </div>
-                    </div>
-                </div>
-
+                    </tbody>
+                </table>
             </div>
 
         </div>
@@ -345,10 +398,17 @@
     <script src='js/jquery-3.5.1.min.js'></script>
     <script src="js/popper.min.js"></script>
     <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/datatables/jquery.dataTables.min.js'></script>
+    <script src="assets/datatables/dataTables.fixedColumns.min.js"></script>
+    <script src="assets/datatables/dataTables.responsive.min.js"></script>
     <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
     <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
     <script src="js/swiper.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js?3"></script>
+    <script>
+
+
+    </script>
 </body>
 
 </html>

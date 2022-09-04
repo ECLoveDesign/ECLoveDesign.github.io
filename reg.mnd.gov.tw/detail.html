@@ -38,7 +38,7 @@
                         </a>
                         <ul id="mainNav" class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="register.html">科別掛號</a>
+                                <a class="nav-link" href="index.html">科別掛號</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="doctor.html">醫生掛號</a>
@@ -46,9 +46,9 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="search.html">掛號查詢/取消</a>
                             </li>
-                            <li class="nav-item">
+                            <!--<li class="nav-item">
                                 <a class="nav-link" href="rest.html">停/代診資訊</a>
-                            </li>
+                            </li>-->
                             <li class="nav-item">
                                 <a class="nav-link" href="info.html">院區資訊</a>
                             </li>
@@ -93,174 +93,10 @@
     <main>
         <div class="container">
 
-            <div class="formArea">
-                <div class="card">
-
-                    <form class="form" id="needs-validation" novalidate>
-
-                        <fieldset class="form-group">
-                            <legend class="col-form-label">證件類型<span class="text-danger">*</span></legend>
-                            <div class="form-row">
-                                <div class="col-6 col-md-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="idtype" id="id" value="id" checked>
-                                        <label class="form-check-label" for="id">身分證字號</label>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="idtype" id="MedicalNo"
-                                            value="MedicalNo">
-                                        <label class="form-check-label" for="MedicalNo">病歷號碼</label>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="idtype" id="passport"
-                                            value="passport">
-                                        <label class="form-check-label" for="passport">護照號碼</label>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="idtype" id="ResidentID"
-                                            value="ResidentID">
-                                        <label class="form-check-label" for="ResidentID">居留證號碼</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <div class="form-group">
-                            <label for="IDnumber">證件號碼<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="IDnumber" placeholder="請輸入證件號碼" value="A123456789" required>
-                            <div class="invalid-feedback">
-                                請輸入證件號碼
-                            </div>
-                        </div>
-
-                        <div class="form-group birthToggle">
-                            <div class="birth d-none">
-                                <div class="form-group">
-                                    <label for="birth">生日
-                                        <span class="text-danger">*</span>
-                                        <span class="text-primary">點此切換輸入方式</span>
-                                    </label>
-                                    <input type="text" class="form-control" id="birth" placeholder="YYYMMDD" required>
-                                    <small id="birDescrib"
-                                        class="form-text text-danger text-muted">(例.出生日期為民國70年1月20日，請輸入700120)</small>
-                                    <div class="invalid-feedback">
-                                        請輸入生日
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="birth2">
-                                <label for="birth2">生日
-                                    <span class="text-danger">*</span>
-                                    <span class="text-primary">點此切換輸入方式</span>
-                                </label>
-                                <div class="form-row input-group">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <select class="form-control selectpicker" title="請輸入年份" required>
-                                                <option value="民國111年 (西元2022年)">民國111年 (西元2022年)</option>
-                                                <option value="民國110年 (西元2021年)">民國110年 (西元2021年)</option>
-                                                <option value="民國109年 (西元2020年)">民國109年 (西元2020年)</option>
-                                                <option value="民國108年 (西元2019年)">民國108年 (西元2019年)</option>
-                                                <option value="民國107年 (西元2018年)">民國107年 (西元2018年)</option>
-                                                <option value="民國106年 (西元2017年)" selected>民國106年 (西元2017年)</option>
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <select class="form-control selectpicker" title="請輸入月份" required>
-                                                <option value="1月">1月</option>
-                                                <option value="2月">2月</option>
-                                                <option value="3月">3月</option>
-                                                <option value="4月" selected>4月</option>
-                                                <option value="5月">5月</option>
-                                                <option value="6月">6月</option>
-                                                <option value="7月">7月</option>
-                                                <option value="8月">8月</option>
-                                                <option value="9月">9月</option>
-                                                <option value="10月">10月</option>
-                                                <option value="11月">11月</option>
-                                                <option value="12月">12月</option>
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <select class="form-control selectpicker" title="請輸入日期" required>
-                                                <option value="1日">1日</option>
-                                                <option value="2日">2日</option>
-                                                <option value="3日">3日</option>
-                                                <option value="4日">4日</option>
-                                                <option value="5日">5日</option>
-                                                <option value="6日">6日</option>
-                                                <option value="7日">7日</option>
-                                                <option value="8日">8日</option>
-                                                <option value="9日">9日</option>
-                                                <option value="10日">10日</option>
-                                                <option value="11日">11日</option>
-                                                <option value="12日">12日</option>
-                                                <option value="13日">13日</option>
-                                                <option value="14日">14日</option>
-                                                <option value="15日">15日</option>
-                                                <option value="16日">16日</option>
-                                                <option value="17日">17日</option>
-                                                <option value="18日">18日</option>
-                                                <option value="19日">19日</option>
-                                                <option value="20日">20日</option>
-                                                <option value="21日">21日</option>
-                                                <option value="22日">22日</option>
-                                                <option value="23日">23日</option>
-                                                <option value="24日">24日</option>
-                                                <option value="25日">25日</option>
-                                                <option value="26日">26日</option>
-                                                <option value="27日">27日</option>
-                                                <option value="28日" selected>28日</option>
-                                                <option value="29日">29日</option>
-                                                <option value="30日">30日</option>
-                                                <option value="31日">31日</option>
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="vcode">驗證碼<span class="text-danger">*</span></label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="vcode" placeholder="請輸入驗證碼" value="1240" required>
-                                <div class="input-group-append" id="button-addon4">
-                                    <img src="images/captcha-img.png">
-                                    <button class="btn btn-outline-secondary btn-refresh" type="button">
-                                        <i class="fa fa-refresh" aria-hidden="true"></i>
-                                    </button>
-                                    <button class="btn btn-outline-secondary btn-vocie" type="button">
-                                        <i class="fa fa-volume-up" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                                <div class="invalid-feedback">
-                                    請輸入證件號碼
-                                </div>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block btn-submit">送出查詢</button>
-
-                    </form>
-
-                </div>
-
+            <div class="loginCont">
+                <p>陳●明您好，您的待看診資訊如下：</p>
             </div>
-
+            
             <div class="detailCont">
                 <div class="table-responsive">
                     <table class="table table-rwd infoTable detailTable" cellspacing="0" width="100%" 
@@ -343,10 +179,10 @@
                     <a href="#" class="btn btn-block btn-primary"><i class="fa fa-print" aria-hidden="true"></i> 列印</a>
                 </div>
                 <div class="col-md-4">
-                    <a href="register.html" class="btn btn-block btn-outline-primary">繼續掛號</a>
+                    <a href="index.html" class="btn btn-block btn-outline-primary">繼續掛號</a>
                 </div>
                 <div class="col-md-4">
-                    <a href="register.html" class="btn btn-block btn-outline-primary">改約其他人</a>
+                    <a href="index.html" class="btn btn-block btn-outline-primary">改約其他人</a>
                 </div>
             </div>
 

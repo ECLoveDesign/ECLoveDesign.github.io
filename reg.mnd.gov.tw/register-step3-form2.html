@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>掛號資料確認 │ 國軍醫院聯合掛號系統</title>
+    <title>科別掛號 │ 國軍醫院聯合掛號系統</title>
 </head>
 
 <body>
@@ -37,8 +37,8 @@
                             <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁">
                         </a>
                         <ul id="mainNav" class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="register.html">科別掛號</a>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">科別掛號</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="doctor.html">醫生掛號</a>
@@ -46,9 +46,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="search.html">掛號查詢/取消</a>
                             </li>
-                            <li class="nav-item">
+                            <!--<li class="nav-item">
                                 <a class="nav-link" href="rest.html">停/代診資訊</a>
-                            </li>
+                            </li>-->
                             <li class="nav-item">
                                 <a class="nav-link" href="info.html">院區資訊</a>
                             </li>
@@ -83,10 +83,33 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">首頁</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">掛號資料確認</li>
+                    <li class="breadcrumb-item active" aria-current="page">科別掛號</li>
                 </ol>
             </nav>
-            <h1>掛號資料確認</h1>
+            <h1>科別掛號</h1>
+
+            <div class="step-wrap">
+                <ol class="step-cont">
+                    <li class="finish">
+                        <a href="index.html">
+                            <span class="icon">1</span>
+                            <div class="title">選擇科別/醫師</div>
+                        </a>
+                    </li>
+                    <li class="finish">
+                        <a href="register-step2.html">
+                            <span class="icon">2</span>
+                            <div class="title">選擇日期時段</div>
+                        </a>
+                    </li>
+                    <li class="current">
+                        <a href="javascript:void(0)">
+                            <span class="icon">3</span>
+                            <div class="title">建立預約掛號</div>
+                        </a>
+                    </li>
+                </ol>
+            </div>
         </div>
     </div>
 
@@ -158,10 +181,10 @@
                                             aria-hidden="true"></i> 列印</a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="register.html" class="btn btn-block btn-outline-primary">繼續掛號</a>
+                                    <a href="index.html" class="btn btn-block btn-outline-primary">繼續掛號</a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="register.html" class="btn btn-block btn-outline-primary">改約其他人</a>
+                                    <a href="index.html" class="btn btn-block btn-outline-primary">改約其他人</a>
                                 </div>
                             </div>
                         </div>
