@@ -1,0 +1,329 @@
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="keywords" content="國軍醫院聯合掛號系統">
+    <meta name="description" content="國軍醫院聯合掛號系統" />
+    <meta property="og:title" content="國軍醫院聯合掛號系統" />
+    <meta property="og:description" content="國軍醫院聯合掛號系統" />
+    <meta property="og:url" content="https://www.google.com.tw/" />
+    <meta property="og:image" content="https://www.google.com.tw//images/og-image.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="國軍醫院聯合掛號系統" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>科別掛號 │ 國軍醫院聯合掛號系統</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
+                    <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Nav"
+                    aria-controls="Nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="Nav">
+                    <div class="container">
+                        <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
+                            <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁">
+                        </a>
+                        <ul id="mainNav" class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="register.html">科別掛號</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="doctor.html">醫生掛號</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="search.html">掛號查詢/取消</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="rest.html">停/代診資訊</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="info.html">院區資訊</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topNav">
+                        <div class="container">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link btn-language" href="#">
+                                        <i class="fa fa-globe"></i> English
+                                    </a>
+                                </li>
+                                <li class="nav-item fontset">
+                                    <span>字級設定</span>
+                                    <a href="#" class="nav-link font-s">小</a>
+                                    <a href="#" class="nav-link font-m">中</a>
+                                    <a href="#" class="nav-link font-l">大</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="jumbotron">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">科別掛號</li>
+                </ol>
+            </nav>
+            <h1>科別掛號</h1>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="searchArea">
+
+                <div class="searchbar">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <select class="form-control selectpicker" data-live-search="true" title="請選擇科別">
+                                    <optgroup label="內科">
+                                        <option value="一般內科">一般內科</option>
+                                        <option value="腸胃內科">腸胃內科</option>
+                                        <option value="心臟內科">心臟內科</option>
+                                        <option value="胸腔內科">胸腔內科</option>
+                                        <option value="神經內科">神經內科</option>
+                                    </optgroup>
+                                    <optgroup label="外科">
+                                        <option value="一般外科">一般外科</option>
+                                        <option value="神經外科">神經外科</option>
+                                        <option value="胸腔外科">胸腔外科</option>
+                                        <option value="整形外科">整形外科</option>
+                                        <option value="直腸外科">直腸外科</option>
+                                        <option value="心臟血管外科">心臟血管外科</option>
+                                    </optgroup>
+                                    <optgroup label="其它專科">
+                                        <option value="家醫科">家醫科</option>
+                                        <option value="感染科">感染科</option>
+                                        <option value="骨科">骨科</option>
+                                        <option value="身心醫學科">身心醫學科</option>
+                                        <option value="復健科">復健科</option>
+                                        <option value="婦產科">婦產科</option>
+                                        <option value="小兒科">小兒科</option>
+                                        <option value="耳鼻喉科">耳鼻喉科</option>
+                                        <option value="眼科">眼科</option>
+                                        <option value="牙科">牙科</option>
+                                        <option value="腎臟科">腎臟科</option>
+                                        <option value="新陳代謝科">新陳代謝科</option>
+                                        <option value="泌尿科">泌尿科</option>
+                                        <option value="血液腫瘤科">血液腫瘤科</option>
+                                        <option value="減肥門診">減肥門診</option>
+                                        <option value="中醫科">中醫科</option>
+                                    </optgroup>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-control selectpicker" data-live-search="true" multiple
+                                    title="請選擇院區">
+                                    <option value="三軍總醫院(內湖院區、汀州院區)">三軍總醫院(內湖院區、汀州院區)</option>
+                                    <option value="三軍總醫院北投分院(院本部、中和街門診)">三軍總醫院北投分院(院本部、中和街門診)</option>
+                                    <option value="三軍總醫院澎湖分院">三軍總醫院澎湖分院</option>
+                                    <option value="三軍總醫院基隆分院(孝二院區、正榮院區)">三軍總醫院基隆分院(孝二院區、正榮院區)</option>
+                                    <option value="三軍總醫院松山分院">三軍總醫院松山分院</option>
+                                    <option value="國軍高雄總醫院(總院區、門診部)">國軍高雄總醫院(總院區、門診部)</option>
+                                    <option value="國軍高雄總醫院左營分院">國軍高雄總醫院左營分院</option>
+                                    <option value="國軍高雄總醫院岡山分院">國軍高雄總醫院岡山分院</option>
+                                    <option value="國軍高雄總醫院屏東分院">國軍高雄總醫院屏東分院</option>
+                                    <option value="國軍台中總醫院">國軍台中總醫院</option>
+                                    <option value="國軍台中總醫院中清分院">國軍台中總醫院中清分院</option>
+                                    <option value="國軍桃園總醫院">國軍桃園總醫院</option>
+                                    <option value="國軍桃園總醫院新竹分院">國軍桃園總醫院新竹分院</option>
+                                    <option value="國軍花蓮總醫院(北埔總院區、進豐門診處、富世門診中心)">國軍花蓮總醫院(北埔總院區、進豐門診處、富世門診中心)
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-dark btn-search" onclick="window.location.href='register-step2.html';">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="anchorNav">
+                    <li><a href="#sec1" class="btn btn-outline-dark btn-anchor">內科</a></li>
+                    <li><a href="#sec2" class="btn btn-outline-dark btn-anchor">外科</a></li>
+                    <li><a href="#sec3" class="btn btn-outline-dark btn-anchor">其他專科</a></li>
+                </ul>
+
+            </div>
+
+            <div id="sec1" class="anchorSec">
+                <h2>內科</h2>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">一般內科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">腸胃內科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">心臟內科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">胸腔內科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">神經內科</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="sec2" class="anchorSec">
+                <h2>外科</h2>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">一般外科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">神經外科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">胸腔外科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">整形外科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">直腸外科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">心臟血管外科</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sec3" class="anchorSec">
+                <h2>其他專科</h2>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">家醫科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">感染科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">骨科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">身心醫學科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">復健科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">婦產科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">小兒科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">耳鼻喉科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">眼科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">牙科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">腎臟科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">新陳代謝科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">泌尿科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">血液腫瘤科</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">減肥門診</a>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <a href="register-step2.html" class="btn btn-outline-dark btn-block btn-type">中醫科</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="images/foot-logo.png">
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>
+                            <a href="#">網站隱私權政策</a>
+                        </li>
+                        <li>
+                            <a href="#">網站安全政策宣告</a>
+                        </li>
+                        <li>
+                            <a href="#">政府網站資料開放宣告</a>
+                        </li>
+                        <li>
+                            <a href="#">個資法保護聲明</a>
+                        </li>
+                    </ul>
+                    <p>Copyright © 國軍醫院. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">        
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+    <script src='js/jquery-3.5.1.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

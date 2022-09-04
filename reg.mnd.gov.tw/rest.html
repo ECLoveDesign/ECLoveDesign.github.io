@@ -1,0 +1,621 @@
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="keywords" content="國軍醫院聯合掛號系統">
+    <meta name="description" content="國軍醫院聯合掛號系統" />
+    <meta property="og:title" content="國軍醫院聯合掛號系統" />
+    <meta property="og:description" content="國軍醫院聯合掛號系統" />
+    <meta property="og:url" content="https://www.google.com.tw/" />
+    <meta property="og:image" content="https://www.google.com.tw//images/og-image.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="國軍醫院聯合掛號系統" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>停/代診資訊 │ 國軍醫院聯合掛號系統</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
+                    <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Nav"
+                    aria-controls="Nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="Nav">
+                    <div class="container">
+                        <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
+                            <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁">
+                        </a>
+                        <ul id="mainNav" class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="register.html">科別掛號</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="doctor.html">醫生掛號</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="search.html">掛號查詢/取消</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="rest.html">停/代診資訊</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="info.html">院區資訊</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topNav">
+                        <div class="container">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link btn-language" href="#">
+                                        <i class="fa fa-globe"></i> English
+                                    </a>
+                                </li>
+                                <li class="nav-item fontset">
+                                    <span>字級設定</span>
+                                    <a href="#" class="nav-link font-s">小</a>
+                                    <a href="#" class="nav-link font-m">中</a>
+                                    <a href="#" class="nav-link font-l">大</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="jumbotron">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">停/代診資訊</li>
+                </ol>
+            </nav>
+            <h1>停/代診資訊</h1>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="searchArea">
+
+                <div class="searchbar">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="form-group">
+                                <select class="form-control selectpicker" data-live-search="true" multiple title="全部院區">
+                                    <option value="三軍總醫院(內湖院區、汀州院區)" selected>三軍總醫院(內湖院區、汀州院區)</option>
+                                    <option value="三軍總醫院北投分院(院本部、中和街門診)">三軍總醫院北投分院(院本部、中和街門診)</option>
+                                    <option value="三軍總醫院澎湖分院">三軍總醫院澎湖分院</option>
+                                    <option value="三軍總醫院基隆分院(孝二院區、正榮院區)">三軍總醫院基隆分院(孝二院區、正榮院區)</option>
+                                    <option value="三軍總醫院松山分院">三軍總醫院松山分院</option>
+                                    <option value="國軍高雄總醫院(總院區、門診部)">國軍高雄總醫院(總院區、門診部)</option>
+                                    <option value="國軍高雄總醫院左營分院">國軍高雄總醫院左營分院</option>
+                                    <option value="國軍高雄總醫院岡山分院">國軍高雄總醫院岡山分院</option>
+                                    <option value="國軍高雄總醫院屏東分院">國軍高雄總醫院屏東分院</option>
+                                    <option value="國軍台中總醫院">國軍台中總醫院</option>
+                                    <option value="國軍台中總醫院中清分院">國軍台中總醫院中清分院</option>
+                                    <option value="國軍桃園總醫院">國軍桃園總醫院</option>
+                                    <option value="國軍桃園總醫院新竹分院">國軍桃園總醫院新竹分院</option>
+                                    <option value="國軍花蓮總醫院(北埔總院區、進豐門診處、富世門診中心)">國軍花蓮總醫院(北埔總院區、進豐門診處、富世門診中心)
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-dark btn-search" onclick="window.location.href='doctor-step2.html';">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>               
+
+            <div class="table-responsive">
+                <table class="table table-hover restTable infoTable table-rwd" cellspacing="0" width="100%" 
+                summary="此為該院區停/代診資訊表，第一欄為該醫生看診日期，第二欄為該醫生看診院區，第三欄為該醫生看診科別，第四欄為該醫生看診時段
+                ，第五欄為該醫生看診診室，第六欄為該醫生停診狀態，第七欄為原看診醫師，第八欄為代診醫師">
+                <caption>院區停/代診資訊</caption>
+                    <thead>
+                        <tr>
+                            <th width="15%">日期</th>
+                            <th width="20%">院區</th>
+                            <th>科別</th>
+                            <th width="100">時段</th>
+                            <th>診室</th>
+                            <th width="100">停/代診</th>
+                            <th width="120">原看診醫師</th>
+                            <th width="100">代診醫師</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%">                
+                                <span class="date">2022/08/16 (二)</span> 
+                            </td>
+                            <td width="20%">
+                                <span class="hospital">三軍總醫院(內湖院區、汀州院區)</span>
+                            </td>
+                            <td>
+                                <span class="type">骨科</span>
+                            </td>
+                            <td width="100">
+                                <span class="period">下午</span>
+                            </td>
+                            <td>
+                                <span class="room">診室138 (內湖院區)</span>
+                            </td>
+                            <td width="100">
+                                <span class="state">停診</span>
+                            </td>
+                            <td width="120">               
+                                <span class="name">陳登偉</span>
+                            </td>
+                            <td width="100">
+                                <span class="agent">--</span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="images/foot-logo.png">
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>
+                            <a href="#">網站隱私權政策</a>
+                        </li>
+                        <li>
+                            <a href="#">網站安全政策宣告</a>
+                        </li>
+                        <li>
+                            <a href="#">政府網站資料開放宣告</a>
+                        </li>
+                        <li>
+                            <a href="#">個資法保護聲明</a>
+                        </li>
+                    </ul>
+                    <p>Copyright © 國軍醫院. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+    <script src='js/jquery-3.5.1.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/datatables/jquery.dataTables.min.js'></script>
+    <script src="assets/datatables/dataTables.fixedColumns.min.js"></script>
+    <script src="assets/datatables/dataTables.responsive.min.js"></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js?3"></script>
+    <script>
+
+
+    </script>
+</body>
+
+</html>

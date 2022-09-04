@@ -1,0 +1,455 @@
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="keywords" content="國軍醫院聯合掛號系統">
+    <meta name="description" content="國軍醫院聯合掛號系統" />
+    <meta property="og:title" content="國軍醫院聯合掛號系統" />
+    <meta property="og:description" content="國軍醫院聯合掛號系統" />
+    <meta property="og:url" content="https://www.google.com.tw/" />
+    <meta property="og:image" content="https://www.google.com.tw//images/og-image.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="國軍醫院聯合掛號系統" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>掛號查詢/取消 │ 國軍醫院聯合掛號系統</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
+                    <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Nav"
+                    aria-controls="Nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="Nav">
+                    <div class="container">
+                        <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
+                            <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁">
+                        </a>
+                        <ul id="mainNav" class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="register.html">科別掛號</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="doctor.html">醫生掛號</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="search.html">掛號查詢/取消</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="rest.html">停/代診資訊</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="info.html">院區資訊</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topNav">
+                        <div class="container">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link btn-language" href="#">
+                                        <i class="fa fa-globe"></i> English
+                                    </a>
+                                </li>
+                                <li class="nav-item fontset">
+                                    <span>字級設定</span>
+                                    <a href="#" class="nav-link font-s">小</a>
+                                    <a href="#" class="nav-link font-m">中</a>
+                                    <a href="#" class="nav-link font-l">大</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="jumbotron">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">掛號查詢/取消</li>
+                </ol>
+            </nav>
+            <h1>掛號查詢/取消</h1>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="formArea">
+                <div class="card">
+
+                    <form class="form" id="needs-validation" novalidate>
+
+                        <fieldset class="form-group">
+                            <legend class="col-form-label">證件類型<span class="text-danger">*</span></legend>
+                            <div class="form-row">
+                                <div class="col-6 col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="idtype" id="id" value="id" checked>
+                                        <label class="form-check-label" for="id">身分證字號</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="idtype" id="MedicalNo"
+                                            value="MedicalNo">
+                                        <label class="form-check-label" for="MedicalNo">病歷號碼</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="idtype" id="passport"
+                                            value="passport">
+                                        <label class="form-check-label" for="passport">護照號碼</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="idtype" id="ResidentID"
+                                            value="ResidentID">
+                                        <label class="form-check-label" for="ResidentID">居留證號碼</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group">
+                            <label for="IDnumber">證件號碼<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="IDnumber" placeholder="請輸入證件號碼" value="A123456789" required>
+                            <div class="invalid-feedback">
+                                請輸入證件號碼
+                            </div>
+                        </div>
+
+                        <div class="form-group birthToggle">
+                            <div class="birth d-none">
+                                <div class="form-group">
+                                    <label for="birth">生日
+                                        <span class="text-danger">*</span>
+                                        <span class="text-primary">點此切換輸入方式</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="birth" placeholder="YYYMMDD" required>
+                                    <small id="birDescrib"
+                                        class="form-text text-danger text-muted">(例.出生日期為民國70年1月20日，請輸入700120)</small>
+                                    <div class="invalid-feedback">
+                                        請輸入生日
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="birth2">
+                                <label for="birth2">生日
+                                    <span class="text-danger">*</span>
+                                    <span class="text-primary">點此切換輸入方式</span>
+                                </label>
+                                <div class="form-row input-group">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <select class="form-control selectpicker" title="請輸入年份" required>
+                                                <option value="民國111年 (西元2022年)">民國111年 (西元2022年)</option>
+                                                <option value="民國110年 (西元2021年)">民國110年 (西元2021年)</option>
+                                                <option value="民國109年 (西元2020年)">民國109年 (西元2020年)</option>
+                                                <option value="民國108年 (西元2019年)">民國108年 (西元2019年)</option>
+                                                <option value="民國107年 (西元2018年)">民國107年 (西元2018年)</option>
+                                                <option value="民國106年 (西元2017年)" selected>民國106年 (西元2017年)</option>
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <select class="form-control selectpicker" title="請輸入月份" required>
+                                                <option value="1月">1月</option>
+                                                <option value="2月">2月</option>
+                                                <option value="3月">3月</option>
+                                                <option value="4月" selected>4月</option>
+                                                <option value="5月">5月</option>
+                                                <option value="6月">6月</option>
+                                                <option value="7月">7月</option>
+                                                <option value="8月">8月</option>
+                                                <option value="9月">9月</option>
+                                                <option value="10月">10月</option>
+                                                <option value="11月">11月</option>
+                                                <option value="12月">12月</option>
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <select class="form-control selectpicker" title="請輸入日期" required>
+                                                <option value="1日">1日</option>
+                                                <option value="2日">2日</option>
+                                                <option value="3日">3日</option>
+                                                <option value="4日">4日</option>
+                                                <option value="5日">5日</option>
+                                                <option value="6日">6日</option>
+                                                <option value="7日">7日</option>
+                                                <option value="8日">8日</option>
+                                                <option value="9日">9日</option>
+                                                <option value="10日">10日</option>
+                                                <option value="11日">11日</option>
+                                                <option value="12日">12日</option>
+                                                <option value="13日">13日</option>
+                                                <option value="14日">14日</option>
+                                                <option value="15日">15日</option>
+                                                <option value="16日">16日</option>
+                                                <option value="17日">17日</option>
+                                                <option value="18日">18日</option>
+                                                <option value="19日">19日</option>
+                                                <option value="20日">20日</option>
+                                                <option value="21日">21日</option>
+                                                <option value="22日">22日</option>
+                                                <option value="23日">23日</option>
+                                                <option value="24日">24日</option>
+                                                <option value="25日">25日</option>
+                                                <option value="26日">26日</option>
+                                                <option value="27日">27日</option>
+                                                <option value="28日" selected>28日</option>
+                                                <option value="29日">29日</option>
+                                                <option value="30日">30日</option>
+                                                <option value="31日">31日</option>
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vcode">驗證碼<span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="vcode" placeholder="請輸入驗證碼" value="1240" required>
+                                <div class="input-group-append" id="button-addon4">
+                                    <img src="images/captcha-img.png">
+                                    <button class="btn btn-outline-secondary btn-refresh" type="button">
+                                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-vocie" type="button">
+                                        <i class="fa fa-volume-up" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="invalid-feedback">
+                                    請輸入證件號碼
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-submit">送出查詢</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="detailCont">
+                <div class="table-responsive">
+                    <table class="table table-rwd infoTable detailTable" cellspacing="0" width="100%" 
+                        summary="此為掛號紀錄，第一欄為掛號的院區名稱，第二欄為掛號看診日期，第三欄為掛號看診時段，第四欄為掛號科別，第五欄為掛號醫師，第六欄為看診之診室，第七欄為就診號">
+                        <caption>掛號紀錄</caption>
+                        <thead>
+                            <tr>
+                                <th width="20%">院區</th>
+                                <th width="15%">看診日期</th>
+                                <th width="80">時段</th>
+                                <th>科別</th>
+                                <th>醫師</th>
+                                <th width="18%">診室</th>
+                                <th width="80">就診號</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="hospital">三軍總醫院(內湖院區、汀州院區)</td></span>
+                                <td>
+                                    <span class="date">2022/08/16 (二)</span>
+                                </td>
+                                <td>
+                                    <span class="period">下午</span>
+                                </td>
+                                <td>
+                                    <span class="type">一般外科</span>
+                                </td>
+                                <td>
+                                    <span class="doctor">廖國秀</span>
+                                </td>
+                                <td>
+                                    <span class="room">診室138 (內湖院區)</span>
+                                </td>
+                                <td>
+                                    <span class="number">22</span>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-block btn-danger btn-cancel"
+                                        data-toggle="modal" data-target="#cancelNotice">我要取消
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="hospital">三軍總醫院(內湖院區、汀州院區)</td></span>
+                                <td>
+                                    <span class="date">2022/08/20 (六)</span>
+                                </td>
+                                <td>
+                                    <span class="period">下午</span>
+                                </td>
+                                <td>
+                                    <span class="type">一般外科</span>
+                                </td>
+                                <td>
+                                    <span class="doctor">施銘朗</span>
+                                </td>
+                                <td>
+                                    <span class="room">診室138 (內湖院區)</span>
+                                </td>
+                                <td>
+                                    <span class="number">46</span>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-block btn-danger btn-cancel"
+                                        data-toggle="modal" data-target="#cancelNotice">我要取消
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="btn-group row">
+                <div class="col-md-4">
+                    <a href="#" class="btn btn-block btn-primary"><i class="fa fa-print" aria-hidden="true"></i> 列印</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="register.html" class="btn btn-block btn-outline-primary">繼續掛號</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="register.html" class="btn btn-block btn-outline-primary">改約其他人</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- 取消 -->
+        <div class="modal fade" id="cancelNotice" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="cancelNoticeLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cancelNoticeLabel">取消掛號確認</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <form class="form" id="cancel-validation" novalidate>
+                        <div class="modal-body">
+                            <p>如您欲取消掛號：</p>
+                            <p>內湖院區-2022/08/03(三)下午-一般外科-廖國秀醫師</p>
+
+                            <div class="form-group">
+                                <label for="vcode">驗證碼<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="vcode" placeholder="請輸入驗證碼" required>
+                                    <div class="input-group-append" id="button-addon4">
+                                        <img src="images/captcha-img.png">
+                                        <button class="btn btn-outline-secondary btn-refresh" type="button">
+                                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                                        </button>
+                                        <button class="btn btn-outline-secondary btn-vocie" type="button">
+                                            <i class="fa fa-volume-up" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        請輸入證件號碼
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-6">                                    
+                                    <button type="submit" class="btn btn-primary btn-block btn-cancel">我要取消</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-outline-primary btn-block"
+                                        data-dismiss="modal">按錯了</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="images/foot-logo.png">
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>
+                            <a href="#">網站隱私權政策</a>
+                        </li>
+                        <li>
+                            <a href="#">網站安全政策宣告</a>
+                        </li>
+                        <li>
+                            <a href="#">政府網站資料開放宣告</a>
+                        </li>
+                        <li>
+                            <a href="#">個資法保護聲明</a>
+                        </li>
+                    </ul>
+                    <p>Copyright © 國軍醫院. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+    <script src='js/jquery-3.5.1.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/datatables/jquery.dataTables.min.js'></script>
+    <script src="assets/datatables/dataTables.fixedColumns.min.js"></script>
+    <script src="assets/datatables/dataTables.responsive.min.js"></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js?3"></script>
+</body>
+
+</html>
