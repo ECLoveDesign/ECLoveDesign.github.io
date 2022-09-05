@@ -354,13 +354,13 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" id="vcode" placeholder="請輸入驗證碼" required>
                                 <div class="input-group-append" id="button-addon4">
-                                    <img src="images/captcha-img.png">
-                                    <button class="btn btn-outline-secondary btn-refresh" type="button" value="換一個">
+                                    <img src="images/captcha-img.png" alt="captcha">
+                                    <a class="btn btn-outline-secondary btn-refresh" title="換一個">
                                         <i class="fa fa-refresh" aria-hidden="true"></i>
-                                    </button>
-                                    <button class="btn btn-outline-secondary btn-vocie" type="button" value="開啟聲音">
+                                    </a>
+                                    <a class="btn btn-outline-secondary btn-vocie" title="開啟聲音">
                                         <i class="fa fa-volume-up" aria-hidden="true"></i>
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="invalid-feedback">
                                     請輸入證件號碼
@@ -368,8 +368,9 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block btn-submit"
-                            onclick="window.location.href='detail.html';">送出查詢</button>
+                        <input type="submit" class="btn btn-primary btn-block btn-submit" name="submit" value="送出查詢" title="送出查詢" onclick="window.location.href='detail.html';">
+                        <!-- <button type="submit" class="btn btn-primary btn-block btn-submit"
+                            onclick="window.location.href='detail.html';">送出查詢</button> -->
 
 
                         <!-- <button type="submit" class="btn btn-primary btn-block btn-submit">送出查詢</button> -->

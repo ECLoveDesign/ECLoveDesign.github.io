@@ -17,6 +17,10 @@
     font-family: var(--font-Sans);
 }
 
+a:focus {
+    outline: 2px dotted black !important;
+}
+
 /* common */
 .affix {
     position: fixed !important;
