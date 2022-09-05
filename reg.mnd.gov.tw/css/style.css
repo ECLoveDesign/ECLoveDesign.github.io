@@ -535,6 +535,7 @@ main::after {
     -o-border-radius: 0;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
+    line-height: 2.5;
 }
 
 .searchbar .row .form-control {
