@@ -328,7 +328,8 @@ header .navbar-brand+.navbar-nav {
 
 .breadcrumb-item a,
 .breadcrumb-item.active {
-    color: #fff;
+    color: #fff;    
+    text-shadow: #000 0px 0 5px;
 }
 
 /* jumbotron */
@@ -1624,4 +1625,38 @@ a.disabled {
 
 .modal-footer .btn {
     padding: 1rem;
+}
+
+/* sitemapCont */
+.sitemapCont p {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+.sitemapCont ul {
+    padding-inline-start: 10px;
+}
+.sitemapCont ul li {
+    list-style: none;
+    line-height: 2rem;
+    font-size: 1rem;
+}
+.sitemapCont .badge {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+.sitemapCont a {
+    font-size: 1.5rem;
+    color: #150186;
+}
+.sitemapCont .card {
+    padding: 2rem;
+}
+.sitemapCont .card h2 {
+    margin-bottom: 3rem;
+}
+/* accesskey */
+footer .accesskey,
+.topNav .accesskey {
+    color: #fff;
 }
