@@ -124,9 +124,9 @@ header .navbar img {
     color: #fff;
 }
 
-.navbar-light .topNav .navbar-nav .nav-link.active,
-.navbar-light .topNav .navbar-nav .nav-link:hover {
-    color: var(--normalBlue);
+.navbar-light .topNav .navbar-nav :not(.fontset) .nav-link.active,
+.navbar-light .topNav .navbar-nav :not(.fontset) .nav-link:hover {
+    color: #fbff00;
 }
 
 .topNav .navbar-nav [class*='font-'] {
