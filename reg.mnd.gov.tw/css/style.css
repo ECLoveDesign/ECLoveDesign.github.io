@@ -441,7 +441,7 @@ header .navbar-brand+.navbar-nav {
 /* main */
 body:not(.index) main>.container>.searchArea,
 body:not(.index) main>.container>.formArea {
-    margin-top: -3.7rem;
+    margin-top: -5rem;
 }
 
 body:not(.index) main>.container>.searchArea.affix {
@@ -536,7 +536,9 @@ main::after {
     -o-border-radius: 0;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
-    line-height: 2.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .searchbar .row .form-control {
