@@ -1,4 +1,61 @@
 
+
+// multiselect
+$(document).ready(function() {
+  
+  // onDeselectAll
+  $('.multiselect').multiselect({
+      includeSelectAllOption: true,
+      enableFiltering: true,
+      // locale: 'zh-tw',
+      onDeselectAll: function(options) {
+          alert('您已取消全選, 共取消 ' + options.length + ' 個項目!');
+      }
+  });
+  
+  $('.multiselect-doctor').multiselect({
+    nonSelectedText: '篩選醫師',
+    includeSelectAllOption: true,
+    enableFiltering: true,
+    // locale: 'zh-tw',
+    onDeselectAll: function(options) {
+        alert('您已取消全選, 共取消 ' + options.length + ' 個項目!');
+    }
+  });
+  
+  $('.multiselect-hospital').multiselect({
+    nonSelectedText: '篩選醫院',
+    includeSelectAllOption: true,
+    enableFiltering: true,
+    // locale: 'zh-tw',
+    onDeselectAll: function(options) {
+        alert('您已取消全選, 共取消 ' + options.length + ' 個項目!');
+    }
+  });
+
+  //dataprovider
+  $('.dataprovider-optgroups').multiselect();
+    var optgroups = [
+        {
+            label: 'Group 1', children: [
+                {label: 'Option 1.1', value: '1-1', selected: true},
+                {label: 'Option 1.2', value: '1-2'},
+                {label: 'Option 1.3', value: '1-3'}
+            ]
+        },
+        {
+            label: 'Group 2', children: [
+                {label: 'Option 2.1', value: '1'},
+                {label: 'Option 2.2', value: '2'},
+                {label: 'Option 2.3', value: '3', disabled: true}
+            ]
+        }
+    ];
+    $('.dataprovider-optgroups').multiselect('dataprovider', optgroups);
+});
+
+
+
 // font size
 $(document).ready(function () {
     $('.font-m').addClass('active');
@@ -24,6 +81,7 @@ $(document).ready(function () {
         $('html').css('font-size', '120%');
     });
 });
+
 
 // anchor
 $('.btn-anchor').click(function(e){
@@ -247,3 +305,4 @@ $('.birthToggle .text-primary').click(function(e){
   $('.birth').toggleClass('d-none');     
   $('.birth2').toggleClass('d-none');
 });
+
