@@ -4,10 +4,9 @@
 $(document).ready(function() {
   
   // onDeselectAll
-  $('.multiselect').multiselect({
+  $('.multiselect,.onDeselectAll').multiselect({
       includeSelectAllOption: true,
       enableFiltering: true,
-      // locale: 'zh-tw',
       onDeselectAll: function(options) {
           alert('您已取消全選, 共取消 ' + options.length + ' 個項目!');
       }
@@ -15,22 +14,16 @@ $(document).ready(function() {
   
   $('.multiselect-doctor').multiselect({
     nonSelectedText: '篩選醫師',
+		filterPlaceholder: '關鍵字..',
     includeSelectAllOption: true,
     enableFiltering: true,
-    // locale: 'zh-tw',
-    onDeselectAll: function(options) {
-        alert('您已取消全選, 共取消 ' + options.length + ' 個項目!');
-    }
   });
   
   $('.multiselect-hospital').multiselect({
     nonSelectedText: '篩選醫院',
+		filterPlaceholder: '院區關鍵字..',
     includeSelectAllOption: true,
     enableFiltering: true,
-    // locale: 'zh-tw',
-    onDeselectAll: function(options) {
-        alert('您已取消全選, 共取消 ' + options.length + ' 個項目!');
-    }
   });
 
   //dataprovider

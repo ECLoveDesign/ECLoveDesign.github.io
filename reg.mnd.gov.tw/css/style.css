@@ -577,25 +577,6 @@ main::after {
     border-radius: 4px;
     margin-bottom: 0;
 }
-.searchbar .form-group .btn-group {
-    margin: 0;
-}
-.searchbar .custom-select {    
-    border-radius: 0;
-    height: calc(1.5em + 2rem + 2px);
-    background: #fff;
-    padding: 1rem 1.75rem 1rem 0.75rem;
-}
-.searchbar .custom-select::after {
-    position: absolute;
-    content: '\f0dc';
-    border: none;
-    display: inline-block;
-    font: normal normal normal 1rem/1 FontAwesome;
-    line-height: 1.5rem;
-    right: 20px;
-}
-
 .searchbar .row [class*="col-"]:first-child .bootstrap-select>.dropdown-toggle {
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
@@ -620,10 +601,39 @@ main::after {
 .searchbar .row .form-control {
     margin-bottom: 0;
 }
+.searchbar .row select:not(.selectpicker,[class*="multiselect-"] ){
+    height: calc(2.75em + 0.75rem + 2px);
+    border-radius: 0;
+}
 
 .searchbar .btn {
     height: 100%;
 }
+
+/* multiselect-container */
+.searchbar .form-group .btn-group {
+    margin: 0;
+}
+.searchbar .custom-select {    
+    border-radius: 0;
+    height: calc(1.5em + 2rem + 2px);
+    background: #fff;
+    padding: 1rem 1.75rem 1rem 0.75rem;
+}
+.searchbar .custom-select::after {
+    position: absolute;
+    content: '\f0dc';
+    border: none;
+    display: inline-block;
+    font: normal normal normal 1rem/1 FontAwesome;
+    line-height: 1.5rem;
+    right: 27px;
+}
+.multiselect-container {    
+    max-height: 350px;
+    overflow: auto;
+}
+
 
 /* formArea */
 .formArea .card {
