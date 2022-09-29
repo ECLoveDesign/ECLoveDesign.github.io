@@ -633,6 +633,9 @@ main::after {
     max-height: 350px;
     overflow: auto;
 }
+.multiselect-selected-text {
+    text-align: left;
+}
 
 
 /* formArea */
@@ -1545,10 +1548,13 @@ tr.dt-rowReorder-moving td.dtfc-fixed-right:last-child {
         background: #005391;
     }
 
+    .dataTables_wrapper .table-rwd tr td:nth-child(1):before {
+        margin-left: 3.5px;
+    }
+
     .table-rwd.infoTable tr td:nth-child(1):before {
         content: "日期 / 院區";
     }
-
     .table-rwd.infoTable tr td:nth-child(2):before {
         content: "上午";
     }
