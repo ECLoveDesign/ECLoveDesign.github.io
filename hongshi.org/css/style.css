@@ -265,6 +265,18 @@ header .navbar-brand+.navbar-nav {
 .jumbotron .kv-slider .swiper-wrapper{
     height: auto;
 }
+.kv-slider .mb {
+    display: none;
+}
+@media (max-width:500px) {
+    .kv-slider .pc {
+        display: none;
+    }
+    .kv-slider .mb {
+        display: block;
+        width: 100%;
+    }
+}
 /* .jumbotron img {
     max-width: 100%;
 } */
@@ -430,6 +442,17 @@ header .navbar-brand+.navbar-nav {
     color: #6c6c6c;
     font-weight: 300;
     letter-spacing: 1px;
+}
+.memberArea .card .mb {
+    display: none;
+}
+@media (max-width:500px) {
+    .memberArea .card .pc {
+        display: none;
+    }
+    .memberArea .card .mb {
+        display: block;
+    }    
 }
 
 /* aboutArea */
