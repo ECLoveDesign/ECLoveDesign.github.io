@@ -39,7 +39,7 @@ body::before {
 section {
     min-height: 100vh;
     position: relative;
-    padding: 6rem 0;
+    padding: 4rem 0 3rem;
 }
 
 h2 {
@@ -307,11 +307,13 @@ header .navigation {
 
     .nav-menu>li {
         position: relative;
+        height: 100%;
     }
 
     .nav-menu:not(.nav-btn)>li>a {
-        padding: 26px;
+        padding: 35px 26px 0;
         color: #fff;
+        height: 100%;
     }
 
     .nav-menu:not(.nav-btn)>li:hover>a,
@@ -320,7 +322,7 @@ header .navigation {
         color: #fff;
     }
 
-    .nav-menu:not(.nav-btn)>li:hover>a::before,
+    /* .nav-menu:not(.nav-btn)>li:hover>a::before,
     .nav-menu:not(.nav-btn)>li.active>a::before,
     .nav-menu:not(.nav-btn)>li.focus>a::before {
         content: '';
@@ -330,10 +332,10 @@ header .navigation {
         margin: auto;
         left: 0;
         right: 0;
-        bottom: 15px;
+        bottom: 0;
         position: absolute;
         background: #fff;
-    }
+    } */
 
     /* .nav-menus-wrapper .nav-menu:last-of-type a {
         padding: 10px 26px;
