@@ -60,12 +60,12 @@ if ( $('.teacher-wrap').length ) {
           breakpoints: {
             500: {
                 slidesPerView: 1,
-                spaceBetween: 25,
+                spaceBetween: 0,
 
             },
             1100: {
                 slidesPerView: 2,
-                spaceBetween: 30,
+                spaceBetween: 0,
 
             },
             1280: {
@@ -91,6 +91,13 @@ if ( $('.video-wrap').length ) {
       nextEl: '.video-swiper .swiper-button-next',
       prevEl: '.video-swiper .swiper-button-prev',
     },
+    breakpoints: {
+      600: {
+          slidesPerView: 1,
+          spaceBetween: 25,
+
+      },
+    },
   });
 
   $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
@@ -108,7 +115,7 @@ if ( $('.video-wrap').length ) {
 if ( $('.feedback-wrap').length ) {
   var feedbackswiper = new Swiper(".feedback-swiper", {
     slidesPerView: 4,
-    spaceBetween: 30,
+    spaceBetween: 10,
     navigation: {
       nextEl: '.feedback-wrap .swiper-button-next',
       prevEl: '.feedback-wrap .swiper-button-prev',
@@ -116,17 +123,17 @@ if ( $('.feedback-wrap').length ) {
     breakpoints: {
         500: {
             slidesPerView: 1,
-            spaceBetween: 25,
+            spaceBetween: 0,
 
         },
         1100: {
             slidesPerView: 2,
-            spaceBetween: 30,
+            spaceBetween: 0,
 
         },
-        1280: {
+        1440: {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 0,
 
         },
     },
@@ -177,6 +184,34 @@ if ( $('.form').length ) {
   
 }
 
+
+// popup login signup
+$(function() {
+  $(".btn-register").click(function() {
+      $(".login_box").hide();
+      $(".sign_box").show();
+  });
+
+  $(".btn-member").click(function() {
+      $(".sign_box").hide();
+      $(".login_box").show();
+  });
+  
+
+});
+
+// multiselect
+$(document).ready(function() {
+  
+  
+  $('.multiselect').multiselect({
+    nonSelectedText: '選擇類別',
+		filterPlaceholder: '類別關鍵字..',
+    includeSelectAllOption: true,
+    enableFiltering: true,
+  });
+
+});
 
 // affix top
 $(window).scroll(function () {
@@ -244,4 +279,5 @@ $('.popup-cont').magnificPopup({
 
 // WOW
 new WOW().init();
+
 
