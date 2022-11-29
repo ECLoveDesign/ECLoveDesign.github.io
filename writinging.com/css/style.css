@@ -1014,6 +1014,9 @@ section h2 {
     position: relative;
 }
 
+.teacher-wrap [class*="col-"] .card {
+    margin-bottom: 2rem;
+}
 .teacher-wrap .swiper-slide a:hover img {
     opacity: .3;
 }
@@ -1556,7 +1559,7 @@ section h2 {
 
 #loginModal .modal-body {
     width: 90%;
-    margin: .5rem auto 0;
+    margin: .5rem auto;
 }
 
 #loginModal .btn {
@@ -1615,6 +1618,9 @@ section h2 {
 }
 
 /* ============== 中文嚴選良師 ================= */
+main>.container {
+    max-width: 80%;
+}
 .jumbotron {
     padding: 1rem 2rem 4rem;
     position: relative;
@@ -1642,6 +1648,7 @@ section h2 {
 }
 .jumbotron .container {
     max-width: 80%;
+    padding: 0;
 }
 .search_box {
     width: 768px;
@@ -1649,4 +1656,29 @@ section h2 {
 }
 .breadcrumb {
     background: transparent;
+    padding: 0;
+}
+.teacher-wrap>.row {
+    margin: 0;
+}
+
+/* search_box */
+.search_box .btn-search {
+    border-color: var(--normalRed);
+    background: var(--normalRed);
+    color: #fff;
+}
+.search_box .btn-search:hover,
+.search_box .btn-search:active,
+.search_box .btn-search:focus {
+    border-color: var(--dangerColor) !important;
+    background: var(--dangerColor) !important;
+}
+.search_box .multiselect-container .multiselect-filter>input.multiselect-search {
+    margin: 0;
+}
+.multiselect-container .multiselect-filter>.fa-search {
+    padding-left: 0;
+    position: absolute;
+    left: 8px;
 }
