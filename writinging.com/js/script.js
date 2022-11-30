@@ -1,4 +1,34 @@
 
+new WOW().init();
+
+if ($(document).width() > 900) {
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+}
+
+// needs-validation
+if ( $('.needs-validation').length ) {
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  
+}
+
 // scolltop
 var btn = $('.btn-top');
 $(window).scroll(function () {
@@ -185,7 +215,8 @@ if ( $('.form').length ) {
 }
 
 
-// popup login signup
+
+// popup login signup 
 $(function() {
   $(".btn-register").click(function() {
       $(".login_box").hide();
@@ -196,14 +227,23 @@ $(function() {
       $(".sign_box").hide();
       $(".login_box").show();
   });
-  
+
+});
+
+
+// sortbox nav-link click 
+$(function() {
+  $(".sortbox .nav-link").click(function() {
+      $(".sortbox .nav-link").removeClass('active');
+      $(this).addClass('active');
+  });
 
 });
 
 // multiselect
+if ( $('.multiselect').length ) {
+  
 $(document).ready(function() {
-  
-  
   $('.multiselect').multiselect({
     nonSelectedText: '選擇類別',
 		filterPlaceholder: '類別關鍵字..',
@@ -212,6 +252,32 @@ $(document).ready(function() {
   });
 
 });
+  
+}
+
+
+
+// multiselect
+if ( $('.twbsPagination').length ) {
+  $('.twbsPagination').twbsPagination({
+    totalPages: 16,
+    visiblePages: 6,
+    first:'&laquo',
+    last:'&raquo',
+    prev: '&lt',
+    next: '&gt',
+    // totalPages: data.total_pages,
+    visiblePages:5,
+    initiateStartPageClick: false,
+    // onPageClick: function (event, page) {
+    //     $('#page-content').text('Page ' + page) + ' content here';
+    // }
+  });
+}
+
+
+
+
 
 // affix top
 $(window).scroll(function () {
@@ -221,6 +287,8 @@ $(window).scroll(function () {
     $("header").removeClass('affix');
   }
 });
+
+
 
 
 // popup-gallery
@@ -279,5 +347,4 @@ $('.popup-cont').magnificPopup({
 
 // WOW
 new WOW().init();
-
 

@@ -60,6 +60,9 @@
                             <li><a href="video-en.html">英文影音賞析</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="news.html">最新消息</a>
+                    </li>
                 </ul>
 
                 <ul class="nav-menu nav-btn align-to-right">
@@ -1053,18 +1056,22 @@
                     </button>
                 </div>
                 <div class="modal-body text-center">
-                    <form class="form">
+                    <form class="form needs-validation" novalidate>
                         <div class="login_box">
 
                             <div class="form-group">
                                 <label for="id">請輸入帳號</label>
-                                <input type="text" class="form-control" id="id"
-                                    placeholder="">
+                                <input type="text" class="form-control" id="id" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請輸入帳號
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="password">請輸入密碼</label>
-                                <input type="password" class="form-control" id="password"
-                                    placeholder="">
+                                <input type="password" class="form-control" id="password" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請輸入密碼
+                                </div>
                             </div>
                             <ul class="forgot">
                                 <li>
@@ -1076,8 +1083,10 @@
                             </ul>
                             <div class="form-group">
                                 <label for="verification">請輸入下方驗證碼</label>
-                                <input type="text" class="form-control" id="verification"
-                                    placeholder="">
+                                <input type="text" class="form-control" id="verification" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請輸入驗證碼
+                                </div>
                             </div>
                             <div class="validimg">
                                 點擊圖片可更換驗證碼
@@ -1086,47 +1095,60 @@
                             <button type="submit" class="btn btn-primary btn-block btn-login">登入</button>
                             <button type="button" class="btn btn-outline-primary btn-block btn-register">註冊</button>
                         </div>
-                        
-                        <div class="sign_box">
+                    </form>
+                    <form class="form needs-validation" novalidate>
+                        <div class="sign_box" style="display:none;">
 
                             <div class="form-group">
                                 <label for="name">請輸入暱稱</label>
-                                <input type="text" class="form-control" id="name"
-                                    placeholder="">
+                                <input type="text" class="form-control" id="name" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請輸入暱稱
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="id">請輸入帳號</label>
-                                <input type="text" class="form-control" id="id"
-                                    placeholder="">
+                                <input type="text" class="form-control" id="id" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請輸入帳號
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="email">請輸入信箱</label>
-                                <input type="email" class="form-control" id="email"
-                                    placeholder="">
+                                <input type="email" class="form-control" id="email" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請輸入信箱
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="password">請輸入8-24碼英文數字符號</label>
-                                <input type="password" class="form-control" id="password"
-                                    placeholder="">
+                                <input type="password" class="form-control" id="password" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請輸入密碼
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="passwordagain">請再次輸入密碼</label>
-                                <input type="password" class="form-control" id="passwordagain"
-                                    placeholder="">
+                                <input type="password" class="form-control" id="passwordagain" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請再次輸入帳號
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="verification">請輸入下方驗證碼</label>
-                                <input type="text" class="form-control" id="verification"
-                                    placeholder="">
+                                <input type="text" class="form-control" id="verification" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請輸入驗證碼
+                                </div>
                             </div>
                             <div class="validimg">
                                 點擊圖片可更換驗證碼
                                 <img src="images/validImg.gif">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block btn-register-submit">註冊</button>
-                            
+
                             <p>註冊及同意 <a href="#" target="_blank">隱私權政策</a> 和 <a href="#" target="_blank">使用者條款</a></p>
                             <button type="button" class="btn btn-outline-primary btn-block btn-member">我是會員</button>
                         </div>
@@ -1147,27 +1169,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.9.0/jquery.validate.js'></script>
     <script src="js/megamenu.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        new WOW().init();
 
-        if ($(document).width() > 900) {
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
-            })
-        }
-        $('.btn-scroll').click(function (e) {
-            e.preventDefault();
-            var target = $($(this).attr('href'));
-            if (target.length) {
-                var scrollTo = target.offset().top - 230;
-                $('body, html').animate({
-                    scrollTop: scrollTo + 'px'
-                }, 800);
-            }
-        });
-    </script>
 </body>
 
 </html>
