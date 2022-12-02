@@ -50,9 +50,10 @@ btn.on('click', function (e) {
 if ( $('.gallery-top').length ) {
   var galleryTop = new Swiper('.gallery-top', {
     spaceBetween: 10,
-     loop: true,
-    loopedSlides: 4
+      loop: true,
+      loopedSlides: 4
   });
+
   var galleryThumbs = new Swiper('.gallery-thumbs', {
     // spaceBetween: 10,
     navigation: {
@@ -64,7 +65,19 @@ if ( $('.gallery-top').length ) {
     touchRatio: 0.2,
     slideToClickedSlide: true,
     loop: true,
-    loopedSlides: 4
+    loopedSlides: 4,
+    breakpoints: {
+        500: {
+            slidesPerView: 2,
+            spaceBetween: 0,
+
+        },
+        991: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+
+        },
+    },
   });
   galleryTop.controller.control = galleryThumbs;
   galleryThumbs.controller.control = galleryTop;
