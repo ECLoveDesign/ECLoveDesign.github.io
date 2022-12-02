@@ -441,6 +441,9 @@ header .navigation {
         padding: 12px 20px 12px 40px;
         width: 100%;
     }
+    .navigation-portrait .nav-dropdown>li.active>a {
+        background-color: var(--dangerColor);
+    }
 
     .nav-dropdown>li:not(:last-child)>a {
         border-bottom: 1px solid #e3f2ff;
@@ -1111,6 +1114,12 @@ section h2 {
     margin-right: 0;
 }
 
+.teacher-wrap .btn-unfollow {
+    background: var(--normalRed);
+}
+.teacher-wrap .btn-unfollow svg {
+    color: #fff;
+}
 .teacher-wrap .btn-follow,
 .teacher-wrap .btn-unfollow:hover {
     background: #fff;
@@ -1813,7 +1822,7 @@ main>div>.container {
 /* sortbox */
 .sortbox {
     background: #E6F5FF;
-    padding: 1rem 0;
+    padding: 1rem 0 0;
     margin-bottom: 3rem;
 }
 .sortbox .nav {    
@@ -1824,6 +1833,7 @@ main>div>.container {
 }
 .sortbox .nav .nav-item {
     margin-right: 1rem;
+    margin-bottom: 1rem;
     color: #333;
 }
 .sortbox .nav-pills .nav-link {
@@ -1834,6 +1844,11 @@ main>div>.container {
 .sortbox .nav-pills .show>.nav-link {
     color: #fff;
     background-color: var(--normalRed);
+}
+@media (max-width:1024px) {
+    .sortbox .nav {
+        justify-content: center;
+    }
 }
 /* pagination */
 .pagination {
