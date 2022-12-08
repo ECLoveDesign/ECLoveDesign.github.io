@@ -1876,3 +1876,60 @@ main>div>.container {
 .name {
     font-size: 1.5rem;
 }
+/* fancybox-caption */
+.fancybox-caption {
+    text-align: center;
+}
+.fancybox-caption::before,
+.fancybox-caption::after {
+    opacity: 0;
+}
+.fancybox-button {
+    background: transparent;
+}
+.fancybox-button, 
+.fancybox-button:link, 
+.fancybox-button:visited {
+    color: #fff;
+}
+.fancybox-bg {
+    background: rgb(9, 25, 79, .7);
+}
+
+
+/*lightgallery*/
+.lightGallery img {
+    max-width: 100%;
+}
+.lightGallery [class*="col-"] {
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.lg-toolbar,
+.lg-sub-html {
+    color: #fff;
+    background: transparent;
+}
+.lg-sub-html h4 {
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+.lg-sub-html p {
+    font-size: 1.1rem;
+}
+.lg-backdrop {
+    background: rgb(9, 25, 79, .7);
+}
+.lg-toolbar .lg-icon,
+#lg-counter {
+    color: #fff;
+}
+.lg-actions .lg-next, 
+.lg-actions .lg-prev {
+    color: #fff;
+    background: transparent;
+}
+.lg-outer.lg-start-zoom .lg-object {
+    max-height: 750px;
+}

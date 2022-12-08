@@ -18,9 +18,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
     <link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.css" />
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css'> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-multiselect/css/bootstrap-multiselect.min.css" />
+    <link rel="stylesheet" href="assets/lightgallery/lightgallery.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
     <link rel="stylesheet" href="css/style.css?3" />
     <title>中文嚴選良師│說文解章─解說你的文章</title>
@@ -99,7 +101,7 @@
 
                 <div class="row">
 
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <div class="avatarbox">
                             <img class="img-thumbnail" src="images/img-teacher-cp.jpg" alt="陳顥">
                         </div>
@@ -110,7 +112,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                項目費用
+                                批改費用
                             </div>
                             <div class="card-body">
 
@@ -210,7 +212,7 @@
                                     </div>
                                     <div class="grade-item">
                                         <div class="grade-name">
-                                            高普特烤
+                                            高普特考
                                         </div>
                                         <ul>
                                             <li>
@@ -233,7 +235,7 @@
                                     </div>
                                 </div>
 
-                                
+
                                 <div class="type-title">英文</div>
                                 <div class="grade-list">
                                     <div class="grade-item">
@@ -330,7 +332,7 @@
                                     </div>
                                     <div class="grade-item">
                                         <div class="grade-name">
-                                            高普特烤
+                                            高普特考
                                         </div>
                                         <ul>
                                             <li>
@@ -358,7 +360,7 @@
 
                     </div>
 
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
 
                         <div class="functionbar">
 
@@ -373,20 +375,20 @@
                                         <span class="num">243</span>
                                     </li>
                                     <li>
-                                        <span class="dataname">關注</span>
+                                        <span class="dataname">收藏</span>
                                         <span class="num">112</span>
                                     </li>
                                 </ul>
                             </div>
-                            
+
                             <div class="actions-group">
 
                                 <button type="button" class="btn btn-follow">
                                     <i class="fa fa-heart"></i> 我要收藏
                                 </button>
-                                
+
                                 <button type="button" class="btn btn-unfollow">
-                                    <i class="fa fa-heart"></i> 已關注
+                                    <i class="fa fa-heart"></i> 已收藏
                                 </button>
 
                                 <button type="button" class="btn btn-send">
@@ -432,9 +434,62 @@
                                 相關紀錄
                             </div>
                             <div class="card-body">
-                                
-                                <div>
+
+                                <a href="images/img-teacher-photo-01-lg.jpg" data-fancybox="images" data-caption="<h4>標題標題1</h4><p> 內容敘述</p>">                   
+                                    <img src="images/img-teacher-photo-01.jpg">
+                                    <div class="title">標題標題1</div>
+                                </a>
+
+                                <div class="row lightGallery">
+                                    <div class="col-12 col-md-6 col-xl-4" data-src="images/img-teacher-photo-01-lg.jpg"
+                                        data-sub-html="<h4>標題標題1</h4><p> 內容敘述</p>">                                        
+                                        <img src="images/img-teacher-photo-01.jpg">
+                                        <div class="title">標題標題1</div>
+                                    </div>
                                     
+                                    <div class="col-12 col-md-6 col-xl-4" data-src="images/img-teacher-photo-01-lg.jpg"
+                                        data-sub-html="<h4>標題標題2</h4><p> 內容敘述</p>">     
+                                        <img src="images/img-teacher-photo-01.jpg">
+                                        <div class="title">標題標題2</div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-xl-4" data-src="images/img-teacher-photo-01-lg.jpg"
+                                        data-sub-html="<h4>標題標題3</h4><p> 內容敘述</p>">     
+                                        <img src="images/img-teacher-photo-01.jpg">
+                                        <div class="title">標題標題3</div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                相關紀錄
+                            </div>
+                            <div class="card-body">
+
+                                <div class="popup-viewfile row">
+
+                                    <div class="col-12 col-md-6 col-xl-4">
+                                        <a data-fancybox data-type="iframe" href="file/13-5A現行考銓.pdf">                                 
+                                            <img src="images/img-teacher-photo-01.jpg">
+                                            <div class="title">標題標題1</div>
+                                         </a>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-xl-4">
+                                        <a data-fancybox data-type="iframe" href="file/13-5A現行考銓.pdf">                                 
+                                            <img src="images/img-teacher-photo-01.jpg">
+                                            <div class="title">標題標題1</div>
+                                         </a>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-xl-4">
+                                        <a data-fancybox data-type="iframe" href="file/13-5A現行考銓.pdf">                                 
+                                            <img src="images/img-teacher-photo-01.jpg">
+                                            <div class="title">標題標題1</div>
+                                         </a>
+                                    </div>
                                 </div>
 
                             </div>
@@ -658,21 +713,16 @@
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
     <script src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.js'></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
     <script src='assets/bootstrap-multiselect/js/bootstrap-multiselect.min.js'></script>
     <script src='assets/bootstrap-multiselect/js/i18n/defaults-zh_TW.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.9.0/jquery.validate.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js'></script>
+    <script src="assets/lightgallery/lightgallery.min.js"></script>
     <script src="js/megamenu.js"></script>
     <script src="js/script.js"></script>
-    <script>
-
-
-
-
-
-    </script>
 </body>
 
 </html>

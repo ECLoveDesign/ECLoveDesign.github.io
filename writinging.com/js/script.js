@@ -227,6 +227,20 @@ if ( $('.form').length ) {
   
 }
 
+//fancybox
+$("[data-fancybox]").fancybox({		
+  buttons: ["close"],
+});
+
+
+//lightGallery
+if ( $('.lightGallery').length ) {
+
+  $('.lightGallery').lightGallery({
+    loop:false,
+    download:false,
+  })  
+}
 
 
 // popup login signup 
@@ -303,6 +317,10 @@ $(window).scroll(function () {
 
 
 
+// popup-viewfile
+$('.popup-viewfile').magnificPopup({
+  type: 'iframe'
+});
 
 // popup-gallery
 $('.popup-gallery').magnificPopup({
