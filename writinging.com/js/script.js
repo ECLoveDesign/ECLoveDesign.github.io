@@ -228,9 +228,12 @@ if ( $('.form').length ) {
 }
 
 //fancybox
-$("[data-fancybox]").fancybox({		
-  buttons: ["close"],
-});
+if ( $('[data-fancybox]').length ) {
+
+  $("[data-fancybox]").fancybox({		
+    buttons: ["close"],
+  });
+}
 
 
 //lightGallery
@@ -284,7 +287,7 @@ $(document).ready(function() {
 
 
 
-// multiselect
+// twbsPagination
 if ( $('.twbsPagination').length ) {
   $('.twbsPagination').twbsPagination({
     totalPages: 16,
