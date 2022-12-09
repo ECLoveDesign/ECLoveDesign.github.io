@@ -50,8 +50,9 @@ section {
 }
 
 h2 {
-    font-size: 60px;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 3rem 0 1.5rem;
 }
 
 h3 {
@@ -70,6 +71,9 @@ p {
     font-size: 1.2rem;
 }
 
+ul {
+    padding-inline-start: 0;
+}
 section .card {
     border: none;
 }
@@ -78,7 +82,20 @@ section .card {
     font-weight: 100;
 }
 
-.btn-more {
+.btn-follow {
+    background: #fff;
+    border: var(--normalRed) solid 1px;
+    color: var(--normalRed);
+    padding: 0.7rem 2rem;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    box-shadow: var(--boxShadow);
+}
+
+.btn-send,
+.btn-more,
+.btn-unfollow,
+.btn-follow:hover {
     background: var(--normalRed);
     border: var(--normalRed) solid 1px;
     color: #fff;
@@ -88,11 +105,14 @@ section .card {
     box-shadow: var(--boxShadow);
 }
 
-.btn-more:hover {
+.btn-send:hover,
+.btn-more:hover,
+.btn-unfollow:hover {
     background: #fff;
     color: var(--normalRed);
     border: var(--normalRed) solid 1px;
 }
+
 
 .btn-dark {
     color: #fff;
@@ -105,7 +125,15 @@ section .card {
     background-color: #6c757d;
     border-color: #6c757d;
 }
-
+@media (max-width:1024px) {
+    .btn-follow,
+    .btn-unfollow,
+    .btn-send,
+    .btn-more {
+        padding: 15px 1rem;
+        font-size: 1rem;
+    }
+}
 .icon-figma::before {
     content: '';
     display: inline-block;
@@ -160,6 +188,7 @@ main {
     overflow-x: hidden;
     z-index: 0;
     position: relative;
+    padding-bottom: 3rem;
 }
 
 header {
@@ -681,10 +710,6 @@ footer em {
     padding: 0;
 }
 
-.social-list {
-    padding-inline-start: 0;
-}
-
 .social-list li+li {
     margin-left: 5px;
 }
@@ -723,7 +748,23 @@ footer em {
 .fb-box {
     overflow: hidden;
 }
-
+@media (max-width:991px) {    
+    .fb-box {
+        width: 300px;
+        margin: 0 auto 2rem;
+    }
+}
+@media (max-width:768px) {
+    .social-list {
+        display: block;
+        margin: 0 auto 1rem;
+        width: fit-content; 
+        overflow: auto;       
+    }
+    .footer-copy p {
+        text-align: center;
+    }
+}
 @media (max-width: 767px) {
     footer .container {
         max-width: 720px;
@@ -731,35 +772,8 @@ footer em {
 }
 
 @media (max-width:720px) {
-
     footer {
-        padding: 5rem 0;
-    }
-}
-
-@media (max-width:499px) {
-    footer::before {
-        top: -3rem;
-    }
-}
-
-@media (max-width:450px) {
-    footer {
-        padding-top: 7rem;
-    }
-
-    footer::before {
-        top: -3rem;
-    }
-
-    .footer-menu-title {
-        margin-left: 1rem;
-    }
-}
-
-@media (max-width:370px) {
-    footer::before {
-        top: -2rem;
+        padding: 2rem 0;
     }
 }
 
@@ -1184,10 +1198,6 @@ section h2 {
 .data-info {
     position: relative;
     z-index: 1;
-}
-
-.data-info ul {
-    padding-inline-start: 0;
 }
 
 .data-info li {
@@ -1623,7 +1633,6 @@ section h2 {
 }
 
 #loginModal .forgot {
-    padding-inline-start: 0;
     overflow: auto;
 }
 
@@ -1716,6 +1725,11 @@ main>div>.container {
     max-width: 80%;
 }
 
+@media (max-width:1366px) {
+    main>div>.container {
+        max-width: 95%;
+    }
+}
 @media (max-width:1024px) {
     main>.container {
         max-width: 100%;
@@ -1767,6 +1781,10 @@ main>div>.container {
     .jumbotron {
         padding: 3rem 1rem;
     }
+    .jumbotron h1 {
+        margin-bottom: 0;
+    }
+    
 }
 
 @media (max-width:500px) {
@@ -1876,7 +1894,7 @@ main>div>.container {
     display: block;
     position: absolute;
     width: 100%;
-    height: 60px;
+    height: 75px;
     left: 0;
     top: 0;
     background: #fff;
@@ -1910,12 +1928,183 @@ main>div>.container {
     background: transparent;
     border-color: #F3F3F3;
 }
+.profolio-wrap .card img {
+    width: 100%;
+}
+@media (max-width:991px) {
+    .profolio-wrap::before {
+        display: none;
+    }
+    .avatarbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 3rem 0 0;
+    }
+    .namebox {            
+        width: fit-content;
+        margin: auto;
+    }
+    /* .profolio-wrap .container>.row>[class*="col-"]:last-child {
+        -ms-flex-order: 1;
+        order: 1;
+    }
+    .profolio-wrap .container>.row>[class*="col-"]:first-child {
+        -ms-flex-order: 2;
+        order: 2;
+    } */
+}
 
 /* functionbar */
 .functionbar {
     display: flex;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.datainfo ul {
+    list-style: none;
+}
+.datainfo ul li {
+    float: left;
+    padding: 1.5rem 5px;
+}
+.datainfo ul li+li::before {
+    color: #E6E6E6;
+    content: '│';
+    margin: 0 10px 0 0;
+}
+.datainfo ul li span {
+    /* color: #4D4D4D; */
+    font-size: 1.2rem;
+}
+.datainfo .dataname {
+    color: #999;
+    margin-right: 5px;
+}
+.actions-group .btn+.btn {
+    margin-left: 10px;
+}
+@media (max-width:1280px) {
+    .datainfo ul li span {
+        font-size: 1.1rem;
+    }
+}
+@media (max-width:991px) {
+    .functionbar {
+        display: block;
+    }
+    .actions-group,
+    .datainfo {
+        display: flex;
+        justify-content: center;
+    }
+    .datainfo ul li {
+        padding: 0.5rem 5px;
+    }
+}
+@media (max-width:500px) {
+    .datainfo ul {
+        margin-bottom: 0;
+    }
+    .datainfo ul li span {
+        font-size: 1rem;
+    }
+}
+
+/* type-title */
+.type-title {
+    position: relative;
+    padding-left: 15px;
+    margin: 0 -20px 1rem;
+}
+.type-title::after  {
+    content: '';
+    display: block;
+    background: var(--normalRed);
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    top: 10px;
+    left: 0;
+    z-index: 0;
+}
+.type-title span {
+    background: #fff;
+    padding: 0 10px;
+    z-index: 1;
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.grade-item ul {
+    position: relative;
+    padding: 10px 0 5px;
+}
+.grade-item li {
+    list-style: none;
+    border-left: #E6E6E6 solid 2px;
+    padding: 0px 10px 6px;    
+    margin-left: 12px;
+} 
+.grade-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.case {
+    width: 65px;
+    padding-right: 10px;
+    text-align: right;
+    display: inline-block;
+    border-right: #E6E6E6 solid 1px;
+    margin-right: 7px;
+}
+.unit {
+    margin-right: 5px;
+}
+.highlight {
+    color: var(--normalRed);
+}
+@media (max-width:1420px) {
+    .grade-item li {
+        margin-left: 5px;
+    }
+}
+@media (max-width:1170px) {
+    .grade-name {
+        margin-left: -5px;
+    }    
+    .grade-item li {
+        margin-left: 0;
+    }
+    .case {
+        width: 60px;
+    }
+}
+@media (min-width:992px) and (max-width:1124px) {
+    .case {
+        width: 100%;
+        border: none;
+        text-align: left;
+    }
+    .grade-item li+li {
+        padding-top: .5rem;
+    }
+}
+@media (max-width:991px) {
+    .grade-list {
+        overflow: auto;
+    }
+    .grade-item {
+        width: 50%;
+        float: left;
+        padding-left: 15px;
+    }
+}
+@media (max-width:678px) {
+    .grade-item {
+        width: 100%;
+    }
 }
 
 /* fancybox */
