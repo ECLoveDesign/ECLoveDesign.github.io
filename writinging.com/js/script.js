@@ -233,6 +233,19 @@ if ( $('[data-fancybox]').length ) {
   $("[data-fancybox]").fancybox({		
     buttons: ["close"],
   });
+
+  //fileview
+  $('.file-group [data-fancybox]').fancybox({
+    baseClass: "fancybox-fileview",
+    type:'iframe',
+  });
+
+  //ytview
+  $('.video-group [data-fancybox]').fancybox({
+    baseClass: "fancybox-ytview",
+    type:'iframe',
+  });
+
 }
 
 

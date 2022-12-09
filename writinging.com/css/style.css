@@ -1869,17 +1869,67 @@ main>div>.container {
 /* profolio-wrap */
 .profolio-wrap {
     background: #F7F7F7;
+    position: relative;
+}
+.profolio-wrap::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    left: 0;
+    top: 0;
+    background: #fff;
+}
+.avatarbox {
+    margin-top: -4rem;
 }
 .avatarbox img {
     max-width: 100%;
+    border: none;
+    box-shadow: rgba(35, 77, 119, 0.05) 0px 0px 15px;
 }
 .namebox {
+    padding: 20px 0;
     font-weight: 500;
 }
 .name {
     font-size: 1.5rem;
 }
-/* fancybox-caption */
+.profolio-wrap .card {
+    border: none;
+    margin-bottom: 1.5rem;
+    box-shadow: rgba(35, 77, 119, 0.05) 0px 0px 15px;
+}
+.profolio-wrap .card-body .title {
+    padding: 5px;
+}
+.profolio-wrap .card-header {    
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: transparent;
+    border-color: #F3F3F3;
+}
+
+/* functionbar */
+.functionbar {
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+/* fancybox */
+[data-fancybox] {
+    display: block;
+    box-shadow: rgba(35, 77, 119, 0.1) 0px 0px 15px;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+[data-fancybox]:hover {
+    box-shadow: rgba(35, 77, 119, 0.5) 0px 20px 20px 0px;
+    transform: translatey(-20px);
+}
+
 .fancybox-caption {
     text-align: center;
 }
@@ -1903,6 +1953,26 @@ main>div>.container {
 }
 .fancybox-bg {
     background: rgb(9, 25, 79, .7);
+}
+.fancybox-ytview .fancybox-stage .fancybox-content {
+    height: calc(60% - 44px);
+    width: 50%;
+}
+.video-group [data-fancybox]::before {
+    font: normal normal normal 1.5rem/1 FontAwesome;
+    content: "\f04b";
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    border: #fff solid 1px;
+    border-radius: 50%;
+    padding: 16px 0 0 22px;
 }
 
 
