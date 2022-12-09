@@ -320,64 +320,6 @@ $(window).scroll(function () {
 
 
 
-// popup-viewfile
-$('.popup-viewfile').magnificPopup({
-  type: 'iframe'
-});
-
-// popup-gallery
-$('.popup-gallery').magnificPopup({
-  type: 'image',
-  removalDelay: 300,
-  mainClass: 'mfp-fade',
-  gallery: {
-    enabled: true
-  },
-  image: {
-    verticalFit: true,
-    titleSrc: function(item) {
-      return item.el.attr('title');
-    }
-  },
-  zoom: {
-    enabled: true,
-    duration: 300,
-    easing: 'ease-in-out',
-    opener: function(openerElement) {
-      return openerElement.is('img') ? openerElement : openerElement.find('img');
-    }
-  }
-});
-
-// popup-img
-$('.popup-img').magnificPopup({
-  type: 'image',  
-  mainClass: 'mfp-fade mfp-tag',
-  image: {
-    verticalFit: true,
-    titleSrc: function(item) {
-      return item.el.attr('title');
-    }
-  },
-// other options
-});
-
-// popup-youtube
-$('.popup-youtube').magnificPopup({
-    disableOn: 700,
-    type: 'iframe',
-    mainClass: 'mfp-fade mfp-video',
-    removalDelay: 160,
-    preloader: false,
-    fixedContentPos: false
-});
-
-// popup-cont
-$('.popup-cont').magnificPopup({
-  type:'iframe',
-  // mainClass: 'mfp-fade mfp-cont',
-});
-
 
 // WOW
 new WOW().init();

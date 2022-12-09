@@ -1021,6 +1021,9 @@ section h2 {
 .card-text {
     text-align: left;
 }
+.card img {
+    max-width: 100%;
+}
 
 /* teacher-wrap */
 .teacher-wrap>.row {
@@ -1892,44 +1895,35 @@ main>div>.container {
 .fancybox-button:visited {
     color: #fff;
 }
+.fancybox-button.disabled, 
+.fancybox-button.disabled:hover, 
+.fancybox-button[disabled], 
+.fancybox-button[disabled]:hover {
+    color: #888;
+}
 .fancybox-bg {
     background: rgb(9, 25, 79, .7);
 }
 
 
-/*lightgallery*/
-.lightGallery img {
-    max-width: 100%;
-}
-.lightGallery [class*="col-"] {
-    margin-bottom: 1rem;
-    cursor: pointer;
+/* article-group */
+.article-group .card {
+    box-shadow: rgba(35, 77, 119, 0.1) 0px 0px 15px;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    margin-bottom: 2rem;
+    position: relative;
 }
 
-.lg-toolbar,
-.lg-sub-html {
-    color: #fff;
-    background: transparent;
+.article-group .card:hover {
+    box-shadow: rgba(35, 77, 119, 0.5) 0px 20px 20px 0px;
+    transform: translatey(-20px);
 }
-.lg-sub-html h4 {
-    font-size: 1.4rem;
-    font-weight: normal;
-}
-.lg-sub-html p {
-    font-size: 1.1rem;
-}
-.lg-backdrop {
-    background: rgb(9, 25, 79, .7);
-}
-.lg-toolbar .lg-icon,
-#lg-counter {
-    color: #fff;
-}
-.lg-actions .lg-next, 
-.lg-actions .lg-prev {
-    color: #fff;
-    background: transparent;
-}
-.lg-outer.lg-start-zoom .lg-object {
-    max-height: 750px;
+
+.article-group .card a {
+    text-indent: -999em;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
