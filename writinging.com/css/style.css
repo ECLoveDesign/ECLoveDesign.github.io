@@ -1740,6 +1740,7 @@ main>div>.container {
     padding: 2rem 2rem 4rem;
     position: relative;
     margin: 0;
+    background-position-x: center !important;
 }
 
 .jumbotron::before {
