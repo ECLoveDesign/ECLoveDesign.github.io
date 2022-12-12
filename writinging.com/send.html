@@ -21,10 +21,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-multiselect/css/bootstrap-multiselect.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/lightgallery/lightgallery.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
     <link rel="stylesheet" href="css/style.css?3" />
-    <title>中文嚴選良師│說文解章─解說你的文章</title>
+    <title>寫作送批│說文解章─解說你的文章</title>
 </head>
 
 <body>
@@ -68,8 +69,10 @@
                 </ul>
 
                 <ul class="nav-menu nav-btn align-to-right">
-                    <li class="nav-login">
-                        <a href="#" class="btn btn-go" data-toggle="modal" data-target="#loginModal">註冊/登入</a>
+                    <li class="nav-member">
+                        <a href="student-thesis.html" class="btn btn-member">
+                            <i class="fa fa-user"></i> 小桃子</a>
+                    </li>
                     <li class="nav-join">
                         <a href="send.html">寫作送批</a></li>
                     </li>
@@ -86,27 +89,227 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">首頁</a></li>
-                        <li class="breadcrumb-item">嚴選良師</li>
-                        <li class="breadcrumb-item active" aria-current="page">中文嚴選良師</li>
+                        <li class="breadcrumb-item active" aria-current="page">寫作送批</li>
                     </ol>
                 </nav>
 
-                <h1>中文嚴選良師</h1>
+                <h1>寫作送批</h1>
             </div>
         </div>
 
         <div class="sendcontact">
             <div class="container">
 
-                <div class="form">
-                    <div class="alert">
-                        <p>請將要留給老師的問題描述清楚，並提供相對應的附件資料給老師參考。<br>為能儘速回覆並解決您的問題，打「<span class="text-danger">*</span>」為必填欄位，麻煩請您務必填寫，謝謝！</p>
-                    </div>
+                <div class="alert">
+                    <p>請將要留給老師的問題描述清楚，並提供相對應的附件資料給老師參考。<br>為能儘速回覆並解決您的問題，打「<span
+                            class="text-danger">*</span>」為必填欄位，麻煩請您務必填寫，謝謝！</p>
                 </div>
-                
+
+
+                <div class="form">
+
+                    <div class="form-section row">
+
+                        <div class="col-12 col-md-4">
+                            <h2 class="section-title">送批對象</h2>
+                        </div>
+
+                        <div class="col-12 col-md-8">
+
+                            <div class="form-row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="language-select" class="control-label">批改語言 <span
+                                                class="text-danger">*</span></label>
+
+                                        <select name="select" class="form-control bs-select" data-ciaoyu="toggle"
+                                            id="language-select">
+                                            <!-- <option value="none" selected="" disabled="">請選擇
+                                            </option> -->
+                                            <option value="1">中文</option>
+                                            <option value="2">英文</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <!--中文程度選擇-->
+                                    <div class="form-group" data-ciaoyu-toggle="language-select" data-ciaoyu-val="1">
+                                        <label class="control-label">程度選擇 <span class="text-danger">*</span></label>
+                                        <select class="form-control bs-select">
+                                            <option value="國小">國小</option>
+                                            <option value="國中(考試、複習考、會考)">國中(考試、複習考、會考)</option>
+                                            <option value="高中(指考、學測)">高中(指考、學測)</option>
+                                            <option value="研究所">研究所</option>
+                                            <option value="高普特考">高普特考</option>
+                                        </select>
+                                    </div>
+
+                                    <!--英文程度選擇-->
+                                    <div class="form-group" data-ciaoyu-toggle="language-select" data-ciaoyu-val="2">
+                                        <label class="control-label">程度選擇 <span class="text-danger">*</span></label>
+                                        <select class="form-control bs-select">
+                                            <option value="多益 (TOEIC)">多益 (TOEIC)</option>
+                                            <option value="托福 (TOEFL iBT)">托福 (TOEFL iBT)</option>
+                                            <option value="雅思 (IELTS)">雅思 (IELTS)</option>
+                                            <option value="全民英檢 (GEPT)">全民英檢 (GEPT)</option>
+                                            <option value="劍橋國際英檢 (Cambridge English)">劍橋國際英檢 (Cambridge English)
+                                            </option>
+                                            <option value="GMAT">GMAT</option>
+                                            <option value="GRE">GRE</option>
+                                            <option value="SAT">SAT</option>
+                                            <option value="ACT">ACT</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="language-select" class="control-label">選擇送批老師 <span
+                                                class="text-danger">*</span></label>
+
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="請選擇送批老師">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-secondary" type="button" id="btn-choose"
+                                                    data-toggle="modal" data-target="#chooseModal">選擇老師</button>
+                                            </div>
+                                        </div>
+
+                                        <small id="passwordHelpInline" class="text-muted">
+                                            您目前選擇 <span class="num teacher">0</span> 位老師，費用共 <span
+                                                class="num point">0</span> 元/點 (現有點數 <span class="num lave">0</span> 點)
+                                        </small>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-section row">
+
+                        <div class="col-12 col-md-4">
+                            <h2 class="section-title">問題說明</h2>
+                        </div>
+
+                        <div class="col-12 col-md-8">
+
+                            <div class="form-row">
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="problem" class="control-label">作文題目與問題描述 <span
+                                                class="text-danger">*</span> (1000 字內)</label>
+                                        <textarea class="form-control ckeditor" id="problem" rows="6"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="other" class="control-label">附加問題 (200字內) </label>
+                                        <textarea class="form-control" id="other" rows="6"></textarea>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-section row">
+
+                        <div class="col-12 col-md-4">
+                            <h2 class="section-title">作文內容</h2>
+                        </div>
+
+                        <div class="col-12 col-md-8">
+
+                            <div class="form-row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-inline mb-3">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="">範例-單選</label>
+                                            <div class="form-check mr-3">
+                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
+                                                    name="exampleRadios" id="online" value="online" checked>
+                                                <label class="form-check-label" for="online">線上填寫</label>
+                                            </div>
+                                            <div class="form-check mr-3">
+                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
+                                                    name="exampleRadios" id="upload" value="upload">
+                                                <label class="form-check-label" for="upload">使用通訊地址</label>
+                                            </div>
+                                        </div><!-- form-group END -->
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-12">
+
+                                    <div class="form-group" data-ciaoyu-toggle="online">
+                                        <label class="control-label">線上填寫 <span class="text-danger">*</span></label>
+                                        <textarea class="form-control ckeditor" id="textarea" rows="1"></textarea>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="upload">
+                                       
+                                        <label for="file-demo">作文檔案  (限定 doc 檔案)</label>
+                                        <div class="input-upload">
+                                            <input type="file" id="file-demo"
+                                                aria-describedby="text-example-help">
+                                            <span>請選擇檔案</span>
+                                            <small id="text-example-help"
+                                                class="form-text text-muted">簡易說明文字</small>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="language-select" class="control-label">選擇送批老師 <span
+                                                class="text-danger">*</span></label>
+
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="請選擇送批老師">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-secondary" type="button" id="btn-choose"
+                                                    data-toggle="modal" data-target="#chooseModal">選擇老師</button>
+                                            </div>
+                                        </div>
+
+                                        <small id="passwordHelpInline" class="text-muted">
+                                            您目前選擇 <span class="num teacher">0</span> 位老師，費用共 <span
+                                                class="num point">0</span> 元/點 (現有點數 <span class="num lave">0</span> 點)
+                                        </small>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
-        
+
 
     </main>
 
@@ -190,12 +393,28 @@
                     </ul>
                 </div>
                 <div class="col-12 col-md">
-                    <p>Copyright © 說文解章 All Rights Reserved</p>
+                    <p>Copyright © 說文解章 All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- chooseModal -->
+    <div class="modal fade" id="chooseModal" tabindex="-1" aria-labelledby="chooseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title text-center" id="chooseModalLabel">歡迎回來</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">
@@ -210,11 +429,14 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
     <script src='assets/bootstrap-multiselect/js/bootstrap-multiselect.min.js'></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
     <script src='assets/bootstrap-multiselect/js/i18n/defaults-zh_TW.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.9.0/jquery.validate.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js'></script>
     <script src="assets/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/ckeditor/ckeditor.js"></script>
     <script src="js/megamenu.js"></script>
+    <script src="js/ciaoyuToggle.min.js"></script>
     <script src="js/script.js"></script>
 
     <script>

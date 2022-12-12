@@ -249,6 +249,11 @@ if ( $('[data-fancybox]').length ) {
 }
 
 
+//bs-select
+if ( $('.bs-select').length ) {
+  $('.bs-select').selectpicker(); 
+}
+
 //lightGallery
 if ( $('.lightGallery').length ) {
 
@@ -286,15 +291,15 @@ $(function() {
 // multiselect
 if ( $('.multiselect').length ) {
   
-$(document).ready(function() {
-  $('.multiselect').multiselect({
-    nonSelectedText: '選擇類別',
-		filterPlaceholder: '類別關鍵字..',
-    includeSelectAllOption: true,
-    enableFiltering: true,
-  });
+  $(document).ready(function() {
+    $('.multiselect').multiselect({
+      nonSelectedText: '選擇類別',
+      filterPlaceholder: '類別關鍵字..',
+      includeSelectAllOption: true,
+      enableFiltering: true,
+    });
 
-});
+  });
   
 }
 
@@ -320,8 +325,6 @@ if ( $('.twbsPagination').length ) {
 
 
 
-
-
 // affix top
 $(window).scroll(function () {
   if ($(this).scrollTop() > 40) {
@@ -333,7 +336,17 @@ $(window).scroll(function () {
 
 
 
-
 // WOW
 new WOW().init();
+
+// ckeditor
+if ( $('.ckeditor').length ) {
+  var elements = CKEDITOR.document.find( '.ckeditor' ),
+    i = 0,
+    element;
+    while (( element = elements.getItem( i++ ) )) {
+        CKEDITOR.replace( element );
+  }
+
+}
 
