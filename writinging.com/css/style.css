@@ -92,6 +92,18 @@ section .card {
     box-shadow: var(--boxShadow);
 }
 
+.btn-search {
+    border-color: var(--normalRed);
+    background: var(--normalRed);
+    color: #fff;
+}
+.btn-search:hover,
+.btn-search:active,
+.btn-search:focus {
+    border-color: var(--dangerColor) !important;
+    background: var(--dangerColor) !important;
+}
+
 .btn-send,
 .btn-more,
 .btn-unfollow,
@@ -113,6 +125,33 @@ section .card {
     border: var(--normalRed) solid 1px;
 }
 
+.btn-reset:hover,
+.btn-reset {
+    color: #fff;
+    background: #B3B3B3;
+}
+.btn-reset:active {
+    color: #fff;
+    background: #919191;
+}
+.btn-save {
+    color: #fff;
+    background: #213162;
+}
+.btn-save:hover,
+.btn-save:active {
+    color: #fff;
+    background: #000;
+}
+.btn-submit {
+    color: #fff;
+    background: var(--normalRed);
+}
+.btn-submit:hover,
+.btn-submit:active {
+    background: var(--dangerColor);
+    color: #fff;
+}
 
 .btn-dark {
     color: #fff;
@@ -1614,19 +1653,24 @@ section h2 {
 
 /* loginModal */
 .modal-header {
+    border: none;
+}
+#loginModal .modal-header {
     background: #29ABE2;
     color: #fff;
     text-align: center;
     padding: 2rem 0 4rem;
 }
-
-.modal-header .close {
+#loginModal .modal-header .close {
     right: 8px;
     top: 13px;
     position: absolute;
 }
-
 .modal-header .modal-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+#loginModal .modal-header .modal-title {
     text-align: center;
     font-size: 1.6rem;
     font-weight: 500;
@@ -1828,19 +1872,6 @@ main>div>.container {
 }
 
 /* search_box */
-.search_box .btn-search {
-    border-color: var(--normalRed);
-    background: var(--normalRed);
-    color: #fff;
-}
-
-.search_box .btn-search:hover,
-.search_box .btn-search:active,
-.search_box .btn-search:focus {
-    border-color: var(--dangerColor) !important;
-    background: var(--dangerColor) !important;
-}
-
 .search_box .multiselect-container .multiselect-filter>input.multiselect-search {
     margin: 0;
 }
@@ -2200,15 +2231,76 @@ main>div>.container {
 
 
 /* ============== 寫作送批 ================= */
-.form-section {
+.sendcontact {
+    background: #F7F7F7;
+    padding-bottom: 4rem;
+}
+.sendcontact::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4rem;
+    background: #F7F7F7;
+    position: absolute;
+    bottom: 0;
+}
+.sendcontact .form {
+    position: relative;    
+    z-index: 1;
+    padding: 2rem 10rem;
+    margin-top: -3rem;    
+    margin-bottom: -3rem;
+    background: #fff;
+    box-shadow: rgba(35, 77, 119, 0.05) 0px 0px 15px;
+}
+.form-section:not(:first-child) {
     border-top: #B3B3B3 solid 2px;
     padding-top: 1rem;
+}
+.form-section .alert {
+    text-align: center;
+}
+.notice-end {
+    max-width: 70%;
+    margin: auto;
 }
 .section-title {
     font-size: 1.4rem;
     margin: 0;
 }
 
+.form-actions {
+    margin: 1rem 0 2rem;
+    display: flex;
+    justify-content: center;
+}
+.form-actions .btn {
+    width: 150px;
+}
+.form-actions .btn+.btn {
+    margin-left: 1rem;
+}
+
+.input-group-append .btn+.btn {
+    margin-left: 1px;
+}
+
+/* bootstrap-tagsinput */
+.bootstrap-tagsinput+.form-control {
+    opacity: 0;
+}
+.sendcontact .bootstrap-tagsinput .badge [data-role="remove"] {
+    display: none;
+}
+#teacher-notice {
+    font-size: 1rem;
+    padding: 5px;
+    display: block;
+}
+#teacher-notice .num {
+    font-weight: bold;
+    color: var(--dangerColor);
+}
 .input-upload {
     position: relative;
 }
@@ -2276,4 +2368,51 @@ main>div>.container {
 .bootstrap-select .dropdown-menu li a:focus,
 .bootstrap-select .dropdown-item:active {
     background: var(--normalRed);
+}
+
+/* nonchooseModal */
+#nonchooseModal img {
+    margin: 2rem 0;
+}
+#nonchooseModal .modal-body {
+    padding: 0 2rem 2rem;
+}
+
+.btn-teacher-list {
+    color: var(--dangerColor);
+    border-color: var(--dangerColor);
+}
+.btn-teacher-list:hover {
+    border-color: var(--dangerColor);
+    background: var(--dangerColor);
+}
+@media (min-width: 992px) {
+    .modal-md {
+        max-width: 400px;
+    }
+}
+
+/* select-teacher-list */
+.select-teacher-list {
+
+}
+.teacher-item {
+    position: relative;
+    display: flex;
+}
+.teacher-info {
+    display: flex;
+}
+.teacher-info .avatar {
+    width: 80px;
+}
+.teacher-info .avatar img {
+    max-width: 100%;
+}
+.teacher-item a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    text-indent: -999em;
 }
