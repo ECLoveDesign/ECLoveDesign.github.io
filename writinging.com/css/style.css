@@ -1793,6 +1793,7 @@ main>div>.container {
 .jumbotron {
     padding: 2rem 2rem 4rem;
     position: relative;
+    z-index: 2;
     margin: 0;
     background-position-x: center !important;
 }
@@ -1832,6 +1833,14 @@ main>div>.container {
     max-width: 100%;
 }
 
+.search_box.affix {
+    background: rgba(230, 245, 255, 0.9);
+    width: 100%;
+    padding: 2rem 4rem;
+    position: fixed;
+    top: 80px;
+    left: 0;
+}
 @media (max-width:1024px) {
     .jumbotron {
         padding: 3rem 1rem;
@@ -2247,7 +2256,7 @@ main>div>.container {
 .sendcontact .form {
     position: relative;    
     z-index: 1;
-    padding: 2rem 10rem;
+    padding: 4rem 10rem;
     margin-top: -3rem;    
     margin-bottom: -3rem;
     background: #fff;
@@ -2258,11 +2267,11 @@ main>div>.container {
     padding-top: 1rem;
 }
 .form-section .alert {
-    text-align: center;
+    padding: 0;
 }
 .notice-end {
     max-width: 70%;
-    margin: auto;
+    margin: 2rem auto;
 }
 .section-title {
     font-size: 1.4rem;
@@ -2399,6 +2408,7 @@ main>div>.container {
 .teacher-item {
     position: relative;
     display: flex;
+    align-items: center;
     padding: 1rem 15px;
     border-bottom: #ddd solid 1px;
 }
@@ -2406,12 +2416,23 @@ main>div>.container {
     position: relative;
     display: flex;
     margin-right: 20px;
+    width: 50%;
 }
 .teacher-info .avatar {
     width: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 .teacher-info .avatar img {
     max-width: 100%;
+}
+.teacher-info .info {
+    text-align: left;
+}
+.teacher-info .info .name  {
+    font-size: 1.2rem;
+    margin-right: 5px;    
 }
 .teacher-item a {
     position: absolute;
@@ -2419,4 +2440,18 @@ main>div>.container {
     height: 100%;
     left: 0;
     text-indent: -999em;
+}
+.teacher-item .form-check-inline {
+    align-items: baseline;
+    margin-right: 2.5rem;
+
+}
+.teacher-item .form-check-inline .form-check-input {    
+    transform: scale(1.2);
+}
+.teacher-item .form-check-label {
+    padding-left: 5px;
+}
+.teacher-item fieldset {
+    margin-bottom: 0;
 }

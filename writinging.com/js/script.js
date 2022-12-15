@@ -332,6 +332,13 @@ $(window).scroll(function () {
   } else {
     $("header").removeClass('affix');
   }
+
+  
+  if ($(this).scrollTop() > 100) {
+    $(".search_box").addClass('affix');
+  } else {
+    $(".search_box").removeClass('affix');
+  }
 });
 
 
