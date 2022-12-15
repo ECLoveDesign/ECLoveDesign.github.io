@@ -1252,7 +1252,7 @@ section h2 {
 .data-info li {
     float: left;
     list-style: none;
-    margin-right: 8px;
+    margin-right: 15px;
     font-family: var(--font-Number);
 }
 
@@ -2093,7 +2093,7 @@ main>div>.container {
     font-size: 1rem;
     font-weight: bold;
 }
-.case {
+.grade-item .case {
     width: 65px;
     padding-right: 10px;
     text-align: right;
@@ -2101,10 +2101,10 @@ main>div>.container {
     border-right: #E6E6E6 solid 1px;
     margin-right: 7px;
 }
-.unit {
+.grade-item .unit {
     margin-right: 5px;
 }
-.highlight {
+.grade-item .highlight {
     color: var(--normalRed);
 }
 @media (max-width:1420px) {
@@ -2393,18 +2393,22 @@ main>div>.container {
 }
 
 /* select-teacher-list */
-.select-teacher-list {
-
+.select-teacher-list .text-muted {
+    display: block;
 }
 .teacher-item {
     position: relative;
     display: flex;
+    padding: 1rem 15px;
+    border-bottom: #ddd solid 1px;
 }
 .teacher-info {
+    position: relative;
     display: flex;
+    margin-right: 20px;
 }
 .teacher-info .avatar {
-    width: 80px;
+    width: 60px;
 }
 .teacher-info .avatar img {
     max-width: 100%;
