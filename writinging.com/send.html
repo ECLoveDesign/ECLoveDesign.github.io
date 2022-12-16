@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="assets/tagsinput/tagsinput.css" />
     <link rel="stylesheet" href="assets/lightgallery/lightgallery.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
-    <link rel="stylesheet" href="css/style.css?1" />
+    <link rel="stylesheet" href="css/style.css?2" />
     <title>寫作送批│說文解章─解說你的文章</title>
 </head>
 
@@ -178,8 +178,7 @@
                                             <div class="row">
                                                 <div class="col-md-8 pr-md-0">
                                                     <input type="text" id="teacher-select" class="form-control"
-                                                        value="王文廷老師 一般件 150 點" data-role="tagsinput"
-                                                        placeholder="請選擇送批老師" disabled />
+                                                        value="王文廷老師 一般件 150 點" data-role="tagsinput" disabled />
 
                                                 </div>
                                                 <div class="col-md-4 pl-md-0">
@@ -195,7 +194,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <small id="teacher-notice" class="text-muted">
+                                            <small class="text-muted teacher-notice">
                                                 您目前選擇 <span class="num teacher">1</span> 位老師，費用共 <span
                                                     class="num point">150</span> 元/點 (現有點數 <span
                                                     class="num lave">200</span>
@@ -268,16 +267,14 @@
                                             <legend class="col-form-label" for="select-upload-type">送出方式 <span
                                                     class="text-danger">*</span></legend>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" data-ciaoyu="toggle"
-                                                    type="radio" name="select-upload-type" id="online"
-                                                    value="online" checked>
+                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
+                                                    name="select-upload-type" id="online" value="online" checked>
                                                 <label class="form-check-label" for="online">線上填寫</label>
                                             </div>
                                             <div class="form-check form-check-inline">
 
-                                                <input class="form-check-input" data-ciaoyu="toggle"
-                                                    type="radio" name="select-upload-type" id="upload"
-                                                    value="upload">
+                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
+                                                    name="select-upload-type" id="upload" value="upload">
                                                 <label class="form-check-label" for="upload">上傳檔案</label>
                                             </div>
                                         </fieldset>
@@ -350,7 +347,8 @@
 
                     <div class="form-section">
                         <div class="alert notice-end">
-                            <p class="text-center">※本網站就台端之相關個人資料之蒐集、處理或利用，均依照有關法令規定辦理，另台端之個人資料相關權益亦可參閱本網站之個人資料保護法專區。</p>
+                            <p class="text-center">※本網站就台端之相關個人資料之蒐集、處理或利用，均依照有關法令規定辦理，另台端之個人資料相關權益亦可參閱本網站之個人資料保護法專區。
+                            </p>
                         </div>
                     </div>
 
@@ -461,7 +459,8 @@
     </footer>
 
     <!-- chooseModal -->
-    <div class="modal fade" data-backdrop="static" id="chooseModal" tabindex="-1" aria-labelledby="chooseModalLabel" aria-hidden="true">
+    <div class="modal fade" data-backdrop="static" id="chooseModal" tabindex="-1" aria-labelledby="chooseModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -470,12 +469,11 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body text-center">
-
+                <div class="modal-body">
 
                     <div class="form">
                         <div class="input-group">
-                            
+
                             <select name="select" class="form-control bs-select" data-ciaoyu="toggle"
                                 id="modal-language-select">
                                 <option value="tw">中文</option>
@@ -536,35 +534,35 @@
 
                                 <fieldset class="form-group">
                                     <legend class="col-form-label sr-only" for="teacher01">王文廷</legend>
-                                    
+
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher01" id="teacher01-normal" value="teacher01-normal">
+                                        <input class="form-check-input" type="radio" name="teacher01"
+                                            id="teacher01-normal" value="teacher01-normal">
                                         <label class="form-check-label" for="teacher01-normal">
                                             <span class="case">一般件</span>
                                             <span class="highlight">200</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                                    
+                                            <div class="block text-left">
                                                 <span class="highlight">4</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher01" id="teacher01-fast" value="teacher01-fast">
+                                        <input class="form-check-input" type="radio" name="teacher01"
+                                            id="teacher01-fast" value="teacher01-fast">
                                         <label class="form-check-label" for="teacher01-fast">
-                                            <span class="case">一般件</span>
-                                            <span class="highlight">200</span>
+                                            <span class="case">急件</span>
+                                            <span class="highlight">400</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                               
-                                                <span class="highlight">4</span>
+                                            <div class="block text-left">
+                                                <span class="highlight">2</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                 </fieldset>
-                                
+
                             </div>
 
                             <div class="teacher-item">
@@ -581,35 +579,35 @@
 
                                 <fieldset class="form-group">
                                     <legend class="col-form-label sr-only" for="teacher02">王文廷</legend>
-                                    
+
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher02" id="teacher02-normal" value="teacher02-normal">
+                                        <input class="form-check-input" type="radio" name="teacher02"
+                                            id="teacher02-normal" value="teacher02-normal">
                                         <label class="form-check-label" for="teacher02-normal">
                                             <span class="case">一般件</span>
                                             <span class="highlight">200</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                                    
+                                            <div class="block text-left">
                                                 <span class="highlight">4</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher02" id="teacher02-fast" value="teacher02-fast">
+                                        <input class="form-check-input" type="radio" name="teacher02"
+                                            id="teacher02-fast" value="teacher02-fast">
                                         <label class="form-check-label" for="teacher02-fast">
-                                            <span class="case">一般件</span>
-                                            <span class="highlight">200</span>
+                                            <span class="case">急件</span>
+                                            <span class="highlight">400</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                               
-                                                <span class="highlight">4</span>
+                                            <div class="block text-left">
+                                                <span class="highlight">2</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                 </fieldset>
-                                
+
                             </div>
 
                             <div class="teacher-item">
@@ -626,35 +624,35 @@
 
                                 <fieldset class="form-group">
                                     <legend class="col-form-label sr-only" for="teacher03">王文廷</legend>
-                                    
+
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher03" id="teacher03-normal" value="teacher03-normal">
+                                        <input class="form-check-input" type="radio" name="teacher03"
+                                            id="teacher03-normal" value="teacher03-normal">
                                         <label class="form-check-label" for="teacher03-normal">
                                             <span class="case">一般件</span>
                                             <span class="highlight">200</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                                    
+                                            <div class="block text-left">
                                                 <span class="highlight">4</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher03" id="teacher03-fast" value="teacher03-fast">
+                                        <input class="form-check-input" type="radio" name="teacher03"
+                                            id="teacher03-fast" value="teacher03-fast">
                                         <label class="form-check-label" for="teacher03-fast">
-                                            <span class="case">一般件</span>
-                                            <span class="highlight">200</span>
+                                            <span class="case">急件</span>
+                                            <span class="highlight">400</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                               
-                                                <span class="highlight">4</span>
+                                            <div class="block text-left">
+                                                <span class="highlight">2</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                 </fieldset>
-                                
+
                             </div>
 
                             <div class="teacher-item">
@@ -671,35 +669,35 @@
 
                                 <fieldset class="form-group">
                                     <legend class="col-form-label sr-only" for="teacher04">王文廷</legend>
-                                    
+
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher04" id="teacher04-normal" value="teacher04-normal">
+                                        <input class="form-check-input" type="radio" name="teacher04"
+                                            id="teacher04-normal" value="teacher04-normal">
                                         <label class="form-check-label" for="teacher04-normal">
                                             <span class="case">一般件</span>
                                             <span class="highlight">200</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                                    
+                                            <div class="block text-left">
                                                 <span class="highlight">4</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher04" id="teacher04-fast" value="teacher04-fast">
+                                        <input class="form-check-input" type="radio" name="teacher04"
+                                            id="teacher04-fast" value="teacher04-fast">
                                         <label class="form-check-label" for="teacher04-fast">
-                                            <span class="case">一般件</span>
-                                            <span class="highlight">200</span>
+                                            <span class="case">急件</span>
+                                            <span class="highlight">400</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                               
-                                                <span class="highlight">4</span>
+                                            <div class="block text-left">
+                                                <span class="highlight">2</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                 </fieldset>
-                                
+
                             </div>
 
                             <div class="teacher-item">
@@ -716,35 +714,35 @@
 
                                 <fieldset class="form-group">
                                     <legend class="col-form-label sr-only" for="teacher05">王文廷</legend>
-                                    
+
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher05" id="teacher05-normal" value="teacher05-normal">
+                                        <input class="form-check-input" type="radio" name="teacher05"
+                                            id="teacher05-normal" value="teacher05-normal">
                                         <label class="form-check-label" for="teacher05-normal">
                                             <span class="case">一般件</span>
                                             <span class="highlight">200</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                                    
+                                            <div class="block text-left">
                                                 <span class="highlight">4</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher05" id="teacher01-fast" value="teacher05-fast">
+                                        <input class="form-check-input" type="radio" name="teacher05"
+                                            id="teacher01-fast" value="teacher05-fast">
                                         <label class="form-check-label" for="teacher05-fast">
-                                            <span class="case">一般件</span>
-                                            <span class="highlight">200</span>
+                                            <span class="case">急件</span>
+                                            <span class="highlight">400</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                               
-                                                <span class="highlight">4</span>
+                                            <div class="block text-left">
+                                                <span class="highlight">2</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                 </fieldset>
-                                
+
                             </div>
 
                             <div class="teacher-item">
@@ -761,36 +759,94 @@
 
                                 <fieldset class="form-group">
                                     <legend class="col-form-label sr-only" for="teacher06">王文廷</legend>
-                                    
+
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher06" id="teacher06-normal" value="teacher06-normal">
+                                        <input class="form-check-input" type="radio" name="teacher06"
+                                            id="teacher06-normal" value="teacher06-normal">
                                         <label class="form-check-label" for="teacher06-normal">
                                             <span class="case">一般件</span>
                                             <span class="highlight">200</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                                    
+                                            <div class="block text-left">
                                                 <span class="highlight">4</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio"
-                                            name="teacher06" id="teacher01-fast" value="teacher06-fast">
+                                        <input class="form-check-input" type="radio" name="teacher06"
+                                            id="teacher01-fast" value="teacher06-fast">
                                         <label class="form-check-label" for="teacher06-fast">
-                                            <span class="case">一般件</span>
+                                            <span class="case">急件</span>
                                             <span class="highlight">200</span>
                                             <span class="unit">點</span>
-                                            <div class="block text-left">                                                                                               
-                                                <span class="highlight">4</span>
+                                            <div class="block text-left">
+                                                <span class="highlight">2</span>
                                                 <span class="unit">天內</span>
                                             </div>
                                         </label>
                                     </div>
                                 </fieldset>
-                                
+
                             </div>
+
+                            <div class="teacher-item">
+                                <div class="teacher-info">
+                                    <div class="avatar">
+                                        <img src="images/img-teacher-cp.jpg" alt="王文廷">
+                                    </div>
+                                    <div class="info">
+                                        <div class="title"><span class="name">王文廷</span>老師</div>
+                                        <div class="dataname">批改數<span class="num">324</span></div>
+                                    </div>
+                                    <a href="#">王文廷</a>
+                                </div>
+
+                                <fieldset class="form-group">
+                                    <legend class="col-form-label sr-only" for="teacher07">王文廷</legend>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="teacher07"
+                                            id="teacher07-normal" value="teacher07-normal">
+                                        <label class="form-check-label" for="teacher07-normal">
+                                            <span class="case">一般件</span>
+                                            <span class="highlight">200</span>
+                                            <span class="unit">點</span>
+                                            <div class="block text-left">
+                                                <span class="highlight">4</span>
+                                                <span class="unit">天內</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="teacher07"
+                                            id="teacher07-fast" value="teacher07-fast">
+                                        <label class="form-check-label" for="teacher07-fast">
+                                            <span class="case">急件</span>
+                                            <span class="highlight">400</span>
+                                            <span class="unit">點</span>
+                                            <div class="block text-left">
+                                                <span class="highlight">2</span>
+                                                <span class="unit">天內</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="popup-teacher-select" class="control-label">已選擇的送批老師</label>
+                            <input type="text" id="popup-teacher-select" class="form-control" value="王文廷老師 一般件 150 點"
+                                data-role="tagsinput" disabled />
+                            <small class="text-muted teacher-notice">
+                                您目前選擇 <span class="num teacher">1</span> 位老師，費用共 <span class="num point">150</span> 元/點
+                                (現有點數 <span class="num lave">200</span>
+                                點)
+                            </small>
 
 
                         </div>
@@ -798,12 +854,18 @@
 
 
                 </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn-submit">確認送出</button>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- nonchooseModal -->
-    <div class="modal fade" data-backdrop="static" id="nonchooseModal" tabindex="-1" aria-labelledby="nonchooseModalLabel" aria-hidden="true">
+    <div class="modal fade" data-backdrop="static" id="nonchooseModal" tabindex="-1"
+        aria-labelledby="nonchooseModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
                 <div class="modal-header">
