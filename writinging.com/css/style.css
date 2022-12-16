@@ -2550,6 +2550,9 @@ main>div>.container {
     padding: 8px 15px;
     border-bottom: #ddd solid 1px;
 }
+.teacher-item:hover {
+    background: #E6F5FF;
+}
 .teacher-info {
     position: relative;
     display: flex;
