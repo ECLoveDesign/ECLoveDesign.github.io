@@ -105,6 +105,7 @@ section .card {
     background: var(--dangerColor) !important;
 }
 
+.btn-send,
 .btn-submit,
 .btn-more,
 .btn-unfollow,
@@ -115,7 +116,11 @@ section .card {
     box-shadow: var(--boxShadow);
 }
 
-.btn-submit:not(:disabled):not(.disabled):active,
+.btn-send:not(:disabled):not(.disabled):active,
+.btn-send:active,
+.btn-send:focus,
+.btn-send:hover,
+.btn-send:not(:disabled):not(.disabled):active,
 .btn-submit:active,
 .btn-submit:focus,
 .btn-submit:hover,
@@ -151,10 +156,13 @@ section .card {
     color: #fff;
     background: #000;
 }
+.btn-send,
 .btn-submit {
     color: #fff;
     background: var(--normalRed);
 }
+.btn-send:hover,
+.btn-send:active,
 .btn-submit:hover,
 .btn-submit:active {
     background: var(--dangerColor);
@@ -1971,6 +1979,7 @@ main>div>.container {
 .profolio-wrap {
     background: #F7F7F7;
     position: relative;
+    z-index: 2;
 }
 .profolio-wrap::before {
     content: '';
