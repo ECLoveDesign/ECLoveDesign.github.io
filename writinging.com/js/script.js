@@ -339,6 +339,12 @@ $(window).scroll(function () {
   } else {
     $(".search_box").removeClass('affix');
   }
+
+  if ($(this).scrollTop() > 200) {
+    $(".nav-slider").addClass('affix');
+  } else {
+    $(".nav-slider").removeClass('affix');
+  }
 });
 
 

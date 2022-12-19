@@ -19,7 +19,10 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
     <link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css" /> -->
+
+    <link rel="stylesheet" href="https://www.npac-ntt.org/dispPageBox/npac-ntt/assets/swiper/css/swiper.css" />
+    
     <link rel="stylesheet" href="assets/bootstrap-multiselect/css/bootstrap-multiselect.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-tagsinput/bootstrap-tagsinput.css" />
@@ -27,7 +30,7 @@
     <link rel="stylesheet" href="assets/lightgallery/lightgallery.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
     <link rel="stylesheet" href="css/style.css?3" />
-    <title>寫作送批│說文解章─解說你的文章</title>
+    <title>老師會員專區│說文解章─解說你的文章</title>
 </head>
 
 <body>
@@ -91,11 +94,48 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">首頁</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">寫作送批</li>
+                        <li class="breadcrumb-item active" aria-current="page">會員專區</li>
                     </ol>
                 </nav>
 
-                <h1>寫作送批</h1>
+                <h1>會員專區</h1>
+
+                <div class="subnav-wrap nav-slider">
+                    <div class="swiper-container subnav-nav">
+                        <ul class="swiper-wrapper section-nav">
+
+                            <li class="swiper-slide nav-item active">
+                                <a class="nav-link" href="#" title="審批管理">
+                                    審批管理
+                                </a>
+                            </li>
+
+                            <li class="swiper-slide nav-item">
+                                <a class="nav-link" href="teacher-income.html" title="我的收益">
+                                    我的收益
+                                </a>
+                            </li>
+
+                            <li class="swiper-slide nav-item">
+                                <a class="nav-link" href="teacher-profile.html" title="個人檔案">
+                                    個人檔案
+                                </a>
+                            </li>
+
+                            <li class="swiper-slide nav-item">
+                                <a class="nav-link" href="teacher-message.html" title="客服中心">
+                                    客服中心
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <button class="btn btn-collapse" type="button" data-toggle="collapse" data-target="#navCollapse"
+                        aria-expanded="false" aria-controls="navCollapse">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="collapse" id="navCollapse"></div>
+                </div>
             </div>
         </div>
 
@@ -894,7 +934,9 @@
     <script src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script> -->
+    <script src="https://www.npac-ntt.org/dispPageBox/npac-ntt/assets/swiper/js/swiper.min.js"></script>
+    <script src="https://www.npac-ntt.org/dispPageBox/npac-ntt/assets/swiper/js/swiper.animate.min.js"></script>
     <script src='assets/bootstrap-multiselect/js/bootstrap-multiselect.min.js'></script>
     <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
     <script src='assets/bootstrap-multiselect/js/i18n/defaults-zh_TW.js'></script>
@@ -921,6 +963,55 @@
 
         // $("#teacher-select").prop('disaled', true);
         // $("[data-role='tagsinput']").prop('disaled', true);
+
+
+        // subnav-wrap
+        if ($('.nav-slider').length) {
+
+            var w = window.innerWidth;
+            if (w < 960) {
+                $('.section-nav').clone().appendTo("#navCollapse");
+                var subnavslider = new Swiper('.swiper-container.subnav-nav', {
+
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    paginationClickable: true,
+                    // spaceBetween: 30,
+                    freeMode: true
+                    // paginationClickable: true,
+                    // centeredSlides: true,
+                    slidesPerView: 4,
+                    // // spaceBetween: 30,
+                    // breakpoints: {
+                    //     375: {
+                    //         slidesPerView: 2,
+                    //         // spaceBetween: 10
+                    //     },
+                    //     480: {
+                    //         slidesPerView: 2,
+                    //         //spaceBetween: 40
+                    //         // spaceBetween: 10
+                    //     },
+                    //     640: {
+                    //         slidesPerView: 2,
+                    //         // spaceBetween: 20
+                    //     },
+                    //     1024: {
+                    //         slidesPerView: 4,
+                    //         // spaceBetween: 10
+                    //     }
+
+                    // },
+                });
+
+                subnavslider.slideTo($('.nav-slider .swiper-wrapper li.active').index());
+
+                $(window).on('scroll', function () {
+                    subnavslider.slideTo($('.nav-slider .swiper-wrapper li.active').index());
+                });
+            } 
+
+        };
     </script>
 </body>
 
