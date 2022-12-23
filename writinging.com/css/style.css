@@ -3221,9 +3221,17 @@ main>div>.container {
 }
 
 .search-wrap .row .btn:not(.dropdown-toggle) {
-    padding: 0.5rem .75rem;
+    padding: 0.2rem 0.75rem;;
     font-size: 1.2rem;
     margin: 0px 0 1rem;
+}
+.search-wrap .row .btn svg {
+    margin:0.3rem 0;
+}
+.search-wrap .row .btn-export {
+    float: right;
+    border: #000 solid 1px;
+    width: 100%;
 }
 @media (max-width:768px) {
     .search-wrap .row .btn:not(.dropdown-toggle) {
@@ -3270,6 +3278,12 @@ main>div>.container {
 
 .table td a:hover {
     color: var(--normalRed);
+}
+.table span.add {
+    color: #0071BC;
+}
+.table span.mins {
+    color: #f02107;
 }
 
 /* tablesorter */
