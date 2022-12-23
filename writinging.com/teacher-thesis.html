@@ -22,14 +22,14 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css" /> -->
 
     <link rel="stylesheet" href="https://www.npac-ntt.org/dispPageBox/npac-ntt/assets/swiper/css/swiper.css" />
-    
+
     <link rel="stylesheet" href="assets/bootstrap-multiselect/css/bootstrap-multiselect.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-tagsinput/bootstrap-tagsinput.css" />
     <link rel="stylesheet" href="assets/tagsinput/tagsinput.css" />
     <link rel="stylesheet" href="assets/lightgallery/lightgallery.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
-    <link rel="stylesheet" href="css/style.css?3" />
+    <link rel="stylesheet" href="css/style.css?4" />
     <title>老師會員專區│說文解章─解說你的文章</title>
 </head>
 
@@ -50,7 +50,7 @@
                     <li>
                         <a href="javascript:void(0)">嚴選良師</a>
                         <ul class="nav-dropdown">
-                            <li class="active"><a href="teacher-tw.html">中文嚴選良師</a></li>
+                            <li><a href="teacher-tw.html">中文嚴選良師</a></li>
                             <li><a href="teacher-en.html">英文嚴選良師</a></li>
                         </ul>
                     </li>
@@ -75,8 +75,16 @@
 
                 <ul class="nav-menu nav-btn align-to-right">
                     <li class="nav-member">
-                        <a href="student-thesis.html" class="btn btn-member">
-                            <i class="fa fa-user"></i> 小桃子</a>
+                        <a href="javascript:void(0)" class="btn btn-member nav-link">
+                            <i class="fa fa-user"></i> 小桃子
+                        </a>
+                        <ul class="nav-dropdown">
+                            <li class="active"><a href="teacher-thesis.html">審批管理</a></li>
+                            <li><a href="teacher-income.html">我的收益</a></li>
+                            <li><a href="teacher-profile.html">個人檔案</a></li>
+                            <li><a href="teacher-message.html">通知中心</a></li>
+                            <li><a href="index.html">登出</a></li>
+                        </ul>
                     </li>
                     <li class="nav-join">
                         <a href="send.html">寫作送批</a></li>
@@ -105,7 +113,7 @@
                         <ul class="swiper-wrapper section-nav">
 
                             <li class="swiper-slide nav-item active">
-                                <a class="nav-link" href="#" title="審批管理">
+                                <a class="nav-link" href="teacher-thesis.html" title="審批管理">
                                     審批管理
                                 </a>
                             </li>
@@ -123,287 +131,224 @@
                             </li>
 
                             <li class="swiper-slide nav-item">
-                                <a class="nav-link" href="teacher-message.html" title="客服中心">
-                                    客服中心
+                                <a class="nav-link" href="teacher-message.html" title="通知中心">
+                                    通知中心
                                 </a>
                             </li>
 
                         </ul>
                     </div>
-                    <button class="btn btn-collapse" type="button" data-toggle="collapse" data-target="#navCollapse"
-                        aria-expanded="false" aria-controls="navCollapse">
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="collapse" id="navCollapse"></div>
                 </div>
+
             </div>
         </div>
 
-        <div class="sendcontact">
+        <div class="cont">
             <div class="container">
 
-                <div class="form">
+                <div class="pagenav">
+                    <ul class="nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">待接單<span class="unread">(3)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order-review.html">審批中</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order-audited.html">已審批</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order-overtime.html">逾時</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order-cancel.html">退單</a>
+                        </li>
+                    </ul>
+                </div>
 
-                    <div class="form-section">
-                        <div class="alert notice-begin">
-                            <p>請將要留給老師的問題描述清楚，並提供相對應的附件資料給老師參考。<br>為能儘速回覆並解決您的問題，打「<span
-                                    class="text-danger">*</span>」為必填欄位，麻煩請您務必填寫，謝謝！</p>
+                <div class="search-wrap">
+                    <div class="row">
+
+                        <div class="col-md-5 col-lg-3">
+                            <!--批改語言-->
+                            <div class="form-group">
+                                <label for="language">批改語言</label>
+                                <select class="form-control bs-select" id="language" title="請選擇">
+                                    <option value="none" selected="" disabled="">請選擇</option>
+                                    <option value="中文" selected>中文</option>
+                                    <option value="英文">英文</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-section">
-                        <div class="row">
-
-                            <div class="col-12 col-md-4">
-                                <h2 class="section-title">送批對象</h2>
+                        <div class="col-md-5 col-lg-3">
+                            <!--關鍵字-->
+                            <div class="form-group">
+                                <label class="label-control" for="keywords">關鍵字</label>
+                                <input type="text" class="form-control" placeholder="請輸入關鍵字">
                             </div>
-
-                            <div class="col-12 col-md-8">
-
-                                <div class="form-row">
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="language-select" class="control-label">批改語言 <span
-                                                    class="text-danger">*</span></label>
-
-                                            <select name="select" class="form-control bs-select" data-ciaoyu="toggle"
-                                                id="language-select">
-                                                <!-- <option value="none" selected="" disabled="">請選擇
-                                            </option> -->
-                                                <option value="1">中文</option>
-                                                <option value="2">英文</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <!--中文程度選擇-->
-                                        <div class="form-group" data-ciaoyu-toggle="language-select"
-                                            data-ciaoyu-val="1">
-                                            <label class="control-label">程度選擇 <span class="text-danger">*</span></label>
-                                            <select class="form-control bs-select">
-                                                <option value="國小">國小</option>
-                                                <option value="國中(考試、複習考、會考)">國中(考試、複習考、會考)</option>
-                                                <option value="高中(指考、學測)">高中(指考、學測)</option>
-                                                <option value="研究所">研究所</option>
-                                                <option value="高普特考">高普特考</option>
-                                            </select>
-                                        </div>
-
-                                        <!--英文程度選擇-->
-                                        <div class="form-group" data-ciaoyu-toggle="language-select"
-                                            data-ciaoyu-val="2">
-                                            <label class="control-label">程度選擇 <span class="text-danger">*</span></label>
-                                            <select class="form-control bs-select">
-                                                <option value="多益 (TOEIC)">多益 (TOEIC)</option>
-                                                <option value="托福 (TOEFL iBT)">托福 (TOEFL iBT)</option>
-                                                <option value="雅思 (IELTS)">雅思 (IELTS)</option>
-                                                <option value="全民英檢 (GEPT)">全民英檢 (GEPT)</option>
-                                                <option value="劍橋國際英檢 (Cambridge English)">劍橋國際英檢 (Cambridge English)
-                                                </option>
-                                                <option value="GMAT">GMAT</option>
-                                                <option value="GRE">GRE</option>
-                                                <option value="SAT">SAT</option>
-                                                <option value="ACT">ACT</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="teacher-select" class="control-label">選擇送批老師 <span
-                                                    class="text-danger">*</span></label>
-                                            <div class="row">
-                                                <div class="col-md-8 pr-md-0">
-                                                    <input type="text" id="teacher-select" class="form-control"
-                                                        value="王文廷老師 一般件 150 點" data-role="tagsinput" disabled />
-
-                                                </div>
-                                                <div class="col-md-4 pl-md-0">
-                                                    <div class="input-group">
-                                                        <div class="input-group-append">
-                                                            <button class="btn btn-secondary" type="button"
-                                                                id="btn-choose" data-toggle="modal"
-                                                                data-target="#nonchooseModal">選擇老師(未關注)</button>
-                                                            <button class="btn btn-secondary" type="button"
-                                                                id="btn-choose" data-toggle="modal"
-                                                                data-target="#chooseModal">選擇老師</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <small class="text-muted teacher-notice">
-                                                您目前選擇 <span class="num teacher">1</span> 位老師，費用共 <span
-                                                    class="num point">150</span> 元/點 (現有點數 <span
-                                                    class="num lave">200</span>
-                                                點)
-                                            </small>
-
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
-
                         </div>
-                    </div>
 
-                    <div class="form-section">
-                        <div class="row">
-
-                            <div class="col-12 col-md-4">
-                                <h2 class="section-title">問題說明</h2>
-                            </div>
-
-                            <div class="col-12 col-md-8">
-
-                                <div class="form-row">
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="problem" class="control-label">作文題目與問題描述 <span
-                                                    class="text-danger">*</span> (1000 字內)</label>
-                                            <textarea class="form-control ckeditor" id="problem" rows="6"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="other" class="control-label">附加問題 (200字內) </label>
-                                            <textarea class="form-control" id="other" rows="6"></textarea>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-
-                            </div>
+                        <div class="col-md-2 col-lg-6">
+                            <button class="btn btn-search" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
                         </div>
 
                     </div>
 
-                    <div class="form-section">
-                        <div class="row">
+                </div>
 
-                            <div class="col-12 col-md-4">
-                                <h2 class="section-title">作文內容</h2>
-                            </div>
+                <div class="table-wrap">
+                    <table class="table table-striped table-hover table-rwd tablesorter sticky" data-sortlist="[[0,0]]">
+                        <thead>
+                            <tr>
+                                <th>剩餘時間</th>
+                                <th>類型</th>
+                                <th>批改語言</th>
+                                <th>文章標題</th>
+                                <th>學生暱稱</th>
+                                <th>送批時間</th>
+                                <th>金額</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="unread">
+                                <td data-label="剩餘時間">0天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">我的未來不是夢</a>
+                                </td>
+                                <td data-label="學生暱稱">小桃子</td>
+                                <td data-label="送批時間">2022.08.03 (三) 16:30</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr class="unread">
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">寒夜</a>
+                                </td>
+                                <td data-label="學生暱稱">葡萄</td>
+                                <td data-label="送批時間">2022.09.01 (四) 17:22</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">老芋仔，我為你寫下</a>
+                                </td>
+                                <td data-label="學生暱稱">蘋果</td>
+                                <td data-label="送批時間">2022.09.23 (五) 11:40</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">2天 14時 12分</td>
+                                <td data-label="類型">急件</td>
+                                <td data-label="批改語言">英文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">Goodbye, John</a>
+                                </td>
+                                <td data-label="學生暱稱">西瓜</td>
+                                <td data-label="送批時間">2022.11.13 (日) 01:11</td>
+                                <td data-label="金額">350</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">徐志摩穿越台灣之後</a>
+                                </td>
+                                <td data-label="學生暱稱">蘋果</td>
+                                <td data-label="送批時間">2022.09.23 (五) 11:40</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">2天 14時 12分</td>
+                                <td data-label="類型">急件</td>
+                                <td data-label="批改語言">英文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">Fighting for or against Graffiti</a>
+                                </td>
+                                <td data-label="學生暱稱">西瓜</td>
+                                <td data-label="送批時間">2022.11.13 (日) 01:11</td>
+                                <td data-label="金額">350</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">再活一次，請多指教</a>
+                                </td>
+                                <td data-label="學生暱稱">蘋果</td>
+                                <td data-label="送批時間">2022.09.23 (五) 11:40</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">2天 14時 12分</td>
+                                <td data-label="類型">急件</td>
+                                <td data-label="批改語言">英文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">Built for Freedom：tde Statue of Liberty</a>
+                                </td>
+                                <td data-label="學生暱稱">西瓜</td>
+                                <td data-label="送批時間">2022.11.13 (日) 01:11</td>
+                                <td data-label="金額">350</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">謝謝你離開的時候，沒有說謊</a>
+                                </td>
+                                <td data-label="學生暱稱">蘋果</td>
+                                <td data-label="送批時間">2022.09.23 (五) 11:40</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">2天 14時 12分</td>
+                                <td data-label="類型">急件</td>
+                                <td data-label="批改語言">英文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">tde Life of a Plastic Bag</a>
+                                </td>
+                                <td data-label="學生暱稱">西瓜</td>
+                                <td data-label="送批時間">2022.11.13 (日) 01:11</td>
+                                <td data-label="金額">350</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">只告訴魚</a>
+                                </td>
+                                <td data-label="學生暱稱">蘋果</td>
+                                <td data-label="送批時間">2022.09.23 (五) 11:40</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">2天 14時 12分</td>
+                                <td data-label="類型">急件</td>
+                                <td data-label="批改語言">英文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">tde White Envelope</a>
+                                </td>
+                                <td data-label="學生暱稱">西瓜</td>
+                                <td data-label="送批時間">2022.11.13 (日) 01:11</td>
+                                <td data-label="金額">350</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                            <div class="col-12 col-md-8">
-
-                                <div class="form-row">
-
-                                    <div class="col-md-6">
-
-                                        <fieldset class="form-group">
-                                            <legend class="col-form-label" for="select-upload-type">送出方式 <span
-                                                    class="text-danger">*</span></legend>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="select-upload-type" id="online" value="online" checked>
-                                                <label class="form-check-label" for="online">線上填寫</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="select-upload-type" id="upload" value="upload">
-                                                <label class="form-check-label" for="upload">上傳檔案</label>
-                                            </div>
-                                        </fieldset>
-
-                                    </div>
-
-                                    <div class="col-md-12">
-
-                                        <div class="form-group" data-ciaoyu-toggle="online">
-                                            <label class="control-label">線上填寫 <span class="text-danger">*</span></label>
-                                            <textarea class="form-control ckeditor" id="textarea" rows="1"></textarea>
-                                        </div>
-
-                                        <div class="form-group" data-ciaoyu-toggle="upload">
-
-                                            <label for="file-thesis">作文檔案 (限定 doc 檔案) <span
-                                                    class="text-danger">*</span></label>
-                                            <div class="input-upload">
-                                                <input type="file" id="file-thesis">
-                                                <span>請選擇檔案</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-
-                                            <label for="file-other">附加檔案 (限定doc、pdf、ppt、jpg、png...檔案)</label>
-                                            <div class="input-upload">
-                                                <input type="file" id="file-other">
-                                                <span>請選擇檔案</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-
-                                            <label for="file-other2" class="sr-only">附加檔案2
-                                                (限定doc、pdf、ppt、jpg、png...檔案)</label>
-                                            <div class="input-upload">
-                                                <input type="file" id="file-other2">
-                                                <span>請選擇檔案</span>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="vcode">驗證碼<span class="text-danger">*</span></label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="vcode" placeholder="請輸入驗證碼"
-                                                    required>
-                                                <div class="input-group-append" id="btn-valid">
-                                                    <img src="images/validImg.gif">
-                                                </div>
-                                                <div class="invalid-feedback">
-                                                    請輸入證件號碼
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <div class="alert notice-end">
-                            <p class="text-center">※本網站就台端之相關個人資料之蒐集、處理或利用，均依照有關法令規定辦理，另台端之個人資料相關權益亦可參閱本網站之個人資料保護法專區。
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" class="btn btn-reset">
-                            重新填寫
-                        </button>
-                        <button type="button" class="btn btn-save">
-                            暫存
-                        </button>
-                        <button type="button" class="btn btn-submit">
-                            確認送出
-                        </button>
-                    </div>
-
+                    <ul class="pagination twbsPagination"></ul>
                 </div>
 
             </div>
@@ -934,12 +879,11 @@
     <script src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.js'></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script> -->
-    <script src="https://www.npac-ntt.org/dispPageBox/npac-ntt/assets/swiper/js/swiper.min.js"></script>
-    <script src="https://www.npac-ntt.org/dispPageBox/npac-ntt/assets/swiper/js/swiper.animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
     <script src='assets/bootstrap-multiselect/js/bootstrap-multiselect.min.js'></script>
     <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
     <script src='assets/bootstrap-multiselect/js/i18n/defaults-zh_TW.js'></script>
+    <script src='assets/tablesorter/jquery.tablesorter.combined.min.js'></script>
     <script src='assets/bootstrap-tagsinput/bootstrap-tagsinput.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.9.0/jquery.validate.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js'></script>
@@ -948,7 +892,7 @@
     <script src="assets/ckeditor/ckeditor.js"></script>
     <script src="js/megamenu.js"></script>
     <script src="js/ciaoyuToggle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js?1"></script>
 
     <script>
         $(".btn-follow").click(function () {
@@ -1009,7 +953,7 @@
                 $(window).on('scroll', function () {
                     subnavslider.slideTo($('.nav-slider .swiper-wrapper li.active').index());
                 });
-            } 
+            }
 
         };
     </script>
