@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="assets/tagsinput/tagsinput.css" />
     <link rel="stylesheet" href="assets/lightgallery/lightgallery.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
-    <link rel="stylesheet" href="css/style.css?5" />
-    <title>老師會員專區│說文解章─解說你的文章</title>
+    <link rel="stylesheet" href="css/style.css?4" />
+    <title>學生會員專區│說文解章─解說你的文章</title>
 </head>
 
 <body>
@@ -79,12 +79,17 @@
                             <i class="fa fa-user"></i> 小桃子
                         </a>
                         <ul class="nav-dropdown">
-                            <li class="active"><a href="teacher-thesis.html">審批管理</a></li>
-                            <li><a href="teacher-income.html">我的收益</a></li>
-                            <li><a href="teacher-profile.html">個人檔案</a></li>
-                            <li><a href="teacher-message.html">通知中心</a></li>
+                            <li class="active"><a href="student-thesis.html">作文管理</a></li>
+                            <li><a href="student-keep.html">我的收藏</a></li>
+                            <li><a href="student-records.html">交易紀錄</a></li>
+                            <li><a href="student-profile.html">個人檔案</a></li>
+                            <li><a href="student-message.html">通知中心</a></li>
+                            <li><a href="student-topup.html">儲值中心</a></li>
                             <li><a href="index.html">登出</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-join">
+                        <a href="send.html">寫作送批</a></li>
                     </li>
                 </ul>
             </div>
@@ -109,27 +114,39 @@
                     <div class="swiper-container subnav-nav">
                         <ul class="swiper-wrapper section-nav">
 
-                            <li class="swiper-slide nav-item">
-                                <a class="nav-link" href="teacher-thesis.html" title="審批管理">
-                                    審批管理
-                                </a>
-                            </li>
-
                             <li class="swiper-slide nav-item active">
-                                <a class="nav-link" href="teacher-income.html" title="我的收益">
-                                    我的收益
+                                <a class="nav-link" href="student-thesis.html" title="作文管理">
+                                    作文管理
                                 </a>
                             </li>
 
                             <li class="swiper-slide nav-item">
-                                <a class="nav-link" href="teacher-profile.html" title="個人檔案">
+                                <a class="nav-link" href="student-keep.html" title="我的收藏">
+                                    我的收藏
+                                </a>
+                            </li>
+
+                            <li class="swiper-slide nav-item">
+                                <a class="nav-link" href="student-records.html" title="交易紀錄">
+                                    交易紀錄
+                                </a>
+                            </li>
+
+                            <li class="swiper-slide nav-item">
+                                <a class="nav-link" href="student-profile.html" title="個人檔案">
                                     個人檔案
                                 </a>
                             </li>
 
                             <li class="swiper-slide nav-item">
-                                <a class="nav-link" href="teacher-message.html" title="通知中心">
+                                <a class="nav-link" href="student-message.html" title="通知中心">
                                     通知中心
+                                </a>
+                            </li>
+
+                            <li class="swiper-slide nav-item">
+                                <a class="nav-link" href="student-topup.html" title="儲值中心">
+                                    儲值中心
                                 </a>
                             </li>
 
@@ -141,7 +158,7 @@
         </div>
 
         <div class="cont">
-            <div class="container">
+            <div class="container">               
 
                 <div class="search-wrap">
                     <div class="row">
@@ -149,11 +166,16 @@
                         <div class="col-md-4 col-lg-3">
                             <!--批改語言-->
                             <div class="form-group">
-                                <label for="transactionTime">交易時間</label>
+                                <label for="transactionTime">狀態</label>
                                 <select class="form-control bs-select" id="transactionTime">
-                                    <option value="最近一個月" selected>最近一個月</option>
-                                    <option value="最近半年">最近半年</option>
-                                    <option value="最近一年">最近一年</option>
+                                    <option value="none" selected="" disabled="">請選擇</option>
+                                    <option value="全部" selected>全部</option>
+                                    <option value="批改中">批改中</option>
+                                    <option value="待接單">待接單</option>
+                                    <option value="暫存">暫存</option>
+                                    <option value="無法接單">無法接單</option>
+                                    <option value="逾時退單">逾時退單</option>
+                                    <option value="批改完成">批改完成</option>
                                 </select>
                             </div>
                         </div>
@@ -173,9 +195,9 @@
                         </div>
 
                         <div class="col-md-3 col-lg-2">
-                            <button class="btn btn-online-dark btn-export" type="button">
-                                匯出報表
-                            </button>
+                            <a class="btn btn-online-dark btn-export" href="send.html">
+                                立即送批
+                            </a>
                         </div>
 
                     </div>
@@ -183,49 +205,152 @@
                 </div>
 
                 <div class="table-wrap">
-                    <table class="table table-striped table-hover table-rwd">
+                    <table class="table table-striped table-hover table-rwd tablesorter sticky" data-sortlist="[[0,0]]">
                         <thead>
                             <tr>
-                                <th>交易日期</th>
                                 <th>類型</th>
-                                <th>交易別</th>
-                                <th>交易內容</th>
-                                <th>送批學生</th>
-                                <th>點數</th>
+                                <th>文章標題</th>
+                                <th>批改老師</th>
+                                <th>送單時間</th>
+                                <th>狀態</th>
+                                <th>管理</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td data-label="交易日期">2022.08.03</td>
-                                <td data-label="類型">入帳</td>
-                                <td data-label="交易別">批改收益</td>
-                                <td data-label="交易內容">小桃子_小學_一般件_150點_4天內</td>
-                                <td data-label="送批學生">小桃子</td>
-                                <td data-label="點數"><span class="add">+1000</span></td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="文章標題">
+                                    <a href="waitReponse.html">我的未來不是夢</a>
+                                </td>
+                                <td data-label="批改老師">王一傳</td>
+                                <td data-label="送單時間">2022.08.03 (三) 16:30</td>
+                                <td data-label="狀態">批改中</td>
+                                <td data-label="管理">
+                                    <button class="btn btn-search" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </td>
                             </tr>
                             <tr>
-                                <td data-label="交易日期">2022.08.03</td>
-                                <td data-label="類型">入帳</td>
-                                <td data-label="交易別">批改收益</td>
-                                <td data-label="交易內容">小桃子_小學_一般件_150點_4天內</td>
-                                <td data-label="送批學生">小桃子</td>
-                                <td data-label="點數"><span class="add">+1000</span></td>
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="#">寒夜</a>
+                                </td>
+                                <td data-label="學生暱稱">葡萄</td>
+                                <td data-label="送批時間">2022.09.01 (四) 17:22</td>
+                                <td data-label="金額">150</td>
                             </tr>
                             <tr>
-                                <td data-label="交易日期">2022.08.03</td>
-                                <td data-label="類型">入帳</td>
-                                <td data-label="交易別">批改收益</td>
-                                <td data-label="交易內容">小桃子_小學_一般件_150點_4天內</td>
-                                <td data-label="送批學生">小桃子</td>
-                                <td data-label="點數"><span class="add">+1000</span></td>
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="waitReponse.html">老芋仔，我為你寫下</a>
+                                </td>
+                                <td data-label="學生暱稱">蘋果</td>
+                                <td data-label="送批時間">2022.09.23 (五) 11:40</td>
+                                <td data-label="金額">150</td>
                             </tr>
                             <tr>
-                                <td data-label="交易日期">2022.08.03</td>
-                                <td data-label="類型">入帳</td>
-                                <td data-label="交易別">批改收益</td>
-                                <td data-label="交易內容">小桃子_小學_一般件_150點_4天內</td>
-                                <td data-label="送批學生">小桃子</td>
-                                <td data-label="點數"><span class="mins">-1000</span></td>
+                                <td data-label="剩餘時間">2天 14時 12分</td>
+                                <td data-label="類型">急件</td>
+                                <td data-label="批改語言">英文</td>
+                                <td data-label="文章標題">
+                                    <a href="waitReponse.html">Goodbye, John</a>
+                                </td>
+                                <td data-label="學生暱稱">西瓜</td>
+                                <td data-label="送批時間">2022.11.13 (日) 01:11</td>
+                                <td data-label="金額">350</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="waitReponse.html">徐志摩穿越台灣之後</a>
+                                </td>
+                                <td data-label="學生暱稱">蘋果</td>
+                                <td data-label="送批時間">2022.09.23 (五) 11:40</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">2天 14時 12分</td>
+                                <td data-label="類型">急件</td>
+                                <td data-label="批改語言">英文</td>
+                                <td data-label="文章標題">
+                                    <a href="waitReponse.html">Fighting for or against Graffiti</a>
+                                </td>
+                                <td data-label="學生暱稱">西瓜</td>
+                                <td data-label="送批時間">2022.11.13 (日) 01:11</td>
+                                <td data-label="金額">350</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="waitReponse.html">再活一次，請多指教</a>
+                                </td>
+                                <td data-label="學生暱稱">蘋果</td>
+                                <td data-label="送批時間">2022.09.23 (五) 11:40</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">2天 14時 12分</td>
+                                <td data-label="類型">急件</td>
+                                <td data-label="批改語言">英文</td>
+                                <td data-label="文章標題">
+                                    <a href="waitReponse.html">Built for Freedom：tde Statue of Liberty</a>
+                                </td>
+                                <td data-label="學生暱稱">西瓜</td>
+                                <td data-label="送批時間">2022.11.13 (日) 01:11</td>
+                                <td data-label="金額">350</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="waitReponse.html">謝謝你離開的時候，沒有說謊</a>
+                                </td>
+                                <td data-label="學生暱稱">蘋果</td>
+                                <td data-label="送批時間">2022.09.23 (五) 11:40</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">2天 14時 12分</td>
+                                <td data-label="類型">急件</td>
+                                <td data-label="批改語言">英文</td>
+                                <td data-label="文章標題">
+                                    <a href="waitReponse.html">tde Life of a Plastic Bag</a>
+                                </td>
+                                <td data-label="學生暱稱">西瓜</td>
+                                <td data-label="送批時間">2022.11.13 (日) 01:11</td>
+                                <td data-label="金額">350</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">1天 14時 12分</td>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="waitReponse.html">只告訴魚</a>
+                                </td>
+                                <td data-label="學生暱稱">蘋果</td>
+                                <td data-label="送批時間">2022.09.23 (五) 11:40</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr>
+                                <td data-label="剩餘時間">2天 14時 12分</td>
+                                <td data-label="類型">急件</td>
+                                <td data-label="批改語言">英文</td>
+                                <td data-label="文章標題">
+                                    <a href="waitReponse.html">tde White Envelope</a>
+                                </td>
+                                <td data-label="學生暱稱">西瓜</td>
+                                <td data-label="送批時間">2022.11.13 (日) 01:11</td>
+                                <td data-label="金額">350</td>
                             </tr>
                         </tbody>
                     </table>
