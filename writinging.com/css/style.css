@@ -2468,6 +2468,7 @@ main>div>.container {
     padding: .75rem 0;
     font-size: 1.2rem;
 }
+.form-section .order-info .info,
 .form-section .order-info .number {
     color: var(--mainColor);
 }
