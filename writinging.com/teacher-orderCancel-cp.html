@@ -145,7 +145,7 @@
 
                     <div class="form-section">
                         <div class="order-info">
-                            <div class="info-name">剩餘時間：<span class="time">2天 15分 16秒</span></div>
+                            <div class="info-name">退單時間：<span class="info">2022.11.12 19:05:22</span></div>
                             <div class="info-name">批改單號：<span class="number">AED00001</span></div>
                         </div>
                     </div>
@@ -180,6 +180,14 @@
                                     <div class="col-md-9">
                                         <input type="text" readonly class="form-control-plaintext" id="orderFinishTime"
                                             value="2022.11.12 14:11">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="orderSubmitTime" class="col-md-3 col-form-label">退單時間</label>
+                                    <div class="col-md-9">
+                                        <input type="text" readonly class="form-control-plaintext" id="orderSubmitTime"
+                                            value="2022.11.12 19:05">
                                     </div>
                                 </div>
 
@@ -291,75 +299,12 @@
 
                         </div>
                     </div>
-
-                    <div class="form-section">
-                        <div class="row">
-
-                            <div class="col-12 col-md-3">
-                                <h2 class="section-title">接單動作</h2>
-                            </div>
-
-                            <div class="col-12 col-md-9">
-                                <div class="form-row">
-
-                                    <div class="col-md-6">
-
-                                        <fieldset class="form-group">
-                                            <legend class="col-form-label" for="select-opinion">是否接單 <span
-                                                    class="text-danger">*</span></legend>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="select-opinion" id="yes" value="yes" checked>
-                                                <label class="form-check-label" for="yes">接單</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="select-opinion" id="cancel" value="cancel">
-                                                <label class="form-check-label" for="cancel">退單</label>
-                                            </div>
-                                        </fieldset>
-
-                                    </div>
-
-                                    <div class="col-md-12">
-
-                                        <div class="form-group" data-ciaoyu-toggle="cancel">
-
-                                            <label for="reason">退單說明<span class="text-danger">*</span></label>
-                                            <textarea class="form-control" id="reason" rows="6"></textarea>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <div class="alert notice-end">
-                            <p class="text-center">※本網站就台端之相關個人資料之蒐集、處理或利用，均依照有關法令規定辦理，另台端之個人資料相關權益亦可參閱本網站之個人資料保護法專區。
-                            </p>
-                        </div>
-                    </div>
+                    
 
                     <div class="form-actions">
-                        <a href="teacher-thesis.html" class="btn btn-outline-dark btn-back">
+                        <a href="teacher-orderCancel.html" class="btn btn-outline-dark btn-back">
                             返回列表
                         </a>
-                        <button type="button" class="btn btn-reset">
-                            重新填寫
-                        </button>
-                        <button type="button" class="btn btn-save">
-                            暫存
-                        </button>
-                        <button type="button" class="btn btn-submit">
-                            確認送出
-                        </button>
                     </div>
 
                 </div>

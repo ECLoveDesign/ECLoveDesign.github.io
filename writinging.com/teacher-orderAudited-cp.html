@@ -145,7 +145,7 @@
 
                     <div class="form-section">
                         <div class="order-info">
-                            <div class="info-name">剩餘時間：<span class="time">2天 15分 16秒</span></div>
+                            <div class="info-name">審批時間：<span class="info">2022.11.12 19:05:22</span></div>
                             <div class="info-name">批改單號：<span class="number">AED00001</span></div>
                         </div>
                     </div>
@@ -180,6 +180,14 @@
                                     <div class="col-md-9">
                                         <input type="text" readonly class="form-control-plaintext" id="orderFinishTime"
                                             value="2022.11.12 14:11">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="orderSubmitTime" class="col-md-3 col-form-label">審批時間</label>
+                                    <div class="col-md-9">
+                                        <input type="text" readonly class="form-control-plaintext" id="orderSubmitTime"
+                                            value="2022.11.12 19:05">
                                     </div>
                                 </div>
 
@@ -296,42 +304,64 @@
                         <div class="row">
 
                             <div class="col-12 col-md-3">
-                                <h2 class="section-title">接單動作</h2>
+                                <h2 class="section-title">批改結果</h2>
                             </div>
 
                             <div class="col-12 col-md-9">
-                                <div class="form-row">
 
-                                    <div class="col-md-6">
-
-                                        <fieldset class="form-group">
-                                            <legend class="col-form-label" for="select-opinion">是否接單 <span
-                                                    class="text-danger">*</span></legend>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="select-opinion" id="yes" value="yes" checked>
-                                                <label class="form-check-label" for="yes">接單</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="select-opinion" id="cancel" value="cancel">
-                                                <label class="form-check-label" for="cancel">退單</label>
-                                            </div>
-                                        </fieldset>
-
-                                    </div>
-
-                                    <div class="col-md-12">
-
-                                        <div class="form-group" data-ciaoyu-toggle="cancel">
-
-                                            <label for="reason">退單說明<span class="text-danger">*</span></label>
-                                            <textarea class="form-control" id="reason" rows="6"></textarea>
+                                <div class="form-group row">
+                                    <label for="thesisFeedback" class="col-md-2 col-form-label">批改回覆</label>
+                                    <div class="col-md-10">
+                                        <div class="form-control-plaintext" id="thesisFeedback">
+                                            <p>
+                                                關於地球的記憶<br>
+                                                被文字固禁在課本裡<br>
+                                                我們的笔尖游走在山脈和海洋<br>
+                                                翻譯每片花瓣的嬌嫩和露水的清新<br>
+                                                所有的言語 答案<br>
+                                                都靜放在我們的課本裡<br>
+                                                等待我們翻起這一切的序幕(節錄自薛憶婷〈我們的課本>)<br>
+                                                以上這首詩,從課本啟動天馬行空的遐想,瞥見知識豐富的樣貌。科學顽童費受(RichardP.Feynman)曾說觀察轉動的餐盤,讓他得到很大的啟發,領略了興之所至的乐趣。物理課可讓我們發現萬物運行的迷人,生物課帶领我們進入細胞核遊歷,外語課讓我
+                                                們聽見世界不同的文化。國文課堂上採菊東離下,悠然見南山」或「輕羅小扇撲流螢」詩中情境也往往能讓人神遊於現實之外。中學教育的課程內容,是否曾經點燃你對知識的熱情?打開課本時,不知能否如《我們的課本)所述,揭開知識想像的序幕。<br>
+                                                請回答下列問題:<br>
+                                                如上文所述,若能從不同角度切入課本,進入知識的想像,或許可以讓課本帶領我們<br>
+                                                經歷驚奇的旅程。請「當我打開課本」為題,寫一篇文章,敘述任一學科課本對你的意義,書寫你探索課本內容、知識的經驗與體會。(占25分)
+                                            </p>
                                         </div>
-
                                     </div>
+                                </div>
 
+                                <div class="form-group row">
+                                    <label for="fileFeedback" class="col-md-2 col-form-label">批改檔案</label>
+                                    <div class="col-md-10">
+                                        <div class="form-control-plaintext" id="fileFeedback">
+                                            <a href="#">批改檔案1.pdf</a>
+                                            <a href="#">批改檔案2.pdf</a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="recordFeedback" class="col-md-2 col-form-label">錄音解說</label>
+                                    <div class="col-md-10">
+                                        <div class="form-control-plaintext" id="recordFeedback">
+                                            <a href="#">錄音解說1.pdf</a>
+                                            <a href="#">錄音解說2.pdf</a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="otherFeedbackFile" class="col-md-2 col-form-label">附加檔案</label>
+                                    <div class="col-md-10">
+                                        <div class="form-control-plaintext" id="otherFeedbackFile">
+                                            <a href="#">附加檔案1.pdf</a>
+                                            <a href="#">附加檔案2.pdf</a>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
 
                             </div>
@@ -340,26 +370,10 @@
                         </div>
                     </div>
 
-                    <div class="form-section">
-                        <div class="alert notice-end">
-                            <p class="text-center">※本網站就台端之相關個人資料之蒐集、處理或利用，均依照有關法令規定辦理，另台端之個人資料相關權益亦可參閱本網站之個人資料保護法專區。
-                            </p>
-                        </div>
-                    </div>
-
                     <div class="form-actions">
-                        <a href="teacher-thesis.html" class="btn btn-outline-dark btn-back">
+                        <a href="teacher-orderAudited.html" class="btn btn-outline-dark btn-back">
                             返回列表
                         </a>
-                        <button type="button" class="btn btn-reset">
-                            重新填寫
-                        </button>
-                        <button type="button" class="btn btn-save">
-                            暫存
-                        </button>
-                        <button type="button" class="btn btn-submit">
-                            確認送出
-                        </button>
                     </div>
 
                 </div>

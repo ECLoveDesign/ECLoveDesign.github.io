@@ -296,42 +296,68 @@
                         <div class="row">
 
                             <div class="col-12 col-md-3">
-                                <h2 class="section-title">接單動作</h2>
+                                <h2 class="section-title">批改結果</h2>
                             </div>
 
                             <div class="col-12 col-md-9">
-                                <div class="form-row">
 
-                                    <div class="col-md-6">
-
-                                        <fieldset class="form-group">
-                                            <legend class="col-form-label" for="select-opinion">是否接單 <span
-                                                    class="text-danger">*</span></legend>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="select-opinion" id="yes" value="yes" checked>
-                                                <label class="form-check-label" for="yes">接單</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="select-opinion" id="cancel" value="cancel">
-                                                <label class="form-check-label" for="cancel">退單</label>
-                                            </div>
-                                        </fieldset>
-
+                                <div class="form-group row">
+                                    <label for="thesisFeedback" class="col-md-2 col-form-label">批改回覆</label>
+                                    <div class="col-md-10">
+                                        <div class="ckeditor" id="thesisFeedback" rows="1"></div>
                                     </div>
+                                </div>
 
-                                    <div class="col-md-12">
-
-                                        <div class="form-group" data-ciaoyu-toggle="cancel">
-
-                                            <label for="reason">退單說明<span class="text-danger">*</span></label>
-                                            <textarea class="form-control" id="reason" rows="6"></textarea>
+                                <div class="form-group row">
+                                    <label for="fileFeedback" class="col-md-2 col-form-label">批改檔案</label>
+                                    <div class="col-md-10">
+                                        <div class="input-upload">
+                                            <input type="file" id="fileFeedback">
+                                            <span>請選擇檔案</span>
                                         </div>
-
+                                        
+                                        <div class="input-upload">
+                                            <input type="file" id="fileFeedback2">
+                                            <span>請選擇檔案</span>
+                                        </div>
+                                        <small class="text-muted teacher-notice">限定 doc 檔</small>
                                     </div>
+                                    
+                                </div>
 
+                                <div class="form-group row">
+                                    <label for="recordFeedback" class="col-md-2 col-form-label">錄音解說</label>
+                                    <div class="col-md-10">
+                                        <div class="input-upload">
+                                            <input type="file" id="recordFeedback">
+                                            <span>請選擇檔案</span>
+                                        </div>
+                                        
+                                        <div class="input-upload">
+                                            <input type="file" id="recordFeedback2">
+                                            <span>請選擇檔案</span>
+                                        </div>
+                                        <small class="text-muted teacher-notice">限定 mp3 檔</small>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="otherFeedbackFile" class="col-md-2 col-form-label">附加檔案</label>
+                                    <div class="col-md-10">
+                                        <div class="input-upload">
+                                            <input type="file" id="otherFeedbackFile">
+                                            <span>請選擇檔案</span>
+                                        </div>
+                                        
+                                        <div class="input-upload">
+                                            <input type="file" id="otherFeedbackFile2">
+                                            <span>請選擇檔案</span>
+                                        </div>
+                                        
+                                        <small class="text-muted teacher-notice">限定 doc、pdf、ptt、jpg、png 檔案</small>
+                                    </div>
+                                    
                                 </div>
 
                             </div>
@@ -348,7 +374,7 @@
                     </div>
 
                     <div class="form-actions">
-                        <a href="teacher-thesis.html" class="btn btn-outline-dark btn-back">
+                        <a href="teacher-orderReview.html" class="btn btn-outline-dark btn-back">
                             返回列表
                         </a>
                         <button type="button" class="btn btn-reset">

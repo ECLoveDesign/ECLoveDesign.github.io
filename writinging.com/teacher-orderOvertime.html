@@ -19,14 +19,17 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
     <link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css" /> -->
+
+    <link rel="stylesheet" href="https://www.npac-ntt.org/dispPageBox/npac-ntt/assets/swiper/css/swiper.css" />
+
     <link rel="stylesheet" href="assets/bootstrap-multiselect/css/bootstrap-multiselect.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-tagsinput/bootstrap-tagsinput.css" />
     <link rel="stylesheet" href="assets/tagsinput/tagsinput.css" />
     <link rel="stylesheet" href="assets/lightgallery/lightgallery.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
-    <link rel="stylesheet" href="css/style.css?5" />
+    <link rel="stylesheet" href="css/style.css?4" />
     <title>老師會員專區│說文解章─解說你的文章</title>
 </head>
 
@@ -47,7 +50,7 @@
                     <li>
                         <a href="javascript:void(0)">嚴選良師</a>
                         <ul class="nav-dropdown">
-                            <li class="active"><a href="teacher-tw.html">中文嚴選良師</a></li>
+                            <li><a href="teacher-tw.html">中文嚴選良師</a></li>
                             <li><a href="teacher-en.html">英文嚴選良師</a></li>
                         </ul>
                     </li>
@@ -84,7 +87,6 @@
                         </ul>
                     </li>
                 </ul>
-
             </div>
         </nav>
     </header>
@@ -138,253 +140,102 @@
             </div>
         </div>
 
-        <div class="cont sendcontact">
+        <div class="cont">
             <div class="container">
 
-                <div class="form">
+                <div class="pagenav">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="teacher-thesis.html">待接單<span>(3)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="teacher-orderReview.html">審批中</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="teacher-orderAudited.html">已審批</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="teacher-orderOvertime.html">逾時</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="teacher-orderCancel.html">退單</a>
+                        </li>
+                    </ul>
+                </div>
 
-                    <div class="form-section">
-                        <div class="order-info">
-                            <div class="info-name">剩餘時間：<span class="time">2天 15分 16秒</span></div>
-                            <div class="info-name">批改單號：<span class="number">AED00001</span></div>
+                <div class="search-wrap">
+                    <div class="row">
+
+                        <div class="col-md-5 col-lg-3">
+                            <!--批改語言-->
+                            <div class="form-group">
+                                <label for="language">批改語言</label>
+                                <select class="form-control bs-select" id="language" title="請選擇">
+                                    <option value="none" selected="" disabled="">請選擇</option>
+                                    <option value="中文">中文</option>
+                                    <option value="英文">英文</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-section">
-                        <div class="row">
-
-                            <div class="col-12 col-md-3">
-                                <h2 class="section-title">案件資訊</h2>
+                        <div class="col-md-5 col-lg-3">
+                            <!--關鍵字-->
+                            <div class="form-group">
+                                <label class="label-control" for="keywords">關鍵字</label>
+                                <input type="text" class="form-control" placeholder="請輸入關鍵字">
                             </div>
-
-                            <div class="col-12 col-md-9">
-
-                                <div class="form-group row">
-                                    <label for="studentName" class="col-md-3 col-form-label">學生暱稱</label>
-                                    <div class="col-md-9">
-                                        <input type="text" readonly class="form-control-plaintext" id="studentName"
-                                            value="小桃子">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="orderAccptedTime" class="col-md-3 col-form-label">接單時間</label>
-                                    <div class="col-md-9">
-                                        <input type="text" readonly class="form-control-plaintext" id="orderAccptedTime"
-                                            value="2022.11.8 14:11">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="orderFinishTime" class="col-md-3 col-form-label">交單期限</label>
-                                    <div class="col-md-9">
-                                        <input type="text" readonly class="form-control-plaintext" id="orderFinishTime"
-                                            value="2022.11.12 14:11">
-                                    </div>
-                                </div>
-
-                            </div>
-
-
                         </div>
-                    </div>
 
-                    <div class="form-section">
-                        <div class="row">
-
-                            <div class="col-12 col-md-3">
-                                <h2 class="section-title">送批屬性</h2>
-                            </div>
-
-                            <div class="col-12 col-md-9">
-
-                                <div class="form-group row">
-                                    <label for="language" class="col-md-3 col-form-label">批改語言</label>
-                                    <div class="col-md-9">
-                                        <input type="text" readonly class="form-control-plaintext" id="language"
-                                            value="中文">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="level" class="col-md-3 col-form-label">類別等級</label>
-                                    <div class="col-md-9">
-                                        <input type="text" readonly class="form-control-plaintext" id="level"
-                                            value="小學">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="orderFinishTime" class="col-md-3 col-form-label">支付點數</label>
-                                    <div class="col-md-9">
-                                        <input type="text" readonly class="form-control-plaintext" id="orderFinishTime"
-                                            value="王一傳老師_一般件_150點_4天內">
-                                    </div>
-                                </div>
-
-                            </div>
-
-
+                        <div class="col-md-2 col-lg-6">
+                            <button class="btn btn-search" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
                         </div>
+
                     </div>
 
-                    <div class="form-section">
-                        <div class="row">
+                </div>
 
-                            <div class="col-12 col-md-3">
-                                <h2 class="section-title">送批內容</h2>
-                            </div>
+                <div class="table-wrap">
+                    <table class="table table-striped table-hover table-rwd tablesorter sticky" data-sortlist="[[0,0]]">
+                        <thead>
+                            <tr>
+                                <th>類型</th>
+                                <th>批改語言</th>
+                                <th>文章標題</th>
+                                <th>學生暱稱</th>
+                                <th>送批時間</th>
+                                <th>逾期時間</th>
+                                <th>金額</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="teacher-orderOvertime-cp.html">我的未來不是夢</a>
+                                </td>
+                                <td data-label="學生暱稱">小桃子</td>
+                                <td data-label="送批時間">2022.08.03 (三) 16:30</td>
+                                <td data-label="逾期時間">2022.08.03 (三) 23:49</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                            <tr>
+                                <td data-label="類型">一般件</td>
+                                <td data-label="批改語言">中文</td>
+                                <td data-label="文章標題">
+                                    <a href="teacher-orderOvertime-cp.html">寒夜</a>
+                                </td>
+                                <td data-label="學生暱稱">葡萄</td>
+                                <td data-label="送批時間">2022.09.01 (四) 17:22</td>
+                                <td data-label="逾期時間">2022.08.03 (三) 23:49</td>
+                                <td data-label="金額">150</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                            <div class="col-12 col-md-9">
-
-                                <div class="form-group row">
-                                    <label for="topicQuestion" class="col-md-3 col-form-label">作文題目與問題描述</label>
-                                    <div class="col-md-9">
-                                        <div class="form-control-plaintext" id="topicQuestion">
-                                            <p>
-                                                關於地球的記憶<br>
-                                                被文字固禁在課本裡<br>
-                                                我們的笔尖游走在山脈和海洋<br>
-                                                翻譯每片花瓣的嬌嫩和露水的清新<br>
-                                                所有的言語 答案<br>
-                                                都靜放在我們的課本裡<br>
-                                                等待我們翻起這一切的序幕(節錄自薛憶婷〈我們的課本>)<br>
-                                                以上這首詩,從課本啟動天馬行空的遐想,瞥見知識豐富的樣貌。科學顽童費受(RichardP.Feynman)曾說觀察轉動的餐盤,讓他得到很大的啟發,領略了興之所至的乐趣。物理課可讓我們發現萬物運行的迷人,生物課帶领我們進入細胞核遊歷,外語課讓我
-                                                們聽見世界不同的文化。國文課堂上採菊東離下,悠然見南山」或「輕羅小扇撲流螢」詩中情境也往往能讓人神遊於現實之外。中學教育的課程內容,是否曾經點燃你對知識的熱情?打開課本時,不知能否如《我們的課本)所述,揭開知識想像的序幕。<br>
-                                                請回答下列問題:<br>
-                                                如上文所述,若能從不同角度切入課本,進入知識的想像,或許可以讓課本帶領我們<br>
-                                                經歷驚奇的旅程。請「當我打開課本」為題,寫一篇文章,敘述任一學科課本對你的意義,書寫你探索課本內容、知識的經驗與體會。(占25分)
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="otherQuestion" class="col-md-2 col-form-label">附加問題</label>
-                                    <div class="col-md-10">
-                                        <input type="text" readonly class="form-control-plaintext" id="otherQuestion"
-                                            value="-">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="mainThesis" class="col-md-2 col-form-label">作文內容</label>
-                                    <div class="col-md-10">
-                                        <div class="form-control-plaintext" id="mainThesis">
-                                            <a href="#">王花花作文-20221019.doc</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="otherSource" class="col-md-2 col-form-label">附加檔案</label>
-                                    <div class="col-md-10">
-                                        <div class="form-control-plaintext" id="otherSource">
-                                            <a href="#">參考1.pdf</a>
-                                            <a href="#">參考2.pdf</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <div class="row">
-
-                            <div class="col-12 col-md-3">
-                                <h2 class="section-title">批改結果</h2>
-                            </div>
-
-                            <div class="col-12 col-md-9">
-
-                                <div class="form-group row">
-                                    <label for="thesisFeedback" class="col-md-2 col-form-label">批改回覆</label>
-                                    <div class="col-md-10">
-                                        <div class="ckeditor" id="thesisFeedback" rows="1"></div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="fileFeedback" class="col-md-2 col-form-label">批改檔案</label>
-                                    <div class="col-md-10">
-                                        <div class="input-upload">
-                                            <input type="file" id="fileFeedback">
-                                            <span>請選擇檔案</span>
-                                        </div>
-                                        
-                                        <div class="input-upload">
-                                            <input type="file" id="fileFeedback2">
-                                            <span>請選擇檔案</span>
-                                        </div>
-                                        <small class="text-muted teacher-notice">限定 doc 檔</small>
-                                    </div>
-                                    
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="recordFeedback" class="col-md-2 col-form-label">錄音解說</label>
-                                    <div class="col-md-10">
-                                        <div class="input-upload">
-                                            <input type="file" id="recordFeedback">
-                                            <span>請選擇檔案</span>
-                                        </div>
-                                        
-                                        <div class="input-upload">
-                                            <input type="file" id="recordFeedback2">
-                                            <span>請選擇檔案</span>
-                                        </div>
-                                        <small class="text-muted teacher-notice">限定 mp3 檔</small>
-                                    </div>
-                                    
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="otherFeedbackFile" class="col-md-2 col-form-label">附加檔案</label>
-                                    <div class="col-md-10">
-                                        <div class="input-upload">
-                                            <input type="file" id="otherFeedbackFile">
-                                            <span>請選擇檔案</span>
-                                        </div>
-                                        
-                                        <div class="input-upload">
-                                            <input type="file" id="otherFeedbackFile2">
-                                            <span>請選擇檔案</span>
-                                        </div>
-                                        
-                                        <small class="text-muted teacher-notice">限定 doc、pdf、ptt、jpg、png 檔案</small>
-                                    </div>
-                                    
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <div class="alert notice-end">
-                            <p class="text-center">※本網站就台端之相關個人資料之蒐集、處理或利用，均依照有關法令規定辦理，另台端之個人資料相關權益亦可參閱本網站之個人資料保護法專區。
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" class="btn btn-reset">
-                            重新填寫
-                        </button>
-                        <button type="button" class="btn btn-save">
-                            暫存
-                        </button>
-                        <button type="button" class="btn btn-submit">
-                            確認送出
-                        </button>
-                    </div>
-
+                    <ul class="pagination twbsPagination"></ul>
                 </div>
 
             </div>
@@ -919,6 +770,7 @@
     <script src='assets/bootstrap-multiselect/js/bootstrap-multiselect.min.js'></script>
     <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
     <script src='assets/bootstrap-multiselect/js/i18n/defaults-zh_TW.js'></script>
+    <script src='assets/tablesorter/jquery.tablesorter.combined.min.js'></script>
     <script src='assets/bootstrap-tagsinput/bootstrap-tagsinput.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.9.0/jquery.validate.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js'></script>
@@ -927,7 +779,7 @@
     <script src="assets/ckeditor/ckeditor.js"></script>
     <script src="js/megamenu.js"></script>
     <script src="js/ciaoyuToggle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js?1"></script>
 
     <script>
         $(".btn-follow").click(function () {
@@ -942,6 +794,55 @@
 
         // $("#teacher-select").prop('disaled', true);
         // $("[data-role='tagsinput']").prop('disaled', true);
+
+
+        // subnav-wrap
+        if ($('.nav-slider').length) {
+
+            var w = window.innerWidth;
+            if (w < 960) {
+                $('.section-nav').clone().appendTo("#navCollapse");
+                var subnavslider = new Swiper('.swiper-container.subnav-nav', {
+
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    paginationClickable: true,
+                    // spaceBetween: 30,
+                    freeMode: true
+                    // paginationClickable: true,
+                    // centeredSlides: true,
+                    slidesPerView: 4,
+                    // // spaceBetween: 30,
+                    // breakpoints: {
+                    //     375: {
+                    //         slidesPerView: 2,
+                    //         // spaceBetween: 10
+                    //     },
+                    //     480: {
+                    //         slidesPerView: 2,
+                    //         //spaceBetween: 40
+                    //         // spaceBetween: 10
+                    //     },
+                    //     640: {
+                    //         slidesPerView: 2,
+                    //         // spaceBetween: 20
+                    //     },
+                    //     1024: {
+                    //         slidesPerView: 4,
+                    //         // spaceBetween: 10
+                    //     }
+
+                    // },
+                });
+
+                subnavslider.slideTo($('.nav-slider .swiper-wrapper li.active').index());
+
+                $(window).on('scroll', function () {
+                    subnavslider.slideTo($('.nav-slider .swiper-wrapper li.active').index());
+                });
+            }
+
+        };
     </script>
 </body>
 
