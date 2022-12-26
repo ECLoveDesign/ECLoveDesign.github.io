@@ -13,6 +13,7 @@
     --boxShadow: 3px 13px 27px rgb(0, 0, 0, , 1.5);
     --mainColor: #213162;
     --subColor: #E6F5FF;
+    --skyblue: #29ABE2;
 }
 
 * {
@@ -506,12 +507,36 @@ header .navigation {
         text-align: center;
     }
 
-    .nav-menu>li>.nav-dropdown {
+    .nav-menus-wrapper.nav-menus-wrapper-right>li>.nav-dropdown {
         border-top: none;
         box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 13px;
         right: -2rem !important;
         margin-top: -5px;
     }
+    .nav-menus-wrapper.nav-menus-wrapper-right>.nav-menu.align-to-right>li>.nav-dropdown {
+        right: .5rem !important;
+        min-width: 120px;
+        margin-top: 0.5rem;
+        box-shadow: rgba(35, 77, 119, 0.5) 0px 0px 15px;
+    }
+    
+    .nav-menus-wrapper.nav-menus-wrapper-right>.nav-menu.align-to-right>li>.nav-dropdown::before {
+        content: "";
+        border: 10px solid transparent;
+        border-bottom-color: white;
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        margin-left: -10px;
+    }
+
+    .nav-menus-wrapper.nav-menus-wrapper-right>.nav-menu.align-to-right>li>.nav-dropdown>li.active>a, 
+    .nav-menus-wrapper.nav-menus-wrapper-right>.nav-menu.align-to-right>li>.nav-dropdown>li>a:hover, 
+    .nav-menus-wrapper.nav-menus-wrapper-right>.nav-menu.align-to-right>li>.nav-dropdown>li>a:focus {
+        color: #fff;
+        background: var(--skyblue);
+    }
+
 }
 
 @media (max-width:1366px) {
@@ -2436,6 +2461,33 @@ main>div>.container {
     padding: 0;
 }
 
+.form-section .order-info {
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .75rem 0;
+    font-size: 1.2rem;
+}
+.form-section .order-info .number {
+    color: var(--mainColor);
+}
+.form-section .order-info .time {
+    color: red;
+}
+.form-section .form-group.row {
+    padding-top: 1.2rem;
+}
+.form-section .form-group.row .col-form-label,
+.form-section .form-group.row .form-control-plaintext {
+    font-size: 1.2rem;
+}
+.form-section .form-group.row:last-child {
+    padding-bottom: 1.2rem;
+}
+
+.form-section .form-group.row+.form-group.row {
+    border-top: #CCC dashed 1px;
+}
 .notice-end {
     max-width: 70%;
     margin: 2rem auto;
@@ -2446,6 +2498,9 @@ main>div>.container {
     margin: 0;
 }
 
+.form-control-plaintext a+a::before {
+    content: '、';
+}
 .form-actions {
     margin: 1rem 0 2rem;
     display: flex;
@@ -2651,6 +2706,9 @@ main>div>.container {
     background-color: #e9ecef;
     border-left: inherit;
     border-radius: 0 0.25rem 0.25rem 0;
+}
+.input-upload+.input-upload {
+    margin-top: 1rem;
 }
 
 /* bootstrap-select */
