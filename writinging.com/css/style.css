@@ -2444,10 +2444,10 @@ main>div>.container {
     z-index: 0;
 }
 
-.sendcontact {
+.form-wrap {
     padding-bottom: 4rem;
 }
-.sendcontact .form {
+.form-wrap .form {
     padding: 4rem 10rem;
     margin-bottom: -3rem;
 }
@@ -2527,7 +2527,7 @@ main>div>.container {
 }
 
 @media (max-width:1366px) {
-    .sendcontact .form {
+    .form-wrap .form {
         padding: 4rem 6rem;
     }
 
@@ -2543,18 +2543,18 @@ main>div>.container {
 }
 
 @media (max-width:1199px) {
-    .sendcontact .form {
+    .form-wrap .form {
         padding: 3rem 6rem;
     }
 }
 
 @media (max-width:1024px) {
-    .sendcontact {
+    .form-wrap {
         padding-bottom: 2rem;
         padding-top: 2rem;
     }
 
-    .sendcontact .form {
+    .form-wrap .form {
         margin: 0;
         padding: 2rem;
     }
@@ -2564,7 +2564,7 @@ main>div>.container {
 }
 
 @media (max-width:991px) {
-    .sendcontact .form {
+    .form-wrap .form {
         padding: 2rem 4rem;
     }
 }
@@ -2578,7 +2578,7 @@ main>div>.container {
         margin-top: 1rem;
     }
 
-    .sendcontact .form {
+    .form-wrap .form {
         padding: 2rem;
     }
 
@@ -2608,7 +2608,7 @@ main>div>.container {
         margin-left: 0;
     }
 
-    .sendcontact .form {
+    .form-wrap .form {
         padding: 1rem;
     }
 }
@@ -2635,7 +2635,7 @@ main>div>.container {
         border-radius: 0.25rem !important;
     }
 
-    .sendcontact {
+    .form-wrap {
         padding-bottom: 1rem;
         padding-top: 1rem;
     }
