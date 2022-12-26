@@ -507,7 +507,7 @@ header .navigation {
         text-align: center;
     }
 
-    .nav-menus-wrapper.nav-menus-wrapper-right>li>.nav-dropdown {
+    .nav-menu>li>.nav-dropdown {
         border-top: none;
         box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 13px;
         right: -2rem !important;
