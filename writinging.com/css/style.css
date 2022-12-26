@@ -2587,6 +2587,10 @@ main>div>.container {
     .cont .container>*+* {
         margin-top: 1rem;
     }
+    .form-section .order-info {
+        display: block;    
+        padding: 0;
+    }
 }
 
 @media (max-width:420px) {
