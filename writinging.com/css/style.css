@@ -2452,6 +2452,7 @@ main>div>.container {
     margin-bottom: -3rem;
 }
 
+.form-section.hasBorder,
 .form-section:not(:first-child) {
     border-top: #B3B3B3 solid 2px;
     padding-top: 1rem;
@@ -3235,6 +3236,9 @@ main>div>.container {
 }
 
 /* pagenav */
+.innerCont .pagenav {
+    border-bottom: #E6E6E6 solid 1px;
+}
 .pagenav .nav {
     padding: 0 1.75rem;
 }
