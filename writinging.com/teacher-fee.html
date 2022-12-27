@@ -150,10 +150,10 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="teacher-profile.html">基本資料</a>
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="teacher-intro.html">老師介紹</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="teacher-fee.html">收費項目</a>
                             </li>
                             <li class="nav-item">
@@ -175,82 +175,56 @@
 
                         <div class="form">
 
+                            <ul class="nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="teacher-fee.html">中文</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="teacher-fee-en.html">英文</a>
+                                </li>
+                            </ul>
+
                             <div class="form-section hasBorder">
                                 <div class="row">
 
                                     <div class="col-12 col-md-3">
-                                        <h2 class="section-title">老師介紹</h2>
+                                        <h2 class="section-title">國小</h2>
                                     </div>
 
                                     <div class="col-12 col-md-9">
 
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="teacherName">老師名稱</label>
-                                            <div class="col-md-9">
-                                                <input type="text" id="teacherName" class="form-control"
-                                                    placeholder="請輸入老師名稱" value="陳灝">
-                                            </div>
-                                        </div>
 
                                         <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="currentPassword">大頭照</label>
+                                            <label class="col-md-3 col-form-label" for="elementarySchoolNormal">【一般件】</label>
                                             <div class="col-md-9">
-                                                <div class="avatar-upload">
-                                                    <div class="avatar-edit">
-                                                        <input type='file' id="imageUpload"
-                                                            accept=".png, .jpg, .jpeg" />
-                                                        <label for="imageUpload"></label>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入需支付點數"
+                                                            id="elementarySchoolNormal" value="250">
                                                     </div>
-                                                    <div class="avatar-preview">
-                                                        <div class="imagePreview"
-                                                            style="background-image: url(images/img-teacher-cp.jpg);">
-                                                        </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入批改天數"
+                                                            id="elementarySchoolNormal2" value="5">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="language" class="col-md-3 col-form-label">批改語言</label>
+                                            <label class="col-md-3 col-form-label" for="elementarySchoolFast">【急件】</label>
                                             <div class="col-md-9">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="language" id="languageTW" value="driver-A">
-                                                    <label class="form-check-label" for="languageTW">
-                                                        中文
-                                                    </label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="language" id="languageEN" value="driver-B">
-                                                    <label class="form-check-label" for="languageEN">
-                                                        英文
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="experience">經歷</label>
-                                            <div class="col-md-9">
-                                                <textarea class="form-control ckeditor" id="experience" rows="1">
-                                                    <p>任教科目：國文科。<br>
-                                                    國立政治大學中文所碩士。<br>
-                                                    現任台北李鋒文教補習班、豐原名仁補習班、士林奇諺補習班老師。<br>
-                                                    強調從生活中理解國文，力求國文不靠背：<br>
-                                                    ★ 打通繁瑣的國學知識，學習不再艱澀枯燥。<br>
-                                                    ★ 與108新課綱結合，重新建構跨領域學習素養能力。<br>
-                                                    卓越教學經驗：<br>
-                                                    ★ 曾任三民輔考補習班、台北李鋒文教補習班、豐原名仁補習班、士林奇諺補習班、竹北北聯補習班、台北第一志願補習班。</p>
-                                                </textarea>
-                                                <small class="text-muted teacher-notice">限 500 字以內</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="introduce">介紹</label>
-                                            <div class="col-md-9">
-                                                <textarea class="form-control ckeditor" id="introduce" rows="1">
-                                                    <p>秉持「國文不靠背」的教學原則，強調從生活中理解國文，並主打「有趣、有料、有效」的教學內容，幫助同學建立有系統的文學視野。幽默風趣的授課風格，使國文科不再生硬，轉為歡樂的課堂。</p>
-                                                </textarea>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入需支付點數"
+                                                            id="elementarySchoolFast" value="250">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入批改天數"
+                                                            id="elementarySchoolFast2" value="5">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -261,21 +235,209 @@
                             </div>
 
                             <div class="form-section">
-                                <div class="alert notice-end">
-                                    <p class="text-center">目前您的檔案尚未公開，無法在良師列表裡搜尋您的檔案!
-                                    </p>
+                                <div class="row">
+
+                                    <div class="col-12 col-md-3">
+                                        <h2 class="section-title">國中</h2>
+                                    </div>
+
+                                    <div class="col-12 col-md-9">
+
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="juniorHighSchoolNormal">【一般件】</label>
+                                            <div class="col-md-9">
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入需支付點數"
+                                                            id="juniorHighSchoolNormal" value="250">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入批改天數"
+                                                            id="juniorHighSchoolNormal2" value="5">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="juniorHighSchoolFast">【急件】</label>
+                                            <div class="col-md-9">
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入需支付點數"
+                                                            id="juniorHighSchoolFast" value="250">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入批改天數"
+                                                            id="juniorHighSchoolFast2" value="5">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+
                                 </div>
                             </div>
 
+                            <div class="form-section">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-3">
+                                        <h2 class="section-title">高中</h2>
+                                    </div>
+
+                                    <div class="col-12 col-md-9">
+
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="seniorHighSchoolNormal">【一般件】</label>
+                                            <div class="col-md-9">
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入需支付點數"
+                                                            id="seniorHighSchoolNormal" value="">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入批改天數"
+                                                            id="seniorHighSchoolNormal2" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="juniorHighSchoolFast">【急件】</label>
+                                            <div class="col-md-9">
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入需支付點數"
+                                                            id="seniorHighSchoolFast" value="">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入批改天數"
+                                                            id="seniorHighSchoolFast2" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-3">
+                                        <h2 class="section-title">大學</h2>
+                                    </div>
+
+                                    <div class="col-12 col-md-9">
+
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="collegeNormal">【一般件】</label>
+                                            <div class="col-md-9">
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入需支付點數"
+                                                            id="collegeNormal" value="">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入批改天數"
+                                                            id="collegeNormal2" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="collegeFast">【急件】</label>
+                                            <div class="col-md-9">
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入需支付點數"
+                                                            id="collegeFast" value="">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入批改天數"
+                                                            id="collegeFast2" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <div class="row">
+
+                                    <div class="col-12 col-md-3">
+                                        <h2 class="section-title">高普特考</h2>
+                                    </div>
+
+                                    <div class="col-12 col-md-9">
+
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="nationNormal">【一般件】</label>
+                                            <div class="col-md-9">
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入需支付點數"
+                                                            id="nationNormal" value="">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入批改天數"
+                                                            id="nationNormal2" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="nationFast">【急件】</label>
+                                            <div class="col-md-9">
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入需支付點數"
+                                                            id="nationFast" value="">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text"  class="form-control" placeholder="請輸入批改天數"
+                                                            id="nationFast2" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
                             <div class="form-actions">
-                                <button type="button" class="btn btn-save">
-                                    暫存
-                                </button>
-                                <button type="button" class="btn btn-publish">
-                                    公開
-                                </button>
                                 <button type="button" class="btn btn-preview">
-                                    預覽
+                                    確認
                                 </button>
                             </div>
 
