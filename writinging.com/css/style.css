@@ -142,6 +142,8 @@ section .card {
     border: var(--normalRed) solid 1px;
 }
 
+.btn-close:hover,
+.btn-close,
 .btn-reset:hover,
 .btn-reset,
 .btn-cancel:hover,
@@ -154,18 +156,33 @@ section .card {
     box-shadow: var(--boxShadow);
 }
 
+
+.btn-close:hover,
+.btn-close {
+    color: #fff;
+    background: #4D4D4D;
+    padding: 0.7rem 2rem;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    box-shadow: var(--boxShadow);
+}
+.btn-close:active {
+    background: #464545
+}
 .btn-cancel:active,
 .btn-reset:active {
     color: #fff;
     background: #919191;
 }
-
+.btn-update,
 .btn-save {
     margin: 10px 0;
     color: #fff;
     background: #213162;
 }
 
+.btn-update:hover,
+.btn-update:active,
 .btn-save:hover,
 .btn-save:active {
     color: #fff;
