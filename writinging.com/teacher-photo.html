@@ -173,7 +173,7 @@
 
                     <div class="form-wrap">
 
-                        <div class="form">
+                        <div class="form repeater">
 
                             <div class="form-section hasBorder">
                                 <div class="row">
@@ -183,118 +183,139 @@
                                     </div>
 
                                     <div class="col-12 col-md-9">
+                                        <div data-repeater-list>
+                                            <div data-repeater-item>
 
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="photo1">照片</label>
-                                            <div class="col-md-9">
-                                                <div class="input-upload">
-                                                    <input type="file" id="photo1">
-                                                    <span>請選擇檔案</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label" for="photo1">照片</label>
+                                                    <div class="col-md-9">
+                                                        <div class="input-upload img">
+                                                            <div class="btn-wrap">
+                                                                <label class="btn-imgUpload">
+                                                                    <span>瀏覽檔案</span>
+                                                                    <input type="file" data-max_length="20"
+                                                                        class="imgUpload">
+                                                                </label>
+                                                            </div>
 
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="photoTitle1">標題</label>
-                                            <div class="col-md-9">
-                                                <input type="text" id="photoTitle1" class="form-control"
-                                                    placeholder="請輸入標題">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="photoDesc1">說明</label>
-                                            <div class="col-md-9">
-                                                <input type="text" id="photoDesc1" class="form-control"
-                                                    placeholder="請輸入說明">
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="currentPassword">大頭照</label>
-                                            <div class="col-md-9">
-                                                <div class="avatar-upload">
-                                                    <div class="avatar-edit">
-                                                        <input type='file' id="imageUpload"
-                                                            accept=".png, .jpg, .jpeg" />
-                                                        <label for="imageUpload"></label>
-                                                    </div>
-                                                    <div class="avatar-preview">
-                                                        <div class="imagePreview"
-                                                            style="background-image: url(images/img-teacher-cp.jpg);">
+                                                            <div class="img-wrap"></div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="form-group row">
-                                            <label for="language" class="col-md-3 col-form-label">批改語言</label>
-                                            <div class="col-md-9">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="language" id="languageTW" value="driver-A">
-                                                    <label class="form-check-label" for="languageTW">
-                                                        中文
-                                                    </label>
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label" for="photoTitle1">標題</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" id="photoTitle1" class="form-control"
+                                                            placeholder="請輸入標題">
+                                                    </div>
                                                 </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="language" id="languageEN" value="driver-B">
-                                                    <label class="form-check-label" for="languageEN">
-                                                        英文
-                                                    </label>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label" for="photoDesc1">說明</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" id="photoDesc1" class="form-control"
+                                                            placeholder="請輸入說明">
+                                                    </div>
                                                 </div>
+                                                <div class="function">
+                                                    <div class="btn btn-danger btn-del" data-repeater-delete>刪除</div>
+                                                </div>                                                
+                                                
+                                            </div>
+
+                                            <div data-repeater-item>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label" for="photo1">照片</label>
+                                                    <div class="col-md-9">
+                                                        <div class="input-upload img">
+                                                            <div class="btn-wrap">
+                                                                <label class="btn-imgUpload">
+                                                                    <span>瀏覽檔案</span>
+                                                                    <input type="file" data-max_length="20"
+                                                                        class="imgUpload">
+                                                                </label>
+                                                            </div>
+
+                                                            <div class="img-wrap"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label" for="photoTitle1">標題</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" id="photoTitle1" class="form-control"
+                                                            placeholder="請輸入標題">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label" for="photoDesc1">說明</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" id="photoDesc1" class="form-control"
+                                                            placeholder="請輸入說明">
+                                                    </div>
+                                                </div>
+                                                <div class="function">
+                                                    <div class="btn btn-danger btn-del" data-repeater-delete>刪除</div>
+                                                </div>                                                
+                                                
+                                            </div>
+                                            
+                                            <div data-repeater-item>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label" for="photo1">照片</label>
+                                                    <div class="col-md-9">
+                                                        <div class="input-upload img">
+                                                            <div class="btn-wrap">
+                                                                <label class="btn-imgUpload">
+                                                                    <span>瀏覽檔案</span>
+                                                                    <input type="file" data-max_length="20"
+                                                                        class="imgUpload">
+                                                                </label>
+                                                            </div>
+
+                                                            <div class="img-wrap"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label" for="photoTitle1">標題</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" id="photoTitle1" class="form-control"
+                                                            placeholder="請輸入標題">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label" for="photoDesc1">說明</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" id="photoDesc1" class="form-control"
+                                                            placeholder="請輸入說明">
+                                                    </div>
+                                                </div>
+                                                <div class="function">
+                                                    <div class="btn btn-danger btn-del" data-repeater-delete>刪除</div>
+                                                </div>                                                
+                                                
                                             </div>
                                         </div>
 
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="experience">經歷</label>
-                                            <div class="col-md-9">
-                                                <textarea class="form-control ckeditor" id="experience" rows="1">
-                                                    <p>任教科目：國文科。<br>
-                                                    國立政治大學中文所碩士。<br>
-                                                    現任台北李鋒文教補習班、豐原名仁補習班、士林奇諺補習班老師。<br>
-                                                    強調從生活中理解國文，力求國文不靠背：<br>
-                                                    ★ 打通繁瑣的國學知識，學習不再艱澀枯燥。<br>
-                                                    ★ 與108新課綱結合，重新建構跨領域學習素養能力。<br>
-                                                    卓越教學經驗：<br>
-                                                    ★ 曾任三民輔考補習班、台北李鋒文教補習班、豐原名仁補習班、士林奇諺補習班、竹北北聯補習班、台北第一志願補習班。</p>
-                                                </textarea>
-                                                <small class="text-muted teacher-notice">限 500 字以內</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="introduce">介紹</label>
-                                            <div class="col-md-9">
-                                                <textarea class="form-control ckeditor" id="introduce" rows="1">
-                                                    <p>秉持「國文不靠背」的教學原則，強調從生活中理解國文，並主打「有趣、有料、有效」的教學內容，幫助同學建立有系統的文學視野。幽默風趣的授課風格，使國文科不再生硬，轉為歡樂的課堂。</p>
-                                                </textarea>
-                                            </div>
-                                        </div>
-
+                                        <div class="btn btn-add" data-repeater-create>新增照片</div>
                                     </div>
 
 
                                 </div>
                             </div>
 
-                            <div class="form-section">
-                                <div class="alert notice-end">
-                                    <p class="text-center">目前您的檔案尚未公開，無法在良師列表裡搜尋您的檔案!
-                                    </p>
-                                </div>
-                            </div>
 
                             <div class="form-actions">
-                                <button type="button" class="btn btn-save">
-                                    暫存
-                                </button>
-                                <button type="button" class="btn btn-publish" onclick="window.location.href='teacher-intro-published.html';">
-                                    公開
-                                </button>
-                                <button type="button" class="btn btn-preview">
-                                    預覽
+                                <button type="button" class="btn btn-archive">
+                                    儲存
                                 </button>
                             </div>
 
@@ -419,23 +440,28 @@
     <script src="assets/lightgallery/lightgallery.min.js"></script>
     <script src="assets/tagsinput/tagsinput-fix.js"></script>
     <script src="assets/ckeditor/ckeditor.js"></script>
+    <script src="assets/jquery.repeater/jquery.repeater.min.js"></script>
     <script src="js/megamenu.js"></script>
     <script src="js/ciaoyuToggle.min.js"></script>
     <script src="js/script.js?1"></script>
     <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('.imagePreview').css('background-image', 'url(' + e.target.result + ')');
-                    $('.imagePreview').hide();
-                    $('.imagePreview').fadeIn(650);
+        $(document).ready(function () {
+            'use strict';
+    
+            $('.repeater').repeater({
+                show: function () {
+                    $(this).slideDown();
+                },
+                hide: function (deleteElement) {
+                    if(confirm('您確定要刪除此項目?')) {
+                        $(this).slideUp(deleteElement);
+                    }
+                },
+                ready: function (setIndexes) {
+    
                 }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        $(".imageUpload").change(function () {
-            readURL(this);
+            });
+            
         });
     </script>
 

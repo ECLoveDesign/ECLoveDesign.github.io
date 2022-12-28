@@ -117,7 +117,7 @@ section .card {
 .btn-more,
 .btn-unfollow,
 .btn-follow:hover,
-.btn-preview:hover  {
+.btn-preview:hover {
     background: var(--normalRed);
     border: var(--normalRed) solid 1px;
     color: #fff;
@@ -132,6 +132,9 @@ section .card {
 .btn-submit:active,
 .btn-submit:focus,
 .btn-submit:hover,
+.btn-archive:active,
+.btn-archive:focus,
+.btn-archive:hover,
 .btn-publish:active,
 .btn-publish:focus,
 .btn-publish:hover,
@@ -166,14 +169,17 @@ section .card {
     margin: 10px 0;
     box-shadow: var(--boxShadow);
 }
+
 .btn-close:active {
     background: #464545
 }
+
 .btn-cancel:active,
 .btn-reset:active {
     color: #fff;
     background: #919191;
 }
+
 .btn-update,
 .btn-save {
     margin: 10px 0;
@@ -189,17 +195,30 @@ section .card {
     background: #000;
 }
 
+.btn-archive,
 .btn-send,
 .btn-submit {
     color: #fff;
     background: var(--normalRed);
 }
 
+.btn-archive:hover,
+.btn-archive:active,
 .btn-send:hover,
 .btn-send:active,
 .btn-submit:hover,
 .btn-submit:active {
     background: var(--dangerColor);
+    color: #fff;
+}
+
+.btn-add {
+    background: var(--skyblue);
+    color: #fff;
+}
+.btn-add:active,
+.btn-add:hover {
+    background: #249acc;
     color: #fff;
 }
 
@@ -236,6 +255,7 @@ section .card {
 }
 
 @media (max-width:1024px) {
+
     .btn-send,
     .btn-submit,
     .btn-publish,
@@ -2479,23 +2499,28 @@ main>div>.container {
     padding: 4rem 10rem;
     margin-bottom: -3rem;
 }
+
 .form-wrap .nav {
     justify-content: center;
     margin-bottom: 2rem;
 }
+
 .form-wrap .nav .nav-item .nav-link {
-    color: #4D4D4D;    
+    color: #4D4D4D;
     font-size: 1.2rem;
     border: #4D4D4D solid 1px;
     padding: 0.5rem 2rem;
 }
+
 .form-wrap .nav .nav-item.active {
     background-color: var(--normalRed);
 }
+
 .form-wrap .nav .nav-item.active .nav-link {
     color: #fff;
-    border:  var(--normalRed) solid 1px;
+    border: var(--normalRed) solid 1px;
 }
+
 .form-wrap .nav .nav-item+.nav-item {
     margin-left: 10px;
 }
@@ -2651,8 +2676,8 @@ main>div>.container {
         display: block;
         padding: 0;
     }
-    
-    .form-section .form-group.row .row [class*="col-"]+ [class*="col-"] {
+
+    .form-section .form-group.row .row [class*="col-"]+[class*="col-"] {
         margin-top: .5rem;
     }
 }
@@ -2794,6 +2819,7 @@ main>div>.container {
     color: var(--dangerColor);
 }
 
+/* input-upload */
 .input-upload {
     position: relative;
 }
@@ -2845,6 +2871,69 @@ main>div>.container {
 .input-upload+.input-upload {
     margin-top: 1rem;
 }
+
+/* input-upload image */
+.input-upload .imgUpload {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.input-upload .btn-wrap {
+    margin-bottom: 10px;
+}
+
+.input-upload.img .img-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.upload-item {
+    width: 200px;
+    margin-bottom: 12px;
+    margin-top: 2rem;
+    margin-right: .75rem;
+}
+.btn-imgUploadDel {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    line-height: 24px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.btn-imgUploadDel:after {
+    content: "✖";
+    font-size: 14px;
+    color: white;
+}
+
+.img-bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 100%;
+}
+
+/* repeater */
+[data-repeater-item] .function{
+    display: flex;
+    justify-content: end;
+    border-bottom: #B3B3B3 solid 2px;
+}
+/* .form [data-repeater-item]+[data-repeater-item] {    
+    border-top: #B3B3B3 solid 2px;
+} */
 
 /* bootstrap-select */
 .bootstrap-select>.dropdown-toggle {
