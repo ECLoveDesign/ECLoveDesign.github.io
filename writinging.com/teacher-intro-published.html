@@ -197,19 +197,17 @@
                                             <div class="col-md-9">
                                                 <div class="avatar-upload">
                                                     <div class="avatar-edit">
-                                                        <input type='file' id="imageUpload"
-                                                            accept=".png, .jpg, .jpeg" />
+                                                        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
                                                         <label for="imageUpload"></label>
                                                     </div>
                                                     <div class="avatar-preview">
-                                                        <div class="imagePreview"
-                                                            style="background-image: url(images/img-teacher-cp.jpg);">
+                                                        <div id="imagePreview" style="background-image: url(https://public.ehanlin.com.tw/web/teacher-list/jrpc_chenhao_v1.png);">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
+                                        
                                         <div class="form-group row">
                                             <label for="language" class="col-md-3 col-form-label">批改語言</label>
                                             <div class="col-md-9">
@@ -257,13 +255,6 @@
                                     </div>
 
 
-                                </div>
-                            </div>
-
-                            <div class="form-section">
-                                <div class="alert notice-end">
-                                    <p class="text-center">目前您的檔案尚未公開，無法在良師列表裡搜尋您的檔案!
-                                    </p>
                                 </div>
                             </div>
 
@@ -403,22 +394,6 @@
     <script src="js/megamenu.js"></script>
     <script src="js/ciaoyuToggle.min.js"></script>
     <script src="js/script.js?1"></script>
-    <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('.imagePreview').css('background-image', 'url(' + e.target.result + ')');
-                    $('.imagePreview').hide();
-                    $('.imagePreview').fadeIn(650);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        $(".imageUpload").change(function () {
-            readURL(this);
-        });
-    </script>
 
 </body>
 
