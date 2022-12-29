@@ -180,13 +180,16 @@ section .card {
     background: #919191;
 }
 
+.btn-edit,
 .btn-update,
 .btn-save {
     margin: 10px 0;
     color: #fff;
-    background: #213162;
+    background: var(--mainColor);
 }
 
+.btn-edit:hover,
+.btn-edit:active,
 .btn-update:hover,
 .btn-update:active,
 .btn-save:hover,
@@ -2544,7 +2547,8 @@ main>div>.container {
 }
 
 .form-section .order-info .info,
-.form-section .order-info .number {
+.form-section .order-info .number,
+.form-section .order-info .time.info {
     color: var(--mainColor);
 }
 
@@ -3534,6 +3538,27 @@ main>div>.container {
     text-decoration: underline;
 }
 
+.table td .btn:not(.dropdown-toggle) {
+    padding: 0.375rem 1.5rem;
+    font-size: 1rem;
+    margin: 0;
+    border-radius: 0;
+}
+.table td .btn+.btn {
+    margin-left: .5rem;
+}
+.table td .btn-del {
+    color: var(--normalRed);
+    background-color: #fff;
+    border-color: var(--normalRed);
+}
+.table td .btn-close {
+    color: #fff;
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+
+}
+
 .table td a:hover {
     color: var(--normalRed);
 }
@@ -3561,6 +3586,9 @@ main>div>.container {
     cursor: pointer;
 }
 
+.tablesorter .tablesorter-header.sorter-false {
+    background-image: none;
+}
 .tablesorter .headerSortUp,
 .tablesorter .tablesorter-headerSortUp,
 .tablesorter .tablesorter-headerAsc {
@@ -3583,6 +3611,11 @@ main>div>.container {
     /* background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAAP///////yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7); */
     /* image */
     /* background-image: url(images/black-desc.gif); */
+}
+@media (min-width:992px) {
+    .tablesorter-sticky-wrapper.tablesorter-sticky-visible {
+        top: 80px !important;
+    }    
 }
 
 /* rwdTable */
