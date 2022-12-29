@@ -3696,6 +3696,9 @@ main>div>.container {
 .news-wrap {
     padding: 1rem 0 2rem 0;
 }
+.message-wrap {
+    padding-top: 3rem;
+}
 
 .cont .container>.article-wrap {
     background: transparent;
@@ -3754,6 +3757,9 @@ main>div>.container {
     .article-wrap {
         padding: 0;  
         margin: 0;
+    }
+    .message-wrap {
+        padding-top: 0;
     }
     .article-wrap .date,
     .message-wrap .date {
