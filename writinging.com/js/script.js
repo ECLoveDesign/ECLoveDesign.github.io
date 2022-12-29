@@ -297,6 +297,12 @@ if ( $('[data-fancybox]').length ) {
     baseClass: "fancybox-ytview",
     type:'iframe',
   });
+  
+  //ytview
+  $('.video-wrap [data-fancybox]').fancybox({
+    baseClass: "fancybox-ytview",
+    type:'iframe',
+  });
 
 }
 
