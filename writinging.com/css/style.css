@@ -344,6 +344,7 @@ main.index {
 header {
     background: var(--mainColor);
     box-shadow: 0 5px 15px rgb(0, 0, 0, .1);
+    z-index: 2;
 }
 
 header.affix {
