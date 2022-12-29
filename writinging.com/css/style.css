@@ -215,6 +215,15 @@ section .card {
     color: #fff;
 }
 
+.btn-export {
+    border: #000 solid 1px;
+    color: #000;
+}
+.btn-export:hover {
+    color: #fff;
+    background: #000;
+}
+
 .btn-add {
     background: var(--skyblue);
     color: #fff;
@@ -2612,6 +2621,9 @@ main>div>.container {
 }
 
 @media (max-width:1366px) {
+    .cont {
+        padding-bottom: 2rem;
+    }
     .form-wrap .form {
         padding: 4rem 6rem;
     }
@@ -3272,7 +3284,6 @@ main>div>.container {
 
 @media(max-width:959px) {
     .nav-slider:not(.anchor-wrap) .swiper-container {
-        width: calc(100% - 45px) !important;
         margin: 0;
     }
 
@@ -3321,12 +3332,6 @@ main>div>.container {
 
 .section-nav li a {
     padding: 1rem;
-}
-
-@media(max-width:500px) {
-    .section-nav li a {
-        letter-spacing: 4px;
-    }
 }
 
 @media(min-width:960px) {
@@ -3386,12 +3391,12 @@ main>div>.container {
 
     .subnav-wrap .subnav-nav li.active a,
     .subnav-wrap .subnav-nav li a:hover {
-        color: #000;
+        color: var(--normalRed);
         font-weight: bold;
         background: transparent;
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
         filter: none !important;
-        border-bottom: 2px solid #444;
+        border-bottom: 2px solid var(--normalRed);
     }
 
     .subnav-wrap .section-nav .nav-item+.nav-item {
@@ -3490,10 +3495,8 @@ main>div>.container {
 
 .search-wrap .row .btn-online-dark {
     float: right;
-    border: #000 solid 1px;
     width: 100%;
 }
-
 @media (max-width:768px) {
     .search-wrap .row .btn:not(.dropdown-toggle) {
         float: right;
@@ -3677,5 +3680,101 @@ main>div>.container {
 
     table td:last-child {
         border-bottom: 0;
+    }
+}
+
+/* message-wrap */
+.message-wrap {
+    padding: 1rem 0 2rem 0;
+}
+.message-wrap h2 {
+    font-size: 1.5rem;
+    margin: 5px 0 10px;
+}
+.message-wrap a {
+    color: #000;
+}
+.message-wrap .date {
+    color: var(--normalRed);
+    line-height: 2.5rem;
+    text-align: right;
+    padding-right: 3rem;    
+}
+.message-wrap .news-item {
+    margin: 1rem 2rem;
+    padding: .5rem 0;
+    border-bottom: #E6E6E6 solid 1px;
+}
+.message-wrap .pagination {
+    margin-top: 3rem;
+}
+@media (max-width:768px) {
+    .message-wrap .date {
+        text-align: left;
+        padding-right: 0;    
+    }    
+    .message-wrap .news-item:first-child {
+        margin-top: 0;
+    }
+    .message-wrap .news-item {
+        margin: 1rem;
+    }
+}
+
+/* news-section */
+.news-wrap {
+    padding: 4rem 10rem;
+}
+.news-section article {
+    padding: 2rem 0;
+}
+.news-section h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+.news-section .news-info {
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    font-size: 1.2rem;    
+    border-bottom: #B3B3B3 solid 2px;
+}
+.news-info .time {
+    color: var(--mainColor);
+    line-height: 2.4rem;
+}
+.news-actions {
+    margin: 1rem 0 0;
+    display: flex;
+    justify-content: center;
+}
+@media (max-width:1366px) {
+    .news-wrap {
+        padding: 2rem 4rem;
+    } 
+}
+@media (max-width:991px) {
+    .news-section .news-info {
+        display: block;
+    }
+    .news-section h2 {
+        margin-bottom: .5rem;
+    }
+}
+@media (max-width:768px) {
+    .news-wrap {
+        padding: 1rem 2rem;
+    } 
+    .news-section h2 {
+        font-size: 1.6rem;
+    }
+}
+@media (max-width:414px) {
+    .news-wrap {
+        padding: .5rem 1rem;
+    } 
+    .news-section h2 {
+        font-size: 1.4rem;
     }
 }
