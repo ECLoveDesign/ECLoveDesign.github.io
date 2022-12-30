@@ -1408,7 +1408,13 @@ section h2 {
     margin-right: .2em;
     color: #0071BC;
 }
-
+@media (min-width:1024px) {
+    .teacher-wrap {
+        margin-top: -2rem;
+        z-index: 2;
+        position: relative;
+    }
+}
 @media (max-width:500px) {
     .teacher-wrap [class*="col-"] {
         -ms-flex: 0 0 100%;
@@ -1990,7 +1996,7 @@ main>div>.container {
 
 .search_box {
     width: 768px;
-    margin: auto;
+    margin: 0 auto 1rem;
     max-width: 100%;
 }
 
@@ -2017,6 +2023,9 @@ main>div>.container {
     .jumbotron h1 {
         font-size: 2rem;
         margin-bottom: 0;
+    }
+    .search_box {
+        margin: 0 auto;
     }
 }
 
@@ -2430,10 +2439,11 @@ main>div>.container {
 .fancybox-bg {
     background: rgb(9, 25, 79, .7);
 }
-
-.fancybox-ytview .fancybox-stage .fancybox-content {
-    height: calc(60% - 44px);
-    width: 50%;
+@media (min-width:1280px) {
+    .fancybox-ytview .fancybox-stage .fancybox-content {
+        height: calc(60% - 44px);
+        width: 50%;
+    }    
 }
 .video-wrap [data-fancybox] {
 
@@ -3701,7 +3711,7 @@ main>div>.container {
     padding: 1rem 0 2rem 0;
 }
 .message-wrap {
-    padding-top: 3rem;
+    padding: 3rem 0;
 }
 
 .cont .container>.article-wrap {
@@ -3851,4 +3861,102 @@ main>div>.container {
 }
 .video-wrap [class*="col-"] {
     margin-bottom: 2rem;
+}
+
+
+/* qa */
+.qa-wrap .accordion>.card {
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    text-align: left;
+}
+
+.qa-wrap .accordion>.card[aria-expanded="true"]+.card {
+    margin-top: 1rem;
+}
+
+.qa-wrap .accordion>.card[aria-expanded="true"] {
+    box-shadow: 0px 0px 11px rgb(0, 0, 0, .2);
+    border-radius: 0.7rem;
+    margin-top: 1rem;
+}
+
+.qa-wrap .accordion>.card[aria-expanded="true"]:first-child {
+    margin-top: 0;
+}
+
+.qa-wrap .accordion>.card[aria-expanded="false"] {
+    border-top: #c1c1c1 dashed 1px;
+    opacity: .7;
+    transition: all 0.2s ease 0s;
+}
+
+.qa-wrap .accordion>.card[aria-expanded="false"]:hover {
+    opacity: 1;
+}
+
+.qa-wrap .accordion>.card[aria-expanded="true"]+.card,
+.qa-wrap .accordion>.card[aria-expanded="false"]:first-child {
+    border: none;
+}
+
+.qa-wrap .accordion>.card[aria-expanded="false"]:last-child {
+    border-bottom: #c1c1c1 dashed 1px;
+    ;
+}
+
+.qa-wrap .accordion .card-header {
+    background: transparent;
+    border: none;
+    padding: 0.75rem .5rem;
+    padding-left: 45px;
+}
+
+.qa-wrap .accordion .card-header::before {
+    content: 'Q';
+    font-size: 1.2rem;
+    text-indent: 9px;
+    line-height: 2rem;
+    background: var(--normalRed);
+    color: #fff;
+    font-family: var(--font-QA);
+    border-radius: 50%;
+    display: block;
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    left: 25px;
+    top: 15px;
+}
+
+.qa-wrap .accordion .card-header::after {
+    font: normal normal normal 16px/1 FontAwesome;
+    content: "\f0d7";
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+
+}
+
+.qa-wrap .accordion .card[aria-expanded="true"] .card-header {
+    border-bottom: #c1c1c1 dashed 1px;
+}
+
+.qa-wrap .accordion .card[aria-expanded="true"] .card-header::after {
+    content: "\f0d8";
+}
+
+.qa-wrap h3+.container {
+    margin-top: 2rem;
+}
+
+.btn-qa {
+    border: none;
+    background: transparent;
+    display: block;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    text-align: left;
 }
