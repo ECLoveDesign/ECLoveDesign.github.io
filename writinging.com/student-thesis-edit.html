@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="assets/lightgallery/lightgallery.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
     <link rel="stylesheet" href="css/style.css?4" />
-    <title>老師會員專區│說文解章─解說你的文章</title>
+    <title>學生會員專區│說文解章─解說你的文章</title>
 </head>
 
 <body>
@@ -79,12 +79,17 @@
                             <i class="fa fa-user"></i> 小桃子
                         </a>
                         <ul class="nav-dropdown">
-                            <li class="active"><a href="teacher-thesis.html">審批管理</a></li>
-                            <li><a href="teacher-income.html">我的收益</a></li>
-                            <li><a href="teacher-profile.html">個人檔案</a></li>
-                            <li><a href="teacher-message.html">通知中心</a></li>
+                            <li class="active"><a href="student-thesis.html">作文管理</a></li>
+                            <li><a href="student-keep.html">我的收藏</a></li>
+                            <li><a href="student-records.html">交易紀錄</a></li>
+                            <li><a href="student-profile.html">個人檔案</a></li>
+                            <li><a href="student-message.html">通知中心</a></li>
+                            <li><a href="student-topup.html">儲值中心</a></li>
                             <li><a href="index.html">登出</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-join">
+                        <a href="send.html">寫作送批</a></li>
                     </li>
                 </ul>
             </div>
@@ -110,26 +115,38 @@
                         <ul class="swiper-wrapper section-nav">
 
                             <li class="swiper-slide nav-item active">
-                                <a class="nav-link" href="teacher-thesis.html" title="審批管理">
-                                    審批管理
+                                <a class="nav-link" href="student-thesis.html" title="作文管理">
+                                    作文管理
                                 </a>
                             </li>
 
                             <li class="swiper-slide nav-item">
-                                <a class="nav-link" href="teacher-income.html" title="我的收益">
-                                    我的收益
+                                <a class="nav-link" href="student-keep.html" title="我的收藏">
+                                    我的收藏
                                 </a>
                             </li>
 
                             <li class="swiper-slide nav-item">
-                                <a class="nav-link" href="teacher-profile.html" title="個人檔案">
+                                <a class="nav-link" href="student-records.html" title="交易紀錄">
+                                    交易紀錄
+                                </a>
+                            </li>
+
+                            <li class="swiper-slide nav-item">
+                                <a class="nav-link" href="student-profile.html" title="個人檔案">
                                     個人檔案
                                 </a>
                             </li>
 
                             <li class="swiper-slide nav-item">
-                                <a class="nav-link" href="teacher-message.html" title="通知中心">
+                                <a class="nav-link" href="student-message.html" title="通知中心">
                                     通知中心
+                                </a>
+                            </li>
+
+                            <li class="swiper-slide nav-item">
+                                <a class="nav-link" href="student-topup.html" title="儲值中心">
+                                    儲值中心
                                 </a>
                             </li>
 
@@ -140,102 +157,316 @@
             </div>
         </div>
 
-        <div class="cont">
+        <div class="cont form-wrap">
             <div class="container">
 
-                <div class="pagenav">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="teacher-thesis.html">待接單<span>(3)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="teacher-orderReview.html">審批中</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="teacher-orderAudited.html">已審批</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="teacher-orderOvertime.html">逾時</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="teacher-orderCancel.html">退單</a>
-                        </li>
-                    </ul>
-                </div>
+                <div class="form">
 
-                <div class="search-wrap">
-                    <div class="row">
-
-                        <div class="col-md-5 col-lg-3">
-                            <!--批改語言-->
-                            <div class="form-group">
-                                <label for="language">批改語言</label>
-                                <select class="form-control bs-select" id="language" title="請選擇">
-                                    <option value="none" selected="" disabled="">請選擇</option>
-                                    <option value="中文">中文</option>
-                                    <option value="英文">英文</option>
-                                </select>
-                            </div>
+                    <div class="form-section">
+                        <div class="order-info">
+                            <div class="info-name">送單時間：<span class="info">2022.11.07 15:14</span></div>
+                            <div class="info-name">送批單號：<span class="number">尚未送單</span></div>
                         </div>
+                    </div>
 
-                        <div class="col-md-5 col-lg-3">
-                            <!--關鍵字-->
-                            <div class="form-group">
-                                <label class="label-control" for="keywords">關鍵字</label>
-                                <input type="text" class="form-control" placeholder="請輸入關鍵字">
+                    <div class="form-section">
+                        <div class="row">
+
+                            <div class="col-12 col-md-4">
+                                <h2 class="section-title">送批對象</h2>
                             </div>
-                        </div>
 
-                        <div class="col-md-2 col-lg-6">
-                            <button class="btn btn-search" type="button">
-                                <i class="fa fa-search"></i>
-                            </button>
+                            <div class="col-12 col-md-8">
+
+                                <div class="form-row">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="language-select" class="control-label">批改語言 <span
+                                                    class="text-danger">*</span></label>
+
+                                            <select name="select" class="form-control bs-select" data-ciaoyu="toggle"
+                                                id="language-select">
+                                                <!-- <option value="none" selected="" disabled="">請選擇
+                                            </option> -->
+                                                <option value="1">中文</option>
+                                                <option value="2">英文</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <!--中文程度選擇-->
+                                        <div class="form-group" data-ciaoyu-toggle="language-select"
+                                            data-ciaoyu-val="1">
+                                            <label class="control-label">程度選擇 <span class="text-danger">*</span></label>
+                                            <select class="form-control bs-select">
+                                                <option value="國小">國小</option>
+                                                <option value="國中(考試、複習考、會考)">國中(考試、複習考、會考)</option>
+                                                <option value="高中(指考、學測)">高中(指考、學測)</option>
+                                                <option value="研究所">研究所</option>
+                                                <option value="高普特考">高普特考</option>
+                                            </select>
+                                        </div>
+
+                                        <!--英文程度選擇-->
+                                        <div class="form-group" data-ciaoyu-toggle="language-select"
+                                            data-ciaoyu-val="2">
+                                            <label class="control-label">程度選擇 <span class="text-danger">*</span></label>
+                                            <select class="form-control bs-select">
+                                                <option value="多益 (TOEIC)">多益 (TOEIC)</option>
+                                                <option value="托福 (TOEFL iBT)">托福 (TOEFL iBT)</option>
+                                                <option value="雅思 (IELTS)">雅思 (IELTS)</option>
+                                                <option value="全民英檢 (GEPT)">全民英檢 (GEPT)</option>
+                                                <option value="劍橋國際英檢 (Cambridge English)">劍橋國際英檢 (Cambridge English)
+                                                </option>
+                                                <option value="GMAT">GMAT</option>
+                                                <option value="GRE">GRE</option>
+                                                <option value="SAT">SAT</option>
+                                                <option value="ACT">ACT</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="teacher-select" class="control-label">選擇批改老師 <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="row">
+                                                <div class="col-md-8 pr-md-0">
+                                                    <input type="text" id="teacher-select" class="form-control"
+                                                        value="王文廷老師 一般件 150 點" data-role="tagsinput" disabled />
+
+                                                </div>
+                                                <div class="col-md-4 pl-md-0">
+                                                    <div class="input-group">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-secondary" type="button"
+                                                                id="btn-choose" data-toggle="modal"
+                                                                data-target="#nonchooseModal">選擇老師(未關注)</button>
+                                                            <button class="btn btn-secondary" type="button"
+                                                                id="btn-choose" data-toggle="modal"
+                                                                data-target="#chooseModal">選擇老師</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <small class="text-muted teacher-notice">
+                                                您目前選擇 <span class="num teacher">1</span> 位老師，費用共 <span
+                                                    class="num point">150</span> 元/點 (現有點數 <span
+                                                    class="num lave">200</span>
+                                                點)
+                                            </small>
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="row">
+
+                            <div class="col-12 col-md-4">
+                                <h2 class="section-title">問題說明</h2>
+                            </div>
+
+                            <div class="col-12 col-md-8">
+
+                                <div class="form-row">
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="problem" class="control-label">作文題目與問題描述 <span
+                                                    class="text-danger">*</span> (1000 字內)</label>
+                                            <div class="form-control ckeditor" id="problem" rows="6">
+                                                <p>
+                                                    關於地球的記憶<br>
+                                                    被文字固禁在課本裡<br>
+                                                    我們的笔尖游走在山脈和海洋<br>
+                                                    翻譯每片花瓣的嬌嫩和露水的清新<br>
+                                                    所有的言語 答案<br>
+                                                    都靜放在我們的課本裡<br>
+                                                    等待我們翻起這一切的序幕(節錄自薛憶婷〈我們的課本>)<br>
+                                                    以上這首詩,從課本啟動天馬行空的遐想,瞥見知識豐富的樣貌。科學顽童費受(RichardP.Feynman)曾說觀察轉動的餐盤,讓他得到很大的啟發,領略了興之所至的乐趣。物理課可讓我們發現萬物運行的迷人,生物課帶领我們進入細胞核遊歷,外語課讓我
+                                                    們聽見世界不同的文化。國文課堂上採菊東離下,悠然見南山」或「輕羅小扇撲流螢」詩中情境也往往能讓人神遊於現實之外。中學教育的課程內容,是否曾經點燃你對知識的熱情?打開課本時,不知能否如《我們的課本)所述,揭開知識想像的序幕。<br>
+                                                    請回答下列問題:<br>
+                                                    如上文所述,若能從不同角度切入課本,進入知識的想像,或許可以讓課本帶領我們<br>
+                                                    經歷驚奇的旅程。請「當我打開課本」為題,寫一篇文章,敘述任一學科課本對你的意義,書寫你探索課本內容、知識的經驗與體會。(占25分)
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="other" class="control-label">附加問題 (200字內) </label>
+                                            <textarea class="form-control" id="other" rows="6"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
                         </div>
 
                     </div>
 
-                </div>
+                    <div class="form-section">
+                        <div class="row">
 
-                <div class="table-wrap">
-                    <table class="table table-striped table-hover table-rwd tablesorter sticky" data-sortlist="[[0,0]]">
-                        <thead>
-                            <tr>
-                                <th>類型</th>
-                                <th>批改語言</th>
-                                <th>文章標題</th>
-                                <th>學生暱稱</th>
-                                <th>送批時間</th>
-                                <th>逾期時間</th>
-                                <th>金額</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="類型">一般件</td>
-                                <td data-label="批改語言">中文</td>
-                                <td data-label="文章標題">
-                                    <a href="teacher-orderOvertime-cp.html">我的未來不是夢</a>
-                                </td>
-                                <td data-label="學生暱稱">小桃子</td>
-                                <td data-label="送批時間">2022.08.03 (三) 16:30</td>
-                                <td data-label="逾期時間">2022.08.03 (三) 23:49</td>
-                                <td data-label="金額">150</td>
-                            </tr>
-                            <tr>
-                                <td data-label="類型">一般件</td>
-                                <td data-label="批改語言">中文</td>
-                                <td data-label="文章標題">
-                                    <a href="teacher-orderOvertime-cp.html">寒夜</a>
-                                </td>
-                                <td data-label="學生暱稱">葡萄</td>
-                                <td data-label="送批時間">2022.09.01 (四) 17:22</td>
-                                <td data-label="逾期時間">2022.08.03 (三) 23:49</td>
-                                <td data-label="金額">150</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            <div class="col-12 col-md-4">
+                                <h2 class="section-title">作文內容</h2>
+                            </div>
 
-                    <ul class="pagination twbsPagination"></ul>
+                            <div class="col-12 col-md-8">
+
+                                <div class="form-row">
+
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <legend class="col-form-label" for="select-upload-type">送出方式 <span
+                                                    class="text-danger">*</span></legend>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
+                                                    name="select-upload-type" id="online" value="online" checked>
+                                                <label class="form-check-label" for="online">線上填寫</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+
+                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
+                                                    name="select-upload-type" id="upload" value="upload">
+                                                <label class="form-check-label" for="upload">上傳檔案</label>
+                                            </div>
+                                        </fieldset>
+
+                                    </div>
+
+                                    <div class="col-md-12">
+
+                                        <div class="form-group" data-ciaoyu-toggle="online">
+                                            <label class="control-label">線上填寫 <span class="text-danger">*</span></label>
+                                            <div class="form-control ckeditor" id="textarea" rows="1">
+                                                <p>
+                                                    關於地球的記憶<br>
+                                                    被文字固禁在課本裡<br>
+                                                    我們的笔尖游走在山脈和海洋<br>
+                                                    翻譯每片花瓣的嬌嫩和露水的清新<br>
+                                                    所有的言語 答案<br>
+                                                    都靜放在我們的課本裡<br>
+                                                    等待我們翻起這一切的序幕(節錄自薛憶婷〈我們的課本>)<br>
+                                                    以上這首詩,從課本啟動天馬行空的遐想,瞥見知識豐富的樣貌。科學顽童費受(RichardP.Feynman)曾說觀察轉動的餐盤,讓他得到很大的啟發,領略了興之所至的乐趣。物理課可讓我們發現萬物運行的迷人,生物課帶领我們進入細胞核遊歷,外語課讓我
+                                                    們聽見世界不同的文化。國文課堂上採菊東離下,悠然見南山」或「輕羅小扇撲流螢」詩中情境也往往能讓人神遊於現實之外。中學教育的課程內容,是否曾經點燃你對知識的熱情?打開課本時,不知能否如《我們的課本)所述,揭開知識想像的序幕。<br>
+                                                    請回答下列問題:<br>
+                                                    如上文所述,若能從不同角度切入課本,進入知識的想像,或許可以讓課本帶領我們<br>
+                                                    經歷驚奇的旅程。請「當我打開課本」為題,寫一篇文章,敘述任一學科課本對你的意義,書寫你探索課本內容、知識的經驗與體會。(占25分)
+                                                </p>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" data-ciaoyu-toggle="upload">
+
+                                            <label for="file-thesis">作文檔案 (限定 doc 檔案) <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="input-upload file">
+
+                                                <input type="file" class="input-file">
+                                                <div class="input-group col-xs-12">
+                                                    <input type="text" class="form-control" disabled
+                                                        placeholder="請選擇檔案">
+                                                    <span class="input-group-append">
+                                                        <button class="upload-field btn btn-browse"
+                                                            type="button">瀏覽檔案</button>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label for="file-other">附加檔案 (限定doc、pdf、ppt、jpg、png...檔案)</label>
+                                            <div class="input-upload file">
+
+                                                <input type="file" class="input-file">
+                                                <div class="input-group col-xs-12">
+                                                    <input type="text" class="form-control" disabled
+                                                        placeholder="請選擇檔案">
+                                                    <span class="input-group-append">
+                                                        <button class="upload-field btn btn-browse"
+                                                            type="button">瀏覽檔案</button>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label for="file-other2" class="sr-only">附加檔案2
+                                                (限定doc、pdf、ppt、jpg、png...檔案)</label>
+                                            <div class="input-upload file">
+
+                                                <input type="file" class="input-file">
+                                                <div class="input-group col-xs-12">
+                                                    <input type="text" class="form-control" disabled
+                                                        placeholder="請選擇檔案">
+                                                    <span class="input-group-append">
+                                                        <button class="upload-field btn btn-browse"
+                                                            type="button">瀏覽檔案</button>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="alert notice-end">
+                            <p class="text-center">※本網站就台端之相關個人資料之蒐集、處理或利用，均依照有關法令規定辦理，另台端之個人資料相關權益亦可參閱本網站之個人資料保護法專區。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline-dark btn-back" onclick="window.location.href='student-thesis.html';">
+                            返回列表
+                        </button>
+                        <button type="button" class="btn btn-reset">
+                            重新填寫
+                        </button>
+                        <button type="button" class="btn btn-save">
+                            暫存
+                        </button>
+                        <button type="button" class="btn btn-submit">
+                            確認送出
+                        </button>
+                    </div>
+
                 </div>
 
             </div>
@@ -329,6 +560,31 @@
             </div>
         </div>
     </footer>
+
+    <!--cancelModal-->
+    <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title text-center" id="cancelModalLabel">提醒</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>您確定要取消批改?<br>一旦取消就無法批改此案件</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-close btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-confirm" onclick="window.location.href='student-thesis.html';">確認取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">
+        <i class="fa fa-angle-up"></i>
+    </a>
 
     <!-- chooseModal -->
     <div class="modal fade" data-backdrop="static" id="chooseModal" tabindex="-1" aria-labelledby="chooseModalLabel"
@@ -754,11 +1010,6 @@
             </div>
         </div>
     </div>
-
-
-    <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">
-        <i class="fa fa-angle-up"></i>
-    </a>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
