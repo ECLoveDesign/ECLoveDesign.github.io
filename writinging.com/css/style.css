@@ -92,7 +92,6 @@ section .card {
     font-size: 1.2rem;
     margin: 10px 0;
 }
-
 .btn-follow,
 .btn-preview {
     background: #fff;
@@ -101,15 +100,19 @@ section .card {
     box-shadow: var(--boxShadow);
 }
 
+.btn-confirm,
 .btn-search {
     border-color: var(--normalRed);
     background: var(--normalRed);
     color: #fff;
 }
 
+.btn-confirm:hover,
+.btn-confirm:active,
 .btn-search:hover,
 .btn-search:active,
 .btn-search:focus {
+    color: #fff;
     border-color: var(--dangerColor) !important;
     background: var(--dangerColor) !important;
 }
@@ -3157,7 +3160,7 @@ main>div>.container {
     border: none;
 }
 
-#chooseModal .modal-footer .btn+.btn {
+.modal-footer .btn+.btn {
     margin-left: 10px;
 }
 
@@ -3167,6 +3170,13 @@ main>div>.container {
         margin: 0 auto;
     }
 }
+
+/* cancelModal */
+#cancelModal .modal-footer {
+    justify-content: center;
+    border: none;
+}
+
 
 /* nav-slider */
 .nav-slider {
@@ -3571,6 +3581,11 @@ main>div>.container {
 }
 .table td .btn+.btn {
     margin-left: .5rem;
+}
+.table td .btn-cancel {
+    color: #fff;
+    background-color: var(--normalRed);
+    border-color: var(--normalRed);
 }
 .table td .btn-del {
     color: var(--normalRed);
