@@ -1422,6 +1422,10 @@ section h2 {
         z-index: 2;
         position: relative;
     }
+    .cont .teacher-wrap {
+        margin-top: 2rem;
+        z-index: auto;
+    }
 }
 @media (max-width:500px) {
     .teacher-wrap [class*="col-"] {
@@ -1943,12 +1947,14 @@ section h2 {
 }
 
 /* ============== 中文嚴選良師 ================= */
-main>div>.container {
+main>div>.container,
+.teacher-wrap .container {
     max-width: 80%;
 }
 
 @media (max-width:1366px) {
-    main>div>.container {
+    main>div>.container,
+    .teacher-wrap .container {
         max-width: 95%;
     }
 }
@@ -1960,7 +1966,8 @@ main>div>.container {
 }
 
 @media (max-width:360px) {
-    main>div>.container {
+    main>div>.container,
+    .teacher-wrap .container {
         max-width: 98%;
     }
 }
@@ -2517,7 +2524,7 @@ main>div>.container {
     bottom: 0;
 }
 
-.cont .container>*:first-child {
+.cont .container>*:first-child:not(.row) {
     position: relative;
     z-index: 2;
     margin-top: -3rem;
