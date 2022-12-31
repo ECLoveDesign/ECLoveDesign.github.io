@@ -229,7 +229,7 @@
                                     <label for="teacher" class="col-md-3 col-form-label">批改老師</label>
                                     <div class="col-md-9">
                                         <input type="text" readonly class="form-control-plaintext" id="teacher"
-                                            value="王明華">
+                                            value="--">
                                     </div>
                                 </div>
 
@@ -332,7 +332,7 @@
                         <button type="button" class="btn btn-edit" onclick="window.location.href='student-thesis-edit.html';">
                             繼續編輯
                         </button>
-                        <button type="button" class="btn btn-submit">
+                        <button type="button" class="btn btn-submit" data-toggle="modal" data-target="#noticeModal">
                             確認送出
                         </button>
                     </div>
@@ -430,7 +430,29 @@
             </div>
         </div>
     </footer>
-    
+
+    <!--noticeModal-->
+    <div class="modal fade" id="noticeModal" tabindex="-1" aria-labelledby="noticeModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title text-center" id="noticeModalLabel">提醒</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>您尚未選擇批改老師! <br>
+                       您需進入編輯選擇才可送單</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-close btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-edit" onclick="window.location.href='student-thesis-edit.html';">繼續編輯</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">
         <i class="fa fa-angle-up"></i>
     </a>
