@@ -2437,7 +2437,7 @@ main>div>.container {
 }
 
 .fancybox-bg {
-    background: rgb(9, 25, 79, .7);
+    background: rgb(9, 25, 79, .95);
 }
 @media (min-width:1280px) {
     .fancybox-ytview .fancybox-stage .fancybox-content {
@@ -3865,6 +3865,9 @@ main>div>.container {
 
 
 /* qa */
+.qa-wrap {    
+    padding-bottom: 1rem;
+}
 .qa-wrap .accordion>.card {
     font-size: 1.1rem;
     border: none;
