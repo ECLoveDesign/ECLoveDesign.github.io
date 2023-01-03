@@ -4011,3 +4011,36 @@ main>div>.container,
     width: 100%;
     text-align: left;
 }
+
+
+/* topup-wrap */
+.topup-wrap {
+    background: #F7F7F7;
+}
+.topup-wrap .card {
+    border: none;
+    margin-bottom: 1.5rem;
+    box-shadow: rgba(35, 77, 119, 0.05) 0px 0px 15px;
+}
+
+.topup-wrap .card-body .title {
+    padding: 5px;
+}
+
+.topup-wrap .card-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: transparent;
+    border-color: #F3F3F3;
+}
+
+.topup-wrap .card img {
+    width: 100%;
+}
+@media (min-width:1024px) {
+    .topup-wrap .container>.row {
+        margin-top: -2rem;
+        z-index: 2;
+        position: relative;
+    }    
+}
