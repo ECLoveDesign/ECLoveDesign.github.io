@@ -117,6 +117,7 @@ section .card {
     background: var(--dangerColor) !important;
 }
 
+.btn-pay,
 .btn-cancelDelivery,
 .btn-send,
 .btn-submit,
@@ -131,6 +132,10 @@ section .card {
     box-shadow: var(--boxShadow);
 }
 
+.btn-pay:not(:disabled):not(.disabled):active,
+.btn-pay:active,
+.btn-pay:focus,
+.btn-pay:hover,
 .btn-cancelDelivery:not(:disabled):not(.disabled):active,
 .btn-cancelDelivery:active,
 .btn-cancelDelivery:focus,
@@ -4043,4 +4048,82 @@ main>div>.container,
         z-index: 2;
         position: relative;
     }    
+}
+.value-list .value-item {
+    border: #B3B3B3 solid 1px;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+.value-list .value-item.active {
+    border: var(--normalRed) solid 3px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+}
+.value-item .value {
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.value-item .value::after {
+    content: 'p';
+    padding: 0px 8px 0px;
+    border-radius: 16px;
+    background: var(--normalRed);
+    color: #fff;
+    margin: 0 0 0 5px;
+    font-size: 21px;
+    font-weight: normal;
+}
+.value-item .dollar {
+    color: #808080;
+    text-align: center;
+    position: relative;
+}
+.value-item .dollar::before {
+    content: 'NT $';
+}
+.value-item .dollar span {
+    /* position: absolute; */
+    /* float: right; */
+    background: var(--normalRed);
+    color: #fff;
+    padding: 2px 18px;
+    margin-left: 10px;
+}
+.topup-wrap .card .credit-card-icon img {
+    width: inherit;
+    height: 25px;
+}
+.credit-card-icon {
+    margin: 10px 0;
+}
+.credit-card-icon img+img {
+    margin-left: 5px;
+}
+.total-wrap {
+    border: var(--normalRed) solid 3px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+}
+.total-wrap .card {
+    margin-bottom: 0;
+}
+.check-cont {
+    margin-bottom: 2rem;
+}
+.check-cont .value-item .value,
+.check-cont .value-item .dollar {
+    text-align: left;
+}
+.check-cont .value-item .dollar {
+    font-size: 2.2rem;
+    color: #212529;
+    font-weight: bold;
+}
+
+.check-cont  [class*="col-"] {
+    display: flex;
+    align-items: center;
 }

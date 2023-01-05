@@ -508,7 +508,36 @@ $(window).scroll(function () {
   // }
 });
 
+// formatNumber
+function formatNumber(n) {
+  if (!isFinite(n)) {
+      return n;
+  }
 
+  var s = "" + n,
+      abs = Math.abs(n),
+      _, i;
+
+  if (abs >= 1000) {
+      _ = ("" + abs).split(/\./);
+      i = _[0].length % 3 || 3;
+
+      _[0] = s.slice(0, i + (n < 0)) +
+          _[0].slice(i).replace(/(\d{3})/g, ',$1');
+
+      s = _.join('.');
+  }
+
+  return s;
+}
+
+$('.value').each(function () {
+  $(this).html(formatNumber($(this).html()))
+})
+
+$('.dollar').each(function () {
+  $(this).html(formatNumber($(this).html()))
+})
 
 // WOW
 new WOW().init();

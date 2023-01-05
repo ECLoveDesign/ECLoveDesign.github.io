@@ -155,7 +155,7 @@
                 </div>
 
             </div>
-        </div>        
+        </div>
 
         <div class="topup-wrap">
             <div class="container">
@@ -175,28 +175,42 @@
                                         <div class="col-md-4">
                                             <div class="value-item active">
                                                 <div class="value">150</div>
-                                                <div class="dollar">NT $100 <span>首次儲值優惠</span></div>
+                                                <div class="dollar">100 <span>首次儲值優惠</span></div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
 
                                             <div class="value-item">
-                                                <div class="value">150</div>
-                                                <div class="dollar">NT $100</div>
+                                                <div class="value">299</div>
+                                                <div class="dollar">299</div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
 
                                             <div class="value-item">
-                                                <div class="value">150</div>
-                                                <div class="dollar">NT $100</div>
+                                                <div class="value">399</div>
+                                                <div class="dollar">399</div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
 
                                             <div class="value-item">
-                                                <div class="value">150</div>
-                                                <div class="dollar">NT $100</div>
+                                                <div class="value">699</div>
+                                                <div class="dollar">699</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+
+                                            <div class="value-item">
+                                                <div class="value">1000</div>
+                                                <div class="dollar">1000</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+
+                                            <div class="value-item">
+                                                <div class="value">1500</div>
+                                                <div class="dollar">1500</div>
                                             </div>
                                         </div>
                                     </div>
@@ -211,9 +225,73 @@
                                 付款方式
                             </div>
                             <div class="card-body">
-                                <p>
-                                    秉持「國文不靠背」的教學原則，強調從生活中理解國文，並主打「有趣、有料、有效」的教學內容，幫助同學建立有系統的文學視野。幽默風趣的授課風格，使國文科不再生硬，轉為歡樂的課堂。
-                                </p>
+
+                                <div class="row">
+                                    <div class="col-lg-9">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="payType">付款方式</label>
+                                            <select class="form-control bs-select" id="payType" title="請選擇">
+                                                <option value="none" disabled="">請選擇</option>
+                                                <option value="信用卡" selected="">信用卡</option>
+                                                <option value="ATM 轉帳">ATM 轉帳</option>
+                                                <option value="超商付款">超商付款</option>
+                                                <option value="LINE Pay">LINE Pay</option>
+                                            </select>
+                                            <div class="credit-card-icon">
+                                                <img src="images/pay-VISA.png">
+                                                <img src="images/pay-Master.png">
+                                                <img src="images/pay-JCB.png">
+                                                <img src="images/pay-Union.png">
+                                            </div>
+                                            <p class="text-muted">下一步將連至第三方金流服務進行刷卡，你所有的交易資訊皆獲得安全保護。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- 發票選項 -->
+                        <div class="card">
+                            <div class="card-header">
+                                發票選項
+                            </div>
+                            <div class="card-body">
+
+                                <div class="row">
+                                    <div class="col-lg-8">
+
+                                        <div class="form-group">
+                                            <label for="name" class="control-label">姓名 <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="text" class="form-control" id="name" placeholder="請輸入姓名">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="email" class="control-label">聯絡信箱 <span
+                                                    class="text-danger">*</span> </label>
+                                            <input type="email" class="form-control" id="email" placeholder="請輸入聯絡信箱">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="invoiceType">發票類型</label>
+                                            <select class="form-control bs-select" id="invoiceType" title="請選擇">
+                                                <option value="none" disabled="">請選擇</option>
+                                                <option value="電子發票" selected="">電子發票</option>
+                                                <option value="捐贈發票">捐贈發票</option>
+                                                <option value="統編發票">統編發票</option>
+                                            </select>
+                                            <p class="text-muted">如需開立統編，請選擇統編發票</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="phonecode" class="control-label">手機條碼 <span
+                                                class="text-danger">*</span> </label>
+                                            <input type="text" class="form-control" id="phonecode" placeholder="請輸入手機條碼">
+                                        </div>
+
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -221,322 +299,49 @@
                     </div>
 
                     <div class="col-lg-4">
+                        <div class="total-wrap">
 
-                        <div class="card">
-                            <div class="card-header">
-                                批改費用
-                            </div>
-                            <div class="card-body">
-
-                                <div class="type-title">
-                                    <span>中文</span>
+                            <div class="card">
+                                <div class="card-header">
+                                    訂單明細
                                 </div>
-                                <div class="grade-list">
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            國小
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            國中(考試、複習考、會考)
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            高中(指考、學測)
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            研究所
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            高普特考
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <div class="card-body">
+                                    <div class="check-cont">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="info-name">
+                                                    儲值數量
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="info-cont">
+                                                    <div class="value-item">
+                                                        <div class="value">150</div>
+                                                    </div>
+                                                </div>
 
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="info-name">
+                                                    儲值金額
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="info-cont">
+                                                    <div class="value-item">
+                                                        <div class="dollar">299</div>
+                                                    </div>
+                                                </div>
 
-                                <div class="type-title">
-                                    <span>英文</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-block btn-pay">付款</button>
+                                    <p>點擊上方按鈕即表示您已依<a href="#">〈購買暨服務契約〉</a>第1.1條期間審閱完畢，並同意契約條款。</p>
                                 </div>
-                                <div class="grade-list">
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            多益 (TOEIC)
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            托福 (TOEFL iBT)
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            雅思 (IELTS)
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            全民英檢 (GEPT)
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            劍橋國際英檢 (Cambridge English)
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            GMAT
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            GRE
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            SAT
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="grade-item">
-                                        <div class="grade-name">
-                                            ACT
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <span class="case">一般件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                            <li>
-                                                <span class="case">急件</span>
-                                                <span class="highlight">200</span>
-                                                <span class="unit">點</span>
-                                                <span class="highlight">4</span>
-                                                <span class="unit">天內</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
+
 
                     </div>
                 </div>
@@ -656,6 +461,11 @@
     <script src="js/megamenu.js"></script>
     <script src="js/ciaoyuToggle.min.js"></script>
     <script src="js/script.js?1"></script>
+    <script>
+        $('.value-item').click(function () {
+            $(this).addClass('active').parent().siblings().find('.value-item').removeClass('active');
+        });
+    </script>
 </body>
 
 </html>
