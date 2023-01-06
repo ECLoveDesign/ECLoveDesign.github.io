@@ -227,20 +227,63 @@
                         <div class="row">
 
                             <div class="col-12 col-md-4">
-                                <h2 class="section-title">問題說明</h2>
+                                <h2 class="section-title">題目說明</h2>
                             </div>
 
                             <div class="col-12 col-md-8">
 
                                 <div class="form-row">
 
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="problem" class="control-label">作文題目與問題描述 <span
-                                                    class="text-danger">*</span> (1000 字內)</label>
-                                            <div class="form-control ckeditor" id="problem" rows="6"></div>
-                                        </div>
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <legend class="col-form-label" for="topic-upload-type">送出方式 <span
+                                                    class="text-danger">*</span></legend>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
+                                                    name="topic-upload-type" id="topic-online" value="online" checked>
+                                                <label class="form-check-label" for="topic-online">線上填寫</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+
+                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
+                                                    name="topic-upload-type" id="topic-upload" value="upload">
+                                                <label class="form-check-label" for="topic-upload">上傳檔案</label>
+                                            </div>
+                                        </fieldset>
+
                                     </div>
+
+                                    <div class="col-md-12">
+
+                                        <div class="form-group" data-ciaoyu-toggle="topic-online">
+                                            <label for="topic-problem" class="control-label">作文題目與問題描述 <span
+                                                    class="text-danger">*</span> (1000 字內)</label>
+                                            <div class="form-control ckeditor" id="topic-problem" rows="6"></div>
+                                        </div>
+
+                                        <div class="form-group" data-ciaoyu-toggle="topic-upload">
+
+                                            <label for="file-question">作文題目與問題描述檔案 (限定 doc 檔案) <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="input-upload file">
+
+                                                <input type="file" class="input-file">
+                                                <div class="input-group col-xs-12">
+                                                    <input type="text" class="form-control" disabled
+                                                        placeholder="請選擇檔案">
+                                                    <span class="input-group-append">
+                                                        <button class="upload-field btn btn-browse"
+                                                            type="button">瀏覽檔案</button>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
 
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -355,23 +398,6 @@
 
                                     </div>
 
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="vcode">驗證碼<span class="text-danger">*</span></label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="vcode" placeholder="請輸入驗證碼"
-                                                    required>
-                                                <div class="input-group-append" id="btn-valid">
-                                                    <img src="images/validImg.gif">
-                                                </div>
-                                                <div class="invalid-feedback">
-                                                    請輸入證件號碼
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
 
                                 </div>
 
