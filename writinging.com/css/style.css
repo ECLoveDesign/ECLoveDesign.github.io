@@ -1424,7 +1424,7 @@ section h2 {
 @media (min-width:1024px) {
     .teacher-wrap {
         margin-top: -2rem;
-        z-index: 2;
+        /* z-index: 3; */
         position: relative;
     }
     .cont .teacher-wrap {
@@ -2143,6 +2143,11 @@ main>div>.container,
 
 .pagination .page-link {
     margin: 0 2px;
+    color: #000;
+}
+.page-item.active .page-link {
+    background-color: #000;
+    border-color: #000;
 }
 
 .page-item:first-child .page-link,
@@ -2632,6 +2637,7 @@ main>div>.container,
 .section-title {
     font-size: 1.4rem;
     margin: 0;
+    padding-top: 1.75rem;
 }
 
 .form-control-plaintext a+a::before {
@@ -3608,7 +3614,7 @@ main>div>.container,
 
 .table td a {
     color: #000;
-    text-decoration: underline;
+    font-weight: bold;
 }
 
 .table td .btn:not(.dropdown-toggle) {

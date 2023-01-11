@@ -76,7 +76,7 @@
                             <i class="fa fa-user"></i> 小桃子
                         </a>
                         <ul class="nav-dropdown">
-                            <li class="active"><a href="teacher-thesis.html">審批管理</a></li>
+                            <li class="active"><a href="teacher-thesis.html">批改管理</a></li>
                             <li><a href="teacher-income.html">我的收益</a></li>
                             <li><a href="teacher-profile.html">個人檔案</a></li>
                             <li><a href="teacher-message.html">通知中心</a></li>
@@ -108,8 +108,8 @@
                         <ul class="swiper-wrapper section-nav">
 
                             <li class="swiper-slide nav-item active">
-                                <a class="nav-link" href="teacher-thesis.html" title="審批管理">
-                                    審批管理
+                                <a class="nav-link" href="teacher-thesis.html" title="批改管理">
+                                    批改管理
                                 </a>
                             </li>
 
@@ -145,8 +145,8 @@
 
                     <div class="form-section">
                         <div class="order-info">
-                            <div class="info-name">剩餘時間：<span class="time">2天 15分 16秒</span></div>
-                            <div class="info-name">批改單號：<span class="number">AED00001</span></div>
+                            <div class="info-name">剩餘批改時間：<span class="time">2天 15分 16秒</span></div>
+                            <div class="info-name">批改單號：<span class="number">TED00001</span></div>
                         </div>
                     </div>
 
@@ -160,10 +160,26 @@
                             <div class="col-12 col-md-9">
 
                                 <div class="form-group row">
+                                    <label for="orderSendNum" class="col-md-3 col-form-label">送批單號</label>
+                                    <div class="col-md-9">
+                                        <input type="text" readonly class="form-control-plaintext" id="orderSendNum"
+                                            value="AED00001">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
                                     <label for="studentName" class="col-md-3 col-form-label">學生暱稱</label>
                                     <div class="col-md-9">
                                         <input type="text" readonly class="form-control-plaintext" id="studentName"
-                                            value="小桃子">
+                                            value="小桃子 (AED000001)">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="orderSendTime" class="col-md-3 col-form-label">送批時間</label>
+                                    <div class="col-md-9">
+                                        <input type="text" readonly class="form-control-plaintext" id="orderSendTime"
+                                            value="2022.11.7 14:11">
                                     </div>
                                 </div>
 
@@ -176,27 +192,12 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="orderFinishTime" class="col-md-3 col-form-label">交單期限</label>
+                                    <label for="orderFinishTime" class="col-md-3 col-form-label">批改期限</label>
                                     <div class="col-md-9">
                                         <input type="text" readonly class="form-control-plaintext" id="orderFinishTime"
                                             value="2022.11.12 14:11">
                                     </div>
                                 </div>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <div class="row">
-
-                            <div class="col-12 col-md-3">
-                                <h2 class="section-title">送批屬性</h2>
-                            </div>
-
-                            <div class="col-12 col-md-9">
 
                                 <div class="form-group row">
                                     <label for="language" class="col-md-3 col-form-label">批改語言</label>
@@ -218,7 +219,7 @@
                                     <label for="orderFinishTime" class="col-md-3 col-form-label">支付點數</label>
                                     <div class="col-md-9">
                                         <input type="text" readonly class="form-control-plaintext" id="orderFinishTime"
-                                            value="王一傳老師_一般件_150點_4天內">
+                                            value="一般件_150點_4天內">
                                     </div>
                                 </div>
 
@@ -227,6 +228,7 @@
 
                         </div>
                     </div>
+
 
                     <div class="form-section">
                         <div class="row">
@@ -334,7 +336,7 @@
                                             </div>
 
                                         </div>
-                                        <small class="text-muted teacher-notice">限定 doc 檔</small>
+                                        <small class="text-muted teacher-notice">限定 doc、pdf、ptt、jpg、png 檔案</small>
                                     </div>
                                     
                                 </div>
@@ -410,7 +412,7 @@
 
                     <div class="form-section">
                         <div class="alert notice-end">
-                            <p class="text-center">※本網站就台端之相關個人資料之蒐集、處理或利用，均依照有關法令規定辦理，另台端之個人資料相關權益亦可參閱本網站之個人資料保護法專區。
+                            <p class="text-center">※若有批改附加檔案，請確認附上。
                             </p>
                         </div>
                     </div>
