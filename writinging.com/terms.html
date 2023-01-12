@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="assets/lightgallery/lightgallery.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
     <link rel="stylesheet" href="css/style.css?5" />
-    <title>寫作送批│說文解章─解說你的文章</title>
+    <title>隱私權政策│說文解章─解說你的文章</title>
 </head>
 
 <body>
@@ -47,7 +47,7 @@
                     <li>
                         <a href="javascript:void(0)">嚴選良師</a>
                         <ul class="nav-dropdown">
-                            <li class="active"><a href="teacher-tw.html">中文嚴選良師</a></li>
+                            <li><a href="teacher-tw.html">中文嚴選良師</a></li>
                             <li><a href="teacher-en.html">英文嚴選良師</a></li>
                         </ul>
                     </li>
@@ -99,337 +99,108 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">首頁</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">寫作送批</li>
+                        <li class="breadcrumb-item active" aria-current="page">使用條款</li>
                     </ol>
                 </nav>
 
-                <h1>寫作送批</h1>
+                <h1>使用條款</h1>
             </div>
         </div>
 
-        <div class="cont form-wrap">
+        <div class="cont">
             <div class="container">
 
-                <div class="form">
-
-                    <div class="form-section">
-                        <div class="alert notice-begin">
-                            <p>請將要留給老師的問題描述清楚，並提供相對應的附件資料給老師參考。<br>為能儘速回覆並解決您的問題，打「<span
-                                    class="text-danger">*</span>」為必填欄位，麻煩請您務必填寫，謝謝！</p>
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <div class="row">
-
-                            <div class="col-12 col-md-4">
-                                <h2 class="section-title">送批對象</h2>
-                            </div>
-
-                            <div class="col-12 col-md-8">
-
-                                <div class="form-row">
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="language-select" class="control-label">批改語言 <span
-                                                    class="text-danger">*</span></label>
-
-                                            <select name="select" class="form-control bs-select" data-ciaoyu="toggle"
-                                                id="language-select">
-                                                <!-- <option value="none" selected="" disabled="">請選擇
-                                            </option> -->
-                                                <option value="1">中文</option>
-                                                <option value="2">英文</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <!--中文程度選擇-->
-                                        <div class="form-group" data-ciaoyu-toggle="language-select"
-                                            data-ciaoyu-val="1">
-                                            <label class="control-label">程度選擇 <span class="text-danger">*</span></label>
-                                            <select class="form-control bs-select">
-                                                <option value="國小">國小</option>
-                                                <option value="國中(考試、複習考、會考)">國中(考試、複習考、會考)</option>
-                                                <option value="高中(指考、學測)">高中(指考、學測)</option>
-                                                <option value="研究所">研究所</option>
-                                                <option value="高普特考">高普特考</option>
-                                            </select>
-                                        </div>
-
-                                        <!--英文程度選擇-->
-                                        <div class="form-group" data-ciaoyu-toggle="language-select"
-                                            data-ciaoyu-val="2">
-                                            <label class="control-label">程度選擇 <span class="text-danger">*</span></label>
-                                            <select class="form-control bs-select">
-                                                <option value="多益 (TOEIC)">多益 (TOEIC)</option>
-                                                <option value="托福 (TOEFL iBT)">托福 (TOEFL iBT)</option>
-                                                <option value="雅思 (IELTS)">雅思 (IELTS)</option>
-                                                <option value="全民英檢 (GEPT)">全民英檢 (GEPT)</option>
-                                                <option value="劍橋國際英檢 (Cambridge English)">劍橋國際英檢 (Cambridge English)
-                                                </option>
-                                                <option value="GMAT">GMAT</option>
-                                                <option value="GRE">GRE</option>
-                                                <option value="SAT">SAT</option>
-                                                <option value="ACT">ACT</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="teacher-select" class="control-label">選擇批改老師 <span
-                                                    class="text-danger">*</span></label>
-                                            <div class="row">
-                                                <div class="col-md-8 pr-md-0">
-                                                    <input type="text" id="teacher-select" class="form-control"
-                                                        value="王文廷老師 一般件 150 點" data-role="tagsinput" disabled />
-
-                                                </div>
-                                                <div class="col-md-4 pl-md-0">
-                                                    <div class="input-group">
-                                                        <div class="input-group-append">
-                                                            <button class="btn btn-secondary" type="button"
-                                                                id="btn-choose" data-toggle="modal"
-                                                                data-target="#nonchooseModal">選擇老師(未關注)</button>
-                                                            <button class="btn btn-secondary" type="button"
-                                                                id="btn-choose" data-toggle="modal"
-                                                                data-target="#chooseModal">選擇老師</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <small class="text-muted teacher-notice">
-                                                您目前選擇 <span class="num teacher">1</span> 位老師，費用共 <span
-                                                    class="num point">150</span> 元/點 (現有點數 <span
-                                                    class="num lave">200</span>
-                                                點)
-                                            </small>
-
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <div class="row">
-
-                            <div class="col-12 col-md-4">
-                                <h2 class="section-title">題目說明</h2>
-                            </div>
-
-                            <div class="col-12 col-md-8">
-
-                                <div class="form-row">
-
-                                    <div class="col-md-6">
-
-                                        <fieldset class="form-group">
-                                            <legend class="col-form-label" for="topic-upload-type">送出方式 <span
-                                                    class="text-danger">*</span></legend>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="topic-upload-type" id="topic-online" value="online" checked>
-                                                <label class="form-check-label" for="topic-online">線上填寫</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="topic-upload-type" id="topic-upload" value="upload">
-                                                <label class="form-check-label" for="topic-upload">上傳檔案</label>
-                                            </div>
-                                        </fieldset>
-
-                                    </div>
-
-                                    <div class="col-md-12">
-
-                                        <div class="form-group" data-ciaoyu-toggle="topic-online">
-                                            <label for="topic-problem" class="control-label">作文題目與問題描述 <span
-                                                    class="text-danger">*</span> (1000 字內)</label>
-                                            <div class="form-control ckeditor" id="topic-problem" rows="6"></div>
-                                        </div>
-
-                                        <div class="form-group" data-ciaoyu-toggle="topic-upload">
-
-                                            <label for="file-question">作文題目與問題描述檔案 (限定 doc 檔案) <span
-                                                    class="text-danger">*</span></label>
-                                            <div class="input-upload file">
-
-                                                <input type="file" class="input-file">
-                                                <div class="input-group col-xs-12">
-                                                    <input type="text" class="form-control" disabled
-                                                        placeholder="請選擇檔案">
-                                                    <span class="input-group-append">
-                                                        <button class="upload-field btn btn-browse"
-                                                            type="button">瀏覽檔案</button>
-                                                    </span>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="other" class="control-label">附加問題 (200字內) </label>
-                                            <textarea class="form-control" id="other" rows="6"></textarea>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="form-section">
-                        <div class="row">
-
-                            <div class="col-12 col-md-4">
-                                <h2 class="section-title">作文內容</h2>
-                            </div>
-
-                            <div class="col-12 col-md-8">
-
-                                <div class="form-row">
-
-                                    <div class="col-md-6">
-
-                                        <fieldset class="form-group">
-                                            <legend class="col-form-label" for="select-upload-type">送出方式 <span
-                                                    class="text-danger">*</span></legend>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="select-upload-type" id="online" value="online" checked>
-                                                <label class="form-check-label" for="online">線上填寫</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-
-                                                <input class="form-check-input" data-ciaoyu="toggle" type="radio"
-                                                    name="select-upload-type" id="upload" value="upload">
-                                                <label class="form-check-label" for="upload">上傳檔案</label>
-                                            </div>
-                                        </fieldset>
-
-                                    </div>
-
-                                    <div class="col-md-12">
-
-                                        <div class="form-group" data-ciaoyu-toggle="online">
-                                            <label class="control-label">線上填寫 <span class="text-danger">*</span></label>
-                                            <div class="form-control ckeditor" id="textarea" rows="1"></div>
-                                        </div>
-
-                                        <div class="form-group" data-ciaoyu-toggle="upload">
-
-                                            <label for="file-thesis">作文檔案 (限定 doc 檔案) <span
-                                                    class="text-danger">*</span></label>
-                                            <div class="input-upload file">
-
-                                                <input type="file" class="input-file">
-                                                <div class="input-group col-xs-12">
-                                                    <input type="text" class="form-control" disabled
-                                                        placeholder="請選擇檔案">
-                                                    <span class="input-group-append">
-                                                        <button class="upload-field btn btn-browse"
-                                                            type="button">瀏覽檔案</button>
-                                                    </span>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-
-                                            <label for="file-other">附加檔案 (限定doc、pdf、ppt、jpg、png...檔案)</label>
-                                            <div class="input-upload file">
-
-                                                <input type="file" class="input-file">
-                                                <div class="input-group col-xs-12">
-                                                    <input type="text" class="form-control" disabled
-                                                        placeholder="請選擇檔案">
-                                                    <span class="input-group-append">
-                                                        <button class="upload-field btn btn-browse"
-                                                            type="button">瀏覽檔案</button>
-                                                    </span>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-
-                                            <label for="file-other2" class="sr-only">附加檔案2
-                                                (限定doc、pdf、ppt、jpg、png...檔案)</label>
-                                            <div class="input-upload file">
-
-                                                <input type="file" class="input-file">
-                                                <div class="input-group col-xs-12">
-                                                    <input type="text" class="form-control" disabled
-                                                        placeholder="請選擇檔案">
-                                                    <span class="input-group-append">
-                                                        <button class="upload-field btn btn-browse"
-                                                            type="button">瀏覽檔案</button>
-                                                    </span>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <div class="alert notice-end">
-                            <p class="text-center">※本網站就台端之相關個人資料之蒐集、處理或利用，均依照有關法令規定辦理，另台端之個人資料相關權益亦可參閱本網站之個人資料保護法專區。
+                <div class="news-wrap">
+
+                    
+                    <div class="news-section">
+                        <div class="news-info">
+                            <p>當您訪問或經由註冊申請過程，成為說文解章網站（以下簡稱本網站）的會員，開始使用本服務時，即表示您已閱讀、瞭解並同意接受本約定書之所有內容。如果您不同意本約定書的內容，您應立即停止使用本網站。本公司有權於任何時間修改或變更本使用條款之內容，您可隨時到說文解章網站瞭解相關修訂內容。如您不同意會員服務條款的修訂內容，您應停止使用本服務，如您仍繼續使用本服務，則視為您已閱讀、瞭解並同意接受本使用條款。
                             </p>
                         </div>
                     </div>
+                    <div class="news-section">
+                        <article>
+                            <h2>一、授權原則</h2>
+                            <p>本網站上可擷取之任何資訊之智慧財產權，皆屬該資訊所有者擁有，本網站及本公司擁有該資訊之合法使用權，非經資訊所有者授權，會員及非會員皆不得侵害資訊所有者之智慧財產權，違反時由會員自負一切法律責任。</p>
+                            <ol>
+                                <li>資訊所有者將內容<span class="text-danger">提交或上傳</span>到說文解章網站，資訊所有者即授予說文解章網站在全球範圍內、非排他性、免許可費、可<span class="text-danger">處</span>分及可轉讓使用，說文解章或本公司亦可複製、發行、準備衍生作品、展示、出版、改編、提供線上版本或電子傳輸，包括但不限於以任何媒體格式，在任何媒體管道推廣和重新發佈服務（及其衍生作品）的全部或部分。您瞭解並同意，對於您已移除或刪除的視頻，說文解章網站可以在伺服器上保留副本。</li>
+                                <li>您保證您提交至服務的內容不得侵犯任何第三方的版權內容或第三方專有權利的內容。</li>
+                            </ol>
 
-                    <div class="form-actions">
-                        <button type="button" class="btn btn-reset">
-                            重新填寫
-                        </button>
-                        <button type="button" class="btn btn-save" onclick="window.location.href='student-thesis.html';">
-                            暫存
-                        </button>
-                        <button type="button" class="btn btn-submit" onclick="window.location.href='student-thesis.html';">
-                            確認送出
-                        </button>
+                            
+                            <h2>二、會員守法義務</h2>
+                            <p>您承諾絕不為任何非法目的或以任何非法方式使用本網站，並承諾遵守中華民國相關法規及一切使用網際網路之國際慣例，您若為中華民國以外之使用者亦同樣接受此規範。您同意並保證不得利用本服務從事侵害他人權益或違法之行為，例如（包括但不限於）：</p>
+                            <ol>
+                                <li>公佈或傳送任何誹謗、侮辱、具威脅性、攻擊性、不雅、猥褻、不實、違反公共秩序或善良風俗、破壞群體和諧或其他不法之文字、圖片或任何形式的檔案於本網站上。</li>
+                                <li>侵害他人名譽、隱私權、營業秘密、商標權、著作權、專利權、其他智慧財產權及其他權利。</li>
+                                <li>違反依法律或契約所應負之保密義務。</li>
+                                <li>冒用他人名義使用本服務。</li>
+                                <li>傳輸或散佈電腦病毒。</li>
+                                <li>從事不法交易行為或張貼虛假不實、引人犯罪之訊息。</li>
+                                <li>販賣槍枝、毒品、禁藥、盜版軟體或其他違禁物。</li>
+                                <li>提供賭博資訊或以任何方式引誘他人參與賭博。</li>
+                                <li>發送廣告資訊或從事商業交易行為。</li>
+                                <li>破壞、干擾或入侵本網站上各項資料、功能、系統之企圖或行為。</li>
+                                <li>其他有正當理由認為不適當之行為。</li>
+                                <li>本站認為有礙本站之營運等行為。</li>
+                            </ol>
+                            
+                            <h2>三、購買須知</h2>
+                            <p>民法規定之無行為能力人（如未滿七歲之未成年人）購買，應由其法定代理人為之；限制行為能力人（滿七歲但未滿二十歲），應得法定代理人之同意，方能購買本網站服務。 一旦註冊即表示已同意並願意完全遵守本購買規定所有內容；且若為民法規定之無行為能力人、限制行為能力人，則視為由無行為能力人之法定代理人代為購買本服務，或限制行為能力人之法定代理人已同意購買本服務。</p>                            
+                            
+                            <h2>四、廣告</h2>
+                            <p>您在本網站上瀏覽到的所有廣告內容、文字與圖片之說明、展示樣品或其他銷售資訊，均由各該廣告商、產品與服務的供應商所負責。您對於廣告之正確性與可信度應自行斟酌與判斷。本網站僅接受委託予以刊登，不對前述廣告負擔保責任。 一旦註冊即表示已同意並願意完全遵守本購買規定所有內容；且若為民法規定之無行為能力人、限制行為能力人，則視為由無行為能力人之法定代理人代為購買本服務，或限制行為能力人之法定代理人已同意購買本服務。</p>
+
+                            <h2>五、使用者責任及停權使用</h2>
+                            <p>使用者（無論會員或非會員）其行為若有違法或有違法之虞，或違反二、會員守法義務，或出現有下列任一可能時，說文解章可不須事先告知使用者或徵求其同意，即可中止該使用者使用本服務之全部或一部，停用或刪除帳戶、取消使用者與之間關於本服務的合約（包括但不限於依據本條款成立的合約，以下皆同），或採取報警等必要及適當之任何其他措施，並保留法律追訴權： 一旦註冊即表示已同意並願意完全遵守本購買規定所有內容；且若為民法規定之無行為能力人、限制行為能力人，則視為由無行為能力人之法定代理人代為購買本服務，或限制行為能力人之法定代理人已同意購買本服務。</p>
+                            <ol>
+                                <li>使用者違反相關法令、本條款、或任何個別條款。</li>
+                                <li>使用者透過散播不實資訊，例如利用詐欺方式或勢力，或透過其他不法方破壞的信譽。</li>
+                                <li>違反現居地現行法令之行為、破壞群體和諧。</li>
+                                <li>操作或使用影響本網站整體網路服務系統運作或進行直接、間接破壞網路上任何其他系統之行為。</li>
+                                <li>以本網站所提供的網路服務從事任何不合法的活動，如恐嚇，侵害他人智慧財產、販售非正式授權軟體、色情光碟、毒品等之行為。</li>
+                                <li>嚴重影響他人之權利時，如散播病毒、惡意散播不實言論等。</li>
+                                <li>違反本服務條款的規定及精神時。</li>
+                                <li>產生任何令人反感等。</li>
+                                <li>從事非本網站主要性質之活動。</li>
+                                <li>本站認為有礙本站之營運等行為。</li>
+                            </ol>
+                            <p>使用者（無論會員或非會員）其行為若有違法或有違法之虞，或違反二、會員守法義務，或出現有下列任一可能時，說文解章可不須事先告知使用者或徵求其同意，即可中止該使用者使用本服務之全部或一部，停用或刪除帳戶、取消使用者與之間關於本服務的合約（包括但不限於依據本條款成立的合約，以下皆同），或採取報警等必要及適當之任何其他措施，並保留法律追訴權： 本網站有權認定會員或非會員在本站的行為是否已違反本使用條款，並可以隨時且無須事先通知，自行決定刪除該內容和，或終止會員或非會員帳號，或禁止其使用。</p>
+
+                            <h2>六、免責聲明</h2>
+                            <p>本網站禁止但不負責任何誹謗、冒犯或任何不合法行為及內容。但上述情況對使用者可能存在的傷害或損害風險完全由其自己承擔。說文解章網站免予承擔所有有關本網站或鏈結網站內容的準確性或完整性的保證、條件、條款和陳述，並且不承擔下列責任：</p>
+                            <ol>
+                                <li>錯誤或內容失實；</li>
+                                <li>您訪問或使用本服務引起任何性質的人身傷害或人身損害；</li>
+                                <li>未經授權訪問或使用有安全措施的伺服器和/或儲存在伺服器上的任何個人資訊和/或財務資訊；</li>
+                                <li>我們服務的中斷或停止傳輸；</li>
+                                <li>第三方可能通過我們的服務傳輸的任何軟體錯誤、病毒、木馬或類似性質的程式；</li>
+                                <li>任何內容中的錯誤或疏忽，或由於使用發佈、郵件傳送、傳輸或通過服務的其他方式獲得的內容，導致的任何形式的損失或損害。</li>
+                            </ol>
+                            <p>說文解章網站不保證、認同、擔保或承擔由任何第三方通過服務或任何超鏈結服務或橫幅功能或其他方式廣告發佈或提供的產品或服務的責任，並且對於您與第三方提供商就商品或服務的交易，說文解章網站不作為一方當事人，也不負責任何監控責任。</p>
+                            
+                            <div class="text-danger">
+                                <h2>七、網站暫停或終止服務</h2>
+                                <p>說文解章網站相關軟硬體設備進行更換、升級或維修得暫停或中斷本服務。如因維修或不可抗力因素，導致本網站服務暫停，暫停期間造成直接或間接利利益之損失，本公司不負賠償責任。</p>
+                                
+                                <p>說文解章網站於服務期間若遭遇天災、戰爭、人為等不可抗力因素，導致本公司對於已付款或未付款之使用者（含送批學生及批改老師）所提供之服務中斷或終止，蓋不負賠償責任。惟若上述導致原因及肇生影響消失後，本網站將視該原因影響程度以恢復服務。</p>
+                            </div>
+                            <div class="text-danger">
+                                <h2>八、更改批改老師及點數處理</h2>
+                                <p>使用者於送批作文並經批改者接單批改後，說文解章計費系統即就該送批作文使用者所購買點數進行扣點作業。若批改者未予批改回復，本公司將於接獲通知後，轉由他位老師批改。轉批之短缺點數將由本網站負責，溢扣點數則退回
+                                    。退回點數僅退回實際消費金額，若原訂單有使用折價券、或是點數折抵等優惠，皆不予退回。本網站得扣除退款匯費及手續費等。 退費申請請聯繫客服，將有專人回覆。
+                                </p>
+                                <h2>十、舉報</h2>
+                            </div>
+                            
+                            <p>倘發現任何違反本服務條款之情事，請聯繫說文解章官方信箱。</p>
+                        </article>
                     </div>
-
                 </div>
 
             </div>
         </div>
-
 
     </main>
 
@@ -968,21 +739,6 @@
     <script src="js/megamenu.js"></script>
     <script src="js/ciaoyuToggle.min.js"></script>
     <script src="js/script.js"></script>
-
-    <script>
-        $(".btn-follow").click(function () {
-            $(this).hide();
-            $(".btn-unfollow").show();
-        });
-
-        $(".btn-unfollow").click(function () {
-            $(this).hide();
-            $(".btn-follow").show();
-        });
-
-        // $("#teacher-select").prop('disaled', true);
-        // $("[data-role='tagsinput']").prop('disaled', true);
-    </script>
 </body>
 
 </html>

@@ -1424,7 +1424,7 @@ section h2 {
 @media (min-width:1024px) {
     .teacher-wrap {
         margin-top: -2rem;
-        /* z-index: 3; */
+        z-index: 3;
         position: relative;
     }
     .cont .teacher-wrap {
@@ -1746,6 +1746,19 @@ section h2 {
 .article .card .data-info a:hover {
     color: #3DA3D4;
 }
+.news-section article h2 {
+    margin-bottom: 1rem;
+}
+article ul li,
+article ol li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+article li ul,
+article li ol {
+    margin-left: 1.75rem;
+    margin-top: 1rem;
+} 
 
 @media (max-width:1199px) {
     .article [class*="col-"]+[class*="col-"] {
@@ -1983,6 +1996,9 @@ main>div>.container,
     z-index: 2;
     margin: 0;
     background-position-x: center !important;
+}
+.jumbotron.layerTop {
+    z-index: 4;
 }
 
 .jumbotron::before {
@@ -2637,6 +2653,8 @@ main>div>.container,
 .section-title {
     font-size: 1.4rem;
     margin: 0;
+}
+.innerCont .section-title {
     padding-top: 1.75rem;
 }
 

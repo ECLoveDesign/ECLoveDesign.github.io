@@ -493,10 +493,13 @@ $(window).scroll(function () {
 
   
   if ($(this).scrollTop() > 120) {
+    
+    $(".jumbotron").addClass('layerTop');
     $(".search_box").addClass('affix');
     // $(".cont .container>*").addClass('mt-0');
   } else {
-    $(".search_box").removeClass('affix');
+    $(".search_box").removeClass('affix');    
+    $(".jumbotron").removeClass('layerTop');
     // $(".cont .container>*").removeClass('mt-0');
   }
 
