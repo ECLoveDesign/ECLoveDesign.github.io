@@ -2567,6 +2567,8 @@ main>div>.container,
 }
 
 .form-wrap {
+    background-color: #fff;
+    box-shadow: rgba(35, 77, 119, 0.05) 0px 0px 15px;
     padding-bottom: 4rem;
 }
 
@@ -2661,9 +2663,6 @@ main>div>.container,
 .section-title {
     font-size: 1.4rem;
     margin: 0;
-}
-.innerCont .section-title {
-    padding-top: 1.75rem;
 }
 
 .form-control-plaintext a+a::before {
