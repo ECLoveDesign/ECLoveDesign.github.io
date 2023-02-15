@@ -1484,8 +1484,8 @@ section h2 {
 
 .video-swiper .swiper-slide {
     font-size: 18px;
-    transition: .7s;
-    transform: scale(0.6);
+    /* transition: .7s;
+    transform: scale(0.6); */
 
     /* Center slide text vertically */
     display: -webkit-box;
@@ -1513,16 +1513,18 @@ section h2 {
     object-fit: cover;
 }
 
-.video-swiper .swiper-slide.swiper-slide-active {
+/* .video-swiper .swiper-slide.swiper-slide-active {
     transform: scale(1);
-}
+} */
 
 .video-wrap .swiper-button-next {
-    right: 400px;
+    right: 0;
+    box-shadow: #081935 0 0 14px;
 }
 
 .video-wrap .swiper-button-prev {
-    left: 400px;
+    left: 0;
+    box-shadow: #081935 0 0 14px;
 }
 
 .video-swiper .card-title {
@@ -1530,77 +1532,24 @@ section h2 {
     font-weight: 400;
 }
 
-@media (max-width:1800px) {
-    .video-wrap .swiper-button-next {
-        right: 320px;
-    }
-
-    .video-wrap .swiper-button-prev {
-        left: 320px;
-    }
-}
-
-@media (max-width:1440px) {
-    .video-wrap .swiper-button-next {
-        right: 250px;
-    }
-
-    .video-wrap .swiper-button-prev {
-        left: 250px;
-    }
-}
-
-@media (max-width:1200px) {
-    .video-wrap .swiper-button-next {
-        right: 200px;
-    }
-
-    .video-wrap .swiper-button-prev {
-        left: 200px;
-    }
-}
-
-@media (max-width:991px) {
-    .video-wrap .swiper-button-next {
-        right: 160px;
-    }
-
-    .video-wrap .swiper-button-prev {
-        left: 160px;
-    }
-}
-
-@media (max-width:835px) {
-    .video-wrap .swiper-button-next {
-        right: 140px;
-    }
-
-    .video-wrap .swiper-button-prev {
-        left: 140px;
-    }
-}
-
-@media (max-width:720px) {
-    .video-wrap .swiper-button-next {
-        right: 110px;
-    }
-
-    .video-wrap .swiper-button-prev {
-        left: 110px;
-    }
-}
-
 @media (max-width:600px) {
     .video-swiper .swiper-slide .card {
-        margin: 0 45px;
+        margin: 0;
     }
 
     .video-wrap .swiper-button-next {
         right: 20px;
     }
-
-    .video-wrap .swiper-button-prev {
-        left: 20px;
+    .video-wrap {
+        width: 100%;
+        padding: 0;
+    }
+    .video-swiper .card-title {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+    .video-swiper .card-body {
+        padding: 0.5rem;
     }
 }
 
@@ -3902,7 +3851,10 @@ main>div>.container,
 
 /* video-wrap */
 .video-wrap {
-    padding: 3rem 0;
+    position: relative;
+    padding: 0 4rem;
+    width: 95%;
+    margin: auto;
 }
 .video-wrap a img {
     max-width: 100%;

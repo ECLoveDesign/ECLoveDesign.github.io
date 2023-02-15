@@ -126,18 +126,23 @@ if ( $('.teacher-wrap').length ) {
 // video-wrap
 if ( $('.video-wrap').length ) {
   var videoswiper = new Swiper('.video-swiper', {
-    slidesPerView: 2,
+    slidesPerView: 3,
     spaceBetween: 0,
-    centeredSlides: true,
+    // centeredSlides: true,
     loop: true,
     navigation: {
-      nextEl: '.video-swiper .swiper-button-next',
-      prevEl: '.video-swiper .swiper-button-prev',
+      nextEl: '.video-wrap .swiper-button-next',
+      prevEl: '.video-wrap .swiper-button-prev',
     },
     breakpoints: {
       600: {
           slidesPerView: 1,
           spaceBetween: 25,
+
+      },
+      1100: {
+          slidesPerView: 2,
+          spaceBetween: 0,
 
       },
     },
