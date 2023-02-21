@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="css/Basic.Global.9AE5CC1C2C691BBB39BE79BD4425A60B.css" />
     <!-- <link rel="stylesheet" href="/__bundles/Basic.Global.9AE5CC1C2C691BBB39BE79BD4425A60B.css?_v=638125652213447514" /> -->
 
-    <link rel="stylesheet" href="css/fix.css" />
-
 
 
 
@@ -380,23 +378,25 @@
                                     <div class="collapse show card-body" id="mblDiv">
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <input type="hidden" name="ShipmentNo" id="ShipmentNo"><label
-                                                    class="form-label"
-                                                    for="OceanExportMbl_FilingNo">&#x6587;&#x4EF6;&#x7DE8;&#x865F;</label><input
-                                                    type="text" id="OceanExportMbl_FilingNo"
-                                                    name="OceanExportMbl.FilingNo" value="" disabled=""
-                                                    class="form-control " /><span
-                                                    class="text-danger field-validation-valid"
-                                                    data-valmsg-for="OceanExportMbl.FilingNo"
-                                                    data-valmsg-replace="true"></span>
+                                                <input type="hidden" name="ShipmentNo" id="ShipmentNo">
+                                                <div class="mb-3"><label class="form-label"
+                                                        for="OceanExportMbl_FilingNo">&#x6587;&#x4EF6;&#x7DE8;&#x865F;</label><input
+                                                        type="text" id="OceanExportMbl_FilingNo"
+                                                        name="OceanExportMbl.FilingNo" value="" disabled=""
+                                                        class="form-control " /><span
+                                                        class="text-danger field-validation-valid"
+                                                        data-valmsg-for="OceanExportMbl.FilingNo"
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
-                                                    for="OceanExportMbl_MblNo">MB/L&#x865F;&#x78BC;</label><input
-                                                    type="text" id="OceanExportMbl_MblNo" name="OceanExportMbl.MblNo"
-                                                    value="" class="form-control " /><span
-                                                    class="text-danger field-validation-valid"
-                                                    data-valmsg-for="OceanExportMbl.MblNo"
-                                                    data-valmsg-replace="true"></span>
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
+                                                        for="OceanExportMbl_MblNo">MB/L&#x865F;&#x78BC;</label><input
+                                                        type="text" id="OceanExportMbl_MblNo"
+                                                        name="OceanExportMbl.MblNo" value=""
+                                                        class="form-control " /><span
+                                                        class="text-danger field-validation-valid"
+                                                        data-valmsg-for="OceanExportMbl.MblNo"
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
@@ -441,31 +441,34 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_PostDate">&#x767C;&#x5E03;&#x65E5;&#x671F;
                                                     </label><input abp-data-datepicker="false" type="text"
                                                         id="OceanExportMbl_PostDate" name="OceanExportMbl.PostDate"
                                                         value="" class="form-control " readonly="" /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.PostDate"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_SoNo">&#x8239;&#x516C;&#x53F8;S/O&#x865F;&#x78BC;</label><input
                                                         type="text" id="OceanExportMbl_SoNo" name="OceanExportMbl.SoNo"
                                                         value="" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.SoNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_ItnNo">Itn&#x7DE8;&#x865F;</label><input
                                                         type="text" id="OceanExportMbl_ItnNo"
                                                         name="OceanExportMbl.ItnNo" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.ItnNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
@@ -862,10 +865,10 @@
                                                     id="mCoLoaderContent" />
                                             </div>
                                             <div class="col-md-3">
-                                                <label for="CareOfId" class="form-label">C/O</label>
+                                                <label for="CareOfId" class="form-label">C/O <input type="checkbox"
+                                                        name="" /></label>
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
                                                     <div class="dropdown form-control">
-                                                        <input type="checkbox" name="" />
                                                         <button class="btn dropdown-toggle " type="button"
                                                             id="drop_CareOfId" data-bs-toggle="dropdown">
                                                             &#x8ACB;&#x9078;&#x64C7;
@@ -933,14 +936,16 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3"><label class="form-label"
-                                                    for="OceanExportMbl_CarrierContractNo">&#x8239;&#x516C;&#x53F8;&#x5408;&#x7D04;&#x7DE8;&#x865F;</label><input
-                                                    type="text" id="OceanExportMbl_CarrierContractNo"
-                                                    name="OceanExportMbl.CarrierContractNo" value=""
-                                                    class="form-control " /><span
-                                                    class="text-danger field-validation-valid"
-                                                    data-valmsg-for="OceanExportMbl.CarrierContractNo"
-                                                    data-valmsg-replace="true"></span></div>
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
+                                                        for="OceanExportMbl_CarrierContractNo">&#x8239;&#x516C;&#x53F8;&#x5408;&#x7D04;&#x7DE8;&#x865F;</label><input
+                                                        type="text" id="OceanExportMbl_CarrierContractNo"
+                                                        name="OceanExportMbl.CarrierContractNo" value=""
+                                                        class="form-control " /><span
+                                                        class="text-danger field-validation-valid"
+                                                        data-valmsg-for="OceanExportMbl.CarrierContractNo"
+                                                        data-valmsg-replace="true"></span></div>
+                                            </div>
                                             <div class="col-md-3">
                                                 <label for="SvcTermToId" class="form-label">&nbsp;&nbsp;</label>
                                                 <div class="mb-2 custom-checkbox custom-control form-check"><input
@@ -961,23 +966,25 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_VesselName">&#x8239;&#x540D;</label><input
                                                         type="text" id="OceanExportMbl_VesselName"
                                                         name="OceanExportMbl.VesselName" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.VesselName"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_Voyage">&#x822A;&#x6B21;</label><input
                                                         type="text" id="OceanExportMbl_Voyage"
                                                         name="OceanExportMbl.Voyage" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.Voyage"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
@@ -998,14 +1005,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_PorEtd">&#x6536;&#x8CA8;&#x5730;(POR)
                                                         ETD</label><input abp-data-datepicker="false" type="text"
                                                         id="OceanExportMbl_PorEtd" name="OceanExportMbl.PorEtd" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.PorEtd"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -1028,7 +1036,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_PolEtd">ETD</label><span> * </span><input
                                                         abp-data-datepicker="false" type="text" data-val="true"
                                                         data-val-required="&#x6B04;&#x4F4D;ETD&#x4E0D;&#x53EF;&#x70BA;&#x7A7A;."
@@ -1036,7 +1045,7 @@
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.PolEtd"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
@@ -1057,14 +1066,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_PodEta">ETA</label><input
                                                         abp-data-datepicker="false" type="text"
                                                         id="OceanExportMbl_PodEta" name="OceanExportMbl.PodEta" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.PodEta"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -1087,14 +1097,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_DelEta">&#x4EA4;&#x8CA8;&#x5730;(DEL)
                                                         ETA</label><input abp-data-datepicker="false" type="text"
                                                         id="OceanExportMbl_DelEta" name="OceanExportMbl.DelEta" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.DelEta"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
@@ -1115,14 +1126,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_FdestEta">&#x6700;&#x7D42;&#x76EE;&#x7684;&#x5730;ETA</label><input
                                                         abp-data-datepicker="false" type="text"
                                                         id="OceanExportMbl_FdestEta" name="OceanExportMbl.FdestEta"
                                                         value="" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.FdestEta"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -1263,7 +1275,7 @@
                                                     </div>
                                                     <div class="col-md-6">
 
-                                                        <div class="mt-2"><label class="form-label"
+                                                        <div class="mb-3"><label class="form-label"
                                                                 for="OceanExportMbl_PrepreCarriageVoyage"></label><input
                                                                 type="text" id="OceanExportMbl_PrepreCarriageVoyage"
                                                                 name="OceanExportMbl.PrepreCarriageVoyage" value=""
@@ -1367,14 +1379,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_DisplayMblContainerSizeQtyInfo">&#x6AC3;&#x578B;/&#x6578;&#x91CF;</label><input
                                                         type="text" id="OceanExportMbl_DisplayMblContainerSizeQtyInfo"
                                                         name="OceanExportMbl.DisplayMblContainerSizeQtyInfo" value=""
                                                         class="form-control " readonly="" /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.DisplayMblContainerSizeQtyInfo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
 
                                         </div>
@@ -1399,25 +1412,28 @@
                                                 </div>
                                                 <input type="hidden" name="OceanExportMbl.OblTypeId" id="mOblTypeId" />
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_DocCutOffTime">&#x6587;&#x4EF6;&#x7D50;&#x95DC;&#x65E5;</label><input
                                                         class="cdatetime form-control " abp-data-datetimepicker="false"
                                                         type="text" id="OceanExportMbl_DocCutOffTime"
                                                         name="OceanExportMbl.DocCutOffTime" value="" /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.DocCutOffTime"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_PortCutOffTime">&#x6E2F;&#x53E3;&#x7D50;&#x95DC;&#x65E5;</label><input
                                                         class="cdatetime form-control " abp-data-datetimepicker="false"
                                                         type="text" id="OceanExportMbl_PortCutOffTime"
                                                         name="OceanExportMbl.PortCutOffTime" value="" /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.PortCutOffTime"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_VgmCutOffTime">VGM&#x7D50;&#x95DC;&#x65E5;&#x671F;</label><input
                                                         abp-data-datetimepicker="false" type="text"
                                                         id="OceanExportMbl_VgmCutOffTime"
@@ -1425,18 +1441,19 @@
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.VgmCutOffTime"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_RailCutOffTime">&#x9435;&#x8DEF;&#x7D50;&#x95DC;&#x65E5;</label><input
                                                         class="cdatetime form-control " abp-data-datetimepicker="false"
                                                         type="text" id="OceanExportMbl_RailCutOffTime"
                                                         name="OceanExportMbl.RailCutOffTime" value="" /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.RailCutOffTime"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="row">
@@ -1458,14 +1475,15 @@
                                                 </div>
 
                                             </div>
-                                            <div class="col-md-3"><label class="form-label"
+                                            <div class="col-md-3">
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_CancelByName">&#x53D6;&#x6D88;&#x8005;</label><input
                                                         type="text" id="OceanExportMbl_CancelByName"
                                                         name="OceanExportMbl.CancelByName" value=""
                                                         class="form-control " readonly="" /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.CancelByName"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                                 <input type="hidden" name="OceanExportMbl.CancelById"
                                                     class="form-control" id="OceanExportMbl_CancelById" />
                                             </div>
@@ -1531,14 +1549,14 @@
                                                 <label for="CareOfId" class="form-label">&#x5DF2;&#x653E;&#x8CA8;<input
                                                         type="checkbox" name="OceanExportMbl.IsReleased"
                                                         value="true" /></label>
-                                                        <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_MblReleaseDate"></label><input
                                                         class="cdatetime form-control " abp-data-datetimepicker="false"
                                                         type="text" id="OceanExportMbl_MblReleaseDate"
                                                         name="OceanExportMbl.MblReleaseDate" value="" /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.MblReleaseDate"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
@@ -1569,14 +1587,14 @@
                                                 &nbsp;
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_OnBoardDate">&#x88DD;&#x8239;&#x65E5;&#x671F;</label><input
                                                         class="cdatetime form-control " abp-data-datetimepicker="false"
                                                         type="text" id="OceanExportMbl_OnBoardDate"
                                                         name="OceanExportMbl.OnBoardDate" value="" /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.OnBoardDate"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <button type="button" id="checkHideBtn">
@@ -1589,33 +1607,33 @@
                                         </div>
                                         <div class="hideArea row">
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_SubBlNo">SubBlNo</label><input type="text"
                                                         id="OceanExportMbl_SubBlNo" name="OceanExportMbl.SubBlNo"
                                                         value="" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.SubBlNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_ServiceContactNo">ServiceContactNo</label><input
                                                         type="text" id="OceanExportMbl_ServiceContactNo"
                                                         name="OceanExportMbl.ServiceContactNo" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.ServiceContactNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_ForwardRefNo">ForwardRefNo</label><input
                                                         type="text" id="OceanExportMbl_ForwardRefNo"
                                                         name="OceanExportMbl.ForwardRefNo" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.ForwardRefNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
@@ -1642,34 +1660,34 @@
                                         </div>
                                         <div class="hideArea row">
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_Trans1Eta">&#x4E2D;&#x8F49;&#x6E2F;ETA</label><input
                                                         class="cdatetime form-control " abp-data-datetimepicker="false"
                                                         type="text" id="OceanExportMbl_Trans1Eta"
                                                         name="OceanExportMbl.Trans1Eta" value="" /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.Trans1Eta"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_EctNo">ECTN &#x865F;&#x78BC; </label><input
                                                         type="text" id="OceanExportMbl_EctNo"
                                                         name="OceanExportMbl.EctNo" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.EctNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportMbl_PrnNo">PRN &#x865F;&#x78BC; </label><input
                                                         type="text" id="OceanExportMbl_PrnNo"
                                                         name="OceanExportMbl.PrnNo" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportMbl.PrnNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="mb-2 custom-checkbox custom-control form-check"><input
@@ -1741,45 +1759,45 @@
                                                     id="OceanExportHbl_HblNo" disabled />
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_SoNo">&#x8239;&#x516C;&#x53F8;S/O&#x865F;&#x78BC;</label><input
                                                         type="text" id="OceanExportHbl_SoNo" name="OceanExportHbl.SoNo"
                                                         value="" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.SoNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_CustomerRefNo">&#x4EE3;&#x7406;&#x53C3;&#x8003;&#x7DE8;&#x865F;</label><input
                                                         type="text" id="OceanExportHbl_CustomerRefNo"
                                                         name="OceanExportHbl.CustomerRefNo" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.CustomerRefNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_DocNo">&#x6587;&#x4EF6;&#x7DE8;&#x865F;</label><input
                                                         type="text" id="OceanExportHbl_DocNo"
                                                         name="OceanExportHbl.DocNo" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.DocNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_QuotationNo">&#x5831;&#x50F9;&#x55AE;&#x865F;</label><input
                                                         type="text" id="OceanExportHbl_QuotationNo"
                                                         name="OceanExportHbl.QuotationNo" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.QuotationNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
@@ -2031,7 +2049,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_PorEtd">&#x6536;&#x8CA8;&#x5730;(POR)
                                                         ETD</label><input abp-data-datepicker="false" type="text"
                                                         data-val="true"
@@ -2040,7 +2058,7 @@
                                                         value="1/1/0001 0:00:00" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.PorEtd"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
@@ -2062,7 +2080,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_PodEta">ETA</label><input
                                                         abp-data-datepicker="false" type="text" data-val="true"
                                                         data-val-required="The ETA field is required."
@@ -2070,7 +2088,7 @@
                                                         value="1/1/0001 0:00:00" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.PodEta"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -2094,7 +2112,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_DelEta">&#x4EA4;&#x8CA8;&#x5730;(DEL)
                                                         ETA</label><input abp-data-datepicker="false" type="text"
                                                         data-val="true"
@@ -2103,7 +2121,7 @@
                                                         value="1/1/0001 0:00:00" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.DelEta"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
@@ -2125,7 +2143,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_FdestEta">&#x6700;&#x7D42;&#x76EE;&#x7684;&#x5730;ETA</label><input
                                                         abp-data-datepicker="false" type="text" data-val="true"
                                                         data-val-required="The &#x6700;&#x7D42;&#x76EE;&#x7684;&#x5730;ETA field is required."
@@ -2133,7 +2151,7 @@
                                                         value="1/1/0001 0:00:00" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.FdestEta"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -2197,7 +2215,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_CargoArrivalDate">&#x63D0;&#x7A7A;&#x6AC3;&#x5730;&#x9EDE;</label><input
                                                         type="datetime-local" data-val="true"
                                                         data-val-required="The &#x63D0;&#x7A7A;&#x6AC3;&#x5730;&#x9EDE; field is required."
@@ -2206,7 +2224,7 @@
                                                         value="0001-01-01T00:00:00.000" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.CargoArrivalDate"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -2329,14 +2347,14 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_DisplayHblContainerSizeQtyInfo">&#x6AC3;&#x578B;&#x6578;&#x91CF;</label><input
                                                         type="text" id="OceanExportHbl_DisplayHblContainerSizeQtyInfo"
                                                         name="OceanExportHbl.DisplayHblContainerSizeQtyInfo" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.DisplayHblContainerSizeQtyInfo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
 
@@ -2397,7 +2415,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_HblWhCutOffTime">&#x5009;&#x5132;&#x7D50;&#x95DC;&#x65E5;</label><input
                                                         type="datetime-local" data-val="true"
                                                         data-val-required="The &#x5009;&#x5132;&#x7D50;&#x95DC;&#x65E5; field is required."
@@ -2406,12 +2424,12 @@
                                                         value="0001-01-01T00:00:00.000" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.HblWhCutOffTime"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_EarlyReturnDatetime">&#x6700;&#x65E9;&#x6536;&#x6AC3;&#x65E5;</label><input
                                                         type="datetime-local" data-val="true"
                                                         data-val-required="The &#x6700;&#x65E9;&#x6536;&#x6AC3;&#x65E5; field is required."
@@ -2420,29 +2438,29 @@
                                                         value="0001-01-01T00:00:00.000" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.EarlyReturnDatetime"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_LcNo">&#x4FE1;&#x7528;&#x7DE8;&#x865F;</label><input
                                                         type="text" id="OceanExportHbl_LcNo" name="OceanExportHbl.LcNo"
                                                         value="" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.LcNo"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_LcIssueBank">&#x4FE1;&#x7528;&#x72C0;&#x958B;&#x7ACB;&#x9280;&#x884C;</label><input
                                                         type="text" id="OceanExportHbl_LcIssueBank"
                                                         name="OceanExportHbl.LcIssueBank" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.LcIssueBank"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_LcIssueDate">&#x4FE1;&#x7528;&#x72C0;&#x958B;&#x7ACB;&#x65E5;&#x671F;</label><input
                                                         type="datetime-local" data-val="true"
                                                         data-val-required="The &#x4FE1;&#x7528;&#x72C0;&#x958B;&#x7ACB;&#x65E5;&#x671F; field is required."
@@ -2451,12 +2469,12 @@
                                                         value="0001-01-01T00:00:00.000" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.LcIssueDate"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_OnBoardDate">&#x88DD;&#x8239;&#x65E5;&#x671F;</label><input
                                                         type="datetime-local" data-val="true"
                                                         data-val-required="The &#x88DD;&#x8239;&#x65E5;&#x671F; field is required."
@@ -2465,7 +2483,7 @@
                                                         value="0001-01-01T00:00:00.000" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.OnBoardDate"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="mb-2 custom-checkbox custom-control form-check"><input
@@ -2488,22 +2506,22 @@
                                             <div class="col-md-3">
                                                 <label for="CareOfId" class="form-label"><input type="checkbox"
                                                         name="OceanExportHbl.IsHold" /> &#x6263;&#x7559; </label>
-                                                        <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_HoldReason"></label><input type="text"
                                                         id="OceanExportHbl_HoldReason" name="OceanExportHbl.HoldReason"
                                                         value="" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.HoldReason"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
 
                                             </div>
-                                            <di class="col-md-3">
+                                            <div class="col-md-3">
                                                 <label for="CareOfId" class="form-label"><input type="checkbox"
                                                         name="OceanExportHbl.IsReleased" value="true" />
                                                     &#x5DF2;&#x653E;&#x8CA8; </label>
-                                                    <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_HblReleaseDate"></label><input
                                                         type="datetime-local" data-val="true"
                                                         data-val-required="The  field is required."
@@ -2512,7 +2530,7 @@
                                                         value="0001-01-01T00:00:00.000" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.HblReleaseDate"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
 
@@ -2523,7 +2541,7 @@
                                                 <label for="CareOfId" class="form-label"><input type="checkbox"
                                                         name="OceanExportHbl.IsCanceled" />
                                                     &#x63D0;&#x55AE;&#x5DF2;&#x53D6;&#x6D88; </label>
-                                                    <label class="form-label"
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_CanceledDate"></label><input
                                                         type="datetime-local" data-val="true"
                                                         data-val-required="The  field is required."
@@ -2532,20 +2550,21 @@
                                                         value="0001-01-01T00:00:00.000" class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.CanceledDate"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
 
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label"
+
+                                                <div class="mb-3"><label class="form-label"
                                                         for="OceanExportHbl_CancelReason">&#x53D6;&#x6D88;&#x539F;&#x56E0;</label><input
                                                         type="text" id="OceanExportHbl_CancelReason"
                                                         name="OceanExportHbl.CancelReason" value=""
                                                         class="form-control " /><span
                                                         class="text-danger field-validation-valid"
                                                         data-valmsg-for="OceanExportHbl.CancelReason"
-                                                        data-valmsg-replace="true"></span>
+                                                        data-valmsg-replace="true"></span></div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">
@@ -2701,7 +2720,7 @@
 
 
     <!-- <script src="/__bundles/Pages.OceanExports.CreateMbl.3F2DE0894B68E6857C61FDC91AE6EBA1.js?_v=638125652826980565"> -->
-    <script src="js/Pages.OceanExports.CreateMbl.3F2DE0894B68E6857C61FDC91AE6EBA1.js">
+        <script src="js/Pages.OceanExports.CreateMbl.3F2DE0894B68E6857C61FDC91AE6EBA1.js">
     </script>
 
 

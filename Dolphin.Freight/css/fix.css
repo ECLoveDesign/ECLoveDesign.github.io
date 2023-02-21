@@ -1,0 +1,15 @@
+/*  fix css */
+
+.dropdown.form-control {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown.form-control .btn.dropdown-toggle {    
+    width: 100%;
+    display: block;
+}
+.dropdown.form-control input[type="checkbox"] {
+    margin: 0 10px;
+}
