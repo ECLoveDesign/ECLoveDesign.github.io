@@ -9,7 +9,12 @@
 .dropdown.form-control .btn.dropdown-toggle {    
     width: 100%;
     display: block;
+    text-align: inherit;
 }
 .dropdown.form-control input[type="checkbox"] {
     margin: 0 10px;
+}
+
+#mblDiv .row+.row {
+    margin-top: 1rem;
 }
