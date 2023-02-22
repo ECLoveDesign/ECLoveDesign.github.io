@@ -1,0 +1,61 @@
+
+#mblDiv .row+.row {
+    margin-top: 1rem;
+}
+
+#mblDiv .form-label {
+    float: left;
+    width: 100px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 38px;
+} 
+#mblDiv .mb-3>.form-label {
+    margin: 0;
+    word-break: break-all;
+} 
+#mblDiv .form-label+.form-control {
+    width: -webkit-fill-available;
+}   
+#mblDiv div[class*="col-"] .abp-widget-wrapper>.dropdown.form-control {
+    padding: 0;
+    height: 38px;
+}
+.form-label+.abp-widget-wrapper {
+    display: flex;
+}
+.abp-widget-wrapper .form-label {
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: 100px;
+}
+.dropdown.form-control {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.dropdown.form-control .btn.dropdown-toggle {
+    width: 100%;
+    text-align: left;
+}
+#mblDiv label[for="SvcTermToId"],
+#mblDiv label[for="OceanExportMbl_MblReleaseDate"] {
+    display: none;
+}
+
+#mblDiv .row .col-md-3 .col-md-6 {
+    width: 100%;
+}
+#mblDiv label[for="OceanExportMbl_PolEtd"] +span {
+    display: none;
+}
+#mblDiv .form-label+span+.form-control {
+    width: -webkit-fill-available;
+}
+label input[type="checkbox"] {
+    margin-left: 10px;
+}
