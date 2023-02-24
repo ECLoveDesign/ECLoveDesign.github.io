@@ -1510,16 +1510,20 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <input type="checkbox" name="OceanExportMbl.IsReleased" value="true" />
                                                 <label for="CareOfId" class="form-label">&#x5DF2;&#x653E;&#x8CA8;</label>
-                                                <label class="form-label"
-                                                    for="OceanExportMbl_MblReleaseDate"></label><input
-                                                    class="cdatetime form-control " abp-data-datetimepicker="false"
+                                                <div class="form-control">                                                    
+                                                    <input type="checkbox" name="OceanExportMbl.IsReleased" value="true" />
+                                                    
+                                                    <label class="form-label"
+                                                    for="OceanExportMbl_MblReleaseDate"></label>
+                                                
+                                                    <input class="cdatetime" abp-data-datetimepicker="false"
                                                     type="text" id="OceanExportMbl_MblReleaseDate"
                                                     name="OceanExportMbl.MblReleaseDate" value="" /><span
                                                     class="text-danger field-validation-valid"
                                                     data-valmsg-for="OceanExportMbl.MblReleaseDate"
                                                     data-valmsg-replace="true"></span>
+                                                </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="abp-widget-wrapper" data-widget-name="SelectComponent">

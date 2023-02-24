@@ -1,0 +1,614 @@
+﻿@page
+@using Dolphin.Freight.Localization
+@using Dolphin.Freight.Web.Pages.Components
+@using Microsoft.Extensions.Localization
+@model Dolphin.Freight.Web.Pages.OceanExports.CreateMblModel
+@inject IStringLocalizer<FreightResource> L
+@section scripts
+{
+    <abp-script src="/Pages/OceanExports/CreateMbl.js" />
+    <script type="text/javascript">
+            $(document).ready(function () {
+                var l = abp.localization.getResource('Freight');
+                $("#addHBtn").click(function(){
+                    addHBtn();
+                });
+            });
+        var cardIndex = 0;
+        function addHBtn(){
+            if (cardIndex ==0 ){
+                var divHtml = addCardRight('new_' + cardIndex, 'new HB/L', '', '#f3c200');
+                $("#hblCard").show();
+                $("#hblCardDiv").append(divHtml)
+                cardIndex++;
+            }else{
+                var l = abp.localization.getResource('Freight');
+                abp.message.info(l("Message:AddHBLErr"));
+            }
+
+        }
+        function addCardRight(hblId,hblNo,soNo,bgColor){
+            var cardHtml = "<div id='card_" + hblId + "' class='card mt-3' onclick=''>"
+            cardHtml = cardHtml + "<div class='card-body'  style='background:" + bgColor + ";color:#FFFFFF;'>"
+            cardHtml = cardHtml + "<p class='card-text'> " + hblNo + ".</p>"
+            cardHtml = cardHtml + "<p class='card-text'> " + soNo + ".</p>"
+            cardHtml = cardHtml + " </div> </div>"
+            return cardHtml ;
+        }
+        </script>
+}
+<abp-breadcrumb>
+    <abp-breadcrumb-item href="#" title=@L["Menu:Home"] />
+    <abp-breadcrumb-item title=@L["Menu:OceanExports"] />
+    <abp-breadcrumb-item title=@L["Menu:OceanExports.CreateMbl"] />
+</abp-breadcrumb>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="EditModal">@L["Tab:Basic"]</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="EditModal2">@L["Tab:Container"]</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="EditModal3">@L["Tab:Accounting"]</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="EditModal4">@L["Tab:Doc"]</a>
+        </li>
+    </ul>
+    <form  submit-button="true" data-ajaxForm="true" id="createForm" >
+<abp-row>
+     <abp-column size-md="_10">
+            <abp-card  border="Dark">
+            <abp-card-header style="background:#555555;color:#FFFFFF;">
+                <abp-row>
+                    <abp-column size-md="_9">
+                        <abp-card-title>
+                            MB/L <span id="title0"></span>
+                                    <span id="title0" style="font-size:0.8em;"></span>
+                                    <span id="title2" style="font-size:0.8em;"></span>
+                            <span id="title3" style="font-size:0.8em;"></span> 
+                            <span id="title4" style="font-size:0.8em;"></span>
+                            <span id="title5" style="font-size:0.8em;"> </span>
+                        </abp-card-title>
+
+                    </abp-column>
+                    <abp-column size-md="_3" class="text-end">
+                        <!--
+                        <div class="btn-group dropdown">
+                            <button class="btn btn-secondary dropdown-toggle"  type="button" id="ActionDrop" data-bs-toggle="dropdown">
+                                請選擇
+                            </button>
+                            <div class="dropdown-menu " aria-labelledby="dropdownMenuButton1" id="ActionDrop">
+                                <a class='dropdown-item' href='#'>
+                                       <li class="fa fa-lock"></li> 鎖定 
+                                    </a>
+                        <a class='dropdown-item' href='#'>
+                            <i class="fa fa-trash"></i> 刪除
+                        </a>
+                                <li class="dropdown-divider"></li>
+                        <a class='dropdown-item' href='#'>
+                        <li class="fa fa-lock"></li> aaa
+                        </a>
+
+                            </div>
+                        </div>
+                        -->
+                            <button type="button" class="btn btn-tool" data-bs-toggle="collapse" data-bs-target="#mblDiv" aria-expanded="false" aria-controls="mblDiv">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </abp-column>
+
+                </abp-row>
+            </abp-card-header>
+            <abp-card-body class="collapse show" id="mblDiv">
+                <abp-row>
+                    <abp-column size-md="_3" >
+                        <input type="hidden" name="ShipmentNo" id="ShipmentNo">
+                        <abp-input asp-for="OceanExportMbl.FilingNo" disabled="true" />
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.MblNo" />
+                    </abp-column>
+                    <abp-column size-md="_3" >
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "OfficeId", FieldName = "OfficeId",DefaultValue="" , IsShowLabel = true , IsRequired = true })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "BlTypeId", FieldName = "BlTypeId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                </abp-row>
+                <abp-row>
+                    <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.PostDate" disabled=true />
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.SoNo" />
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.ItnNo" />
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "MblCarrierId", FieldName = "MblCarrierId",DefaultValue="" , IsShowLabel = true , IsRequired = false  })
+                    </abp-column>
+                 </abp-row>
+                 <abp-row>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "BlAcctCarrierId", FieldName = "BlAcctCarrierId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "ShippingAgentId", FieldName = "ShippingAgentId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "MblOverseaAgentId", FieldName = "MblOverseaAgentId",DefaultValue="" , IsShowLabel = true , IsRequired = false  })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "MblNotifyId", FieldName = "MblNotifyId",DefaultValue="" , IsShowLabel = true , IsRequired = false  })
+                    </abp-column>
+                 </abp-row>
+                 <abp-row>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "ForwardingAgentId", FieldName = "ForwardingAgentId" , DefaultValue="" , IsShowLabel = true , IsRequired = false  })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "CoLoaderId", FieldName = "CoLoaderId",DefaultValue="" , IsShowLabel = true , IsRequired = false  })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        <label for="CareOfId" class="form-label">C/O <input type="checkbox" name="" /></label>
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "CareOfId", FieldName = "CareOfId",DefaultValue="" , IsShowLabel = false , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "MblOperatorId", FieldName = "MblOperatorId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                 </abp-row>
+                 <abp-row>
+                     <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.CarrierContractNo" />
+                     </abp-column>
+                     <abp-column size-md="_3">
+                        <div class="frontCheck">
+                            <abp-input asp-for="OceanExportMbl.IsDirect" />
+                        </div>
+                     </abp-column>
+                     <abp-column size-md="_6">
+
+                     </abp-column>
+                 </abp-row>
+                 <abp-row>
+                        <abp-column >
+                            &nbsp;
+                        </abp-column>
+                 </abp-row>
+                 <abp-row>
+                     <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.VesselName" />
+                     </abp-column>
+                     <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.Voyage" />
+                     </abp-column>
+                     <abp-column size-md="_3">
+                            @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "PorId", FieldName = "PorId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                     </abp-column>
+                     <abp-column size-md="_3">
+                            <abp-input asp-for="OceanExportMbl.PorEtd" />
+                     </abp-column>
+                 </abp-row>
+                 <abp-row>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "PolId", FieldName = "PolId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.PolEtd" />
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "PodId", FieldName = "PodId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.PodEta" />
+                    </abp-column>
+                 </abp-row>
+                  <abp-row>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "DelId", FieldName = "DelId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.DelEta" />
+                    </abp-column>
+                    <abp-column size-md="_3">
+                         @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "FdestId", FieldName = "FdestId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.FdestEta" />
+                    </abp-column>
+                 </abp-row>
+                 <abp-row>
+                    <abp-column size-md="_3">
+                            @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "EmptyPickupId", FieldName = "EmptyPickupId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                            @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "DeliveryToId", FieldName = "DeliveryToId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                            @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "PreCarriageVesselNameId", FieldName = "PreCarriageVesselNameId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                        <abp-column size-md="_3">
+                            <abp-input asp-for="OceanExportMbl.PrepreCarriageVoyage" />
+                        </abp-column>
+                 </abp-row>
+                 <abp-row>
+                        <abp-column >
+                            &nbsp;
+                        </abp-column>
+                 </abp-row>
+                 <abp-row>
+                    <abp-column size-md="_3">
+                            @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "FreightTermId", FieldName = "FreightTermId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                            @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "ShipModeId", FieldName = "ShipModeId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                            @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "SvcTermFromId", FieldName = "SvcTermFromId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "SvcTermToId", FieldName = "SvcTermToId",DefaultValue="" , IsShowLabel = false , IsRequired = false })
+                    </abp-column>
+                        <abp-column size-md="_3">
+                            <abp-input asp-for="OceanExportMbl.DisplayMblContainerSizeQtyInfo" readonly="true" />
+                        </abp-column>
+
+                 </abp-row>
+                 <abp-row>
+                    <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.RailCutOffTime" />
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.IsCanceled" />
+                        <abp-input asp-for="OceanExportMbl.PortCutOffTime" />
+                   </abp-column>
+                   <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.VgmCutOffTime " />
+                   </abp-column>
+                 </abp-row>
+                 <abp-row>
+                    <abp-column size-md="_3">
+                        @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "MblReferralById", FieldName = "MblReferralById",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                    </abp-column>
+                    <abp-column size-md="_3">
+                        <abp-input asp-for="OceanExportMbl.IsBookingAgent" />
+                   </abp-column>
+                   <abp-column size-md="_3">
+                        <label for="CareOfId" class="form-label">@L["IsReleased"]<input type="checkbox" name="OceanExportMbl.IsReleased" /></label>
+                                <abp-input asp-for="OceanExportMbl.MblReleaseDate" />
+                   </abp-column>
+                   <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "ReleaseById", FieldName = "ReleaseById",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                   </abp-column>
+                 </abp-row>
+            </abp-card-body>
+        </abp-card>
+        <br/>
+        <abp-card border="Dark" id="hblCard" style="display:none;">
+            <abp-card-header style="background:#f3c200;color:#FFFFFF;">
+                <abp-row>
+                    <abp-column class="col-xl-10">
+                        <abp-card-title>
+                                    HB/L  <span id="htitle0"></span>
+                                    <span id="htitle0" style="font-size:0.8em;"></span>
+                                    <span id="htitle2" style="font-size:0.8em;"></span>
+                                    <span id="htitle3" style="font-size:0.8em;"></span>
+                                    <span id="htitle4" style="font-size:0.8em;"></span>
+                                    <span id="htitle5" style="font-size:0.8em;"> </span>
+                        </abp-card-title>
+
+                    </abp-column>
+                    <abp-column class="col-xl-2 text-end">
+                        <!--
+                        <div class="btn-group dropdown">
+                            <button class="btn btn-secondary dropdown-toggle"  type="button" id="ActionDrop" data-bs-toggle="dropdown">
+                                請選擇
+                            </button>
+                            <div class="dropdown-menu " aria-labelledby="dropdownMenuButton1" id="ActionDrop">
+                                <a class='dropdown-item' href='#'>
+                                       <li class="fa fa-lock"></li> 鎖定
+                                    </a>
+                        <a class='dropdown-item' href='#'>
+                            <i class="fa fa-trash"></i> 刪除
+                        </a>
+                                <li class="dropdown-divider"></li>
+                        <a class='dropdown-item' href='#'>
+                        <li class="fa fa-lock"></li> aaa
+                        </a>
+
+                            </div>
+                        </div>
+                        -->
+                        <button type="button" class="btn btn-tool" data-bs-toggle="collapse" data-bs-target="#hblDiv" aria-expanded="false" aria-controls="hblDiv">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </abp-column>
+
+                </abp-row>
+            </abp-card-header>
+            <abp-card-body class="collapse show" id="hblDiv">
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.HblNo"  />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.SoNo" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                               <abp-input asp-for="OceanExportHbl.CustomerRefNo" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.DocNo" />
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.QuotationNo" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HblShipperId", FieldName = "HblShipperId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HblCustomerId", FieldName = "HblCustomerId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HblBillToId", FieldName = "HblBillToId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HblConsigneeId", FieldName = "HblConsigneeId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HblNotifyId", FieldName = "HblNotifyId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "CustomsBrokerId", FieldName = "CustomsBrokerId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "TruckerId", FieldName = "TruckerId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "AgentId", FieldName = "AgentId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                               
+                            </abp-column>
+                            <abp-column size-md="_3">
+                               
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HblForwardingAgentId", FieldName = "HblForwardingAgentId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.IsSubAgentBl" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+
+                            </abp-column>
+                            <abp-column size-md="_3">
+
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "ReceivingAgentId", FieldName = "ReceivingAgentId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HPorId", FieldName = "HPorId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.PorEtd" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HPodId", FieldName = "HPodId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.PodEta" />
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HDelId", FieldName = "HDelId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.DelEta" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HFdestId", FieldName = "HFdestId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.FdestEta" />
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "FbaFcId", FieldName = "FbaFcId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HEmptyPickupId", FieldName = "HEmptyPickupId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HDeliveryToId", FieldName = "HDeliveryToId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.CargoArrivalDate" />
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "CargoPickupId", FieldName = "CargoPickupId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HShipModeId", FieldName = "HShipModeId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "FreightTermForBuyerId", FieldName = "FreightTermForBuyerId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "FreightTermForSalerId", FieldName = "FreightTermForSalerId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HSvcTermFromId", FieldName = "HSvcTermFromId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HSvcTermToId", FieldName = "HSvcTermToId",DefaultValue="" , IsShowLabel = false , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.DisplayHblContainerSizeQtyInfo" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.IsExpress" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "CargoTypeId", FieldName = "CargoTypeId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "MblSalesTypeId", FieldName = "MblSalesTypeId",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.HblWhCutOffTime" />
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.EarlyReturnDatetime" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.LcNo" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.LcIssueBank" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.LcIssueDate" />
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.OnBoardDate" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <abp-input asp-for="OceanExportHbl.IsStackable" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                <label for="CareOfId" class="form-label"><input type="checkbox" name="OceanExportHbl.IsHold" /> @L["IsHold"] </label>
+                                <abp-input asp-for="OceanExportHbl.HoldReason" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                <label for="CareOfId" class="form-label"><input type="checkbox" name="OceanExportHbl.IsReleased" /> @L["IsReleased"] </label>
+                                <abp-input asp-for="OceanExportHbl.HblReleaseDate" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                
+                            </abp-column>
+                        </abp-row>
+                        <abp-row>
+                            <abp-column size-md="_3">
+                                <label for="CareOfId" class="form-label"><input type="checkbox" name="OceanExportHbl.IsCanceled" /> @L["IsCanceled"] </label>
+                                <abp-input asp-for="OceanExportHbl.CanceledDate" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+
+                            </abp-column>
+                            <abp-column size-md="_3">
+
+                                <abp-input asp-for="OceanExportHbl.CancelReason" />
+                            </abp-column>
+                            <abp-column size-md="_3">
+                                @await Component.InvokeAsync(typeof(SelectComponent),new {TagName =  "HMblReferralById", FieldName = "HMblReferralById",DefaultValue="" , IsShowLabel = true , IsRequired = false })
+                            </abp-column>
+                        </abp-row>
+            </abp-card-body>
+        </abp-card>
+     </abp-column>
+     <abp-column size-md="_2">
+            <br/>
+            <abp-button class="btn btn-outline-secondary me-md-2" type="button" id="addHBtn">@L["Btn:AddHbl"].Value</abp-button>
+                <div id="hblCardDiv" class="hblCard"></div>
+     </abp-column>
+</abp-row>
+<abp-row class="mt-3">
+    <abp-column>
+                <input type="hidden" name="OceanExportMbl.OfficeId" id="mOfficeId" value="@Model.OceanExportMbl.OfficeId" />
+                <input type="hidden" name="OceanExportMbl.MblSalesTypeId" id="mMblSalesTypeId" value="@Model.OceanExportMbl.MblSalesTypeId" />
+                <input type="hidden" name="OceanExportMbl.PreCarriageVesselNameId" id="mPreCarriageVesselNameId" value="@Model.OceanExportMbl.PreCarriageVesselNameId" />
+                <input type="hidden" name="OceanExportMbl.SvcTermFromId" id="mSvcTermFromId" value="@Model.OceanExportMbl.SvcTermFromId" />
+                <input type="hidden" name="OceanExportMbl.SvcTermToId" id="mSvcTermToId" value="@Model.OceanExportMbl.SvcTermToId" />
+                <input type="hidden" name="OceanExportMbl.ShipModeId" id="mShipModeId" value="@Model.OceanExportMbl.ShipModeId" />
+                <input type="hidden" name="OceanExportMbl.FreightTermId" id="mFreightTermId" value="@Model.OceanExportMbl.FreightTermId" />
+                <input type="hidden" name="OceanExportMbl.BlTypeId" id="mBlTypeId" value="@Model.OceanExportMbl.BlTypeId" />
+                <input type="hidden" name="OceanExportMbl.MblCarrierId" id="mMblCarrierId" value="@Model.OceanExportMbl.MblCarrierId" />
+                <input type="hidden" name="OceanExportMbl.BlAcctCarrierId" id="mBlAcctCarrierId" value="@Model.OceanExportMbl.BlAcctCarrierId" />
+                <input type="hidden" name="OceanExportMbl.ShippingAgentId" id="mShippingAgentId" value="@Model.OceanExportMbl.ShippingAgentId" />
+                <input type="hidden" name="OceanExportMbl.MblOverseaAgentId" id="mMblOverseaAgentId" value="@Model.OceanExportMbl.MblOverseaAgentId" />
+                <input type="hidden" name="OceanExportMbl.MblNotifyId" id="mMblNotifyId" value="@Model.OceanExportMbl.MblNotifyId" />
+                <input type="hidden" name="OceanExportMbl.MblReferralById" id="mMblReferralById" value="@Model.OceanExportMbl.MblReferralById" />
+                <input type="hidden" name="OceanExportMbl.EmptyPickupId" id="mEmptyPickupId" value="@Model.OceanExportMbl.EmptyPickupId" />
+                <input type="hidden" name="OceanExportMbl.DeliveryToId" id="mDeliveryToId" value="@Model.OceanExportMbl.DeliveryToId" />
+                <input type="hidden" name="OceanExportMbl.CoLoaderId" id="mCoLoaderId" value="@Model.OceanExportMbl.CoLoaderId" />
+                <input type="hidden" name="OceanExportMbl.ForwardingAgentId" id="mForwardingAgentId" value="@Model.OceanExportMbl.ForwardingAgentId" />
+                <input type="hidden" name="OceanExportMbl.CareOfId" id="mCareOfId" value="@Model.OceanExportMbl.CareOfId" />
+                <input type="hidden" name="OceanExportMbl.PorId" id="mPorId" value="@Model.OceanExportMbl.PorId" />
+                <input type="hidden" name="OceanExportMbl.PolId" id="mPolId" value="@Model.OceanExportMbl.PolId" />
+                <input type="hidden" name="OceanExportMbl.PodId" id="mPodId" value="@Model.OceanExportMbl.PodId" />
+                <input type="hidden" name="OceanExportMbl.DelId" id="mDelId" value="@Model.OceanExportMbl.DelId" />
+                <input type="hidden" name="OceanExportMbl.FdestId" id="mFdestId" value="@Model.OceanExportMbl.FdestId" />
+
+                <input type="hidden" name="OceanExportHbl.CargoTypeId" id="hCargoTypeId" value="@Model.OceanExportHbl.CargoTypeId" />
+                <input type="hidden" name="OceanExportHbl.SvcTermFromId" id="hHSvcTermFromId" value="@Model.OceanExportHbl.SvcTermFromId" />
+                <input type="hidden" name="OceanExportHbl.SvcTermToId" id="hHSvcTermToId" value="@Model.OceanExportHbl.SvcTermToId" />
+                <input type="hidden" name="OceanExportHbl.ShipModeId" id="hHShipModeId" value="@Model.OceanExportHbl.ShipModeId" />
+                <input type="hidden" name="OceanExportHbl.FreightTermForBuyerId" id="hFreightTermForBuyerId" value="@Model.OceanExportHbl.FreightTermForBuyerId" />
+                <input type="hidden" name="OceanExportHbl.FreightTermForSalerId" id="hFreightTermForSalerId" value="@Model.OceanExportHbl.FreightTermForSalerId" />
+                <input type="hidden" name="OceanExportHbl.HblCustomerId" id="hHblCustomerId" value="@Model.OceanExportHbl.HblCustomerId" />
+                <input type="hidden" name="OceanExportHbl.HblShipperId" id="hHblShipperId" value="@Model.OceanExportHbl.HblShipperId" />
+                <input type="hidden" name="OceanExportHbl.HblBillToId" id="hHblBillToId" value="@Model.OceanExportHbl.HblBillToId" />
+                <input type="hidden" name="OceanExportHbl.HblConsigneeId" id="hHblConsigneeId" value="@Model.OceanExportHbl.HblConsigneeId" />
+                <input type="hidden" name="OceanExportHbl.HblNotifyId" id="hHblNotifyId" value="@Model.OceanExportHbl.HblNotifyId" />
+                <input type="hidden" name="OceanExportHbl.CustomsBrokerId" id="hCustomsBrokerId" value="@Model.OceanExportHbl.CustomsBrokerId" />
+                <input type="hidden" name="OceanExportHbl.TruckerId" id="hTruckerId" value="@Model.OceanExportHbl.TruckerId" />
+                <input type="hidden" name="OceanExportHbl.AgentId" id="hAgentId" value="@Model.OceanExportHbl.AgentId" />
+                <input type="hidden" name="OceanExportHbl.ForwardingAgentId" id="hHblForwardingAgentId" value="@Model.OceanExportHbl.ForwardingAgentId" />
+                <input type="hidden" name="OceanExportHbl.ReceivingAgentId" id="hReceivingAgentId" value="@Model.OceanExportHbl.ReceivingAgentId" />
+                <input type="hidden" name="OceanExportHbl.FbaFcId" id="hFbaFcId" value="@Model.OceanExportHbl.FbaFcId" />
+                <input type="hidden" name="OceanExportHbl.EmptyPickupId" id="hHEmptyPickupId" value="@Model.OceanExportHbl.EmptyPickupId" />
+                <input type="hidden" name="OceanExportHbl.DeliveryToId" id="hHDeliveryToId" value="@Model.OceanExportHbl.DeliveryToId" />
+                <input type="hidden" name="OceanExportHbl.MblReferralById" id="hHMblReferralById" value="@Model.OceanExportHbl.MblReferralById" />
+                <input type="hidden" name="OceanExportHbl.PorId" id="hHPorId" value="@Model.OceanExportHbl.PorId" />
+                <input type="hidden" name="OceanExportHbl.PodId" id="hHPodId" value="@Model.OceanExportHbl.PodId" />
+                <input type="hidden" name="OceanExportHbl.HDelId" id="hHDelId" value="@Model.OceanExportHbl.DelId" />
+                <input type="hidden" name="OceanExportHbl.FdestId" id="hHFdestId" value="@Model.OceanExportHbl.FdestId" />
+        <abp-button class="btn btn-primary me-md-2" type="button" id="saveBtn">@L["Save"].Value</abp-button>
+    </abp-column>
+</abp-row>
+    <abp-row>
+        <abp-column>
+            &nbsp;
+        </abp-column>
+    </abp-row>
+    </form>
