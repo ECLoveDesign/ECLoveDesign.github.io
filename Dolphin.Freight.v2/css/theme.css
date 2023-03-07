@@ -8,6 +8,7 @@
     --font-Title: 3rem;
     --font-p: 1.5rem;
     --normalBlue: #015383;
+    --secondBlue: #E4F1F9;
 }
 
 body, html {
@@ -17,7 +18,7 @@ body, html {
 
 body {
     color: #212529;
-    background: #F4F6F9;
+    background: var(--secondBlue);
     padding: 0px;
     margin: 0px;
     font-size: 1rem;
