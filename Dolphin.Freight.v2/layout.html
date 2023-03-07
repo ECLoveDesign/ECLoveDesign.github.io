@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>萬泰物流管理系統</title>
+    <link rel="shortcut icon" href='../images/favicon.ico' />
+    <link rel="image_src" href='../images/favicon.ico' type="image/jpeg" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500&family=Oswald:wght@500&display=swap">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/theme.css" />
+</head>
+
+<body>
+
+    <div class="container main-container">
+        <h1 class="site-title d-none">sample01</h1>
+        <div class="wrapper main-wrapper fixed-navbar">
+            <header>
+                <nav class="header-navbar navbar-expand-md navbar fixed-top navbar-hide-on-scroll navbar-border navbar-shadow headroom header"
+                    data-nav="brand-center">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-header">
+                            <ul class="nav navbar-nav flex-row">
+                                <li class="nav-item mr-auto1">
+                                    <button type="button" class="mobile-menu sidebar-toggle-box"
+                                        aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
+                                        data-target="#navBar">
+                                        <span></span>
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="navbar-brand" href="#">
+                                        <h1 class="brand-text">dFreight</h1>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-globe"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">中文</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">英文</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa fa-user mr-1"></i>帳戶管理
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa fa-sign-out mr-1" title="登出"></i>登出
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-mobile">
+                            <ul class="nav navbar-nav justify-content-end w-100">
+
+                                <li class="dropdown dropdown-language nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-globe"></i>
+                                        <span class="user-name">語言</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">中文</a>
+                                        <a class="dropdown-item" href="#">英文</a>
+                                    </div>
+
+                                </li>
+
+                                <li class="dropdown dropdown-user-info nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                        <span class="user-name">admin</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa fa-user mr-1"></i>帳戶管理
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa fa-sign-out mr-1" title="登出"></i>登出
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <!--左邊選單-->
+            <aside>
+                <div class="sidebar" id="navBar">
+                    <ul id="navigation" class="list-unstyled sidebar-mneu">
+                        <!-- 選單01，menu 後加上classname為圖示class，亦可取消-->
+                        <li class="menu list-dailyReport">
+                            <a href="#" title="選單01" class="collapsible" data-toggle="collapse" data-target="#menu01">
+                                選單01</a>
+                            <ul id="menu01" class="list-unstyled collapse show" data-parent="#navigation">
+                                <li class="active">
+                                    <a href="#" title="選單01-01">選單01-01</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="選單01-02">選單01-02</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="選單01-03">選單01-03</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--選單02-->
+                        <li class="menu list-monthlyReport">
+                            <a href="#" title="選單02" class="collapsible collapsed" data-toggle="collapse"
+                                data-target="#menu02">
+                                選單02</a>
+                            <ul id="menu02" class="list-unstyled collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="選單02-01">選單02-01</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="選單02-02">選單02-02</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--月報審查-->
+                        <li class="menu list-review">
+                            <a href="#" title="選單03" class="collapsible collapsed" data-toggle="collapse"
+                                data-target="#menu03">
+                                選單03</a>
+                            <ul id="menu03" class="list-unstyled collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="選單03-01">選單03-01</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="選單03-02">選單03-02</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--/sidebar-->
+            </aside>
+
+            <!-- MAIN CONT -->
+            <main role="main" class="main-content container-fluid">
+                <!-------------------- 主要內容 -------------------->
+                <div class="content-wrapper">
+                    <div class="page-header">
+                        <h2 class="page-title">頁面標題</h2>
+                    </div>
+                    <!--內容區塊-->
+                    <div class="page-content-area">
+
+                    </div>
+                </div>
+            </main>
+
+            <!-- MAIN CONT end-->
+            <footer>
+                <div class="copyright">
+                    <ul>
+                        <li>Copyright © Dolphin.Freight 2023</li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!--JS-->
+    <script src='js/jquery-3.5.1.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src="js/sidebar.js"></script>
+
+
+</body>
+
+</html>
