@@ -195,6 +195,11 @@ body {
     .navbar-header .nav-item.dropdown {
         position: relative !important;
     }
+    .navbar-header .nav-item:nth-child(2) {
+        min-width:auto;
+        max-width: auto;
+        width: 70%;
+    }
 }
 
 /*--- 登入資訊 ---*/
@@ -257,11 +262,12 @@ f.dropdown-user-info .dropdown-item .dropdown-user-info .dropdown-user-link {
 }
 
 .navbar-nav .dropdown-menu {
-    right: 1rem;
-    /* left: 1rem !important;
-    min-width: 11rem; */
+    right: 0;
 }
 
+.navbar-nav .dropdown-menu i {
+    margin-right: 10px;
+}
 .header-navbar .navbar-nav .show {
     position: relative;
 }
@@ -523,35 +529,35 @@ aside {
 }
 
 
+#navigation {
+    overflow: auto;
+    height: calc(100% - 72px);
+    padding-bottom: 1rem;
+}
+
+#navigation::-webkit-scrollbar-track {
+	background-color: var(--normalBlue);
+}
+
+#navigation::-webkit-scrollbar {
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+#navigation::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #0088d6;
+}
 #navigation>li {
     position: relative;    
 }
-#navigation>li::before {
-    font-size: 0.875em;
-    color: #d1f5f1;
-    font-family: "FontAwesome";
-    font-weight: 900;
-    position: absolute;
-    margin-right: 12px;
-    z-index: 10;
-    left: 18px;
-    top: 14px;
+aside a {
+    transition: all .2s linear;
 }
-
-#navigation>li.menu-home:before {
-    content: "\f015";
-}
-
-#navigation>li.menu-management:before {
-    content: "\f007";
-}
-
-#navigation>li.menu-review:before {
-    content: "\f4fc";
-}
-
-#navigation>li.menu-reviewhistory:before {
-    content: "\f1da";
+aside ul {
+    padding-left: 0;
+    list-style: none;
 }
 
 aside ul li a {
@@ -560,7 +566,6 @@ aside ul li a {
     position: relative;
     margin: 0;
     color: #fff;
-    transition: all .2s linear;
     font-size: 0.9375em;
 }
 
@@ -569,48 +574,32 @@ aside ul a:hover {
     text-decoration: none;
 }
 #navigation>li>a {
-    padding-left: 44px;
+    padding-left: 18px;
     padding-right: 32px;
     color: #fff;
 }
-#navigation>li>a.collapsible:not(.collapsed),
-#navigation>li.active>a {
+#navigation>li>a:hover {
+    padding-left: 24px;
+}
+#navigation>li.active a {
     background: #0088D6;
 }
-#navigation>li>a:not(.collapsible):after {
-    content: "\f078";
-    font-size: 0.875em;
-    color: #fff;
-    font-family: "FontAwesome";
-    display: inline-block;
-    position: absolute;
-    right: 8px;
-    top: 15px;
-    transition: transform .3s ease-in-out;
-    -webkit-transition: transform .3s ease-in-out;
-    -moz-transition: transform .3s ease-in-out;
-    -ms-transition: transform .3s ease-in-out;
-    -o-transition: transform .3s ease-in-out;
-    transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
+#navigation a i {
+    margin-right: 12px;
 }
-
-aside ul a.collapsible:hover {
+aside ul a.menu-item:hover {
     color: rgba(255, 255, 255, .8)
 }
 
-aside ul a.collapsible:after {
+aside ul a.menu-item:after {
     content: "\f078";
     font-size: 0.875em;
     color: #fff;
     font-family: "FontAwesome";
     display: inline-block;
     position: absolute;
-    right: 8px;
-    top: 15px;
+    right: 10px;
+    top: 12px;
     transition: transform .3s ease-in-out;
     -webkit-transition: transform .3s ease-in-out;
     -moz-transition: transform .3s ease-in-out;
@@ -618,12 +607,11 @@ aside ul a.collapsible:after {
     -o-transition: transform .3s ease-in-out;
 }
 
-aside ul a.collapsible.collapsed {
+aside ul a.menu-item[aria-expanded="false"] {
     background: transparent;
 }
 
-aside ul a.collapsible.collapsed:after {
-    /*縮起來時*/
+aside ul a.menu-item[aria-expanded="false"]:after {
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
@@ -637,78 +625,39 @@ aside ul li>ul {
     position: relative;
 }
 
-aside ul li>ul.collapse.show {
-    background: #0088D6;
-}
-
 aside ul li>ul li {
     position: relative;
     /* padding-left: 34px; */
 }
 
-aside ul li>ul li:before {
-    content: "\f061";
-    font-size: 12px;
-    font-family: "FontAwesome";
-    display: inline-block;
-    position: absolute;
-    left: 48px;
-    top: 11px;
-    margin-right: 8px;
-    color: #fff;
-    transition: transform .3s ease-in-out;
-    -webkit-transition: transform .3s ease-in-out;
-    -moz-transition: transform .3s ease-in-out;
-    -ms-transition: transform .3s ease-in-out;
-    -o-transition: transform .3s ease-in-out;
-    z-index: 10;
-}
-
-aside ul li>ul li.active:before {
-    color: var(--normalBlue);
-}
-
 aside ul li>ul li a {
     display: block;
     background: transparent;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.7);
     border: transparent;
-    padding: 8px 24px 7px 66px;
-    font-size: 0.875em;
-    transition: transform .3s ease-in-out;
-    -webkit-transition: transform .3s ease-in-out;
-    -moz-transition: transform .3s ease-in-out;
-    -ms-transition: transform .3s ease-in-out;
-    -o-transition: transform .3s ease-in-out;
+    padding: 12px 7px 12px 44px;
 }
-
+aside ul li>ul li>ul li a {
+    font-size: 0.875em;
+    padding: 10px 7px 10px 70px;
+}
+aside ul li>ul li>ul li a:hover {
+    padding-left: 75px;
+}
 aside ul li>ul li a:hover {
-    /* background: rgba(67, 72, 132, 0.6); */
-    background: #003f63;
+    /* background: #003f63; */
     color: #fff;
     text-decoration: none;
-    /* transform: scale(1.05) translateX(3px);
-    -webkit-transform: scale(1.05) translateX(3px);
-    -moz-transform: scale(1.05) translateX(3px);
-    -ms-transform: scale(1.05) translateX(3px);
-    -o-transform: scale(1.05) translateX(3px);
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3); */
+    padding-left: 50px;
 }
-
-aside ul li>ul li a:hover {
-    color: var(--normalBlue);
-    background-color: #F4D65E;
-    font-weight: bold;
-}
+#navigation li>ul li.active a,
 aside ul li>ul li.active a {
     color: var(--normalBlue);
+    font-weight: bold;
     /* background: rgba(255, 255, 255, .4); */
     background: #f2f3f7;
 }
 
-aside ul li>ul li:hover:before {
-    color: var(--normalBlue);
-}
 @media(min-width:1366px) {
     .sidebar {
         overflow-y: hidden;
@@ -853,7 +802,7 @@ aside ul li>ul li:hover:before {
 /* 內頁區塊 內距24px */
 
 .content-wrapper {
-    padding: 0 24px;
+    padding: 12px 24px;
     min-height: 800px;
 }
 .content-wrapper>div+div {
@@ -4116,6 +4065,9 @@ footer .copyright ul {
     border-radius: 10px;
 }
 .card-header:first-child {
+    border-radius: 10px;
+}
+.card-header.active:first-child {
     border-radius: 10px 10px 0 0;
 }
 .card-header 
@@ -4166,3 +4118,32 @@ footer .copyright ul {
     border: 1px solid #ced4da;
     background: #fff;
 }
+
+/* anchor */
+.page-section {
+    height: 480px;
+    padding: 3em;
+    background: linear-gradient(45deg, #232526 10%, #414345 90%);
+    color: white;
+  }
+  .page-section.hero {
+    background: linear-gradient(45deg, #43cea2 10%, #185a9d 90%);
+  }
+  
+  .navigation {
+    position: fixed;
+    width: 100%;
+    background-color: #43cea2;
+    color: #ddd;
+  }
+  .navigation__link {
+    color: #efe;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1em;
+    font-weight: 400;
+  }
+  .navigation__link.active {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
