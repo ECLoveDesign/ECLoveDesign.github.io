@@ -1,53 +1,9 @@
 
 
-// multiselect
-$(document).ready(function() {
-  
-  // onDeselectAll
-  $('.multiselect,.onDeselectAll').multiselect({
-      includeSelectAllOption: true,
-      enableFiltering: true,
-      onDeselectAll: function(options) {
-          alert('您已取消全選, 共取消 ' + options.length + ' 個項目!');
-      }
-  });
-  
-  $('.multiselect-doctor').multiselect({
-    nonSelectedText: '篩選醫師',
-		filterPlaceholder: '關鍵字..',
-    includeSelectAllOption: true,
-    enableFiltering: true,
-  });
-  
-  $('.multiselect-hospital').multiselect({
-    nonSelectedText: '篩選醫院',
-		filterPlaceholder: '院區關鍵字..',
-    includeSelectAllOption: true,
-    enableFiltering: true,
-  });
-
-  //dataprovider
-  $('.dataprovider-optgroups').multiselect();
-    var optgroups = [
-        {
-            label: 'Group 1', children: [
-                {label: 'Option 1.1', value: '1-1', selected: true},
-                {label: 'Option 1.2', value: '1-2'},
-                {label: 'Option 1.3', value: '1-3'}
-            ]
-        },
-        {
-            label: 'Group 2', children: [
-                {label: 'Option 2.1', value: '1'},
-                {label: 'Option 2.2', value: '2'},
-                {label: 'Option 2.3', value: '3', disabled: true}
-            ]
-        }
-    ];
-    $('.dataprovider-optgroups').multiselect('dataprovider', optgroups);
+// selectpicker
+$('.selectpicker').on( 'hide.bs.select', function ( ) {
+  $(this).trigger("focusout");
 });
-
-
 
 // font size
 $(document).ready(function () {
