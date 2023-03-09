@@ -1,0 +1,130 @@
+
+/*=============================
+        LOGIN 
+==============================*/
+:root {
+    --font-Sans: 'Noto Sans TC', sans-serif;
+    --font-Serif: 'Noto Serif TC', serif;
+    --font-Size: 1.2em;
+    --font-Title: 3rem;
+    --font-p: 1.5rem;
+    --normalBlue: #015383;
+    --secondBlue: #E4F1F9;
+    --normalYellow: #F4D65C;
+}
+body {
+    height: 100%;
+    background: url(../images/bg-login.jpg) no-repeat center bottom;
+    background-size: cover;
+}
+header {
+    padding: 5px 10px;
+    background: #fff;
+}
+header .navbar-nav {
+    justify-content: end;
+}
+header .nav-link {
+    color: #444;
+}
+.navbar-nav .dropdown-menu {
+    left: -40px !important;
+}
+.form-wrap {
+    width: 450px;
+    height: fit-content;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.brand-text {
+    color: var(--normalBlue);
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    margin: 0 0 1rem;
+}
+body.card-center {
+    height: 100%;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+html, body.card-center {
+    height: 100%;
+}
+
+.form-wrap .form-signin {
+    width: 100%;
+    max-width: 367px;
+    padding: 25px;
+    margin: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    position: relative;
+    background: #fff;
+}
+.form-wrap .form-signin .checkbox {
+    font-weight: 400;
+}
+.form-wrap .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-wrap .form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-wrap .form-signin .img_logo{
+    width: 218px;
+    display: block;
+    margin: 28px auto;
+}
+.form-wrap .form-signin label{
+    margin-top: 10px;
+}
+
+.form-wrap .form-signin .radiobox{
+    margin: 10px auto 32px;
+    text-align: right;
+}
+
+.form-wrap .form-signin .radiobox legend{
+    text-align: left;
+    vertical-align: middle;
+    margin-top: 5px;
+}
+
+.form-wrap .btn-signin{
+    margin: 20px auto 15px;
+    background: var(--normalYellow);
+    color: #000;
+    font-weight: bold;
+}
+.form-wrap .btn-signin:hover{
+    background:#d4ad0e;
+}
+
+.form-wrap .forgot-register{
+    margin-top: 18px;
+    text-align: center;
+}
+.form-check .form-check-input {
+    transform: scale(1.2);
+    margin-top: 0.95rem;
+}
+.copyright {
+    color: #fff;
+    text-shadow: #000 0px 0px 5px;
+    margin-top: 15px;
+    text-align: center;
+}
