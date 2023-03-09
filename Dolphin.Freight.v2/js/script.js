@@ -81,52 +81,29 @@ $(document).ready(function () {
 });
 
 
-// anchor
-$('.btn-anchor').click(function (e) {
-  e.preventDefault();
-  var target = $($(this).attr('href'));
-  if (target.length) {
-    var scrollTo = target.offset().top;
-    $('body, html').animate({
-      scrollTop: scrollTo - 140 + 'px'
-    }, 800);
-  }
-});
-
-
 // card anchor
 $(document).ready(function () {
   $('a[href*=#]').bind('click', function (e) {
-    e.preventDefault(); // prevent hard jump, the default behavior
+    e.preventDefault();
+    var target = $($(this).attr('href'));
 
-    var target = $(this).attr("href"); // Set the target as variable
+    if (target.length) {
+      var scrollTo = target.offset().top;
+      $('body, html').animate({
+        scrollTop: scrollTo - 100 + 'px'
+      }, 800);
+    }
 
-    // perform animated scrolling by getting top-position of target-element and set it as scroll target
-    $('html, body').stop().animate({
-      scrollTop: $(target).offset().top
-    }, 600, function () {
-      location.hash = target; //attach the hash (#jumptarget) to the pageurl
-    });
-
-    return false;
   });
 });
 
 $(window).scroll(function () {
   var scrollDistance = $(window).scrollTop();
-
-  // Show/hide menu on scroll
-  if (scrollDistance >= 850) {
-    $('nav').fadeIn("fast");
-  } else {
-    $('nav').fadeOut("fast");
-  }
-
-  // Assign active class to nav links while scolling
-  $('.page-section').each(function (i) {
+  
+  $('.board-item').each(function (i) {
     if ($(this).position().top <= scrollDistance) {
-      $('.navigation a.active').removeClass('active');
-      $('.navigation a').eq(i).addClass('active');
+      $('.cardNav a.active').removeClass('active');
+      $('.cardNav a').eq(i).addClass('active');
     }
   });
 }).scroll();
