@@ -46,7 +46,7 @@ table {
 }
 
 table th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #fbf8f2;
   padding: 18px 10px;
@@ -104,7 +104,7 @@ table.red {
 }
 
 table.red th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 18px;
   background: #f5efef;
   padding: 18px 10px;
@@ -244,14 +244,7 @@ h3 a {
   font-size: 15px;
   color: #666;
   text-align: right;
-  line-height:24px;
 }
-
-.tablenote a {
-  color: #169bcc; margin-left: 10px;
-}
-
-.tablenote a:hover { color:#721e18;}
 
 select.intable {
   border: #e7e7e7 1px solid;
@@ -547,7 +540,7 @@ body.templateV1 table.PACED {
 }
 
 body.templateV1 table.PACED th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #f3f3f3;
   padding: 18px 10px;
@@ -572,7 +565,7 @@ body.templateV1 table.PACED-P {
 }
 
 body.templateV1 table.PACED-P th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #f9f0ee;
   padding: 18px 10px;
@@ -588,7 +581,7 @@ body.templateV1 table.PACED-A {
 }
 
 body.templateV1 table.PACED-A th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #e9f6f3;
   padding: 18px 10px;
@@ -604,7 +597,7 @@ body.templateV1 table.PACED-C {
 }
 
 body.templateV1 table.PACED-C th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #f9f1dc;
   padding: 18px 10px;
@@ -620,7 +613,7 @@ body.templateV1 table.PACED-E {
 }
 
 body.templateV1 table.PACED-E th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #e8f7f8;
   padding: 18px 10px;
@@ -636,7 +629,7 @@ body.templateV1 table.PACED-D {
 }
 
 body.templateV1 table.PACED-D th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #fbeff7;
   padding: 18px 10px;
@@ -841,7 +834,7 @@ body.templateV2 table.PACED {
 }
 
 body.templateV2 table.PACED th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #f3f3f3;
   padding: 18px 10px;
@@ -857,7 +850,7 @@ body.templateV2 table.PACED-P {
 }
 
 body.templateV2 table.PACED-P th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #e6f1f6;
   padding: 18px 10px;
@@ -873,7 +866,7 @@ body.templateV2 table.PACED-A {
 }
 
 body.templateV2 table.PACED-A th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #e8f4f4;
   padding: 18px 10px;
@@ -889,7 +882,7 @@ body.templateV2 table.PACED-C {
 }
 
 body.templateV2 table.PACED-C th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #f1f3db;
   padding: 18px 10px;
@@ -905,7 +898,7 @@ body.templateV2 table.PACED-E {
 }
 
 body.templateV2 table.PACED-E th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #f7f1e5;
   padding: 18px 10px;
@@ -921,7 +914,7 @@ body.templateV2 table.PACED-D {
 }
 
 body.templateV2 table.PACED-D th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #f9eeee;
   padding: 18px 10px;
@@ -1108,7 +1101,7 @@ body.templateV3 table.PACED {
 }
 
 body.templateV3 table.PACED th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #f3f3f3;
   padding: 18px 10px;
@@ -1124,7 +1117,7 @@ body.templateV3 table.PACED-P {
 }
 
 body.templateV3 table.PACED-P th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #fbe8f5;
   padding: 18px 10px;
@@ -1140,7 +1133,7 @@ body.templateV3 table.PACED-A {
 }
 
 body.templateV3 table.PACED-A th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #f8e6ec;
   padding: 18px 10px;
@@ -1156,7 +1149,7 @@ body.templateV3 table.PACED-C {
 }
 
 body.templateV3 table.PACED-C th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #feeeef;
   padding: 18px 10px;
@@ -1172,7 +1165,7 @@ body.templateV3 table.PACED-E {
 }
 
 body.templateV3 table.PACED-E th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #fff5f5;
   padding: 18px 10px;
@@ -1188,7 +1181,7 @@ body.templateV3 table.PACED-D {
 }
 
 body.templateV3 table.PACED-D th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #f6f0f0;
   padding: 18px 10px;
@@ -1444,7 +1437,7 @@ a.arrowlink {
 .tab_container>table.subTable {}
 
 .tab_container>table.subTable>th {
-  color: #000;
+  color: #7d7d7d;
   font-size: 16px;
   background: #f9f0ee;
   padding: 18px 10px;
@@ -1495,18 +1488,6 @@ a.arrowlink {
 .functionIcon a.gmail {
   background: url(../images/img/icon_gmail.png) no-repeat left center;
 }
-
-.functionIcon a.add {
-  background: url(../images/img/icon_add.png) no-repeat left center;
-}
-
-.functionIcon a.del {
-  background: url(../images/img/icon_del.png) no-repeat left center;
-}
-
-.addList { position:absolute; width:100%; border:#169bcc 1px solid; background:rgba(255,255,255,.9); padding: 10px 20px; top:43px;}
-.addList ul.add li { display:block; font-size:15px; padding: 5px 0; margin: 5px 0; text-align: left; color:#169bcc;}
-.addList ul.add li input[type="checkbox"] { display:inline-block; margin: 0 5px 0 0;}
 
 #memo {
   padding-bottom: 20px;
@@ -1635,13 +1616,10 @@ ul.personal-3 li img {
   font-weight: normal;
 }
 
-.itemTitle .functionZone {
+.itemTitle a {
   position: absolute;
   right: 5px;
   top: 10px;
-}
-
-.itemTitle .functionZone a { display:inline-block; margin: 0 0 0 5px;
 }
 
 ul.personal-3>li>table.personal-S {
@@ -2300,15 +2278,11 @@ img.cap { width:80%; margin: 30px auto -30px auto; max-width:255px; display:bloc
   font-weight: normal;
 }
 
-.itemTitle .functionZone {
-  position: absolute;
+  .itemTitle a {
+    position: absolute;
   right: 5px;
   top: 10px;
-}
-
-.itemTitle .functionZone a { display:inline-block; margin: 0 0 0 5px;
-}
-
+  }
 
   ul.personal-3>li>table.personal-S {
     font-size: 15px;
