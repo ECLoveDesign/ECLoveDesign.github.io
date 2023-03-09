@@ -83,14 +83,14 @@ $(document).ready(function () {
 
 // card anchor
 $(document).ready(function () {
-  $('a[href*=#]').bind('click', function (e) {
+  $('.borad-cont a[href*=#]').bind('click', function (e) {
     e.preventDefault();
     var target = $($(this).attr('href'));
 
     if (target.length) {
       var scrollTo = target.offset().top;
       $('body, html').animate({
-        scrollTop: scrollTo - 100 + 'px'
+        scrollTop: scrollTo - 80 + 'px'
       }, 800);
     }
 
@@ -102,11 +102,14 @@ $(window).scroll(function () {
   
   $('.board-item').each(function (i) {
     if ($(this).position().top <= scrollDistance) {
-      $('.cardNav a.active').removeClass('active');
-      $('.cardNav a').eq(i).addClass('active');
+      $('.cardAnchor a.active').removeClass('active');
+      $('.cardAnchor a').eq(i).addClass('active');
+      $('.cardAnchor .borad-anchor').removeClass('focus');
+      $('.cardAnchor a.active').parent().parent().addClass('focus');
     }
   });
 }).scroll();
+
 
 // affix top
 if ($(document).width() < 992) {
