@@ -675,7 +675,9 @@ aside ul a.active,
 aside ul a:hover {
     text-decoration: none;
 }
-
+aside .sb-nav-link-icon {
+    display: inline;
+}
 #navigation>li>a {
     padding-left: 18px;
     padding-right: 32px;
@@ -4515,7 +4517,7 @@ footer .copyright ul {
     box-shadow: rgba(4, 38, 56, 0.2) 0 0 8px;
     padding: 15px;
     border-radius: 10px;
-    margin-bottom: 24px;
+    margin-bottom: 15px;
 }
 .function-wrap .form {
     margin-bottom: 10px;

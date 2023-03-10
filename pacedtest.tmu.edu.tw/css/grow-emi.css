@@ -1,0 +1,65 @@
+/* capacity Distribution Chart */
+main {
+    z-index: 1;
+    position: relative;
+}
+.chart-wrap {
+    width: 60%;
+    display:block;
+    overflow:hidden;
+    padding: 60px 50px;
+    background:#fff;
+    border-radius:4px;
+}
+
+.capacityDistribution {
+    margin: 4rem 0 0;
+}
+.capacityDistribution .cont {
+    border-top: #721e18 2px solid;
+    background: #F5EFEF;
+    padding: 15px;
+
+}
+
+.capacityDistribution canvas{
+    background:#fff;
+    height:400px;
+}
+
+.capacityDistribution .cont-colmun {
+    margin: 10px 0;
+    display: flex;
+}
+.capacityDistribution .cont-colmun .function {
+    width: 20%;
+}
+.capacityDistribution .cont-colmun .info-cont {
+    width: 20%;
+}
+
+.info-cont {
+    padding: 10px;
+}
+.info-cont p {
+    font-size: 1rem;
+    color: #000;
+}
+@media (max-width:1366px) {
+    .capacityDistribution .cont-colmun {
+        display: block;
+        overflow: auto;
+    }
+    .chart-wrap {
+        float: left;
+        width: 80%;
+    }    
+    .capacityDistribution .cont-colmun .function {
+        float: left;
+        width: 20%;
+    }
+    .capacityDistribution .cont-colmun .info-cont {
+        float: left;
+        width: 100%;
+    }
+}

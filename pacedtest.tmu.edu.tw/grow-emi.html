@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="./css/slick.css">
     <link rel="stylesheet" href="./css/slick-theme.min.css">
 
-    <!-- achievement css -->
+    <!-- grow-emi css -->
     <link rel="stylesheet" href="./css/grow-emi.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -29,8 +29,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="JS/jquery.nicescroll.min.js"></script>
     <title>臺北醫學大學---學生個人化學習專區</title>
-    
-    <link rel="stylesheet" href="./css/styles.e689adb762080980.css"></head>
+
+    <link rel="stylesheet" href="./css/styles.e689adb762080980.css">
+</head>
 </head>
 
 <body class="templateV1">
@@ -241,7 +242,7 @@
     <main class="page index-page major-fields-page">
         <div class="container">
 
-            <!-- achievement Begin -->
+            <!-- CONT Begin -->
             <h3 class="container__title major-fields__title">EMI修課歷程</h3>
             <div class="RecordTableOuter">
                 <div class="RecordTable">
@@ -259,10 +260,8 @@
                                 </span><span class="EMIBar">
                                     E4 </span><span class="EMIBar"> E5 </span>
                             </td>
-                            <td data-type="chosen-already" class="td__search unshow" ng-reflect-unshow="true"><i
-                                    class="fas fa-search"></i></td>
-                            <td data-type="chosen-already" class="td__search unshow" ng-reflect-unshow="true"><i
-                                    class="far fa-question-circle"></i>
+                            <td data-type="chosen-already" class="td__search"><i class="fas fa-search"></i></td>
+                            <td data-type="chosen-already" class="td__search"><i class="far fa-question-circle"></i>
                             </td>
                         </tr>
                     </table>
@@ -289,7 +288,7 @@
                             <td>跨領域學院學士班課程</td>
                         </tr>
                     </table>
-                    <table class="major-fields__table table__seaching-feedback table--unshow">
+                    <table class="major-fields__table table__seaching-feedback">
                         <tr class="table__seaching-feedback--context-title title__des user-suggestion">
                             <td>EMI認證等級</td>
                             <td>認證基準</td>
@@ -317,6 +316,7 @@
                     </table><br>
                 </div>
             </div>
+
             <div class="tablenote" style="text-align: left;">※計算截至前一學期之及格EMI課程，實際資料以教務學務系統為準。</div><br><br>
             <div class="RecordTableOuter">
                 <div class="RecordTable">
@@ -385,7 +385,69 @@
                     </table>
                 </div>
             </div>
-            <!-- achievement End -->
+
+
+            <!-- grow-emi Begin -->
+            <div class="capacityDistribution">
+                <h3 class="red">英文能力分布</h3>
+
+                <div class="cont">
+                    <div class="tablenote" style="text-align: left;">110學年第1學期 您的英語閱讀能力分布情形如下
+                        <span>英文能力資料採自104學年度起線上提交檢定者</span>
+                    </div>
+
+                    <div class="cont-colmun">
+                        <div class="function">
+                            <form novalidate="" name="form" id="form" class="ng-pristine ng-valid ng-touched">
+                                <div class="form-group">
+                                    <label class="control-label" for="ayearsms">學年期</label>
+                                    <select name="ayearsms" class="ng-pristine ng-valid ng-touched">
+                                        <option value="1112">1112學期</option>
+                                        <option value="1111">1111學期</option>
+                                        <option value="1102">1102學期</option>
+                                        <option value="1101">1101學期</option>
+                                        <option value="1092">1092學期</option>
+                                        <option value="1091">1091學期</option>
+                                        <option value="1082">1082學期</option>
+                                        <option value="1081">1081學期</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="capacity">英文能力</label>
+                                    <select name="capacity" class="ng-pristine ng-valid ng-touched">
+                                        <option value="聽力">聽力</option>
+                                        <option value="口說">口說</option>
+                                        <option value="閱讀" selected>閱讀</option>
+                                        <option value="寫作">寫作</option>
+                                        <option value="語測基礎值">語測基礎值</option>
+                                    </select>
+                                </div>
+
+                                
+                            </form>
+
+                        </div>
+                        <div class="chart-wrap">
+                            <canvas id="capacityDistributionChart"></canvas>
+                        </div>
+
+                        <div class="info-cont">
+                            <p>您位於全校前<span>18%</span>(第500-800名)</p>
+                            <p>學院前<span>26%</span>(第80-120名)</p>
+                            <p>系所前<span>23%</span>(第30-50名)</p>
+                            <p>全系前<span>18%</span>(第10-30名)</p>
+
+                            <a>[閱讀] 課程推薦</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- grow emi End -->
+
+            <!-- CONT End -->
 
         </div>
     </main>
@@ -443,8 +505,10 @@
         });
     </script>
 
-    <!-- achievement js -->
-    <script src="./js/achievement.js?3"></script>
+    <!-- grow emi js -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.0/Chart.min.js'></script>
+    <script src="./js/grow-emi.js"></script>
 </body>
 
 </html>
