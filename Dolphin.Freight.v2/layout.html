@@ -19,7 +19,7 @@
 <body>
 
     <div class="container main-container">
-        
+
         <div class="wrapper main-wrapper fixed-navbar">
             <header>
                 <nav class="header-navbar navbar-expand-md navbar fixed-top navbar-hide-on-scroll navbar-border navbar-shadow headroom header"
@@ -37,7 +37,7 @@
                                 <li class="nav-item">
                                     <a class="navbar-brand" href="#">
                                         <h1 class="brand-text">dFreight</h1>
-                                    </a>                           
+                                    </a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -429,393 +429,411 @@
                     <!--內容區塊-->
                     <div class="page-content-area">
 
-                        <div class="function-wrap">
-                            <div class="row">
-                                <div class="col-lg-10 col-md-12">
+                        <div class="row">
+                            <div class="col-md-9">
 
-                                    <div class="form-inline">
-                                        <div class="form-group">
-                                            <label class="my-1 mr-2" for="cardOrderSet">卡片排序</label>
-                                            <select class="form-control selectpicker" id="cardOrderSet" data-width="150px">
-                                                <option selected>請選擇</option>
-                                                <option value="建立日期">建立日期</option>
-                                                <option value="HB/L 號碼">HB/L 號碼</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="sr-only" for="cardOrder">Preference</label>
-                                            <select class="form-control selectpicker" id="cardOrder" data-width="150px">
-                                                <option selected>請選擇</option>
-                                                <option value="遞增">遞增</option>
-                                                <option value="遞減">遞減</option>
-                                            </select>
-                                        </div>
-                                        <fieldset class="form-group">
-                                            <legend class="col-form-label">卡片顯示</legend>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
-                                                <label class="form-check-label" for="inlineCheckbox1">託運人與收貨人</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                                    value="option2">
-                                                <label class="form-check-label" for="inlineCheckbox2">名稱標籤</label>
-                                            </div>
-                                        </fieldset>
+                                <div class="board-wrap">
 
-                                        <button type="submit" class="btn btn-dark btn-update mr-auto">
-                                            <i class="fa-solid fa-arrows-rotate"></i>更新
-                                        </button>
+                                    <div class="card board-item" id="cardA">
+                                        <div class="card-header active">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                            <div class="title">
+                                                <a href="#">MB/L 123AAA</a>
+                                                <span class="note">SWANSEA</span>
+                                                <span class="date">(09-15-2022)</span>
+                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                <span class="note">SWANSEA</span>
+                                                <span class="date">(09-15-2022)</span>
+                                            </div>
+                                            <button class="btn btn-collapse" type="button" data-toggle="collapse"
+                                                data-target="#cardA-cont" aria-expanded="true"
+                                                aria-controls="cardA-cont">
+                                            </button>
+                                        </div>
+
+                                        <div id="cardA-cont" class="collapse show">
+                                            <div class="card-body">
+
+                                                <div class="form">
+
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="number">文件編號</label>
+                                                                <input type="text" class="form-control" id="number"
+                                                                    value="OE-22100001" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="mblNumber">MB/L 號碼</label>
+                                                                <input type="text" class="form-control" id="mblNumber"
+                                                                    value="123AAA">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="site">分站</label>
+                                                                <select id="site" class="form-control selectpicker"
+                                                                    data-live-search="true">
+                                                                    <option value="分站A">分站A</option>
+                                                                    <option value="分站B">分站B</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="Billcategory">提單類別</label>
+                                                                <select id="Billcategory"
+                                                                    class="form-control selectpicker"
+                                                                    data-live-search="true">
+                                                                    <option value="提單類別A">提單類別A</option>
+                                                                    <option value="提單類別B">提單類別B</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card board-item" id="cardB">
+                                        <div class="card-header active">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                            <div class="title">
+                                                <a href="#">MB/L 123AAA</a>
+                                                <span class="note">SWANSEA</span>
+                                                <span class="date">(09-15-2022)</span>
+                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                <span class="note">SWANSEA</span>
+                                                <span class="date">(09-15-2022)</span>
+                                            </div>
+                                            <button class="btn btn-collapse" type="button" data-toggle="collapse"
+                                                data-target="#cardB-cont" aria-expanded="true"
+                                                aria-controls="cardB-cont">
+                                            </button>
+                                        </div>
+
+                                        <div id="cardB-cont" class="collapse show">
+                                            <div class="card-body">
+
+                                                <div class="form">
+
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="number">文件編號</label>
+                                                                <input type="text" class="form-control" id="number"
+                                                                    value="OE-22100001" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="mblNumber">MB/L 號碼</label>
+                                                                <input type="text" class="form-control" id="mblNumber"
+                                                                    value="123AAA">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="site">分站</label>
+                                                                <select id="site" class="form-control selectpicker">
+                                                                    <option value="分站A">分站A</option>
+                                                                    <option value="分站B">分站B</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="Billcategory">提單類別</label>
+                                                                <select id="Billcategory"
+                                                                    class="form-control selectpicker">
+                                                                    <option value="提單類別A">提單類別A</option>
+                                                                    <option value="提單類別B">提單類別B</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card board-item" id="cardC">
+                                        <div class="card-header active">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                            <div class="title">
+                                                <a href="#">MB/L 123AAA</a>
+                                                <span class="note">SWANSEA</span>
+                                                <span class="date">(09-15-2022)</span>
+                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                <span class="note">SWANSEA</span>
+                                                <span class="date">(09-15-2022)</span>
+                                            </div>
+                                            <button class="btn btn-collapse" type="button" data-toggle="collapse"
+                                                data-target="#cardC-cont" aria-expanded="true"
+                                                aria-controls="cardC-cont">
+                                            </button>
+                                        </div>
+
+                                        <div id="cardC-cont" class="collapse show">
+                                            <div class="card-body">
+
+                                                <div class="form">
+
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="number">文件編號</label>
+                                                                <input type="text" class="form-control" id="number"
+                                                                    value="OE-22100001" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="mblNumber">MB/L 號碼</label>
+                                                                <input type="text" class="form-control" id="mblNumber"
+                                                                    value="123AAA">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="site">分站</label>
+                                                                <select id="site" class="form-control selectpicker">
+                                                                    <option value="分站A">分站A</option>
+                                                                    <option value="分站B">分站B</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="Billcategory">提單類別</label>
+                                                                <select id="Billcategory"
+                                                                    class="form-control selectpicker">
+                                                                    <option value="提單類別A">提單類別A</option>
+                                                                    <option value="提單類別B">提單類別B</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card board-item" id="cardD">
+                                        <div class="card-header active">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                            <div class="title">
+                                                <a href="#">MB/L 123AAA</a>
+                                                <span class="note">SWANSEA</span>
+                                                <span class="date">(09-15-2022)</span>
+                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                <span class="note">SWANSEA</span>
+                                                <span class="date">(09-15-2022)</span>
+                                            </div>
+                                            <button class="btn btn-collapse" type="button" data-toggle="collapse"
+                                                data-target="#cardD-cont" aria-expanded="true"
+                                                aria-controls="cardD-cont">
+                                            </button>
+                                        </div>
+
+                                        <div id="cardD-cont" class="collapse show">
+                                            <div class="card-body">
+
+                                                <div class="form">
+
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="number">文件編號</label>
+                                                                <input type="text" class="form-control" id="number"
+                                                                    value="OE-22100001" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="mblNumber">MB/L 號碼</label>
+                                                                <input type="text" class="form-control" id="mblNumber"
+                                                                    value="123AAA">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="site">分站</label>
+                                                                <select id="site" class="form-control selectpicker">
+                                                                    <option value="分站A">分站A</option>
+                                                                    <option value="分站B">分站B</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="Billcategory">提單類別</label>
+                                                                <select id="Billcategory"
+                                                                    class="form-control selectpicker">
+                                                                    <option value="提單類別A">提單類別A</option>
+                                                                    <option value="提單類別B">提單類別B</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>
-                                <div class="col-lg-2 col-md-12">
-                                    <button class="btn btn-block btn-outline-dark btn-add">
+                            </div>
+                            
+                            <div class="col-md-3">
+
+                                <div class="borad-wrap">
+                                        
+                                    <button class="btn btn-block btn-add">
                                         <i class="fa-solid fa-plus"></i>新增MB/L
                                     </button>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="board-wrap">
-
-                            <div class="anchor-wrap affix">
-
-                                <div class="cardAnchor">
-
-                                    <div class="borad-anchor">
-                                        <div class="borad-cont">
-                                            <a class="link" href="#cardA">
-                                                <span class="label label-HBL">HB/L</span>
-                                                <span class="MBLnumber">OH-23010005</span>
-                                                <a class="outlink" href="#" target="_blank">
-                                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                                </a>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="borad-anchor">
-                                        <div class="borad-cont">
-                                            <a class="link" href="#cardB">
-                                                <span class="label label-HBL">HB/L</span>
-                                                <span class="MBLnumber">123BBB</span>
-                                                <a class="outlink" href="#" target="_blank">
-                                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                                </a>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="borad-anchor">
-                                        <div class="borad-cont">
-                                            <a class="link" href="#cardC">
-                                                <span class="label label-HBL">HB/L</span>
-                                                <span class="MBLnumber">123CCC</span>
-                                                <a class="outlink" href="#" target="_blank">
-                                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                                </a>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="borad-anchor">
-                                        <div class="borad-cont">
-                                            <a class="link" href="#cardD">
-                                                <span class="label label-HBL">HB/L</span>
-                                                <span class="MBLnumber">123DDD</span>
-                                                <a class="outlink" href="#" target="_blank">
-                                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                                </a>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="borad-anchor">
-                                        <div class="borad-cont">
-                                            <a class="link" href="#cardE">
-                                                <span class="label label-HBL">HB/L</span>
-                                                <span class="MBLnumber">123EEE</span>
-                                                <a class="outlink" href="#" target="_blank">
-                                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                                </a>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="borad-anchor">
-                                        <div class="borad-cont">
-                                            <a class="link" href="#cardF">
-                                                <span class="label label-HBL">HB/L</span>
-                                                <span class="MBLnumber">123FFF</span>
-                                                <a class="outlink" href="#" target="_blank">
-                                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                                </a>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="borad-anchor">
-                                        <div class="borad-cont">
-                                            <a class="link" href="#cardG">
-                                                <span class="label label-HBL">HB/L</span>
-                                                <span class="MBLnumber">123GGG</span>
-                                                <a class="outlink" href="#" target="_blank">
-                                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                                </a>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="card board-item" id="cardA">
-                                <div class="card-header active">
-                                    <i class="fa fa-lock" aria-hidden="true"></i>
-                                    <div class="title">
-                                        <a href="#">MB/L 123AAA</a>
-                                        <span class="note">SWANSEA</span>
-                                        <span class="date">(09-15-2022)</span>
-                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                        <span class="note">SWANSEA</span>
-                                        <span class="date">(09-15-2022)</span>
-                                    </div>
-                                    <button class="btn btn-collapse" type="button" data-toggle="collapse"
-                                        data-target="#cardA-cont" aria-expanded="true" aria-controls="cardA-cont">
-                                    </button>
-                                </div>
-
-                                <div id="cardA-cont" class="collapse show">
-                                    <div class="card-body">
+                                    <div class="function-wrap">
 
                                         <div class="form">
+                                            <div class="form-group">
+                                                <label for="cardOrderSet">卡片排序</label>
+                                                <select class="form-control selectpicker" id="cardOrderSet">
+                                                    <option selected>請選擇</option>
+                                                    <option value="建立日期">建立日期</option>
+                                                    <option value="HB/L 號碼">HB/L 號碼</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="cardOrder">Preference</label>
+                                                <select class="form-control selectpicker" id="cardOrder">
+                                                    <option selected>請選擇</option>
+                                                    <option value="遞增">遞增</option>
+                                                    <option value="遞減">遞減</option>
+                                                </select>
+                                            </div>
+                                            <fieldset class="form-group">
+                                                <legend class="col-form-label">卡片顯示</legend>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="inlineCheckbox1" value="option1">
+                                                    <label class="form-check-label"
+                                                        for="inlineCheckbox1">託運人與收貨人</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="inlineCheckbox2" value="option2">
+                                                    <label class="form-check-label"
+                                                        for="inlineCheckbox2">名稱標籤</label>
+                                                </div>
+                                            </fieldset>
 
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="number">文件編號</label>
-                                                        <input type="text" class="form-control" id="number"
-                                                            value="OE-22100001" readonly>
-                                                    </div>
+                                            <button type="submit" class="btn btn-dark btn-block btn-update">
+                                                <i class="fa-solid fa-arrows-rotate"></i>更新
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="anchor-wrap">
+
+                                        <div class="cardAnchor">
+
+                                            <div class="borad-anchor">
+                                                <div class="borad-cont">
+                                                    <a class="link" href="#cardA">
+                                                        <span class="label label-HBL">HB/L</span>
+                                                        <span class="MBLnumber">OH-23010005</span>
+                                                        <a class="outlink" href="#" target="_blank">
+                                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                        </a>
+                                                    </a>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="mblNumber">MB/L 號碼</label>
-                                                        <input type="text" class="form-control" id="mblNumber"
-                                                            value="123AAA">
-                                                    </div>
+                                            </div>
+
+                                            <div class="borad-anchor">
+                                                <div class="borad-cont">
+                                                    <a class="link" href="#cardB">
+                                                        <span class="label label-HBL">HB/L</span>
+                                                        <span class="MBLnumber">123BBB</span>
+                                                        <a class="outlink" href="#" target="_blank">
+                                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                        </a>
+                                                    </a>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="site">分站</label>
-                                                        <select id="site" class="form-control selectpicker" data-live-search="true">
-                                                            <option value="分站A">分站A</option>
-                                                            <option value="分站B">分站B</option>
-                                                        </select>
-                                                    </div>
+                                            </div>
+
+                                            <div class="borad-anchor">
+                                                <div class="borad-cont">
+                                                    <a class="link" href="#cardC">
+                                                        <span class="label label-HBL">HB/L</span>
+                                                        <span class="MBLnumber">123CCC</span>
+                                                        <a class="outlink" href="#" target="_blank">
+                                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                        </a>
+                                                    </a>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="Billcategory">提單類別</label>
-                                                        <select id="Billcategory" class="form-control selectpicker" data-live-search="true">
-                                                            <option value="提單類別A">提單類別A</option>
-                                                            <option value="提單類別B">提單類別B</option>
-                                                        </select>
-                                                    </div>
+                                            </div>
+
+                                            <div class="borad-anchor">
+                                                <div class="borad-cont">
+                                                    <a class="link" href="#cardD">
+                                                        <span class="label label-HBL">HB/L</span>
+                                                        <span class="MBLnumber">123DDD</span>
+                                                        <a class="outlink" href="#" target="_blank">
+                                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                        </a>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="borad-anchor">
+                                                <div class="borad-cont">
+                                                    <a class="link" href="#cardE">
+                                                        <span class="label label-HBL">HB/L</span>
+                                                        <span class="MBLnumber">123EEE</span>
+                                                        <a class="outlink" href="#" target="_blank">
+                                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                        </a>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="borad-anchor">
+                                                <div class="borad-cont">
+                                                    <a class="link" href="#cardF">
+                                                        <span class="label label-HBL">HB/L</span>
+                                                        <span class="MBLnumber">123FFF</span>
+                                                        <a class="outlink" href="#" target="_blank">
+                                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                        </a>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="borad-anchor">
+                                                <div class="borad-cont">
+                                                    <a class="link" href="#cardG">
+                                                        <span class="label label-HBL">HB/L</span>
+                                                        <span class="MBLnumber">123GGG</span>
+                                                        <a class="outlink" href="#" target="_blank">
+                                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                        </a>
+                                                    </a>
                                                 </div>
                                             </div>
 
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="card board-item" id="cardB">
-                                <div class="card-header active">
-                                    <i class="fa fa-lock" aria-hidden="true"></i>
-                                    <div class="title">
-                                        <a href="#">MB/L 123AAA</a>
-                                        <span class="note">SWANSEA</span>
-                                        <span class="date">(09-15-2022)</span>
-                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                        <span class="note">SWANSEA</span>
-                                        <span class="date">(09-15-2022)</span>
-                                    </div>
-                                    <button class="btn btn-collapse" type="button" data-toggle="collapse"
-                                        data-target="#cardB-cont" aria-expanded="true" aria-controls="cardB-cont">
-                                    </button>
-                                </div>
-
-                                <div id="cardB-cont" class="collapse show">
-                                    <div class="card-body">
-
-                                        <div class="form">
-
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="number">文件編號</label>
-                                                        <input type="text" class="form-control" id="number"
-                                                            value="OE-22100001" readonly>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="mblNumber">MB/L 號碼</label>
-                                                        <input type="text" class="form-control" id="mblNumber"
-                                                            value="123AAA">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="site">分站</label>
-                                                        <select id="site" class="form-control selectpicker">
-                                                            <option value="分站A">分站A</option>
-                                                            <option value="分站B">分站B</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="Billcategory">提單類別</label>
-                                                        <select id="Billcategory" class="form-control selectpicker">
-                                                            <option value="提單類別A">提單類別A</option>
-                                                            <option value="提單類別B">提單類別B</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card board-item" id="cardC">
-                                <div class="card-header active">
-                                    <i class="fa fa-lock" aria-hidden="true"></i>
-                                    <div class="title">
-                                        <a href="#">MB/L 123AAA</a>
-                                        <span class="note">SWANSEA</span>
-                                        <span class="date">(09-15-2022)</span>
-                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                        <span class="note">SWANSEA</span>
-                                        <span class="date">(09-15-2022)</span>
-                                    </div>
-                                    <button class="btn btn-collapse" type="button" data-toggle="collapse"
-                                        data-target="#cardC-cont" aria-expanded="true" aria-controls="cardC-cont">
-                                    </button>
-                                </div>
-
-                                <div id="cardC-cont" class="collapse show">
-                                    <div class="card-body">
-
-                                        <div class="form">
-
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="number">文件編號</label>
-                                                        <input type="text" class="form-control" id="number"
-                                                            value="OE-22100001" readonly>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="mblNumber">MB/L 號碼</label>
-                                                        <input type="text" class="form-control" id="mblNumber"
-                                                            value="123AAA">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="site">分站</label>
-                                                        <select id="site" class="form-control selectpicker">
-                                                            <option value="分站A">分站A</option>
-                                                            <option value="分站B">分站B</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="Billcategory">提單類別</label>
-                                                        <select id="Billcategory" class="form-control selectpicker">
-                                                            <option value="提單類別A">提單類別A</option>
-                                                            <option value="提單類別B">提單類別B</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card board-item" id="cardD">
-                                <div class="card-header active">
-                                    <i class="fa fa-lock" aria-hidden="true"></i>
-                                    <div class="title">
-                                        <a href="#">MB/L 123AAA</a>
-                                        <span class="note">SWANSEA</span>
-                                        <span class="date">(09-15-2022)</span>
-                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                        <span class="note">SWANSEA</span>
-                                        <span class="date">(09-15-2022)</span>
-                                    </div>
-                                    <button class="btn btn-collapse" type="button" data-toggle="collapse"
-                                        data-target="#cardD-cont" aria-expanded="true" aria-controls="cardD-cont">
-                                    </button>
-                                </div>
-
-                                <div id="cardD-cont" class="collapse show">
-                                    <div class="card-body">
-
-                                        <div class="form">
-
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="number">文件編號</label>
-                                                        <input type="text" class="form-control" id="number"
-                                                            value="OE-22100001" readonly>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="mblNumber">MB/L 號碼</label>
-                                                        <input type="text" class="form-control" id="mblNumber"
-                                                            value="123AAA">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="site">分站</label>
-                                                        <select id="site" class="form-control selectpicker">
-                                                            <option value="分站A">分站A</option>
-                                                            <option value="分站B">分站B</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="Billcategory">提單類別</label>
-                                                        <select id="Billcategory" class="form-control selectpicker">
-                                                            <option value="提單類別A">提單類別A</option>
-                                                            <option value="提單類別B">提單類別B</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
 
 
