@@ -678,6 +678,9 @@ aside ul a:hover {
 aside .sb-nav-link-icon {
     display: inline;
 }
+#navigation .sb-nav-link-icon i {
+    margin-right: 5px;
+}
 #navigation>li>a {
     padding-left: 18px;
     padding-right: 32px;
@@ -919,7 +922,6 @@ aside ul li>ul li.active a {
 
 .content-wrapper {
     padding: 12px 24px;
-    min-height: 4000px;
 }
 
 .content-wrapper>div+div {
@@ -4237,31 +4239,31 @@ footer .copyright ul {
 }
 
 
-.cardAnchor .board-item:nth-child(1) .card-header {
+.cardAnchor .board-item.hbl1 .card-header {
     border-color: #6F3CA3;
 }
 
-.cardAnchor .board-item:nth-child(2) .card-header {
+.cardAnchor .board-item.hbl2 .card-header {
     border-color: #015383;
 }
 
-.cardAnchor .board-item:nth-child(3) .card-header {
+.cardAnchor .board-item.hbl3 .card-header {
     border-color: #9E8D7D;
 }
 
-.cardAnchor .board-item:nth-child(4) .card-header {
+.cardAnchor .board-item.hbl4 .card-header {
     border-color: #2E95CF;
 }
 
-.cardAnchor .board-item:nth-child(5) .card-header {
+.cardAnchor .board-item.hbl5 .card-header {
     border-color: #016D77;
 }
 
-.cardAnchor .board-item:nth-child(6) .card-header {
+.cardAnchor .board-item.hbl6 .card-header {
     border-color: #2e59cf;
 }
 
-.cardAnchor .board-item:nth-child(7) .card-header {
+.cardAnchor .board-item.hbl7 .card-header {
     border-color: #1b0177;
 }
 

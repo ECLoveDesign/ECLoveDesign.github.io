@@ -23,6 +23,7 @@
 
     <!-- grow-emi css -->
     <link rel="stylesheet" href="./css/grow-emi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -393,15 +394,15 @@
 
                 <div class="cont">
                     <div class="tablenote" style="text-align: left;">110學年第1學期 您的英語閱讀能力分布情形如下
-                        <span>英文能力資料採自104學年度起線上提交檢定者</span>
+                        <span>(英文能力資料採自104學年度起線上提交檢定者)</span>
                     </div>
 
                     <div class="cont-colmun">
                         <div class="function">
-                            <form novalidate="" name="form" id="form" class="ng-pristine ng-valid ng-touched">
+                            <div class="form">
                                 <div class="form-group">
                                     <label class="control-label" for="ayearsms">學年期</label>
-                                    <select name="ayearsms" class="ng-pristine ng-valid ng-touched">
+                                    <select name="ayearsms">
                                         <option value="1112">1112學期</option>
                                         <option value="1111">1111學期</option>
                                         <option value="1102">1102學期</option>
@@ -414,7 +415,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label" for="capacity">英文能力</label>
-                                    <select name="capacity" class="ng-pristine ng-valid ng-touched">
+                                    <select name="capacity">
                                         <option value="聽力">聽力</option>
                                         <option value="口說">口說</option>
                                         <option value="閱讀" selected>閱讀</option>
@@ -424,7 +425,7 @@
                                 </div>
 
                                 
-                            </form>
+                            </div>
 
                         </div>
                         <div class="chart-wrap">
@@ -432,12 +433,77 @@
                         </div>
 
                         <div class="info-cont">
-                            <p>您位於全校前<span>18%</span>(第500-800名)</p>
-                            <p>學院前<span>26%</span>(第80-120名)</p>
-                            <p>系所前<span>23%</span>(第30-50名)</p>
-                            <p>全系前<span>18%</span>(第10-30名)</p>
+                            <p>您的英語閱讀能力位於：
+                                <ul>
+                                    <li>全校前<span>18%</span>(第500-800名)</li>
+                                    <li>學院前<span>26%</span>(第80-120名)</li>
+                                    <li>系所前<span>23%</span>(第30-50名)</li>
+                                    <li>全系前<span>18%</span>(第10-30名)</li>
+                                </ul>
+                            </p>        
 
-                            <a>[閱讀] 課程推薦</a>
+                            <a class="btn-popup" href="#popup-modal">[閱讀] 課程推薦</a>
+
+                            <div id="popup-modal" class="white-popup-block mfp-hide popupCont">
+                               <div class="popup-title">課程推薦</div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>序</th>
+                                            <th>開課單位</th>
+                                            <th>課號</th>
+                                            <th>課程名稱</th>
+                                            <th>選分數</th>
+                                            <th>選課積木池</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>一般通識組</td>
+                                            <td>00000750</td>
+                                            <td>英文商務寫作</td>
+                                            <td>2.0</td>
+                                            <td>
+                                                <a class="btn btn-choose active">
+                                                    <span class="material-icons">
+                                                        favorite
+                                                    </span>                                                        
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>一般通識組</td>
+                                            <td>00020349</td>
+                                            <td>英文演說</td>
+                                            <td>2.0</td>
+                                            <td>
+                                                <a class="btn btn-choose">
+                                                    <span class="material-icons">
+                                                        favorite_border
+                                                    </span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>一般通識組</td>
+                                            <td>00020350</td>
+                                            <td>英文文法(一)</td>
+                                            <td>2.0</td>
+                                            <td>
+                                                <a class="btn btn-choose">
+                                                    <span class="material-icons">
+                                                        favorite_border
+                                                    </span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </div>
 
                     </div>
@@ -508,6 +574,7 @@
     <!-- grow emi js -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.0/Chart.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="./js/grow-emi.js"></script>
 </body>
 

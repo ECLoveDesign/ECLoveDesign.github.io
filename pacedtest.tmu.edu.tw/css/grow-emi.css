@@ -1,20 +1,33 @@
+
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 /* capacity Distribution Chart */
 main {
     z-index: 1;
     position: relative;
 }
+
+.capacityDistribution .cont-colmun {
+    margin: 10px 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
 .chart-wrap {
-    width: 60%;
-    display:block;
-    overflow:hidden;
+    -ms-flex: 0 0 60%;
+    flex: 0 0 60%;
+    max-width: 60%;
+    display: block;
+    overflow: hidden;
     padding: 60px 50px;
-    background:#fff;
-    border-radius:4px;
+    background: #fff;
+    border-radius: 4px;
 }
 
 .capacityDistribution {
     margin: 4rem 0 0;
 }
+
 .capacityDistribution .cont {
     border-top: #721e18 2px solid;
     background: #F5EFEF;
@@ -22,44 +35,129 @@ main {
 
 }
 
-.capacityDistribution canvas{
-    background:#fff;
-    height:400px;
+.capacityDistribution canvas {
+    background: #fff;
+    height: 400px;
 }
 
-.capacityDistribution .cont-colmun {
-    margin: 10px 0;
-    display: flex;
-}
+
 .capacityDistribution .cont-colmun .function {
-    width: 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+    margin: 10px 0;
 }
+
 .capacityDistribution .cont-colmun .info-cont {
-    width: 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
 }
 
 .info-cont {
     padding: 10px;
 }
+
 .info-cont p {
     font-size: 1rem;
     color: #000;
 }
+.info-cont ul {
+    padding-inline-start: 40px;
+}
+.info-cont ul li {
+    list-style: disc;
+    margin-top: 10px;
+}
+
+.capacityDistribution .cont-colmun .function .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.capacityDistribution .cont-colmun .function label {
+    width: 100px;
+    text-align: justify;
+}
+
+.info-cont a {
+    margin-top: 1rem;
+}
+
+.capacityDistribution .btn-popup {
+    color: #349BD3;
+    display: block;
+    text-decoration: underline;
+}
+
 @media (max-width:1366px) {
-    .capacityDistribution .cont-colmun {
-        display: block;
-        overflow: auto;
-    }
     .chart-wrap {
-        float: left;
-        width: 80%;
-    }    
+        -ms-flex: 0 0 80%;
+        flex: 0 0 80%;
+        max-width: 80%;
+        order: 3;
+    }
+
     .capacityDistribution .cont-colmun .function {
-        float: left;
-        width: 20%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        order: 1;
+    }
+    .capacityDistribution .cont-colmun .function .form {
+        display: flex;
+    }
+
+    .capacityDistribution .cont-colmun .function .form-group {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
     }
     .capacityDistribution .cont-colmun .info-cont {
-        float: left;
-        width: 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        order: 2;
     }
+}
+@media (max-width:500px) {
+    .capacityDistribution .cont-colmun .function .form,    
+    .capacityDistribution .cont-colmun .function .form-group {
+        display: block;
+    }    
+}
+
+/* popupCont */
+.popupCont .popup-title {
+    color: #721e18;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 0;
+}
+.popupCont table thead th {
+    background: #AD9E7D;
+    color: #fff;
+    font-weight: normal;
+}
+.popupCont .btn {
+    color: #AC9E7F;
+}
+.popupCont table th,
+.popupCont table td {
+    text-align: center;
+}
+
+/* magnific-popup */
+.white-popup-block {
+    background: #FFF;
+    padding: 25px;
+    max-width: 650px;
+    margin: 40px auto;
+    position: relative;
+}
+
+/* start state */
+.mfp-zoom-in .zoom-anim-dialog {
+    opacity: 0;
 }
