@@ -13,10 +13,24 @@ main {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
-.chart-wrap {
+.capacityDistribution .colmunLeft {
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+.capacityDistribution .colmunCenter {
     -ms-flex: 0 0 60%;
     flex: 0 0 60%;
     max-width: 60%;
+}
+.capacityDistribution .colmunRight {
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+
+.chart-wrap {
     display: block;
     overflow: hidden;
     padding: 60px 50px;
@@ -42,20 +56,11 @@ main {
 
 
 .capacityDistribution .cont-colmun .function {
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-    max-width: 20%;
     margin: 10px 0;
 }
 
 .capacityDistribution .cont-colmun .info-cont {
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-    max-width: 20%;
-}
-
-.info-cont {
-    padding: 10px;
+    padding: 20px;
 }
 
 .info-cont p {
@@ -92,14 +97,14 @@ main {
 }
 
 @media (max-width:1366px) {
-    .chart-wrap {
-        -ms-flex: 0 0 80%;
-        flex: 0 0 80%;
-        max-width: 80%;
+    .capacityDistribution .colmunCenter {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
         order: 3;
     }
 
-    .capacityDistribution .cont-colmun .function {
+    .capacityDistribution .colmunLeft {
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;
@@ -114,14 +119,21 @@ main {
         flex: 0 0 50%;
         max-width: 50%;
     }
-    .capacityDistribution .cont-colmun .info-cont {
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        max-width: 100%;
+    .capacityDistribution .colmunRight {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
         order: 2;
     }
 }
 @media (max-width:500px) {
+    .capacityDistribution .colmunLeft,
+    .capacityDistribution .colmunCenter,
+    .capacityDistribution .colmunRight {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
     .capacityDistribution .cont-colmun .function .form,    
     .capacityDistribution .cont-colmun .function .form-group {
         display: block;
