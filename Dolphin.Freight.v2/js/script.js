@@ -123,8 +123,8 @@ if ($(document).width() < 992) {
   });
 }
 
-// borad-wrap
-if ($('.borad-wrap').length) {
+// card-wrap
+if ($('.card-wrap').length) {
 
   if ($(document).width() > 992) {
     $(window).scroll(function () {

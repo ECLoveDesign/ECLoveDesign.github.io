@@ -4307,11 +4307,55 @@ footer .copyright ul {
 .board-wrap .btn-collapse[aria-expanded="false"]::before {
     content: "\f067";
 }
+.board-wrap .card .card-header .dropdown {
+    position: absolute;
+    right: 50px;
+    top: 6px;
+}
+.board-wrap .card .card-header .dropdown .btn {
+    padding: 0.2rem 0.75rem;
+}
+.board-wrap .card .card-header .dropdown .dropdown-menu {
+    margin-top: -16px;
+    margin-left: -11px;    
+}
 
-.board-wrap .card:nth-child(1) .card-header {
-    background: var(--normalBlue);
+.board-wrap .card.hbl1 .card-header {
+    background: #6F3CA3;
     color: #fff;
 }
+
+.board-wrap .card.hbl2 .card-header {
+    background: #015383;
+    color: #fff;
+}
+
+.board-wrap .card.hbl3 .card-header {
+    background: #9E8D7D;
+    color: #fff;
+}
+
+.board-wrap .card.hbl4 .card-header {
+    background: #2E95CF;
+    color: #fff;
+}
+
+.board-wrap .card.hbl5 .card-header {
+    background: #016D77;
+    color: #fff;
+}
+
+.board-wrap .card.hbl6 .card-header {
+    background: #2e59cf;
+    color: #fff;
+}
+
+.board-wrap .card.hbl7 .card-header {
+    background: #1b0177;
+    color: #fff;
+}
+
+
 
 /* select */
 .bootstrap-select>.dropdown-toggle {
@@ -4381,31 +4425,31 @@ footer .copyright ul {
     border-bottom: #444 solid 6px;
 }
 
-.cardAnchor .borad-anchor:nth-child(1) {
+.cardAnchor .borad-anchor.hbl1 {
     border-color: #6F3CA3;
 }
 
-.cardAnchor .borad-anchor:nth-child(2) {
+.cardAnchor .borad-anchor.hbl2 {
     border-color: #015383;
 }
 
-.cardAnchor .borad-anchor:nth-child(3) {
+.cardAnchor .borad-anchor.hbl3 {
     border-color: #9E8D7D;
 }
 
-.cardAnchor .borad-anchor:nth-child(4) {
+.cardAnchor .borad-anchor.hbl4 {
     border-color: #2E95CF;
 }
 
-.cardAnchor .borad-anchor:nth-child(5) {
+.cardAnchor .borad-anchor.hbl5 {
     border-color: #016D77;
 }
 
-.cardAnchor .borad-anchor:nth-child(6) {
+.cardAnchor .borad-anchor.hbl6 {
     border-color: #2e59cf;
 }
 
-.cardAnchor .borad-anchor:nth-child(7) {
+.cardAnchor .borad-anchor.hbl7 {
     border-color: #1b0177;
 }
 
@@ -4563,19 +4607,19 @@ footer .copyright ul {
     }
 }
 
-/* borad-wrap */
-.borad-wrap .anchor-wrap.affix {
+/* card-wrap */
+.card-wrap .anchor-wrap.affix {
     position: fixed;
     top: 90px;
     width: 365px;
 }
-.borad-wrap .btn-add {
+.card-wrap .btn-add {
     color: #000;
     background: var(--normalYellow);
     margin-bottom: 15px;
 }
 
-.borad-wrap .btn-add:hover {
+.card-wrap .btn-add:hover {
     color: #fff;
     background:#d4ad0e;
 }
