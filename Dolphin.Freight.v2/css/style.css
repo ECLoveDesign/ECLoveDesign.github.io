@@ -921,6 +921,7 @@ aside ul li>ul li.active a {
 /* 內頁區塊 內距24px */
 
 .content-wrapper {
+    min-height: calc(100vh - 144px);
     padding: 12px 24px;
 }
 
