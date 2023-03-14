@@ -82,8 +82,10 @@ main {
 }
 
 .capacityDistribution .cont-colmun .function label {
-    width: 100px;
+    width: 75px;
     text-align: justify;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .info-cont a {
@@ -96,9 +98,9 @@ main {
     text-decoration: underline;
 }
 
-.capacityDistribution .cont-colmun .function .form-group select {
-    width: 200px;
-    max-width: 100%;
+.capacityDistribution .cont-colmun .function .form-group select {    
+    width: 130px;
+    max-width: 50%;
 }
 
 @media (max-width:1366px) {
@@ -132,9 +134,9 @@ main {
     }
 }
 @media (max-width:768px) {
-    .capacityDistribution .cont-colmun .function .form-group select {
-        width: 150px;
-        max-width: 100%;
+    .capacityDistribution .cont-colmun .function .form-group select {    
+        width: 130px;
+        max-width: 50%;
     }  
     
     .capacityDistribution .colmunRight {
@@ -163,6 +165,7 @@ main {
     }
     .capacityDistribution .cont-colmun .function .form-group select {
         width: 100%;
+        max-width: 100%;
     }
 }
 

@@ -51,7 +51,7 @@ var options = {
 		}
 	},
 	responsive: [{
-		breakpoint: 480,
+		breakpoint: 768,
 		options: {
 			legend: {
 				position: 'bottom',
