@@ -96,6 +96,11 @@ main {
     text-decoration: underline;
 }
 
+.capacityDistribution .cont-colmun .function .form-group select {
+    width: 200px;
+    max-width: 100%;
+}
+
 @media (max-width:1366px) {
     .capacityDistribution .colmunCenter {
         -ms-flex: 0 0 100%;
@@ -126,6 +131,18 @@ main {
         order: 2;
     }
 }
+@media (max-width:768px) {
+    .capacityDistribution .cont-colmun .function .form-group select {
+        width: 150px;
+        max-width: 100%;
+    }  
+    
+    .capacityDistribution .colmunRight {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
 @media (max-width:500px) {
     .capacityDistribution .colmunLeft,
     .capacityDistribution .colmunCenter,
@@ -137,7 +154,16 @@ main {
     .capacityDistribution .cont-colmun .function .form,    
     .capacityDistribution .cont-colmun .function .form-group {
         display: block;
-    }    
+    }  
+    .capacityDistribution .cont-colmun .function .form-group {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+    .capacityDistribution .cont-colmun .function .form-group select {
+        width: 100%;
+    }
 }
 
 /* popupCont */
