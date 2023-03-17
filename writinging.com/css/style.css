@@ -1385,8 +1385,7 @@ section h2 {
 }
 @media (min-width:1024px) {
     .teacher-wrap {
-        margin-top: -2rem;
-        z-index: 3;
+        z-index: 1;
         position: relative;
     }
     .cont .teacher-wrap {
@@ -1961,7 +1960,14 @@ main>div>.container,
         max-width: 95%;
     }
 }
-
+@media (min-width:1024px) {
+    .search_box.teacher {
+        width: 768px;
+        margin: 2rem auto 0;
+        max-width: 100%;
+        margin-bottom: -2rem;
+    }
+}
 @media (max-width:1024px) {
     .jumbotron {
         padding: 3rem 1rem;
@@ -1972,7 +1978,7 @@ main>div>.container,
         margin-bottom: 0;
     }
     .search_box {
-        margin: 0 auto;
+        margin: 2rem auto 0;
     }
 }
 
@@ -2642,6 +2648,9 @@ main>div>.container,
 
     .cont .container>*:first-child {
         margin-top: -1rem;
+    }
+    .cont .container>*:first-child:not(.row) {        
+        margin-top: -15px;
     }
 }
 
