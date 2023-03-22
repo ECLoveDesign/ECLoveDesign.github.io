@@ -54,7 +54,7 @@ var options = {
 		breakpoint: 768,
 		options: {
 			legend: {
-				position: 'bottom',
+				// position: 'bottom',
 				offsetX: -10,
 				offsetY: 0
 			}
