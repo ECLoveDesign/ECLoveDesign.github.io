@@ -4,7 +4,7 @@ var options = {
 		name: '無資料',
 		data: [3, 3, 10, 10]
 	}, {
-		name: 'A2以下',
+		name: 'A2以下(您的落點)',
 		data: [5, 10, 4, 4],
 	}, {
 		name: 'B1',
@@ -16,7 +16,7 @@ var options = {
 		name: 'C1',
 		data: [3, 3, 5, 10]
 	}],
-	colors: ['#DBDBDB', '#DDEBF6', '#E2EFDB', '#C10000', '#FEF0CB'],	  
+	colors: ['#DBDBDB', '#DDEBF6', '#E2EFDB', '#C10000', '#FEF0CB','#000'],	  
 	dataLabels: {
 		style: {
 		  colors: ['#000', '#000', '#000', '#fff', '#000']
@@ -54,7 +54,7 @@ var options = {
 		breakpoint: 768,
 		options: {
 			legend: {
-				// position: 'bottom',
+				position: 'bottom',
 				offsetX: -10,
 				offsetY: 0
 			}
