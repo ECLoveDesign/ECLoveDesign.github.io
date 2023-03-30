@@ -1265,6 +1265,14 @@ section h2 {
     transform: translateY(20px);
 }
 
+.teacher-wrap .card>a {
+    position: relative;
+}
+.teacher-wrap .card>a::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;  
+}
 .teacher-wrap .card>a::before {
     opacity: 0;
     transform: translateY(250px);
@@ -1279,13 +1287,17 @@ section h2 {
 }
 
 .teacher-wrap .card img {
+    position: absolute;
     display: block;
-    width: 101%;
+    width: 100%;    
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     /* height: 100%; */
     /* object-fit: cover; */
     transition: .7s;
 }
-
 .teacher-wrap .btn-follow,
 .teacher-wrap .btn-unfollow {
     position: absolute;
@@ -3861,7 +3873,7 @@ main>div>.container,
 /* video-wrap */
 .video-wrap {
     position: relative;
-    padding: 0 4rem;
+    padding: 4rem;
     width: 95%;
     margin: auto;
 }
