@@ -1541,6 +1541,14 @@ section h2 {
 .video-swiper .card-title {
     text-align: center;
     font-weight: 400;
+    line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    max-height: 55px;
 }
 
 @media (max-width:600px) {
@@ -1913,7 +1921,7 @@ main>div>.container,
 }
 
 .jumbotron {
-    padding: 2rem 1.2rem 4rem;
+    padding: 2rem 1.2rem 5rem;
     position: relative;
     z-index: 2;
     margin: 0;
@@ -1972,15 +1980,15 @@ main>div>.container,
         max-width: 95%;
     }
 }
-@media (min-width:1024px) {
+@media (max-width:1024px) {
     .search_box.teacher {
-        width: 768px;
         margin: 2rem auto 0;
         max-width: 100%;
         margin-bottom: -2rem;
     }
-}
-@media (max-width:1024px) {
+    .search_box.affix {
+        top: 45px;
+    }
     .jumbotron {
         padding: 3rem 1rem;
     }
