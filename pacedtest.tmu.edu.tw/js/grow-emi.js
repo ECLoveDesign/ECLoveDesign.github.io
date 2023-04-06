@@ -60,6 +60,9 @@ var options = {
 			}
 		}
 	}],
+	tooltip: {
+		enabled: false,
+	}
 };
 
 var chart = new ApexCharts(document.querySelector("#capacityDistributionChart"), options);
