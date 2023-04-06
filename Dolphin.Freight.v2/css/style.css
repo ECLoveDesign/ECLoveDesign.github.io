@@ -416,7 +416,7 @@ f.dropdown-user-info .dropdown-item .dropdown-user-info .dropdown-user-link {
 }
 
 .container.main-container {
-    background: #F2F3F7;
+    background: #F6FAFB;
     min-height: 100%;
     position: relative;
     outline: 1px solid rgba(0, 0, 0, 0);
@@ -821,7 +821,7 @@ aside ul li>ul li.active a {
     -moz-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    background: #F2F3F7;
+    /* background: #F6FAFB; */
 }
 
 .hidden-left .main-content {
@@ -927,6 +927,8 @@ aside ul li>ul li.active a {
 
 .content-wrapper>div+div {
     margin-top: 20px;
+}
+.page-content-area {
     border-radius: 10px;
 }
 
@@ -4681,13 +4683,78 @@ footer .copyright ul {
     top: 90px;
     width: 365px;
 }
-.card-wrap .btn-add {
+.btn-add {
     color: #000;
     background: var(--normalYellow);
     margin-bottom: 15px;
 }
 
-.card-wrap .btn-add:hover {
+.btn-add:hover {
     color: #fff;
     background:#d4ad0e;
+}
+
+/* datatable */
+table.datatable tr th,
+table.datatable tr td {
+    width: auto !important;
+    min-width:100px;
+    vertical-align: middle;
+}
+table.datatable tr th {
+    padding: 8px 40px 8px 10px !important;
+}
+table.datatable tr .dtr-control {
+    min-width:auto;
+}
+table.dataTable>tbody>tr.child span.dtr-title {
+    min-width:100px;
+}
+table.dataTable>tbody>tr.child ul.dtr-details {
+    display: block;
+    width: 100%;
+}
+table.dataTable>tbody>tr.child ul.dtr-details>li {
+    width: 100%;
+}
+
+table .btn-lock {
+    color: #000;
+    text-decoration: none;
+}
+table .btn-lock:hover {
+    color: #0088D6;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #F6FAFB;
+}
+/* card */
+.card {
+    border: none;
+    box-shadow: rgba(4, 38, 56, 0.1) 0 0 8px;
+}
+.card:not(.board-item) {
+    border-radius: 10px;
+}
+.card:not(.board-item) .card-header {
+    color: var(--normalBlue);
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+}
+@media (min-width:500px) {
+    .card:not(.board-item) .card-header {
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+}
+@media (max-width:499px) {
+    .card:not(.board-item) .card-header .btn-add {
+        float: right;
+    }
+    table.dataTable>tbody>tr.child ul.dtr-details>li {
+        display: flex;
+    }
 }

@@ -1,0 +1,22 @@
+/*--------------------------------------------------------
+                 fix
+--------------------------------------------------------*/
+.dropdown.form-control ul.dropdown-menu {
+    max-height: 200px;
+    overflow: auto;
+}
+.dropdown.form-control ul.dropdown-menu .dropdown-item2 {
+    padding: .5rem 1rem;
+}
+
+.dropdown.form-control ul.dropdown-menu li.form-control {
+    padding: 0;
+    height: auto;
+}
+.dropdown.form-control ul.dropdown-menu li>a {
+    display: none;
+}
+.dropdown.form-control ul.dropdown-menu li [class*="col-"] {
+    max-width: 100%;
+    padding: 0;
+}

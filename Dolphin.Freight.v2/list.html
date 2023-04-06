@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>dFreight 物流管理系統</title>
+    <link rel="shortcut icon" href='images/favicon.ico' />
+    <link rel="image_src" href='images/favicon.ico' type="image/jpeg" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500&family=Oswald:wght@500&display=swap">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/datatables/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="assets/datatables/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+    <div class="container main-container">
+
+        <div class="wrapper main-wrapper fixed-navbar">
+            <header>
+                <nav class="header-navbar navbar-expand-md navbar fixed-top navbar-hide-on-scroll navbar-border navbar-shadow headroom header"
+                    data-nav="brand-center">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-header">
+                            <ul class="nav navbar-nav flex-row">
+                                <li class="nav-item mr-auto1">
+                                    <button type="button" class="mobile-menu sidebar-toggle-box"
+                                        aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
+                                        data-target="#navBar">
+                                        <span></span>
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="navbar-brand" href="#">
+                                        <h1 class="brand-text">dFreight</h1>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-globe"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">中文</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">英文</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa fa-user mr-1"></i>帳戶管理
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="login.html">
+                                            <i class="fa fa-sign-out mr-1" title="登出"></i>登出
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-mobile">
+                            <ul class="nav navbar-nav justify-content-end w-100">
+
+                                <li class="dropdown dropdown-language nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-globe"></i>
+                                        <span class="user-name">語言</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">中文</a>
+                                        <a class="dropdown-item" href="#">英文</a>
+                                    </div>
+
+                                </li>
+
+                                <li class="dropdown dropdown-user-info nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                        <span class="user-name">admin</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-gears"></i>我的帳戶
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="login.html">
+                                            <i class="fa-solid fa-power-off"></i>登出
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <!--左邊選單-->
+            <aside>
+                <div class="sidebar" id="navBar">
+                    <ul id="navigation" class="sidebar-menu">
+                        <li class="nav-item">
+                            <a href="#" title="首頁">
+                                <i class="fa fa-house"></i>首頁
+                            </a>
+                        </li>
+                        <!--管理-->
+                        <li class="nav-item">
+                            <a href="#" title="管理" class="menu-item" data-toggle="collapse" data-target="#management"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-user-gear"></i>管理
+                            </a>
+                            <ul id="management" class="collapse" data-parent="#navigation">
+                                <!--租戶管理-->
+                                <li>
+                                    <a href="#" title="租戶管理" class="menu-item" data-toggle="collapse"
+                                        data-target="#tenantManagement" aria-expanded="false">
+                                        <i class="fa-solid fa-user-group"></i>租戶管理
+                                    </a>
+                                    <ul id="tenantManagement" class="collapse" data-parent="#management">
+                                        <li>
+                                            <a href="#" title="租戶">租戶</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!--身分識別管理-->
+                                <li>
+                                    <a href="#" title="身分識別管理" class="menu-item" data-toggle="collapse"
+                                        data-target="#identification" aria-expanded="false">
+                                        <i class="fa-solid fa-id-card"></i>身分識別管理
+                                    </a>
+                                    <ul id="identification" class="collapse" data-parent="#management">
+                                        <li>
+                                            <a href="#" title="角色">角色</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="使用者">使用者</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" title="設置">
+                                        <i class="fa-solid fa-gear"></i>設置
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--海運進口-->
+                        <li class="nav-item active">
+                            <a href="#" title="海運進口" class="menu-item" data-toggle="collapse" data-target="#seaEntrance"
+                                aria-expanded="true">
+                                <i class="fa-solid fa-ship"></i>海運進口
+                            </a>
+                            <ul id="seaEntrance" class="collapse show" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="新增一票運輸">新增一票運輸</a>
+                                </li>
+                                <li class="active">
+                                    <a href="#" title="我的運輸清單">我的運輸清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Master B/L 清單">Master B/L 清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="House B/L 清單">House B/L 清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="新增 S/O">新增 S/O</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="S/O 清單">S/O 清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="新增船期">新增船期</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="船期清單">船期清單</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--海運出口-->
+                        <li class="nav-item">
+                            <a href="#" title="海運出口" class="menu-item" data-toggle="collapse" data-target="#seaExport"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-ferry"></i>海運出口
+                            </a>
+                            <ul id="seaExport" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="新增一票運輸">新增一票運輸</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="我的運輸清單">我的運輸清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Master B/L 清單">Master B/L 清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="House B/L 清單">House B/L 清單</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--空運進口-->
+                        <li class="nav-item">
+                            <a href="#" title="空運進口" class="menu-item" data-toggle="collapse" data-target="#airImport"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-plane-arrival"></i>空運進口
+                            </a>
+                            <ul id="airImport" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="新增一票運輸">新增一票運輸</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="我的運輸清單">我的運輸清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="MAWB清單">MAWB清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="HAWB清單">HAWB清單</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--空運出口-->
+                        <li class="nav-item">
+                            <a href="#" title="空運出口" class="menu-item" data-toggle="collapse" data-target="#airExport"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-plane-departure"></i>空運出口
+                            </a>
+                            <ul id="airExport" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="新增一票運輸">新增一票運輸</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="我的運輸清單">我的運輸清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="MAWB清單">MAWB清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="HAWB清單">HAWB清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="新增S/O">新增S/O</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="S/O清單">S/O清單</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--設定-->
+                        <li class="nav-item">
+                            <a href="#" title="設定" class="menu-item" data-toggle="collapse" data-target="#setting"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-gear"></i>設定
+                            </a>
+                            <ul id="setting" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="IT號碼管理">IT號碼管理</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Awb號碼管理">Awb號碼管理</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="包裝管理">包裝管理</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="集裝箱管理">集裝箱管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--會計設定-->
+                        <li class="nav-item">
+                            <a href="#" title="會計設定" class="menu-item" data-toggle="collapse" data-target="#accounting"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-calculator"></i>會計設定
+                            </a>
+                            <ul id="accounting" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="科目代碼管理">科目代碼管理</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="計費代碼管理">計費代碼管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--貿易夥伴-->
+                        <li class="nav-item">
+                            <a href="#" title="貿易夥伴" class="menu-item" data-toggle="collapse" data-target="#partner"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-handshake"></i>貿易夥伴
+                            </a>
+                            <ul id="partner" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="新增貿易夥伴">新增貿易夥伴</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="貿易夥伴信用額度">貿易夥伴信用額度</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="貿易夥伴清單">貿易夥伴清單</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--綜合業務-->
+                        <li class="nav-item">
+                            <a href="#" title="綜合業務" class="menu-item" data-toggle="collapse"
+                                data-target="#integratedServices" aria-expanded="false">
+                                <i class="fa-solid fa-briefcase"></i>綜合業務
+                            </a>
+                            <ul id="integratedServices" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="新增一票運輸">新增一票運輸</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="我的運輸清單">我的作業清單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="作業清單">作業清單</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--倉儲-->
+                        <li class="nav-item">
+                            <a href="#" title="倉儲" class="menu-item" data-toggle="collapse" data-target="#storage"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-box"></i>倉儲
+                            </a>
+                            <ul id="storage" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="倉儲收據">倉儲收據</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="出入庫">出入庫</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--銷售-->
+                        <li class="nav-item">
+                            <a href="#" title="銷售" class="menu-item" data-toggle="collapse" data-target="#sale"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-shop"></i>銷售
+                            </a>
+                            <ul id="sale" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="新增報價單">新增報價單</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="報價清單">報價清單</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--報表-->
+                        <li class="nav-item">
+                            <a href="#" title="報表" class="menu-item" data-toggle="collapse" data-target="#report"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-chart-pie"></i>報表
+                            </a>
+                            <ul id="report" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="#" title="貨量與利潤報表">貨量與利潤報表</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="貨量與利潤圖">貨量與利潤圖</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="員工績效報告">員工績效報告</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="使用者登入/登出報告">使用者登入/登出報告</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="進出貨報告">進出貨報告</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="集裝箱倉儲報表">集裝箱倉儲報表</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--/sidebar-->
+            </aside>
+
+            <!-- MAIN CONT -->
+            <main role="main" class="main-content container-fluid">
+
+                <!-------------------- 主要內容 -------------------->
+                <div class="content-wrapper">
+                    <div class="page-header">
+
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">海運出口</li>
+                                <li class="breadcrumb-item active">
+                                    <a href="#">我的運輸清單</a>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <!-- <h2 class="content-header-title">新增一票運輸</h2> -->
+
+                        <!--內容區塊-->
+                        <div class="page-content-area">
+
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="title">
+                                        我的運輸清單
+                                    </div>
+
+                                    <button class="btn btn-add">
+                                        <i class="fa-solid fa-plus"></i>新增
+                                    </button>
+
+                                </div>
+
+                                <div class="card-body">
+
+                                    <table class="table table-striped datatable" class="display nowrap"
+                                        style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>動作</th>
+                                                <th>鎖定</th>
+                                                <th>文件編號</th>
+                                                <th>MB/L號碼</th>
+                                                <th>分站</th>
+                                                <th>船公司S/O號碼</th>
+                                                <th>船公司合約編號</th>
+                                                <th>ETD</th>
+                                                <th>ETA</th>
+                                                <th>文件結關日</th>
+                                                <th>VGM結關日期</th>
+                                                <th>收貨地(POR)</th>
+                                                <th>裝貨港(POL)</th>
+                                                <th>卸貨港(POD)</th>
+                                                <th>交貨地(DEL)</th>
+                                                <th>船公司</th>
+                                                <th>運輸模式</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock06" onclick="isReady('lock06')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock02" onclick="isReady('lock02')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock03" onclick="isReady('lock03')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock04" onclick="isReady('lock04')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>                                                    
+                                                    <div class="dropdown list-action">
+                                                        <button
+                                                            class="btn btn-primary btn-action dropdown-toggle"
+                                                            type="button" id="listAction-drop"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="fa-solid fa-gear"></i>
+                                                            操作
+                                                        </button>
+                                                        <div class="dropdown-menu"
+                                                            aria-labelledby="listAction-drop">
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                                編輯
+                                                            </a>
+                                                            <a class="dropdown-item btn-detail" href="#">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                刪除
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <a href="#" class="btn-lock" id="lock05" onclick="isReady('lock05')">
+                                                        <i class="fa-lg fa-solid fa-lock-open"></i>
+                                                        <span>上鎖/解鎖</span>
+                                                    </a>
+                                                </td>
+                                                <td>OE-23030004</td>
+                                                <td>--</td>
+                                                <td>台北(TPE)</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>2023-03-12T00:00:00</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th></th>
+                                                <th>動作</th>
+                                                <th>鎖定</th>
+                                                <th>文件編號</th>
+                                                <th>MB/L號碼</th>
+                                                <th>分站</th>
+                                                <th>船公司S/O號碼</th>
+                                                <th>船公司合約編號</th>
+                                                <th>ETD</th>
+                                                <th>ETA</th>
+                                                <th>文件結關日</th>
+                                                <th>VGM結關日期</th>
+                                                <th>收貨地(POR)</th>
+                                                <th>裝貨港(POL)</th>
+                                                <th>卸貨港(POD)</th>
+                                                <th>交貨地(DEL)</th>
+                                                <th>船公司</th>
+                                                <th>運輸模式</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+            </main>
+
+            <!-- MAIN CONT end-->
+            <footer>
+                <div class="copyright">
+                    <ul>
+                        <li>Copyright © dFreight 2023</li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!--JS-->
+    <!-- <script src='js/jquery-3.5.1.min.js'></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
+    <script src="assets/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/datatables/dataTables.responsive.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var table = $('.datatable').DataTable( {
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+                },
+                dom: '<"top"f>rt<"bottom"lpi>',
+                responsive: {
+                    details: {
+                        type: 'column'
+                    }
+                },
+                
+                columnDefs: [{
+                    className: 'dtr-control',
+                    orderable: false,
+                    targets: 0
+                }],
+                order: [1, 'asc'],
+            } );
+            
+        });
+
+        // dataTable上鎖/解鎖
+        function isReady (sts) {
+            if ($('#' + sts).hasClass('action')) {
+                $('#' + sts + ' i').attr('class', 'fa-lg fa-solid fa-lock fa-lg')
+                $('#' + sts).removeClass('action')
+            }else {
+                $('#' + sts + ' i').attr('class', 'fa-lg fa-solid fa-lock-open')
+                $('#' + sts).addClass('action')
+            }
+        }
+    </script>
+
+</body>
+
+</html>
