@@ -224,6 +224,7 @@ main.index {
 
 .group-link {
     position: fixed;
+    z-index: 1;
     right: 0;
     bottom: 20px;
 
@@ -418,6 +419,7 @@ header.affix #mainNav .navbar-nav .nav-link:hover {
         top: 0;
         left: 0;
         z-index: -1;
+        box-shadow: 0px 3px 20px #023894;
     }
 
     .navbar-brand {
