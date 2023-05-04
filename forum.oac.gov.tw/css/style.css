@@ -843,7 +843,44 @@ body>.modal-wrap {
     filter: drop-shadow( 6px 5px 5px rgb(0, 0, 0, .4));
     display: block;
 }
-
+@media (max-width:1199px) {
+    .speaker-cont .avatar {
+        position: relative;
+        right: auto;
+        top: auto;
+    }
+    .speaker-cont>.row>[class*="col-"]:first-child {
+        order: 2;
+    }
+    .speaker-cont>.row>[class*="col-"]:last-child {
+        order: 1;
+    }
+    .speaker-cont .avatar img {
+        margin: auto;
+    }
+    .speaker-cont ul {
+        margin-top: 3rem;
+    }
+    .modal-content {
+        padding: 1.5rem;
+    }
+    .modal-title {
+        width: 100%;
+    }
+    .speaker-cont ul li {
+        position: relative;
+        line-height: 1.4rem;
+        padding-left: 80px;
+    }
+    .speaker-cont ul li span {
+        position: absolute;
+        left: 15px;
+        top: 0;
+    }
+    .speaker-cont ul li+li {
+        margin-top: 20px;
+    }
+}
 /* agenda */
 #agenda {
     position: relative;
