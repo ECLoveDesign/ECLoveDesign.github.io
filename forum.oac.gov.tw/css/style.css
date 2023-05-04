@@ -295,6 +295,16 @@ header {
 
 header.affix {
     width: 100%;
+    
+    background-color: rgba(47, 188, 237, 0.7);
+    background: -moz-linear-gradient(top, rgb(47, 188, 237, .8) 0%, rgba(47, 188, 237, 0.6) 60%, rgba(47, 188, 237, 0) 90%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(47, 188, 237, .8) 0%, rgba(47, 188, 237, 0.6) 60%, rgba(47, 188, 237, 0) 90%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(47, 188, 237, .8) 0%, rgba(47, 188, 237, 0.6) 60%, rgba(47, 188, 237, 0) 90%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002c4d', endColorstr='#00002c4c', GradientType=0);
+    /* IE6-9 */
 }
 
 .affix {
@@ -337,6 +347,7 @@ header.affix {
 
 #mainNav .navbar-nav .nav-link {
     color: #067CCB;
+    font-size: 1.2rem;
 }
 
 header.affix #mainNav .navbar-nav .nav-link {
@@ -634,9 +645,13 @@ footer p {
 }
 .speaker-wrap .swiper-button-prev {
     background-image: url(../images/btn-prev.png);
+    -webkit-filter: drop-shadow( 0px 7px 6px rgb(0, 0, 0, .4));
+    filter: drop-shadow( 0px 7px 6px rgb(0, 0, 0, .4));
 }
 .speaker-wrap .swiper-button-next {
     background-image: url(../images/btn-next.png);
+    -webkit-filter: drop-shadow( 0px 7px 6px rgb(0, 0, 0, .4));
+    filter: drop-shadow( 0px 7px 6px rgb(0, 0, 0, .4));
 }
 .speaker-item {
     background: #fff;
@@ -725,12 +740,18 @@ footer p {
 /* speaker-cont */
 .modal-content {
     padding: 2rem 0 2rem 2rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 10px 8px 16px;    
+    border-radius: 2rem;
 }
 .modal-content .close {
     position: absolute;
     right: 25px;
     top: 20px;
     font-size: 2rem;
+    opacity: 1;
+}
+.modal-content .close:hover>* {
+    transform: translateY(3px);
 }
 .modal-header {
     border: none;
@@ -880,7 +901,7 @@ body>.modal-wrap {
     font-size: 1.5rem;
 }
 #agenda .table .number {
-    font-size: 13px;
+    font-size: 15px;
     font-family: var(--font-Number);
     text-align: center;
     font-weight: bold; 
@@ -891,6 +912,17 @@ body>.modal-wrap {
     font-style: italic;
     font-weight: normal;  
     letter-spacing: 0;
+    position: relative;
+}
+#agenda .table thead .number::before {
+    content: '';
+    display: block;
+    background: #4A9EFF;
+    position: absolute;
+    width: 130%;
+    height: 100%;
+    top: 0;
+    left: -130%;
 }
 #agenda .table tbody tr {
     background: #1D7CAB;
@@ -913,6 +945,9 @@ body>.modal-wrap {
 }
 #agenda .table td .topic {
     margin-top: 75px;
+}
+#agenda .table td .topic.text-center {
+    margin-top: 90px;
 }
 #agenda .table td p {
     font-size: 16px;
