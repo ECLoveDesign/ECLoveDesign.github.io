@@ -349,10 +349,24 @@ header.affix {
     color: #067CCB;
     font-size: 1.2rem;
 }
-
+#mainNav .navbar-nav .nav-link .badge {
+    background: #36A6F2;
+    color: #fff;
+}
+#mainNav .navbar-nav .nav-link .badge:hover {
+    background: #fff;
+    color: #36A6F2;
+}
 header.affix #mainNav .navbar-nav .nav-link {
     color: #fff;
     text-shadow: #023894 0px 0px 5px;
+}
+header.affix #mainNav .navbar-nav .nav-link .badge {
+    background: #023894;
+}
+header.affix #mainNav .navbar-nav .nav-link .badge:hover {
+    background: #fff;
+    color: #023894;
 }
 
 #mainNav .navbar-nav .nav-link:hover,
@@ -436,6 +450,7 @@ header.affix #mainNav .navbar-nav .nav-link:hover {
 
     #mainNav .navbar-nav .nav-link {
         color: #fff;
+        padding: 1rem;
     }
 }
 
