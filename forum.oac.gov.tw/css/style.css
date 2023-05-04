@@ -184,6 +184,12 @@ section .card {
     .thin {
         font-weight: 500;
     }
+    section>h2 {
+        width: 80%;
+    }
+    h2::before {
+        width: 150px;
+    }
 }
 
 
@@ -1071,11 +1077,7 @@ body>.modal-wrap {
     color: #000;
     font-size: 1.2rem;
 }
-@media (max-width:992px) {
-    #agenda .table thead .number::before {
-        display: none;
-    }
-}
+
 @media (max-width:768px) {
     #agenda {
         background-size: cover;
