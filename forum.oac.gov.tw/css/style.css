@@ -100,7 +100,7 @@ section .container>.cont p {
 @media (max-width:1024px) {
     section {
         min-height: auto;
-        padding: 4rem 0 2rem;
+        padding: 4rem 0;
     }
 }
 
@@ -159,7 +159,6 @@ section .card {
 .thin {
     font-weight: 100;
 }
-
 @media (max-width:1199px) {
     p {
         font-size: 1rem;
@@ -168,6 +167,12 @@ section .card {
     h4 {
         font-size: 18px;
         margin-bottom: 15px;
+    }
+}
+@media (max-width:1024px) {
+    section>h2 {
+        width: 90%;
+        margin: 2rem 3rem 3rem;
     }
 }
 
@@ -473,6 +478,7 @@ footer p {
 /* intro */
 #intro {
     background: url(../images/bg-intro.png) no-repeat center 0;
+    background-size: cover;
 }
 
 .kv {
@@ -997,6 +1003,29 @@ body>.modal-wrap {
     position: relative;
     background: url(../images/bg-video.png) no-repeat center bottom;
 }
+#video>* {
+    position: relative;
+    z-index: 1;
+}
+#video::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 60%;
+    width: 100%;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.7);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, .8) 0%, rgba(255, 255, 255, 0.6) 60%, rgba(255, 255, 255, 0) 90%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, .8) 0%, rgba(255, 255, 255, 0.6) 60%, rgba(255, 255, 255, 0) 90%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, .8) 0%, rgba(255, 255, 255, 0.6) 60%, rgba(255, 255, 255, 0) 90%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002c4d', endColorstr='#00002c4c', GradientType=0);
+    /* IE6-9 */
+}
 
 /* traffic */
 #traffic {    
@@ -1041,6 +1070,26 @@ body>.modal-wrap {
     background: url(../images/icon-car.png) no-repeat right;
     background-size: contain;
     top: -40px;
+}
+#traffic img {
+    max-width: 100%;
+}
+@media (max-width:1366px) {
+    #traffic .info {        
+        padding-left: 50px;
+    }
+}
+@media (max-width:1024px) {
+    #traffic .info {        
+        padding-left: 80px;
+    }
+}
+@media (max-width:650px) {
+    #traffic ul li .subtitle::before {  
+        left: -70px;      
+        width: 50px;
+        height: 50px;
+    }
 }
 
 /* registration */
@@ -1109,10 +1158,43 @@ section .container>.form {
     border-radius: 30px;
     color: #fff;
     display: block;
-    margin: auto;
+    margin: 1rem auto;
+}
+@media (max-width:768px) {
+    #registration .container>.cont {
+        padding: 20px 30px;
+    }
+    .form .form-check-input {
+        transform: scale(1.2);
+        margin: 0.5rem 0 0 -1.5rem;
+    }
 }
 
 /* contact */
 #contact {
+    position: relative;
     background: url(../images/bg-contact.png) no-repeat center bottom;
+}
+#contact>* {
+    position: relative;
+    z-index: 1;
+}
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 60%;
+    width: 100%;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.7);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, .8) 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0) 90%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, .8) 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0) 90%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, .8) 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0) 90%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002c4d', endColorstr='#00002c4c', GradientType=0);
+    /* IE6-9 */
 }
