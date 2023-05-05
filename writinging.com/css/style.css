@@ -2166,6 +2166,37 @@ main>div>.container,
 .profolio-wrap .card img {
     width: 100%;
 }
+.video-group a,
+.gallery a,
+.file-group a {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.video-group a::after {
+    content: "";
+    display: block;
+    padding-bottom: 55%;
+}
+
+.gallery a::after,
+.file-group a::after {
+    content: "";
+    display: block;
+    padding-bottom: 60%;
+}
+.video-group a img,
+.gallery a img,
+.file-group a img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
 @media (max-width:991px) {
     .profolio-wrap::before {
@@ -2192,6 +2223,11 @@ main>div>.container,
         -ms-flex-order: 2;
         order: 2;
     } */
+}
+@media (max-width:768px) {        
+    .file-group [class*="col-"]+[class*="col-"] {
+        margin-top: 15px;
+    }
 }
 
 /* functionbar */
