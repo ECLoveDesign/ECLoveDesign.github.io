@@ -14,9 +14,9 @@ main {
     flex-wrap: wrap;
 }
 .capacityDistribution .colmunLeft {
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-    max-width: 20%;
+    -ms-flex: 0 0 15%;
+    flex: 0 0 15%;
+    max-width: 15%;
 }
 .capacityDistribution .colmunCenter {
     -ms-flex: 0 0 60%;
@@ -24,16 +24,15 @@ main {
     max-width: 60%;
 }
 .capacityDistribution .colmunRight {
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-    max-width: 20%;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
 }
 
 
 .chart-wrap {
     display: block;
     overflow: hidden;
-    padding: 60px 50px;
     background: #fff;
     border-radius: 4px;
 }
@@ -64,13 +63,14 @@ main {
 }
 
 .info-cont p {
-    font-size: 1rem;
+    font-size: 18px;
     color: #000;
 }
 .info-cont ul {
     padding-inline-start: 40px;
 }
 .info-cont ul li {
+    font-size: 18px;
     list-style: disc;
     margin-top: 10px;
 }
@@ -94,6 +94,7 @@ main {
 
 .capacityDistribution .btn-popup {
     color: #349BD3;
+    font-size: 18px;
     display: block;
     text-decoration: underline;
 }
@@ -102,7 +103,9 @@ main {
     width: 130px;
     max-width: 50%;
 }
-
+.arrow_box {
+    padding: 10px;
+}
 @media (max-width:1366px) {
     .capacityDistribution .colmunCenter {
         -ms-flex: 0 0 100%;
