@@ -16,13 +16,13 @@ var options = {
 		name: 'C1',
 		data: [3, 3, 5, 10]
 	}],
-	colors: ['#DBDBDB', '#DDEBF6', '#E2EFDB', '#C10000', '#FEF0CB','#000'],	  
+	colors: ['#DBDBDB', '#DDEBF6', '#E2EFDB', '#C10000', '#FEF0CB', '#000'],
 	dataLabels: {
 		style: {
-		  fontSize: '18px',	
-		  colors: ['#000', '#000', '#000', '#fff', '#000']
+			fontSize: '18px',
+			colors: ['#000', '#000', '#000', '#fff', '#000']
 		}
-	},  
+	},
 	chart: {
 		type: 'bar',
 		height: 350,
@@ -33,21 +33,21 @@ var options = {
 		},
 	},
 	xaxis: {
-        labels: {
-            style: {
-                fontSize: '18px',
+		labels: {
+			style: {
+				fontSize: '18px',
 				fontFamily: 'Noto Sans TC',
 				fontWeight: 700,
-            }
-        },	
+			}
+		},
 		categories: ['全校', '全院', '全系', '全系同年級'],
 	},
 	yaxis: {
-        labels: {
-            style: {
-                fontSize: '18px'
-            }
-        },	
+		labels: {
+			style: {
+				fontSize: '18px'
+			},
+		},
 	},
 	fill: {
 		opacity: 1
@@ -55,15 +55,15 @@ var options = {
 	legend: {
 		position: 'right',
 		offsetX: 0,
-		offsetY: 50,		
-		inverseOrder: true,		
+		offsetY: 50,
+		inverseOrder: true,
 		fontSize: "16px"
 	},
 	states: {
 		hover: {
-		 filter: {
-			type: 'darken'
-		  }
+			filter: {
+				type: 'darken'
+			}
 		}
 	},
 	responsive: [{
@@ -77,19 +77,16 @@ var options = {
 		}
 	}],
 	tooltip: {
-		custom: function({ series, seriesIndex, dataPointIndex, w }) {
-		  return (
-			'<div class="arrow_box">' +
-			"<span>" +
-			w.globals.labels[dataPointIndex] +
-			": " +
-			series[seriesIndex][dataPointIndex] +
-			"</span>" +
-			"%" +
-			"</div>"
-		  );
+		y: {
+			formatter: function (value, opts) {
+				let percent = opts.w.globals.seriesPercent[opts.seriesIndex][opts.dataPointIndex];
+				return percent.toFixed(0) + '%'
+			}
+		},
+		style: {
+			fontSize: '18px',
 		}
-	  }
+	},
 	// tooltip: {
 	// 	enabled: false,
 	// }
