@@ -653,6 +653,7 @@ footer p {
     background: url(../images/bg-speaker.png) no-repeat center bottom;
     background-size: cover;
     position: relative;
+    min-height: 900px;
 }
 .speaker-wrap {
     width: 80%;    
@@ -792,6 +793,9 @@ footer p {
     }
 }
 @media (max-width:1024px) {
+    #speaker {
+        min-height: auto;
+    }
     .speaker-wrap {
         position: relative;        
         width: 95%;
