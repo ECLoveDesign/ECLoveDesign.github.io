@@ -125,8 +125,8 @@ h2::before {
 }
 
 section>h2 {
-    width: 40vw;
-    margin: 2rem 0 3rem 5rem;
+    width: 36vw;
+    margin: 2rem 0 3rem 15rem;
 }
 section>h2::before {
     background: #2BB5FC;
@@ -654,17 +654,6 @@ footer p {
     background-size: cover;
     position: relative;
 }
-#speaker h2 {
-    color: #1C7CAC;
-    font-weight: bold;
-    text-align: center;
-    border-bottom: #fff solid 2px;
-    width: 315px;
-    margin: 30px auto 0;
-}
-#speaker h2::before {
-    display: none;
-}
 .speaker-wrap {
     width: 80%;    
     position: absolute;
@@ -718,8 +707,20 @@ footer p {
     -o-border-radius: 20px;
     width: 100%;
     height: 515px;
-    padding: 2.5rem 0;
+    padding: 3rem 0 1.5rem;
     position: relative;
+}
+.speaker-item .type {
+    background: #DBF0F9;
+    color: #184A84;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    width: 140px;
+    padding: 5px 10px;
+    border-radius: 0 0 12px 12px;
 }
 .speaker-item .avatar img {
     max-width: 100%;
@@ -728,7 +729,7 @@ footer p {
     color: #808080;
     font-size: 20px;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 10px 0 0;
     line-height: 24px;
     height: 50px;
     display: flex;
@@ -744,7 +745,7 @@ footer p {
 }
 .speaker-item .title {
     color: #057397;
-    font-size: 18px;
+    font-size: 17px;
     width: 80%;
     margin: auto;
     position: absolute;
@@ -771,12 +772,22 @@ footer p {
         height: 525px;
     }
     .speaker-item .title {
-        bottom: 30px;
+        bottom: 35px;
         height: 90px;
+    }
+}
+@media (max-width:1440px) {
+    .speaker-item .title {
+        width: 85%;
     }
 }
 @media (max-width:1280px) {
     .speaker-item {
+        width: 90%;
+    }
+}
+@media (max-width:1130px) {
+    .speaker-item .title {
         width: 90%;
     }
 }
@@ -786,16 +797,6 @@ footer p {
         width: 95%;
     }
     .speaker-wrap .swiper-container {
-        width: 90%;
-    }
-}
-@media (max-width:850px) {
-    .speaker-item {
-        width: 80%;
-    }
-}
-@media (max-width:800px) {
-    .speaker-item {
         width: 90%;
     }
 }
@@ -859,9 +860,11 @@ footer p {
 body>.modal-wrap {
     z-index: auto;
 }
+/*
 .modal-wrap .modal:nth-child(odd) .speaker-cont ul li {
     color: #FBA9A9;
 }
+*/
 .speaker-cont ul li span::after {
     content: '｜';
 }

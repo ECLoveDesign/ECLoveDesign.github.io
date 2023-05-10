@@ -116,7 +116,11 @@ if ( $('.speaker-wrap').length ) {
       },
       1024: { 
         slidesPerView: 2,
-        spaceBetween: 20
+        spaceBetween: 10
+      },
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 10
       },
       1366: {
         slidesPerView: 3,
