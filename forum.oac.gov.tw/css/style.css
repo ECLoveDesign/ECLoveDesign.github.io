@@ -447,7 +447,8 @@ header.affix #mainNav .navbar-nav .nav-link:hover {
     #mainNav.show {
         -ms-flex-pack: center;
         justify-content: center;
-        height: 100vh;
+        height: calc(100vh - 65px);
+        overflow: auto;
         align-items: center;
         display: flex;
         background: rgba(24, 74, 132, 0.95);
@@ -464,6 +465,12 @@ header.affix #mainNav .navbar-nav .nav-link:hover {
     #mainNav .navbar-nav .nav-link {
         color: #fff;
         padding: 1rem;
+    }
+}
+@media (max-height:645px) {
+    #mainNav.show {
+        padding: 2rem 0;
+        display: block;
     }
 }
 
