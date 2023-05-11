@@ -16,7 +16,8 @@ var options = {
 		name: 'C1',
 		data: [3, 3, 5, 10]
 	}],
-	colors: ['#DBDBDB', '#DDEBF6', '#E2EFDB', '#C10000', '#FEF0CB', '#000'],
+	colors: ['#DBDBDB', '#DDEBF6', '#E2EFDB', '#C10000', '#FEF0CB', '#000'],	
+	// 20230508 調整字體大小
 	dataLabels: {
 		style: {
 			fontSize: '18px',
@@ -32,6 +33,7 @@ var options = {
 			show: false,
 		},
 	},
+	// 20230508 調整字體大小
 	xaxis: {
 		labels: {
 			style: {
@@ -42,6 +44,7 @@ var options = {
 		},
 		categories: ['全校', '全院', '全系', '全系同年級'],
 	},
+	// 20230508 調整字體大小
 	yaxis: {
 		labels: {
 			style: {
@@ -52,6 +55,7 @@ var options = {
 	fill: {
 		opacity: 1
 	},
+	// 20230508 調整字體大小
 	legend: {
 		position: 'right',
 		offsetX: 0,
@@ -76,20 +80,18 @@ var options = {
 			}
 		}
 	}],
+	// 20230508 調整 hover 內容 & 字體大小
 	tooltip: {
 		y: {
 			formatter: function (value, opts) {
 				let percent = opts.w.globals.seriesPercent[opts.seriesIndex][opts.dataPointIndex];
-				return percent.toFixed(0) + '%'
+				return percent.toFixed(1) + '%'
 			}
 		},
 		style: {
 			fontSize: '18px',
 		}
 	},
-	// tooltip: {
-	// 	enabled: false,
-	// }
 };
 
 var chart = new ApexCharts(document.querySelector("#capacityDistributionChart"), options);

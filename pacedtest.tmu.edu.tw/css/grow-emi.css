@@ -48,6 +48,10 @@ main {
 
 }
 
+.capacityDistribution .cont .tablenote {
+    font-size: 18px;
+}
+
 .capacityDistribution canvas {
     background: #fff;
     height: 400px;
@@ -78,14 +82,14 @@ main {
 .capacityDistribution .cont-colmun .function .form-group {
     display: flex;
     align-items: center;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 
 .capacityDistribution .cont-colmun .function label {
+    font-size: 16px;
     width: 75px;
     text-align: justify;
     display: block;
-    margin-bottom: 10px;
 }
 
 .info-cont a {
@@ -106,6 +110,9 @@ main {
 .arrow_box {
     padding: 10px;
 }
+/* .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+    display: none;
+} */
 @media (max-width:1366px) {
     .capacityDistribution .colmunCenter {
         -ms-flex: 0 0 100%;
