@@ -27,6 +27,17 @@ if (768 < $(window).width()) {
   $('body').addClass('mb');
 }
 
+
+
+if (1365 < $(window).width()) {
+  $("#switch").click(function(){
+    $('aside').toggleClass('on');
+  });
+} else {
+  $('aside').removeClass('on');
+  $("#switch").prop("checked", false);
+
+}
 // $('.nav-item .menu-item').click(function (e) {
 
 //   if ($(this).attr("aria-expanded") === "true") {
