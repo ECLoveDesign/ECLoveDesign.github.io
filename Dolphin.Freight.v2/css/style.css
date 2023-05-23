@@ -1008,8 +1008,12 @@ aside ul li>ul li.active a {
         width: calc(100% - 60px);
         margin-left: 60px;
     }
-
-    .hidden-left .main-content,    
+    aside.on+.main-content+footer {
+        width: calc(100% - 45px);
+        margin-left: 45px;
+    }
+    .hidden-left .main-content,   
+    .hidden-left aside.on+.main-content+footer, 
     .hidden-left aside.on+.main-content {
         width: 100%;
         left: 0;
@@ -1019,7 +1023,7 @@ aside ul li>ul li.active a {
         -o-transition: all .3s ease-in-out;
         transition: all .3s ease-in-out;
         -ms-transition: all .3s ease-in-out;
-    }
+    }   
     .mb.hidden-left .main-content {
         margin-left: 260px;
         margin-right: -260px;
