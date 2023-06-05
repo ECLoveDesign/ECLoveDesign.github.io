@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang=zh-Hant dir>
+<!--
+ Page saved with SingleFile 
+ url: https://localhost:44312/Identity/Roles 
+ saved date: Wed May 31 2023 10:57:12 GMT+0800 (台北標準時間)
+-->
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv=X-UA-Compatible content="ie=edge">
+<title>首頁 | 學生個人化學習專區-後台</title>
+
+<link rel="stylesheet" href="css/vendor.css">
+<link rel="stylesheet" href="css/abp-dev.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+
+<body class=abp-application-layout cz-shortcut-listen=true>
+
+    <div class=lpx-scroll-container>
+        <div id=lpx-wrapper>
+            <div class="lpx-mobile-navbar-container sf-hidden">
+
+
+
+            </div>
+            <div class=lpx-sidebar-container>
+                <div class="lpx-sidebar lpx-scroll-container" id=lpx-sidebar>
+                    <nav class=lpx-nav>
+                        <div class=lpx-logo-container>
+
+                            <a href=https://localhost:44312/> <div class=lpx-brand-logo></div>
+                        </a>
+                        <i class="lpx-icon bi bi-filter-left menu-collapse-icon hidden-in-hover-trigger"
+                            aria-hidden=true data-lpx-toggle=sidebar></i>
+                </div>
+                <ul class=lpx-nav-menu id=desktop-sidebar>
+
+                    <li class=outer-menu-item>
+
+                        <a href=https://localhost:44312/ class="lpx-menu-item-link lpx-menu-item"
+                            id=MenuItem_Backend.Home>
+                            <span class=lpx-menu-item-icon><i class="lpx-icon fas fa-home" aria-hidden=true></i></span>
+                            <span class="lpx-menu-item-text hidden-in-hover-trigger">首頁</span>
+                        </a>
+                    </li>
+                    <li class=outer-menu-item>
+
+                        <a class="lpx-menu-item-link lpx-menu-item">
+                            <span class=lpx-menu-item-icon><i class="lpx-icon fa fa-wrench" aria-hidden=true></i></span>
+                            <span class="lpx-menu-item-text hidden-in-hover-trigger">管理</span>
+                            <i class="dd-icon hidden-in-hover-trigger lpx-caret bi-chevron-down" aria-hidden=true></i>
+                        </a>
+                        <ul id=MenuItem_Abp.Application.Main.Administration
+                            class="lpx-inner-menu hidden-in-hover-trigger collapsed sf-hidden">
+
+
+
+                        </ul>
+                    </li>
+                </ul>
+                </nav>
+            </div>
+        </div>
+        <div class=lpx-content-container>
+            <div class=lpx-topbar-container>
+                <div class=lpx-topbar>
+                    <nav aria-label=breadcrumb class=lpx-breadcrumb-container>
+
+                        <ol class=lpx-breadcrumb>
+                            <li class=lpx-breadcrumb-item>
+                                <i class="lpx-breadcrumb-item-icon bi-house-door-fill" aria-hidden=true></i>
+                                <a href=https://localhost:44312/> </a> </li> <li class=lpx-breadcrumb-separator><i
+                                        class="lpx-icon bi bi-chevron-right"></i></li>
+                            <li class=lpx-breadcrumb-item>
+                                <i class=lpx-breadcrumb-item-icon aria-hidden=true></i>
+                                <a href=#>身份識別管理</a>
+                            </li>
+                            <li class=lpx-breadcrumb-separator><i class="lpx-icon bi bi-chevron-right"></i></li>
+                            <li class=lpx-breadcrumb-item>
+                                <i class=lpx-breadcrumb-item-icon aria-hidden=true></i>
+                                <a href=#>角色</a>
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class=lpx-topbar-content>
+
+                        <div class="lpx-language-selection dropdown" data-lpx-language-selection=something>
+                            <div class=dropdown-toggle role=button id=languageDropdown data-bs-toggle=dropdown
+                                aria-expanded=false>
+                                <i class="lpx-icon bi bi-globe"></i>
+                                <span>ZH</span>
+                            </div>
+                            <div class="dropdown-menu sf-hidden" aria-labelledby=languageDropdown>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                        <div class=dropdown>
+                            <div class="lpx-user-profile dropdown-toggle" role=button id=userDropdown
+                                data-bs-toggle=dropdown aria-expanded=false>
+                                <span class=user-full-name>admin</span>
+                            </div>
+                            <div class="dropdown-menu sf-hidden" aria-labelledby=userDropdown>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=lpx-content>
+
+
+                <div class="col-auto d-flex justify-content-between my-2" id=AbpContentToolbar>
+
+                    <h1>首頁</h1>
+
+                    <button name=CreateRole class="mx-1 btn btn-primary btn-sm" type=button data-busy-text=處理中...><i
+                            class="fa fa-plus"></i> <span>新角色</span></button>
+                </div>
+                <div id=IdentityRolesWrapper class="card mb-3">
+                    <div class=card-body>
+
+                        <!-- mainCont Begin -->
+
+
+                        <div class="chart-wrap">
+                            <div id="logChart"></div>
+                        </div>
+
+                        <!-- mainCont End -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+    <script src="js/backend.js"></script>
+    <script>
+        
+    </script>
+
+</body>
