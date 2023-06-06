@@ -76,11 +76,11 @@
                             </li> 
                             <li class=lpx-breadcrumb-separator><i
                                     class="lpx-icon bi bi-chevron-right"></i></li>
-                            <!-- <li class=lpx-breadcrumb-item>
+                            <li class=lpx-breadcrumb-item>
                                 <i class=lpx-breadcrumb-item-icon aria-hidden=true></i>
-                                <a href=#>身份識別管理</a>
+                                <a href=#>模擬登入</a>
                             </li>
-                            <li class=lpx-breadcrumb-separator><i class="lpx-icon bi bi-chevron-right"></i></li>
+                            <!-- <li class=lpx-breadcrumb-separator><i class="lpx-icon bi bi-chevron-right"></i></li>
                             <li class=lpx-breadcrumb-item>
                                 <i class=lpx-breadcrumb-item-icon aria-hidden=true></i>
                                 <a href=#>角色</a>
@@ -135,7 +135,7 @@
 
                 <div class="col-auto d-flex justify-content-between my-2" id=AbpContentToolbar>
 
-                    <!-- <h1>首頁</h1> -->
+                    <!-- <h1>模擬登入</h1> -->
 
                     <!-- <button name=CreateRole class="mx-1 btn btn-primary btn-sm" type=button data-busy-text=處理中...><i
                             class="fa fa-plus"></i> <span>新角色</span></button> -->
@@ -146,39 +146,25 @@
                         <!-- mainCont Begin -->
 
                         <div class="search-wrap">
-                            <div class="title">查詢條件</div>
+                            <div class="title">模擬登入</div>
                             <div class="row">
         
                                 <div class="col-md-5 col-lg-3">
-                                    <!--開始日期-->
                                     <div class="form-group">
-                                        <label for="startTime">開始日期</label>
-                                        <input type="date" id="startTime" class="form-control" name="date">
-                                    </div>
-                                </div>
-        
-                                <div class="col-md-5 col-lg-3">
-                                    <!--結束日期-->
-                                    <div class="form-group">
-                                        <label for="endTime">結束日期</label>
-                                        <input type="date" id="endTime" class="form-control" name="date">
+                                        <label class="label-control" for="studentID">請輸入學號</label>
+                                        <input type="text" class="form-control" placeholder="請輸入學號">
                                     </div>
                                 </div>
         
                                 <div class="col-md-2 col-lg-6">
-                                    <button class="btn btn-search" type="button">
-                                        查詢
+                                    <button class="btn btn-submit" type="button">
+                                        登入
                                     </button>
                                 </div>
         
                             </div>
         
                         </div>
-
-                        <div class="chart-wrap">
-                            <div id="logChart"></div>
-                        </div>
-
                         <!-- mainCont End -->
 
                     </div>
@@ -189,9 +175,6 @@
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
-    <script src="js/backend.js?1"></script>
     <script>
         
     </script>

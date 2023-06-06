@@ -1,0 +1,43 @@
+.search-wrap .row {
+    align-items: end;
+}
+.search-wrap {
+    background: #f9f9f9;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: #bfbfbf 0px 0px 4px;
+}
+
+.search-wrap .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.btn-submit,
+.btn-search {
+    color: #fff;
+    background: #AA2C34;
+    padding: 0.2rem 0.75rem;
+    font-size: 1.2rem;
+    margin: 0px 0 1.2rem;
+    border-radius: 0.25rem;
+}
+.btn-search:not(:disabled):not(.disabled).active,
+.btn-search:not(:disabled):not(.disabled):active,
+.show>.btn-search.dropdown-toggle,
+.btn-search:active,
+.btn-search:focus,
+.btn-search:hover,
+
+.btn-submit:not(:disabled):not(.disabled).active,
+.btn-submit:not(:disabled):not(.disabled):active,
+.show>.btn-submit.dropdown-toggle,
+.btn-submit:active,
+.btn-submit:focus,
+.btn-submit:hover{
+    color: #fff;
+    background: #721419;    
+}
