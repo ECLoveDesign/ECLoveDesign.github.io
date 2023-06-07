@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="css/vendor.css">
 <link rel="stylesheet" href="css/abp-dev.css">
-<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/custom.css?1">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 </head>
@@ -72,10 +72,9 @@
                         <ol class=lpx-breadcrumb>
                             <li class=lpx-breadcrumb-item>
                                 <i class="lpx-breadcrumb-item-icon bi-house-door-fill" aria-hidden=true></i>
-                                <a href="home.html"> 首頁</a> 
-                            </li> 
-                            <li class=lpx-breadcrumb-separator><i
-                                    class="lpx-icon bi bi-chevron-right"></i></li>
+                                <a href="home.html"> 首頁</a>
+                            </li>
+                            <li class=lpx-breadcrumb-separator><i class="lpx-icon bi bi-chevron-right"></i></li>
                             <!-- <li class=lpx-breadcrumb-item>
                                 <i class=lpx-breadcrumb-item-icon aria-hidden=true></i>
                                 <a href=#>身份識別管理</a>
@@ -145,10 +144,30 @@
 
                         <!-- mainCont Begin -->
 
-                        <div class="search-wrap">
+                        <div class="chart-search">
+
+                            <div class="form-inline">
+                                
+                                <div class="title">查詢條件</div>
+
+                                <div class="form-group">
+                                    <label for="startTime">開始日期</label>
+                                    <input type="date" id="startTime" class="form-control" name="date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="endTime">結束日期</label>
+                                    <input type="date" id="endTime" class="form-control" name="date">
+                                </div>
+                                
+                                <button type="submit" class="btn btn-search">查詢</button>
+                            </div>
+
+                        </div>
+
+                        <div class="search-wrap d-none">
                             <div class="title">查詢條件</div>
                             <div class="row">
-        
+
                                 <div class="col-md-5 col-lg-3">
                                     <!--開始日期-->
                                     <div class="form-group">
@@ -156,7 +175,7 @@
                                         <input type="date" id="startTime" class="form-control" name="date">
                                     </div>
                                 </div>
-        
+
                                 <div class="col-md-5 col-lg-3">
                                     <!--結束日期-->
                                     <div class="form-group">
@@ -164,15 +183,15 @@
                                         <input type="date" id="endTime" class="form-control" name="date">
                                     </div>
                                 </div>
-        
+
                                 <div class="col-md-2 col-lg-6">
                                     <button class="btn btn-search" type="button">
                                         查詢
                                     </button>
                                 </div>
-        
+
                             </div>
-        
+
                         </div>
 
                         <div class="chart-wrap">
@@ -193,7 +212,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
     <script src="js/backend.js?3"></script>
     <script>
-        
+
     </script>
 
 </body>

@@ -41,3 +41,28 @@
     color: #fff;
     background: #721419;    
 }
+
+/* chart-search */
+.chart-search .title {
+    font-size: 1.2rem;
+    font-weight: bold;    
+    margin-right: 2rem;
+}
+
+.chart-search .form-group {
+    margin-right: 1rem;
+}
+.chart-search .form-group label {
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+.chart-search .btn {
+    margin-bottom: 0;
+}
+
+@media (min-width:768px) {
+    .chart-search {
+        position: relative;
+        z-index: 1;
+    }
+}
