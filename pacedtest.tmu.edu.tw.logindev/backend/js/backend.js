@@ -8,7 +8,7 @@ var options = {
         data: [10, 15, 16, 12, 20, 10, 16, 15, 26, 40, 22, 20, 14, 16, 12, 14]
     }],
     chart: {
-        height: 550,
+        height: 400,
         type: 'area',
         stacked: false,
         zoom: {
