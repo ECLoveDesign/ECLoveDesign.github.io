@@ -86,7 +86,15 @@ var options = {
     legend: {
         position: 'bottom',
         horizontalAlign: 'center',
-    }
+    },
+	responsive: [{
+		breakpoint: 768,
+		options: {
+			chart: {
+                height: 350,
+			}
+		}
+	}],
 }
 
 var chart = new ApexCharts(
