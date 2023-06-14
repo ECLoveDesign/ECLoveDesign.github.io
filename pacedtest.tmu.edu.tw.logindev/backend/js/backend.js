@@ -1,5 +1,5 @@
 
-// subnav-wrap
+// nav-slider
 if ($('.nav-slider').length) {
 
     // $(window).scroll(function () {
