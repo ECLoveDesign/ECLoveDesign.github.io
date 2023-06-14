@@ -109,7 +109,9 @@
 .section-nav {
     margin: 0;
     height: auto;
-    padding-inline-start: 0;
+    padding-inline-start: 0;    
+    border: none;    
+    flex-wrap: inherit;
 }
 .section-nav li {
     width: auto;
@@ -335,11 +337,10 @@
     position: relative;
     border-left: none;
     border-right: none;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 15px 15px 0;
     background: #ededed;
 }
-
 .subnav-wrap .subnav-nav a {
     font-weight: normal;
     color: #333;
@@ -381,4 +382,9 @@
     .subnav-wrap .section-nav .nav-item+.nav-item {
         border: none;
     }
+}
+
+/* tabcont */
+.card .dataTables_wrapper {
+    width: 100%;
 }
