@@ -26,6 +26,11 @@
     margin: 0px 0 1.2rem;
     border-radius: 0.25rem;
 }
+.btn-download {
+    padding: 0.2rem 0.75rem;
+    margin: 0px 0 1.2rem;
+    border-radius: 0.25rem;
+}
 
 .btn-search:not(:disabled):not(.disabled).active,
 .btn-search:not(:disabled):not(.disabled):active,
@@ -83,6 +88,40 @@
     }
 
     .chart-search .form-inline .form-group {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+
+/* download-cont */
+.download-cont {
+    margin-bottom: 1rem;
+}
+
+.download-cont .form-group {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.download-cont .form-group label {
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+@media (min-width:768px) {
+    .download-cont {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media (max-width:600px) {
+    .download-cont .form-inline {
+        flex-flow: column;
+    }
+
+    .download-cont .form-inline .form-group {
         margin-right: 0;
         width: 100%;
     }
@@ -193,17 +232,13 @@
 
 .section-nav .nav-top .nav-link::before {
     content: "\f341";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: 'Font Awesome 5 Free';
     /*font-family: 'npacfont';
     content: '\EA5A';/*gotop*/
     margin-right: .5rem;
 }
 
 @media(min-width:960px) {
-
-    .nav-slider .btn-collapse {
-        display: none;
-    }
 
     .nav-slider div[class*='swiper-button-'] {
         display: none;
@@ -268,25 +303,6 @@
     .subnav-wrap .subnav-nav li a {
         padding: 1rem !important;
     }
-
-    .nav-slider .btn-collapse {
-        position: absolute;
-        right: 0;
-        top: 0;
-        padding: 12px 10px 8px;
-        line-height: 36px;
-        outline: 0;
-        outline: 0;
-        box-shadow: none;
-    }
-
-    .nav-slider .btn-collapse[aria-expanded="true"] {
-        -moz-transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-        transform: rotate(180deg);
-    }
 }
 
 .section-nav li a {
@@ -323,7 +339,7 @@
     /* content: "\EABE"; */
     /* font-family: "npacfont"; */
     content: "\f060";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: 'Font Awesome 5 Free';
     position: absolute;
     right: 10px;
     top: 50%;
