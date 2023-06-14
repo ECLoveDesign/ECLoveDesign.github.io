@@ -404,3 +404,6 @@
 .card .dataTables_wrapper {
     width: 100%;
 }
+table.dataTable tbody tr:hover {
+    background: #ffef98;
+}
