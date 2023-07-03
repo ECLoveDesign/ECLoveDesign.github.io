@@ -1,0 +1,38 @@
+
+/* addStyle */
+.addAwardText {
+    font-weight: 500;
+    display: contents;
+}
+.addAwardText a {
+    color: #169bcc;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+@media (max-width:1480px) {
+    .addAwardText {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+
+.collectionAward {
+    text-align: right;
+}
+.collectionAward ul {
+    display: flex;
+    justify-content: end;
+}
+.collectionAward img {
+    height: 55px;
+}
+.collectionAward .nohav img {
+    filter: grayscale(100%);
+}
+@media (max-width:768px) {
+    .collectionAward ul {
+        justify-content:inherit;
+    }
+}
