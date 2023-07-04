@@ -1,0 +1,140 @@
+/* addStyle */
+.subDescripe {
+    color: #000;
+    font-weight: 500;
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-left: 20px;
+}
+.subDescripe a {
+    color: #000;
+    position: inherit;
+    font-size: 1.6rem;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+@media (max-width:1480px) {
+    .subDescripe {
+        display: block;
+        margin: 10px 0;
+        margin-left: 0;
+    }
+}
+.rewardList {    
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+.rewardList-item {
+    display: flex;
+    align-items: center;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    margin-bottom: 20px;
+}
+.rewardList-item .caption {
+    padding-left: 15px;
+}
+
+.rewardList-item .title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.rewardList-item span {
+    font-size: 1.1rem;
+}
+
+.rewardList-item .badege img {
+    width: 83px;
+}
+
+.rewardList-item.nohav .badege img {
+    filter: grayscale(100%);
+}
+
+.history {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+
+.prizeList {    
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+.prizeList-item {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.prizeList-item img {
+    max-width: 100%;
+}
+.prizeList-item .info {
+    margin: 10px 0;
+}
+.prizeList-item .info .title {
+    margin-bottom: 10px;
+}
+.prizeList-item .info .title a {
+    color: #169bcc;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.prizeList-item .info .point {
+    color: red;
+}
+
+
+/* popupCont */
+.popupCont .popup-title {
+    color: #721e18;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 0;
+}
+.popupCont table thead th {
+    background: #AD9E7D;
+    color: #fff;
+    font-weight: normal;
+}
+.popupCont .btn {
+    color: #AC9E7F;
+}
+.popupCont table th,
+.popupCont table td {
+    text-align: center;
+}
+
+/* magnific-popup */
+.white-popup-block {
+    background: #FFF;
+    padding: 25px;
+    margin: 40px auto;
+    position: relative;
+}
+#popup-awardHistory {
+    max-width: 80vw;
+}
+
+
+/* start state */
+.mfp-zoom-in .zoom-anim-dialog {
+    opacity: 0;
+}
+
+
+/* popup cont */
+.prizePic {
+    width: 80px;
+}

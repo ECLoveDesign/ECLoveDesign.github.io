@@ -2,7 +2,7 @@
 /* addStyle */
 .addAwardText {
     font-weight: 500;
-    display: contents;
+    display: inline-block;
 }
 .addAwardText a {
     color: #169bcc;
