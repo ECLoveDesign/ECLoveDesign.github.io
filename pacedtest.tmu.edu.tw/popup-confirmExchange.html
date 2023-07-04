@@ -1,0 +1,31 @@
+<style>
+    .popup-title {
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding: 15px 0;
+        text-align: center;
+    }
+    p {
+        font-size: 1.4rem;
+    }
+    a {
+        color: #169bcc;
+    }
+
+</style>
+<!--已成功兌換-->
+<div class="white-popup-block mfp-hide popupCont" style="max-width:95%; margin: 20px auto;">
+   <p>您目前有 100點</p>
+   <p>請至獎品兌換頁，點選「<a href="popup-awardHistory.html">查看兌換紀錄表</a>」查看詳細資訊。</p>
+
+   <a href="popup-finishExchange.html">是</a>
+   <a id="popup-modal-dismiss" href="#">否</a>
+</div>
+<script>    
+    $('#popup-modal-dismiss').click(function(e) {
+    e.preventDefault();
+        if (window.parent == window.top) {
+            window.parent.$.magnificPopup.close();
+        }
+    });
+</script>

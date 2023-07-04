@@ -1,5 +1,47 @@
+
+<link rel="stylesheet" href="./css/table.css">
+<style>
+    .popup-title {
+        color: #721e18;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 15px 0;
+    }
+    table thead th {
+        background: #AD9E7D;
+        color: #fff;
+        font-weight: normal;
+    }
+    .btn,    
+    .btn:hover {
+        color: #AC9E7F;
+        display: block;
+        padding: 8px;
+        border: #AC9E7F solid 1px;
+        cursor: pointer;
+    }
+    .btn:hover {
+        color: #fff;
+        background: #AC9E7F;
+    }
+    .btn.disabled,    
+    .btn.disabled:hover {
+        background: #e7e7e7;
+        color: #000;
+        border: #e7e7e7 solid 1px;
+        cursor: default;
+    }
+    table th,
+    table td {
+        text-align: center;
+    }
+    .prizePic {
+        width: 80px;
+    }
+
+</style>
 <!--兌換紀錄表-->
-<div id="popup-awardHistory" class="white-popup-block mfp-hide popupCont" style="max-width:600px; margin: 20px auto;">
+<div id="popup-awardHistory" class="white-popup-block mfp-hide popupCont" style="max-width:95%; margin: 20px auto;">
     <div class="popup-title">獎品兌換紀錄表</div>
     <table>
         <thead>
@@ -11,7 +53,6 @@
                 <th>點數兌換日期</th>
                 <th>兌換</th>
                 <th>領取日期</th>
-                <th>兌換日期</th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +64,6 @@
                 <td>50點</td>
                 <td>請攜帶手機，至教務處兌換紀念品。</td>
                 <td>2023/04/29</td>
-                <td>已兌換</td>
                 <td>
                     <a class="btn btn-exchange">兌換</a>
                 </td>
@@ -37,7 +77,6 @@
                 <td>60點</td>
                 <td>請攜帶手機，至教務處兌換紀念品。</td>
                 <td>2023/04/29</td>
-                <td>已兌換</td>
                 <td>
                     <a class="btn btn-exchange disabled">已兌換</a>
                 </td>

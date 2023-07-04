@@ -96,26 +96,6 @@
 }
 
 
-/* popupCont */
-.popupCont .popup-title {
-    color: #721e18;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 15px 0;
-}
-.popupCont table thead th {
-    background: #AD9E7D;
-    color: #fff;
-    font-weight: normal;
-}
-.popupCont .btn {
-    color: #AC9E7F;
-}
-.popupCont table th,
-.popupCont table td {
-    text-align: center;
-}
-
 /* magnific-popup */
 .white-popup-block {
     background: #FFF;
@@ -123,18 +103,18 @@
     margin: 40px auto;
     position: relative;
 }
-#popup-awardHistory {
-    max-width: 80vw;
+.mfp-cont-iframe .mfp-iframe-holder .mfp-content {
+    max-width: 1200px;
 }
-
-
+.mfp-cont-iframe .mfp-iframe-scaler iframe,
+.mfp-cont .mfp-iframe-scaler iframe {
+    background: #fff;
+}
 /* start state */
 .mfp-zoom-in .zoom-anim-dialog {
     opacity: 0;
 }
 
-
-/* popup cont */
-.prizePic {
-    width: 80px;
+#popup-confirmExchange {
+    width: 600px;
 }

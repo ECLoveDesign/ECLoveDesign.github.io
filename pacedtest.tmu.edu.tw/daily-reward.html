@@ -22,7 +22,7 @@
 
     <!-- dailyReward css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-    <link rel="stylesheet" href="./css/dailyReward.css">
+    <link rel="stylesheet" href="./css/dailyReward.css?1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -305,7 +305,7 @@
                     目前累計 <a href="#">100</a> 點
                 </div>
 
-                <a class="btn-popup history" href="popup-awardHistory.html">
+                <a class="btn-popup-iframe history" href="popup-awardHistory.html">
                     查看兌換紀錄表
                 </a>
 
@@ -320,7 +320,8 @@
                     </div>
                     <div class="info">
                         <div class="title">
-                            <a class="btn-popup-ajax confirm" href="#popup-confirmExchange">
+                            
+                            <a class="btn-popup btn-popup confirm" href="#popup-confirmExchange">
                                 紀念品(確認兌換)
                             </a>
 
@@ -338,7 +339,7 @@
                     </div>
                     <div class="info">
                         <div class="title">
-                            <a class="btn-popup finish" href="#popup-finishExchange">
+                            <a class="btn-popup-iframe finish" href="popup-finishExchange.html">
                                 活動優先權(已兌換)
                             </a>
                         </div>
@@ -380,6 +381,14 @@
                 </div>
             </div>
 
+            <!--確認是否兌換-->
+            <div id="popup-confirmExchange" class="white-popup-block mfp-hide popupCont">
+                <p style="font-size: 1.4rem; font-weight: bold;">您目前有 <a href="#">100</a>點。</p>
+                <p>是否確認兌換「紀念品(50點)」?</p>
+
+                <a class="btn" href="#">是</a>
+                <a class="btn popup-modal-dismiss" href="#">否</a>
+            </div>
             
             <!--兌換紀錄表-->
             <div id="popup-confirmExchange" class="white-popup-block mfp-hide popupCont">
@@ -451,7 +460,7 @@
 
     <!-- daily reward js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script src="./js/daily-reward.js"></script>
+    <script src="./js/daily-reward.js?1"></script>
 
 </body>
 
