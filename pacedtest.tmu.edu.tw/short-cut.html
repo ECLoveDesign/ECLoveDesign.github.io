@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="./css/slick-theme.min.css">
 
     <!-- shortCut css -->
-    <link rel="stylesheet" href="./css/shortCut.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="./css/shortCut.css?1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -188,38 +189,47 @@
         ul.personal-3 {
             margin-top: 20px;
         }
+
         ul.personal-3 li>div>a>img {
-            width: auto;    
+            width: auto;
             margin: 10px;
             float: right;
         }
+
         ul.personal-3 li a {
             text-align: center;
         }
+
         ul.personal-3 li a:hover {
             color: #000;
         }
+
         ul.personal-3 li {
             margin: 0 3.3% 30px 0;
         }
+
         .spaceing-area {
             padding: 15% 0;
         }
+
         @media (max-width:1747px) {
             ul.personal-3 li {
                 margin: 0 3% 30px 0;
             }
         }
+
         @media (max-width:1525px) {
             ul.personal-3 li {
                 margin: 0 25px 30px 0;
             }
         }
+
         @media (max-width:1188px) {
             ul.personal-3 li {
                 margin: 0 20px 30px 0;
             }
         }
+
         @media (max-width:1085px) {
             ul.personal-3 li {
                 margin: 0 10px 30px 0;
@@ -230,7 +240,7 @@
 
     <main class="page index-page" style="margin-bottom: -300px;">
         <div class="container">
-            
+
             <!--新增地方-->
             <div class="collectionAward">
                 <ul>
@@ -260,10 +270,11 @@
 
                 <!--新增地方-->
                 <div class="addAwardText">
-                    您已獲得徽章 <a href="daily-reward.html">2</a> 枚，點數 <a href="daily-reward.html">100</a> 點! 查看 <a href="daily-reward.html">連續登入獎勵</a>
+                    您已獲得徽章 <a href="daily-reward.html">2</a> 枚，點數 <a href="daily-reward.html">100</a> 點! 查看 <a
+                        href="daily-reward.html">連續登入獎勵</a>
                 </div>
                 <!--新增地方-->
-               
+
                 <div class="functionIcon">
                     <a href="javascript:void(0)" class="add"><span class="txt">新增</span></a>
                     <a href="javascript:void(0)" class="edit"><span class="txt">切換顯示</span></a>
@@ -284,7 +295,7 @@
                     <a href="#" style="cursor: pointer;">
                         <img src="images/img/cap.png" class="cap">
                         <div class="width: 100%; display: block; text-align:center">應完成
-                            <span class="Big">2</span>項 / 未完成 <span class="Big">0</span>項 
+                            <span class="Big">2</span>項 / 未完成 <span class="Big">0</span>項
                         </div>
                         <div class="capBar">
                             <span class="OKBar">
@@ -580,8 +591,50 @@
                     </table>
                 </li>
             </ul>
-            
+
         </div>
+
+        <!--新增地方-->
+        <button data-mfp-src="#popup-reward" class="modal-btn"></button>
+        <div id="popup-reward" class="white-popup-block mfp-hide popupCont" role="dialog" aria-labelledby="modal-title"
+            aria-describedby="modal-content">
+
+            <div class="popup-title">
+                <span>連續登入獎勵</span>
+            </div>
+
+            <div class="dailylog-wrap">
+                <ul class="progessbar">
+                    <li class="complete" data-point="+1">
+                        <span>1天</span>
+                    </li>
+                    <li class="active" data-point="+2">
+                        <span>2天</span>
+                    </li>
+                    <li class="" data-point="+3">
+                        <span>3天</span>
+                    </li>
+                    <li class="" data-point="+4">
+                        <span>4天</span>
+                    </li>
+                    <li class="" data-point="+5">
+                        <span>5天</span>
+                    </li>
+                    <li class="" data-point="+6">
+                        <span>6天</span>
+                    </li>
+                    <li class="" data-point="+7">
+                        <span>7天</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="daily-slogan">
+                <p>恭喜您! 今日獲得 2 點!</p>
+            </div>
+
+        </div>
+        <!--新增地方-->
 
     </main>
 
@@ -616,6 +669,7 @@
         <!-- to top -->
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script defer src="js/vendor.js?0f874adb"></script>
     <script defer src="js/index.js?a378b159"></script>
     <!-- javascript for every page -->
@@ -641,6 +695,22 @@
         });
     </script>
 
+
+    <!-- popup js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let selector = $('.modal-btn');
+            selector.magnificPopup({
+                type: 'inline',
+                closeBtnInside: true,
+                autoFocusLast: true,
+                focus: ".modal-title",
+                mainClass: 'mfp-cont'
+            });
+            selector.click();
+        });
+    </script>
 </body>
 
 </html>

@@ -142,7 +142,7 @@
     position: relative;
 }
 .mfp-cont-iframe .mfp-iframe-holder .mfp-content {
-    max-width: 1200px;
+    max-width: 1000px;
 }
 .mfp-cont-iframe .mfp-iframe-scaler iframe,
 .mfp-cont .mfp-iframe-scaler iframe {
@@ -155,4 +155,38 @@
 
 #popup-confirmExchange {
     width: 600px;
+}
+
+#popup-confirmExchange p {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#popup-confirmExchange p span {
+    font-weight: 500;
+    padding: 0 5px;
+}
+#popup-confirmExchange .btn-group {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0;
+}
+#popup-confirmExchange .btn-group>* {
+    margin: 0.25rem;
+}
+#popup-confirmExchange .btn {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    color: #212529;
+    border: 1px solid #6c757d;
+    padding: 0.375rem 1.5rem;
+}
+#popup-confirmExchange .btn-yes {
+    color: #fff;
+    background-color: #7f181c;
+    border-color: #7f181c;
 }
