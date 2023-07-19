@@ -1,0 +1,658 @@
+/* explore 20230107 */
+
+h3, .h3 {
+	color: #FFFFFF;
+}
+
+h5, .h5 {
+    color: #2B2B2B;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+h6, .h6 {
+    font-size: 1.125rem;
+    color: #B68D63;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+body-d {
+    　background-image: url("../images/bg_d1.png");
+    　background-repeat: no-repeat;
+    　background-color: #ffffff;
+}
+
+.img-fluid {
+	text-align: center;
+}
+
+.mask-1 {
+background: url("https://www.youtube.com/embed/Wz12_ipiUKA") no-repeat top center / cover;
+}
+
+.mask-1 {
+-webkit-mask: url("../images/mask_circle.png") no-repeat center center / contain;
+mask: url("../images/mask_circle.png") no-repeat center center / contain;
+}
+
+.mask-2 {
+background: url("https://www.youtube.com/embed/-5iyXffefAg") no-repeat top center / cover;
+}
+
+.mask-2 {
+-webkit-mask: url("../images/mask_circle.png") no-repeat center center / contain;
+mask: url("../images/mask_circle.png") no-repeat center center / contain;
+}
+
+.mask-3 {
+background: url("https://www.youtube.com/embed/g2WYZRZrlgY") no-repeat top center / cover;
+}
+
+.mask-3 {
+-webkit-mask: url("../images/mask_circle.png") no-repeat center center / contain;
+mask: url("../images/mask_circle.png") no-repeat center center / contain;
+}
+
+.mask-4 {
+background: url("https://www.youtube.com/embed/ojxXbbfK3XY") no-repeat top center / cover;
+}
+
+.mask-4 {
+-webkit-mask: url("../images/mask_circle.png") no-repeat center center / contain;
+mask: url("../images/mask_circle.png") no-repeat center center / contain;
+}
+
+.mask-5 {
+background: url("https://www.youtube.com/embed/xXqhzmuSlOc") no-repeat top center / cover;
+}
+
+.mask-5 {
+-webkit-mask: url("../images/mask_circle.png") no-repeat center center / contain;
+mask: url("../images/mask_circle.png") no-repeat center center / contain;
+}
+
+.mask-6 {
+background: url("https://www.youtube.com/embed/BZTFvgFFvb8") no-repeat top center / cover;
+}
+
+.mask-6 {
+-webkit-mask: url("../images/mask_circle.png") no-repeat center center / contain;
+mask: url("../images/mask_circle.png") no-repeat center center / contain;
+}
+
+.mask-7 {
+background: url("https://www.youtube.com/embed/fvGncyLsKIU") no-repeat top center / cover;
+}
+
+.mask-7 {
+-webkit-mask: url("../images/mask_circle.png") no-repeat center center / contain;
+mask: url("../images/mask_circle.png") no-repeat center center / contain;
+}
+
+.mask-8 {
+background: url("https://www.youtube.com/embed/PNXj60nDFJA") no-repeat top center / cover;
+}
+
+.mask-8 {
+-webkit-mask: url("../images/mask_circle.png") no-repeat center center / contain;
+mask: url("../images/mask_circle.png") no-repeat center center / contain;
+}
+
+.mask-9 {
+background: url("https://www.youtube.com/embed/6qJf0cetYeU") no-repeat top center / cover;
+}
+
+.mask-9 {
+-webkit-mask: url("../images/mask_circle.png") no-repeat center center / contain;
+mask: url("../images/mask_circle.png") no-repeat center center / contain;
+}
+
+.mask-10 {
+background: url("https://www.youtube.com/embed/46CkZX0XN9Q") no-repeat top center / cover;
+}
+
+.mask-10 {
+-webkit-mask: url("../images/mask_circle.png") no-repeat center center / contain;
+mask: url("../images/mask_circle.png") no-repeat center center / contain;
+}
+
+#main #main03 #movie-f2-10 {
+    text-align: center;
+}
+.col-lg-10.col-md-10.col-10 #bar01 #bar-leftline {
+	border-top: 2px solid #B68D63;
+	margin-top: 20px;
+}
+.col-lg-10.col-md-10.col-10 #bar01 #bar-middleline {
+    border: 2px solid #B68D63;
+    border-radius: 30px;
+    text-align: center;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    color: #2B2B2B;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 120%;
+    line-height: 35px;
+}
+.col-lg-10.col-md-10.col-10 #bar01 #bar-rightline {
+	border-top: 2px solid #B68D63;
+	margin-top: 20px;
+}
+.col-lg-10.col-md-10.col-10 .row #bar-linemiddle {
+    color: #2B2B2B;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    height: auto;
+    border: 2px solid #B68D63;
+    border-radius: 30px;
+    line-height: 44px;
+}
+.col-lg-10.col-md-10.col-10 .row #bar-leftline {
+	border-top: 2px solid #B68D63;
+	margin-top: 23px;
+}
+.col-lg-10.col-md-10.col-10 .row #bar-lineright {
+	border-top: 2px solid #B68D63;
+	margin-top: 23px;
+}
+.col-lg-10.col-md-10.col-10 .row #bar-leftdot {
+	color: #B68D63;
+	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
+	font-style: normal;
+	font-size: 24px;
+	line-height: 32px;
+	text-align: right;
+}
+#header #header03 #text-title01 {
+    text-align: center;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    font-weight: bolder;
+    color: #B68D63;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#main #main01 #text-context01 {
+    color: #2B2B2B;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.col-lg-10.col-md-10.col-10 .row #bar-dotright {
+	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
+	font-size: 24px;
+	line-height: 32px;
+	color: #B68D63;
+	text-align: left;
+}
+#header #header02 #btn-close01 {
+    margin-left: -30px;
+}
+.col-lg-10.col-md-10.col-10 .row #bar-linemiddle-c1 {
+    color: #FFFFFF;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    font-variant: normal;
+    text-align: center;
+    font-size: 25px;
+    line-height: 47px;
+    border-radius: 30px;
+    border: 2px solid #B68D63;
+}
+#main #main01 #text-context01-c1 {
+    color: #FFFFFF;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.row #btn-booking .btn.btn-lg {
+    color: #FFFFFF;
+    background-color: #B68D63;
+    border-radius: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 6px;
+    margin-top: 26px;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    font-size: 18px;
+}
+.row #btn-en .btn.btn-lg {
+    color: #2B2B2B;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-size: 16px;
+    font-style: normal;
+    background-color: #FFC902;
+    border-radius: 30px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 25px;
+}
+.col-lg-10 .row #link-about {
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    color: #2B2B2B;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.col-lg-10 .row #link-salon {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #2B2B2B;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    font-size: 18px;
+}
+.col-lg-10 .row #link-explore {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #2B2B2B;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    font-size: 18px;
+}
+.col-lg-10 .row #link-only {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #2B2B2B;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    font-size: 18px;
+    padding-top: 0px;
+    top: 15px;
+}
+.col-lg-10 .row #dot-left {
+	color: #B68D63;
+	text-align: right;
+	margin-bottom: 0px;
+	font-size: 18px;
+}
+.col-lg-10 .row #line-middle {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border-top: 2px solid #B68D63;
+	margin-top: 18px;
+}
+.col-lg-10 .row #dot-right {
+	color: #B68D63;
+	font-size: 18px;
+	text-align: left;
+}
+/* !!!! NOTICE !!!!! --begin-- */
+.col-lg-1.col-md-1.col-1 a img {
+	margin-left: -24px;
+}
+/* !!!! NOTICE !!!!! --end-- */
+.row #app-download a {
+    color: #F8F8F8;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+}
+.row #app-download1 a {
+    color: #FFFFFF;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+}
+#footer #footer02 .col-xl-10.col-lg-10.col-md-10.col-sm-10.col-10 {
+    color: #FFFFFF;
+}
+.row .col-md-10.col-sm-10.col-10.col-xl-10 #a1col {
+    margin-left: 13%;
+}
+.carousel-item.active .carousel-caption:not(.scroll-to-next-container) #btnscrll {
+    margin-bottom: -85px;
+    margin-left: 10%;
+}
+#main .row #a1col {
+    padding-left: 14%;
+}
+
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+    width: auto;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.row {
+    text-align: center;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
+.col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
+.col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
+.col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
+.col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
+.col-xl-auto {
+    color: #2B2B2B;
+}
+
+.col-10 {
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+}
+
+.col-12 {
+	text-align: center;
+}
+
+.btn {
+    text-align: inherit;
+}
+
+.btn-link {
+	color: #2B2B2B;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+	color: #B68D63;
+	background-color: #FFC902;
+    text-decoration: none;
+}
+
+.btn-link:focus, .btn-link.focus {
+    text-decoration: none;
+}
+
+.carousel-caption:not(.scroll-to-next-container) {
+    bottom: 100px;
+    left: 91px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.carousel-caption.scroll-to-next-container {
+    /* bottom: 100px; */
+    /* left: 91px; */
+    position: absolute;
+    bottom: 20px;
+    right: 15%;
+    left: 15%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 10;
+}
+
+#link-salon {
+	text-align: center;
+	top: 15px;
+}
+#link-about {
+	text-align: center;
+	top: 15px;
+}
+#link-explore {
+	text-align: center;
+	top: 15px;
+}
+#logo-fe62 {
+	text-align: center;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	margin-top: -23px;
+	top: 15px;
+}
+.col-xl-10.col-lg-10.col-md-10.col-sm-10.col-10 .row #count01 {
+    color: #2B2B2B;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    font-size: 16px;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.col-xl-10.col-lg-10.col-md-10.col-sm-10.col-10 .row #count03 {
+	text-align: left;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #2B2B2B;
+	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
+	font-style: normal;
+	font-size: 16px;
+}
+.col-xl-10.col-lg-10.col-md-10.col-sm-10.col-10 .row #count02 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#footer #footer02 {
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #B68D63;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
+	font-style: normal;
+	font-size: 16px;
+}
+#footer01-2 .row #info-location {
+    color: #2B2B2B;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    font-size: 16px;
+    text-align: left;
+    line-height: 40px;
+}
+#footer01-2 .row #info-service {
+    color: #2B2B2B;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    font-variant: normal;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: left;
+}
+#footer #footer01 {
+	background-color: #EBDECF;
+	border-top-left-radius: 60px;
+	border-top-right-radius: 60px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+#footer01-2 .row #tabfapp {
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	background-color: #F1EDE3;
+	border-radius: 30px;
+}
+.col-12.col-lg-6 .row #info-tabfapp {
+    text-align: left;
+    color: #2B2B2B;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-style: normal;
+    font-size: 16px;
+    margin-top: 26px;
+}
+.col-12.col-lg-6 .row #btn-andriod {
+	color: #FFFFFF;
+	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
+	font-style: normal;
+	font-size: 16px;
+	margin-top: 16px;
+}
+#link-only {
+	text-align: center;
+}
+.col-12.col-lg-6 .row #btn-ios {
+	color: #FFFFFF;
+	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
+	font-style: normal;
+	font-size: 16px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 16px;
+}
+#btn-andriod .row #app-download {
+    margin-top: -25px;
+    color: #FCFCFC;
+    font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
+    font-size: 16px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+#btn-ios .row #app-download1 {
+	margin-top: -26px;
+	margin-left: 19px;
+	margin-bottom: 15px;
+	color: #FFFFFF;
+}
+#btn-booking {
+	text-align: center;
+}
+#app-download1 {
+	color: #FFFFFF;
+}
+.a2bg {
+}
+
+.p1 {
+    text-align: left;
+    color: #2B2B2B;
+}
+.p2 {
+    color: #B68D63;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    font-size: 16px;
+    opacity: 0.8;
+    text-align: left;
+}
+.p3 {
+    color: #2B2B2B;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+    text-align: left;
+}
+
+#section-tunnel-of-time.section-container,
+#section-hall-of-currency.section-container {
+    background-position: center center;
+    background-size: cover;
+}
+#section-tunnel-of-time.section-container {
+    background-image: url('../images/bg_a2.png');
+}
+
+#section-hall-of-currency.section-container {
+    background-image: url('../images/bg_a5.png');
+}
+main#main-explore {
+    background-image: url('../images/bg_explore3_cropped.png');
+    background-position: center 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.mask-border {
+	width: 80vw;
+	height: 80vw;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.mask-border > .embed-responsive {
+    width: 142.224vw;
+    transform: translateX(-21.88%);
+}
+
+.mask-border > .embed-responsive > .embed-responsive-item {
+    transform: scale(1.01);
+}
+
+@media (min-width: 576px) {
+    .mask-border {
+        width: 42vw;
+        height: 42vw;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .mask-border > .embed-responsive {
+        width: 74.668vw;
+        transform: translateX(-21.88%);
+    }
+    .container {
+      max-width: none;
+    }
+    .container, .container-sm {
+        margin-left: 0px;
+    }
+    #main02 .col-xl-10.col-lg-10.col-md-10.col-sm-10.col-10 img {
+        padding-top: 0px;
+        margin-top: -219px;
+    }
+    .col-lg-12 .dropdown.show .btn.btn-lg {
+        color: #FFFFFF;
+        background-color: #FFC902;
+        border-radius: 30px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    .col-lg-10.col-md-10.col-10 #bar01 #bar-leftline {
+        border-top: 2px solid #B68D63;
+        margin-top: 25px;
+    }
+    .col-lg-10.col-md-10.col-10 #bar01 #bar-rightling {
+        border-top: 2px solid #B68D63;
+        margin-top: 25px;
+    }
+    .col-lg-10.col-md-10.col-10 #bar01 #bar-middleline {
+        border: 2px solid #B68D63;
+        border-radius: 30px;
+        text-align: center;
+        color: #2B2B2B;
+        font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+        font-style: normal;
+        font-size: 120%;
+        line-height: 220%;
+    }
+    #bar01 #bar-close .btn {
+        color: #FFFFFF;
+        font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
+        font-style: normal;
+        font-variant: normal;
+        font-size: 14px;
+        border-radius: 30px;
+        background-color: #B68D63;
+        margin-top: 7px;
+    }
+    .a6-col-line {
+        border-top: 2px solid #B68D63;
+    }
+}
+
+@media (min-width: 768px) {
+    #main #main04 .col-xl-10.col-lg-10.col-md-10.col-sm-10.col-10 {
+        margin-top: -300px;
+    }
+    .col-md-2 {
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-1 {
+        text-align: center;
+    }
+    .col-lg-8 {
+        color: #FFFFFF;
+    }
+}
+
+/*
+a:not([href]):hover {
+    text-align: center;
+}
+h3, .h3 {
+	color: #FFFFFF;
+}
+*/
