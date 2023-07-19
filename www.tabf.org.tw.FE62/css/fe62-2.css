@@ -206,6 +206,7 @@ body.header-loaded .header > .lang-switch {
 .header .site-logo {
     display: block;
     background-image: url(../images/fe62_logox2.png);
+    text-indent: -9999em;
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
