@@ -740,7 +740,7 @@ pre code {
 }
 .col-lg-10.col-md-10.col-10 .row #bar-dotright {
 	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
-	font-size: 24px;
+	font-size: 1.5rem;
 	line-height: 32px;
 	color: #B68D63;
 }
@@ -753,7 +753,7 @@ pre code {
     font-style: normal;
     font-variant: normal;
     text-align: center;
-    font-size: 25px;
+    font-size: 1.5rem;
     line-height: 47px;
     border-radius: 30px;
     border: 2px solid #B68D63;
@@ -763,7 +763,7 @@ pre code {
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -777,12 +777,12 @@ pre code {
     margin-top: 26px;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 18px;
+    font-size: 1.15rem;
 }
 .row #btn-en .btn.btn-lg {
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
-    font-size: 16px;
+    font-size: 1.1rem;
     font-style: normal;
     background-color: #FFC902;
     border-radius: 30px;
@@ -798,7 +798,7 @@ pre code {
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
     color: #2B2B2B;
-    font-size: 18px;
+    font-size: 1.15rem;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -808,7 +808,7 @@ pre code {
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 18px;
+    font-size: 1.15rem;
 }
 .col-lg-10 .row #link-explore {
     margin-top: 10px;
@@ -816,7 +816,7 @@ pre code {
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 18px;
+    font-size: 1.15rem;
 }
 .col-lg-10 .row #link-only {
     margin-top: 10px;
@@ -824,7 +824,7 @@ pre code {
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 18px;
+    font-size: 1.15rem;
     padding-top: 0px;
     top: 15px;
 }
@@ -832,7 +832,7 @@ pre code {
 	color: #B68D63;
 	text-align: right;
 	margin-bottom: 0px;
-	font-size: 18px;
+	font-size: 1.15rem;
 }
 .col-lg-10 .row #line-middle {
 	padding-top: 0px;
@@ -842,7 +842,7 @@ pre code {
 }
 .col-lg-10 .row #dot-right {
 	color: #B68D63;
-	font-size: 18px;
+	font-size: 1.15rem;
 	text-align: left;
 }
 .col-lg-1.col-md-1.col-1 a img {
@@ -872,7 +872,7 @@ pre code {
 .p2 {
     color: #B68D63;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
-    font-size: 16px;
+    font-size: 1.1rem;
     opacity: 0.8;
     text-align: left;
 }
@@ -881,7 +881,7 @@ pre code {
 }
 .pa-btn.btn-lg  {
     color: #FFFFFF;
-    font-size: 18px;
+    font-size: 1.15rem;
     text-align: center;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     border-radius: 30px;
@@ -1459,7 +1459,7 @@ pre code {
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
     font-variant: normal;
-    font-size: 14px;
+    font-size: .9rem;
     border-radius: 30px;
     background-color: #B68D63;
     margin-top: 7px;

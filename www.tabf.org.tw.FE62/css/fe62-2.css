@@ -35,19 +35,19 @@ html .mobile-menu .mobile-menu-close-btn > img {
 .p-heading {
     font-style: normal;
     font-weight: normal;
-    font-size: 25px;
+    font-size: 1.5rem;
     color: rgba(35,25,22,1);
 }
 .p-title {
     font-weight: bold;
     color: rgba(201,160,99,1);
     letter-spacing: 1px;
-    font-size: 21px;
+    font-size: 1.25rem;
 }
 .p-description {
     line-height: 1.612;
     letter-spacing: 0.75px;
-    font-size: 17px;
+    font-size: 1.1rem;
 }
 
 .text-hide-on-mobile {
@@ -843,13 +843,13 @@ main.container-fluid .section-venue-wrapper {
 @media only screen and (min-width: 1600px) {
 
     .p-heading {
-        font-size: 32px;
+        font-size: 2rem;
     }
     .p-title {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     .p-description {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
     header {
         height: 165px;

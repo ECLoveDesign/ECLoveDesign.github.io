@@ -144,7 +144,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
     text-align: center;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: normal;
     height: auto;
     border: 2px solid #B68D63;
@@ -163,7 +163,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
 	color: #B68D63;
 	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
 	font-style: normal;
-	font-size: 24px;
+	font-size: 1.5rem;
 	line-height: 32px;
 	text-align: right;
 }
@@ -173,7 +173,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     font-style: normal;
     font-weight: bolder;
     color: #B68D63;
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -183,14 +183,14 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     font-style: normal;
     font-variant: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1rem;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 .col-lg-10.col-md-10.col-10 .row #bar-dotright {
 	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
-	font-size: 24px;
+	font-size: 1.5rem;
 	line-height: 32px;
 	color: #B68D63;
 	text-align: left;
@@ -204,7 +204,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     font-style: normal;
     font-variant: normal;
     text-align: center;
-    font-size: 25px;
+    font-size: 1.5rem;
     line-height: 47px;
     border-radius: 30px;
     border: 2px solid #B68D63;
@@ -214,7 +214,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
     text-align: center;
-    font-size: 16px;
+    font-size: 1.1rem;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -228,12 +228,12 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     margin-top: 26px;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 18px;
+    font-size: 1.15rem;
 }
 .row #btn-en .btn.btn-lg {
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
-    font-size: 16px;
+    font-size: 1.1rem;
     font-style: normal;
     background-color: #FFC902;
     border-radius: 30px;
@@ -245,7 +245,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
     color: #2B2B2B;
-    font-size: 18px;
+    font-size: 1.15rem;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -255,7 +255,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 18px;
+    font-size: 1.15rem;
 }
 .col-lg-10 .row #link-explore {
     margin-top: 10px;
@@ -263,7 +263,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 18px;
+    font-size: 1.15rem;
 }
 .col-lg-10 .row #link-only {
     margin-top: 10px;
@@ -271,7 +271,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 18px;
+    font-size: 1.15rem;
     padding-top: 0px;
     top: 15px;
 }
@@ -279,7 +279,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
 	color: #B68D63;
 	text-align: right;
 	margin-bottom: 0px;
-	font-size: 18px;
+	font-size: 1.15rem;
 }
 .col-lg-10 .row #line-middle {
 	padding-top: 0px;
@@ -289,7 +289,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
 }
 .col-lg-10 .row #dot-right {
 	color: #B68D63;
-	font-size: 18px;
+	font-size: 1.15rem;
 	text-align: left;
 }
 /* !!!! NOTICE !!!!! --begin-- */
@@ -407,7 +407,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 16px;
+    font-size: 1.1rem;
     text-align: right;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -420,7 +420,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
 	color: #2B2B2B;
 	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
 	font-style: normal;
-	font-size: 16px;
+	font-size: 1.1rem;
 }
 .col-xl-10.col-lg-10.col-md-10.col-sm-10.col-10 .row #count02 {
 	margin-top: 10px;
@@ -434,13 +434,13 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
 	padding-bottom: 10px;
 	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
 	font-style: normal;
-	font-size: 16px;
+	font-size: 1.1rem;
 }
 #footer01-2 .row #info-location {
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 16px;
+    font-size: 1.1rem;
     text-align: left;
     line-height: 40px;
 }
@@ -449,7 +449,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
     font-variant: normal;
-    font-size: 16px;
+    font-size: 1.1rem;
     line-height: 40px;
     text-align: left;
 }
@@ -473,14 +473,14 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 16px;
+    font-size: 1.1rem;
     margin-top: 26px;
 }
 .col-12.col-lg-6 .row #btn-andriod {
 	color: #FFFFFF;
 	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
 	font-style: normal;
-	font-size: 16px;
+	font-size: 1.1rem;
 	margin-top: 16px;
 }
 #link-only {
@@ -490,7 +490,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
 	color: #FFFFFF;
 	font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
 	font-style: normal;
-	font-size: 16px;
+	font-size: 1.1rem;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	margin-top: 16px;
@@ -499,7 +499,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
     margin-top: -25px;
     color: #FCFCFC;
     font-family: "Taipei Sans TC Beta Bold", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Regular";
-    font-size: 16px;
+    font-size: 1.1rem;
     margin-left: 10px;
     margin-bottom: 15px;
 }
@@ -525,7 +525,7 @@ mask: url("../images/mask_circle.png") no-repeat center center / contain;
 .p2 {
     color: #B68D63;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
-    font-size: 16px;
+    font-size: 1.1rem;
     opacity: 0.8;
     text-align: left;
 }
@@ -620,7 +620,7 @@ main#main-explore {
         font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
         font-style: normal;
         font-variant: normal;
-        font-size: 14px;
+        font-size: .9rem;
         border-radius: 30px;
         background-color: #B68D63;
         margin-top: 7px;

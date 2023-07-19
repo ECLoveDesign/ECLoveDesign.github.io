@@ -2,7 +2,7 @@ body {
     background-color:#FDF4E3;
 }
 h5, .h5 {
-    font-size: 18px;
+    font-size: 1.15rem;
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
@@ -11,7 +11,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
-    font-size: 18px;
+    font-size: 1.15rem;
     color: #B68D63;
     font-weight: bolder;
     margin-top: 20px;
@@ -27,7 +27,7 @@ h6, .h6 {
 .p2 {
     color: #B68D63;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
-    font-size: 16px;
+    font-size: 1.1rem;
     opacity: 0.8;
     text-align: left;
 }
