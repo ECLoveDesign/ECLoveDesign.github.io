@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css for every page -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500&amp;display=swap&amp;subset=chinese-traditional"
+        type="text/css">
+    <link rel="stylesheet" href="./css/vendor.css">
+    <link rel="stylesheet" href="./css/splide-sea-green.min.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- css for this page -->
+    <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/slick-theme.min.css">
+
+    <!-- today css -->
+    <link rel="stylesheet" href="./css/today.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="JS/jquery.nicescroll.min.js"></script>
+    <title>臺北醫學大學---學生個人化學習專區</title>
+</head>
+
+<body class="templateV1">
+    <header class="header">
+        <div>
+
+            <div class="header__wrapper">
+
+                <div class="header_logo">
+                    <picture class="header_logo_mobile">
+                        <source>
+                        <source>
+                        <img src="./images/img/LOGO-M.png"></img>
+                    </picture>
+                    <div class="header_logo_mobile_2_wrapper">
+                        <picture class="header_logo_mobile_2">
+                            <source>
+                            <source>
+                            <img src="./images/img/LOGO-M-2.png"></img>
+                        </picture>
+                    </div>
+                </div>
+
+
+                <picture class="header_img_right">
+                    <source>
+                    <source>
+                    <img src="./images/img/LOGO-PC.png"></img>
+                </picture>
+                <div id="information"><a href="#" style=" font-weight:bold; color:#900">＜
+                        回上頁</a><b>學號：</b>0000000<b>姓名：</b>王大同<b>狀態：</b>在學<b>系所：</b>高齡健康暨長期照護學系 (<a href="#"
+                        class="click">登出</a>)
+                    <div class="language"><a href="#" class="click">繁中</a>/<a href="#">EN</a></div>
+                </div>
+                <nav class="nav-outer">
+                    <a class="nav-outer__link" href="short-cut.html">
+                        個人常用功能
+                    </a>
+
+                    <a class="nav-outer__link nav-outer__link--active" data-tab="drop_down_2">
+                        Today
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_2">
+                        <a class="nav-inner__link" href="today.html">
+                            Today</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_3">
+                        修業狀況
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_3">
+                        <a class="nav-inner__link">
+                            專業學分</a>
+                        <a class="nav-inner__link">
+                            通識學分</a>
+                        <a class="nav-inner__link">
+                            畢業資格</a>
+                        <a class="nav-inner__link">
+                            基礎服學</a>
+                        <a class="nav-inner__link">
+                            語文檢定</a>
+                        <a class="nav-inner__link">
+                            游泳檢定</a>
+                        <a class="nav-inner__link">
+                            體育必修學分</a>
+                        <a class="nav-inner__link">
+                            輔/雙</a>
+                        <a class="nav-inner__link">
+                            學分學程/微學程</a>
+                        <a class="nav-inner__link">
+                            學習預警</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_4">
+                        學習發展
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_4">
+                        <a class="nav-inner__link">
+                            EMI學習</a>
+                        <a class="nav-inner__link">
+                            重點領域</a>
+                        <a class="nav-inner__link">
+                            (產業)見實習</a>
+                        <a class="nav-inner__link">
+                            設計思考</a>
+                        <a class="nav-inner__link">
+                            自主學習</a>
+                    </nav>
+
+
+                    <a class="nav-outer__link" data-tab="drop_down_5">
+                        課外學習
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_5">
+                        <a class="nav-inner__link">
+                            社團參與</a>
+                        <a class="nav-inner__link">
+                            領導知能</a>
+                        <a class="nav-inner__link">
+                            社會服務/社區服務</a>
+                        <a class="nav-inner__link">
+                            校外學習/研習</a>
+                        <a class="nav-inner__link">
+                            安全教育</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_6">
+                        能力指標
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_6">
+                        <a class="nav-inner__link">
+                            專業核心能力</a>
+                        <a class="nav-inner__link">
+                            必修核心能力</a>
+                        <a class="nav-inner__link">
+                            選修核心能力</a>
+                        <a class="nav-inner__link">
+                            通識核心能力</a>
+                        <a class="nav-inner__link">
+                            跨域核心能力</a>
+                        <a class="nav-inner__link">
+                            12項就業能力</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_7">
+                        個人專屬雲
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_7">
+                        <a class="nav-inner__link">
+                            個人履歷</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_8">
+                        資源連結
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_8">
+                        <a class="nav-inner__link">
+                            資源連結</a>
+                    </nav>
+
+                    <a class="nav-outer__link" href="achievement.html">
+                        成就名人堂
+                    </a>
+
+                    <div class="burger" id="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <!--此樣式不需加入-->
+    <style>
+        ul.personal-3 {
+            margin-top: 20px;
+        }
+
+        ul.personal-3 li>div>a>img {
+            width: auto;
+            margin: 10px;
+            float: right;
+        }
+
+        ul.personal-3 li a {
+            text-align: center;
+        }
+
+        ul.personal-3 li a:hover {
+            color: #000;
+        }
+
+        ul.personal-3 li {
+            margin: 0 3.3% 30px 0;
+        }
+
+        .spaceing-area {
+            padding: 15% 0;
+        }
+
+        @media (max-width:1747px) {
+            ul.personal-3 li {
+                margin: 0 3% 30px 0;
+            }
+        }
+
+        @media (max-width:1525px) {
+            ul.personal-3 li {
+                margin: 0 25px 30px 0;
+            }
+        }
+
+        @media (max-width:1188px) {
+            ul.personal-3 li {
+                margin: 0 20px 30px 0;
+            }
+        }
+
+        @media (max-width:1085px) {
+            ul.personal-3 li {
+                margin: 0 10px 30px 0;
+            }
+        }
+
+        .calendar-wrap img {
+            max-width: 100%;
+        }
+
+        [_nghost-uun-c92] .abgne_tab2 ul.tabs2 li.active {
+            background: url('tabBG.3504f79b19228c58.gif') no-repeat center bottom;
+            height: 65px;
+            color: #fff;
+        }
+
+        .add-calendar[_ngcontent-uun-c92] img[_ngcontent-uun-c92] {
+            width: 20px;
+            height: 20px;
+        }
+
+        .small-question[_ngcontent-uun-c92] {
+            margin-left: 2px;
+            margin-right: 5px;
+            float: right;
+        }
+
+        .small-question[_ngcontent-uun-c92] a[_ngcontent-uun-c92] {
+            position: unset;
+        }
+
+        td[_ngcontent-uun-c92] {
+            word-break: break-all;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+    </style>
+    <!--此樣式不需加入-->
+
+    <!--新增項目-->
+    <style>
+        .btn-IM[_ngcontent-uun-c92] img[_ngcontent-uun-c92] {
+            width: 20px;
+            height: 20px;
+        }
+
+        .function-wrap {
+            display: flex;
+        }
+
+        table td .function-wrap a {
+            width: 30px;
+        }
+
+        td[_ngcontent-uun-c92] .function-wrap {
+            white-space: inherit;
+        }
+
+        .accordion-cont {
+            display: none;
+        }
+
+    </style>
+    <!--新增項目-->
+
+    <app-today _nghost-uun-c92="">
+        <main _ngcontent-uun-c92="" class="page index-page">
+            <div _ngcontent-uun-c92="" class="container">
+                <div _ngcontent-uun-c92="" id="memo">
+                    <div _ngcontent-uun-c92="" class="date">
+                        <div _ngcontent-uun-c92="" class="year">2023</div>
+                        <div _ngcontent-uun-c92="" class="month">7.21</div>
+                    </div>
+                    <div _ngcontent-uun-c92="" class="calendarTitle"><a _ngcontent-uun-c92="" fragment="googleCalendar"
+                            ng-reflect-fragment="googleCalendar" ng-reflect-router-link="."
+                            href="/today#googleCalendar">個人行事曆</a></div>
+                    <div _ngcontent-uun-c92="" class="clear"></div>
+                </div>
+                <div _ngcontent-uun-c92="" class="abgne_tab2" style="margin-top: 0;">
+                    <app-tab-paced _ngcontent-uun-c92="" _nghost-uun-c67="" ng-reflect-tab="個人課表"
+                        ng-reflect-tabs="個人課表,個人活動,全校活動" ng-reflect-by-click="true">
+
+                        <ul _ngcontent-uun-c67="" class="tabs2">
+                            <li _ngcontent-uun-c67="" ng-reflect-ng-class="[object Object]" class="active"><b
+                                    _ngcontent-uun-c67="" class="markundefined">個人課表</b></li>
+                            <li _ngcontent-uun-c67="" ng-reflect-ng-class="[object Object]"><b _ngcontent-uun-c67=""
+                                    class="markundefined">個人活動</b></li>
+                            <li _ngcontent-uun-c67="" ng-reflect-ng-class="[object Object]"><b _ngcontent-uun-c67=""
+                                    class="markundefined">全校活動</b></li>
+
+                            <div _ngcontent-uun-c67="" class="clear"></div>
+                        </ul>
+                    </app-tab-paced>
+                </div>
+                <div _ngcontent-uun-c92="" class="tab_container2">
+
+                    <div _ngcontent-uun-c92="" id="tab1" class="tab_content2">
+                        <h3 _ngcontent-uun-c92="">個人課表 <div _ngcontent-uun-c92="" class="searchList">
+                                <form _ngcontent-uun-c92="" novalidate="" name="form" id="form"
+                                    class="ng-untouched ng-pristine ng-valid"><select _ngcontent-uun-c92=""
+                                        name="ayearsms" ng-reflect-name="ayearsms"
+                                        class="ng-untouched ng-pristine ng-valid" ng-reflect-model="1112">
+                                        <option _ngcontent-uun-c92="" value="1112" ng-reflect-value="1112">1112學期
+                                        </option>
+                                        <option _ngcontent-uun-c92="" value="1111" ng-reflect-value="1111">1111學期
+                                        </option>
+                                        <option _ngcontent-uun-c92="" value="1102" ng-reflect-value="1102">1102學期
+                                        </option>
+                                        <option _ngcontent-uun-c92="" value="1101" ng-reflect-value="1101">1101學期
+                                        </option>
+                                        <option _ngcontent-uun-c92="" value="1092" ng-reflect-value="1092">1092學期
+                                        </option>
+                                        <option _ngcontent-uun-c92="" value="1091" ng-reflect-value="1091">1091學期
+                                        </option>
+                                        <option _ngcontent-uun-c92="" value="1082" ng-reflect-value="1082">1082學期
+                                        </option>
+                                        <option _ngcontent-uun-c92="" value="1081" ng-reflect-value="1081">1081學期
+                                        </option>
+                                    </select></form>
+                            </div><small _ngcontent-uun-c92="" class="small-question"><a _ngcontent-uun-c92=""
+                                    target="_blank"
+                                    href="https://docs.google.com/document/d/e/2PACX-1vSsOAc1wt9BCFCnIToyDi447DQRMAUnDijN-7W2587uAk1ZnmwNmjTM0vODheUyWljzNnzRTlB773hU/pub"><i
+                                        _ngcontent-uun-c92="" class="far fa-question-circle"></i></a></small></h3>
+
+                        <div _ngcontent-uun-c92="" class="RecordTableOuter">
+                            <div _ngcontent-uun-c92="" class="RecordTable">
+
+
+                                <table _ngcontent-uun-c92="" class="class02">
+                                    <tr _ngcontent-uun-c92="">
+                                        <th _ngcontent-uun-c92=""></th>
+                                        <th _ngcontent-uun-c92="">開課單位</th>
+                                        <th _ngcontent-uun-c92="">課程名稱</th>
+                                        <th _ngcontent-uun-c92="">年級</th>
+                                        <th _ngcontent-uun-c92="">學分</th>
+                                        <th _ngcontent-uun-c92="">選別</th>
+                                        <th _ngcontent-uun-c92="">授課教師</th>
+                                        <th _ngcontent-uun-c92="">上課時間</th>
+                                        <th _ngcontent-uun-c92="">地點</th>
+                                    </tr>
+
+                                    <tr _ngcontent-uun-c92="">
+                                        <!--新增項目-->
+                                        <td _ngcontent-uun-c92="" style="white-space: inherit;">
+
+                                            <div class="function-wrap">
+
+                                                <a _ngcontent-uun-c92="" target="_blank" class="add-calendar"
+                                                    href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;dates=20230213T081000/20230213T220000&amp;text=口腔衛生照護學實習(二)@機構&amp;location=機構&amp;recur=RRULE:FREQ%3DWEEKLY;BYDAY=FR,MO,TH,TU,WE;INTERVAL%3D1;UNTIL=20230617T220000&amp;sf=true&amp;details=<a href=&quot;https://newacademic.tmu.edu.tw/OutSide.aspx?mainPage=QQBwAHAAbABpAGMAYQB0AGkAbwBuAC8AVABLAEUALwBQAFIARwAvAFAAUgBHADEAMQAwADAAXwAwADIALgBhAHMAcAB4AD8ATwBQAD0AWQA=%26AYEARSMS=1112%26COSID=00280096%26OPEN_CLASSID= &quot;>口腔衛生照護學實習(二)</a>">
+                                                    <img _ngcontent-uun-c92="" src="images/img/icon_calendar.png">
+                                                </a>
+
+                                                <a _ngcontent-uun-c92="" class="btn-IM" data-toggle="toggle">
+                                                    <img _ngcontent-uun-c92="" src="images/img/icon_IM.png">
+                                                </a>
+                                            </div>
+                                            <!--新增項目-->
+
+                                        </td>
+                                        <td _ngcontent-uun-c92="" ng-reflect-lang-field="[object Object]">口腔衛生學系</td>
+                                        <td _ngcontent-uun-c92=""><a _ngcontent-uun-c92="" target="_blank"
+                                                ng-reflect-lang-field="[object Object]"
+                                                href="https://newacademic.tmu.edu.tw/OutSide.aspx?mainPage=QQBwAHAAbABpAGMAYQB0AGkAbwBuAC8AVABLAEUALwBQAFIARwAvAFAAUgBHADEAMQAwADAAXwAwADIALgBhAHMAcAB4AD8ATwBQAD0AWQA=&amp;AYEARSMS=1112&amp;COSID=00280096&amp;OPEN_CLASSID= ">口腔衛生照護學實習(二)</a>
+                                        </td>
+                                        <td _ngcontent-uun-c92="">4</td>
+                                        <td _ngcontent-uun-c92="">9.0</td>
+                                        <td _ngcontent-uun-c92="">必修</td>
+                                        <td _ngcontent-uun-c92="" ng-reflect-lang-field="[object Object]">張偉民</td>
+                                        <td _ngcontent-uun-c92="">
+                                            101,102,103,104,105,106,107,108,109,10A,10B,10C,10D,201,202,203,204,205,206,207,208,209,20A,20B,20C,20D,301,302,303,304,305,306,307,308,309,30A,30B,30C,30D,401,402,403,404,405,406,407,408,409,40A,40B,40C,40D,501,502,503,504,505,506,507,508,509,50A,50B,50C,50D,601,602,603,604,605,606,607,608,609,60A,60B,60C,60D
+                                        </td>
+                                        <td _ngcontent-uun-c92="" ng-reflect-lang-field="[object Object]">機構</td>
+                                    </tr>
+
+                                    <!--新增項目-->
+                                    <tr _ngcontent-uun-c92="" class="accordion-cont" style="display: table-row;">
+                                        <td colspan="9">
+                                            <div class="im-wrap">
+                                                <div class="panel-head">
+                                                    IM課版學習記錄統計
+                                                </div>
+                                                <div class="panel-cont">
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-discuss.png"></img>討論
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            3/6
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-readTimes.png"></img>閱讀次數
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            19
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-readCost.png"></img>閱讀時間
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            02:19:20
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-homework.png"></img>作業
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            5/8
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-form.png"></img>問卷
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            0/1
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-exam.png"></img>測驗
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            2/2
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-note.png"></img>筆記
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            1
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr _ngcontent-uun-c92="">
+                                        <td _ngcontent-uun-c92="" style="white-space: inherit;">
+
+                                            <div class="function-wrap">
+
+                                                <a _ngcontent-uun-c92="" target="_blank" class="add-calendar"
+                                                    href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;dates=20230213T081000/20230213T220000&amp;text=口腔衛生照護學實習(二)@機構&amp;location=機構&amp;recur=RRULE:FREQ%3DWEEKLY;BYDAY=FR,MO,TH,TU,WE;INTERVAL%3D1;UNTIL=20230617T220000&amp;sf=true&amp;details=<a href=&quot;https://newacademic.tmu.edu.tw/OutSide.aspx?mainPage=QQBwAHAAbABpAGMAYQB0AGkAbwBuAC8AVABLAEUALwBQAFIARwAvAFAAUgBHADEAMQAwADAAXwAwADIALgBhAHMAcAB4AD8ATwBQAD0AWQA=%26AYEARSMS=1112%26COSID=00280096%26OPEN_CLASSID= &quot;>口腔衛生照護學實習(二)</a>">
+                                                    <img _ngcontent-uun-c92="" src="images/img/icon_calendar.png">
+                                                </a>
+
+                                                <a _ngcontent-uun-c92="" class="btn-IM" data-toggle="toggle">
+                                                    <img _ngcontent-uun-c92="" src="images/img/icon_IM.png">
+                                                </a>
+                                            </div>
+
+                                        </td>
+                                        <td _ngcontent-uun-c92="" ng-reflect-lang-field="[object Object]">口腔衛生學系</td>
+                                        <td _ngcontent-uun-c92=""><a _ngcontent-uun-c92="" target="_blank"
+                                                ng-reflect-lang-field="[object Object]"
+                                                href="https://newacademic.tmu.edu.tw/OutSide.aspx?mainPage=QQBwAHAAbABpAGMAYQB0AGkAbwBuAC8AVABLAEUALwBQAFIARwAvAFAAUgBHADEAMQAwADAAXwAwADIALgBhAHMAcAB4AD8ATwBQAD0AWQA=&amp;AYEARSMS=1112&amp;COSID=00280096&amp;OPEN_CLASSID= ">口腔衛生照護學實習(二)</a>
+                                        </td>
+                                        <td _ngcontent-uun-c92="">4</td>
+                                        <td _ngcontent-uun-c92="">9.0</td>
+                                        <td _ngcontent-uun-c92="">必修</td>
+                                        <td _ngcontent-uun-c92="" ng-reflect-lang-field="[object Object]">張偉民</td>
+                                        <td _ngcontent-uun-c92="">
+                                            101,102,103,104,105,106,107,108,109,10A,10B,10C,10D,201,202,203,204,205,206,207,208,209,20A,20B,20C,20D,301,302,303,304,305,306,307,308,309,30A,30B,30C,30D,401,402,403,404,405,406,407,408,409,40A,40B,40C,40D,501,502,503,504,505,506,507,508,509,50A,50B,50C,50D,601,602,603,604,605,606,607,608,609,60A,60B,60C,60D
+                                        </td>
+                                        <td _ngcontent-uun-c92="" ng-reflect-lang-field="[object Object]">機構</td>
+                                    </tr>
+
+                                    
+                                    <!--新增項目-->
+                                    <tr _ngcontent-uun-c92="" class="accordion-cont">
+                                        <td colspan="9">
+                                            <div class="im-wrap">
+                                                <div class="panel-head">
+                                                    IM課版學習記錄統計
+                                                </div>
+                                                <div class="panel-cont">
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-discuss.png"></img>討論
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            3/6
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-readTimes.png"></img>閱讀次數
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            19
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-readCost.png"></img>閱讀時間
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            02:19:20
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-homework.png"></img>作業
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            5/8
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-form.png"></img>問卷
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            0/1
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-exam.png"></img>測驗
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            2/2
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="info-item">
+                                                        <div class="info-title">
+                                                            <img src="images/img/icon-note.png"></img>筆記
+                                                        </div>
+                                                        <div class="info-cont">
+                                                            1
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <h3 _ngcontent-uun-c92="">個人Google行事曆 <small _ngcontent-uun-c92="">(每分鐘更新)</small></h3>
+                <div class="calendar-wrap">
+                    <img src="images/img-today-calendar.png">
+                </div>
+
+            </div>
+        </main>
+    </app-today>
+    <div class="spaceing-area"></div>
+
+
+    <footer class="footer">
+        <div class="note">※實際資料以教務學務系統為準。</div>
+        <div class="footer__Wrapper">
+            <div class="footer__inner">
+
+                <picture class="footer__inner--photo">
+                    <source>
+                    <source>
+                    <img class="schoolLogo" src="./images/img/LOGO-Footer.png" alt="">
+                </picture>
+
+                <p class="footer__inner--notice">若您對系統有疑問或建議，請洽下列連結窗口。</p>
+
+                <div class="footer__inner--teacher">
+                    <h2>教務處 : 黃千倚 02-27361661轉2101 </h2><span>/</span>
+                    <h2>學務處 : 黃昭文 02-27361661轉2210 </h2><span>/</span>
+                    <h2>資訊處 : 王界智 02-66382736轉1606</h2>
+                </div>
+
+                <p class="footer__inner--copyright">Copyright © 2022 臺北醫學大學 Taipei Medical University</p>
+
+            </div>
+        </div>
+
+
+        <!-- to top -->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer src="js/vendor.js?0f874adb"></script>
+    <script defer src="js/index.js?a378b159"></script>
+    <!-- javascript for every page -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+    <script src="./js/header.js"></script>
+
+    <!-- javascript for this page -->
+    <script src="./js/newest.js"></script>
+    <script src="./js/tabmark.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slick-content').slick({
+                infinite: false,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+            });
+
+        });
+
+
+        $(function () {
+            Grid.init();
+        });
+
+        /*開關*/
+        $(document).ready(function () {
+            $('[data-toggle="toggle"]').click(function () {
+                $(this).parents().next(".accordion-cont").toggle();
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
