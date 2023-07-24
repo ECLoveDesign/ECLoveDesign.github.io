@@ -41,7 +41,7 @@ h2,
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: left;
     line-height: 30px;
     margin-top: 10px;
@@ -52,7 +52,7 @@ h2,
     color: #2B2B2B;
     font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
     font-style: normal;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 40px;
     margin-bottom: 40px;
     line-height: 24px;
@@ -360,7 +360,7 @@ h2,
         text-align: center;
         font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", Helvetica, "Heiti TC Light", "Heiti TC Medium";
         font-style: normal;
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 24px;
     }
 
