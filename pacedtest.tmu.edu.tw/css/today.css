@@ -7,6 +7,10 @@
     border-bottom: #ededed 1px solid;
     padding: 18px 10px;
 }
+.im-wrap .panel-head a {
+    color: #fff;
+    text-decoration: underline;
+}
 .im-wrap .panel-cont {
     border-bottom: #ededed 1px solid;
     padding: 20px 40px;
@@ -28,17 +32,16 @@
     margin-left: 40px;
 }
 .im-wrap .info-title {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
 } 
 .im-wrap .info-title img {
-    height: 40px;
+    height: 30px;
 }
 .im-wrap .info-cont {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
 } 
 
@@ -66,6 +69,14 @@
         -ms-flex: 0 0 40%;
         flex: 0 0 40%;
         max-width: 40%; 
+    }
+
+    .RecordTableOuter {
+        overflow-x: auto;
+    }
+    table th,
+    td[_ngcontent-uun-c92] {
+        width: 150px !important;
     }
 }
 @media (max-width:799px) {
