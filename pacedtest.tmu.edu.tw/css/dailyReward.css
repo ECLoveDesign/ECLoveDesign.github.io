@@ -54,8 +54,23 @@
     font-size: 1.1rem;
 }
 
-.rewardList-item .badege img {
+.rewardList-item .badege {    
+    position: relative;
     width: 83px;
+    height: 83px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #000;
+}
+.rewardList-item .badege img {
+    margin: auto;
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .rewardList-item.nohav .badege img {
