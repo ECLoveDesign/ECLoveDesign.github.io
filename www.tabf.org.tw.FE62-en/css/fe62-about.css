@@ -1,0 +1,47 @@
+.col-lg-8 {
+    color: #2B2B2B;
+}
+
+.btnscroll-offest {}
+
+
+#RightNow {
+    display: block;
+    height: 100%;
+    position: relative;
+}
+
+#RightNow:before {
+    content: '';
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s all;
+}
+
+#RightNow:hover:before {
+    display: block;
+}
+
+#RightNow > span {
+    text-align: center;
+    font-size: 1.2em;
+    color: #fff;
+    border: 1px solid #fff;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: .3s all;
+}
+
+#RightNow:hover > span {
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, 0) scale(1.1);
+}

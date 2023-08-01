@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Taipei Sans TC Beta Regular", "Taipei Sans TC Beta Light", "Taipei Sans TC Beta Bold", "Heiti TC Light", "Heiti TC Medium", "Taipei Sans TC Beta", "Noto Sans TC", "PingFang TC", sans-serif;
+    color: #2B2B2B;
+}
+
+a:link {
+    color: #2B2B2B;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #B68D63;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #2B2B2B;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+h2,
+.h2 {
+    /*font-size: 1.5rem;*/
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+    font-weight: bolder;
+}
+
+b,
+strong {
+    color: #B68D63;
+}
+
+footer > div > div > .row {
+    align-items: center;
+}
+
+#f03 .row .col-3 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
