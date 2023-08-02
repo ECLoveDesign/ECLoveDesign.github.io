@@ -35,9 +35,11 @@
     border-radius: 50%;
     background: #000;
 }
-.collectionAward ul li + li {
+
+.collectionAward ul li+li {
     margin-left: 5px;
 }
+
 .collectionAward img {
     margin: auto;
     position: absolute;
@@ -166,15 +168,18 @@
     right: 0;
     top: -45px;
 }
+
 @media (max-width:768px) {
     #popup-reward::before {
         display: none;
     }
 }
+
 @media (max-width:375px) {
     #popup-reward .popup-title {
         font-size: 1.4rem;
     }
+
     #popup-reward .popup-title span::after {
         width: 223px;
         height: 115px;
@@ -182,6 +187,7 @@
         top: -50px;
     }
 }
+
 /* dailylog-wrap */
 .dailylog-wrap {
     width: 80%;
@@ -218,6 +224,7 @@
     font-weight: 500;
     color: #444;
 }
+
 .progessbar li .point {}
 
 .progessbar li:before {
@@ -273,6 +280,7 @@
     color: #fff;
     border-color: #EA2027;
 }
+
 .daily-slogan {
     position: relative;
     background: #c41919;
@@ -283,6 +291,7 @@
     margin: 0 auto 20px;
     padding: 20px;
 }
+
 .daily-slogan::before {
     content: '';
     display: block;
@@ -296,6 +305,7 @@
     right: 0;
     top: -45px;
 }
+
 #popup-reward .daily-slogan p {
     font-weight: 500;
     margin: 20px 0;
@@ -315,28 +325,77 @@
     position: absolute;
     top: -15px;
 }
+
 .daily-slogan p::before {
     left: 0;
 }
+
 .daily-slogan p::after {
     right: 0;
 }
+
 @media (max-width:768px) {
     .dailylog-wrap {
         min-width: 100%;
     }
+
     .daily-slogan {
         min-width: 90%;
     }
+
     #popup-reward .daily-slogan p {
         min-width: 90%;
     }
 }
+
 @media (max-width:615px) {
+
     .daily-slogan p::before,
     .daily-slogan p::after {
-        position: relative;    
+        position: relative;
         margin: 20px auto;
         top: auto;
+    }
+}
+
+/* fix text clould background */
+.card[_ngcontent-yru-c76],
+.card[_ngcontent-yru-c76] .card-body,
+#textCloudArea {
+    height: 100%;
+}
+.card-body {
+    position: relative;
+}
+#textCloudArea {
+    position: relative;
+}
+#textCloudArea::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/img/bg-textCloud.png) no-repeat center;
+    background-size: contain;
+    /* opacity: .9; */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#textCloudArea svg {
+    position: absolute;
+    /* transform: scale(1.6); */
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-weight: 700 !important;
+}
+#textCloudArea svg text {
+    font-weight: 700;
+    text-shadow: #fff 0 0 5px;
+}
+@media (min-width:1770px) {
+    #textCloudArea svg {
+        transform: scale(1.6);
     }
 }
