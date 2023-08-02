@@ -168,6 +168,10 @@
     right: 0;
     top: -45px;
 }
+#popup-reward.en-version .popup-title span::after {
+    background: url(../images/img/popup-title-deco-en.png) no-repeat 48% center;
+    left: auto;
+}
 
 @media (max-width:768px) {
     #popup-reward::before {
@@ -305,6 +309,17 @@
     right: 0;
     top: -45px;
 }
+#popup-reward.en-version .daily-slogan::before {
+    background: url(../images/img/title-slogan-en.png) no-repeat center;
+    background-size: contain;
+    width: 200px;
+    height: 75px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: -45px;
+}
 
 #popup-reward .daily-slogan p {
     font-weight: 500;
@@ -330,10 +345,33 @@
     left: 0;
 }
 
+#popup-reward.en-version .daily-slogan p::before {
+    left: -10%;
+}
+
 .daily-slogan p::after {
     right: 0;
 }
+#popup-reward.en-version .daily-slogan p::after {
+    right: -10%;
+}
 
+@media (max-width:1240px) {
+    #popup-reward.en-version .daily-slogan p::before {
+        left: -15%;
+    }
+    #popup-reward.en-version .daily-slogan p::after {
+        right: -15%;
+    }
+}
+@media (max-width:1024px) {
+    #popup-reward.en-version .daily-slogan p::before {
+        left: -20%;
+    }
+    #popup-reward.en-version .daily-slogan p::after {
+        right: -20%;
+    }
+}
 @media (max-width:768px) {
     .dailylog-wrap {
         min-width: 100%;
@@ -345,6 +383,10 @@
 
     #popup-reward .daily-slogan p {
         min-width: 90%;
+    }
+    #popup-reward.en-version .daily-slogan p::before,
+    #popup-reward.en-version .daily-slogan p::after {
+        display: none;
     }
 }
 
