@@ -453,6 +453,7 @@ main.container-fluid .section-venue-wrapper {
     background-repeat: no-repeat;
     position: relative;
     transform: scale(1.36);
+    /* margin-top: 4rem; */
 }
 .canvas-venue .indicators-board .board-logo {
     width: 12.997%; height: 18.067%; display: block;
@@ -491,8 +492,11 @@ main.container-fluid .section-venue-wrapper {
     width: 88vw;
 }
 .section-venue-container .reading-venue {
-    min-height: 120px; display: flex; justify-content: center;
-    align-items: center;
+    min-height: 250px;     
+    padding-top: 20px;
+    display: flex; 
+    justify-content: center;
+    /* align-items: center; */
 }
 .section-venue-container .reading-venue .active-message,
 .section-venue-container .reading-venue.active .pending-message {
@@ -766,7 +770,7 @@ main.container-fluid .section-venue-wrapper {
         padding-bottom: 5vw;
     }
     .section-venue-container .reading-venue {
-        width: 40%;
+        width: 80%;
     }
     .hover-banner.active:not(:hover) > .hover-banner-active {
         opacity: 0;
@@ -891,7 +895,7 @@ main.container-fluid .section-venue-wrapper {
         min-height: 963px;
     }
     .section-venue-container .reading-venue {
-        width: 35%;
+        width: 55%;
     }
 
     main.container-fluid .section-cafe-container {
