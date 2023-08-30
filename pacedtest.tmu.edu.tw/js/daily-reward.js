@@ -39,3 +39,25 @@ $(document).on('click', '.popup-modal-dismiss', function (e) {
     e.preventDefault();
     $.magnificPopup.close();
 });
+
+if ($('.btn-popover').length) {
+
+	var popovers = document.querySelectorAll('.popover');
+	var popoverTriggers = document.querySelectorAll('.btn-popover');
+
+	for (var i = 0; i < popoverTriggers.length; i++) {
+		popoverTriggers[i].addEventListener('click', function(event) {
+			closeAllOthers(this.parentElement);
+			this.parentElement.classList.toggle('popover--active');
+		});
+	}
+
+	function closeAllOthers(ignore) {
+		for (var i = 0; i < popovers.length; i++) {
+			if ( popovers[i] !== ignore) {
+				popovers[i].classList.remove('popover--active');	
+			}
+		}
+	}
+
+};

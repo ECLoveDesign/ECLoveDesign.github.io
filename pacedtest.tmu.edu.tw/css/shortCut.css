@@ -17,27 +17,27 @@
     }
 }
 
-
 .collectionAward {
     text-align: right;
+    overflow: auto;
 }
 
 .collectionAward ul {
-    display: flex;
-    justify-content: end;
+    overflow: auto;
+    float: right;
 }
 
 .collectionAward ul li {
     position: relative;
+    float: left;
     width: 50px;
     height: 50px;
     overflow: hidden;
     border-radius: 50%;
-    background: #000;
-}
-
-.collectionAward ul li+li {
-    margin-left: 5px;
+    /* background: #000; */
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .collectionAward img {

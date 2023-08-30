@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css for every page -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500&amp;display=swap&amp;subset=chinese-traditional"
+        type="text/css">
+    <link rel="stylesheet" href="./css/vendor.css">
+    <link rel="stylesheet" href="./css/splide-sea-green.min.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- css for this page -->
+    <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/slick-theme.min.css">
+
+    <!-- dailyReward css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="./css/dailyReward.css?5">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="JS/jquery.nicescroll.min.js"></script>
+    <title>連續登入獎勵</title>
+</head>
+
+<body class="templateV1">
+    <header class="header">
+        <div>
+
+            <div class="header__wrapper">
+
+                <div class="header_logo">
+                    <picture class="header_logo_mobile">
+                        <source>
+                        <source>
+                        <img src="./images/img/LOGO-M.png"></img>
+                    </picture>
+                    <div class="header_logo_mobile_2_wrapper">
+                        <picture class="header_logo_mobile_2">
+                            <source>
+                            <source>
+                            <img src="./images/img/LOGO-M-2.png"></img>
+                        </picture>
+                    </div>
+                </div>
+
+
+                <picture class="header_img_right">
+                    <source>
+                    <source>
+                    <img src="./images/img/LOGO-PC.png"></img>
+                </picture>
+                <div id="information"><a href="#" style=" font-weight:bold; color:#900">＜
+                        回上頁</a><b>學號：</b>0000000<b>姓名：</b>王大同<b>狀態：</b>在學<b>系所：</b>高齡健康暨長期照護學系 (<a href="#"
+                        class="click">登出</a>)
+                    <div class="language"><a href="#" class="click">繁中</a>/<a href="#">EN</a></div>
+                </div>
+                <nav class="nav-outer">
+                    <a class="nav-outer__link" href="short-cut.html">
+                        個人常用功能
+                    </a>
+
+                    <a class="nav-outer__link" data-tab="drop_down_2">
+                        Today
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_2">
+                        <a class="nav-inner__link">
+                            Today</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_3">
+                        修業狀況
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_3">
+                        <a class="nav-inner__link">
+                            專業學分</a>
+                        <a class="nav-inner__link">
+                            通識學分</a>
+                        <a class="nav-inner__link">
+                            畢業資格</a>
+                        <a class="nav-inner__link">
+                            基礎服學</a>
+                        <a class="nav-inner__link">
+                            語文檢定</a>
+                        <a class="nav-inner__link">
+                            游泳檢定</a>
+                        <a class="nav-inner__link">
+                            體育必修學分</a>
+                        <a class="nav-inner__link">
+                            輔/雙</a>
+                        <a class="nav-inner__link">
+                            學分學程/微學程</a>
+                        <a class="nav-inner__link">
+                            學習預警</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_4">
+                        學習發展
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_4">
+                        <a class="nav-inner__link">
+                            EMI學習</a>
+                        <a class="nav-inner__link">
+                            重點領域</a>
+                        <a class="nav-inner__link">
+                            (產業)見實習</a>
+                        <a class="nav-inner__link">
+                            設計思考</a>
+                        <a class="nav-inner__link">
+                            自主學習</a>
+                    </nav>
+
+
+                    <a class="nav-outer__link" data-tab="drop_down_5">
+                        課外學習
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_5">
+                        <a class="nav-inner__link">
+                            社團參與</a>
+                        <a class="nav-inner__link">
+                            領導知能</a>
+                        <a class="nav-inner__link">
+                            社會服務/社區服務</a>
+                        <a class="nav-inner__link">
+                            校外學習/研習</a>
+                        <a class="nav-inner__link">
+                            安全教育</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_6">
+                        能力指標
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_6">
+                        <a class="nav-inner__link">
+                            專業核心能力</a>
+                        <a class="nav-inner__link">
+                            必修核心能力</a>
+                        <a class="nav-inner__link">
+                            選修核心能力</a>
+                        <a class="nav-inner__link">
+                            通識核心能力</a>
+                        <a class="nav-inner__link">
+                            跨域核心能力</a>
+                        <a class="nav-inner__link">
+                            12項就業能力</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_7">
+                        個人專屬雲
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_7">
+                        <a class="nav-inner__link">
+                            個人履歷</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_8">
+                        資源連結
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_8">
+                        <a class="nav-inner__link">
+                            資源連結</a>
+                    </nav>
+
+                    <a class="nav-outer__link" href="achievement.html">
+                        成就名人堂
+                    </a>
+
+                    <div class="burger" id="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <!--此樣式不需加入-->
+    <style>
+        .spaceing-area {
+            padding: 15% 0;
+        }
+    </style>
+    <!--此樣式不需加入-->
+
+    <main class="page index-page" style="margin-bottom: -300px;">
+        <div class="container">
+
+            <h3 class="red">徽章列表
+
+                <div class="subDescripe">
+                    恭喜獲得 <a href="#">2</a> 枚徽章
+                </div>
+
+            </h3>
+
+            <div class="rewardList">
+
+                <div class="rewardList-item nohav">
+                    <div class="badege">
+                        <img src="https://pacedtest.tmu.edu.tw/api/badges/5eabfe69-c545-63bb-c1f1-3a0cbcd9b90d" title="初學乍練">
+                    </div>
+                    <div class="caption">
+                        <div class="title">初學乍練</div>
+                        <span>初次登入</span>
+                    </div>
+                </div>
+
+                <div class="rewardList-item nohav">
+                    <div class="badege">
+                        <img src="https://pacedtest.tmu.edu.tw/api/badges/3838deb1-32de-9261-619e-3a0cbcefad99" title="初出茅廬">
+                    </div>
+                    <div class="caption">
+                        <div class="title">初出茅廬</div>
+                        <span>首次活動報名</span>
+                    </div>
+                </div>
+
+                <div class="rewardList-item">
+                    <div class="badege">
+                        <img src="https://pacedtest.tmu.edu.tw/api/badges/fd4cff2b-20b9-fc1f-9795-3a0cbcf9265d" title="持之以恆">
+                    </div>
+                    <div class="caption">
+                        <div class="title">持之以恆</div>
+                        <span>單一機構實習時間達 1 年</span>
+                    </div>
+                </div>
+
+                <div class="rewardList-item nohav">
+                    <div class="badege">
+                        <img src="images/img/badge-12.png" title="國際公民">
+                    </div>
+                    <div class="caption">
+                        <div class="title">國際公民</div>
+                        <span>解鎖國際化活動</span>
+                    </div>
+                </div>
+
+                <div class="rewardList-item nohav">
+                    <div class="badege">
+                        <img src="images/img/badge-16.png" title="數位學習">
+                    </div>
+                    <div class="caption">
+                        <div class="title">數位學習</div>
+                        <span>解鎖數位學習課程</span>
+                    </div>
+                </div>
+
+                <div class="rewardList-item nohav">
+                    <div class="badege">
+                        <img src="images/img/badge-23.png" title="創新英才">
+                    </div>
+                    <div class="caption">
+                        <div class="title">創新英才</div>
+                        <span>解鎖創新創業課程</span>
+                    </div>
+                </div>
+
+                <div class="rewardList-item nohav">
+                    <div class="badege">
+                        <img src="images/img/badge-08.png" title="卓越領導">
+                    </div>
+                    <div class="caption">
+                        <div class="title">卓越領導</div>
+                        <span>解鎖領導知能活動</span>
+                    </div>
+                </div>
+
+                <div class="rewardList-item">
+                    <div class="badege">
+                        <img src="images/img/badge-02.jpg" title="科學探究">
+                    </div>
+                    <div class="caption">
+                        <div class="title">科學探究</div>
+                        <span>解鎖 PsBL 課程</span>
+                    </div>
+                </div>
+
+                <div class="rewardList-item nohav">
+                    <div class="badege">
+                        <img src="images/img/badge-13.png" title="力爭上游">
+                    </div>
+                    <div class="caption">
+                        <div class="title">力爭上游</div>
+                        <span>解鎖競賽類活動</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <h3 class="red">獎品兌換
+
+                <div class="subDescripe">
+                    目前累計 <a href="#">100</a> 點。您已兌換 50 點
+                </div>
+
+                <a class="btn-popup-iframe history" href="popup-awardHistory.html">
+                    查看兌換紀錄表
+                </a>
+
+            </h3>
+            
+
+
+            <div class="prizeList">
+                <div class="prizeList-item">
+                    <div class="prize">
+                        <img src="images/img/img-prizetest-01.jpg" title="紀念品">
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            
+                            <a class="btn-popup btn-popup confirm" href="#popup-confirmExchange">
+                                紀念品(確認兌換)
+                            </a>
+
+                        </div>
+                        <div class="point">
+                            50點
+                        </div>
+                        <div class="text">
+                            剩餘 49 個
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="prizeList-item">
+                    <div class="prize">
+                        <img src="images/img/img-prizetest-02.jpg" title="活動優先權">
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <a class="btn-popup-iframe finish" href="popup-finishExchange.html">
+                                活動優先權(已兌換)
+                            </a>
+                        </div>
+                        <div class="point">
+                            100點
+                        </div>
+                        <div class="text">
+                            剩餘 49 個
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="prizeList-item">
+                    <div class="prize">
+                        <img src="images/img/img-prizetest-03.jpg" title="折抵活動費用">
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <a href="#">折抵活動費用</a>
+                        </div>
+                        <div class="point">
+                            150點
+                        </div>
+                        <div class="text">
+                            剩餘 49 個
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="prizeList-item">
+                    <div class="prize">
+                        <img src="images/img/img-prizetest-04.jpg" title="選課權重">
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <a href="#">選課權重</a>
+                        </div>
+                        <div class="point">
+                            200點
+                        </div>
+                        <div class="text">
+                            剩餘 49 個
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--確認是否兌換-->
+            <div id="popup-confirmExchange" class="white-popup-block mfp-hide popupCont">
+                <p>您目前有<span>100</span>點。</p>
+                <p>是否確認兌換「<span>紀念品(50點)</span>」?</p>
+
+                <div class="btn-group">
+                    <a class="btn popup-modal-dismiss" href="#">否</a>
+                    <a class="btn btn-yes" href="#">是</a>
+                </div>
+            </div>
+            
+            <!--兌換紀錄表-->
+            <div id="popup-confirmExchange" class="white-popup-block mfp-hide popupCont">
+                <div class="popup-title">已成功兌換「紀念品B」!</div>
+                <p>目前點數剩餘 <a href="#">50</a>點。</p>
+                <p>請至獎品兌換頁，點選「<a href="#">查看兌換紀錄表</a>」查看詳細資訊。</p>
+            </div>
+
+            <div class="spaceing-area"></div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="note">※實際資料以教務學務系統為準。</div>
+        <div class="footer__Wrapper">
+            <div class="footer__inner">
+
+                <picture class="footer__inner--photo">
+                    <source>
+                    <source>
+                    <img class="schoolLogo" src="./images/img/LOGO-Footer.png" alt="">
+                </picture>
+
+                <p class="footer__inner--notice">若您對系統有疑問或建議，請洽下列連結窗口。</p>
+
+                <div class="footer__inner--teacher">
+                    <h2>教務處 : 黃千倚 02-27361661轉2101 </h2><span>/</span>
+                    <h2>學務處 : 黃昭文 02-27361661轉2210 </h2><span>/</span>
+                    <h2>資訊處 : 王界智 02-66382736轉1606</h2>
+                </div>
+
+                <p class="footer__inner--copyright">Copyright © 2022 臺北醫學大學 Taipei Medical University</p>
+
+            </div>
+        </div>
+
+
+        <!-- to top -->
+    </footer>
+
+    <script defer src="js/vendor.js?0f874adb"></script>
+    <script defer src="js/index.js?a378b159"></script>
+    <!-- javascript for every page -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+    <script src="./js/header.js"></script>
+
+    <!-- javascript for this page -->
+    <script src="./js/newest.js"></script>
+    <script src="./js/tabmark.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slick-content').slick({
+                infinite: false,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+            });
+        });
+
+
+        $(function () {
+            Grid.init();
+        });
+    </script>
+
+
+    <!-- daily reward js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="./js/daily-reward.js?2"></script>
+
+</body>
+
+</html>
