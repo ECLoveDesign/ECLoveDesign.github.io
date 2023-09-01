@@ -115,21 +115,19 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    justify-content: center;
     margin-bottom: 3rem;
 }
 .badgeList-item {
     width: 150px;
-    text-align: center;
-    -ms-flex: 0 0 10%;
-    flex: 0 0 10%;
-    max-width: 10%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
 }
 .badgeList-item .badege {
     position: relative;
     width: 120px;
     height: 120px;
-    margin: auto;
+    margin: 0;
     overflow: hidden;
     /* border-radius: 50%; */
     /* background: #000; */
@@ -139,6 +137,7 @@
     position: absolute;
     display: block;
     width: 100%;
+    height: 100%;
     top: 0;
     bottom: 0;
     left: 0;
@@ -147,28 +146,13 @@
 .badgeList-item.nohav .badege img {
     filter: grayscale(100%);
 }
-@media (max-width:1480px) {
-    .badgeList-item {
-        -ms-flex: 0 0 12%;
-        flex: 0 0 12%;
-        max-width: 12%;
-    }
+.badgeList-item .badege::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
 }
-@media (max-width:1366px) {
-    .badgeList-item {
-        -ms-flex: 0 0 15%;
-        flex: 0 0 15%;
-        max-width: 15%;
-    }
-}
-@media (max-width:1024px) {
-    .badgeList-item {
-        -ms-flex: 0 0 20%;
-        flex: 0 0 20%;
-        max-width: 20%;
-    }
-}
-@media (max-width:768px) {
+
+/* @media (max-width:768px) {
     .badgeList-item {
         -ms-flex: 0 0 25%;
         flex: 0 0 25%;
@@ -188,23 +172,38 @@
         flex: 0 0 50%;
         max-width: 50%;
     }
-}
+} */
 
 
 /* popover */
-.popover {
-    display: inline-block;
+.badgeList-item>.popover {
+    display: flex;
+    align-items: center;
     position: relative;
 }
-.badege-title .btn-popover {
-    margin-top: 5px;
-    display: block;
+.badege-caption .btn-popover {
+    position: relative;
+    display: inline-block;
 }
-.badege-title {
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-align: center;
+.badege-caption .btn-popover::after {
+    content: '';
+    display: block;
+    background: url(../images/img/icon_info.png) no-repeat 0 -4px;
+    width: 25px;
+    height: 23px;
+    background-size: contain;
+}
+.badege-caption {
     margin-top: 5px;
+    width: calc(90% - 120px);
+    position: relative;
+    padding: 0 0 0 10px;
+    display: flex;
+}
+.popover-cont .title ,
+.badege-title {
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 .btn-popover {
     cursor: pointer;
@@ -217,10 +216,10 @@
     list-style-type: none;
     margin: 8px 0;
     padding:1rem 0.6rem ;
-    /* width: 100%; */
-    min-width: 85%;
+    width: 100%;
+    min-width: 100px;
     position: absolute;
-    top: calc(100% + 5px);
+    top: calc(100% + 8px);
     left: 0;
     box-shadow: 0 2px 3px 0 rgba(63, 63, 68, 0.2);
     transition-property: transform, opacity;
@@ -278,13 +277,107 @@
 }
 
 .popover-cont .title {
-    font-size: 1.4rem;
     margin-bottom: 10px;
     font-weight: 500;
 }
 .popover-cont span {
     font-size: 1.1rem;
 }
+@media (max-width:1700px) {
+    .popover-cont .title ,
+    .badege-title {
+        font-size: 1.2rem;
+    }
+    .popover-cont span {
+        font-size: 1rem;
+    }
+}
+@media (max-width:1520px) {
+    .popover-cont .title ,
+    .badege-title {
+        font-size: 1rem;
+    }
+    .popover-cont span {
+        font-size: .8rem;
+    }
+}
+@media (max-width:1440px) {
+    .badgeList-item .badege {
+        width: 100px;
+        height: 100px;
+    }
+    .badege-caption {
+        width: calc(90% - 100px);
+    }
+}
+@media (max-width:1366px) {
+    .badgeList-item>.popover {
+        display: block;
+        text-align: center;
+    }
+    .badege-caption {
+        width: 85%;
+        padding: 0;
+        margin: auto;
+        justify-content: center;    
+        display: block;
+    }
+    .badege-title {
+        height: 40px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+    }
+    .badgeList-item .badege {
+        width: 120px;
+        height: 120px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    .badgeList-item {
+        margin-bottom: 20px;
+    }
+    .badege-caption .btn-popover::after {
+        background: url(../images/img/icon_info.png) no-repeat 0 1px;
+        background-size: contain;
+    }
+}
+@media (max-width:768px) {
+    .badgeList-item .badege {
+        width: 100px;
+        height: 100px;
+    }
+}
+@media (max-width:650px) {
+    .badgeList-item .badege {
+        width: 100px;
+        height: 100px;
+    }
+}
+@media (max-width:560px) {
+    .badgeList-item .badege {
+        width: 80px;
+        height: 80px;
+    }
+    .popover-cont:after {
+        left: 20px;
+        right: auto;
+    }
+}
+@media (max-width:440px) {
+    .badgeList-item .badege {
+        width: 60px;
+        height: 60px;
+    }
+    .popover-cont .title, .badege-title {
+        font-size: .8rem;
+    }
+}
+
 
 /* prizeList */
 .prizeList {
