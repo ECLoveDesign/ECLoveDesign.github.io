@@ -119,9 +119,9 @@
 }
 .badgeList-item {
     width: 150px;
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-    max-width: 20%;
+    -ms-flex: 0 0 12.5%;
+    flex: 0 0 12.5%;
+    max-width: 12.5%;
     margin-bottom: 20px;
 }
 .badgeList-item .badege {
@@ -151,6 +151,13 @@
     content: "";
     display: block;
     padding-bottom: 100%;
+}
+@media (max-width:1120px) {
+    .badgeList-item {
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
 }
 
 /* @media (max-width:768px) {
@@ -201,6 +208,9 @@
     padding: 0 0 0 10px;
     display: flex;
     align-items: center;
+}
+.badege-title {
+    display: none !important;
 }
 .popover-cont .title ,
 .badege-title {
