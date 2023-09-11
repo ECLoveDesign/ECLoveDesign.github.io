@@ -244,9 +244,9 @@
 }
 .popover-cont:after {
     bottom: 100%;
-    left: 0;
-    right: 0;
-    margin: auto;
+    left: 13px;
+    /* right: 0; */
+    /* margin: auto; */
     border: solid transparent;
     content: " ";
     height: 0;
@@ -354,6 +354,14 @@
         background: url(../images/img/icon_info.png) no-repeat center;
         background-size: contain;
     }
+    .popover-cont:after {
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .popover-cont {
+        width: 85%;
+    }
 }
 @media (max-width:768px) {
     .badgeList-item .badege {
@@ -366,6 +374,9 @@
         width: 100px;
         height: 100px;
     }
+    .popover-cont {
+        min-width: auto;
+    }
 }
 @media (max-width:560px) {
     .badgeList-item .badege {
@@ -373,7 +384,7 @@
         height: 80px;
     }
     .popover-cont:after {
-        left: 20px;
+        left: 32px;
         right: auto;
     }
 }
@@ -384,6 +395,13 @@
     }
     .popover-cont .title, .badege-title {
         font-size: .8rem;
+    }
+    .popover-cont:after {
+        left: 0;
+        right: 0;
+    }
+    .popover-cont {
+        margin: 8px -5px;
     }
 }
 
