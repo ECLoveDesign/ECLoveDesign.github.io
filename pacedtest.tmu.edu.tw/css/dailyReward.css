@@ -13,6 +13,7 @@
     font-size: 1.6rem;
     text-decoration: underline;
     font-weight: 700;
+    display: initial;
 }
 
 @media (max-width:1480px) {
@@ -25,7 +26,7 @@
 
 @media (max-width:768px) {
     .subDescripe {
-        display: flex;
+        font-size: 1.2rem;
     }
 }
 
@@ -291,6 +292,7 @@
 .popover-cont .title {
     margin-bottom: 10px;
     font-weight: 500;
+    word-wrap: break-word;
 }
 .popover-cont span {
     font-size: 1.1rem;
