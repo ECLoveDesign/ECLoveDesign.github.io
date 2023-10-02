@@ -34,7 +34,26 @@ if ($('.btn-popup-iframe').length) {
 		mainClass: 'mfp-cont-iframe'
 	});
 
+	$('.btn-popup-iframe.finish').magnificPopup({
+		type: 'iframe',
+
+		// fixedContentPos: false,
+		// fixedBgPos: true,
+
+		overflowY: 'scroll',
+
+		closeBtnInside: true,
+		preloader: false,
+
+		midClick: true,
+		mainClass: 'mfp-cont-iframe finish'
+	});
+
 };
+
+
+
+
 $(document).on('click', '.popup-modal-dismiss', function (e) {
     e.preventDefault();
     $.magnificPopup.close();

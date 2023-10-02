@@ -504,6 +504,41 @@
 .mfp-cont .mfp-iframe-scaler iframe {
     background: #fff;
 }
+.mfp-cont-iframe.finish .mfp-iframe-scaler iframe {
+    background: transparent;
+    z-index: 1;
+}
+.mfp-cont-iframe.finish .mfp-iframe-scaler {
+    background: #fff;
+}
+.mfp-cont-iframe.finish .mfp-iframe-scaler::before,
+.mfp-cont-iframe.finish .mfp-iframe-scaler::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 250px;
+    z-index: 0;
+    position: absolute;
+}
+.mfp-cont-iframe.finish .mfp-iframe-scaler::before {
+    background: url(../images/img/bg-popup-finishExchange.png) no-repeat top left;
+    background-size: contain;
+    left: 0;
+    top: 0;
+}
+.mfp-cont-iframe.finish .mfp-iframe-scaler::after {
+    background: url(../images/img/bg-popup-finishExchange-2.png) no-repeat right bottom;
+    background-size: contain;
+    right: 0;
+    bottom: 0;
+}
+@media (max-width:690px) {
+    .mfp-cont-iframe.finish .mfp-iframe-scaler::before,
+    .mfp-cont-iframe.finish .mfp-iframe-scaler::after {
+        height: 100px;
+    }
+    
+}
 
 /* start state */
 .mfp-zoom-in .zoom-anim-dialog {
