@@ -537,7 +537,12 @@
     .mfp-cont-iframe.finish .mfp-iframe-scaler::after {
         height: 100px;
     }
-    
+}
+@media (max-width:400px) {        
+    .mfp-cont-iframe.finish .mfp-iframe-scaler {
+        background: #fff;
+        min-height: 30vh;
+    }
 }
 
 /* start state */
