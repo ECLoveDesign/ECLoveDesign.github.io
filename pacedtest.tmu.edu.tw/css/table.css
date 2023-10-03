@@ -62,6 +62,11 @@ table td {
   background: rgba(255, 255, 255, 1);
 }
 
+table th.center,
+table td.center {
+  text-align: center;
+}
+
 table td.title {
   font-size: 22px;
   font-weight: bold;
@@ -70,6 +75,10 @@ table td.title {
 
 table td a {
   color: #169bcc;
+}
+
+table td a.btn-choose {
+  color: #AC9E7F;
 }
 
 table td a.phone {
@@ -221,7 +230,10 @@ table th.percentTD {
   color: #666;
   margin-left: 15px;
 }
-
+.searchList.m0 {
+  margin: 0;
+  margin-bottom: 15px;
+}
 .searchList select {
   border: #e7e7e7 1px solid;
   padding: 5px;
@@ -229,6 +241,26 @@ table th.percentTD {
   display: inline-block;
   margin: 0 10px;
   font-weight: bold;
+}
+.searchList.m0 select:first-child {
+  margin-left: 0;
+}
+
+
+.searchList input {
+  border: #e7e7e7 1px solid;
+  padding: 10px;
+  display: inline-block;
+  margin: 0 10px;
+}
+.searchList .btn-submit {
+  background: #721e18;
+  color: #fff;
+  padding: 10px;
+}
+.searchList .btn-submit:hover,
+.searchList .btn-submit:active {
+  background: #310b09;
 }
 
 h3 a {
@@ -1881,10 +1913,11 @@ table.focus-in01 th:nth-child(5), table.focus-in01 td:nth-child(5) { width:25%;}
 
 table.online th:first-child, table.online td:first-child,
 table.online th:nth-child(2), table.online td:nth-child(2) { width:15%;}
-table.online th:nth-child(3), table.online td:nth-child(3) { width:40%;}
+table.online th:nth-child(3), table.online td:nth-child(3) { width:30%;}
 table.online th:nth-child(4), table.online td:nth-child(4),
 table.online th:nth-child(5), table.online td:nth-child(5),
-table.online th:nth-child(6), table.online td:nth-child(6) { width:10%;}
+table.online th:nth-child(6), table.online td:nth-child(6),
+table.online th:nth-child(7), table.online td:nth-child(7) { width:10%;}
 
 table.INS th:first-child, table.INS td:first-child { width:30%;}
 
@@ -2111,7 +2144,8 @@ img.cap { width:80%; margin: 30px auto -30px auto; max-width:255px; display:bloc
     font-size: 15px;
   }
 
-  table td.title {
+  table td.title,  
+  table td.title a {
     font-size: 16px;
     font-weight: bold;
     white-space: nowrap;

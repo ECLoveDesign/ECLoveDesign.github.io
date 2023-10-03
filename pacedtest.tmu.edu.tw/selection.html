@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css for every page -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500&amp;display=swap&amp;subset=chinese-traditional"
+        type="text/css">
+    <link rel="stylesheet" href="./css/vendor.css">
+    <link rel="stylesheet" href="./css/splide-sea-green.min.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- css for this page -->
+    <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/slick-theme.min.css">
+
+    <!-- today css -->
+    <link rel="stylesheet" href="./css/today.css?3">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="JS/jquery.nicescroll.min.js"></script>
+    <title>選課積木池</title>
+</head>
+
+<body class="templateV1">
+    <header class="header">
+        <div>
+
+            <div class="header__wrapper">
+
+                <div class="header_logo">
+                    <picture class="header_logo_mobile">
+                        <source>
+                        <source>
+                        <img src="./images/img/LOGO-M.png"></img>
+                    </picture>
+                    <div class="header_logo_mobile_2_wrapper">
+                        <picture class="header_logo_mobile_2">
+                            <source>
+                            <source>
+                            <img src="./images/img/LOGO-M-2.png"></img>
+                        </picture>
+                    </div>
+                </div>
+
+
+                <picture class="header_img_right">
+                    <source>
+                    <source>
+                    <img src="./images/img/LOGO-PC.png"></img>
+                </picture>
+                <div id="information"><a href="#" style=" font-weight:bold; color:#900">＜
+                        回上頁</a><b>學號：</b>0000000<b>姓名：</b>王大同<b>狀態：</b>在學<b>系所：</b>高齡健康暨長期照護學系 (<a href="#"
+                        class="click">登出</a>)
+                    <div class="language"><a href="#" class="click">繁中</a>/<a href="#">EN</a></div>
+                </div>
+                <nav class="nav-outer">
+                    <a class="nav-outer__link" href="short-cut.html">
+                        個人常用功能
+                    </a>
+
+                    <a class="nav-outer__link" data-tab="drop_down_2">
+                        Today
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_2">
+                        <a class="nav-inner__link" href="today.html">
+                            Today</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_3">
+                        修業狀況
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_3">
+                        <a class="nav-inner__link">
+                            專業學分</a>
+                        <a class="nav-inner__link">
+                            通識學分</a>
+                        <a class="nav-inner__link">
+                            畢業資格</a>
+                        <a class="nav-inner__link">
+                            基礎服學</a>
+                        <a class="nav-inner__link">
+                            語文檢定</a>
+                        <a class="nav-inner__link">
+                            游泳檢定</a>
+                        <a class="nav-inner__link">
+                            體育必修學分</a>
+                        <a class="nav-inner__link">
+                            輔/雙</a>
+                        <a class="nav-inner__link">
+                            學分學程/微學程</a>
+                        <a class="nav-inner__link">
+                            學習預警</a>
+                    </nav>
+
+                    <a class="nav-outer__link nav-outer__link--active" data-tab="drop_down_4">
+                        學習發展
+                    </a>
+                    <nav class="nav-inner nav-inner--active" data-tab="drop_down_4">
+                        <a class="nav-inner__link">
+                            EMI學習</a>
+                        <a class="nav-inner__link">
+                            重點領域</a>
+                        <a class="nav-inner__link">
+                            見/實習</a>
+                        <a class="nav-inner__link splide__slide nav-inner__link--active">
+                            選課積木池</a>
+                    </nav>
+
+
+                    <a class="nav-outer__link" data-tab="drop_down_5">
+                        課外學習
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_5">
+                        <a class="nav-inner__link">
+                            社團參與</a>
+                        <a class="nav-inner__link">
+                            領導知能</a>
+                        <a class="nav-inner__link">
+                            社會服務/社區服務</a>
+                        <a class="nav-inner__link">
+                            校外學習/研習</a>
+                        <a class="nav-inner__link">
+                            安全教育</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_6">
+                        能力指標
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_6">
+                        <a class="nav-inner__link">
+                            專業核心能力</a>
+                        <a class="nav-inner__link">
+                            必修核心能力</a>
+                        <a class="nav-inner__link">
+                            選修核心能力</a>
+                        <a class="nav-inner__link">
+                            通識核心能力</a>
+                        <a class="nav-inner__link">
+                            跨域核心能力</a>
+                        <a class="nav-inner__link">
+                            12項就業能力</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_7">
+                        個人專屬雲
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_7">
+                        <a class="nav-inner__link">
+                            個人履歷</a>
+                    </nav>
+
+                    <a class="nav-outer__link" data-tab="drop_down_8">
+                        資源連結
+                    </a>
+                    <nav class="nav-inner" data-tab="drop_down_8">
+                        <a class="nav-inner__link">
+                            資源連結</a>
+                    </nav>
+
+                    <a class="nav-outer__link" href="achievement.html">
+                        成就名人堂
+                    </a>
+
+                    <div class="burger" id="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+
+    <app-today _nghost-uun-c92="">
+        <main _ngcontent-uun-c92="" class="page index-page">
+            <div _ngcontent-uun-c92="" class="container">
+
+                <h3 _ngcontent-uun-c92="">選課積木池</h3>
+
+                <div _ngcontent-uun-c92="" class="searchList m0">
+                    <form _ngcontent-uun-c92="" novalidate="" name="form" id="form"
+                        class="ng-untouched ng-pristine ng-valid">
+                        <select _ngcontent-uun-c92="" name="unit"
+                            ng-reflect-name="unit" class="ng-untouched ng-pristine ng-valid">
+                            <option _ngcontent-uun-c92="" value="開課單位" ng-reflect-value="開課單位">開課單位
+                            </option>
+                        </select>
+                        
+                        <select _ngcontent-uun-c92="" name="score"
+                            ng-reflect-name="score" class="ng-untouched ng-pristine ng-valid">
+                            <option _ngcontent-uun-c92="" value="學分數" ng-reflect-value="學分數">學分數
+                            </option>
+                        </select>
+                        
+                        <select _ngcontent-uun-c92="" name="type"
+                            ng-reflect-name="type" class="ng-untouched ng-pristine ng-valid">
+                            <option _ngcontent-uun-c92="" value="選別" ng-reflect-value="選別">選別
+                            </option>
+                        </select>
+
+                        <input type="text" class="form-control icon-search" id="keyword" placeholder="課程名稱搜尋">
+                        
+                        <button type="submit" class="btn btn-submit">查詢</button>
+
+                    </form>
+                </div>
+
+                <div _ngcontent-wxv-c96="" class="RecordTableOuter">
+                    <div _ngcontent-wxv-c96="" class="RecordTable">
+                        <table _ngcontent-wxv-c96="" class="selection">
+                            <tr _ngcontent-wxv-c96="">
+                                <th _ngcontent-wxv-c96=""style="width: 5%;">序</th>
+                                <th _ngcontent-wxv-c96="" class="unit">開課單位</th>
+                                <th _ngcontent-wxv-c96="">課程代碼</th>
+                                <th _ngcontent-wxv-c96="">課程名稱</th>
+                                <th _ngcontent-wxv-c96="">學分數</th>
+                                <th _ngcontent-wxv-c96="">選別</th>
+                                <th _ngcontent-wxv-c96="">授課教師</th>
+                            </tr>
+                            <tr _ngcontent-wxv-c96="">
+                                <td _ngcontent-wxv-c96="">1</td>
+                                <td _ngcontent-wxv-c96="">一般通識組</td>
+                                <td _ngcontent-wxv-c96="">00000226</td>
+                                <td _ngcontent-wxv-c92="">
+                                    <a _ngcontent-wxv-c92="" target="_blank" href="#">運動與健康</a>
+                                </td>
+                                <td _ngcontent-wxv-c96="">2.0</td>
+                                <td _ngcontent-wxv-c96="">選修</td>
+                                <td _ngcontent-wxv-c96="">許政成</td>
+                            </tr>
+                            <!--ng-container-->
+                            <tr _ngcontent-wxv-c96="">
+                                <td _ngcontent-wxv-c96="">2</td>
+                                <td _ngcontent-wxv-c96="">一般通識組</td>
+                                <td _ngcontent-wxv-c96="">00000616</td>
+                                <td _ngcontent-wxv-c92="">
+                                    <a _ngcontent-wxv-c92="" target="_blank" href="#">貨幣與文明</a>
+                                </td>
+                                <td _ngcontent-wxv-c96="">2.0</td>
+                                <td _ngcontent-wxv-c96="">選修</td>
+                                <td _ngcontent-wxv-c96="">曾美芳</td>
+                            </tr>
+                            <!--ng-container-->
+                            <tr _ngcontent-wxv-c96="">
+                                <td _ngcontent-wxv-c96="">3</td>
+                                <td _ngcontent-wxv-c96="">語言中心組</td>
+                                <td _ngcontent-wxv-c96="">00970025</td>
+                                <td _ngcontent-wxv-c92="">
+                                    <a _ngcontent-wxv-c92="" target="_blank" href="#">旅遊英文</a>
+                                </td>
+                                <td _ngcontent-wxv-c96="">2.0</td>
+                                <td _ngcontent-wxv-c96="">選修</td>
+                                <td _ngcontent-wxv-c96="">王承怡</td>
+                            </tr>
+                            <!--ng-container-->
+                            <tr _ngcontent-wxv-c96="">
+                                <td _ngcontent-wxv-c96="">4</td>
+                                <td _ngcontent-wxv-c96="">一般通識組</td>
+                                <td _ngcontent-wxv-c96="">00000863</td>
+                                <td _ngcontent-wxv-c92="">
+                                    <a _ngcontent-wxv-c92="" target="_blank" href="#">設計思考</a>
+                                </td>
+                                <td _ngcontent-wxv-c96="">1.0</td>
+                                <td _ngcontent-wxv-c96="">選修</td>
+                                <td _ngcontent-wxv-c96="">王明旭</td>
+                            </tr>
+                            <!--ng-container-->
+                            <tr _ngcontent-wxv-c96="">
+                                <td _ngcontent-wxv-c96="">5</td>
+                                <td _ngcontent-wxv-c96="">語言中心組</td>
+                                <td _ngcontent-wxv-c96="">00970026</td>
+                                <td _ngcontent-wxv-c92="">
+                                    <a _ngcontent-wxv-c92="" target="_blank" href="#">英文字彙</a>
+                                </td>
+                                <td _ngcontent-wxv-c96="">2.0</td>
+                                <td _ngcontent-wxv-c96="">選修</td>
+                                <td _ngcontent-wxv-c96="">徐碧霞</td>
+                            </tr>
+                            <!--ng-container-->
+                            <!--bindings={
+                    "ng-reflect-ng-for-of": "[object Object],[object Object"
+                  }-->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </app-today>
+    <div class="spaceing-area"></div>
+
+
+    <footer class="footer">
+        <div class="note">※實際資料以教務學務系統為準。</div>
+        <div class="footer__Wrapper">
+            <div class="footer__inner">
+
+                <picture class="footer__inner--photo">
+                    <source>
+                    <source>
+                    <img class="schoolLogo" src="./images/img/LOGO-Footer.png" alt="">
+                </picture>
+
+                <p class="footer__inner--notice">若您對系統有疑問或建議，請洽下列連結窗口。</p>
+
+                <div class="footer__inner--teacher">
+                    <h2>教務處 : 黃千倚 02-27361661轉2101 </h2><span>/</span>
+                    <h2>學務處 : 黃昭文 02-27361661轉2210 </h2><span>/</span>
+                    <h2>資訊處 : 王界智 02-66382736轉1606</h2>
+                </div>
+
+                <p class="footer__inner--copyright">Copyright © 2022 臺北醫學大學 Taipei Medical University</p>
+
+            </div>
+        </div>
+
+
+        <!-- to top -->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer src="js/vendor.js?0f874adb"></script>
+    <script defer src="js/index.js?a378b159"></script>
+    <!-- javascript for every page -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+    <script src="./js/header.js"></script>
+
+    <!-- javascript for this page -->
+    <script src="./js/newest.js"></script>
+    <script src="./js/tabmark.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slick-content').slick({
+                infinite: false,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+            });
+
+        });
+
+
+        $(function () {
+            Grid.init();
+        });
+
+        /*開關*/
+        $(document).ready(function () {
+            $('[data-toggle="toggle"]').click(function () {
+                $(this).parents().next(".accordion-cont").toggle();
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
