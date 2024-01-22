@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-multiselect/css/bootstrap-multiselect.min.css" />
+    <link rel="stylesheet" href="assets/magnific-popup/magnific-popup.css" />  
     <link rel="stylesheet" href="css/style.css" />
     <title>衛教單張 │ 國軍臺中總醫院 藥典查詢系統</title>
 </head>
@@ -113,18 +114,16 @@
             <div class="searchbar">
                 <div class="row">
                     <div class="col-md-2">
-
                         <div class="form-group">
                             <select class="form-control selectpicker" title="全部查詢">
                                 <option selected value="全部查詢">全部查詢</option>
-                                <option value="藥品名稱 (中/英)">藥品名稱 (中/英)</option>
-                                <option value="成份名 (學名)">成份名 (學名)</option>
-                                <option value="顏色、形狀、外觀">顏色、形狀、外觀</option>
-                                <option value="適應症">適應症</option>
-                                <option value="院內代碼">院內代碼</option>
-                                <option value="ATC CODE">ATC CODE</option>
+                                <option value="心血管">心血管</option>
+                                <option value="高血壓">高血壓</option>
+                                <option value="抗凝血">抗凝血</option>
+                                <option value="抗精神">抗精神</option>
+                                <option value="抗憂鬱">抗憂鬱</option>
+                                <option value="抗癲癇">抗癲癇</option>
                             </select>
-
                         </div>
                     </div>
                     <div class="col-md-9">
@@ -145,7 +144,7 @@
             <div class="container">
 
                 <div class="table-responsive">
-                    <table class="table datatable downloadTable">
+                    <table class="table datatable downloadTable table-rwd">
                         <thead>
                             <tr>
                                 <th>編號</th>
@@ -307,7 +306,7 @@
             <div class="container">
                 <a class="accesskey" href="#B" accesskey="B" name="B" title="下方功能區 ALT + B">:::</a>
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-xl-9">
                         <img src="images/foot-logo.png" alt="國軍臺中總醫院 藥典查詢系統首頁">
                         <ul>
                             <li>
@@ -331,7 +330,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-xl-3">
                     </div>
                 </div>
             </div>
@@ -373,17 +372,11 @@
     <script src="js/popper.min.js"></script>
     <script src='assets/bootstrap/js/bootstrap.min.js'></script>
     <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
-    <script src='assets/bootstrap-multiselect/js/bootstrap-multiselect.min.js'></script>
-    <script src='assets/bootstrap-multiselect/js/i18n/defaults-zh_TW.js'></script>
     <script src='assets/datatables/jquery.dataTables.min.js'></script>
     <script src="assets/datatables/dataTables.fixedColumns.min.js"></script>
     <script src="assets/datatables/dataTables.responsive.min.js"></script>
+    <script src="assets/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="js/script.js"></script>
-    <!-- <script>
-        $(window).on('load', function () {
-            $('#infoModal').modal('show');
-        });
-    </script> -->
 </body>
 
 </html>

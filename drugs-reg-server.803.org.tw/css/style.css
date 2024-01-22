@@ -26,7 +26,7 @@ a:focus {
 .affix {
     position: fixed !important;
     top: 0;
-    z-index: 2;
+    z-index: 3;
 }
 
 img {
@@ -67,8 +67,8 @@ img {
 }
 
 .alert-primary {
-    background: #f0fbff;
-    border-color: #f0fbff;
+    background: #eef1f8;
+    border-color: #eef1f8;
 }
 
 .alert-primary h3 {
@@ -86,6 +86,7 @@ header {
     width: 100%;
     background: #fff;
     border-top: var(--normalBlue) solid 10px;
+    box-shadow: rgba(20, 57, 92, 0.3) 0px 0px 15px;
 }
 
 header .navbar {
@@ -237,10 +238,28 @@ header .navbar img {
 
     .topNav .navbar-nav {
         width: 100%;
+        display: contents;
     }
     .navbar-brand {
         background: url(../images/logo-mb.jpg) no-repeat;
         background-size: contain;
+    }
+    .topNav .navbar-nav li+li::before,
+    .topNav .navbar-nav li span,
+    .navbar-light .topNav .navbar-nav :not(.fontset) .nav-link {
+        color: #fff;
+    }
+    .topNav .navbar-nav [class*='font-'] {
+        color: #fff;
+    }
+    .navbar-light .topNav .navbar-nav :not(.fontset) .nav-link:hover {
+        color: #ffd900;
+    }
+    .navbar-nav {
+        width: 100%;
+    }
+    .affix .navbar-nav .nav-link {
+        color: #fff;
     }
 }
 
@@ -343,6 +362,12 @@ header .navbar-brand+.navbar-nav {
         color: #fff;
     }
 }
+@media (max-width:414px) {
+    .navbar-brand {
+        width: 200px;
+        height: 60px;
+    }
+}
 
 /* breadcrume */
 .breadcrumb {
@@ -380,12 +405,29 @@ header .navbar-brand+.navbar-nav {
     text-align: center;
     letter-spacing: 10px;
 }
-
-@media (max-width:991px) {
+@media (max-width:1025px) {
     .jumbotron {
-        padding: 1rem;
+        margin-bottom: 0;
+        padding-bottom: 0;    
+        overflow: auto;
     }
-
+    .jumbotron .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    nav[aria-label="breadcrumb"] {
+        display: flex;
+    }
+    .breadcrumb {
+        margin: auto;
+        text-align: center;
+        display: inline-flex;
+    }
+    .subNav li a {
+        border-radius: 0;
+    }
+}
+@media (max-width:991px) {
     .jumbotron h1 {
         margin: 3rem 0 2rem;
     }
@@ -476,9 +518,13 @@ header .navbar-brand+.navbar-nav {
         -webkit-transform: translate(0, 0);
         -ms-transform: translate(0, 0);
         transform: translate(0, 0);
+    }
+    .subNav ul {
+        margin: auto;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        padding-inline-start: 0;
     }
 
     .subNav li {
@@ -487,10 +533,14 @@ header .navbar-brand+.navbar-nav {
         -ms-flex: 1 auto;
         flex: 1 auto;
         border-radius: 0;
+        list-style: none;
     }
 
     .subNav li+li {
         margin-left: 0;
+    }
+    .subNav li a {
+        border-radius: 0;
     }
 
     .subNav li .svg {
@@ -511,6 +561,9 @@ header .navbar-brand+.navbar-nav {
         -ms-flex-direction: column;
         flex-direction: column;
         padding: 5px;
+    }
+    .subNav li i {
+        margin-left: 0;
     }
 }
 
@@ -604,6 +657,10 @@ main>* {
     background: #fff;
     border: #ccc solid 1px;
 }
+.searchArea .btn:not(.dropdown-toggle) {
+    margin-bottom: 10px;
+}
+
 .searchArea .btn.active {
     background: var(--normalBlue);
     border-color: var(--normalBlue);
@@ -672,8 +729,15 @@ main>* {
     border-radius: 0;
 }
 
-.searchbar .btn {
-    height: 100%;
+@media (max-width:1200px) {
+    .searchArea {
+        position: relative;
+        width: calc(100% - 60px);
+        margin: auto;
+    }
+    .searchbar {
+        position: relative;
+    }
 }
 
 /* multiselect-container */
@@ -767,6 +831,11 @@ main>* {
 }
 .resultArea .container {
     padding: 0;
+}
+@media (max-width:768px) {
+    .resultArea {
+        padding: 0 1rem;
+    }
 }
 /* birthToggle */
 .birthToggle .text-primary {
@@ -1033,7 +1102,11 @@ main>* {
 .searchbar .row [class*="col-"] {
     padding: 0;
 }
-
+@media (max-width:767px) {
+    .searchbar>.row [class*="col-"]+[class*="col-"] {
+        margin-top: .5rem;
+    }
+}
 .anchorNav {
     margin: 30px 0;
     padding-inline-start: 0;
@@ -1191,7 +1264,11 @@ footer .copy {
 footer .copy p {
     margin: 1rem 0;
 }
-
+@media (max-width:1366px) {
+    footer .cont .container {
+        max-width: 100%;
+    }
+}
 @media (max-width:991px) {
     footer .row [class*="col-"]:first-child {
         text-align: center;
@@ -1316,31 +1393,31 @@ table th,table td {
     background: #fff;
 }
 
-/* infoTable */
-.infoTable td,
-.infoTable th {
+/* drugTable */
+.drugTable td,
+.drugTable th {
     vertical-align: inherit;
 }
 
-.infoTable td {
+.drugTable td {
     font-size: 1.1rem;
 }
 
-.infoTable tbody tr:nth-child(odd) {
-    background: #f0fbff;
+.drugTable tbody tr:nth-child(odd) {
+    background: #eef1f8;
 }
 
-.infoTable tbody tr:nth-child(even) {
+.drugTable tbody tr:nth-child(even) {
     background: #fff;
 }
 
-.infoTable thead {
-    background: #00b0df;
+.drugTable thead {
+    background: #eef1f8;
     color: #fff;
 }
 
-.infoTable thead th {
-    border-color: #00b0df;
+.drugTable thead th {
+    border-color: #eef1f8;
     font-weight: 500;
     position: relative;
     padding: 0.75rem 0.5rem;
@@ -1349,7 +1426,7 @@ table th,table td {
 /* tbody {
 	background: rgb(255,255,255,0.6);
 } */
-.infoTable td:nth-child(2) {
+.drugTable td:nth-child(2) {
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -1358,54 +1435,33 @@ table th,table td {
     background: #ffff99;
 }
 
-.infoTable td a,
-.infoTable td a:hover {
-    padding: 5px 7px;
-    color: #000;
-    display: block;
-    text-align: left;
-    text-decoration: none;
-    border: transparent solid 1px;
-    border-bottom: transparent solid 5px;
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+@media (min-width:1700px) {
+    .drugTable th:nth-child(6) {
+        width: 500px;
+    }    
+}
+@media (min-width:1440px) {
+    .drugTable th:nth-child(1) {
+        width: 110px;
+    }
+    .drugTable th:nth-child(2),
+    .drugTable th:nth-child(3),
+    .drugTable th:nth-child(5) {
+        width: 180px;
+    }
+    
 }
 
-.infoTable td a:not([href$="javascript:void(0)"], .btn-register):hover {
-    border: var(--normalBlue) solid 1px;
-    border-bottom: var(--normalBlue) solid 5px;
-    background: #fff;
-}
-
-.infoTable td .btn-register {
-    color: #343a40;
-    text-align: center;
-    border: #4d7be3 solid 1px;
-    border-radius: 0;
-    padding: 1rem;
-}
-
-.infoTable td .btn-register:hover,
-.infoTable td .btn-register:focus,
-.infoTable td .btn-register:active {
-    background: #4d7be3;
-    color: #fff;
-    border: #4d7be3 solid 1px;
-    border-radius: 0;
-    text-align: center;
-    padding: 1rem;
-}
-
-.infoTable td a span {
+.drugTable td a span {
     display: block;
 }
 
-.infoTable td a i[class*="fa"],
-.infoTable td a:hover i[class*="fa"] {
+.drugTable td a i[class*="fa"],
+.drugTable td a:hover i[class*="fa"] {
     color: #000;
 }
 
-.infoTable td a i[class*="fa"] {
+.drugTable td a i[class*="fa"] {
     font-size: 1.2rem;
     line-height: 2rem;
 }
@@ -1423,7 +1479,7 @@ table caption {
 }
 
 @media (max-width:500px) {
-    .infoTable td>span {
+    .drugTable td>span {
         display: block;
         padding: 5px 7px;
     }
@@ -1478,25 +1534,10 @@ table caption {
 }
 
 @media only screen and (min-width: 991px) {
-    .infoTable {
+    .drugTable {
         table-layout: fixed;
         max-width: 100% !important;
     }
-
-    .infoTable thead th+th::before {
-        content: '';
-        width: 4px;
-        height: 122%;
-        display: block;
-        background: #f3f8fa;
-        position: absolute;
-        left: -9px;
-        bottom: -6px;
-    }
-
-    /* .table-hover>tbody>tr:hover {
-        background-color: #ffcc00;
-	} */
 }
 
 /* linkTable */
@@ -1551,8 +1592,8 @@ div.dataTables_wrapper div.dataTables_info {
     padding-top: 15px;
 }
 
-/* .infoTable td:first-child, 
-.infoTable th:first-child {
+/* .drugTable td:first-child, 
+.drugTable th:first-child {
     width: 5px !important;
 } */
 table.dataTable thead .sorting:after,
@@ -1609,7 +1650,7 @@ tr.dt-rowReorder-moving td.dtfc-fixed-right:last-child {
 }
 
 /* rwdTable */
-@media (max-width: 991px) {
+@media (max-width: 1280px) {
     .table-rwd {
         overflow: hidden;
         width: 100%;
@@ -1646,7 +1687,7 @@ tr.dt-rowReorder-moving td.dtfc-fixed-right:last-child {
         margin-right: 15px;
         padding: 0.75rem;
         width: calc(29% + 1.5rem);
-        background: #00b0df;
+        background: #38bf7b;
         color: #fff;
         margin-bottom: 0;
         position: absolute;
@@ -1656,85 +1697,61 @@ tr.dt-rowReorder-moving td.dtfc-fixed-right:last-child {
     }
 
     .table-rwd tr:nth-child(even) td:before {
-        background: #005391;
+        background: #188850;
     }
 
     .dataTables_wrapper .table-rwd tr td:nth-child(1):before {
-        margin-left: 3.5px;
+        margin-left: 2px;
     }
 
-    .table-rwd.infoTable tr td:nth-child(1):before {
-        content: "日期 / 院區";
+    .table-rwd.drugTable tr td:nth-child(1):before {
+        content: "圖示";
     }
 
-    .table-rwd.infoTable tr td:nth-child(2):before {
-        content: "上午";
+    .table-rwd.drugTable tr td:nth-child(2):before {
+        content: "英文名稱";
     }
 
-    .table-rwd.infoTable tr td:nth-child(3):before {
-        content: "下午";
+    .table-rwd.drugTable tr td:nth-child(3):before {
+        content: "中文名稱";
     }
 
-    .table-rwd.infoTable tr td:nth-child(4):before {
-        content: "夜間";
+    .table-rwd.drugTable tr td:nth-child(4):before {
+        content: "健保價";
     }
 
-    .table-rwd.doctorTable tr td:nth-child(1):before {
-        content: "醫師";
+    .table-rwd.drugTable tr td:nth-child(5):before {
+        content: "成分名";
     }
 
-    .table-rwd.doctorTable tr td:nth-child(2):before {
-        content: "服務院區-科別";
+    .table-rwd.drugTable tr td:nth-child(6):before {
+        content: "適應症";
     }
 
-    .table-rwd.doctorTable tr td:nth-child(3):before {
-        content: "掛號";
+    .table-rwd.drugTable tr td:nth-child(7):before {
+        content: "ACT Code";
     }
 
-    .table-rwd.linkTable tr td:nth-child(1):before {
-        content: "院區";
+    .table-rwd.drugTable tr td:nth-child(8):before {
+        content: "懷孕分級";
     }
 
-    .table-rwd.linkTable tr td:nth-child(2):before {
-        content: "地址 / 電話";
+    .table-rwd.drugTable tr td:nth-child(9):before {
+        content: "藥廠";
     }
 
-    .table-rwd.linkTable tr td:nth-child(3):before {
-        content: "門診時間表";
+    .table-rwd.downloadTable tr td:nth-child(1):before {
+        content: "編號";
     }
 
-
-    .table-rwd.detailTable tr td:nth-child(1):before {
-        content: "院區";
+    .table-rwd.downloadTable tr td:nth-child(2):before {
+        content: "類別";
     }
 
-    .table-rwd.detailTable tr td:nth-child(2):before {
-        content: "看診日期";
+    .table-rwd.downloadTable tr td:nth-child(3):before {
+        content: "檔案名稱";
     }
 
-    .table-rwd.detailTable tr td:nth-child(3):before {
-        content: "時段";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(4):before {
-        content: "科別";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(5):before {
-        content: "醫師";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(6):before {
-        content: "診室";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(7):before {
-        content: "就診號";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(8):before {
-        content: "";
-    }
 
     .table-rwd tr+tr {
         border-top: 10px solid #f3f8fa;
@@ -1751,7 +1768,7 @@ tr.dt-rowReorder-moving td.dtfc-fixed-right:last-child {
         width: 115px;
     }
 
-    .infoTable tbody tr:nth-child(odd) {
+    .drugTable tbody tr:nth-child(odd) {
         background: #fff;
     }
 
@@ -1909,6 +1926,43 @@ footer .accesskey,
 }
 .infoArea ul li>* {
     display: inline-block;
+    word-break: break-all;
+}
+.infoArea .img-mfp {    
+    position: relative;
+    display: inline-block;
+}
+.infoArea .img-mfp::after { 
+    color: #fff;
+    content: "\f00e";
+    font: normal normal normal 1.6rem/1 FontAwesome;
+    filter: drop-shadow(2px 2px 3px #000);
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+@media (max-width:1199px) {
+    .infoArea {
+        border: #ccc solid 1px;
+    }
+    .infoArea .row [class*="col-"] {
+        border: none;
+    }
+    .infoArea .row [class*="col-"]:not(:last-child) {
+        padding-bottom: 0;
+    } 
+    .infoArea .row [class*="col-"]:last-child {
+        padding-top: 0;
+    } 
+}
+@media (max-width:600px) {
+    .infoArea ul li .title {
+        width: 100%;
+    }
+    .infoArea ul li .cont {
+        width: 100%;
+        margin-bottom: .5rem;
+    }
 }
 
 /* modal */

@@ -89,19 +89,19 @@ $(document).ready(function () {
       autoWidth: false,
       searching: false,
       dom: '<"top"li>rt<"bottom"fp>',
-      responsive: {
-          details: {
-              display: $.fn.dataTable.Responsive.display.childRowImmediate,
-              type: 'none',
-              target: ''
-          }
-      },
-      columnDefs: [
-        { targets: [0,5], orderable: false },
-        { width: 180, targets: [1,2,4] },
-        { width: 110, targets: [0] },
-        { width: 500, targets: [5] },
-      ],
+      // responsive: {
+      //     details: {
+      //         display: $.fn.dataTable.Responsive.display.childRowImmediate,
+      //         type: 'none',
+      //         target: ''
+      //     }
+      // },
+      // columnDefs: [
+      //   { targets: [0,5], orderable: false },
+      //   { width: 180, targets: [1,2,4] },
+      //   { width: 110, targets: [0] },
+      //   { width: 500, targets: [5] },
+      // ],
       // pageLength : 15,
   } );
 
@@ -113,13 +113,13 @@ $(document).ready(function () {
     autoWidth: false,
     searching: false,
     dom: '<"top"li>rt<"bottom"fp>',
-    responsive: {
-        details: {
-            display: $.fn.dataTable.Responsive.display.childRowImmediate,
-            type: 'none',
-            target: ''
-        }
-    },
+    // responsive: {
+    //     details: {
+    //         display: $.fn.dataTable.Responsive.display.childRowImmediate,
+    //         type: 'none',
+    //         target: ''
+    //     }
+    // },
     // columnDefs: [
     //   { targets: [0,5], orderable: false },
     //   { width: 180, targets: [1,2,4] },
