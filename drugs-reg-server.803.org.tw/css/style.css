@@ -660,6 +660,7 @@ main>* {
     justify-content: center;
     background: var(--normalBlue);
     color: #fff;
+    border-color: var(--normalBlue);
 }
 
 .searchbar .row .form-control {
@@ -1939,3 +1940,18 @@ footer .accesskey,
         top: 30px;
     }
 }
+
+/* mfp */
+.img-mfp img.mfp-img {
+	padding: 0;
+}
+/* position of shadow behind the image */
+.img-mfp .mfp-figure:after {
+	top: 0;
+	bottom: 0;
+}
+/* padding for main container */
+.img-mfp .mfp-container {
+	padding: 0;
+}
+
