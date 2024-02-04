@@ -382,6 +382,7 @@ header .navbar-brand+.navbar-nav {
         color: #fff;
     }
     .topNav .navbar-nav li {
+        width: 100%;
         justify-content: center;
     }
 }
@@ -1748,7 +1749,7 @@ tr.dt-rowReorder-moving td.dtfc-fixed-right:last-child {
     }
 
     .table-rwd tr:nth-child(even) td:before {
-        background: #188850;
+        background: #033268;
     }
 
     .dataTables_wrapper .table-rwd tr td:nth-child(1):before {
