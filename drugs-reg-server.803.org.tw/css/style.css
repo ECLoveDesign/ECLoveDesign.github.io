@@ -13,11 +13,16 @@
     --normalBlue: #033268;
     --subBlue: #0b4ba3;
 }
+body {
+    font-size: 1.1rem;
+}
 
 * {
     font-family: var(--font-Sans);
 }
-
+a {
+    color: #006adb;
+}
 a:focus {
     outline: 2px dotted black !important;
 }
@@ -168,7 +173,7 @@ header .navbar img {
     header .navbar-expand-lg .navbar-collapse {
         display: -ms-block !important;
         display: block !important;
-        margin-top: -53px;
+        margin-top: -46px;
     }
 
     header {
@@ -231,6 +236,8 @@ header .navbar img {
 
     header {
         padding: 0;
+        position: relative;
+        z-index: 2;
     }
 
     header>.navbar>.container {
@@ -411,6 +418,8 @@ header .navbar-brand+.navbar-nav {
     border-radius: 0;
     padding: 1rem 0;
     margin-bottom: 4rem;
+    z-index: 1;
+    position: relative;
 }
 
 .jumbotron h1 {
@@ -608,6 +617,7 @@ body:not(.index) main .searchArea.affix {
     margin-top: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.9);
+    box-shadow: rgba(0, 17, 36, 0.4) 0px 0px 8px;
     left: 0;
     top: 0;
     padding: 1rem;
@@ -628,7 +638,6 @@ main {
     background: #edf1f7;
     padding-bottom: 3rem;
 }
-
 main::before {
     content: '';
     display: block;
@@ -654,6 +663,11 @@ main>* {
     z-index: 1;
 }
 
+@media (max-width:991px) {
+    main {
+        min-height: inherit;
+    }
+}
 
 /* searchbar */
 .searchArea {
@@ -731,8 +745,12 @@ main>* {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--normalBlue);
+    background: var(--subBlue);
     color: #fff;
+    border-color: var(--subBlue);
+}
+.searchbar .row [class*="col-"]:last-child .btn:hover {
+    background: var(--normalBlue);
     border-color: var(--normalBlue);
 }
 
@@ -1210,20 +1228,16 @@ h2 {
     font-size: 24px;
     position: relative;
     font-weight: 400;
-    padding-left: 5px;
     margin-bottom: 2rem;
 }
 
-h2::before {
-    content: '';
-    display: block;
-    height: 2px;
-    width: 60px;
-    background: var(--normalBlue);
-    position: absolute;
-    bottom: -15px;
-    left: 0;
+h3 {
+    color: var(--subBlue);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
+
 
 /* notice */
 .notice {
@@ -1297,9 +1311,21 @@ footer .copy p {
     footer .row [class*="col-"]:first-child {
         text-align: center;
     }
+    footer ul li {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+    footer ul li+li::before {
+        display: none;
+    }
 
     footer p {
         text-align: center;
+    }
+    footer img {
+        margin: auto;
+        display: block;
     }
 
 }
@@ -1408,7 +1434,7 @@ footer .copy p {
     margin-bottom: 0;
 }
 .table thead th {
-    background: #38bf7b;
+    background: #00A160;
     color: #fff;
     text-align: center;
     border-bottom: #eef1f8 solid 4px;
@@ -1711,7 +1737,7 @@ tr.dt-rowReorder-moving td.dtfc-fixed-right:last-child {
         margin-right: 15px;
         padding: 0.75rem;
         width: calc(29% + 1.5rem);
-        background: #38bf7b;
+        background: #00A160;
         color: #fff;
         margin-bottom: 0;
         position: absolute;
@@ -1846,7 +1872,7 @@ div.dataTables_wrapper div.dataTables_paginate a:not(.disabled) {
 }
 .paginate_button.current,
 .paginate_button:not(.previous, .next):hover {
-    background: #38bf7b;
+    background: #00A160;
     color: #fff !important;
     text-decoration: none;    
     border-radius: 5px;
@@ -1904,7 +1930,7 @@ a.disabled {
 
 .sitemapCont a {
     font-size: 1.5rem;
-    color: #150186;
+    color: var(--normalBlue);
 }
 
 .sitemapCont .card {
@@ -1918,7 +1944,7 @@ a.disabled {
 /* accesskey */
 footer .accesskey,
 .topNav .accesskey {
-    color: #666;
+    color: #fff;
 }
 @media (max-width:1023px) {
     .accesskey {
@@ -2037,3 +2063,11 @@ footer .accesskey,
 	padding: 0;
 }
 
+
+/* main-content */
+.main-content ul.none-style {
+    padding-inline-start: 0;
+}
+.main-content ul.none-style>li {
+    list-style: none;
+}
