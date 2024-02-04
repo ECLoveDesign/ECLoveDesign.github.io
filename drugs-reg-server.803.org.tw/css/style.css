@@ -1434,9 +1434,10 @@ footer .copy p {
     margin-bottom: 0;
 }
 .table thead th {
-    background: #00A160;
+    font-size: 1.1rem;
     color: #fff;
     text-align: center;
+    background: #008550;
     border-bottom: #eef1f8 solid 4px;
 }
 table th,table td {
@@ -1737,7 +1738,7 @@ tr.dt-rowReorder-moving td.dtfc-fixed-right:last-child {
         margin-right: 15px;
         padding: 0.75rem;
         width: calc(29% + 1.5rem);
-        background: #00A160;
+        background: #008550;
         color: #fff;
         margin-bottom: 0;
         position: absolute;
@@ -1872,7 +1873,7 @@ div.dataTables_wrapper div.dataTables_paginate a:not(.disabled) {
 }
 .paginate_button.current,
 .paginate_button:not(.previous, .next):hover {
-    background: #00A160;
+    background: #008550;
     color: #fff !important;
     text-decoration: none;    
     border-radius: 5px;
