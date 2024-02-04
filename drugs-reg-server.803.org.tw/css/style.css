@@ -160,6 +160,8 @@ header .navbar img {
     background-size: contain;
     width: 285px;
     height: 90px;
+    position: relative;
+    z-index: 4;
 }
 
 @media (min-width: 992px) {
@@ -235,7 +237,15 @@ header .navbar img {
         padding-right: 15px;
         padding-left: 15px;
     }
+    .topNav{
+        background: #0b4280;
+    }
 
+    .topNav .navbar-nav [class*='font-']:hover, 
+    .topNav .navbar-nav [class*='font-'].active {
+        color: #000;
+        background: #ffd900;
+    }
     .topNav .navbar-nav {
         width: 100%;
         display: contents;
@@ -244,7 +254,9 @@ header .navbar img {
         background: url(../images/logo-mb.jpg) no-repeat;
         background-size: contain;
     }
-    .topNav .navbar-nav li+li::before,
+    .topNav .navbar-nav li+li::before {
+        display: none;
+    }
     .topNav .navbar-nav li span,
     .navbar-light .topNav .navbar-nav :not(.fontset) .nav-link {
         color: #fff;
@@ -339,13 +351,9 @@ header .navbar-brand+.navbar-nav {
         display: none;
     }
 
-    header .collapse .container:first-child {
-        justify-content: center;
-        text-align: center;
-    }
-
     #mainNav {
         width: 100%;
+        text-align: center;
     }
 }
 
@@ -354,12 +362,20 @@ header .navbar-brand+.navbar-nav {
         display: block;
     }
 
+    header .collapse .container:first-child {
+        justify-content: center;
+        text-align: center;    
+        display: block;
+    }
     .navbar-collapse .navbar-brand {
         display: none;
     }
 
     #mainNav .nav-link {
         color: #fff;
+    }
+    .topNav .navbar-nav li {
+        justify-content: center;
     }
 }
 @media (max-width:414px) {
@@ -737,6 +753,14 @@ main>* {
     }
     .searchbar {
         position: relative;
+    }
+}
+@media (max-width:1023px) {
+    .searchbar {
+        top: 0;
+    }
+    .searchArea .form-text {
+        margin-top: 0;
     }
 }
 
@@ -1896,7 +1920,11 @@ footer .accesskey,
 .topNav .accesskey {
     color: #666;
 }
-
+@media (max-width:1023px) {
+    .accesskey {
+        display: none;
+    }
+}
 /* infoArea */
 .infoArea {
     margin: 2rem;
