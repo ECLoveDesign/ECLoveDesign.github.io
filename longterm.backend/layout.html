@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>後台管理系統│臺南市政府社會局─長期照顧管理中心</title>
+    <link rel="shortcut icon" href='images/favicon.ico' />
+    <link rel="image_src" href='images/favicon.ico' type="image/jpeg" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500&family=Oswald:wght@500&display=swap">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+    <div class="container main-container">
+
+        <div class="wrapper main-wrapper fixed-navbar">
+            <header>
+                <nav class="header-navbar navbar-expand-md navbar fixed-top navbar-hide-on-scroll navbar-border navbar-shadow headroom header"
+                    data-nav="brand-center">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-header">
+                            <ul class="nav navbar-nav flex-row">
+                                <li class="nav-item mr-auto1">
+                                    <button type="button" class="mobile-menu sidebar-toggle-box"
+                                        aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
+                                        data-target="#navBar">
+                                        <span></span>
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="navbar-brand" href="#">
+                                        <img src="images/logo.png">
+                                        <h1 class="d-none">臺南市政府社會局─長期照顧管理中心</h1>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-globe"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">中文</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">英文</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa fa-user mr-1"></i>帳戶管理
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="login.html">
+                                            <i class="fa fa-sign-out mr-1" title="登出"></i>登出
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-mobile">
+                            <ul class="nav navbar-nav justify-content-end w-100">
+
+                                <li class="dropdown dropdown-language nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-globe"></i>
+                                        <span class="user-name">語言</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">中文</a>
+                                        <a class="dropdown-item" href="#">英文</a>
+                                    </div>
+
+                                </li>
+
+                                <li class="dropdown dropdown-user-info nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                        <span class="user-name">admin</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-gears"></i>我的帳戶
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="login.html">
+                                            <i class="fa-solid fa-power-off"></i>登出
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <!--左邊選單-->
+            <aside>
+                <div class="sidebar" id="navBar">
+                    <ul id="navigation" class="sidebar-menu">
+                        <li class="nav-item active">
+                            <a href="#" title="帳號管理">
+                                <i class="fa fa-users"></i>帳號管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" title="系統設定">
+                                <i class="fa fa-sitemap"></i>系統設定
+                            </a>
+                        </li>
+                        <!--長照服務-->
+                        <li class="nav-item">
+                            <a href="#" title="長照服務" class="menu-item" data-toggle="collapse" data-target="#management"
+                                aria-expanded="false">
+                                <i class="fas fa-hand-holding-heart"></i>長照服務
+                            </a>
+                            <ul id="management" class="collapse" data-parent="#navigation">
+                                <!--長照服務1-->
+                                <li>
+                                    <a href="#" title="長照服務1">
+                                        <i class="fas fa-hand-holding-heart"></i>長照服務1
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" title="操作紀錄">
+                                <i class="fa fa-history"></i>操作紀錄
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/sidebar-->
+            </aside>
+
+            <!-- MAIN CONT -->
+            <main role="main" class="main-content container-fluid">
+
+                <!-------------------- 主要內容 -------------------->
+                <div class="content-wrapper">
+                    <div class="page-header">
+
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">帳號管理</li>
+                                <li class="breadcrumb-item active">
+                                    <a href="#">新增一票運輸</a>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <h2 class="content-header-title">帳號管理</h2>
+
+                        <div class="function-wrap">
+                            <ul class="submenu">
+                                <li class="active">
+                                    <a href="#">特約機構管理</a>
+                                </li>
+                                <li><a href="#">人員帳號管理</a></li>
+                            </ul>
+
+                            <!-- <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Active</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                            </ul> -->
+
+                            <div class="form-wrap">
+                                <div class="row">
+                                    <div class="col-lg-10 col-md-12">
+
+                                        <div class="form-inline">
+                                            <div class="form-group">
+                                                <label class="my-1 mr-2" for="cardOrderSet">卡片排序</label>
+                                                <select class="form-control selectpicker" id="cardOrderSet"
+                                                    data-width="150px">
+                                                    <option selected>請選擇</option>
+                                                    <option value="建立日期">建立日期</option>
+                                                    <option value="HB/L 號碼">HB/L 號碼</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="cardOrder">Preference</label>
+                                                <select class="form-control selectpicker" id="cardOrder"
+                                                    data-width="150px">
+                                                    <option selected>請選擇</option>
+                                                    <option value="遞增">遞增</option>
+                                                    <option value="遞減">遞減</option>
+                                                </select>
+                                            </div>
+                                            <fieldset class="form-group">
+                                                <legend class="col-form-label">卡片顯示</legend>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                        value="option1">
+                                                    <label class="form-check-label"
+                                                        for="inlineCheckbox1">託運人與收貨人</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                                        value="option2">
+                                                    <label class="form-check-label" for="inlineCheckbox2">名稱標籤</label>
+                                                </div>
+                                            </fieldset>
+
+                                            <button type="submit" class="btn btn-dark btn-update mr-auto">
+                                                <i class="fa-solid fa-arrows-rotate"></i>更新
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-2 col-md-12">
+                                        <button class="btn btn-block btn-outline-dark btn-add">
+                                            <i class="fa-solid fa-plus"></i>新增MB/L
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                    <!--內容區塊-->
+                    <div class="page-content-area">
+
+
+
+                    </div>
+                </div>
+            </main>
+
+            <!-- MAIN CONT end-->
+            <footer>
+                <div class="copyright">
+                    <ul>
+                        <li>Copyright © 臺南市政府社會局─長期照顧管理中心 2024</li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!--JS-->
+    <!-- <script src='js/jquery-3.5.1.min.js'></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>
