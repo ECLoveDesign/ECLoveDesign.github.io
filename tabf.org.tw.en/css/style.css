@@ -1,0 +1,11 @@
+
+
+/* header */
+.brand {
+    content: '';
+    display: block;
+    background: url(../images/logo-en.svg) no-repeat center;
+    width: 250px;
+    height: 80px;
+    text-indent: -999em;
+}
