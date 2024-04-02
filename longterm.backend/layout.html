@@ -12,6 +12,13 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500&family=Oswald:wght@500&display=swap">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <!-- <link rel="stylesheet" href="assets/datatables/dataTables.dataTables.css" /> -->
+    
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css'>
+    <link rel='stylesheet' href='https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css'>
+    
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css'> -->
+    
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
@@ -159,7 +166,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">帳號管理</li>
                                 <li class="breadcrumb-item active">
-                                    <a href="#">新增一票運輸</a>
+                                    <a href="#">特約機構管理</a>
                                 </li>
                             </ol>
                         </div>
@@ -192,21 +199,30 @@
 
                                         <div class="form-inline">
                                             <div class="form-group">
-                                                <label class="my-1 mr-2" for="cardOrderSet">卡片排序</label>
-                                                <select class="form-control selectpicker" id="cardOrderSet"
+                                                <label class="my-1 mr-2" for="name">特約單位名稱</label>
+                                                <select class="form-control selectpicker" id="name"
                                                     data-width="150px">
                                                     <option selected>請選擇</option>
-                                                    <option value="建立日期">建立日期</option>
-                                                    <option value="HB/L 號碼">HB/L 號碼</option>
+                                                    <option value="請選擇">請選擇</option>
+                                                    <option value="請選擇">請選擇</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label class="sr-only" for="cardOrder">Preference</label>
-                                                <select class="form-control selectpicker" id="cardOrder"
+                                                <label class="my-1 mr-2" for="type">申請服務類型</label>
+                                                <select class="form-control selectpicker" id="type"
                                                     data-width="150px">
                                                     <option selected>請選擇</option>
-                                                    <option value="遞增">遞增</option>
-                                                    <option value="遞減">遞減</option>
+                                                    <option value="請選擇">請選擇</option>
+                                                    <option value="請選擇">請選擇</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="my-1 mr-2" for="type">帳號狀態</label>
+                                                <select class="form-control selectpicker" id="type"
+                                                    data-width="150px">
+                                                    <option selected>請選擇</option>
+                                                    <option value="請選擇">請選擇</option>
+                                                    <option value="請選擇">請選擇</option>
                                                 </select>
                                             </div>
                                             <fieldset class="form-group">
@@ -249,7 +265,123 @@
                     <div class="page-content-area">
 
 
-
+                        <table id="example" class="display table " style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <button style="border: none; background: transparent; font-size: 14px;"
+                                            id="MyTableCheckAllButton">
+                                            <i class="far fa-square"></i>
+                                        </button>
+                                    </th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>$320,800</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Garrett Winters</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>63</td>
+                                    <td>$170,750</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Ashton Cox</td>
+                                    <td>Junior Technical Author</td>
+                                    <td>San Francisco</td>
+                                    <td>66</td>
+                                    <td>$86,000</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Cedric Kelly</td>
+                                    <td>Senior Javascript Developer</td>
+                                    <td>Edinburgh</td>
+                                    <td>22</td>
+                                    <td>$433,060</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Airi Satou</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>33</td>
+                                    <td>$162,700</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Brielle Williamson</td>
+                                    <td>Integration Specialist</td>
+                                    <td>New York</td>
+                                    <td>61</td>
+                                    <td>$372,000</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Herrod Chandler</td>
+                                    <td>Sales Assistant</td>
+                                    <td>San Francisco</td>
+                                    <td>59</td>
+                                    <td>$137,500</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Rhona Davidson</td>
+                                    <td>Integration Specialist</td>
+                                    <td>Tokyo</td>
+                                    <td>55</td>
+                                    <td>$327,900</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Colleen Hurst</td>
+                                    <td>Javascript Developer</td>
+                                    <td>San Francisco</td>
+                                    <td>39</td>
+                                    <td>$205,500</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Sonya Frost</td>
+                                    <td>Software Engineer</td>
+                                    <td>Edinburgh</td>
+                                    <td>23</td>
+                                    <td>$103,600</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Jena Gaines</td>
+                                    <td>Office Manager</td>
+                                    <td>London</td>
+                                    <td>30</td>
+                                    <td>$90,560</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
             </main>
@@ -271,14 +403,16 @@
 
 
     <!--JS-->
-    <!-- <script src='js/jquery-3.5.1.min.js'></script> -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='js/jquery-3.5.1.min.js'></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
     <script src="js/popper.min.js"></script>
     <script src='assets/bootstrap/js/bootstrap.min.js'></script>
     <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
     <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
+    <!-- <script src="assets/datatables/jquery.dataTables.min.js"></script> -->
+    <script src='https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js'></script>
     <script src="js/script.js"></script>
-
 
 </body>
 

@@ -866,6 +866,7 @@ aside ul li>ul li.active a {
 
 .function-wrap {
     margin: 2rem 0;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.2));
 }
 
 /* submenu2 */
@@ -904,8 +905,8 @@ aside ul li>ul li.active a {
     position: absolute;
     left: 0;
     top: 3px;
-    bottom: 2px;
-    width: 10px;
+    bottom: -2px;
+    width: 12px;
     /* transform: rotate(14deg); */
     border-left: 1px solid #e0e0e0;
     background: #f7f7f7;
@@ -1570,10 +1571,12 @@ footer .copyright ul {
 /* form-inline */
 .form-wrap {
     background: #fff;
-    box-shadow: rgba(4, 38, 56, 0.2) 0 0 8px;
+    /* box-shadow: rgba(4, 38, 56, 0.2) 0 0 8px; */
     padding: 15px;
     border-radius: 0 0 10px 10px;
     margin-bottom: 24px;
+    border: 1px solid #e0e0e0;
+    border-top: none;
 }
 
 .form-inline legend {

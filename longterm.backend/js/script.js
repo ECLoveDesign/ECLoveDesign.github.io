@@ -140,118 +140,57 @@ if ($(document).width() > 900) {
 }
 
 // dataTable
-if ($(document).width() > 767) {
-
-  $('.registerTable').DataTable({
-    autoWidth: false,
-    searching: false,
-    bInfo: false,
-    columnDefs: [{
-      targets: [1, 2, 3],
-      orderable: false
-    }, ],
-    responsive: {
-      details: {
-        display: $.fn.dataTable.Responsive.display.childRowImmediate,
-        type: 'none',
-        target: ''
-      }
-    },
-    pageLength: 20,
-    lengthChange: false,
-    language: {
-      url: 'assets/datatables/i18n/zh-HANT.json'
-    },
-    scrollY: "550px",
-    scrollX: true,
-    scrollCollapse: true,
-    paging: false,
-  })
-
-  $('.doctorTable').DataTable({
-    autoWidth: false,
-    searching: false,
-    bInfo: false,
-    columnDefs: [{
-      targets: [2],
-      orderable: false
-    }, ],
-    responsive: {
-      details: {
-        display: $.fn.dataTable.Responsive.display.childRowImmediate,
-        type: 'none',
-        target: ''
-      }
-    },
-    pageLength: 20,
-    lengthChange: false,
-    language: {
-      url: 'assets/datatables/i18n/zh-HANT.json'
-    },
-    scrollY: "550px",
-    scrollX: true,
-    scrollCollapse: true,
-    paging: false,
-  })
-
-  $('.restTable').DataTable({
-    autoWidth: false,
-    searching: false,
-    bInfo: false,
-    columnDefs: [{
-      targets: [4, 6, 7],
-      orderable: false
-    }, ],
-    responsive: {
-      details: {
-        display: $.fn.dataTable.Responsive.display.childRowImmediate,
-        type: 'none',
-        target: ''
-      }
-    },
-    pageLength: 20,
-    lengthChange: false,
-    language: {
-      url: 'assets/datatables/i18n/zh-HANT.json'
-    },
-    scrollY: "550px",
-    scrollX: true,
-    scrollCollapse: true,
-    paging: false,
-  })
-
-
-  $('.linkTable').DataTable({
-    autoWidth: false,
-    searching: false,
-    bInfo: false,
-    columnDefs: [{
-        targets: [1, 2],
-        orderable: false
+$(document).ready(function() {
+  let myTable = $('#example').DataTable({
+      columnDefs: [{
+          orderable: false,
+          className: 'select-checkbox',
+          targets: 0,
+      }],
+      select: {
+          style: 'os', // 'single', 'multi', 'os', 'multi+shift'
+          selector: 'td:first-child',
       },
-      // { width: 20, targets: [1,2,3] },
-      // { width: 40, targets: [0] },
-    ],
-    responsive: {
-      details: {
-        display: $.fn.dataTable.Responsive.display.childRowImmediate,
-        type: 'none',
-        target: ''
+      order: [
+          [1, 'asc'],
+      ],
+  });
+
+  $('#MyTableCheckAllButton').click(function() {
+      if (myTable.rows({
+              selected: true
+          }).count() > 0) {
+          myTable.rows().deselect();
+          return;
       }
-    },
-    pageLength: 20,
-    lengthChange: false,
-    language: {
-      url: 'assets/datatables/i18n/zh-HANT.json'
-    },
-    scrollY: "550px",
-    scrollX: true,
-    scrollCollapse: true,
-    paging: false,
-  })
 
+      myTable.rows().select();
+  });
 
-}
+  myTable.on('select deselect', function(e, dt, type, indexes) {
+      if (type === 'row') {
+          // We may use dt instead of myTable to have the freshest data.
+          if (dt.rows().count() === dt.rows({
+                  selected: true
+              }).count()) {
+              // Deselect all items button.
+              $('#MyTableCheckAllButton i').attr('class', 'far fa-check-square');
+              return;
+          }
+
+          if (dt.rows({
+                  selected: true
+              }).count() === 0) {
+              // Select all items button.
+              $('#MyTableCheckAllButton i').attr('class', 'far fa-square');
+              return;
+          }
+
+          // Deselect some items button.
+          $('#MyTableCheckAllButton i').attr('class', 'far fa-minus-square');
+      }
+  });
+});
 
 // datepicker
 $(function () {
