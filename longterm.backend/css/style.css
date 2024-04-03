@@ -7,7 +7,7 @@
     --font-Size: 1.2em;
     --font-Title: 3rem;
     --font-p: 1.5rem;
-    --normalBlue: #015383;
+    --normalBrown: #451d13;
     --secondBlue: #E4F1F9;
     --normalYellow: #F4D65C;
 }
@@ -98,7 +98,7 @@ input[type="month"]:active::before {
 
 .navbar-brand,
 .navbar-brand:hover {
-    color: var(--normalBlue);
+    color: var(--normalBrown);
     font-family: 'Oswald', sans-serif;
 }
 
@@ -119,11 +119,13 @@ input[type="month"]:active::before {
     line-height: 0;
     padding: 6px;
     position: relative;
-    width: 32px;
-    height: 32px;
+    width: 45px;
+    height: 45px;
     z-index: 999;
     border: none;
-    background: transparent;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
 }
 
 .mobile-menu span,
@@ -132,8 +134,11 @@ input[type="month"]:active::before {
     cursor: pointer;
     height: 0.125rem;
     width: 1.25rem;
-    background: var(--normalBlue);
+    background: var(--normalBrown);
     position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
     display: block;
     content: '';
     transition-property: -webkit-transform;
@@ -178,7 +183,7 @@ input[type="month"]:active::before {
         width: 20px;
         margin: 10px 0;
         position: relative;
-        border-top: 1px solid var(--normalBlue);
+        border-top: 1px solid var(--normalBrown);
         display: block;
     }
 
@@ -186,7 +191,7 @@ input[type="month"]:active::before {
     .mobile-menu span::after {
         content: "";
         display: block;
-        background: var(--normalBlue);
+        background: var(--normalBrown);
         height: 2px;
         width: 20px;
         position: absolute;
@@ -276,7 +281,7 @@ input[type="month"]:active::before {
     display: block;
     margin: 0 auto;
     text-align: center;
-    color: var(--normalBlue);
+    color: var(--normalBrown);
 }
 
 .navbar-header .nav-item .nav-link.dropdown-toggle+.dropdown-menu {
@@ -328,7 +333,10 @@ input[type="month"]:active::before {
 
 /*--- 登入資訊 ---*/
 .nav-link.dropdown-user-link {
-    color: var(--normalBlue);
+    color: var(--normalBrown);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
 }
 
 .dropdown-user-info a:after {
@@ -347,7 +355,7 @@ input[type="month"]:active::before {
     font-size: 1.75em;
     justify-content: center;
     align-items: center;
-    color: var(--normalBlue);
+    color: var(--normalBrown);
     line-height: 1.1;
 }
 
@@ -363,7 +371,7 @@ f.dropdown-user-info .dropdown-item .dropdown-user-info .dropdown-user-link {
 }
 
 .dropdown-user-info .dropdown-user-link:hover {
-    color: var(--normalBlue);
+    color: var(--normalBrown);
 }
 
 .nav-link.dropdown-user-link {
@@ -663,7 +671,7 @@ aside {
 }
 
 #navigation::-webkit-scrollbar-track {
-    background-color: var(--normalBlue);
+    background-color: var(--normalBrown);
 }
 
 #navigation::-webkit-scrollbar {
@@ -791,7 +799,7 @@ aside ul li>ul li a:hover {
 
 #navigation li>ul li.active a,
 aside ul li>ul li.active a {
-    color: var(--normalBlue);
+    color: var(--normalBrown);
     font-weight: bold;
     /* background: rgba(255, 255, 255, .4); */
     background: #f2f3f7;
@@ -1141,7 +1149,7 @@ aside ul li>ul li.active a {
 }
 
 .breadcrumb-item.active a:hover {
-    color: var(--normalBlue);
+    color: var(--normalBrown);
 }
 
 .content-header-title {
@@ -1400,7 +1408,7 @@ footer .copyright ul {
 }
 
 .board-wrap .card:nth-child(1) .card-header {
-    background: var(--normalBlue);
+    background: var(--normalBrown);
     color: #fff;
 }
 
@@ -1480,7 +1488,7 @@ footer .copyright ul {
 }
 
 .cardAnchor .borad-anchor:nth-child(2) {
-    border-color: #015383;
+    border-color: #451d13;
 }
 
 .cardAnchor .borad-anchor:nth-child(3) {
