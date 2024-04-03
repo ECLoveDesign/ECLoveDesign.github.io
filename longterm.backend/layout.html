@@ -15,7 +15,7 @@
     <link rel='stylesheet' href='https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css'>
     <link rel='stylesheet' href='https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css'>
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css?3" />
+    <link rel="stylesheet" type="text/css" href="css/style.css?4" />
 </head>
 
 <body>
@@ -156,6 +156,7 @@
                 <!-------------------- 主要內容 -------------------->
                 <div class="content-wrapper">
                     <div class="page-header">
+                        <h2 class="content-header-title">帳號管理</h2>
 
                         <div class="breadcrumb-wrapper">
                             <ol class="breadcrumb">
@@ -166,104 +167,102 @@
                             </ol>
                         </div>
 
-                        <h2 class="content-header-title">帳號管理</h2>
-
-                        <div class="function-wrap">
-                            <ul class="submenu">
-                                <li class="active">
-                                    <a href="#">特約機構管理</a>
-                                </li>
-                                <li><a href="#">人員帳號管理</a></li>
-                            </ul>
-
-                            <!-- <ul class="nav nav-tabs">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Active</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                            </ul> -->
-
-                            <div class="form-wrap">
-                                <div class="row">
-                                    <div class="col-lg-8 col-md-12">
-
-                                        <div class="form-inline">
-                                            <div class="form-group">
-                                                <label class="sr-only" for="name">特約單位名稱</label>
-                                                <input type="text" class="form-control" id="name" placeholder="特約單位名稱">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="sr-only my-1 mr-2" for="type">申請服務類型</label>
-                                                <select class="form-control selectpicker" id="type"  title="申請服務類型" multiple data-max-options="5"
-                                                    multiple data-max-options="2">
-                                                    <option value="居家服務">居家服務</option>
-                                                    <option value="日間照顧">日間照顧</option>
-                                                    <option value="家庭托顧">家庭托顧</option>
-                                                    <option value="小規模多機能服務">小規模多機能服務</option>
-                                                    <option value="專業服務">專業服務</option>
-                                                    <option value="輔具租借">輔具租借</option>
-                                                    <option value="交通接送">交通接送</option>
-                                                    <option value="喘息服務">喘息服務</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="sr-only my-1 mr-2" for="type">帳號狀態</label>
-                                                <select class="form-control selectpicker" id="type"
-                                                    data-width="150px">
-                                                    <option value="none" selected="" disabled="">帳號狀態</option>
-                                                    <option value="啟用">啟用</option>
-                                                    <option value="停用">停用</option>
-                                                    <option value="暫停">暫停</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="sr-only my-1 mr-2" for="violation">記點狀態</label>
-                                                <select class="form-control selectpicker" id="violation"
-                                                    data-width="150px">
-                                                    <option value="none" selected="" disabled="">記點狀態</option>
-                                                    <option value="有違規">有違規</option>
-                                                    <option value="有違約">有違約</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="mr-2" for="applyTime">申請日期</label>
-                                                <input type="month" class="form-control" id="applyTime" value="" name="start" min="1911-01" value="2024-04" />
-                                            </div>
-                                            
-
-                                            <button type="submit" class="btn btn-dark btn-search mr-auto">
-                                                <i class="fa-solid fa-search"></i>查詢
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-lg-4 col-md-12">
-                                        <div class="actions">
-                                            <button class="btn btn-outline-dark btn-edit btn-add mr-2">
-                                                <i class="fas fa-file-export"></i>匯出 excel
-                                            </button>
-                                            <button class="btn btn-warning btn-add">
-                                                <i class="fa-solid fa-plus"></i>新增特約
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-
                     </div>
 
 
+                    <!--查詢-->
+                    
+                    <div class="function-wrap">
+                        <ul class="submenu">
+                            <li class="active">
+                                <a href="#">特約機構管理</a>
+                            </li>
+                            <li><a href="#">人員帳號管理</a></li>
+                        </ul>
+
+                        <!-- <ul class="nav nav-tabs">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul> -->
+
+                        <div class="form-wrap">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-12">
+
+                                    <div class="form-inline">
+
+                                        <div class="form-group">
+                                            <label class="sr-only my-1 mr-2" for="type">申請服務類型</label>
+                                            <select class="form-control selectpicker" id="type"  title="申請服務類型" multiple data-max-options="5"
+                                                multiple data-max-options="2">
+                                                <option value="居家服務">居家服務</option>
+                                                <option value="日間照顧">日間照顧</option>
+                                                <option value="家庭托顧">家庭托顧</option>
+                                                <option value="小規模多機能服務">小規模多機能服務</option>
+                                                <option value="專業服務">專業服務</option>
+                                                <option value="輔具租借">輔具租借</option>
+                                                <option value="交通接送">交通接送</option>
+                                                <option value="喘息服務">喘息服務</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only my-1 mr-2" for="type">帳號狀態</label>
+                                            <select class="form-control selectpicker" id="type"
+                                                data-width="150px">
+                                                <option value="none" selected="" disabled="">帳號狀態</option>
+                                                <option value="啟用">啟用</option>
+                                                <option value="停用">停用</option>
+                                                <option value="暫停">暫停</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only my-1 mr-2" for="violation">記點狀態</label>
+                                            <select class="form-control selectpicker" id="violation"
+                                                data-width="150px">
+                                                <option value="none" selected="" disabled="">記點狀態</option>
+                                                <option value="有違規">有違規</option>
+                                                <option value="有違約">有違約</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="mr-2" for="applyTime">申請日期</label>
+                                            <input type="month" class="form-control" id="applyTime" value="" name="start" min="1911-01" value="2024-04" />
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="sr-only" for="name">特約單位名稱</label>
+                                            <input type="text" class="form-control" id="name" placeholder="特約單位名稱">
+                                        </div>
+
+                                        <button type="submit" class="btn btn-dark btn-search mr-auto">
+                                            <i class="fa-solid fa-search"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4 col-md-12">
+                                    <div class="actions">
+                                        <button class="btn btn-outline-dark btn-export btn-add mr-2">
+                                            <i class="fas fa-file-export"></i>匯出 excel
+                                        </button>
+                                        <button class="btn btn-warning btn-add">
+                                            <i class="fa-solid fa-plus"></i>新增特約
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
                     <!--內容區塊-->
                     <div class="page-content-area">
 
