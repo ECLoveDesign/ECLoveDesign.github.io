@@ -140,55 +140,67 @@ if ($(document).width() > 900) {
 }
 
 // dataTable
-$(document).ready(function() {
+$(document).ready(function () {
   let myTable = $('#example').DataTable({
-      columnDefs: [{
-          orderable: false,
-          className: 'select-checkbox',
-          targets: 0,
-      }],
-      select: {
-          style: 'os', // 'single', 'multi', 'os', 'multi+shift'
-          selector: 'td:first-child',
-      },
-      order: [
-          [1, 'asc'],
-      ],
+    columnDefs: [{
+      orderable: false,
+      className: 'select-checkbox',
+      targets: 0,
+    }],
+    select: {
+      style: 'os', // 'single', 'multi', 'os', 'multi+shift'
+      selector: 'td:first-child',
+    },
+    order: [
+      [1, 'asc'],
+    ],
+    dom: '<"top"if>rt<"bottom"lp>',
+    searching: false,
+    language: {
+      url: 'https://cdn.datatables.net/plug-ins/2.0.3/i18n/zh-HANT.json'
+    },
+    select: {
+      info: false
+    },
+    dom: '<"top"f>rt<"bottom"ilp>',
+
+    pageLength: 20,
+    lengthChange: false,
   });
 
-  $('#MyTableCheckAllButton').click(function() {
-      if (myTable.rows({
-              selected: true
-          }).count() > 0) {
-          myTable.rows().deselect();
-          return;
-      }
+  $('#MyTableCheckAllButton').click(function () {
+    if (myTable.rows({
+      selected: true
+    }).count() > 0) {
+      myTable.rows().deselect();
+      return;
+    }
 
-      myTable.rows().select();
+    myTable.rows().select();
   });
 
-  myTable.on('select deselect', function(e, dt, type, indexes) {
-      if (type === 'row') {
-          // We may use dt instead of myTable to have the freshest data.
-          if (dt.rows().count() === dt.rows({
-                  selected: true
-              }).count()) {
-              // Deselect all items button.
-              $('#MyTableCheckAllButton i').attr('class', 'far fa-check-square');
-              return;
-          }
-
-          if (dt.rows({
-                  selected: true
-              }).count() === 0) {
-              // Select all items button.
-              $('#MyTableCheckAllButton i').attr('class', 'far fa-square');
-              return;
-          }
-
-          // Deselect some items button.
-          $('#MyTableCheckAllButton i').attr('class', 'far fa-minus-square');
+  myTable.on('select deselect', function (e, dt, type, indexes) {
+    if (type === 'row') {
+      // We may use dt instead of myTable to have the freshest data.
+      if (dt.rows().count() === dt.rows({
+        selected: true
+      }).count()) {
+        // Deselect all items button.
+        $('#MyTableCheckAllButton i').attr('class', 'far fa-check-square');
+        return;
       }
+
+      if (dt.rows({
+        selected: true
+      }).count() === 0) {
+        // Select all items button.
+        $('#MyTableCheckAllButton i').attr('class', 'far fa-square');
+        return;
+      }
+
+      // Deselect some items button.
+      $('#MyTableCheckAllButton i').attr('class', 'far fa-minus-square');
+    }
   });
 });
 
@@ -228,11 +240,18 @@ if ($('#needs-validation, #cancel-validation').length) {
     }, false);
   }());
 
-  $('.selectpicker').on('hide.bs.select', function () {
-    $(this).trigger("focusout");
-  });
+  // $('.selectpicker').on('hide.bs.select', function () {
+  //   $(this).trigger("focusout");
+
+  // });
 
 };
+
+$(document).ready(function () { 
+  $('.selectpicker').selectpicker({ 
+    language: 'zh_TW' 
+  }); 
+});
 
 
 // birthToggle

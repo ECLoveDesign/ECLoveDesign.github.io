@@ -44,6 +44,18 @@ body {
     margin-right: 5px;
 }
 
+input[type="month"]::before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    width: 100%;
+}
+
+input[type="month"]:focus::before,
+input[type="month"]:active::before {
+    content: "";
+    width: 0%;
+}
+
 /*--------------------------------------------------------
                  header 
 --------------------------------------------------------*/
@@ -865,6 +877,8 @@ aside ul li>ul li.active a {
 }
 
 .function-wrap {
+    position: relative;
+    z-index: 1;
     margin: 2rem 0;
     filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.2));
 }
@@ -900,6 +914,7 @@ aside ul li>ul li.active a {
     font-size: 1.2rem;
     color: #000;
 }
+
 .submenu li a:before {
     content: " ";
     position: absolute;
@@ -1579,6 +1594,15 @@ footer .copyright ul {
     border-top: none;
 }
 
+.form-wrap .actions {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+}
+
+.form-inline {
+    margin-top: 10px;
+}
 .form-inline legend {
     display: contents;
     width: auto;
@@ -1587,6 +1611,13 @@ footer .copyright ul {
 .form-inline label,
 .form-inline legend {
     font-size: 1rem;
+}
+.form-inline .form-group {
+    margin-bottom: 10px;
+}
+.form-inline .form-group+.btn {
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 @media (min-width:992px) {
@@ -1621,4 +1652,9 @@ footer .copyright ul {
     .form-inline .form-group {
         margin-bottom: 15px;
     }
+}
+
+/* dataTable */
+table.dataTable thead th:first-child {
+    text-align: center;
 }

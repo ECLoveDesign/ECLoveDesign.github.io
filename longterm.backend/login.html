@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>後台管理系統│臺南市政府社會局─長期照顧管理中心</title>
+    <title>登入│臺南市政府社會局─長期照顧管理中心</title>
     <link rel="shortcut icon" href='images/favicon.ico' />
     <link rel="image_src" href='images/favicon.ico' type="image/jpeg" />
     <link rel="stylesheet"
@@ -13,60 +13,69 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css?1" />
 </head>
 
 <body>
-    <header>
-        <ul class="nav navbar-nav flex-row">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="fa fa-globe"></i>
-                    <span class="user-name">語言
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">中文</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">英文</a>
-                </div>
-            </li>
-        </ul>
-    </header>
         
     
     <div class="form-wrap">
 
-        <form class="form-signin">
-            
-            <h1 class="brand-text">
-                <img src="images/logo.png" alt="臺南市政府社會局─長期照顧管理中心">
-            </h1>
-    
-            <label for="account">使用者名稱或電子信箱地址</label>
-            <input type="account" class="form-control" id="account"placeholder="請輸入使用者名稱">
-            
-            <label for="password">密碼</label>
-            <input type="password" class="form-control" id="password" placeholder="請輸入密碼">
-            
-            <fieldset class="form-group">
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="remember">
-                    <label class="form-check-label" for="remember">記住我</label>
-                </div>
-            </fieldset>
-            
-            <button class="btn btn-lg btn-block btn-signin" type="button" onclick="window.location.href='layout.html';">登入</button>
-            
-    
-            <div class="forgot-register">
-                <a class="forgot" href="#">忘記密碼</a> / 
-                <a class="register" href="#">註冊</a>
+        <div class="row">
+            <div class="col-xl-6 d-none d-xl-block">
+                <div class="bg"></div>
+                <!-- <img class="visual" src="images/img-login.jpg" alt="臺南市政府社會局─長期照顧管理中心"> -->
             </div>
-        </form>
-    
-        <p class="copyright">© Copyright © dFreight 2023</p>
+            <div class="col-xl-6">
+                <form class="form-signin">
+                    <div class="brand-text">
+                        <img src="images/logo.png" alt="臺南市政府社會局─長期照顧管理中心">
+                    </div>
+
+                    <div class="title">登入
+                        <a class="register" href="#">註冊</a>
+                    </div>
+            
+                    <div class="form-group">
+                        <label class="sr-only" for="account">使用者名稱或電子信箱地址</label>
+                        <input type="account" class="form-control" id="account" placeholder="請輸入使用者名稱">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="sr-only" for="password">密碼</label>
+                        <input type="password" class="form-control" id="password" placeholder="請輸入密碼">
+                    </div>
+
+                    <fieldset class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="remember">
+                            <label class="form-check-label" for="remember">記住我</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="reCAPTCHA">
+                        <a href="#">
+                            <img src="images/reCAPTCHA.jpg">
+                        </a>
+                    </div>
+                    
+                    <button class="btn btn-lg btn-block btn-signin" type="button" onclick="window.location.href='layout.html';">登入</button>
+                    
+            
+                    <div class="forgot-register">
+                        <a class="forgot" href="#">忘記密碼</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
     </div>
+
+    <footer>
+            
+        <p class="copyright">Copyright © 臺南市政府社會局─長期照顧管理中心</p>
+    </footer>
 
         
     
@@ -81,7 +90,7 @@
     <script src='assets/bootstrap/js/bootstrap.min.js'></script>
     <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
     <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js?1"></script>
 
 
 </body>
