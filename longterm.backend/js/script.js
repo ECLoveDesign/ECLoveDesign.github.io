@@ -163,7 +163,6 @@ $(document).ready(function () {
       info: false
     },
     dom: '<"top"f>rt<"bottom"ilp>',
-
     pageLength: 20,
     lengthChange: false,
   });
