@@ -1213,9 +1213,7 @@ aside ul li>ul li.active a {
                  footer  
 --------------------------------------------------------*/
 
-footer {
-    color: #FFF;
-    /* background: #ddd; */
+footer {    
     font-size: 0.875em;
     padding: 12px 12px 15px 36px;
     -webkit-transition: all .3s ease-in-out;
@@ -1224,7 +1222,8 @@ footer {
     transition: all .3s ease-in-out;
     width: 100%;
     margin-left: 0;
-    margin-top: 24px;
+    margin-top: 0;
+    background: #f0f0f0;
 }
 
 .hidden-left footer {
