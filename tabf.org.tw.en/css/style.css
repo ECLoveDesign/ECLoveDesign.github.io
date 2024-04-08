@@ -9,3 +9,39 @@
     height: 80px;
     text-indent: -999em;
 }
+
+/* custom menu */
+.navbar .navSec {
+    align-self: center;
+}
+.menu-inner {
+    padding-inline-start: 0;    
+    margin: 0;
+}
+.navbar-right {
+    flex: 0 0 25%;
+}
+[class*="d-"] .menu-link>i.bx {
+    transform: none;
+}
+
+@media (min-width:1201px) { 
+    .menu {
+        display: flex;
+    }
+    .menu-inner {
+        display: flex;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .menu-inner {
+        height: auto;
+        margin-top: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-bottom: 0;
+    }
+    .menu-header+.menu-inner {
+        margin-top: -3rem;
+    }
+}

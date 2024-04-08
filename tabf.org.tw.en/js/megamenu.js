@@ -45,7 +45,7 @@ function toggleSubMenu(e) {
 
 // Fixed Navbar Menu on Window Resize
 window.addEventListener("resize", () => {
-    if (window.innerWidth >= 992) {
+    if (window.innerWidth >= 1200) {
         if (menu.classList.contains("is-active")) {
             toggleMenu();
         }

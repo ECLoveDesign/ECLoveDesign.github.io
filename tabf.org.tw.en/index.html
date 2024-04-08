@@ -27,204 +27,151 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
 
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" type="text/css" href="css/style5.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/modernizr.custom.js"></script>
     <title>TABF</title>
 </head>
 
 <body>
 
+    <div class="wrap">
 
-    <header class="header" id="header">
-        <nav class="navbar container">
-            <div class="navSec navbar-left">
-                <a class="brand" href="/" title="home">TABF</a>
-
-                <div class="burger" id="burger">
-                    <span class="burger-line"></span>
-                    <span class="burger-line"></span>
-                    <span class="burger-line"></span>
-                </div>
-            </div>
-            <div class="navSec navbar-center">
-                <span class="overlay"></span>
-                <div class="menu" id="menu">
-                    <div class="menu-header">
-                        <span class="menu-arrow"><i class="bx bx-chevron-left"></i></span>
-                        <span class="menu-title"></span>
+        <header class="header" id="header">
+            <nav class="navbar container">
+                <div class="navSec navbar-left">
+                    <a class="brand" href="/" title="home">TABF</a>
+    
+                    <div class="burger" id="burger">
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
                     </div>
+                </div>
+                <div class="navSec navbar-center">
+                    <span class="overlay"></span>
+                    <div class="menu" id="menu">
+                        <div class="menu-header">
+                            <span class="menu-arrow"><i class="bx bx-chevron-left"></i></span>
+                            <span class="menu-title"></span>
+                        </div>
+    
+                        <ul class="menu-inner">
+                            <li class="menu-item menu-dropdown">
+                                <span class="menu-link">About<i class="bx bx-chevron-right"></i></span>
+                                <div class="submenu megamenu megamenu-column-4">
+                                    <div class="sub-title submenu-inner">
+                                        <div class="title">About</div>
+                                    </div>
+                                    <div class="submenu-inner">
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item"><a href="#" class="submenu-link">Our story</a></li>
+                                            <li class="submenu-item"><a href="#" class="submenu-link">Board</a></li>
+                                            <li class="submenu-item"><a href="#" class="submenu-link">Management team</a></li>
+                                            <li class="submenu-item"><a href="#" class="submenu-link">FE62</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="menu-item menu-dropdown">
+                                <span class="menu-link">Functions<i class="bx bx-chevron-right"></i></span>
+                                <div class="submenu megamenu megamenu-column-4">
+                                    <div class="sub-title submenu-inner">
+                                        <div class="title">Functions</div>
+                                    </div>
+                                    <div class="submenu-inner">
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item"><a href="#" class="submenu-link">Training Development</a></li>
+                                            <li class="submenu-item"><a href="#" class="submenu-link">Talent Assessment</a></li>
+                                            <li class="submenu-item"><a href="#" class="submenu-link">Financial Literacy Education</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="menu-item"><a href="#" class="menu-link">Partnerships</a></li>
+                            <li class="menu-item menu-dropdown">
+                                <span class="menu-link">News & Events<i class="bx bx-chevron-right"></i></span>
+                                <div class="submenu megamenu megamenu-column-4">
+                                    <div class="sub-title submenu-inner">
+                                        <div class="title">News & Events</div>
+                                    </div>
+                                    <ul class="submenu-list">
+                                        <li class="submenu-item"><a href="#" class="submenu-link">News</a></li>
+                                        <li class="submenu-item"><a href="#" class="submenu-link">Events</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu-item"><a href="#" class="menu-link">Contact Us</a></li>
+                        </ul>
+                        
+                        <ul class="menu-inner d-xl-none">
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <i class='bx bxs-map mr-2'></i>Site Map
+                                </a>
+                            </li>
+                            <li class="menu-item dropdown">
+                                <a href="#" class="menu-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class='bx bx-globe mr-2'></i>English</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">English</a>
+                                    <a class="dropdown-item" href="#">中文</a>
+                                </div>
+                            </li>
+                            <li class="menu-item">
+                                <button class="menu-link" id="trigger-overlay" type="button">
+                                    <i class='bx bx-search-alt-2 mr-2'></i>Search
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="navSec navbar-right d-none d-xl-block">
                     <ul class="menu-inner">
-                        <li class="menu-item menu-dropdown">
-                            <span class="menu-link">About<i class="bx bx-chevron-right"></i></span>
-                            <div class="submenu megamenu megamenu-column-4">
-                                <div class="sub-title submenu-inner">
-                                    <div class="title">About</div>
-                                </div>
-                                <div class="submenu-inner">
-                                    <ul class="submenu-list">
-                                        <li class="submenu-item"><a href="background.html" class="submenu-link">Background</a></li>
-                                        <li class="submenu-item"><a href="boardmembers.html" class="submenu-link">BoardMembers</a></li>
-                                        <li class="submenu-item"><a href="chairman.html" class="submenu-link">Our Chairman and President</a></li>
-                                        <li class="submenu-item"><a href="team.html" class="submenu-link">Management team</a></li>
-                                        <li class="submenu-item"><a href="structure.html" class="submenu-link">Structure</a></li>
-                                    </ul>
-                                </div>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link">
+                                <i class='bx bxs-map mr-2'></i>Site Map
+                            </a>
+                        </li>
+                        <li class="menu-item dropdown">
+                            <a href="#" class="menu-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bx-globe mr-2'></i>English</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">English</a>
+                                <a class="dropdown-item" href="#">中文</a>
                             </div>
                         </li>
-                        <li class="menu-item menu-dropdown">
-                            <span class="menu-link">Functions<i class="bx bx-chevron-right"></i></span>
-                            <div class="submenu megamenu megamenu-column-4">
-                                <div class="sub-title submenu-inner">
-                                    <div class="title">Functions</div>
-                                </div>
-                                <div class="submenu-inner">
-                                    <ul class="submenu-list">
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Login</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Register</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Track Order</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Help</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <li class="menu-item">
+                            <button class="menu-link" id="trigger-overlay" type="button">
+                                <i class='bx bx-search-alt-2 mr-2'></i>Search
+                            </button>
                         </li>
-                        <li class="menu-item"><a href="#" class="menu-link">Partnerships</a></li>
-                        <li class="menu-item menu-dropdown">
-                            <span class="menu-link">Account<i class="bx bx-chevron-right"></i></span>
-                            <div class="submenu megamenu megamenu-column-4">
-                                <ul class="submenu-list">
-                                    <li class="submenu-item"><a href="#" class="submenu-link">Login</a></li>
-                                    <li class="submenu-item"><a href="#" class="submenu-link">Register</a></li>
-                                    <li class="submenu-item"><a href="#" class="submenu-link">Track Order</a></li>
-                                    <li class="submenu-item"><a href="#" class="submenu-link">Help</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="menu-item"><a href="#" class="menu-link">Partnerships</a></li>
-                        <li class="menu-item"><a href="#" class="menu-link">Contact Us</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="navSec navbar-right">
-                <button class="switch" id="switch">
-                    <span class="switch-light"><i class="bx bx-sun"></i></span>
-                    <span class="switch-dark"><i class="bx bx-moon"></i></span>
-                </button>
-            </div>
+            </nav>
+        </header>
+        <section style="margin-top: 15rem;">
+
+            <button class="menu-link" id="trigger-overlay" type="button">
+                <i class='bx bx-search-alt-2 mr-2'></i>Search
+            </button>
+        </section>
+
+    
+    </div>
+    
+    <div class="overlay overlay-scale">
+        <button type="button" class="overlay-close">Close</button>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
-    </header>
-
-
-    <!-- loginModal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title text-center" id="loginModalLabel">歡迎回來</div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <form class="form needs-validation" novalidate>
-                        <div class="login_box">
-
-                            <div class="form-group">
-                                <label for="id">請輸入帳號</label>
-                                <input type="text" class="form-control" id="id" placeholder="" required>
-                                <div class="invalid-feedback">
-                                    請輸入帳號
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">請輸入密碼</label>
-                                <input type="password" class="form-control" id="password" placeholder="" required>
-                                <div class="invalid-feedback">
-                                    請輸入密碼
-                                </div>
-                            </div>
-                            <ul class="forgot">
-                                <li>
-                                    <a href="#">忘記密碼</a>
-                                </li>
-                                <li>
-                                    <a href="#">忘記帳號</a>
-                                </li>
-                            </ul>
-                            <div class="form-group">
-                                <label for="verification">請輸入下方驗證碼</label>
-                                <input type="text" class="form-control" id="verification" placeholder="" required>
-                                <div class="invalid-feedback">
-                                    請輸入驗證碼
-                                </div>
-                            </div>
-                            <div class="validimg">
-                                點擊圖片可更換驗證碼
-                                <img src="images/validImg.gif">
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block btn-login">登入</button>
-                            <button type="button" class="btn btn-outline-primary btn-block btn-register">註冊</button>
-                        </div>
-                    </form>
-                    <form class="form needs-validation" novalidate>
-                        <div class="sign_box" style="display:none;">
-
-                            <div class="form-group">
-                                <label for="name">請輸入暱稱</label>
-                                <input type="text" class="form-control" id="name" placeholder="" required>
-                                <div class="invalid-feedback">
-                                    請輸入暱稱
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="id">請輸入帳號</label>
-                                <input type="text" class="form-control" id="id" placeholder="" required>
-                                <div class="invalid-feedback">
-                                    請輸入帳號
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">請輸入信箱</label>
-                                <input type="email" class="form-control" id="email" placeholder="" required>
-                                <div class="invalid-feedback">
-                                    請輸入信箱
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">請輸入8-24碼英文數字符號</label>
-                                <input type="password" class="form-control" id="password" placeholder="" required>
-                                <div class="invalid-feedback">
-                                    請輸入密碼
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="passwordagain">請再次輸入密碼</label>
-                                <input type="password" class="form-control" id="passwordagain" placeholder="" required>
-                                <div class="invalid-feedback">
-                                    請再次輸入帳號
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="verification">請輸入下方驗證碼</label>
-                                <input type="text" class="form-control" id="verification" placeholder="" required>
-                                <div class="invalid-feedback">
-                                    請輸入驗證碼
-                                </div>
-                            </div>
-                            <div class="validimg">
-                                點擊圖片可更換驗證碼
-                                <img src="images/validImg.gif">
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block btn-register-submit">註冊</button>
-
-                            <p>註冊及同意 <a href="#" target="_blank">隱私權政策</a> 和 <a href="#" target="_blank">使用者條款</a></p>
-                            <button type="button" class="btn btn-outline-primary btn-block btn-member">我是會員</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
 
     <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">
@@ -237,6 +184,8 @@
     <script src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="js/megamenu.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/demo1.js"></script>
     <script src="js/script.js"></script>
 
 </body>
