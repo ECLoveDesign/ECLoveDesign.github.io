@@ -23,22 +23,14 @@ btn.on('click', function (e) {
 });
 
 
-//bs-select
-if ( $('.bs-select').length ) {
-  $('.bs-select').selectpicker(); 
-}
-
 // WOW
 new WOW().init();
 
-// ckeditor
-if ( $('.ckeditor').length ) {
-  var elements = CKEDITOR.document.find( '.ckeditor' ),
-    i = 0,
-    element;
-    while (( element = elements.getItem( i++ ) )) {
-        CKEDITOR.replace( element );
-  }
-
-}
-
+// overlay
+$('.btn-search,.search-wrap .btn-close').click(function() {
+  $('.search-wrap').toggleClass('open');
+});
+// $('.overlay-menu a').click(function() {
+//   $('.search-cont').toggleClass('open');
+//   return false;
+// });

@@ -1,4 +1,11 @@
 (function() {
+	
+	
+	// var triggerBttn = document.getElementsByClassName("trigger-overlay");
+	// var triggerBttn = document.getElementsByClassName( '.trigger-overlay' ),
+	// var triggerBttn = document.getElementsByid( 'trigger-overlay' ),
+
+	// var triggerBttn = document.querySelector( 'trigger-overlay' ),
 	var triggerBttn = document.getElementById( 'trigger-overlay' ),
 		overlay = document.querySelector( 'div.overlay' ),
 		closeBttn = overlay.querySelector( 'button.overlay-close' );
