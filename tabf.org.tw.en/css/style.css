@@ -929,7 +929,8 @@ footer .logo {
     border-radius: 0;
     padding: 10rem 0 1rem;
     position: relative;
-    background-position: center;
+    background-position: center;    
+    margin-bottom: 0;
 
 }
 .jumbotron::before{
@@ -1015,6 +1016,8 @@ article {
 }
 .page-content {
     position: relative;
+    padding-top: 2rem;
+    overflow: hidden;
 }
 .page-content>* {
     position: relative;
@@ -1161,4 +1164,19 @@ article img {
         width: 80%;
         margin: 0 auto 4rem;
     }
+}
+
+/* leader-info */
+.leader-info img {
+    max-width: 100%;
+}
+.leader-info {
+    margin: 2rem 0;
+}
+.leader-info .row {
+    margin: 0;
+}
+.leader-info [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
 }
