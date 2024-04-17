@@ -1865,3 +1865,17 @@ article img {
 .info-txt {
     color: #fff;
 }
+.info-txt ul li {
+    list-style: none;
+    position: relative;
+}
+.info-txt ul li span {
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    margin-right: 15px;
+}
+.info-txt ul li span::after {
+    content: '│';
+    float: right;
+}
