@@ -449,7 +449,16 @@ section h2 {
     align-items: baseline;
     margin-bottom: 5px;
 }
+.news-wrap.result .list-item .card-body {
+    padding: 2rem 3rem;
+}
 
+.news-wrap.result .card-info .date{
+    order: 2;
+}
+.news-wrap.result .card-info .type{
+    order: 1;
+}
 .news-wrap .date {
     color: var(--normalColor);
     font-weight: bold;
@@ -624,6 +633,8 @@ section h2 {
     }
     .news-wrap .list-item .card-body {
         background: #fff;
+    }
+    .news-wrap .list-item [class*="col-"] .card-body {
         padding: 2rem 2rem 4rem 5rem;
     }
     .list-item .img-cont {
@@ -649,6 +660,28 @@ section h2 {
         width: 100px;
     }
     
+}
+@media (max-width:600px) {
+    .news-wrap.result .list-item .card-body {
+        padding:1rem;
+    }
+}
+
+/* result */
+.result .search-box {
+    text-align: center;
+    max-width: 800px;
+    margin: 4rem auto  2rem;
+}
+
+.result .search-number .num {
+    color: var(--normalColor);
+    font-size: 2rem;
+    font-weight: 700;
+}
+.result .search-number p {
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 /*pagination*/
