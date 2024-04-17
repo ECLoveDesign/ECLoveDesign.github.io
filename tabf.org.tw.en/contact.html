@@ -29,7 +29,7 @@
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     <link rel="stylesheet" href="css/megamenu.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>News & Events│TABF</title>
+    <title>Our story│TABF</title>
 </head>
 
 <body>
@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="submenu-inner">
                                     <ul class="submenu-list">
-                                        <li class="submenu-item">
+                                        <li class="submenu-item active">
                                             <a href="story.html" class="submenu-link">Our story</a>
                                         </li>
                                         <li class="submenu-item">
@@ -192,21 +192,24 @@
     </header>
 
     <main>
-        <!-- <div class="jumbotron jumbotron-fluid" style="background-image: url(images/img-jumbotron-about.jpg);">
+        <div class="jumbotron jumbotron-fluid" style="background-image: url(images/img-jumbotron-about.jpg);">
 
             <div class="container">
-                <h1>News & Events</h1>
+                <h1>About</h1>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="news-list.html">Press release</a>
+                        <a class="nav-link" href="story.html">Our story</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="news-list.html">Media</a>
+                        <a class="nav-link" href="board.html">Board</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Management team</a>
                     </li>
                 </ul>
 
             </div>
-        </div> -->
+        </div>
 
         <div class="page-content">
 
@@ -215,167 +218,142 @@
                 <div class="page-head">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Search Results</li>
+                        <li class="breadcrumb-item">About</li>
+                        <li class="breadcrumb-item active">Our story</li>
                     </ul>
-                    <h2><span>Search Results</span></h2>
+                    <h2><span>Background</span></h2>
                 </div>
+
 
                 <div class="main-content">
 
-                    <div class="result news-wrap">
+                    <form class="text-left needs-validation" novalidate="">
 
-                        <div class="search-box">
-
-                            <form role="search">
-                                <div class="form-group">
-                                    <input name="" type="hidden" value="">
-                                    <input type="text" class="form-control" id="S" name="S" placeholder="Type here" value="Taipei" title="關鍵字搜尋：文章關鍵字搜尋" accesskey="S">
-                                    <input type="submit" id="sKwss" name="sKwss" value="送出查詢" title="送出文章關鍵字查詢">
+                        <div class="form-row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group row">
+                                    <label for="name" class="col-4 col-form-label col-form-label-sm">Name<span
+                                            class="text-danger">*</span></label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="name" required="">
+                                        <div class="invalid-feedback">Please enter your name</div>
+                                    </div>
                                 </div>
-        
-        
-                            </form>
-
-                            <div class="search-number">
-                                <div class="num">44</div>
-                                <p>Results</p>
                             </div>
-        
+                            <div class="col-12 col-md-6">
+                                <div class="form-group row">
+                                    <label for="subject" class="col-4 col-form-label col-form-label-sm">Subject <span
+                                            class="text-danger">*</span></label>
+                                    <div class="col-8">
+                                        <select class="custom-select" id="subject" required>
+                                            <option selected disabled value="">Choose...</option>
+                                            <option>subjectA</option>
+                                            <option>subjectB</option>
+                                            <option>subjectC</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please choose your question subject</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-
-                        <div class="list-item">
-
-                            <div class="card-body">
-
-                                <div class="card-info">
-                                    <div class="date">March 14, 2024</div>
-                                    <a href="#" class="type">Press release</a>
+                        <div class="form-row">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <label for="mail" class="col-2 col-form-label col-form-label-sm">Message <span
+                                            class="text-danger">*</span></label>
+                                    <div class="col-10">
+                                        <input type="text" class="form-control" id="mail" required="">
+                                        <div class="invalid-feedback">Please choose your Email</div>
+                                    </div>
                                 </div>
-
-                                <div class="card-title">TABF welcomes delegation led by the Hon. Phil Mnisi,
-                                    Governor of the Central Bank of Eswatini</div>
-                                <a href="news-detail.html" class="btn-learnmore"><span>Learn more</span></a>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="list-item">
-
-                            <div class="card-body">
-
-                                <div class="card-info">
-                                    <div class="date">March 14, 2024</div>
-                                    <a href="#" class="type">Press release</a>
-                                </div>
-
-                                <div class="card-title">TABF welcomes delegation led by the Hon. Phil Mnisi,
-                                    Governor of the Central Bank of Eswatini</div>
-                                <a href="news-detail.html" class="btn-learnmore"><span>Learn more</span></a>
-
                             </div>
 
                         </div>
 
+                        <div class="form-row">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <label for="message" class="col-2 col-form-label col-form-label-sm">Email <span
+                                            class="text-danger">*</span></label>
+                                    <div class="col-10">
 
-                        <div class="list-item">
-
-                            <div class="card-body">
-
-                                <div class="card-info">
-                                    <div class="date">March 14, 2024</div>
-                                    <a href="#" class="type">Press release</a>
+                                        <textarea type="text" rows="2" class="form-control" sid="message"
+                                            required=""></textarea>
+                                        <div class="invalid-feedback">Please enter a message in the textarea.</div>
+                                    </div>
                                 </div>
-
-                                <div class="card-title">TABF welcomes delegation led by the Hon. Phil Mnisi,
-                                    Governor of the Central Bank of Eswatini</div>
-                                <a href="news-detail.html" class="btn-learnmore"><span>Learn more</span></a>
-
                             </div>
 
                         </div>
 
+                        <div class="form-row">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <label for="code" class="col-2 col-form-label col-form-label-sm">Verfication
+                                        Code<span class="text-danger">*</span></label>
+                                    <div class="col-7">                                        
 
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="vcode" placeholder="請輸入驗證碼"
+                                                required="">
 
-                        <div class="list-item">
-
-                            <div class="card-body">
-
-                                <div class="card-info">
-                                    <div class="date">March 14, 2024</div>
-                                    <a href="#" class="type">Press release</a>
+                                            <div class="input-group-append" id="button-addon4">
+                                                <img src="images/Captcha.jpg" alt="captcha" height="40">
+                                                <a class="btn btn-outline-secondary btn-refresh" title="change">
+                                                    <i class='bx bx-refresh'></i>
+                                                </a>
+                                                <a class="btn btn-outline-secondary btn-vocie" title="volume up">
+                                                    <i class='bx bxs-volume-full' ></i>
+                                                </a>
+                                            </div>
+                                            <div class="invalid-feedback">Please enter verfication code</div>
+                                            
+                                        </div>
+                                                                                
+                                        <small id="passwordHelpBlock" class="form-text text-muted">
+                                            Please enter the following text to the box below to submit
+                                        </small>
+                                    </div>
+                                    <div class="col-3">
+                                        <button id="submitClick" class="btn btn-apply btn-block float-right">Submit</button>
+                                    </div>
                                 </div>
-
-                                <div class="card-title">TABF welcomes delegation led by the Hon. Phil Mnisi,
-                                    Governor of the Central Bank of Eswatini</div>
-                                <a href="news-detail.html" class="btn-learnmore"><span>Learn more</span></a>
-
                             </div>
 
                         </div>
 
+                    </form>
 
-                        <div class="list-item">
+                    <div class="contact-info">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="info-cont">
+                                    <img class="logo" src="images/logo-footer.svg">
 
-                            <div class="card-body">
-
-                                <div class="card-info">
-                                    <div class="date">March 14, 2024</div>
-                                    <a href="#" class="type">Press release</a>
+                                    <div class="info-txt">
+                                        <ul>
+                                            <li>Add: No.62, Sec.3, Roosevelt Road, Taipei 100, Taiwan, R.O.C.</li>
+                                            <li>Tel: 886-2-3365-3666</li>
+                                            <li>Fax: 886-2-2363-8968</li>
+                                            <li>Email: overseas@tabf.org.tw</li>
+                                        </ul>
+                                        
+                                        
+                                    </div>
                                 </div>
 
-                                <div class="card-title">TABF welcomes delegation led by the Hon. Phil Mnisi,
-                                    Governor of the Central Bank of Eswatini</div>
-                                <a href="news-detail.html" class="btn-learnmore"><span>Learn more</span></a>
-
                             </div>
+                            <div class="col-md-7">
+                                
+                                <div class="maps">
 
-                        </div>
-
-
-                        <div class="list-item">
-
-                            <div class="card-body">
-
-                                <div class="card-info">
-                                    <div class="date">March 14, 2024</div>
-                                    <a href="#" class="type">Press release</a>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3615.3445373263435!2d121.5242509!3d25.0223791!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a98fd4684a8d%3A0xa27ece6d39e897a4!2sTaiwan%20Academy%20of%20Banking%20and%20Finance!5e0!3m2!1sen!2stw!4v1576475552621!5m2!1sen!2stw" width="100%" height="320" frameborder="0" style="border:0;" allowfullscreen="" title="TABF location"></iframe>
+            
                                 </div>
-
-                                <div class="card-title">TABF welcomes delegation led by the Hon. Phil Mnisi,
-                                    Governor of the Central Bank of Eswatini</div>
-                                <a href="news-detail.html" class="btn-learnmore"><span>Learn more</span></a>
-
                             </div>
-
                         </div>
-
-
-                        <div class="list-item">
-
-                            <div class="card-body">
-
-                                <div class="card-info">
-                                    <div class="date">March 14, 2024</div>
-                                    <a href="#" class="type">Press release</a>
-                                </div>
-
-                                <div class="card-title">TABF welcomes delegation led by the Hon. Phil Mnisi,
-                                    Governor of the Central Bank of Eswatini</div>
-                                <a href="news-detail.html" class="btn-learnmore"><span>Learn more</span></a>
-
-                            </div>
-
-                        </div>
-
-                        <ul class="pagination twbsPagination"></ul>
-
                     </div>
-
-
-
 
                 </div>
 
@@ -461,7 +439,6 @@
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
     <script src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js'></script>
     <script src="js/megamenu.js"></script>
     <script src="js/script.js"></script>
 
