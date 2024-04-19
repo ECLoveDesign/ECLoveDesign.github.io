@@ -11,6 +11,10 @@
     --font-Title: 3rem;
     --font-p: 1.5rem;
     --normalColor: #9eb532;
+    --fbColor: #607aa1;
+    --ytColor: #ff0000;
+    --iosColor: #4d4d4d;
+    --linkedinColor: #0a66b9;
 }
 
 a:hover {
@@ -64,7 +68,10 @@ a:hover {
     .menu {
         display: flex;
     }
-
+    .navbar-center .menu-item {
+        padding-right: 0.6rem;
+        padding-left: 0.6rem;
+    }
     .submenu {
         padding: 2rem;
     }
@@ -72,13 +79,18 @@ a:hover {
     .menu-inner {
         display: flex;
     }
-
+    .navbar-right.toolmenu {
+        display: flex;
+    }
+    .navbar-right.toolmenu .menu-link>i.bx {        
+        transform: none;
+    }
     .navbar-right .menu-item {
         padding-right: 0;
     }
 
     .menu-link {
-        padding: 1.75rem 0.5rem;
+        padding: 1.75rem 0.25rem;
     }
 
     .menu-link>i {
@@ -198,13 +210,15 @@ a:hover {
     .submenu-link:hover::before {
         background: var(--normalColor);
     }
-
-    .toolmenu {
+    .menu-item.toolmenu,    
+    .menu .social{
         display: none;
     }
 }
-
-@media only screen and (max-width: 1200px) {
+@media (max-width:1200px) {
+    .navbar-right.toolmenu {
+        display: none;
+    }    
     .menu-inner {
         height: auto;
         margin-top: 0;
@@ -237,8 +251,68 @@ a:hover {
     }
 
     .toolmenu .menu-link i:first-child {
+        width: 100%;
         position: absolute;
         left: 10px;
+    }        
+    .menu .social {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .menu .social ul {
+        padding-inline-start: 0;
+        margin: 0;
+        display: flex;
+    }
+    .menu .social ul li {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+    .menu .social .menu-link { 
+        color: #fff;
+        justify-content: center;
+    }
+    .menu .social .menu-link img {
+        margin-left: -20px;
+    }
+    .menu-link.fb {
+        background: var(--fbColor);
+    }
+    .menu-link.yt {
+        background: var(--ytColor);
+    }
+    .menu-link.apple {
+        background: var(--iosColor);
+    }
+    .menu-link.linkedin {
+        background: var(--linkedinColor);
+    }
+}
+
+@media (max-width:902px) {
+    .menu .social ul {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .menu .social ul li {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width:450px) {
+    .menu .social ul {
+        display: block;
+    }
+    .menu .social ul li {
+        max-width: 100%;
     }
 }
 
@@ -1245,6 +1319,72 @@ footer .logo {
         right: 10px;
     }
 }
+
+/* btn-social */
+.btn-social,
+.btn-social:hover {
+    background: #000;
+    display: block;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    z-index: 1;
+    transition: all 0.2s linear;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    opacity: 0;
+}
+
+.btn-social.fb {
+    background: var(--fbColor);
+    bottom: 215px;
+    right: 35px;
+}
+.btn-social.yt {
+    background: var(--ytColor);
+    bottom: 170px;
+    right: 35px;
+}
+.btn-social.apple {
+    background: var(--iosColor);
+    bottom: 125px;
+    right: 35px;
+}
+.btn-social.linkedin {
+    background: var(--linkedinColor);
+    bottom: 80px;
+    right: 35px;
+}
+
+.btn-social:hover {
+    background: #444;
+    /* filter: drop-shadow(2px 2px 5px #000); */
+}
+
+.btn-social.show {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn-social:hover {
+    text-decoration: none;
+}
+
+.btn-social i {
+    margin-top: 3px;
+    margin-left: 3px;
+    font-size: 1.5rem;
+    text-indent: -2px;
+}
+@media (max-width:1200px) {
+    .btn-social {
+        display: none;
+    }
+}
+
 
 /* jumbotron */
 .jumbotron {
