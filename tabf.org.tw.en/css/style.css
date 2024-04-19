@@ -763,7 +763,7 @@ section h2 {
 @media (min-width:1366px) {
     .post-wrap {
         max-width: 1000px;
-        margin: auto;
+        margin: 2rem auto;
     }
 }
 @media (min-width:768px){
@@ -1278,12 +1278,13 @@ footer .logo {
 .jumbotron h1 {
     color: #fff;
     font-size: 4.5rem;
-    border-bottom: rgba(255, 255, 255, 0.6) solid 2px;
-    padding-bottom: .5rem;
+    margin: 0;
 }
 
 .jumbotron .nav {
-    margin: 1rem 0 .5rem;
+    margin: .5rem 0 .5rem;
+    border-top: rgba(255, 255, 255, 0.6) solid 2px;
+    padding-top: 1rem;
 }
 
 .jumbotron .nav-item+.nav-item {
@@ -1353,6 +1354,12 @@ footer .logo {
 
 .breadcrumb-item+.breadcrumb-item::before {
     content: "‧";
+}
+.breadcrumb a {
+    color: var(--normalColor);
+}
+.breadcrumb a:hover {
+    color: #6a5f21;
 }
 
 article {
@@ -1833,14 +1840,14 @@ article img {
     border: #C9C9C9 solid 1px;
     background: #fff;
 }
-.main-content #contact .col-form-label-sm {
+.main-content #contact label {
     text-align: right;
 }
 
 /* contact-info */
-.contact-info {
+.contact-info {    
     margin: 2rem 0 4rem;
-    padding: 2rem;
+    padding: 4rem 3rem;
     position: relative;
     background: url(../images/bg-contact.jpg) no-repeat center;
 }
@@ -1857,17 +1864,38 @@ article img {
 }
 .contact-info>* {
     position: relative;
-    z-index: 1;
+    z-index: 1;    
+    align-items: center;
 }
-.contact-info .logo {
+.contact-info .logo {    
     margin: 0 0 2rem;
+    height: 60px;
+    display: block;
+}
+.contact-cont {    
+    padding: 0 0 0 3rem;
 }
 .info-txt {
     color: #fff;
 }
+.info-txt ul {
+    padding-inline-start: 0;
+}
 .info-txt ul li {
     list-style: none;
     position: relative;
+    padding-left: 100px;
+    margin-bottom: 15px;
+}
+.info-txt ul li .title {
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+.info-txt ul li .title i {
+    font-size: 1.2rem;
+    margin-right: 10px;
 }
 .info-txt ul li span {
     width: 60px;
@@ -1878,4 +1906,13 @@ article img {
 .info-txt ul li span::after {
     content: '│';
     float: right;
+    font-size: .7rem;
+    margin-top: .2rem;
+}
+.info-txt ul li a {
+    color: #fff;
+    text-decoration: underline;
+}
+.info-txt ul li a:hover {
+    text-decoration: none;
 }

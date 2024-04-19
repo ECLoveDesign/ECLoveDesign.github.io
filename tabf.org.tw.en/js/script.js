@@ -22,6 +22,16 @@ btn.on('click', function (e) {
   $('html, body').animate({ scrollTop: 0 }, '10000');
 });
 
+// btn-social
+var btnSocial = $('.btn-social');
+$(window).scroll(function () {
+  if ($(window).scrollTop() > 300) {
+    btnSocial.addClass('show');
+  } else {
+    btnSocial.removeClass('show');
+  }
+});
+
 
 // WOW
 new WOW().init();
