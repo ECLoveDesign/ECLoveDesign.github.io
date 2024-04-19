@@ -38,7 +38,10 @@ new WOW().init();
 
 // overlay
 $('.btn-search,.search-wrap .btn-close').click(function() {
+  
   $('.search-wrap').toggleClass('open');
+  return false;
+  
 });
 // $('.overlay-menu a').click(function() {
 //   $('.search-cont').toggleClass('open');
