@@ -31,7 +31,11 @@ a:hover {
     height: 80px;
     text-indent: -999em;
 }
-
+@media (max-width:350px) {
+    .brand {
+        height: 30px;
+    }
+}
 /* custom menu */
 .navbar {
     padding: 0;
@@ -55,7 +59,7 @@ a:hover {
     transform: none;
 }
 
-.active .submenu-link {
+.submenu-item.active .submenu-link {
     color: var(--normalColor);
     text-decoration: none;
 }
@@ -71,6 +75,9 @@ a:hover {
     .navbar-center .menu-item {
         padding-right: 0.6rem;
         padding-left: 0.6rem;
+    }
+    .navbar-center .menu-item.active .menu-link {
+        color: var(--normalColor);
     }
     .submenu {
         padding: 2rem;
@@ -1452,6 +1459,14 @@ footer .logo {
         max-width: 100%;
     }
 }
+@media (max-width:768px) {
+    .jumbotron h1 {
+        font-size: 3rem;
+    }
+    .jumbotron {
+        padding: 3rem 0 1rem;
+    }
+}
 
 /* page-content */
 .page-content h2 {
@@ -1721,6 +1736,11 @@ article img {
         background: #f9f9f9;
     }
 }
+@media (max-width:768px) {
+    article section {
+        padding:15px;
+    }
+}
 
 /* leader-info */
 .leader-info .avatar {
@@ -1983,6 +2003,26 @@ article img {
 .main-content #contact label {
     text-align: right;
 }
+@media (max-width:767px) {
+    .main-content #contact {
+        padding: 2rem;
+    }
+    .main-content #contact label {
+        text-align: left;
+    }
+    .main-content #contact .input-group input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .main-content #contact .btn-apply {
+        margin-top: 15px;
+    }
+}
+@media (max-width:500px) {
+    .main-content #contact {
+        padding: 1rem;
+    }
+}
 
 /* contact-info */
 .contact-info {    
@@ -2011,6 +2051,7 @@ article img {
     margin: 0 0 2rem;
     height: 60px;
     display: block;
+    max-width: 100%;
 }
 .contact-cont {    
     padding: 0 0 0 3rem;
@@ -2055,4 +2096,17 @@ article img {
 }
 .info-txt ul li a:hover {
     text-decoration: none;
+}
+@media (max-width:768px) {
+    .contact-info {
+        padding: 3rem 2rem;
+    }
+    .contact-cont {
+        padding: 0;
+    }
+}
+@media (max-width:600px) {
+    .contact-info {
+        padding: 2rem 1rem;
+    }
 }
