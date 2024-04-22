@@ -1,5 +1,4 @@
 
-new WOW().init();
 
 if ($(document).width() > 900) {
     $(function () {
@@ -31,10 +30,6 @@ $(window).scroll(function () {
     btnSocial.removeClass('show');
   }
 });
-
-
-// WOW
-new WOW().init();
 
 // overlay
 $('.btn-search,.search-wrap .btn-close').click(function() {
