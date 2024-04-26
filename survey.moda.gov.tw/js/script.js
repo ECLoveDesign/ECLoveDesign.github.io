@@ -1,4 +1,33 @@
 
+// reload
+var isPad = (window.innerWidth<=1025);
+$(window).resize(function(){
+    var w = window.innerWidth;
+    if ((w <= 1025 && !isPad) || (w > 1025 && isPad)){
+        location.reload();
+    }
+});
+
+// validation
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+
 // scolltop
 var btn = $('.btn-top');
 $(window).scroll(function () {
@@ -25,6 +54,16 @@ $(window).scroll(function () {
   }
 });
 
+// profile show
+if ($(document).width() > 1024) {
+  $(document).ready(function(){
+    var firstName = $('.firstName').text();
+    var lastName = $('.lastName').text();
+    var intials = firstName.charAt(0) + lastName.charAt(0);
+    var profile = $('.profile').text(intials);
+  });
+}
+
 // show 
 $(window).scroll(function () {
 
@@ -39,7 +78,93 @@ $(window).scroll(function () {
 
 });
 
+//submenu
+var $select = $('<select class="bs-select" data-width="100%"></select>');
+$(".submenu").append($select);
+$(".submenu a").each(function(){
+  var $anchor = $(this);
+  var $option = $("<option></option>");
+  if ($anchor.parent().hasClass("selected")) {
+    $option.prop("selected", true);
+  }
+  
+  $option.val($anchor.attr("href"));
+    $option.text($anchor.text());
+  $select.append($option);
+  
+});
 
+$select.change(function(){
+     window.location = $select.val();
+});
+
+// tooltip
+if ($(document).width() > 900) {
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+}
+
+// dataTable
+$(document).ready(function () {
+  var listTable = $('.listTable').DataTable( {
+      language: {
+          url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+          // url: 'assets/datatables/i18n/zh-HANT.json',
+          search: "搜尋",
+          paginate: {
+            first: "<<",
+            previous: "<",
+            next: ">",
+            last: ">>"
+        },      
+          
+      },    
+      // responsive: {
+      //     details: {
+      //         display: $.fn.dataTable.Responsive.display.childRowImmediate,
+      //         type: 'none',
+      //         target: ''
+      //     }
+      // },
+      // columnDefs: [
+      //   { targets: [0,5], orderable: false },
+      //   { width: 180, targets: [1,2,4] },
+      //   { width: 110, targets: [0] },
+      //   { width: 500, targets: [5] },
+      // ],
+      // pageLength : 15,
+  } );
+
+  
+  var downloadTable = $('.downloadTable').DataTable( {
+    language: {
+        url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+    },          
+    autoWidth: false,
+    searching: false,
+    dom: '<"top"li>rt<"bottom"fp>',
+    // responsive: {
+    //     details: {
+    //         display: $.fn.dataTable.Responsive.display.childRowImmediate,
+    //         type: 'none',
+    //         target: ''
+    //     }
+    // },
+    // columnDefs: [
+    //   { targets: [0,5], orderable: false },
+    //   { width: 180, targets: [1,2,4] },
+    //   { width: 110, targets: [0] },
+    //   { width: 500, targets: [5] },
+    // ],
+    // pageLength : 15,
+} );
+  
+});
+
+// bs-select
+$('.bs-select').selectpicker();
+  
 // popup-gallery
 $('.popup-gallery').magnificPopup({
   type: 'image',

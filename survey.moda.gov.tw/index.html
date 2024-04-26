@@ -20,10 +20,10 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="touch-icon.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/datatables/dataTables.bootstrap5.min.css" />
     <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css" />
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
-    <link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css'>
+    <link rel="stylesheet" href="assets/magnific-popup/magnific-popup.min.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</title>
@@ -43,7 +43,7 @@
                     <li>
                         <a href="javascript:void(0)">問卷填寫 <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="nav-dropdown">
-                            <li><a href="survey-progress.html">調查中問卷</a></li>
+                            <li><a href="index.html">調查中問卷</a></li>
                             <li><a href="survey-history.html">歷史問卷</a></li>
                         </ul>
                     </li>
@@ -75,9 +75,17 @@
                 </ul>
 
                 <ul class="nav-menu nav-btn align-to-right">
-                    <li class="nav-apply"><a href="#">問卷製作申請</a></li>                    
+                    <li class="nav-apply">
+                        <a href="#" data-toggle="modal" data-target="#surveyApply">問卷製作申請</a>
+                    </li>
                     <li class="nav-login">
-                        <a href="javascript:void(0)">WangCindy <i class="fa-solid fa-chevron-down"></i></a>
+                        <a href="javascript:void(0)">
+                            <div class="profile">
+                                <span class="firstName">Cyndi</span>
+                                <span class="lastName">Wang</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a>
                         <ul class="nav-dropdown">
                             <li><a href="login.html">登出</a></li>
                         </ul>
@@ -93,18 +101,113 @@
         <li class="breadcrumb-item active">問卷填寫</li>
     </ol>
 
-    <main style="min-height: 1000px;">
+    <main>
+
+        <div class="submenu">
+
+            <ul class="nav nav-pills">
+                <li class="nav-item selected">
+                    <a class="nav-link" href="index.html">調查中問卷</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="survey-history.html">歷史問卷</a>
+                </li>
+            </ul>
+        </div>
+
+        <table class="table table-striped listTable table-rwd">
+            <thead>
+                <tr>
+                    <th>問卷代號</th>
+                    <th>問卷名稱</th>
+                    <th>起訖日期</th>
+                    <th>填卷狀態</th>
+                    <th>動作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-title="問卷代號">MODA113030013</td>
+                    <td data-title="問卷名稱">113年資訊資源調查問卷</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="填卷狀態">未填寫</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="survey-fill.html">
+                            <i class="far fa-edit"></i>填寫
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MODA113040001</td>
+                    <td data-title="問卷名稱">各行各業數位轉型問卷調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="填卷狀態">未填寫</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="survey-fill.html">
+                            <i class="far fa-edit"></i>填寫
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113030010</td>
+                    <td data-title="問卷名稱">民眾日常使用運具狀況調查問卷</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="填卷狀態">已填寫</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="survey-fill.html">
+                            <i class="far fa-edit"></i>填寫
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113020008</td>
+                    <td data-title="問卷名稱">公務人員日常使用運具調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="填卷狀態">已填寫</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="survey-fill.html">
+                            <i class="far fa-edit"></i>填寫
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113020032</td>
+                    <td data-title="問卷名稱">公路局人民陳情案件處理情形滿意度調查 </td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="填卷狀態">已填寫</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="survey-fill.html">
+                            <i class="far fa-edit"></i>填寫
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOE113010015</td>
+                    <td data-title="問卷名稱">教育部成人教育調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="填卷狀態">已填寫</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="survey-fill.html">
+                            <i class="far fa-edit"></i>填寫
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
 
     </main>
+
     <footer>
-        <a href="#" class="footer-top">
-            <i class="fas fa-long-arrow-alt-up"></i>
-            <span>回到頁首</span>
-        </a>
-        <hr>
-        <img src="images/logo-footer.svg">
-        <p>© Longteng Education Co., Ltd. All rights reserved. <br>
-            本網頁各連結標題及連結內容歸原權利人所有</p>
+        <div class="nav foot-nav">
+            <a class="nav-link" href="#">使用條款</a>
+            <a class="nav-link" href="#">隱私權政策</a>
+            <a class="nav-link" href="#">政府版權宣告</a>
+        </div>
+        <div class="foot-cont">
+            <img src="images/logo-footer.png">
+            <p>Copyright © 數位發展部 版權所有</p>
+        </div>
     </footer>
 
     <div class="modal fade" id="sdgsModal" tabindex="-1" aria-labelledby="actionModalLabel" aria-hidden="true">
@@ -126,37 +229,95 @@
     <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首"><span class="material-icons">
             expand_less </span></a>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
-    <script src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
-        integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script>
+
+    <!-- 問卷製作申請 -->
+    <div class="modal fade" id="surveyApply" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="surveyApplyLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="surveyApplyLabel">問卷製作-權限開通申請</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        如您欲進行問卷製作，請將下方資料補齊並送出申請，系統將透過電子信箱發送驗證信給您，完成驗證後即可開通相關權限。問卷製作權限開通後，您即可於資訊資源效率查調系統中使用「問卷製作」及「問卷回收情形」兩個模組。
+                    </div>
+
+                    <form class="form form-surveyApply needs-validation" novalidate>
+                        <div class="form-group row">
+                            <label for="account" class="col-md-3 col-form-label">帳號
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <input type="text" id="account" class="form-control" placeholder="請輸入帳號"
+                                    value="WangCyndi" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-3 col-form-label">姓名
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <input type="text" id="name" class="form-control" placeholder="請輸入姓名" value="王心凌"
+                                    disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="department" class="col-md-3 col-form-label">機關
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <select class="custom-select" id="department" required>
+                                    <option selected disabled value="">請選擇</option>
+                                    <option>數位發展部 (A29000000G)</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    請選擇
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-3 col-form-label">公務信箱
+                                <span class="text-danger">*</span>
+                            </label>
+
+                            <div class="col-md-9">
+                                <input type="email" id="email" class="form-control" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請填寫公務信箱
+                                </div>
+                                <span class="form-text text-danger">請以gov電子信箱為主。如為其他電子信箱，須待系統管理員進行身分認證後，方能開通問卷製作權限。</span>
+                            </div>
+                        </div>
+                        
+                        <div class="actions">
+                            <button type="submit" class="btn btn-primary btn-submit">送出</button>
+                        </div>
+
+                    </form>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script src='js/jquery-3.2.1.min.js'></script>
+    <script src='js/popper-1.12.9.min.js'></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src='assets/datatables/dataTables.min.js'></script>
+    <script src='assets/datatables/dataTables.bootstrap5.min.js'></script>
+    <script src='assets/magnific-popup/jquery.magnific-popup.min.js'></script>
     <script src="js/megamenu.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        new WOW().init();
-
-
-
-        if ($(document).width() > 900) {
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
-            })
-        }
-        $('.btn-scroll').click(function (e) {
-            e.preventDefault();
-            var target = $($(this).attr('href'));
-            if (target.length) {
-                var scrollTo = target.offset().top - 230;
-                $('body, html').animate({
-                    scrollTop: scrollTo + 'px'
-                }, 800);
-            }
-        });
-    </script>
 </body>
 
 </html>

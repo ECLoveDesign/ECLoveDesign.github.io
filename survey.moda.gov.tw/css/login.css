@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;400;500;700&display=swap);
+
+* {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+body {
+    background: url(../images/bg-login.jpg) no-repeat center;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+}
+
+body>* {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+}
+
+h1 {
+    display: none;
+}
+
+.login-wrap {
+    width: 360px;
+    max-width: 80%;
+    text-align: center;
+    height: fit-content;
+}
+
+footer {
+    top: auto;
+    bottom: 20px;
+    font-weight: 500;
+}
+
+.btn {
+    margin-top: 30px;
+    text-decoration: none;
+    color: #000;
+    background: #ffde3b;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.2s linear;
+}
+
+.btn:hover {
+    color: #fff;
+    background: #000;
+}
