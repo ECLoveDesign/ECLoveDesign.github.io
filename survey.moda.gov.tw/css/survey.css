@@ -54,7 +54,18 @@ footer {
 }
 
 /* card */
+.card {
+    border-radius: 20px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 5px;
+}
+.card-header:first-child {
+    border-radius: 20px 20px 0 0;
+}
 .card-header {
     color: #000;
     background: var(--normalYellow);
+    border-bottom: none;
+    text-align: left;
+    font-weight: 500;
 }
