@@ -59,22 +59,30 @@
             bottom: 20px;
             font-weight: 500;
         }
-
-        .btn {
-            margin-top: 30px;
-            text-decoration: none;
-            color: #000;
-            background: #ffde3b;
-            padding: 10px 20px;
-            display: block;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: all 0.2s linear;
-        }
-
-        .btn:hover {
+        .btn-back {
+            cursor: pointer;
             color: #fff;
-            background: #000;
+            background-color: #0069d9;
+            border-color: #0062cc;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            letter-spacing: 20px;
+            text-indent: 20px;
+            font-weight: 500;
+            box-shadow: 0px 0px 9px rgb(0, 0, 0, .1);
+        }
+        .btn-back:hover {
+            background-color: #004a9a;
+        }
+        .btn-back:active {
+            color: #0062cc;
+            background: #fff;
+        }
+        .login-wrap p {
+            margin: 2rem 0;
+            font-size: 1.6rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -82,8 +90,9 @@
 <body>
     <h1>資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</h1>
     <div class="login-wrap">
-        <img src="images/logo.svg">
-        <a class="btn btn-login" href="index.html">登入</a>
+        <img src="images/img-finish.jpg">
+        <p>謝謝您! 已收到您的問卷。</p>
+        <button type="submit" class="btn btn-primary btn-back" onclick="window.location.href='index.html';">回到問卷列表</button>
     </div>
     <footer>
         <p>Copyright © 數位發展部 版權所有</p>

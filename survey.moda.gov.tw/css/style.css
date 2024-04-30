@@ -24,12 +24,12 @@
 }
 
 /* btn */
-[class*="btn-"]:not(.dropdown-toggle) {
+[class*="btn-"]:not(.dropdown-toggle,.btn-top) {
     border: #ced4da solid 1px;
     border-radius: 20px;
     transition: all 0.2s linear;
 }
-[class*="btn-"] i {
+[class*="btn-"]:not(.dropdown-toggle,.btn-top) i {
     margin-right: 5px;
 }
 .btn-edit {
@@ -41,6 +41,29 @@
 .btn-edit:active {
     color: #000;
     background: #fff;
+}
+.btn-view {
+    color: #fff;
+    background: #29abe2;
+    border: #29abe2 solid 1px;
+}
+.btn-view:hover,
+.btn-view:active {
+    color: #fff;
+    background: #1b87b6;
+}
+.btn-del {
+    color: #fff;
+    background: #ed1c24;
+    border: #ed1c24 solid 1px;
+}
+.btn-del:hover,
+.btn-del:active {
+    color: #fff;
+    background: #a80a10;
+}
+.btn-add {
+    background: var(--normalYellow);
 }
 .btn-primary {
     background: var(--primaryColor);
@@ -133,7 +156,9 @@ header.affix {
     color: #000;
     background: var(--normalYellow);
 }
-
+.nav-dropdown>li.active>a,
+.nav-dropdown>li.active>a:hover, 
+.nav-dropdown>li.active>a:focus,
 .nav-dropdown>li>a:hover,
 .nav-dropdown>li>a:focus {
     color: #fff;
@@ -233,7 +258,10 @@ header.affix {
 
     .nav-menu>li>a>[class*="fa-"] {
         display: inline-block;
-        transform: none;
+        font-size: 1.5rem;
+        height: inherit;
+        transform: scale(1.2);
+        margin-left: 3px;
     }
 
     .nav-menu>li>.nav-dropdown {
@@ -410,8 +438,11 @@ header.affix {
     text-decoration: none;
 }
 
-.btn-top span {
+.btn-top [class*="fa-"] {
     line-height: 2.3rem;
+    font-size: 1.2rem;
+    display: block;
+    text-align: center;
 }
 
 @media(max-width:767px) {
@@ -531,7 +562,7 @@ footer p {
     font-weight: 500;
 }
 .submenu .nav-pills .nav-link:hover,
-.submenu .nav-pills .selected .nav-link, 
+.submenu .nav-pills .active .nav-link, 
 .submenu .nav-pills .show>.nav-link {
     background-color: var(--normalYellow);
 }
@@ -556,6 +587,47 @@ footer p {
     .submenu button {
         display: none;
     }
+}
+
+/* functionmenu */
+.functionmenu {    
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+.functionmenu::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: #f2f2f2;
+}
+.functionmenu .btn {
+    float: right;
+    margin-top: -3rem;
+    z-index: 1;
+    position: relative;
+}
+.functionmenu .nav {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom: 1.5rem;
+    display: flex;
+    margin-bottom: -5px;
+    position: relative;
+    z-index: 1;
+}
+.nav-line .nav-link {
+    color: #000;
+    font-weight: 500;
+    padding: .5rem 1.5rem 1rem;
+}
+.nav-line .nav-link:hover {
+    border-bottom: var(--normalYellow) solid 5px; 
+}
+.nav-line .active .nav-link:hover,
+.nav-line .active .nav-link {
+    border-bottom: #f7931e solid 5px; 
 }
 
 /* dataTable */
@@ -632,8 +704,19 @@ table.dataTable thead>tr>th.dt-orderable-desc {
 table.table.dataTable.table-striped>tbody>tr:nth-of-type(2n)>* {
     background: var(--secondColor);
 }
+
+table.table.dataTable.table-striped>tbody>tr:nth-of-type(2n) {
+    border-radius: 20px;
+    overflow: hidden;
+}
 table.table.dataTable.table-striped>tbody>tr:nth-of-type(2n+1)>* {
     box-shadow: none;
+}
+table.table.dataTable.table-striped>tbody>tr:nth-of-type(2n)>td:first-child {
+    border-radius: 8px 0 0 8px;
+}
+table.table.dataTable.table-striped>tbody>tr:nth-of-type(2n)>td:last-child {
+    border-radius: 0 8px 8px 0;
 }
 /* .dt-bootstrap5>.row [class*="col-"], */
 table.dataTable thead>tr>th.dt-orderable-asc:first-child, 
@@ -650,13 +733,21 @@ table.dataTable thead>tr>th.dt-orderable-desc:last-child {
 .dt-bootstrap5 .col-md-auto {
     padding-left: 0;
     width: fit-content;
+    padding-right: 5px;
 }
 .dt-bootstrap5>.row .col-12 {
     padding: 0;
 }
 .dt-paging.paging_full_numbers .page-item.active .page-link {
     background: #000;
-    border-color: #000;
+    border-color: #000;    
+    box-shadow: 0 0 0 .2rem rgba(0, 0, 0, 0.25);
+}
+.dt-bootstrap5 .page-link {
+    color: #000;
+}
+.dt-bootstrap5 .page-link:focus {
+    box-shadow: 0 0 0 .2rem rgba(0, 0, 0, 0.25);    
 }
 @media (max-width:767px) {
     div.dt-container div.dt-info {
