@@ -936,7 +936,7 @@ table.dataTable thead>tr>th.dt-orderable-desc:last-child {
 /* addTopic */
 .topic-wrap {
     border: #cacaca solid 1px;
-    padding: 20px 20px 15px;
+    padding: 20px;
     border-radius: 5px;
     position: relative;
     margin: 10px 0 30px;
@@ -957,6 +957,9 @@ table.dataTable thead>tr>th.dt-orderable-desc:last-child {
 
 .topic-wrap .form-group {
     margin-bottom: 1.5rem;
+}
+.topic-wrap .form-group:last-child {
+    margin-bottom: 0;
 }
 
 /* preview-zone */
@@ -1047,3 +1050,277 @@ table.dataTable thead>tr>th.dt-orderable-desc:last-child {
 .input-group [class*="btn-"] i {
     margin-right: 0;
 }
+
+/* survey-cont */
+.survey-cont .form-section {
+    position: relative;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.survey-cont .form-section span {
+    position: relative;
+    background: #fff;
+    left: 20px;
+    padding: 0 15px;
+    text-align: center;
+}
+.survey-cont .form-section::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 8px;
+    background: var(--primaryColor);
+    z-index: 0;
+    top: 9px;
+}
+.survey-cont .question-title {    
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.survey-cont .form-group {
+    padding-left: 45px;
+}
+.survey-cont .badge-form {
+    background: var(--normalYellow);
+    padding: .5em .75em;
+    margin-right: .25em;
+    margin-left: -45px;
+    width: 40px;
+    font-size: .9rem;
+}
+.survey-cont .form-group.indent {
+    margin-left: 45px;
+}
+
+
+/* checkbox radiobox custom */
+.radio-custom .check-group,
+.check-custom .check-group {
+    position: relative;
+}
+
+.radio-custom input[type="radio"],
+.check-custom input[type="checkbox"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+}
+
+.radio-custom input[type="radio"]+label,
+.check-custom input[type="checkbox"]+label {
+    padding: 0.25em 1.5rem 0.5em 2.7rem;
+    display: block;
+    text-align: left;
+    border-radius: 5px;
+    margin: 0;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    cursor: pointer;
+}
+
+.radio-custom input[type="radio"]+label::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #d5d5d5;
+    position: absolute;
+    top: 0.675rem;
+    left: 1rem;
+    transition: all 0.2s ease;
+}
+
+.check-custom input[type="checkbox"]+label::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 0;
+    border: 1px solid #d5d5d5;
+    position: absolute;
+    top: 0.65rem;
+    left: 1rem;
+    transition: all 0.2s ease;
+}
+
+/* hover */
+.radio-custom input[type="radio"]+label:hover,
+.check-custom input[type="checkbox"]+label:hover {
+    border-color: #444;
+    color: #444;
+    box-shadow: 0 0 5px rgb(68, 68, 68, 29%);
+}
+
+.radio-custom input[type="radio"]:disabled+label:hover,
+.check-custom input[type="checkbox"]:disabled+label:hover {
+    color: inherit;
+    background-color: #e9ecef;
+    border-color: #ced4da;
+    box-shadow: none;
+}
+/* checked */
+.radio-custom input[type="rado"]:checked+label,
+.check-custom input[type="checkbox"]:checked+label,
+.radio-custom input[type="radio"]:focus+label,
+.check-custom input[type="checkbox"]:focus+label {
+    border-color: #444;
+    color: #444;
+    box-shadow: 0 0 5px rgb(68, 68, 68, 29%);
+    background: #f2f2f2;
+}
+
+.radio-custom input[type="radio"]:checked+label:before {
+    border: 2px solid #444;
+}
+
+.check-custom input[type="checkbox"]:checked+label:before {
+    background: #444;
+    border-color: #444;
+}
+
+.radio-custom input[type="radio"]:checked+label:after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #444;
+    position: absolute;
+    top: calc(0.6rem + 6px);
+    left: calc(1rem + 5px);
+    transition: all 0.2s ease;
+}
+
+.check-custom input[type="checkbox"]:checked+label:after {
+    font-family:"FontAwesome";
+    content: "\f00c";
+    color: #fff;
+    font-size: 0.75rem;
+    border-radius: 0;
+    display: inline-block;
+    text-align: center;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;    
+    top: 0.6rem;
+    left: 1rem;
+    transition: all 0.2s ease;
+}
+/* disabled */
+.radio-custom input[type="radio"]:disabled+label,
+.check-custom input[type="checkbox"]:disabled+label {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+}
+
+.radio-custom input[type="radio"]:disabled+label::before,
+.check-custom input[type="checkbox"]:disabled+label::before {
+    border-color:#aeaeae ;
+}
+
+/* table-matrix */
+.table-matrix tr.form-group .custom-control-label {
+    text-indent: -999em;    
+}
+.table-matrix tr th,
+.table-matrix tr td {
+    text-align:  center;
+    border: none;
+}
+.table-matrix tr th:first-child,
+.table-matrix tr td:first-child {
+    text-align: left;
+}
+.table-matrix tr th {
+    background: #fff;
+    font-weight: 400;    
+    border: none;
+}
+.table-matrix.table-striped>tbody>tr:nth-of-type(2n+1)>* {
+    background: var(--secondColor);
+}
+
+/* rwdTable */
+@media (max-width: 767px) {
+    .survey-cont .table-rwd {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .survey-cont .table-hover tbody tr:hover {
+        background: transparent;
+    }
+
+    .survey-cont .table-rwd tr {
+        display: grid;
+        width: 100%;
+    }
+
+    .survey-cont .table-rwd th {
+        display: none;
+    }
+
+    .survey-cont .table-rwd td {
+        display: block;
+        width: 100%;
+        position: relative;
+        padding-left: 36%;
+    }
+
+    .survey-cont .table-rwd tr td:before {
+        content: attr(data-title);
+        font-weight: 500;
+        display: inline-block;
+        margin-right: 15px;
+        padding: 0.75rem;
+        width: calc(29% + 1.5rem);
+        background: var(--normalGray);
+        margin-bottom: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+    }
+
+    .survey-cont .table-rwd tr:nth-child(even) td:before {
+        background: var(--normalYellow);
+    }
+
+    .survey-cont .table-rwd tr+tr {
+        border-top: 1px solid #f3f8fa;
+    }
+}
+
+@media (max-width: 500px) {
+    .survey-cont .table-rwd td {
+        padding-left: 125px;
+        border-top: 4px solid #f3f8fa;
+    }
+
+    .survey-cont .table-rwd tr td:before {
+        width: 115px;
+    }
+
+    .survey-cont .drugTable tbody tr:nth-child(odd) {
+        background: #fff;
+    }
+
+}
+
+/* bt-custom */
+.survey-cont .custom-control-input:checked~.custom-control-label::before {
+    border-color: #444;
+    background-color: #444;
+}
+.survey-cont .custom-control-input:not(:disabled):active~.custom-control-label::before {
+    background-color: #e2e2e2;
+    border-color: #e2e2e2;
+}
+.survey-cont .custom-control-input:focus~.custom-control-label::before {
+    box-shadow: 0 0 0 .2rem rgba(0, 0, 0, 0.25);
+}
+
