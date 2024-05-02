@@ -199,8 +199,7 @@
                             </div>
                         </div>
 
-                        <div id="collapsetitle" class="collapse show" aria-labelledby="headingTitle"
-                            data-parent="#accordionWrap">
+                        <div id="collapsetitle" class="collapse show topicCont" aria-labelledby="headingTitle">
 
                             <div class="section-body">
                                 <div class="topic-cont">
@@ -281,19 +280,17 @@
 
                                 <div class="group-setting">
                                     <div class="form-inline">
-                                        <div class="form-group">
+                                        <div class="form-group required">
                                             <label class="my-1 mr-2" for="mustGroup">必填群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup">
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="mustGroup" title="請選擇(可多選)">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group view">
                                             <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup">
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple data-width="auto" id="viewGroup" title="請選擇(可多選)">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
@@ -305,16 +302,24 @@
                             </div>
 
                             <div class="functions">
-                                <button type="button" class="btn btn-outline-dark btn-required active"
-                                    data-toggle="tooltip" data-placement="bottom" title="必填設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟必填">
                                     <i class="fa fa-star"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-dark btn-view active" data-toggle="tooltip"
-                                    data-placement="bottom" title="可見度設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉必填">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟可見度">
                                     <i class="fa fa-eye"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-dark btn-indent active"
-                                    data-toggle="tooltip" data-placement="bottom" title="縮排">
+                                <button type="button" class="btn btn-outline-dark btn-view-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉可見度">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
+                                    data-placement="bottom" title="縮排">
                                     <i class="fa fa-indent"></i>
                                 </button>
                                 <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
@@ -324,8 +329,7 @@
                             </div>
                         </div>
 
-                        <div id="collapseSingle" class="collapse show" aria-labelledby="headingSingle"
-                            data-parent="#accordionWrap">
+                        <div id="collapseSingle" class="collapse show topicCont" aria-labelledby="headingSingle">
 
                             <div class="section-body">
                                 <div class="topic-cont">
@@ -435,19 +439,17 @@
 
                                 <div class="group-setting">
                                     <div class="form-inline">
-                                        <div class="form-group">
+                                        <div class="form-group required">
                                             <label class="my-1 mr-2" for="mustGroup">必填群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="mustGroup" disabled="" title="請選擇(可多選)">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group view">
                                             <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="viewGroup" disabled="" title="請選擇(可多選)">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
@@ -459,12 +461,20 @@
                             </div>
 
                             <div class="functions">
-                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
-                                    data-placement="bottom" title="必填設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟必填">
                                     <i class="fa fa-star"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
-                                    data-placement="bottom" title="可見度設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉必填">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟可見度">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉可見度">
                                     <i class="fa fa-eye"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
@@ -478,8 +488,7 @@
                             </div>
                         </div>
 
-                        <div id="collapseMultiple" class="collapse show" aria-labelledby="headingMultiple"
-                            data-parent="#accordionWrap">
+                        <div id="collapseMultiple" class="collapse show topicCont" aria-labelledby="headingMultiple">
 
                             <div class="section-body">
                                 <div class="topic-cont">
@@ -565,19 +574,17 @@
 
                                 <div class="group-setting">
                                     <div class="form-inline">
-                                        <div class="form-group">
+                                        <div class="form-group required">
                                             <label class="my-1 mr-2" for="mustGroup">必填群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="mustGroup" disabled="" title="請選擇(可多選)">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group view">
                                             <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="viewGroup" title="請選擇(可多選)" disabled="">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
@@ -589,12 +596,20 @@
                             </div>
 
                             <div class="functions">
-                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
-                                    data-placement="bottom" title="必填設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟必填">
                                     <i class="fa fa-star"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
-                                    data-placement="bottom" title="可見度設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉必填">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟可見度">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉可見度">
                                     <i class="fa fa-eye"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
@@ -608,8 +623,7 @@
                             </div>
                         </div>
 
-                        <div id="collapseRadio" class="collapse show" aria-labelledby="headingRadio"
-                            data-parent="#accordionWrap">
+                        <div id="collapseRadio" class="collapse show topicCont" aria-labelledby="headingRadio">
 
                             <div class="section-body">
                                 <div class="topic-cont">
@@ -708,7 +722,6 @@
                                             </div>
                                         </div>
 
-
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text">
@@ -757,15 +770,21 @@
 
                                             <div class="input-group-append">
                                                 <button class="btn btn-secondary dropdown-toggle" type="button"
-                                                    data-toggle="dropdown" aria-expanded="false"><i
-                                                        class="fa fa-cog"></i> 選項</button>
+                                                    data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa fa-cog"></i> 選項
+                                                </button>
+
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="fa fa-picture-o"></i>上傳圖片</a>
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="fa fa-commenting-o"></i>增加備註</a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="fa fa-picture-o"></i>上傳圖片
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="fa fa-commenting-o"></i>增加備註
+                                                    </a>
                                                 </div>
+
                                             </div>
+
                                         </div>
 
 
@@ -791,19 +810,17 @@
 
                                 <div class="group-setting">
                                     <div class="form-inline">
-                                        <div class="form-group">
+                                        <div class="form-group required">
                                             <label class="my-1 mr-2" for="mustGroup">必填群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="mustGroup" disabled="" title="請選擇(可多選)">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group view">
                                             <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="viewGroup" title="請選擇(可多選)" disabled="">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
@@ -815,12 +832,20 @@
                             </div>
 
                             <div class="functions">
-                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
-                                    data-placement="bottom" title="必填設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟必填">
                                     <i class="fa fa-star"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
-                                    data-placement="bottom" title="可見度設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉必填">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟可見度">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉可見度">
                                     <i class="fa fa-eye"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
@@ -834,8 +859,7 @@
                             </div>
                         </div>
 
-                        <div id="collapseCheckbox" class="collapse show" aria-labelledby="headingCheckbox"
-                            data-parent="#accordionWrap">
+                        <div id="collapseCheckbox" class="collapse show topicCont" aria-labelledby="headingCheckbox">
 
                             <div class="section-body">
                                 <div class="topic-cont">
@@ -1016,19 +1040,17 @@
 
                                 <div class="group-setting">
                                     <div class="form-inline">
-                                        <div class="form-group">
+                                        <div class="form-group required">
                                             <label class="my-1 mr-2" for="mustGroup">必填群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="mustGroup" disabled="" title="請選擇(可多選)">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group view">
                                             <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="viewGroup" title="請選擇(可多選)" disabled="">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
@@ -1040,12 +1062,20 @@
                             </div>
 
                             <div class="functions">
-                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
-                                    data-placement="bottom" title="必填設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟必填">
                                     <i class="fa fa-star"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
-                                    data-placement="bottom" title="可見度設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉必填">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟可見度">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉可見度">
                                     <i class="fa fa-eye"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
@@ -1059,8 +1089,7 @@
                             </div>
                         </div>
 
-                        <div id="collapseNum" class="collapse show" aria-labelledby="headingNum"
-                            data-parent="#accordionWrap">
+                        <div id="collapseNum" class="collapse show topicCont" aria-labelledby="headingNum">
 
                             <div class="section-body">
                                 <div class="topic-cont">
@@ -1145,19 +1174,17 @@
 
                                 <div class="group-setting">
                                     <div class="form-inline">
-                                        <div class="form-group">
+                                        <div class="form-group required">
                                             <label class="my-1 mr-2" for="mustGroup">必填群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="mustGroup" disabled="" title="請選擇(可多選)">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group view">
                                             <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="viewGroup" title="請選擇(可多選)" disabled="">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
@@ -1169,12 +1196,20 @@
                             </div>
 
                             <div class="functions">
-                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
-                                    data-placement="bottom" title="必填設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟必填">
                                     <i class="fa fa-star"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
-                                    data-placement="bottom" title="可見度設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉必填">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟可見度">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉可見度">
                                     <i class="fa fa-eye"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
@@ -1188,8 +1223,7 @@
                             </div>
                         </div>
 
-                        <div id="collapseEmail" class="collapse show" aria-labelledby="headingEmail"
-                            data-parent="#accordionWrap">
+                        <div id="collapseEmail" class="collapse show topicCont" aria-labelledby="headingEmail">
 
                             <div class="section-body">
                                 <div class="topic-cont">
@@ -1274,19 +1308,17 @@
 
                                 <div class="group-setting">
                                     <div class="form-inline">
-                                        <div class="form-group">
+                                        <div class="form-group required">
                                             <label class="my-1 mr-2" for="mustGroup">必填群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="mustGroup" disabled="" title="請選擇(可多選)">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group view">
                                             <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="viewGroup" title="請選擇(可多選)" disabled="">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
@@ -1298,12 +1330,20 @@
                             </div>
 
                             <div class="functions">
-                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
-                                    data-placement="bottom" title="必填設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟必填">
                                     <i class="fa fa-star"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
-                                    data-placement="bottom" title="可見度設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉必填">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟可見度">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉可見度">
                                     <i class="fa fa-eye"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
@@ -1317,8 +1357,7 @@
                             </div>
                         </div>
 
-                        <div id="collapseTime" class="collapse show" aria-labelledby="headingTime"
-                            data-parent="#accordionWrap">
+                        <div id="collapseTime" class="collapse show topicCont" aria-labelledby="headingTime">
 
                             <div class="section-body">
                                 <div class="topic-cont">
@@ -1403,19 +1442,17 @@
 
                                 <div class="group-setting">
                                     <div class="form-inline">
-                                        <div class="form-group">
+                                        <div class="form-group required">
                                             <label class="my-1 mr-2" for="mustGroup">必填群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="mustGroup" disabled="" title="請選擇(可多選)">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group view">
                                             <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="viewGroup" title="請選擇(可多選)" disabled="">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
@@ -1427,12 +1464,20 @@
                             </div>
 
                             <div class="functions">
-                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
-                                    data-placement="bottom" title="必填設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟必填">
                                     <i class="fa fa-star"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
-                                    data-placement="bottom" title="可見度設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉必填">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟可見度">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉可見度">
                                     <i class="fa fa-eye"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
@@ -1446,8 +1491,7 @@
                             </div>
                         </div>
 
-                        <div id="collapseDate" class="collapse show" aria-labelledby="headingDate"
-                            data-parent="#accordionWrap">
+                        <div id="collapseDate" class="collapse show topicCont" aria-labelledby="headingDate">
 
                             <div class="section-body">
                                 <div class="topic-cont">
@@ -1532,19 +1576,17 @@
 
                                 <div class="group-setting">
                                     <div class="form-inline">
-                                        <div class="form-group">
+                                        <div class="form-group required">
                                             <label class="my-1 mr-2" for="mustGroup">必填群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="mustGroup" disabled="" title="請選擇(可多選)">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group view">
                                             <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
-                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
-                                                <option selected>請選擇(可多選)</option>
+                                            <select class="bs-select my-1 mr-sm-2" multiple id="viewGroup" title="請選擇(可多選)" disabled="">
                                                 <option value="1">群組1</option>
                                                 <option value="2">群組2</option>
                                                 <option value="3">群組3</option>
@@ -1556,12 +1598,20 @@
                             </div>
 
                             <div class="functions">
-                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
-                                    data-placement="bottom" title="必填設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟必填">
                                     <i class="fa fa-star"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
-                                    data-placement="bottom" title="可見度設定">
+                                <button type="button" class="btn btn-outline-dark btn-required-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉必填">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-open" data-toggle="tooltip"
+                                    data-placement="bottom" title="開啟可見度">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view-close d-none" data-toggle="tooltip"
+                                    data-placement="bottom" title="關閉可見度">
                                     <i class="fa fa-eye"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
@@ -1575,8 +1625,7 @@
                             </div>
                         </div>
 
-                        <div id="collapseMatrix" class="collapse show" aria-labelledby="headingMatrix"
-                            data-parent="#accordionWrap">
+                        <div id="collapseMatrix" class="collapse show topicCont" aria-labelledby="headingMatrix">
 
                             <div class="section-body">
                                 <div class="topic-cont">
@@ -1738,20 +1787,24 @@
 
             <div class="col-xs-6 col-md-3 sidebar-offcanvas">
 
-                <div class="sectionNav-wrap">
+                <div class="topicSet-wrap">
 
-                    <div class="section-nav">
+                    <div class="topicSet-cont">
 
                         <div class="accordion" id="topicSetFunction">
+
                             <div class="card">
-                                <div class="card-header" id="headingOne">
+                                <div class="card-header" id="topicSelectHead">
                                     <button class="topic-toggle" type="button" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        新增題目
+                                        data-target="#topicSelectCollapse" aria-expanded="true"
+                                        aria-controls="topicSelectCollapse">
+                                        <span>新增題目</span>
+                                        <i class="fa fa-minus"></i>
+                                        <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
 
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                <div id="topicSelectCollapse" class="collapse show" aria-labelledby="topicSelectHead"
                                     data-parent="#topicSetFunction">
                                     <div class="card-body">
 
@@ -1799,7 +1852,9 @@
                                 <div class="card-header" id="headingTwo">
                                     <button class="topic-toggle collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        題庫選題
+                                        <span>題庫選題</span>
+                                        <i class="fa fa-minus"></i>
+                                        <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
@@ -1811,7 +1866,7 @@
                                             <div class="form-group">
                                                 <label for="TopicTypeSelect">題目類別</label>
                                                 <select class="bs-select" id="TopicTypeSelect">
-                                                    <option selected disabled value="">請選擇</option>
+                                                    <option disabled value="">請選擇</option>
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -1823,7 +1878,7 @@
                                             <div class="form-group">
                                                 <label for="TopicSelect">題目</label>
                                                 <select class="bs-select" id="TopicSelect">
-                                                    <option selected disabled value="">請選擇</option>
+                                                    <option disabled value="">請選擇</option>
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -1832,7 +1887,8 @@
                                                 </select>
                                             </div>
 
-                                            <button type="button" class="btn btn-block btn-primary btn-addTopicInto">加入</button>
+                                            <button type="button"
+                                                class="btn btn-block btn-primary btn-addTopicInto">加入</button>
 
 
                                         </div>
@@ -1844,14 +1900,16 @@
                                     <button class="topic-toggle collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
-                                        群組設定
+                                        <span>群組設定</span>
+                                        <i class="fa fa-minus"></i>
+                                        <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
                                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                     data-parent="#topicSetFunction">
                                     <div class="card-body">
-                                        
-                                        <table class="table table-striped listTable table-rwd">
+
+                                        <table class="table table-striped groupTable table-rwd">
                                             <thead>
                                                 <tr>
                                                     <th>群組名稱</th>
@@ -1862,35 +1920,171 @@
                                                 <tr>
                                                     <td data-title="群組名稱">中央(一)</td>
                                                     <td data-title="動作">
-                                                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#topicEdit">
-                                                            <i class="fa fa-edit" data-toggle="tooltip" data-placement="bottom" title="編輯"></i>
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
                                                         </a>
                                                         <button class="btn btn-del">
-                                                            <i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="刪除"></i>刪除
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
                                                         </button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td data-title="群組名稱">行政院中央(二三)</td>
                                                     <td data-title="動作">
-                                                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#topicEdit">
-                                                            <i class="fa fa-edit" data-toggle="tooltip" data-placement="bottom" title="編輯"></i>
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
                                                         </a>
                                                         <button class="btn btn-del">
-                                                            <i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="刪除"></i>刪除
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
                                                         </button>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td data-title="群組名稱">MOTC113030010</td>
+                                                    <td data-title="群組名稱">中央(一)</td>
                                                     <td data-title="動作">
-                                                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#topicEdit">
-                                                            <i class="fa fa-edit" data-toggle="tooltip" data-placement="bottom" title="編輯"></i>
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
                                                         </a>
                                                         <button class="btn btn-del">
-                                                            <i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="刪除"></i>刪除
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
                                                         </button>
                                                     </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="群組名稱">中央(一)</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="群組名稱">中央(一)</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="群組名稱">中央(一)</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="群組名稱">中央(一)</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="群組名稱">中央(一)</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="群組名稱">中央(一)</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="群組名稱">中央(一)</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="群組名稱">中央(一)</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="群組名稱">中央(一)</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal"
+                                                            data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip"
+                                                                data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip"
+                                                                data-placement="bottom" title="刪除"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
 
@@ -1902,11 +2096,11 @@
 
                     </div>
 
-                    <div id="btn-collapse-sec" class="btn btn-outline-secondary btn-block btn-collapseall"><i
+                    <div id="btn-collapseTopic" class="btn btn-outline-secondary btn-block btn-collapseall"><i
                             class="fa fa-minus"></i> 全部收合
                     </div>
 
-                    <div id="btn-expand-sec" class="btn btn-outline-secondary btn-block btn-extendedeall"><i
+                    <div id="btn-expandTopic" class="btn btn-outline-secondary btn-block btn-extendedeall"><i
                             class="fa fa-plus"></i> 全部打開</div>
                 </div>
             </div>
@@ -1976,7 +2170,7 @@
                             </label>
                             <div class="col-md-9">
                                 <select class="custom-select" id="department" required>
-                                    <option selected disabled value="">請選擇</option>
+                                    <option disabled value="">請選擇</option>
                                     <option>數位發展部 (A29000000G)</option>
                                 </select>
                                 <div class="invalid-feedback">
@@ -2099,7 +2293,7 @@
                             </label>
                             <div class="col-md-9">
                                 <select class="custom-select" id="correspond" required>
-                                    <option selected disabled value="">請選擇</option>
+                                    <option disabled value="">請選擇</option>
                                     <option>對應問卷1</option>
                                     <option>對應問卷2</option>
                                 </select>
@@ -2133,7 +2327,7 @@
                                 <i class="fa fa-newspaper-o"></i>建立
                             </button>
                             <button type="button" class="btn btn-danger btn-del">
-                                <i class="fa fa-trash"></i>刪除
+                                <i class="fa fa-trash"></i>
                             </button>
                         </div>
 
@@ -2152,12 +2346,44 @@
     <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
     <script src='assets/datatables/dataTables.min.js'></script>
     <script src='assets/datatables/dataTables.bootstrap5.min.js'></script>
+    <script src="assets/datatables/dataTables.fixedColumns.min.js"></script>
+    <script src="assets/datatables/dataTables.responsive.min.js"></script>
     <script src='assets/magnific-popup/jquery.magnific-popup.min.js'></script>
     <script src='assets/sweetalert2/js/sweetalert2.all.min.js'></script>
     <script src='assets/Sortable/Sortable.min.js'></script>
     <script src="js/megamenu.js"></script>
     <script src="js/ciaoyuToggle.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            var groupTable = $('.groupTable').DataTable({
+                language: {                    
+                    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+                    search: "搜尋",
+                    paginate: {
+                        first: "<<",
+                        previous: "<",
+                        next: ">",
+                        last: ">>"
+                    },
+                },                
+                responsive: {
+                        details: {
+                            display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                            type: 'none',
+                            target: ''
+                        }
+                    },
+                    pageLength: 20,
+                    lengthChange: false,
+                    scrollY: "250px",
+                    scrollX: true,
+                    scrollCollapse: true,
+                    paging: false,
+            });
+
+        });
+    </script>
 </body>
 
 
