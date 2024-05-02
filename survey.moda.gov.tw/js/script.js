@@ -250,6 +250,240 @@ if ($('.preview-zone').length) {
   });
 }
 
+// affix top
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 40) {
+        $(".sidebar-offcanvas").addClass('affix-top');
+        $("#btnSub").addClass('affix-top');
+    } else {
+        $(".sidebar-offcanvas").removeClass('affix-top');
+        $("#btnSub").removeClass('affix-top');
+    }
+
+    if ($(document).width() > 900) {
+        if ($(this).scrollTop() > 135) {
+            $(".sidebar-offcanvas").addClass('affix-top');
+            $("#btnSub").addClass('affix-top');
+
+        } else {
+            $(".sidebar-offcanvas").removeClass('affix-top');
+            $("#btnSub").removeClass('affix-top');
+        }
+    }
+
+});
+
+// section ul
+var sections = $('section'),
+    nav = $('nav'),
+    nav_height = nav.outerHeight();
+
+cont_top = $('.content-header').height();
+
+$(window).on('scroll', function () {
+    var cur_pos = $(this).scrollTop();
+
+
+    sections.each(function () {
+        // var top = $(this).offset().top - nav_height,
+        var top = $(this).offset().top - 140,
+            bottom = top + $(this).outerHeight();
+        first_top = 140;
+
+        if (cur_pos >= top && cur_pos <= bottom) {
+            // alert($(this).scrollTop());
+            nav.find('a').removeClass('active');
+            sections.removeClass('active');
+
+            $(this).addClass('active');
+            nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+        }
+
+        if (cur_pos <= first_top) {
+            $('.section-nav div:first-child a').addClass('active');
+        }
+
+    });
+});
+
+nav.find('a').on('click', function () {
+    var $el = $(this),
+        id = $el.attr('href');
+
+    $('html, body').animate({
+        // scrollTop: $(id).offset().top - nav_height
+
+        scrollTop: $(id).offset().top - 100
+    }, 500);
+
+    return false;
+});
+
+//anchor
+$(".btn-anchor").click(function() {
+    $('html, body').animate({
+        scrollTop: $(this.hash).offset().top - 100
+    }, 750);
+    return false;
+});
+
+//collapse
+$(document).ready(function () {
+
+    // $("#btn-collapse-sec").hide();
+    $("#btn-expand-sec").hide();
+
+    $("#btn-collapse-sec").click(function () {
+        $('.collapse').removeClass('show');
+        $("#btn-expand-sec").show();
+        $("#btn-collapse-sec").hide();
+        $(".topic-toggle").attr("aria-expanded", "false");
+    });
+
+
+    $("#btn-expand-sec").click(function () {
+        $('.collapse').addClass('show').css("height", "");
+        $("#btn-expand-sec").hide();
+        $("#btn-collapse-sec").show();
+        $(".topic-toggle").attr("aria-expanded", "true");
+    });
+
+    $(".card-header .topic-toggle").click(function () {
+        $('.collapse').each(function (index) {
+            if ($(this).hasClass('show')) {
+                $("#btn-expand-sec").show();
+                $("#btn-collapse-sec").hide();
+                // $(this).parent().find('.topic-toggle').attr("aria-expanded","true");
+            }
+        });
+    });
+
+});
+
+// offcanvas
+$(document).ready(function () {
+	$('[data-toggle="offcanvas"]').click(function () {
+		$('.row-offcanvas').toggleClass('active')
+	});
+});
+
+
+
+// affix top
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 40) {
+        $(".sidebar-offcanvas").addClass('affix-top');
+    } else {
+        $(".sidebar-offcanvas").removeClass('affix-top');
+    }
+
+    if ($(document).width() > 900) {
+
+        if ($(this).scrollTop() > 135) {
+            $(".sidebar-offcanvas").addClass('affix-top');
+
+        } else {
+            $(".sidebar-offcanvas").removeClass('affix-top');
+        }
+    }
+
+});
+
+// drag
+if ($('.surveyedit-wrap').length) {
+  const dragArea = document.querySelector(".surveyedit-wrap");
+  new Sortable(dragArea, {
+    animation: 350
+  });
+}
+
+
+// section ul
+var sections = $('section'),
+    nav = $('nav'),
+    nav_height = nav.outerHeight();
+
+cont_top = $('.content-header').height();
+
+$(window).on('scroll', function () {
+    var cur_pos = $(this).scrollTop();
+
+
+    sections.each(function () {
+        // var top = $(this).offset().top - nav_height,
+        var top = $(this).offset().top - 140,
+            bottom = top + $(this).outerHeight();
+        first_top = 140;
+
+        if (cur_pos >= top && cur_pos <= bottom) {
+            // alert($(this).scrollTop());
+            nav.find('a').removeClass('active');
+            sections.removeClass('active');
+
+            $(this).addClass('active');
+            nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+        }
+
+        if (cur_pos <= first_top) {
+            $('.section-nav div:first-child a').addClass('active');
+        }
+
+    });
+});
+
+nav.find('a').on('click', function () {
+    var $el = $(this),
+        id = $el.attr('href');
+
+    $('html, body').animate({
+        // scrollTop: $(id).offset().top - nav_height
+
+        scrollTop: $(id).offset().top - 100
+    }, 500);
+
+    return false;
+});
+
+//anchor
+$(".btn-anchor").click(function() {
+    $('html, body').animate({
+        scrollTop: $(this.hash).offset().top - 100
+    }, 750);
+    return false;
+});
+
+//collapse
+$(document).ready(function () {
+
+    // $("#btn-collapse-sec").hide();
+    $("#btn-expand-sec").hide();
+
+    $("#btn-collapse-sec").click(function () {
+        $('.collapse').removeClass('show');
+        $("#btn-expand-sec").show();
+        $("#btn-collapse-sec").hide();
+        $(".topic-toggle").attr("aria-expanded", "false");
+    });
+
+
+    $("#btn-expand-sec").click(function () {
+        $('.collapse').addClass('show').css("height", "");
+        $("#btn-expand-sec").hide();
+        $("#btn-collapse-sec").show();
+        $(".topic-toggle").attr("aria-expanded", "true");
+    });
+
+    $(".card-header .topic-toggle").click(function () {
+        $('.collapse').each(function (index) {
+            if ($(this).hasClass('show')) {
+                $("#btn-expand-sec").show();
+                $("#btn-collapse-sec").hide();
+                // $(this).parent().find('.topic-toggle').attr("aria-expanded","true");
+            }
+        });
+    });
+
+});
 
 
 // popup-gallery

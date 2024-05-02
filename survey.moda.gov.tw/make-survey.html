@@ -155,6 +155,1763 @@
             </ul>
         </div>
 
+        <div class="row row-offcanvas row-offcanvas-right">
+            <div class="col-xs-6 col-md-9">
+
+                <div class="d-block d-md-none">
+                    <button type="button" id="btnSub" class="btn btn-primary btn-lg btn-block" data-toggle="offcanvas"
+                        style="margin-bottom: 30px;">
+                        <div class="row">
+                            <div class="col-1">
+                                <i class="fa fa-bars" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title="其他選項"></i>
+                            </div>
+                            <div class="col-11">
+                                <div class="btn-title d-inline">其他選項</div>
+                            </div>
+                        </div>
+                    </button>
+
+                </div>
+
+                <div class="surveyedit-wrap" id="accordionWrap">
+
+                    <!-- 分類標題 -->
+                    <section id="typetitle">
+                        <div class="section-header" id="headingTitle">
+                            <div class="section-title">
+                                <button class="topic-toggle type" type="button" data-toggle="collapse"
+                                    data-target="#collapsetitle" aria-expanded="true" aria-controls="collapsetitle">
+                                    <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
+                                    <div class="badge badge-form">
+                                        <i class="fa fa-header"></i>
+                                    </div>
+                                    <span>分類標題</span>
+                                </button>
+
+                            </div>
+
+                            <div class="functions">
+                                <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
+                                    data-placement="bottom" title="刪除">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="collapsetitle" class="collapse show" aria-labelledby="headingTitle"
+                            data-parent="#accordionWrap">
+
+                            <div class="section-body">
+                                <div class="topic-cont">
+
+                                    <div class="form-group">
+                                        <label for="typetitleEdit">標題<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="typetitleEdit" placeholder="請輸入文字內容"
+                                            value="電腦使用狀況" required>
+                                        <div class="invalid-feedback">
+                                            請輸入標題內容
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="uploadImg" id="typetitleEdituploadImg" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="typetitleEdituploadImg">上傳圖片</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="note" id="typetitleEditnote" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="typetitleEditnote">備註</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="typetitleEdituploadImg">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="typetitleEditnote">
+                                        <label for="typetitleEditNote">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="typetitleEditNote" rows="3"
+                                            placeholder="請輸入文字" required=""></textarea>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- 單行文字 -->
+                    <section id="topicSingle" class="indent">
+                        <div class="section-header" id="headingSingle">
+                            <div class="section-title">
+                                <button class="topic-toggle" type="button" data-toggle="collapse"
+                                    data-target="#collapseSingle" aria-expanded="true" aria-controls="collapseSingle">
+                                    <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
+                                    <div class="badge badge-form">1</div>
+                                    <span>單行文字</span>
+                                </button>
+
+                                <div class="group-setting">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="mustGroup">必填群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup">
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup">
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="functions">
+                                <button type="button" class="btn btn-outline-dark btn-required active"
+                                    data-toggle="tooltip" data-placement="bottom" title="必填設定">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view active" data-toggle="tooltip"
+                                    data-placement="bottom" title="可見度設定">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-indent active"
+                                    data-toggle="tooltip" data-placement="bottom" title="縮排">
+                                    <i class="fa fa-indent"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
+                                    data-placement="bottom" title="刪除">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="collapseSingle" class="collapse show" aria-labelledby="headingSingle"
+                            data-parent="#accordionWrap">
+
+                            <div class="section-body">
+                                <div class="topic-cont">
+
+                                    <div class="form-group">
+                                        <label for="singleTextTopic">題目<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="singleTextTopic" rows="3"
+                                            placeholder="請輸入題目內容" required>機關(學校全名)</textarea>
+                                        <div class="invalid-feedback">
+                                            請輸入題目內容
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="uploadImg" id="singleTextEdituploadImg" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="singleTextEdituploadImg">上傳圖片</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="note" id="singleTextEditnote" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="singleTextEditnote">備註</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="singleTextEdituploadImg">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="singleTextEditnote">
+                                        <label for="singleTextEditNote">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="singleTextEditNote" rows="3"
+                                            placeholder="請輸入文字內容" required=""></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="singleTextEdit">回答</label>
+                                        <input type="text" class="form-control" id="singleTextEdit"
+                                            placeholder="可略過，或填入輸入框提示文字 (例如：請填寫OOOO)">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 分類線 -->
+                    <section id="divider">
+                        <div class="section-header" id="headingDivider">
+                            <div class="section-title">
+                                <button class="topic-toggle line" type="button">
+                                    <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
+                                    <div class="badge badge-form">
+                                        <i class="fa fa-window-minimize"></i>
+                                    </div>
+                                    <span>分類線</span>
+                                </button>
+
+                            </div>
+
+                            <div class="functions">
+                                <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
+                                    data-placement="bottom" title="刪除">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- 多行文字 -->
+                    <section id="topicMultiple">
+                        <div class="section-header" id="headingMultiple">
+                            <div class="section-title">
+                                <button class="topic-toggle" type="button" data-toggle="collapse"
+                                    data-target="#collapseMultiple" aria-expanded="true"
+                                    aria-controls="collapseMultiple">
+                                    <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
+                                    <div class="badge badge-form">1</div>
+                                    <span>多行文字</span>
+                                </button>
+
+                                <div class="group-setting">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="mustGroup">必填群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="functions">
+                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
+                                    data-placement="bottom" title="必填設定">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
+                                    data-placement="bottom" title="可見度設定">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
+                                    data-placement="bottom" title="縮排">
+                                    <i class="fa fa-indent"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
+                                    data-placement="bottom" title="刪除">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="collapseMultiple" class="collapse show" aria-labelledby="headingMultiple"
+                            data-parent="#accordionWrap">
+
+                            <div class="section-body">
+                                <div class="topic-cont">
+                                    <div class="form-group">
+                                        <label for="multipleLineEditTopic">題目<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="multipleLineEditTopic" rows="3"
+                                            placeholder="請輸入題目內容" required></textarea>
+                                        <div class="invalid-feedback">
+                                            請輸入題目內容
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input"
+                                                name="multipleLineEditfunctionCustom" value="uploadImg"
+                                                id="multipleLineEdituploadImg" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="multipleLineEdituploadImg">上傳圖片</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input"
+                                                name="multipleLineEditfunctionCustom" value="note"
+                                                id="multipleLineEditnote" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="multipleLineEditnote">備註</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="multipleLineEdituploadImg">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="multipleLineEditnote">
+                                        <label for="MultipleTextEditNote">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="MultipleTextEditNote" rows="3"
+                                            placeholder="請輸入文字內容" required=""></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="multipleLineEdit">回答</label>
+                                        <textarea class="form-control" id="multipleLineEdit" rows="3"
+                                            placeholder="可略過，或填入輸入框提示文字 (例如：請填寫OOOO)"></textarea>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 單選題 -->
+                    <section id="topicRadio">
+                        <div class="section-header" id="headingRadio">
+                            <div class="section-title">
+                                <button class="topic-toggle" type="button" data-toggle="collapse"
+                                    data-target="#collapseRadio" aria-expanded="true" aria-controls="collapseRadio">
+                                    <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
+                                    <div class="badge badge-form">1</div>
+                                    <span>單選題</span>
+                                </button>
+
+                                <div class="group-setting">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="mustGroup">必填群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="functions">
+                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
+                                    data-placement="bottom" title="必填設定">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
+                                    data-placement="bottom" title="可見度設定">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
+                                    data-placement="bottom" title="縮排">
+                                    <i class="fa fa-indent"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
+                                    data-placement="bottom" title="刪除">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="collapseRadio" class="collapse show" aria-labelledby="headingRadio"
+                            data-parent="#accordionWrap">
+
+                            <div class="section-body">
+                                <div class="topic-cont">
+
+                                    <div class="form-group">
+                                        <label for="RadioTopic">題目<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="RadioTopic" rows="3" placeholder="請輸入題目內容"
+                                            required></textarea>
+                                        <div class="invalid-feedback">
+                                            請輸入題目內容
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="uploadImg" id="RadiouploadImg" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="RadiouploadImg">上傳圖片</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="note" id="Radionote" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="Radionote">備註</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="note" id="RadioOther" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="RadioOther">其他</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="RadiouploadImg">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="Radionote">
+                                        <label for="RadioNote">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="RadioNote" rows="3" placeholder="請輸入文字內容"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>回答</label>
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <input type="radio" disabled>
+                                                    <span class="label-text">A</span>
+                                                </div>
+                                            </div>
+                                            <label class="d-none" for="RadioA">回答A</label>
+                                            <input type="text" class="form-control" id="RadioA" placeholder="請輸入選項內容"
+                                                required>
+
+                                            <button class="btn btn-outline-secondary btn-addchoice" type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+
+                                            <div class="input-group-append">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    data-toggle="dropdown" aria-expanded="false"><i
+                                                        class="fa fa-cog"></i> 選項</button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-picture-o"></i>上傳圖片</a>
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-commenting-o"></i>增加備註</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <input type="radio" disabled>
+                                                    <span class="label-text">B</span>
+                                                </div>
+                                            </div>
+                                            <label class="d-none" for="RadioB">回答B</label>
+                                            <input type="text" class="form-control" id="RadioB" placeholder="請輸入選項內容"
+                                                required>
+
+                                            <button class="btn btn-outline-secondary btn-addchoice" type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+
+                                            <div class="input-group-append">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    data-toggle="dropdown" aria-expanded="false"><i
+                                                        class="fa fa-cog"></i> 選項</button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-picture-o"></i>上傳圖片</a>
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-commenting-o"></i>增加備註</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group" data-ciaoyu-toggle="RadioOther">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <input type="radio" disabled>
+                                                    <span class="label-text">C</span>
+                                                </div>
+                                            </div>
+                                            <label class="d-none" for="RadioC">回答C</label>
+                                            <input type="text" class="form-control" id="RadioC" placeholder="請輸入選項內容"
+                                                value="其他" required>
+
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+
+                                            <div class="input-group-append">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    data-toggle="dropdown" aria-expanded="false"><i
+                                                        class="fa fa-cog"></i> 選項</button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-picture-o"></i>上傳圖片</a>
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-commenting-o"></i>增加備註</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 多選題 -->
+                    <section id="topicCheckbox">
+                        <div class="section-header" id="headingCheckbox">
+                            <div class="section-title">
+                                <button class="topic-toggle" type="button" data-toggle="collapse"
+                                    data-target="#collapseCheckbox" aria-expanded="true"
+                                    aria-controls="collapseCheckbox">
+                                    <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
+                                    <div class="badge badge-form">1</div>
+                                    <span>多選題</span>
+                                </button>
+
+                                <div class="group-setting">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="mustGroup">必填群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="functions">
+                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
+                                    data-placement="bottom" title="必填設定">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
+                                    data-placement="bottom" title="可見度設定">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
+                                    data-placement="bottom" title="縮排">
+                                    <i class="fa fa-indent"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
+                                    data-placement="bottom" title="刪除">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="collapseCheckbox" class="collapse show" aria-labelledby="headingCheckbox"
+                            data-parent="#accordionWrap">
+
+                            <div class="section-body">
+                                <div class="topic-cont">
+
+                                    <div class="form-group">
+                                        <label for="CheckboxTopic">題目<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="CheckboxTopic" rows="3" placeholder="請輸入題目內容"
+                                            required></textarea>
+                                        <div class="invalid-feedback">
+                                            請輸入題目內容
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="uploadImg" id="CheckboxuploadImg" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="CheckboxuploadImg">上傳圖片</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="note" id="Checkboxnote" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="Checkboxnote">備註</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="note" id="CheckboxOther" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="CheckboxOther">其他</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="CheckboxuploadImg">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="Checkboxnote">
+                                        <label for="CheckboxNote">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="CheckboxNote" rows="3" placeholder="請輸入文字內容"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>回答</label>
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <input type="checkbox" disabled>
+                                                    <span class="label-text">A</span>
+                                                </div>
+                                            </div>
+                                            <label class="d-none" for="CheckboxA">回答A</label>
+                                            <input type="text" class="form-control" id="CheckboxA" placeholder="請輸入選項內容"
+                                                required>
+
+                                            <button class="btn btn-outline-secondary btn-addchoice" type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+
+                                            <div class="input-group-append">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    data-toggle="dropdown" aria-expanded="false"><i
+                                                        class="fa fa-cog"></i> 選項</button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-picture-o"></i>上傳圖片</a>
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-commenting-o"></i>增加備註</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <input type="checkbox" disabled>
+                                                    <span class="label-text">B</span>
+                                                </div>
+                                            </div>
+                                            <label class="d-none" for="CheckboxB">回答B</label>
+                                            <input type="text" class="form-control" id="CheckboxB" placeholder="請輸入選項內容"
+                                                required>
+
+                                            <button class="btn btn-outline-secondary btn-addchoice" type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+
+                                            <div class="input-group-append">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    data-toggle="dropdown" aria-expanded="false"><i
+                                                        class="fa fa-cog"></i> 選項</button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-picture-o"></i>上傳圖片</a>
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-commenting-o"></i>增加備註</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group" data-ciaoyu-toggle="CheckboxOther">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <input type="checkbox" disabled>
+                                                    <span class="label-text">C</span>
+                                                </div>
+                                            </div>
+                                            <label class="d-none" for="CheckboxC">回答C</label>
+                                            <input type="text" class="form-control" id="CheckboxC" placeholder="請輸入選項內容"
+                                                value="其他" required>
+
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+
+                                            <div class="input-group-append">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    data-toggle="dropdown" aria-expanded="false"><i
+                                                        class="fa fa-cog"></i> 選項</button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-picture-o"></i>上傳圖片</a>
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="fa fa-commenting-o"></i>增加備註</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 數字題 -->
+                    <section id="topicNum">
+                        <div class="section-header" id="headingNum">
+                            <div class="section-title">
+                                <button class="topic-toggle" type="button" data-toggle="collapse"
+                                    data-target="#collapseNum" aria-expanded="true" aria-controls="collapseNum">
+                                    <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
+                                    <div class="badge badge-form">1</div>
+                                    <span>數字題</span>
+                                </button>
+
+                                <div class="group-setting">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="mustGroup">必填群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="functions">
+                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
+                                    data-placement="bottom" title="必填設定">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
+                                    data-placement="bottom" title="可見度設定">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
+                                    data-placement="bottom" title="縮排">
+                                    <i class="fa fa-indent"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
+                                    data-placement="bottom" title="刪除">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="collapseNum" class="collapse show" aria-labelledby="headingNum"
+                            data-parent="#accordionWrap">
+
+                            <div class="section-body">
+                                <div class="topic-cont">
+
+                                    <div class="form-group">
+                                        <label for="NumberTopic">題目<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="NumberTopic" rows="3" placeholder="請輸入題目內容"
+                                            required>公務使用中之實體桌上型電腦或工作站，總計幾台？</textarea>
+                                        <div class="invalid-feedback">
+                                            請輸入題目內容
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="uploadImg" id="NumberTypeuploadImg" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="NumberTypeuploadImg">上傳圖片</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="note" id="NumberTypenote" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="NumberTypenote">備註</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="NumberTypeuploadImg">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="NumberTypenote">
+                                        <label for="NumberTypeNote">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="NumberTypeNote" rows="3" placeholder="請輸入文字"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="NumberText">回答</label>
+                                        <input type="text" class="form-control" id="NumberText"
+                                            placeholder="可略過，或填入輸入框提示文字 (例如：請填寫OOOO)">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 郵件題 -->
+                    <section id="topicEmail">
+                        <div class="section-header" id="headingEmail">
+                            <div class="section-title">
+                                <button class="topic-toggle" type="button" data-toggle="collapse"
+                                    data-target="#collapseEmail" aria-expanded="true" aria-controls="collapseEmail">
+                                    <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
+                                    <div class="badge badge-form">1</div>
+                                    <span>郵件題</span>
+                                </button>
+
+                                <div class="group-setting">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="mustGroup">必填群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="functions">
+                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
+                                    data-placement="bottom" title="必填設定">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
+                                    data-placement="bottom" title="可見度設定">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
+                                    data-placement="bottom" title="縮排">
+                                    <i class="fa fa-indent"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
+                                    data-placement="bottom" title="刪除">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="collapseEmail" class="collapse show" aria-labelledby="headingEmail"
+                            data-parent="#accordionWrap">
+
+                            <div class="section-body">
+                                <div class="topic-cont">
+
+                                    <div class="form-group">
+                                        <label for="emailTopic">題目<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="emailTopic" rows="3" placeholder="請輸入題目內容"
+                                            required></textarea>
+                                        <div class="invalid-feedback">
+                                            請輸入題目內容
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="uploadImg" id="emailuploadImg" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="emailuploadImg">上傳圖片</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="note" id="emailnote" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="emailnote">備註</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="emailuploadImg">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="emailnote">
+                                        <label for="emailNote">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="emailNote" rows="3" placeholder="請輸入文字內容"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="NumberText">回答</label>
+                                        <input type="text" class="form-control" id="NumberText"
+                                            placeholder="可略過，或填入輸入框提示文字 (例如：請填寫OOOO)">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 時間題 -->
+                    <section id="topicTime">
+                        <div class="section-header" id="headingTime">
+                            <div class="section-title">
+                                <button class="topic-toggle" type="button" data-toggle="collapse"
+                                    data-target="#collapseTime" aria-expanded="true" aria-controls="collapseTime">
+                                    <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
+                                    <div class="badge badge-form">1</div>
+                                    <span>時間題</span>
+                                </button>
+
+                                <div class="group-setting">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="mustGroup">必填群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="functions">
+                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
+                                    data-placement="bottom" title="必填設定">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
+                                    data-placement="bottom" title="可見度設定">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
+                                    data-placement="bottom" title="縮排">
+                                    <i class="fa fa-indent"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
+                                    data-placement="bottom" title="刪除">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="collapseTime" class="collapse show" aria-labelledby="headingTime"
+                            data-parent="#accordionWrap">
+
+                            <div class="section-body">
+                                <div class="topic-cont">
+
+                                    <div class="form-group">
+                                        <label for="timeTopic">題目<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="timeTopic" rows="3" placeholder="請輸入題目內容"
+                                            required></textarea>
+                                        <div class="invalid-feedback">
+                                            請輸入題目內容
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="uploadImg" id="timeuploadImg" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="timeuploadImg">上傳圖片</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="note" id="timenote" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="timenote">備註</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="timeuploadImg">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="timenote">
+                                        <label for="timeNote">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="timeNote" rows="3" placeholder="請輸入文字內容"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="NumberText">回答</label>
+                                        <input type="text" class="form-control" id="NumberText"
+                                            placeholder="可略過，或填入輸入框提示文字 (例如：請填寫OOOO)">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 日期題 -->
+                    <section id="topicDate">
+                        <div class="section-header" id="headingDate">
+                            <div class="section-title">
+                                <button class="topic-toggle" type="button" data-toggle="collapse"
+                                    data-target="#collapseDate" aria-expanded="true" aria-controls="collapseDate">
+                                    <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
+                                    <div class="badge badge-form">1</div>
+                                    <span>日期題</span>
+                                </button>
+
+                                <div class="group-setting">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="mustGroup">必填群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="functions">
+                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
+                                    data-placement="bottom" title="必填設定">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
+                                    data-placement="bottom" title="可見度設定">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
+                                    data-placement="bottom" title="縮排">
+                                    <i class="fa fa-indent"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
+                                    data-placement="bottom" title="刪除">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="collapseDate" class="collapse show" aria-labelledby="headingDate"
+                            data-parent="#accordionWrap">
+
+                            <div class="section-body">
+                                <div class="topic-cont">
+
+                                    <div class="form-group">
+                                        <label for="dateTopic">題目<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="dateTopic" rows="3" placeholder="請輸入題目內容"
+                                            required></textarea>
+                                        <div class="invalid-feedback">
+                                            請輸入題目內容
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="uploadImg" id="dateuploadImgEdit" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="dateuploadImgEdit">上傳圖片</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="note" id="datenoteEdit" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="datenoteEdit">備註</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="dateuploadImgEdit">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="datenoteEdit">
+                                        <label for="datenoteEdit">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="datenoteEdit" rows="3" placeholder="請輸入文字內容"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="NumberText">回答</label>
+                                        <input type="text" class="form-control" id="NumberText"
+                                            placeholder="可略過，或填入輸入框提示文字 (例如：請填寫OOOO)">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 矩陣題 -->
+                    <section id="topicMatrix">
+                        <div class="section-header" id="headingMatrix">
+                            <div class="section-title">
+                                <button class="topic-toggle" type="button" data-toggle="collapse"
+                                    data-target="#collapseMatrix" aria-expanded="true" aria-controls="collapseMatrix">
+                                    <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
+                                    <div class="badge badge-form">1</div>
+                                    <span>日期題</span>
+                                </button>
+
+                                <div class="group-setting">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="mustGroup">必填群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="mustGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="my-1 mr-2" for="viewGroup">可見度群組</label>
+                                            <select class="custom-select my-1 mr-sm-2" id="viewGroup" disabled>
+                                                <option selected>請選擇(可多選)</option>
+                                                <option value="1">群組1</option>
+                                                <option value="2">群組2</option>
+                                                <option value="3">群組3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="functions">
+                                <button type="button" class="btn btn-outline-dark btn-required" data-toggle="tooltip"
+                                    data-placement="bottom" title="必填設定">
+                                    <i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-view" data-toggle="tooltip"
+                                    data-placement="bottom" title="可見度設定">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark btn-indent" data-toggle="tooltip"
+                                    data-placement="bottom" title="縮排">
+                                    <i class="fa fa-indent"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-del" data-toggle="tooltip"
+                                    data-placement="bottom" title="刪除">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="collapseMatrix" class="collapse show" aria-labelledby="headingMatrix"
+                            data-parent="#accordionWrap">
+
+                            <div class="section-body">
+                                <div class="topic-cont">
+
+                                    <div class="form-group">
+                                        <label for="MatrixTypeTopic">題目<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="MatrixTypeTopic" rows="3"
+                                            placeholder="請輸入題目內容" required></textarea>
+                                        <div class="invalid-feedback">
+                                            請輸入題目內容
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="uploadImg" id="MatrixTypeuploadImg" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="MatrixTypeuploadImg">上傳圖片</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" name="functionCustom"
+                                                value="note" id="MatrixTypenote" data-ciaoyu="toggle">
+                                            <label class="form-check-label" for="MatrixTypenote">備註</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="MatrixTypeuploadImg">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" data-ciaoyu-toggle="MatrixTypenote">
+                                        <label for="MatrixTypeNote">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="MatrixTypeNote" rows="3"
+                                            placeholder="請輸入文字內容" required=""></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label><i class="fa fa-bars"></i> 列</label>
+
+                                        <div class="input-group">
+                                            <label class="d-none" for="MatrixTypeRowA">列A</label>
+                                            <input type="text" class="form-control" id="MatrixTypeRowA"
+                                                placeholder="請輸入內容" required>
+
+                                            <button class="btn btn-outline-secondary btn-addchoice" type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <label class="d-none" for="MatrixTypeRowB">列B</label>
+                                            <input type="text" class="form-control" id="MatrixTypeRowB"
+                                                placeholder="請輸入內容" required>
+
+                                            <button class="btn btn-outline-secondary btn-addchoice" type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <label class="d-none" for="MatrixTypeRowC">列C</label>
+                                            <input type="text" class="form-control" id="MatrixTypeRowC"
+                                                placeholder="請輸入內容" required>
+
+                                            <button class="btn btn-outline-secondary btn-addchoice" type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label><i class="fa fa-columns"></i> 欄</label>
+
+                                        <div class="input-group">
+                                            <label class="d-none" for="MatrixTypeColA">欄A</label>
+                                            <input type="text" class="form-control" id="MatrixTypeColA"
+                                                placeholder="請輸入內容" required>
+
+                                            <button class="btn btn-outline-secondary btn-addchoice" type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <label class="d-none" for="MatrixTypeColB">欄B</label>
+                                            <input type="text" class="form-control" id="MatrixTypeColB"
+                                                placeholder="請輸入內容" required>
+
+                                            <button class="btn btn-outline-secondary btn-addchoice" type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <label class="d-none" for="MatrixTypeColC">欄C</label>
+                                            <input type="text" class="form-control" id="MatrixTypeColC"
+                                                placeholder="請輸入內容" required>
+
+                                            <button class="btn btn-outline-secondary btn-addchoice" type="button">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-removechoice" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </section>
+
+                </div><!-- accordionWrap END -->
+
+            </div><!-- col-md-10 END -->
+
+            <div class="col-xs-6 col-md-3 sidebar-offcanvas">
+
+                <div class="sectionNav-wrap">
+
+                    <div class="section-nav">
+
+                        <div class="accordion" id="topicSetFunction">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <button class="topic-toggle" type="button" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        新增題目
+                                    </button>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#topicSetFunction">
+                                    <div class="card-body">
+
+                                        <button type="button" class="btn btn-block btn-addSingle">
+                                            <i class="fa fa-dot-circle-o"></i> 單行文字
+                                        </button>
+
+                                        <button type="button" class="btn btn-block btn-addRadio">
+                                            <i class="fa fa-dot-circle-o"></i> 多行文字
+                                        </button>
+
+                                        <button type="button" class="btn btn-block btn-addRadio">
+                                            <i class="fa fa-dot-circle-o"></i> 單選題
+                                        </button>
+
+                                        <button type="button" class="btn btn-block btn-addRadio">
+                                            <i class="fa fa-check-square"></i> 複選題
+                                        </button>
+
+                                        <button type="button" class="btn btn-block btn-addRadio">
+                                            <i class="fa fa-dot-circle-o"></i> 數字題
+                                        </button>
+
+                                        <button type="button" class="btn btn-block btn-addRadio">
+                                            <i class="fa fa-dot-circle-o"></i> 電子郵件題
+                                        </button>
+
+                                        <button type="button" class="btn btn-block btn-addRadio">
+                                            <i class="fa fa-dot-circle-o"></i> 日期題
+                                        </button>
+
+                                        <button type="button" class="btn btn-block btn-addRadio">
+                                            <i class="fa fa-dot-circle-o"></i> 時間題
+                                        </button>
+
+                                        <button type="button" class="btn btn-block btn-addRadio">
+                                            <i class="fa fa-dot-circle-o"></i> 矩陣題
+                                        </button>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <button class="topic-toggle collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        題庫選題
+                                    </button>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#topicSetFunction">
+                                    <div class="card-body">
+
+                                        <div class="dataSelect">
+
+                                            <div class="form-group">
+                                                <label for="TopicTypeSelect">題目類別</label>
+                                                <select class="bs-select" id="TopicTypeSelect">
+                                                    <option selected disabled value="">請選擇</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="TopicSelect">題目</label>
+                                                <select class="bs-select" id="TopicSelect">
+                                                    <option selected disabled value="">請選擇</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+
+                                            <button type="button" class="btn btn-block btn-primary btn-addTopicInto">加入</button>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <button class="topic-toggle collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        群組設定
+                                    </button>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#topicSetFunction">
+                                    <div class="card-body">
+                                        
+                                        <table class="table table-striped listTable table-rwd">
+                                            <thead>
+                                                <tr>
+                                                    <th>群組名稱</th>
+                                                    <th>動作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-title="群組名稱">中央(一)</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip" data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="刪除"></i>刪除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="群組名稱">行政院中央(二三)</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip" data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="刪除"></i>刪除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="群組名稱">MOTC113030010</td>
+                                                    <td data-title="動作">
+                                                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#topicEdit">
+                                                            <i class="fa fa-edit" data-toggle="tooltip" data-placement="bottom" title="編輯"></i>
+                                                        </a>
+                                                        <button class="btn btn-del">
+                                                            <i class="fa fa-trash" data-toggle="tooltip" data-placement="bottom" title="刪除"></i>刪除
+                                                        </button>
+                                                    </td>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div id="btn-collapse-sec" class="btn btn-outline-secondary btn-block btn-collapseall"><i
+                            class="fa fa-minus"></i> 全部收合
+                    </div>
+
+                    <div id="btn-expand-sec" class="btn btn-outline-secondary btn-block btn-extendedeall"><i
+                            class="fa fa-plus"></i> 全部打開</div>
+                </div>
+            </div>
+
+        </div>
 
     </main>
 
@@ -178,13 +1935,13 @@
 
     <!-- 問卷製作申請 -->
     <div class="modal fade" id="surveyApply" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="surveyApplyLabel" aria-hidden="true">
+        aria-labelledby="surveyApplyLabel">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title" id="surveyApplyLabel">問卷製作-權限開通申請</div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -258,20 +2015,20 @@
 
     <!-- 新增題目 -->
     <div class="modal fade" id="addSurvey" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="addSurveyLabel" aria-hidden="true">
+        aria-labelledby="addSurveyLabel">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title" id="addSurveyLabel">新增問卷</div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
 
                     <form class="form form-addSurvey needs-validation" novalidate>
                         <div class="form-group row">
-                            <label for="abbr" class="col-md-3 col-form-label">問卷代號
+                            <label for="abbr" class="col-md-3 col-form-label">群組名稱
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="col-md-9">
@@ -376,7 +2133,7 @@
                                 <i class="fa fa-newspaper-o"></i>建立
                             </button>
                             <button type="button" class="btn btn-danger btn-del">
-                                <i class="fa fa-trash" aria-hidden="true"></i>刪除
+                                <i class="fa fa-trash"></i>刪除
                             </button>
                         </div>
 
@@ -397,40 +2154,10 @@
     <script src='assets/datatables/dataTables.bootstrap5.min.js'></script>
     <script src='assets/magnific-popup/jquery.magnific-popup.min.js'></script>
     <script src='assets/sweetalert2/js/sweetalert2.all.min.js'></script>
+    <script src='assets/Sortable/Sortable.min.js'></script>
     <script src="js/megamenu.js"></script>
     <script src="js/ciaoyuToggle.min.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        $(document).ready(function () {
-            var topicList = $('#topicList').DataTable({
-                language: {
-                    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
-                    // url: 'assets/datatables/i18n/zh-HANT.json',
-                    search: "搜尋",
-                    columnDefs: [{
-                        width: 200,
-                        targets: 0
-                    }],
-                    paginate: {
-                        first: "<<",
-                        previous: "<",
-                        next: ">",
-                        last: ">>"
-                    },
-                },
-                columnDefs: [{
-                        width: 200,
-                        targets: [0]
-                    },
-                    {
-                        width: 500,
-                        targets: [1, 2]
-                    },
-                ],
-            });
-
-        });
-    </script>
 </body>
 
 
