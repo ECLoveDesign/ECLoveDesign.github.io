@@ -1442,6 +1442,7 @@ div.dt-scroll-body {
     background: #fff;
     border: #000 solid 1px;
 }
+.functions [class*="btn-"].active,
 .functions .btn[class*="-open"] {
     color: #fff;
     background: #000;
@@ -1600,7 +1601,7 @@ section + section  {
 }
 .topic-toggle span {
     font-size: 1rem;
-    margin: 0 5px;
+    margin: 5px;
 }
 .topic-toggle[aria-expanded="true"] .fa-plus {
     display: none;

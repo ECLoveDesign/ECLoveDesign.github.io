@@ -349,39 +349,14 @@ $(".btn-indent").click(function () {
   $(this).closest('section').toggleClass('indent');
 });
 
-$(".functions .btn-required-open").click(function () {
-  $(this).addClass('d-none');
-  $(this).siblings('.btn-required-close').removeClass("d-none");
-  $(this).parent().parent().find('.required .bs-select').prop('disabled', true);
-  $(this).parent().parent().find('.required .bs-select').selectpicker('refresh');
-  $(this).parent().parent().find('.required select').prop('disabled', (i, v) => !v);
+$(".functions .btn-required").click(function () {
+  $(this).toggleClass('active');
+  $(this).parent().parent().find('.required').toggleClass('d-none');
 });
-
-$(".functions .btn-required-close").click(function () {
-  $(this).addClass('d-none');
-  $(this).siblings('.btn-required-open').removeClass("d-none");
-  $(this).parent().parent().find('.required .bs-select').prop('disabled', false);
-  $(this).parent().parent().find('.required .bs-select').selectpicker('refresh');
-  $(this).parent().parent().find('.required select').prop('disabled', (i, v) => !v);
+$(".functions .btn-view").click(function () {
+  $(this).toggleClass('active');
+  $(this).parent().parent().find('.view').toggleClass('d-none');
 });
-
-$(".functions .btn-view-open").click(function () {
-  $(this).addClass('d-none');
-  $(this).siblings('.btn-view-close').removeClass("d-none");
-  $(this).parent().parent().find('.view .bs-select').prop('disabled', true);
-  $(this).parent().parent().find('.view .bs-select').selectpicker('refresh');
-  $(this).parent().parent().find('.view select').prop('disabled', (i, v) => !v);
-});
-
-$(".functions .btn-view-close").click(function () {
-  $(this).addClass('d-none');
-  $(this).siblings('.btn-view-open').removeClass("d-none");
-  $(this).parent().parent().find('.view .bs-select').prop('disabled', false);
-  $(this).parent().parent().find('.view .bs-select').selectpicker('refresh');
-  $(this).parent().parent().find('.view select').prop('disabled', (i, v) => !v);
-});
-
-
 
 
 // popup-gallery
