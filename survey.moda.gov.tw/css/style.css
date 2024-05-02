@@ -70,6 +70,53 @@
     background: #a80a10;
 }
 
+.btn-back {
+    color: #fff;
+    background: #333;
+    border: #333 solid 1px;
+}
+
+.btn-back:hover,
+.btn-back:active {
+    color: #fff;
+    background: #000;
+}
+.btn-save {
+    color: #fff;
+    background: #00c200;
+    border: #00c200 solid 1px;
+}
+
+.btn-save:hover,
+.btn-save:active {
+    color: #fff;
+    background: #007900;
+}
+
+.btn-copylink {
+    color: #fff;
+    background: #009245;
+    border: #009245 solid 1px;
+}
+
+.btn-copylink:hover,
+.btn-copylink:active {
+    color: #fff;
+    background: #007536;
+}
+.btn-clone {
+    color: #000;
+    background: #fff;
+    border: #000 solid 1px;
+}
+
+.btn-clone:hover,
+.btn-clone:active {
+    color: #fff;
+    background: var(--primaryColor);
+    border: var(--primaryColor) solid 1px;
+}
+
 .btn-add {
     background: var(--normalYellow);
 }
@@ -614,22 +661,26 @@ footer p {
 .functionmenu {
     position: relative;
     margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 .functionmenu::after {
     content: '';
     display: block;
     position: absolute;
+    bottom: -6px;
     width: 100%;
     height: 5px;
     background: #f2f2f2;
 }
 
 .functionmenu .btn {
-    float: right;
-    margin-top: -3rem;
     z-index: 1;
     position: relative;
+}
+.functionmenu .btn+.btn {
+    margin-left: 5px;
 }
 
 .functionmenu .nav {
@@ -641,6 +692,11 @@ footer p {
     position: relative;
     z-index: 1;
 }
+.functionmenu .surveyCode {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-left: 5px;
+}
 
 .nav-line .nav-link {
     color: #000;
@@ -651,10 +707,33 @@ footer p {
 .nav-line .nav-link:hover {
     border-bottom: var(--normalYellow) solid 5px;
 }
+.nav-line .nav-link[href="#"]:hover {
+    border: none;
+}
 
 .nav-line .active .nav-link:hover,
 .nav-line .active .nav-link {
     border-bottom: #f7931e solid 5px;
+}
+
+/* editmenu */
+.editmenu {
+    background: #696969;
+    border-radius: 30px;
+    margin-bottom: 2.5rem;
+}
+.editmenu  .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    padding: .75rem;
+    border-radius: 30px;
+    border: transparent solid 1px;
+}
+.editmenu .active .nav-link {
+    color: #000;
+    background: #fff;
+    border-color: #000;
+    font-weight: 700;
 }
 
 /* dataTable */
@@ -922,7 +1001,12 @@ table.dataTable thead>tr>th.dt-orderable-desc:last-child {
 .modal-backdrop.show {
     opacity: .8;
 }
-
+.form-group.row>label {
+    text-align: right;
+}
+.custom-control-inline {
+    margin-top: .5rem;
+}
 @media (min-width:1025px) {
     .modal-body {
         padding: 25px;
@@ -1079,18 +1163,18 @@ table.dataTable thead>tr>th.dt-orderable-desc:last-child {
     margin-bottom: 10px;
 }
 .survey-cont .form-group {
-    padding-left: 45px;
+    padding-left: 50px;
 }
 .survey-cont .badge-form {
     background: var(--normalYellow);
     padding: .5em .75em;
     margin-right: .25em;
-    margin-left: -45px;
-    width: 40px;
+    margin-left: -55px;
+    width: 50px;
     font-size: .9rem;
 }
 .survey-cont .form-group.indent {
-    margin-left: 45px;
+    margin-left: 50px;
 }
 
 

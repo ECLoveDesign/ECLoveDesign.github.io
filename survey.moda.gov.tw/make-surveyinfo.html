@@ -21,8 +21,8 @@
     <link rel="apple-touch-icon" href="touch-icon.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
-    <link rel="stylesheet" href="assets/datatables/dataTables.bootstrap5.min.css" />    
-    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" /> 
+    <link rel="stylesheet" href="assets/datatables/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="assets/magnific-popup/magnific-popup.min.css" />
     <link rel="stylesheet" href="assets/sweetalert2/css/sweetalert2.min.css" />
     <link rel="stylesheet" href="css/megamenu.css" />
@@ -41,18 +41,18 @@
             </div>
             <div class="nav-menus-wrapper">
                 <ul class="nav-menu">
-                    <li class="active">
+                    <li>
                         <a href="javascript:void(0)">問卷填寫 <i class="fa fa-angle-down"></i></a>
                         <ul class="nav-dropdown">
-                            <li class="active"><a href="index.html">調查中問卷</a></li>
+                            <li><a href="index.html">調查中問卷</a></li>
                             <li><a href="survey-history.html">歷史問卷</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="javascript:void(0)">問卷製作 <i class="fa fa-angle-down"></i></a>
                         <ul class="nav-dropdown">
                             <li><a href="make-database.html">題庫設定</a></li>
-                            <li><a href="make-setting.html">問卷設定</a></li>
+                            <li class="active"><a href="make-setting.html">問卷設定</a></li>
                             <li><a href="make-user.html">填卷人設定</a></li>
                             <li><a href="make-group.html">群組設定</a></li>
                         </ul>
@@ -99,7 +99,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">資訊資源效率查調系統</a></li>
         <!-- <li class="breadcrumb-item"><a href="#">問卷填寫</a></li> -->
-        <li class="breadcrumb-item active">問卷填寫</li>
+        <li class="breadcrumb-item active">問卷設定</li>
     </ol>
 
     <main>
@@ -107,195 +107,164 @@
         <div class="submenu">
 
             <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="make-database.html">題庫設定</a>
+                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">調查中問卷</a>
+                    <a class="nav-link" href="make-setting.html">問卷設定</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="survey-history.html">歷史問卷</a>
+                    <a class="nav-link" href="make-user.html">填卷人設定</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="make-group.html">群組設定</a>
                 </li>
             </ul>
         </div>
 
-        <table class="table table-striped listTable table-rwd">
-            <thead>
-                <tr>
-                    <th>問卷代號</th>
-                    <th>問卷名稱</th>
-                    <th>起訖日期</th>
-                    <th>填卷狀態</th>
-                    <th>動作</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td data-title="問卷代號">MODA113030013</td>
-                    <td data-title="問卷名稱">113年資訊資源調查問卷</td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">未填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MODA113040001</td>
-                    <td data-title="問卷名稱">各行各業數位轉型問卷調查</td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">未填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOTC113030010</td>
-                    <td data-title="問卷名稱">民眾日常使用運具狀況調查問卷</td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOTC113020008</td>
-                    <td data-title="問卷名稱">公務人員日常使用運具調查</td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOTC113020032</td>
-                    <td data-title="問卷名稱">公路局人民陳情案件處理情形滿意度調查 </td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOE113010015</td>
-                    <td data-title="問卷名稱">教育部成人教育調查</td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOTC113020008</td>
-                    <td data-title="問卷名稱">公務人員日常使用運具調查</td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOTC113020032</td>
-                    <td data-title="問卷名稱">公路局人民陳情案件處理情形滿意度調查 </td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOE113010015</td>
-                    <td data-title="問卷名稱">教育部成人教育調查</td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOTC113020008</td>
-                    <td data-title="問卷名稱">公務人員日常使用運具調查</td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOTC113020032</td>
-                    <td data-title="問卷名稱">公路局人民陳情案件處理情形滿意度調查 </td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOE113010015</td>
-                    <td data-title="問卷名稱">教育部成人教育調查</td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOTC113020008</td>
-                    <td data-title="問卷名稱">公務人員日常使用運具調查</td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOTC113020032</td>
-                    <td data-title="問卷名稱">公路局人民陳情案件處理情形滿意度調查 </td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="問卷代號">MOE113010015</td>
-                    <td data-title="問卷名稱">教育部成人教育調查</td>
-                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
-                    <td data-title="填卷狀態">已填寫</td>
-                    <td data-title="動作">
-                        <a class="btn btn-edit" href="survey-fill.html">
-                            <i class="fa fa-edit"></i>填寫
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="functionmenu">
+            <ul class="nav nav-line">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">編輯問卷
+                        <span class="surveyCode">MODA113030001</span>
+                    </a>
+                </li>
+            </ul>
 
+            <div class="functionactions">
+                <a href="make-setting.html" class="btn btn-back">
+                    <i class="fa fa-chevron-left"></i>回列表
+                </a>
+                <button type="submit" class="btn btn-save">
+                    <i class="fa fa-save"></i>儲存
+                </button>
+            </div>
+        </div>
 
+        <div class="editmenu">
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item active">
+                    <a class="nav-link" href="make-surveyinfo.html">問卷基本資料</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="make-survey.html">問卷題目設定</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="make-surveyjump.html">跳題設定</a>
+                </li>
+            </ul>
+        </div>
+
+        <form class="form form-addSurvey needs-validation" novalidate>
+            <div class="form-group row">
+                <label for="abbr" class="col-md-3 col-form-label">問卷代號
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="col-md-9">
+                    <input type="text" id="abbr" class="form-control" placeholder="請輸入您的機關英文縮寫" value="MODA113030001" disabled>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label for="abbr" class="col-md-3 col-form-label">問卷代號
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="col-md-9">
+                    <input type="text" id="abbr" class="form-control" placeholder="請輸入您的機關英文縮寫" value="113年政府機關電腦作業效率調查問卷" required>
+                    <div class="invalid-feedback">
+                        請選擇開始日期
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="beginDate" class="col-md-3 col-form-label">開始日期
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="col-md-9">
+                    <input type="date" id="beginDate" class="form-control" placeholder="請選擇開始日期" value="2024-08-15" required>
+                    <div class="invalid-feedback">
+                        請選擇開始日期
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="endDate" class="col-md-3 col-form-label">結束日期
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="col-md-9">
+                    <input type="date" id="endDate" class="form-control" placeholder="請選擇結束日期" value="2024-08-15" required>
+                    <div class="invalid-feedback">
+                        請選擇結束日期
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="beginSurvey" class="col-md-3 col-form-label">問卷開頭語
+                    <span class="text-danger">*</span>
+                </label>
+
+                <div class="col-md-9">
+                    <textarea class="form-control" id="beginSurvey" rows="3" placeholder="請輸入文字" required="">
+一、本表旨為瞭解政府機關數位應用符合我國政府數位資通訊應用服務發展，為審議各機關資源之參考。
+二、調查結果僅供原填寫機關及其上級主管機關參考。
+三、「資訊相關經費支出」可由系統帶入「主計總處決算數(含審計部審定增減數)」資料。如您欲帶入相關資料，須請貴機關主計人員至主計總處「歲計會計資訊管理系統」進行資料申請。</textarea>
+                    <div class="invalid-feedback">
+                        請輸入文字
+                    </div>
+                    <span class="form-text">此欄文字將顯示於問卷開頭</span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="endSurvey" class="col-md-3 col-form-label">問卷結束語
+                    <span class="text-danger">*</span>
+                </label>
+
+                <div class="col-md-9">
+                    <textarea class="form-control" id="endSurvey" rows="3" placeholder="請輸入文字" required=""></textarea>
+                    <div class="invalid-feedback">
+                        請輸入文字
+                    </div>
+                    <span class="form-text">此欄文字將於填卷人交件後顯示</span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="correspond" class="col-md-3 col-form-label">對應問卷
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="col-md-9">
+                    <select class="bs-select" data-live-search="true" id="correspond" required>
+                        <option disabled value="">請選擇</option>
+                        <option selected>113年政府機關電腦作業效率調查問卷</option>
+                        <option>對應問卷2</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        請選擇對應問卷
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="correspond" class="col-md-3 col-form-label">對應問卷
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="col-md-9">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="loginfill" name="correspond" class="custom-control-input" checked required>
+                        <label class="custom-control-label" for="loginfill">登入填寫</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="anonymous" name="correspond" class="custom-control-input" required>
+                        <label class="custom-control-label" for="anonymous">匿名填寫</label>
+                    </div>
+                </div>
+            </div>
+
+        </form>
     </main>
 
     <footer>
@@ -378,10 +347,11 @@
                                 <div class="invalid-feedback">
                                     請填寫公務信箱
                                 </div>
-                                <span class="form-text text-danger">請以gov電子信箱為主。如為其他電子信箱，須待系統管理員進行身分認證後，方能開通問卷製作權限。</span>
+                                <span
+                                    class="form-text text-danger">請以gov電子信箱為主。如為其他電子信箱，須待系統管理員進行身分認證後，方能開通問卷製作權限。</span>
                             </div>
                         </div>
-                        
+
                         <div class="actions">
                             <button type="submit" class="btn btn-primary btn-submit">送出</button>
                         </div>
@@ -389,7 +359,7 @@
                     </form>
 
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -404,7 +374,40 @@
     <script src='assets/magnific-popup/jquery.magnific-popup.min.js'></script>
     <script src='assets/sweetalert2/js/sweetalert2.all.min.js'></script>
     <script src="js/megamenu.js"></script>
+    <script src="js/ciaoyuToggle.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            var topicList = $('#topicList').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+                    // url: 'assets/datatables/i18n/zh-HANT.json',
+                    search: "搜尋",
+                    columnDefs: [{
+                        width: 200,
+                        targets: 0
+                    }],
+                    paginate: {
+                        first: "<<",
+                        previous: "<",
+                        next: ">",
+                        last: ">>"
+                    },
+                },
+                columnDefs: [{
+                        width: 200,
+                        targets: [0]
+                    },
+                    {
+                        width: 500,
+                        targets: [1, 2]
+                    },
+                ],
+            });
+
+        });
+    </script>
 </body>
+
 
 </html>

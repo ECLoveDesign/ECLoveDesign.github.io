@@ -154,11 +154,43 @@ $('.btn-del').on('click', function () {
         type: "success",
         title: '刪除成功!',
         text: '已刪除此項目',
-        confirmButtonClass: 'btn btn-success',
+        showConfirmButton: false,
+        timer: 1500
+        // confirmButtonClass: 'btn btn-success',
+        // confirmButtonText: '關閉',
       })
     }
   })
 });
+
+$('.btn-copylink').on('click', function () {
+  Swal.fire({
+    type: "success",
+    title: "您已複製問卷連結",
+    showConfirmButton: false,
+    timer: 1000
+  });
+});
+
+$('.btn-save').on('click', function () {
+  Swal.fire({
+    type: "success",
+    title: "儲存成功",
+    showConfirmButton: false,
+    timer: 1000
+  });
+});
+
+$('.btn-clone').on('click', function () {
+  Swal.fire({
+    type: "success",
+    title: "您已複製問卷",
+    confirmButtonClass: 'btn btn-success',
+    confirmButtonText: '前往問卷',
+  });
+});
+
+
 
 // bs-select
 $('.bs-select').selectpicker();
