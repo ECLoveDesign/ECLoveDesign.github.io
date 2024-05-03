@@ -1471,6 +1471,15 @@ div.dt-scroll-body {
 .topic-cont .form-group:last-child {
     margin-bottom: 0;
 }
+@media (max-width:991px) {
+    .section-header>.functions {
+        position: absolute;
+        right: 0;
+        height: 100%;
+    }
+   
+}
+
 
 /* Off Canvas */
 .btn-offcanvas {
@@ -1634,6 +1643,28 @@ section + section  {
     width: auto !important;
     min-width: 100px;
 }
+@media (max-width:991px) {
+    .group-setting {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        width: 100%;
+    }
+    .form-inline {
+        -ms-flex-flow: nowrap;
+        flex-flow: nowrap;
+    }
+    .topic-toggle {
+        width: 390px;
+    }
+    .indent .section-header .topic-toggle {
+        width: 390px;
+    }
+    #typetitle .topic-toggle,
+    #divider .topic-toggle {
+        width: 200px;
+    }
+}
 
 /* topicSet-cont */
 .topicSet-cont .accordion {
@@ -1762,7 +1793,7 @@ section + section  {
 }
 .btn-offcanvas.affix-top {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     top: 70px;
     left: 0;
@@ -1777,6 +1808,6 @@ section + section  {
         width: calc(50% - 50px);
     }
     .affix-top .topicSet-wrap .card-body {
-        max-height: 250px;
+        max-height: 275px;
     }
 }
