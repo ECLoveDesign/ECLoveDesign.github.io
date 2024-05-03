@@ -166,13 +166,13 @@
             </div>
             
             <div class="form-group row">
-                <label for="abbr" class="col-md-3 col-form-label">問卷代號
+                <label for="surveyName" class="col-md-3 col-form-label">問卷名稱
                     <span class="text-danger">*</span>
                 </label>
                 <div class="col-md-9">
-                    <input type="text" id="abbr" class="form-control" placeholder="請輸入您的機關英文縮寫" value="113年政府機關電腦作業效率調查問卷" required>
+                    <input type="text" id="surveyName" class="form-control" placeholder="請輸入問卷名稱" value="113年政府機關電腦作業效率調查問卷" required>
                     <div class="invalid-feedback">
-                        請選擇開始日期
+                        請輸入問卷名稱
                     </div>
                 </div>
             </div>
@@ -202,49 +202,34 @@
             </div>
 
             <div class="form-group row">
-                <label for="beginSurvey" class="col-md-3 col-form-label">問卷開頭語
-                    <span class="text-danger">*</span>
-                </label>
+                <label for="beginSurvey" class="col-md-3 col-form-label">問卷開頭語</label>
 
                 <div class="col-md-9">
-                    <textarea class="form-control" id="beginSurvey" rows="3" placeholder="請輸入文字" required="">
+                    <textarea class="form-control" id="beginSurvey" rows="3" placeholder="請輸入文字">
 一、本表旨為瞭解政府機關數位應用符合我國政府數位資通訊應用服務發展，為審議各機關資源之參考。
 二、調查結果僅供原填寫機關及其上級主管機關參考。
 三、「資訊相關經費支出」可由系統帶入「主計總處決算數(含審計部審定增減數)」資料。如您欲帶入相關資料，須請貴機關主計人員至主計總處「歲計會計資訊管理系統」進行資料申請。</textarea>
-                    <div class="invalid-feedback">
-                        請輸入文字
-                    </div>
                     <span class="form-text">此欄文字將顯示於問卷開頭</span>
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="endSurvey" class="col-md-3 col-form-label">問卷結束語
-                    <span class="text-danger">*</span>
-                </label>
+                <label for="endSurvey" class="col-md-3 col-form-label">問卷結束語</label>
 
                 <div class="col-md-9">
-                    <textarea class="form-control" id="endSurvey" rows="3" placeholder="請輸入文字" required=""></textarea>
-                    <div class="invalid-feedback">
-                        請輸入文字
-                    </div>
+                    <textarea class="form-control" id="endSurvey" rows="3" placeholder="請輸入文字"></textarea>
                     <span class="form-text">此欄文字將於填卷人交件後顯示</span>
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="correspond" class="col-md-3 col-form-label">對應問卷
-                    <span class="text-danger">*</span>
-                </label>
+                <label for="correspond" class="col-md-3 col-form-label">填卷方式</label>
                 <div class="col-md-9">
-                    <select class="bs-select" data-live-search="true" id="correspond" required>
+                    <select class="bs-select" data-live-search="true" id="correspond">
                         <option disabled value="">請選擇</option>
                         <option selected>113年政府機關電腦作業效率調查問卷</option>
                         <option>對應問卷2</option>
                     </select>
-                    <div class="invalid-feedback">
-                        請選擇對應問卷
-                    </div>
                 </div>
             </div>
 
@@ -269,9 +254,7 @@
 
     <footer>
         <div class="nav foot-nav">
-            <a class="nav-link" href="#">使用條款</a>
-            <a class="nav-link" href="#">隱私權政策</a>
-            <a class="nav-link" href="#">政府版權宣告</a>
+            <a class="nav-link" href="privacy.html">隱私權政策</a>
         </div>
         <div class="foot-cont">
             <img src="images/logo-footer.png">

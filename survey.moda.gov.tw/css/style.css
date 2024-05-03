@@ -146,6 +146,12 @@
     background: #fff;
     border: 1px solid #ced4da;
 }
+.form-inline .bootstrap-select .dropdown-menu li a {
+    padding: 0rem 1.5rem;
+}
+.bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
+    top: 15px;
+}
 
 /* main */
 main {
@@ -179,7 +185,7 @@ header.affix {
 .affix {
     position: fixed !important;
     top: 0;
-    z-index: 2;
+    z-index: 3;
 }
 
 .blur {
@@ -504,7 +510,7 @@ header.affix {
     line-height: 2.3rem;
     font-size: 1.2rem;
     display: block;
-    text-align: center;
+    padding-left: 11px;
 }
 
 @media(max-width:767px) {
@@ -675,7 +681,21 @@ footer p {
     height: 5px;
     background: #f2f2f2;
 }
-
+.functionmenu.affix-top {
+    position: fixed;
+    top: 90px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    left: 0;
+    padding: 15px 15px 0;
+}
+.functionmenu.affix-top .nav-line .nav-link {
+    color: #fff;
+}
+.functionmenu.affix-top::after {
+    display: none;
+}
 .functionmenu .btn {
     z-index: 1;
     position: relative;
@@ -749,8 +769,10 @@ table.dataTable th {
 table.dataTable tbody tr:last-child td {
     border-bottom: #ededed solid 1px;
 }
-
-
+table.dataTable th.dt-type-numeric,
+table.dataTable td.dt-type-numeric {
+    text-align: left;
+}
 table.dataTable thead>tr>th:not(.sorting_disabled):active {
     -moz-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), inset 1px 0 1px rgba(255, 255, 255, 0.3), inset -1px 0 1px rgba(255, 255, 255, 0.3), inset 0 -1px 1px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(0, 0, 0, 0.45), 0 -1px 1px rgba(0, 0, 0, 0.3), 1px 0 1px rgba(255, 255, 255, 0.15), -1px 0 1px rgba(255, 255, 255, 0.15), 0 1px 1px rgba(255, 255, 255, 0.2);
     -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), inset 1px 0 1px rgba(255, 255, 255, 0.3), inset -1px 0 1px rgba(255, 255, 255, 0.3), inset 0 -1px 1px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(0, 0, 0, 0.45), 0 -1px 1px rgba(0, 0, 0, 0.3), 1px 0 1px rgba(255, 255, 255, 0.15), -1px 0 1px rgba(255, 255, 255, 0.15), 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -967,7 +989,9 @@ div.dt-scroll-body {
     background: var(--normalYellow);
     border-color: transparent;
 }
-
+.modal-body {
+    overflow-x: hidden;
+}
 .modal-title {
     font-size: 1.2rem;
     font-weight: 500;
@@ -1471,7 +1495,7 @@ div.dt-scroll-body {
 .topic-cont .form-group:last-child {
     margin-bottom: 0;
 }
-@media (max-width:991px) {
+@media (max-width:1440px) {
     .section-header>.functions {
         position: absolute;
         right: 0;
@@ -1643,8 +1667,8 @@ section + section  {
     width: auto !important;
     min-width: 100px;
 }
-@media (max-width:991px) {
-    .group-setting {
+@media (max-width:1440px) {
+    .section-header {
         overflow-x: auto;
         white-space: nowrap;
         display: flex;
@@ -1654,15 +1678,11 @@ section + section  {
         -ms-flex-flow: nowrap;
         flex-flow: nowrap;
     }
-    .topic-toggle {
-        width: 390px;
-    }
-    .indent .section-header .topic-toggle {
-        width: 390px;
-    }
-    #typetitle .topic-toggle,
-    #divider .topic-toggle {
-        width: 200px;
+    .group-setting {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        width: calc(100% - 220px);
     }
 }
 
@@ -1693,6 +1713,9 @@ section + section  {
     border: none;
     border-radius: 0;
 }
+.topicSet-cont .accordion .card-body {
+    padding: .5rem 1.25rem;
+} 
 .topicSet-cont .accordion>.card .btn {
     border-radius: 5px;
 }
@@ -1735,7 +1758,7 @@ section + section  {
 /* .affix-top .topicSet-cont, */
 .affix-top .topicSet-wrap {
     position: fixed;
-    top: 100px;
+    top: 170px;
     width: calc(25% - 30px);
 }
 
@@ -1790,6 +1813,7 @@ section + section  {
     /* margin-bottom: 20px; */
     background: transparent;
     display: flex;
+    z-index: 1;
 }
 .btn-offcanvas.affix-top {
     position: fixed;
@@ -1810,4 +1834,29 @@ section + section  {
     .affix-top .topicSet-wrap .card-body {
         max-height: 275px;
     }
+}
+
+/* jumpSet-cont */
+.jumpSet-cont .actions {
+    margin-top: 25px;
+}
+.jumpSet-cont .card {
+    border: none;
+    border-radius: 0;
+}
+
+.jumpSet-cont .card-header:first-child,
+.jumpSet-cont .card-header {
+    border-radius: 0;
+    border: none;
+    background: #fff;
+    box-shadow: 0 5px 15px rgb(0, 0, 0, .2);
+    position: relative;
+    z-index: 1;
+}
+.jumpSet-cont .form-group {
+    margin-bottom: 0;
+}
+.jumpSet-cont .card-body {
+    background: #f3f3f3;
 }

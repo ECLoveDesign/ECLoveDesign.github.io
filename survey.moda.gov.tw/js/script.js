@@ -190,6 +190,14 @@ $('.btn-clone').on('click', function () {
   });
 });
 
+$('[class*="btn-add-"],.btn-addTopicInto').on('click', function () {
+  Swal.fire({
+    type: "success",
+    title: "成功加入題目",
+    showConfirmButton: false,
+    timer: 1000
+  });
+});
 
 
 // bs-select
@@ -253,19 +261,23 @@ if ($('.preview-zone').length) {
 // affix top
 $(window).scroll(function () {
     if ($(this).scrollTop() > 40) {
+        $(".functionmenu").addClass('affix-top');
         $(".sidebar-offcanvas").addClass('affix-top');
         $(".btn-offcanvas").addClass('affix-top');
     } else {
+      $(".functionmenu").removeClass('affix-top');
         $(".sidebar-offcanvas").removeClass('affix-top');
         $(".btn-offcanvas").removeClass('affix-top');
     }
 
     if ($(document).width() > 900) {
         if ($(this).scrollTop() > 135) {
+            $(".functionmenu").addClass('affix-top');
             $(".sidebar-offcanvas").addClass('affix-top');
             $(".btn-offcanvas").addClass('affix-top');
 
         } else {
+            $(".functionmenu").removeClass('affix-top');
             $(".sidebar-offcanvas").removeClass('affix-top');
             $(".btn-offcanvas").removeClass('affix-top');
         }

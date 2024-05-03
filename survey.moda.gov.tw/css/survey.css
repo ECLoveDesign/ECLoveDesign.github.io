@@ -40,7 +40,6 @@ body>* {
     display: block;
 }
 main {
-    margin-top: 30px;
     width:calc(100% - 70px);
     z-index: 1;
 }
@@ -183,6 +182,18 @@ footer {
 .survey-finish {
     margin: 30px auto;
     width: 500px;
+}
+
+.btn-save {
+    color: #fff;
+    background: #00c200;
+    border: #00c200 solid 1px;
+}
+
+.btn-save:hover,
+.btn-save:active {
+    color: #fff;
+    background: #007900;
 }
 
 /* checkbox radiobox custom */

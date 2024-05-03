@@ -18,4 +18,14 @@
       });
     }, false);
   })();
+
   
+// save
+$('.btn-save').on('click', function () {
+    Swal.fire({
+      type: "success",
+      title: "儲存成功",
+      showConfirmButton: false,
+      timer: 1000
+    });
+});
