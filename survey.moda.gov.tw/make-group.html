@@ -1,0 +1,400 @@
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale = 1" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="數位發展部,資訊資源效率查調系統">
+    <meta name="description"
+        content="數位發展部 Ministry of Digital Affairs (moda) 作為臺灣數位發展的「mòda（馬達）」，將連結「公民」與「技術」、提升「產業」及「安全」，實現智慧國家的願景，並以臺灣模式持續引領世界。">
+    <meta property="og:title" content="資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs" />
+    <meta property="og:description"
+        content="數位發展部 Ministry of Digital Affairs (moda) 作為臺灣數位發展的「mòda（馬達）」，將連結「公民」與「技術」、提升「產業」及「安全」，實現智慧國家的願景，並以臺灣模式持續引領世界。" />
+    <meta property="og:url" content="https://moda.gov.tw" />
+    <meta property="og:image" content="https://moda.gov.tw/assets/img/fbshare2.jpg" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="touch-icon.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/datatables/dataTables.bootstrap5.min.css" />    
+    <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css" /> 
+    <link rel="stylesheet" href="assets/magnific-popup/magnific-popup.min.css" />
+    <link rel="stylesheet" href="assets/sweetalert2/css/sweetalert2.min.css" />
+    <link rel="stylesheet" href="css/megamenu.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</title>
+</head>
+
+<body>
+    <h1 class="d-none">資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</h1>
+    <header>
+        <nav id="mainnav" class="navigation">
+            <div class="nav-header">
+                <a class="nav-brand" href="index.html"><img src="images/logo.svg"
+                        title="資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs"></a>
+                <div class="nav-toggle"></div>
+            </div>
+            <div class="nav-menus-wrapper">
+                <ul class="nav-menu">
+                    <li>
+                        <a href="javascript:void(0)">問卷填寫 <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="nav-dropdown">
+                            <li><a href="index.html">調查中問卷</a></li>
+                            <li><a href="survey-history.html">歷史問卷</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:void(0)">問卷製作 <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="nav-dropdown">
+                            <li><a href="make-database.html">題庫設定</a></li>
+                            <li><a href="make-setting.html">問卷設定</a></li>
+                            <li><a href="make-user.html">填卷人設定</a></li>
+                            <li class="active"><a href="make-group.html">群組設定</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">問卷回收情形 <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="nav-dropdown">
+                            <li><a href="winding-progress.html">調查中問卷</a></li>
+                            <li><a href="winding-history.html">歷史問卷</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="dashboard.html">儀表板</a>
+                    </li>
+                    <li>
+                        <a href="chart.html">查調報告檢視</a>
+                    </li>
+                    <li>
+                        <a href="#">後台管理</a>
+                    </li>
+                </ul>
+
+                <ul class="nav-menu nav-btn align-to-right">
+                    <li class="nav-apply">
+                        <a href="#" data-toggle="modal" data-target="#surveyApply">問卷製作申請</a>
+                    </li>
+                    <li class="nav-login">
+                        <a href="javascript:void(0)">
+                            <div class="profile">
+                                <span class="firstName">Cyndi</span>
+                                <span class="lastName">Wang</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+                        <ul class="nav-dropdown">
+                            <li><a href="login.html">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">資訊資源效率查調系統</a></li>
+        <!-- <li class="breadcrumb-item"><a href="#">問卷填寫</a></li> -->
+        <li class="breadcrumb-item active">群組設定</li>
+    </ol>
+
+    <main>
+
+        <div class="submenu">
+
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="make-database.html">題庫設定</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="make-setting.html">問卷設定</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="make-user.html">填卷人設定</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="make-group.html">群組設定</a>
+                </li>
+            </ul>
+        </div>
+
+        <table class="table table-striped listTable table-rwd">
+            <thead>
+                <tr>
+                    <th>問卷代號</th>
+                    <th>問卷名稱</th>
+                    <th>起訖日期</th>
+                    <th>動作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-title="問卷代號">MODA113030013</td>
+                    <td data-title="問卷名稱">113年資訊資源調查問卷</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MODA113040001</td>
+                    <td data-title="問卷名稱">各行各業數位轉型問卷調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113030010</td>
+                    <td data-title="問卷名稱">民眾日常使用運具狀況調查問卷</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113020008</td>
+                    <td data-title="問卷名稱">公務人員日常使用運具調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113020032</td>
+                    <td data-title="問卷名稱">公路局人民陳情案件處理情形滿意度調查 </td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOE113010015</td>
+                    <td data-title="問卷名稱">教育部成人教育調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113020008</td>
+                    <td data-title="問卷名稱">公務人員日常使用運具調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113020032</td>
+                    <td data-title="問卷名稱">公路局人民陳情案件處理情形滿意度調查 </td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOE113010015</td>
+                    <td data-title="問卷名稱">教育部成人教育調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113020008</td>
+                    <td data-title="問卷名稱">公務人員日常使用運具調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113020032</td>
+                    <td data-title="問卷名稱">公路局人民陳情案件處理情形滿意度調查 </td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOE113010015</td>
+                    <td data-title="問卷名稱">教育部成人教育調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113020008</td>
+                    <td data-title="問卷名稱">公務人員日常使用運具調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOTC113020032</td>
+                    <td data-title="問卷名稱">公路局人民陳情案件處理情形滿意度調查 </td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="問卷代號">MOE113010015</td>
+                    <td data-title="問卷名稱">教育部成人教育調查</td>
+                    <td data-title="起訖日期">2024/03/01~2024/06/30</td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" href="make-groupedit.html">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </main>
+
+    <footer>
+        <div class="nav foot-nav">
+            <a class="nav-link" href="privacy.html">隱私權政策</a>
+        </div>
+        <div class="foot-cont">
+            <img src="images/logo-footer.png">
+            <p>Copyright © 數位發展部 版權所有</p>
+        </div>
+    </footer>
+
+
+    <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+
+    <!-- 問卷製作申請 -->
+    <div class="modal fade" id="surveyApply" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="surveyApplyLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="surveyApplyLabel">問卷製作-權限開通申請</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        如您欲進行問卷製作，請將下方資料補齊並送出申請，系統將透過電子信箱發送驗證信給您，完成驗證後即可開通相關權限。問卷製作權限開通後，您即可於資訊資源效率查調系統中使用「問卷製作」及「問卷回收情形」兩個模組。
+                    </div>
+
+                    <form class="form form-surveyApply needs-validation" novalidate>
+                        <div class="form-group row">
+                            <label for="account" class="col-md-3 col-form-label">帳號
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <input type="text" id="account" class="form-control" placeholder="請輸入帳號"
+                                    value="WangCyndi" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-3 col-form-label">姓名
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <input type="text" id="name" class="form-control" placeholder="請輸入姓名" value="王心凌"
+                                    disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="department" class="col-md-3 col-form-label">機關
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <select class="custom-select" id="department" required>
+                                    <option selected disabled value="">請選擇</option>
+                                    <option>數位發展部 (A29000000G)</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    請選擇
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-3 col-form-label">公務信箱
+                                <span class="text-danger">*</span>
+                            </label>
+
+                            <div class="col-md-9">
+                                <input type="email" id="email" class="form-control" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請填寫公務信箱
+                                </div>
+                                <span class="form-text text-danger">請以gov電子信箱為主。如為其他電子信箱，須待系統管理員進行身分認證後，方能開通問卷製作權限。</span>
+                            </div>
+                        </div>
+                        
+                        <div class="actions">
+                            <button type="submit" class="btn btn-primary btn-submit">送出</button>
+                        </div>
+
+                    </form>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script src='js/jquery-3.2.1.min.js'></script>
+    <script src='js/popper-1.12.9.min.js'></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src='assets/datatables/dataTables.min.js'></script>
+    <script src='assets/datatables/dataTables.bootstrap5.min.js'></script>
+    <script src="assets/datatables/dataTables.fixedColumns.min.js"></script>
+    <script src="assets/datatables/dataTables.responsive.min.js"></script>
+    <script src='assets/magnific-popup/jquery.magnific-popup.min.js'></script>
+    <script src='assets/sweetalert2/js/sweetalert2.all.min.js'></script>
+    <script src="js/megamenu.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

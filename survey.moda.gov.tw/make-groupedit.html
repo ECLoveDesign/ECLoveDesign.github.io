@@ -52,27 +52,28 @@
                         <a href="javascript:void(0)">問卷製作 <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="nav-dropdown">
                             <li><a href="make-database.html">題庫設定</a></li>
-                            <li><a href="make-setting.html">問卷設定</a></li>
-                            <li class="active"><a href="make-user.html">填卷人設定</a></li>
-                            <li><a href="make-group.html">群組設定</a></li>
-                        </ul>
+                            <li<a href="make-setting.html">問卷設定</a>
                     </li>
-                    <li>
-                        <a href="javascript:void(0)">問卷回收情形 <i class="fa-solid fa-chevron-down"></i></a>
-                        <ul class="nav-dropdown">
-                            <li><a href="winding-progress.html">調查中問卷</a></li>
-                            <li><a href="winding-history.html">歷史問卷</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="dashboard.html">儀表板</a>
-                    </li>
-                    <li>
-                        <a href="chart.html">查調報告檢視</a>
-                    </li>
-                    <li>
-                        <a href="#">後台管理</a>
-                    </li>
+                    <li><a href="make-user.html">填卷人設定</a></li>
+                    <li class="active">><a href="make-group.html">群組設定</a></li>
+                </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">問卷回收情形 <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="winding-progress.html">調查中問卷</a></li>
+                        <li><a href="winding-history.html">歷史問卷</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="dashboard.html">儀表板</a>
+                </li>
+                <li>
+                    <a href="chart.html">查調報告檢視</a>
+                </li>
+                <li>
+                    <a href="#">後台管理</a>
+                </li>
                 </ul>
 
                 <ul class="nav-menu nav-btn align-to-right">
@@ -99,7 +100,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">資訊資源效率查調系統</a></li>
         <!-- <li class="breadcrumb-item"><a href="#">問卷填寫</a></li> -->
-        <li class="breadcrumb-item active">填卷人設定</li>
+        <li class="breadcrumb-item active">群組設定</li>
     </ol>
 
     <main>
@@ -113,10 +114,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="make-setting.html">問卷設定</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="make-user.html">填卷人設定</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="make-group.html">群組設定</a>
                 </li>
             </ul>
@@ -133,83 +134,89 @@
                 <a href="make-user.html" class="btn btn-back">
                     <i class="fa fa-chevron-left"></i>回列表
                 </a>
-                <a href="#" class="btn btn-import" data-toggle="modal" data-target="#userImport">
+                <a href="#" class="btn btn-import" data-toggle="modal" data-target="#groupImport">
                     <i class="fa-solid fa-file-import"></i>匯入
                 </a>
-                <a href="#" class="btn btn-export">
-                    <i class="fa-solid fa-file-export"></i>匯出 ODS
-                </a>
-                <a href="#" class="btn btn-export">
-                    <i class="fa-solid fa-file-export"></i>匯出 CSV
-                </a>
-                <a href="#" class="btn btn-notify" data-toggle="modal" data-target="#userNotify">
-                    <i class="fa-regular fa-paper-plane"></i>發送通知
-                </a>
-                <a href="#" class="btn btn-add" data-toggle="modal" data-target="#userAdd">
+                <button type="button" class="btn btn-add" data-toggle="modal" data-target="#groupAdd">
                     <i class="fa fa-plus"></i>新增
-                </a>
+                </button>
             </div>
         </div>
 
-        <table class="table table-striped selectTable table-rwd">
+
+        <table class="table table-striped listTable table-rwd">
             <thead>
                 <tr>
-                    <th></th>
-                    <th>項次</th>
-                    <th>代碼</th>
-                    <th>名稱</th>
-                    <th>上級代碼</th>
-                    <th>電子郵件</th>
-                    <th>狀態</th>
+                    <th>群組名稱</th>
                     <th>動作</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td data-title=""></td>
-                    <td data-title="項次">1</td>
-                    <td data-title="代碼">leigo1024</td>
-                    <td data-title="名稱">曹銜羿</td>
-                    <td data-title="上級代碼"></td>
-                    <td data-title="電子郵件"><a href="mailto:leigo1024@gmail.com">leigo1024@gmail.com</a></td>
-                    <td data-title="狀態">啟用</td>
-                    <td data-title="動作">
-                        <a class="btn btn-stop">
-                            <i class="fa-solid fa-ban"></i>停用
+                    <td data-title="群組名稱">
+                        <a href="#" data-toggle="modal" data-target="#groupView">
+                            中央(一)
                         </a>
+                    </td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" data-toggle="modal" data-target="#groupEdit">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                        <a href="#" class="btn btn-import" data-toggle="modal" data-target="#groupImport">
+                            <i class="fa-solid fa-file-import"></i>匯入
+                        </a>
+                        <a href="#" class="btn btn-export">
+                            <i class="fa-solid fa-file-export"></i>匯出
+                        </a>
+                        <button class="btn btn-del">
+                            <i class="fa-solid fa-trash-can"></i>刪除
+                        </button>
                     </td>
                 </tr>
                 <tr>
-                    <td data-title=""></td>
-                    <td data-title="項次">1</td>
-                    <td data-title="代碼">leigo1024</td>
-                    <td data-title="名稱">曹銜羿</td>
-                    <td data-title="上級代碼"></td>
-                    <td data-title="電子郵件"><a href="mailto:leigo1024@gmail.com">leigo1024@gmail.com</a></td>
-                    <td data-title="狀態">啟用</td>
-                    <td data-title="動作">
-                        <a class="btn btn-stop">
-                            <i class="fa-solid fa-ban"></i>停用
+                    <td data-title="群組名稱">
+                        <a href="#" data-toggle="modal" data-target="#groupView">
+                            中央(二)
                         </a>
+                    </td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" data-toggle="modal" data-target="#groupEdit">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                        <a href="#" class="btn btn-import" data-toggle="modal" data-target="#groupImport">
+                            <i class="fa-solid fa-file-import"></i>匯入
+                        </a>
+                        <a href="#" class="btn btn-export">
+                            <i class="fa-solid fa-file-export"></i>匯出
+                        </a>
+                        <button class="btn btn-del">
+                            <i class="fa-solid fa-trash-can"></i>刪除
+                        </button>
                     </td>
                 </tr>
                 <tr>
-                    <td data-title=""></td>
-                    <td data-title="項次">1</td>
-                    <td data-title="代碼">leigo1024</td>
-                    <td data-title="名稱">曹銜羿</td>
-                    <td data-title="上級代碼"></td>
-                    <td data-title="電子郵件"><a href="mailto:leigo1024@gmail.com">leigo1024@gmail.com</a></td>
-                    <td data-title="狀態">停用</td>
-                    <td data-title="動作">
-                        <a class="btn btn-success btn-enable">
-                            <i class="fa-solid fa-circle-check"></i>啟用
+                    <td data-title="群組名稱">
+                        <a href="#" data-toggle="modal" data-target="#groupView">
+                            中央(三)
                         </a>
+                    </td>
+                    <td data-title="動作">
+                        <a class="btn btn-edit" data-toggle="modal" data-target="#groupEdit">
+                            <i class="fa fa-edit"></i>編輯
+                        </a>
+                        <a href="#" class="btn btn-import" data-toggle="modal" data-target="#groupImport">
+                            <i class="fa-solid fa-file-import"></i>匯入
+                        </a>
+                        <a href="#" class="btn btn-export">
+                            <i class="fa-solid fa-file-export"></i>匯出
+                        </a>
+                        <button class="btn btn-del">
+                            <i class="fa-solid fa-trash-can"></i>刪除
+                        </button>
                     </td>
                 </tr>
             </tbody>
         </table>
-
 
     </main>
 
@@ -308,51 +315,29 @@
         </div>
     </div>
 
-    <!-- 新增填卷人 -->
-    <div class="modal fade" id="userAdd" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="userAddLabel">
+    <!-- 新增群組 -->
+    <div class="modal fade" id="groupAdd" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="groupAddLabel">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="modal-title" id="userAddLabel">新增填卷人</div>
+                    <div class="modal-title" id="groupAddLabel">新增群組</div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
 
-                    <form class="form form-userAdd needs-validation" novalidate>
+                    <form class="form form-groupAdd needs-validation" novalidate>
                         <div class="form-group row">
-                            <label for="surveyCode" class="col-md-3 col-form-label">代碼</label>
-                            <div class="col-md-9">
-                                <input type="text" id="surveyCode" class="form-control" placeholder="">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="userName" class="col-md-3 col-form-label">名稱
+                            <label for="account" class="col-md-3 col-form-label">群組名稱
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="col-md-9">
-                                <input type="text" id="userName" class="form-control" placeholder="" required>
+                                <input type="text" id="account" class="form-control" placeholder="" required>
                                 <div class="invalid-feedback">
-                                    請輸入名稱
+                                    請輸入群組名稱
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="surveyParentCode" class="col-md-3 col-form-label">上級代碼</label>
-                            <div class="col-md-9">
-                                <input type="text" id="surveyParentCode" class="form-control" placeholder="">
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label for="userEmail" class="col-md-3 col-form-label">電子郵件</label>
-                            <div class="col-md-9">
-                                <input type="email" id="userEmail" class="form-control" placeholder="">
                             </div>
                         </div>
 
@@ -368,50 +353,100 @@
         </div>
     </div>
 
-    <!-- 匯入填卷人 -->
-    <div class="modal fade" id="userImport" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="userImportLabel">
+    <!-- 編輯群組 -->
+    <div class="modal fade" id="groupEdit" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="groupEditLabel">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="modal-title" id="userImportLabel">匯入填卷人</div>
+                    <div class="modal-title" id="groupEditLabel">編輯群組</div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p><a href="#">下載範例檔案</a></p>
 
-                    <div class="alert alert-danger">※檔案內容格式請勿更改</div>
-
-
-                    <form class="form form-userImport needs-validation" novalidate>
-
+                    <form class="form form-groupEdit needs-validation" novalidate>
                         <div class="form-group row">
-                            <label for="surveyCode" class="col-md-3 col-form-label">檔案上傳 (CSV檔)                                 
+                            <label for="account" class="col-md-3 col-form-label">群組名稱
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="col-md-9">
-                                <input type="file" id="surveyCode" class="form-control-file" placeholder="" required>
+                                <input type="text" id="account" class="form-control" placeholder="請輸入群組名稱" value="中央(一)"
+                                    required>
                                 <div class="invalid-feedback">
-                                    請選擇檔案
+                                    請輸入群組名稱
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <div class="offset-md-3 col-md-9">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="clearUser">
-                                    <label class="form-check-label" for="clearUser">
-                                        清除現有填卷人資料
-                                    </label>
+
+                            <label for="groupList" class="col-md-3 col-form-label">群組名單
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <select name="from" id="undo_redo" class="custom-select" size="13"
+                                            multiple="multiple">
+                                            <option value="1">張楚嵐</option>
+                                            <option value="2">王也</option>
+                                            <option value="3">馮寶寶</option>
+                                            <option value="4">張靈玉</option>
+                                            <option value="5">夏禾</option>
+                                            <option value="6">張之維</option>
+                                            <option value="7">諸葛青</option>
+                                            <option value="8">徐三</option>
+                                            <option value="9">風莎燕</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <button type="button" id="undo_redo_undo" class="btn btn-undo btn-block">
+                                            <i class="fa-solid fa-rotate-left"></i>
+                                        </button>
+                                        <button type="button" id="undo_redo_leftAll"
+                                            class="btn btn-default btn-block">
+                                            <i class="fa-solid fa-angles-left"></i>
+                                        </button>
+
+                                        <button type="button" id="undo_redo_leftSelected"
+                                            class="btn btn-default btn-block">
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        
+                                        <button type="button" id="undo_redo_rightSelected"
+                                            class="btn btn-default btn-block">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+
+                                        <button type="button" id="undo_redo_rightAll"
+                                            class="btn btn-default btn-block">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                        </button>
+
+                                        <button type="button" id="undo_redo_redo" class="btn btn-redo btn-block">
+                                            <i class="fa-solid fa-rotate-right"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <select name="to" id="undo_redo_to" class="custom-select" size="13"
+                                            multiple="multiple" required>
+                                            <div class="invalid-feedback">
+                                                請選擇使用者
+                                            </div>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="actions">
-                            <button type="submit" class="btn btn-primary btn-submit">上傳</button>
+                            <button type="submit" class="btn btn-primary btn-submit">送出</button>
                         </div>
 
                     </form>
@@ -422,46 +457,91 @@
         </div>
     </div>
 
-    <!-- 通知填卷人 -->
-    <div class="modal fade" id="userNotify" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="userNotifyLabel">
+    
+    <!-- 查看群組 -->
+    <div class="modal fade" id="groupView" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="groupViewLabel">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="modal-title" id="userNotifyLabel">通知填卷人</div>
+                    <div class="modal-title" id="groupViewLabel">查看群組</div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
+                    
 
-                    <form class="form form-userNotify needs-validation" novalidate>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>群組名稱</th>
+                                <th>使用者名稱</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-title="群組名稱">中央(一)</td>
+                                <td data-title="使用者名稱">
+                                    張楚嵐<br>王也<br>馮寶寶<br>張靈玉<br>夏禾
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                            <div class="form-group">
-                                <label for="notifyTopic">主旨
-                                    <span class="text-danger">*</span>
-                                </label>
-                                <input type="text" class="form-control" id="notifyTopic" placeholder="" required="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 匯入群組 -->
+    <div class="modal fade" id="groupImport" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="groupImportLabel">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="groupImportLabel">匯入群組</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><a href="#">下載範例檔案</a></p>
+
+                    <div class="alert alert-danger">※檔案內容格式請勿更改</div>
+
+
+                    <form class="form form-groupImport needs-validation" novalidate>
+
+                        <div class="form-group row">
+                            <label for="surveyCode" class="col-md-3 col-form-label">檔案上傳 (CSV檔)
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <input type="file" id="surveyCode" class="form-control-file" placeholder="" required>
                                 <div class="invalid-feedback">
-                                    請輸入主旨
+                                    請選擇檔案
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="notifyText">內容
-                                    <span class="text-danger">*</span>
-                                </label>
-                                <textarea class="form-control" id="notifyText" rows="3" placeholder="請輸入內容" required=""></textarea>
-                                <div class="invalid-feedback">
-                                    請輸入內容
+                        <!-- <div class="form-group row">
+                            <div class="offset-md-3 col-md-9">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="clearUser">
+                                    <label class="form-check-label" for="clearUser">
+                                        清除現有填卷人資料
+                                    </label>
                                 </div>
                             </div>
+                        </div> -->
 
-                            <div class="actions">
-                                <button type="button" class="btn btn-light btn-cahcel">取消</button>
-                                
-                                <button type="submit" class="btn btn-primary btn-send">傳送</button>
-                            </div>
+                        <div class="actions">
+                            <button type="submit" class="btn btn-primary btn-submit">上傳</button>
+                        </div>
 
                     </form>
 
@@ -479,44 +559,15 @@
     <script src='assets/datatables/dataTables.bootstrap5.min.js'></script>
     <script src="assets/datatables/dataTables.fixedColumns.min.js"></script>
     <script src="assets/datatables/dataTables.responsive.min.js"></script>
-    <script src="assets/datatables/select/dataTables.select.min.js"></script>
-    <script src="assets/datatables/select/select.dataTables.min.js"></script>
     <script src='assets/magnific-popup/jquery.magnific-popup.min.js'></script>
     <script src='assets/sweetalert2/js/sweetalert2.all.min.js'></script>
+    <script src='assets/multiselect/multiselect.min.js'></script>
     <script src="js/megamenu.js"></script>
     <script src="js/script.js"></script>
+
     <script>
         $(document).ready(function () {
-            var selectTable = $('.selectTable').DataTable({
-                language: {
-                    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
-                    // url: 'assets/datatables/i18n/zh-HANT.json',
-                    search: "搜尋",
-                    columnDefs: [{
-                        width: 200,
-                        targets: 0
-                    }],
-                    paginate: {
-                        first: "<<",
-                        previous: "<",
-                        next: ">",
-                        last: ">>"
-                    },
-                },
-                columnDefs: [{
-                    orderable: false,
-                    render: DataTable.render.select(),
-                    targets: 0
-                }],
-                select: {
-                    style: 'os',
-                    selector: 'td:first-child'
-                },
-                order: [
-                    [1, 'asc']
-                ]
-            });
-
+            $('#undo_redo').multiselect();
         });
     </script>
 </body>
