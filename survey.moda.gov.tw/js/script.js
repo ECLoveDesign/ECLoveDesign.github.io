@@ -162,7 +162,6 @@ $('.btn-del').on('click', function () {
     }
   })
 });
-
 $('.btn-copylink').on('click', function () {
   Swal.fire({
     type: "success",
@@ -198,6 +197,28 @@ $('[class*="btn-add-"],.btn-addTopicInto').on('click', function () {
     timer: 1000
   });
 });
+
+
+$('.btn-stop').on('click', function () {
+  Swal.fire({
+    type: "info",
+    title: "您已停用該使用者",
+    showConfirmButton: false,
+    timer: 1000
+  });
+});
+
+
+$('.btn-enable').on('click', function () {
+  Swal.fire({
+    type: "success",
+    title: "您已啟用該使用者",
+    showConfirmButton: false,
+    timer: 1000
+  });
+});
+
+
 
 
 // bs-select

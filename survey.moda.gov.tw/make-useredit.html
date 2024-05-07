@@ -99,7 +99,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">資訊資源效率查調系統</a></li>
         <!-- <li class="breadcrumb-item"><a href="#">問卷填寫</a></li> -->
-        <li class="breadcrumb-item active">問卷設定</li>
+        <li class="breadcrumb-item active">填卷人設定</li>
     </ol>
 
     <main>
@@ -110,10 +110,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="make-database.html">題庫設定</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="make-setting.html">問卷設定</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="make-user.html">填卷人設定</a>
                 </li>
                 <li class="nav-item">
@@ -125,92 +125,91 @@
         <div class="functionmenu">
             <ul class="nav nav-line">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">編輯問卷
-                        <span class="surveyCode">MODA113030001</span>
-                    </a>
+                    <a class="nav-link" href="#">113年資訊資源調查問卷</a>
                 </li>
             </ul>
 
             <div class="functionactions">
-                <a href="make-setting.html" class="btn btn-back">
+                <a href="make-user.html" class="btn btn-back">
                     <i class="fa fa-chevron-left"></i>回列表
                 </a>
-                <button type="submit" class="btn btn-save">
-                    <i class="fa fa-save"></i>儲存
-                </button>
-            </div>
-        </div>
-
-        <div class="editmenu">
-            <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                    <a class="nav-link" href="make-surveyinfo.html">問卷基本資料</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="make-survey.html">問卷題目設定</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="make-surveyjump.html">跳題設定</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="functionmenu">
-            <ul class="nav nav-line">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">跳題列表</a>
-                </li>
-            </ul>
-
-            <div class="functionactions">
-                <a href="#" class="btn btn-add" data-toggle="modal" data-target="#jumpAdd">
+                <a href="#" class="btn btn-import" data-toggle="modal" data-target="#userImport">
+                    <i class="fa-solid fa-file-import"></i>匯入
+                </a>
+                <a href="#" class="btn btn-export">
+                    <i class="fa-solid fa-file-export"></i>匯出 ODS
+                </a>
+                <a href="#" class="btn btn-export">
+                    <i class="fa-solid fa-file-export"></i>匯出 CSV
+                </a>
+                <a href="#" class="btn btn-export" data-toggle="modal" data-target="#userNotify">
+                    <i class="fa-regular fa-paper-plane"></i>發送通知
+                </a>
+                <a href="#" class="btn btn-add" data-toggle="modal" data-target="#userAdd">
                     <i class="fa fa-plus"></i>新增
                 </a>
             </div>
         </div>
 
-
-        <table id="topicList" class="table table-striped table-rwd">
+        <table class="table table-striped selectTable table-rwd">
             <thead>
                 <tr>
-                    <th width:="50">序號</th>
-                    <th>題目</th>
-                    <th>選擇條件</th>
-                    <th>跳題題目</th>
+                    <th></th>
+                    <th>項次</th>
+                    <th>代碼</th>
+                    <th>名稱</th>
+                    <th>上級代碼</th>
+                    <th>電子郵件</th>
+                    <th>狀態</th>
                     <th>動作</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td data-title="序號">1</td>
-                    <td data-title="題目">5. 有無資訊相關經費支出 </td>
-                    <td data-title="選擇條件">(A) 無</td>
-                    <td data-title="跳題題目">6. 截至111年底有無從事資訊人員?</td>
+                    <td data-title=""></td>
+                    <td data-title="項次">1</td>
+                    <td data-title="代碼">leigo1024</td>
+                    <td data-title="名稱">曹銜羿</td>
+                    <td data-title="上級代碼"></td>
+                    <td data-title="電子郵件"><a href="mailto:leigo1024@gmail.com">leigo1024@gmail.com</a></td>
+                    <td data-title="狀態">啟用</td>
                     <td data-title="動作">
-                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#jumpEdit">
-                            <i class="fa fa-edit"></i>編輯
+                        <a class="btn btn-stop">
+                            <i class="fa-solid fa-ban"></i>停用
                         </a>
-                        <button class="btn btn-del">
-                            <i class="fa-solid fa-trash-can"></i>刪除
-                        </button>
                     </td>
                 </tr>
                 <tr>
-                    <td data-title="序號">2</td>
-                    <td data-title="題目">5. 有無資訊相關經費支出 </td>
-                    <td data-title="選擇條件">(A) 無</td>
-                    <td data-title="跳題題目">6. 截至111年底有無從事資訊人員?</td>
+                    <td data-title=""></td>
+                    <td data-title="項次">1</td>
+                    <td data-title="代碼">leigo1024</td>
+                    <td data-title="名稱">曹銜羿</td>
+                    <td data-title="上級代碼"></td>
+                    <td data-title="電子郵件"><a href="mailto:leigo1024@gmail.com">leigo1024@gmail.com</a></td>
+                    <td data-title="狀態">啟用</td>
                     <td data-title="動作">
-                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#jumpEdit">
-                            <i class="fa fa-edit"></i>編輯
+                        <a class="btn btn-stop">
+                            <i class="fa-solid fa-ban"></i>停用
                         </a>
-                        <button class="btn btn-del">
-                            <i class="fa-solid fa-trash-can"></i>刪除
-                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title=""></td>
+                    <td data-title="項次">1</td>
+                    <td data-title="代碼">leigo1024</td>
+                    <td data-title="名稱">曹銜羿</td>
+                    <td data-title="上級代碼"></td>
+                    <td data-title="電子郵件"><a href="mailto:leigo1024@gmail.com">leigo1024@gmail.com</a></td>
+                    <td data-title="狀態">停用</td>
+                    <td data-title="動作">
+                        <a class="btn btn-success btn-enable">
+                            <i class="fa-solid fa-circle-check"></i>啟用
+                        </a>
                     </td>
                 </tr>
             </tbody>
         </table>
+
 
     </main>
 
@@ -309,220 +308,205 @@
         </div>
     </div>
 
-
-    <!-- 新增跳題 -->
-    <div class="modal fade" id="jumpAdd" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="jumpAddLabel">
+    <!-- 新增填卷人 -->
+    <div class="modal fade" id="userAdd" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="userAddLabel">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="modal-title" id="jumpAddLabel">新增跳題</div>
+                    <div class="modal-title" id="userAddLabel">新增填卷人</div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
 
-                    <form class="form jumpSet-cont needs-validation" novalidate>
-
-                        <div class="card">
-                            <div class="card-header">
-
-                                <div class="form-group row">
-                                    <label for="selectTopic" class="col-md-2 col-form-label">題目</label>
-                                    <div class="col-md-10">
-                                        <select id="selectTopic" class="bs-select form-control" data-live-search="true" required="">                                           
-                                            <option disabled selected value="">請選擇</option>
-                                            <option value="1">有無資訊相關經費支出?</option>
-                                            <option value="2">有無資訊相關經費支出?</option>
-                                            <option value="3">有無資訊相關經費支出?</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            請選擇題目
-                                        </div>
-                                    </div>
-                                </div>
-
+                    <form class="form form-userAdd needs-validation" novalidate>
+                        <div class="form-group row">
+                            <label for="surveyCode" class="col-md-3 col-form-label">代碼</label>
+                            <div class="col-md-9">
+                                <input type="text" id="surveyCode" class="form-control" placeholder="">
                             </div>
-                            <div class="card-body">
+                        </div>
 
-                                <div class="survey-cont">
-
-
+                        <div class="form-group row">
+                            <label for="userName" class="col-md-3 col-form-label">名稱
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <input type="text" id="userName" class="form-control" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請輸入名稱
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="form-group row">
-                                    <label for="jumpTopic" class="col-md-2 col-form-label">跳題題目</label>
-                                    <div class="col-md-10">
-                                        <select id="jumpTopic" class="bs-select form-control" data-live-search="true" required="">
-                                            <option disabled selected value="">請選擇</option>
-                                            <option value="1">截至111年底有無從事資訊人員?</option>
-                                            <option value="2">截至111年底有無從事資訊人員?</option>
-                                            <option value="3">截至111年底有無從事資訊人員?</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            請選擇題目
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="card-body">
-
-                                <div class="survey-cont">
-
-                                </div>
-
+                        <div class="form-group row">
+                            <label for="surveyParentCode" class="col-md-3 col-form-label">上級代碼</label>
+                            <div class="col-md-9">
+                                <input type="text" id="surveyParentCode" class="form-control" placeholder="">
                             </div>
                         </div>
 
-                        
+
+                        <div class="form-group row">
+                            <label for="userEmail" class="col-md-3 col-form-label">電子郵件</label>
+                            <div class="col-md-9">
+                                <input type="email" id="userEmail" class="form-control" placeholder="">
+                            </div>
+                        </div>
+
                         <div class="actions">
-                            <button type="submit" class="btn btn-success btn-save">
-                                <i class="fa-solid fa-floppy-disk"></i>儲存
-                            </button>
-                            <button type="button" class="btn btn-danger btn-del">
-                                <i class="fa-solid fa-trash-can" aria-hidden="true"></i>刪除
-                            </button>
+                            <button type="submit" class="btn btn-primary btn-submit">送出</button>
                         </div>
+
                     </form>
-
-
 
                 </div>
 
-
             </div>
-
         </div>
     </div>
 
-
-    <!-- 編輯跳題 -->
-    <div class="modal fade" id="jumpEdit" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="jumpEditLabel">
+    <!-- 匯入填卷人 -->
+    <div class="modal fade" id="userImport" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="userImportLabel">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="modal-title" id="jumpEditLabel">編輯跳題</div>
+                    <div class="modal-title" id="userImportLabel">匯入填卷人</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><a href="#">下載範例檔案</a></p>
+
+                    <div class="alert alert-danger">※檔案內容格式請勿更改</div>
+
+
+                    <form class="form form-userImport needs-validation" novalidate>
+
+                        <div class="form-group row">
+                            <label for="surveyCode" class="col-md-3 col-form-label">檔案上傳 (CSV檔)                                 
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <input type="file" id="surveyCode" class="form-control-file" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請選擇檔案
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="offset-md-3 col-md-9">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="clearUser">
+                                    <label class="form-check-label" for="clearUser">
+                                        清除現有填卷人資料
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <button type="submit" class="btn btn-primary btn-submit">上傳</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 通知填卷人 -->
+    <div class="modal fade" id="userNotify" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="userNotifyLabel">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="userNotifyLabel">通知填卷人</div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
 
-                    <form class="form jumpSet-cont needs-validation" novalidate>
+                    <form class="form form-userNotify needs-validation" novalidate>
 
-                        <div class="card">
-                            <div class="card-header">
-
-                                <div class="form-group row">
-                                    <label for="selectTopic" class="col-md-2 col-form-label">題目</label>
-                                    <div class="col-md-10">
-                                        <select id="selectTopic" class="bs-select form-control" data-live-search="true" required="">
-                                            <option disabled value="">請選擇</option>
-                                            <option value="1" selected>有無資訊相關經費支出?</option>
-                                            <option value="2">有無資訊相關經費支出?</option>
-                                            <option value="3">有無資訊相關經費支出?</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            請選擇題目
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="card-body">
-
-                                <div class="survey-cont">
-
-                                    <div class="form-group">
-                                        <div class="badge badge-form">5</div>
-                                        <label for="radioType">有無資訊相關經費支出?</label>
-                                        <div class="radio-custom">
-                                            <div class="check-group">
-                                                <input type="radio" class="custom-input" id="radioA" name="radioType"
-                                                    required="">
-                                                <label class="custom-label" for="radioA">(A) 無 </label>
-                                            </div>
-                                            <div class="check-group">
-                                                <input type="radio" class="custom-input" id="radioB" name="radioType"
-                                                    required="">
-                                                <label class="custom-label" for="radioB">(B) 有</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                            <div class="form-group">
+                                <label for="notifyTopic">主旨
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="notifyTopic" placeholder="" required="">
+                                <div class="invalid-feedback">
+                                    請輸入主旨
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="form-group row">
-                                    <label for="jumpTopic" class="col-md-2 col-form-label">跳題題目</label>
-                                    <div class="col-md-10">
-                                        <select id="jumpTopic" class="bs-select form-control" data-live-search="true" required="">
-                                            <option disabled value="">請選擇</option>
-                                            <option value="1" selected>截至111年底有無從事資訊人員?</option>
-                                            <option value="2">截至111年底有無從事資訊人員?</option>
-                                            <option value="3">截至111年底有無從事資訊人員?</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            請選擇題目
-                                        </div>
-                                    </div>
+                            <div class="form-group">
+                                <label for="notifyText">內容
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <textarea class="form-control" id="notifyText" rows="3" placeholder="請輸入內容" required=""></textarea>
+                                <div class="invalid-feedback">
+                                    請輸入內容
                                 </div>
-
                             </div>
-                            <div class="card-body">
 
-                                <div class="survey-cont">
-
-                                    <div class="form-group">
-                                        <div class="badge badge-form">6</div>
-                                        <label for="radioType">截至111年底有無從事資訊人員?</label>
-                                        <div class="radio-custom">
-                                            <div class="check-group">
-                                                <input type="radio" class="custom-input" id="radioA" name="radioType"
-                                                    required="">
-                                                <label class="custom-label" for="radioA">(A) 無 </label>
-                                            </div>
-                                            <div class="check-group">
-                                                <input type="radio" class="custom-input" id="radioB" name="radioType"
-                                                    required="">
-                                                <label class="custom-label" for="radioB">(B) 有</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
+                            <div class="actions">
+                                <button type="button" class="btn btn-light btn-cahcel">取消</button>
+                                
+                                <button type="submit" class="btn btn-primary btn-send">傳送</button>
                             </div>
-                        </div>
-                        
-                        <div class="actions">
-                            <button type="submit" class="btn btn-success btn-edit">
-                                <i class="fa fa-edit"></i>編輯
-                            </button>
-                            <button type="button" class="btn btn-danger btn-del">
-                                <i class="fa-solid fa-trash-can" aria-hidden="true"></i>刪除
-                            </button>
-                        </div>
 
-                    </div>
-
-
+                    </form>
 
                 </div>
 
+            </div>
+        </div>
+    </div>
+
+    <!-- 編輯群組 -->
+    <div class="modal fade" id="groupEdit" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="groupEditLabel">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="groupEditLabel">編輯群組</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form form-groupEdit needs-validation" novalidate>
+                        <div class="form-group row">
+                            <label for="account" class="col-md-3 col-form-label">群組名稱
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <input type="text" id="account" class="form-control" placeholder="請輸入群組名稱" value="中央(一)"
+                                    required>
+                                <div class="invalid-feedback">
+                                    請輸入群組名稱
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <button type="submit" class="btn btn-primary btn-submit">送出</button>
+                        </div>
+
+                    </form>
+
+                </div>
 
             </div>
-
         </div>
     </div>
 
@@ -535,15 +519,16 @@
     <script src='assets/datatables/dataTables.bootstrap5.min.js'></script>
     <script src="assets/datatables/dataTables.fixedColumns.min.js"></script>
     <script src="assets/datatables/dataTables.responsive.min.js"></script>
+    <script src="assets/datatables/select/dataTables.select.min.js"></script>
+    <script src="assets/datatables/select/select.dataTables.min.js"></script>
     <script src='assets/magnific-popup/jquery.magnific-popup.min.js'></script>
     <script src='assets/sweetalert2/js/sweetalert2.all.min.js'></script>
     <script src='assets/Sortable/Sortable.min.js'></script>
     <script src="js/megamenu.js"></script>
-    <script src="js/ciaoyuToggle.min.js"></script>
     <script src="js/script.js"></script>
     <script>
         $(document).ready(function () {
-            var topicList = $('#topicList').DataTable({
+            var selectTable = $('.selectTable').DataTable({
                 language: {
                     url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
                     // url: 'assets/datatables/i18n/zh-HANT.json',
@@ -560,14 +545,17 @@
                     },
                 },
                 columnDefs: [{
-                        width: 200,
-                        targets: [0]
-                    },
-                    {
-                        width: 500,
-                        targets: [1, 2]
-                    },
-                ],
+                    orderable: false,
+                    render: DataTable.render.select(),
+                    targets: 0
+                }],
+                select: {
+                    style: 'os',
+                    selector: 'td:first-child'
+                },
+                order: [
+                    [1, 'asc']
+                ]
             });
 
         });
