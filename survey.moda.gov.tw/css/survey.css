@@ -23,14 +23,12 @@
     /* font-size: 14px; */
 }
 
-body {
-    background: url(../images/bg-login.jpg) no-repeat center;
-    background-size: cover;
+body {    
     position: relative;
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
-body>* {
+/* body>* {
     position: absolute;
     left: 0;
     right: 0;
@@ -38,15 +36,29 @@ body>* {
     bottom: 0;
     margin: auto;
     display: block;
+}*/
+
+
+body::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-login.jpg) no-repeat center;    
+    background-size: cover;
+    position: fixed;
+    z-index: 0;
 }
 main {
     width:calc(100% - 70px);
+    margin: auto;
     z-index: 1;
 }
 
 footer {
     top: auto;
-    bottom: 10px;
+    padding: 20px;
+    /* bottom: 10px; */
     font-weight: 500;
     z-index: 1;
     text-align: center;
@@ -70,16 +82,26 @@ footer {
     text-align: left;
     font-weight: 500;
 }
+
+.card-header.affix-top {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 70px;
+    width: calc(100% - 140px);
+    border-radius: 0;
+}
+
 .survey-fill {
     margin: 30px auto;
     width: calc(100% - 70px);
 }
 
-.survey-fill .card-body {
+/* .survey-fill .card-body {
     height: 750px;
     overflow: auto;
     min-height: auto;
-}
+} */
 .survey-info {
     padding-left: 15px;
     border-left: #d6d6d6 solid 5px;
@@ -166,6 +188,14 @@ footer {
     display: flex;
     justify-content: center;
 }
+.actions.affix-top {
+    position: fixed;
+    z-index: 1;
+    bottom: 25px;
+    width: 100%;
+    left: 0;
+}
+
 .actions [class*="btn-"] {
     padding: 10px 20px;
     border-radius: 25px;
@@ -175,6 +205,10 @@ footer {
     font-weight: 500;
     box-shadow: 0px 0px 9px rgb(0, 0, 0, .1);
 }
+.actions [class*="btn-"]+ [class*="btn-"] {
+    margin-left: 20px;
+}
+.actions .btn-confirm,
 .actions .btn-back {
     letter-spacing: 5px;
     text-indent: 5px;
@@ -453,4 +487,16 @@ footer {
 }
 .was-validated .custom-input:valid~.custom-label::after {
     background: #28a745;
+}
+
+/* remarkCont */
+#remarkCont {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    left: 0;
+    z-index: 1;
+    padding: 20px 0 110px;
+    border-top: #dbdbdb solid 1px;
 }

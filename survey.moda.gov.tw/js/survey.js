@@ -29,3 +29,27 @@ $('.btn-save').on('click', function () {
       timer: 1000
     });
 });
+
+
+// affix top
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 40) {
+    $(".card-header").addClass('affix-top');
+      $(".actions").addClass('affix-top');
+  } else {
+    $(".card-header").removeClass('affix-top');
+    $(".actions").removeClass('affix-top');
+  }
+
+  if ($(document).width() > 900) {
+      if ($(this).scrollTop() > 135) {
+          $(".card-header").addClass('affix-top');
+          $(".actions").addClass('affix-top');
+
+      } else {
+          $(".card-header").removeClass('affix-top');
+          $(".actions").removeClass('affix-top');
+      }
+  }
+
+});

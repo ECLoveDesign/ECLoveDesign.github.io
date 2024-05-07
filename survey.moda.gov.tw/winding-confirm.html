@@ -1,0 +1,363 @@
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale = 1" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="數位發展部,資訊資源效率查調系統">
+    <meta name="description"
+        content="數位發展部 Ministry of Digital Affairs (moda) 作為臺灣數位發展的「mòda（馬達）」，將連結「公民」與「技術」、提升「產業」及「安全」，實現智慧國家的願景，並以臺灣模式持續引領世界。">
+    <meta property="og:title" content="資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs" />
+    <meta property="og:description"
+        content="數位發展部 Ministry of Digital Affairs (moda) 作為臺灣數位發展的「mòda（馬達）」，將連結「公民」與「技術」、提升「產業」及「安全」，實現智慧國家的願景，並以臺灣模式持續引領世界。" />
+    <meta property="og:url" content="https://moda.gov.tw" />
+    <meta property="og:image" content="https://moda.gov.tw/assets/img/fbshare2.jpg" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="touch-icon.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/datatables/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/magnific-popup/magnific-popup.min.css" />
+    <link rel="stylesheet" href="assets/sweetalert2/css/sweetalert2.min.css" />
+    <link rel="stylesheet" href="css/megamenu.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</title>
+    <style>
+        table.dataTable thead>tr>th.dt-orderable-asc:first-child,
+        table.dataTable thead>tr>th.dt-orderable-desc:first-child,
+        table.dataTable tr td:first-child {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="d-none">資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</h1>
+    <header>
+        <nav id="mainnav" class="navigation">
+            <div class="nav-header">
+                <a class="nav-brand" href="index.html"><img src="images/logo.svg"
+                        title="資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs"></a>
+                <div class="nav-toggle"></div>
+            </div>
+            <div class="nav-menus-wrapper">
+                <ul class="nav-menu">
+                    <li>
+                        <a href="javascript:void(0)">問卷填寫 <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="nav-dropdown">
+                            <li><a href="index.html">調查中問卷</a></li>
+                            <li><a href="survey-history.html">歷史問卷</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">問卷製作 <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="nav-dropdown">
+                            <li><a href="make-database.html">題庫設定</a></li>
+                            <li><a href="make-setting.html">問卷設定</a></li>
+                            <li><a href="make-user.html">填卷人設定</a></li>
+                            <li><a href="make-group.html">群組設定</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:void(0)">問卷回收情形 <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="nav-dropdown">
+                            <li class="active"><a href="winding-progress.html">調查中問卷</a></li>
+                            <li><a href="winding-history.html">歷史問卷</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="dashboard.html">儀表板</a>
+                    </li>
+                    <li>
+                        <a href="chart.html">查調報告檢視</a>
+                    </li>
+                    <li>
+                        <a href="#">後台管理</a>
+                    </li>
+                </ul>
+
+                <ul class="nav-menu nav-btn align-to-right">
+                    <li class="nav-apply">
+                        <a href="#" data-toggle="modal" data-target="#surveyApply">問卷製作申請</a>
+                    </li>
+                    <li class="nav-login">
+                        <a href="javascript:void(0)">
+                            <div class="profile">
+                                <span class="firstName">Cyndi</span>
+                                <span class="lastName">Wang</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+                        <ul class="nav-dropdown">
+                            <li><a href="login.html">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">資訊資源效率查調系統</a></li>
+        <!-- <li class="breadcrumb-item"><a href="#">問卷填寫</a></li> -->
+        <li class="breadcrumb-item active">問卷回收情形</li>
+    </ol>
+
+    <main>
+
+        <div class="submenu">
+
+            <ul class="nav nav-pills">
+                <li class="nav-item active">
+                    <a class="nav-link" href="winding-progress.html">調查中問卷</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="winding-history.html">歷史問卷</a>
+                </li>
+            </ul>
+        </div>
+
+        
+        <div class="functionmenu">
+            
+            <ul class="nav nav-line">
+                <li class="nav-item">
+                    <a class="nav-link" href="winding-todolist.html">待處理</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="winding-confirm.html">已確認</a>
+                </li>
+            </ul>
+
+            <div class="functionactions">
+                <a href="winding-progress.html" class="btn btn-back">
+                    <i class="fa fa-chevron-left"></i>回列表
+                </a>
+                <a href="#" class="btn btn-export">
+                    <i class="fa-solid fa-file-export"></i>清單匯出
+                </a>
+            </div>
+        </div>
+
+        <table class="table table-striped listTable table-rwd">
+            <thead>
+                <tr>
+                    <th width:="50">項次</th>
+                    <th>代碼</th>
+                    <th>名稱</th>
+                    <th>備註文字</th>
+                    <th>最新處理人員時間</th>
+                    <th>動作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-title="項次">1</td>
+                    <td data-title="代碼">387143100I</td>
+                    <td data-title="名稱">臺中市潭子區衛生所</td>
+                    <td data-title="備註文字">3/16已確認第五大題，可從第六大題接續確認</td>
+                    <td data-title="最新處理人員時間">李慧玲 2024/03/18 16:55</td>
+                    <td data-title="動作">
+                        <a class="btn btn-view" href="winding-view.html">
+                            <i class="fa fa-eye"></i>查看
+                        </a>
+                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#topicEdit">
+                            <i class="fa fa-edit"></i>備註
+                        </a>
+                        <button class="btn btn-return">
+                            <i class="fa-solid fa-arrow-left-long"></i>退回
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="項次">1</td>
+                    <td data-title="代碼">387143100I</td>
+                    <td data-title="名稱">臺中市潭子區衛生所</td>
+                    <td data-title="備註文字">3/16已確認第五大題，可從第六大題接續確認</td>
+                    <td data-title="最新處理人員時間">李慧玲 2024/03/18 16:55</td>
+                    <td data-title="動作">
+                        <a class="btn btn-view" href="winding-view.html">
+                            <i class="fa fa-eye"></i>查看
+                        </a>
+                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#topicEdit">
+                            <i class="fa fa-edit"></i>備註
+                        </a>
+                        <button class="btn btn-return">
+                            <i class="fa-solid fa-arrow-left-long"></i>退回
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-title="項次">1</td>
+                    <td data-title="代碼">387143100I</td>
+                    <td data-title="名稱">臺中市潭子區衛生所</td>
+                    <td data-title="備註文字">3/16已確認第五大題，可從第六大題接續確認</td>
+                    <td data-title="最新處理人員時間">李慧玲 2024/03/18 16:55</td>
+                    <td data-title="動作">
+                        <a class="btn btn-view" href="winding-view.html">
+                            <i class="fa fa-eye"></i>查看
+                        </a>
+                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#topicEdit">
+                            <i class="fa fa-edit"></i>備註
+                        </a>
+                        <button class="btn btn-return">
+                            <i class="fa-solid fa-arrow-left-long"></i>退回
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </main>
+
+    <footer>
+        <div class="nav foot-nav">
+            <a class="nav-link" href="privacy.html">隱私權政策</a>
+        </div>
+        <div class="foot-cont">
+            <img src="images/logo-footer.png">
+            <p>Copyright © 數位發展部 版權所有</p>
+        </div>
+    </footer>
+
+
+    <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+
+    <!-- 問卷製作申請 -->
+    <div class="modal fade" id="surveyApply" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="surveyApplyLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="surveyApplyLabel">問卷製作-權限開通申請</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        如您欲進行問卷製作，請將下方資料補齊並送出申請，系統將透過電子信箱發送驗證信給您，完成驗證後即可開通相關權限。問卷製作權限開通後，您即可於資訊資源效率查調系統中使用「問卷製作」及「問卷回收情形」兩個模組。
+                    </div>
+
+                    <form class="form form-surveyApply needs-validation" novalidate>
+                        <div class="form-group row">
+                            <label for="account" class="col-md-3 col-form-label">帳號
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <input type="text" id="account" class="form-control" placeholder="請輸入帳號"
+                                    value="WangCyndi" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-3 col-form-label">姓名
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <input type="text" id="name" class="form-control" placeholder="請輸入姓名" value="王心凌"
+                                    disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="department" class="col-md-3 col-form-label">機關
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <select class="custom-select" id="department" required>
+                                    <option selected disabled value="">請選擇</option>
+                                    <option>數位發展部 (A29000000G)</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    請選擇
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-3 col-form-label">公務信箱
+                                <span class="text-danger">*</span>
+                            </label>
+
+                            <div class="col-md-9">
+                                <input type="email" id="email" class="form-control" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請填寫公務信箱
+                                </div>
+                                <span
+                                    class="form-text text-danger">請以gov電子信箱為主。如為其他電子信箱，須待系統管理員進行身分認證後，方能開通問卷製作權限。</span>
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <button type="submit" class="btn btn-primary btn-submit">送出</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src='js/jquery-3.2.1.min.js'></script>
+    <script src='js/popper-1.12.9.min.js'></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src='assets/datatables/dataTables.min.js'></script>
+    <script src='assets/datatables/dataTables.bootstrap5.min.js'></script>
+    <script src="assets/datatables/dataTables.fixedColumns.min.js"></script>
+    <script src="assets/datatables/dataTables.responsive.min.js"></script>
+    <script src='assets/magnific-popup/jquery.magnific-popup.min.js'></script>
+    <script src='assets/sweetalert2/js/sweetalert2.all.min.js'></script>
+    <script src="js/megamenu.js"></script>
+    <script src="js/ciaoyuToggle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            var topicList = $('#topicList').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+                    // url: 'assets/datatables/i18n/zh-HANT.json',
+                    search: "搜尋",
+                    columnDefs: [{
+                        width: 200,
+                        targets: 0
+                    }],
+                    paginate: {
+                        first: "<<",
+                        previous: "<",
+                        next: ">",
+                        last: ">>"
+                    },
+                },
+                columnDefs: [{
+                        width: 200,
+                        targets: [0]
+                    },
+                    {
+                        width: 500,
+                        targets: [1, 2]
+                    },
+                ],
+            });
+
+        });
+    </script>
+</body>
+
+
+</html>
