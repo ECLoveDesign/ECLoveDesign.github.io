@@ -95,7 +95,6 @@
     color: #fff!important;
     background: #000 ;
 }
-
 .btn-notify {
     color: #fff !important;
     background: #0051e7;
@@ -119,13 +118,15 @@
     color: #000 ;
     background: #ac0000;
 }
-
+.btn-reset,
 .btn-back {
     color: #fff;
     background: #333;
     border: #333 solid 1px;
 }
 
+.btn-reset:hover,
+.btn-reset:active,
 .btn-back:hover,
 .btn-back:active {
     color: #fff;
@@ -167,9 +168,12 @@
     border: var(--primaryColor) solid 1px;
 }
 
+.btn-search,
 .btn-return,
 .btn-add {
     background: var(--normalYellow);
+    border-color: var(--normalYellow);
+
 }
 
 .btn-primary {
@@ -1999,4 +2003,71 @@ section + section  {
 
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
+}
+
+/* highchart 2*/
+
+.chart .highcharts-figure,
+.chart .highcharts-data-table table {
+    min-width: 310px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.chart .highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.chart .highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.chart .highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.chart .highcharts-data-table td,
+.chart .highcharts-data-table th,
+.chart .highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.chart .highcharts-data-table thead tr,
+.chart .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.chart .highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+
+/* search-wrap */
+.search-wrap {
+    margin-bottom: 2rem;
+    padding: 15px 30px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, .2);
+    border-radius: 10px;
+}
+.search-wrap .row {
+    align-items: end;
+}
+.search-wrap .row .btn:not(.dropdown-toggle) {
+    padding: .55rem 0.75rem;
+    font-size: 1.2rem;
+    margin: 0px 0 1rem;
+    border-radius: 6px;
+}
+.search-wrap .btn i {
+    margin-right: 0;
 }
