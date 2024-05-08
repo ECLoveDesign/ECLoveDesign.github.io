@@ -132,9 +132,9 @@
                     <td data-title="問卷名稱">113年資訊資源調查問卷</td>
                     <td data-title="起訖日期">2024/03/01~2024/06/30</td>
                     <td data-title="回收情形">
-                        <span class="badge badge-success">已填報</span> (186份，9.2%)<br>
-                        <span class="badge badge-warning">未填報</span> (1837份，90.8%)<br>
-                        <span class="badge badge-info">主計處資料申請</span> (33份)
+                        <span class="badge badge-success">已填報</span> (186份，9.05%)<br>
+                        <span class="badge badge-warning">未填報</span> (1837份，89.35%)<br>
+                        <span class="badge badge-info">主計處資料申請</span> (33份，1.61%)
                     </td>
                     <td data-title="動作">
                         <a class="btn btn-view" href="winding-todolist.html">
@@ -150,14 +150,14 @@
                     <td data-title="問卷名稱">各行各業數位轉型問卷調查</td>
                     <td data-title="起訖日期">2024/03/01~2024/06/30</td>
                     <td data-title="回收情形">
-                        <span class="badge badge-success">已填報</span> (56份，26.1%)<br>
-                        <span class="badge badge-warning">未填報</span> (159份，73.9%)<br>
+                        <span class="badge badge-success">已填報</span> (56份，26.05%)<br>
+                        <span class="badge badge-warning">未填報</span> (159份，73.95%)<br>
                     </td>
                     <td data-title="動作">
                         <a class="btn btn-view" href="winding-todolist.html">
                             <i class="fa fa-eye"></i>查看
                         </a>
-                        <a class="btn btn-chart" href="#" data-toggle="modal" data-target="#windingChart">
+                        <a class="btn btn-chart" href="#" data-toggle="modal" data-target="#windingChart2">
                             <i class="fa-solid fa-chart-pie"></i>圖表
                         </a>
                     </td>
@@ -276,6 +276,27 @@
                 <div class="modal-body">
 
                     <div class="chart-01" style="height: 450px;"></div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 查看圖表2 -->
+    <div class="modal fade" id="windingChart2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="windingChart2Label">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="windingChart2Label">查看圖表</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="chart-02" style="height: 450px;"></div>
 
                 </div>
 
@@ -433,7 +454,7 @@
                             }
                         }
                     },
-                    colors: ['#00e396', '#feb019', '#444'],
+                    colors: ['#28a745', '#ffc107', '#17a2b8'],
                     title: {
                         text: '113年資訊資源效率調查問卷<br>問卷回收情形',
                     },
@@ -490,16 +511,119 @@
                         colorByPoint: true,
                         innerSize: '80%',
                         data: [{
-                            name: '已填報-已確認     ',
-                            y: 4604,
+                            name: '已填報     ',
+                            y: 186,
                             // sliced: true,
                             // selected: true
                         }, {
-                            name: '已填報-待處理',
-                            y: 1628,
+                            name: '未填報',
+                            y: 1837,
+                        }, {
+                            name: '主計處資料申請',
+                            y: 33,
+                        }]
+                    }]
+                });
+
+                //chart-01
+                $('.chart-02').highcharts({
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: true,
+                        type: 'pie',
+                        
+                        events: {
+                            render: function () {
+                                var chart = this,
+                                    sum = 0;
+
+                                if (chart.textGroup) {
+                                    chart.textGroup.destroy()
+                                    chart.textGroup = undefined;
+                                }
+
+                                chart.textGroup = chart.renderer.g('textGroup').add().toFront()
+                                chart.series[0].data.forEach(function (value) {
+                                    sum += value.y;
+                                })
+
+                                var customText = chart.myCustomText = chart.renderer.text(
+                                        '總件數' + '<br></br>' + sum, chart.plotWidth / 2, chart .plotHeight / 1.55
+                                    )
+                                    .css({
+                                        fontSize: '26px',
+                                    })
+                                    .add(chart.textGroup);
+                                chart.textGroup.translate(-chart.myCustomText.getBBox().width / 3);
+
+                            }
+                        }
+                    },
+                    colors: ['#28a745', '#ffc107'],
+                    title: {
+                        text: '各行各業數位轉型問卷調查',
+                    },
+                    credits: {
+                        enabled: false,
+                    },
+                    legend: {
+                        //enabled: false
+                        // layout: 'vertical',
+                        labelFormatter: function () {
+                            return this.name + '  ' + this.percentage.toFixed(2) + '%';
+                        },
+                        itemStyle: {
+                            fontSize: '16px',
+                            font: 'Microsoft JhengHei , Verdana, sans-serif',
+                            // color: '#A0A0A0'
+                        },
+                        itemMarginTop: 5,
+                        margin: 20,
+                    },
+                    
+                    tooltip: {
+                        headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                        pointFormat: '<span style="font-size: 1rem;">共 {point.y:1f}件</span><br/>' +
+                            '{series.name}: <b>{point.percentage:.2f}%</b>' 
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.y:1f}件  ' +'(' + '{point.percentage:.2f} %'  +')'
+                            },
+                            showInLegend: true
+                        },
+                        series: {
+                            cursor: 'pointer',
+                            point: {
+                                events: {
+                                    click: function () {
+                                        location.href = this.options.url;
+                                    }
+                                }
+                            }
+                        }
+                    },
+
+                    exporting: {
+                        enabled: false
+                    },
+                    series: [{
+                        name: '百分比',
+                        colorByPoint: true,
+                        innerSize: '80%',
+                        data: [{
+                            name: '已填報     ',
+                            y: 56,
+                            // sliced: true,
+                            // selected: true
                         }, {
                             name: '未填報',
-                            y: 1984,
+                            y: 159,
                         }]
                     }]
                 });
