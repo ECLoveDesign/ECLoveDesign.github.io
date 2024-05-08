@@ -1083,7 +1083,15 @@ table.table.dataTable>tbody>tr.selected>* {
 /* modal */
 .modal-header {
     background: var(--normalYellow);
-    border-color: transparent;
+    border-color: transparent;    
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+.modal-header .close {
+    transform: scale(1.5);
+    margin-top: -8px;
+    margin-right: -6px;
 }
 /* .modal-body {
     overflow-x: hidden;
