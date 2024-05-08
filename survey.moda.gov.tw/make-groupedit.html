@@ -134,7 +134,7 @@
                 <a href="make-user.html" class="btn btn-back">
                     <i class="fa fa-chevron-left"></i>回列表
                 </a>
-                <a href="#" class="btn btn-import" data-toggle="modal" data-target="#groupImport">
+                <a href="#" class="btn btn-import" data-toggle="modal" data-target="#groupNameImport">
                     <i class="fa-solid fa-file-import"></i>匯入
                 </a>
                 <button type="button" class="btn btn-add" data-toggle="modal" data-target="#groupAdd">
@@ -495,15 +495,67 @@
         </div>
     </div>
 
+    <!-- 匯入群組名稱 -->
+    <div class="modal fade" id="groupNameImport" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="groupNameImportLabel">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="groupNameImportLabel">匯入群組名稱</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><a href="#">下載範例檔案</a></p>
+
+                    <div class="alert alert-danger">※檔案內容格式請勿更改</div>
 
 
-    <!-- 匯入群組 -->
+                    <form class="form form-groupNameImport needs-validation" novalidate>
+
+                        <div class="form-group row">
+                            <label for="surveyCode" class="col-md-3 col-form-label">檔案上傳 (CSV檔)
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-9">
+                                <input type="file" id="surveyCode" class="form-control-file" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    請選擇檔案
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-group row">
+                            <div class="offset-md-3 col-md-9">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="clearUser">
+                                    <label class="form-check-label" for="clearUser">
+                                        清除現有填卷人資料
+                                    </label>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="actions">
+                            <button type="submit" class="btn btn-primary btn-submit">上傳</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 匯入群組名單 -->
     <div class="modal fade" id="groupImport" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="groupImportLabel">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="modal-title" id="groupImportLabel">匯入群組</div>
+                    <div class="modal-title" id="groupImportLabel">匯入群組名單</div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
@@ -550,6 +602,8 @@
             </div>
         </div>
     </div>
+
+    
 
     <script src='js/jquery-3.2.1.min.js'></script>
     <script src='js/popper-1.12.9.min.js'></script>
