@@ -587,10 +587,10 @@ header.affix {
 }
 
 .btn-top [class*="fa-"] {
-    line-height: 2.3rem;
+    line-height: 2.7rem;
     font-size: 1.2rem;
     display: block;
-    padding-left: 7px;
+    padding-left: 9px;
 }
 
 @media(max-width:767px) {
