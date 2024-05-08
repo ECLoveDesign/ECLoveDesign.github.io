@@ -275,7 +275,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <div class="chart" style="height: 750px;"></div>
+                    <div class="chart-01" style="height: 450px;"></div>
 
                 </div>
 
@@ -398,6 +398,113 @@
                     }]
                 });
 
+                //chart-01
+                $('.chart-01').highcharts({
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: true,
+                        type: 'pie',
+                        
+                        events: {
+                            render: function () {
+                                var chart = this,
+                                    sum = 0;
+
+                                if (chart.textGroup) {
+                                    chart.textGroup.destroy()
+                                    chart.textGroup = undefined;
+                                }
+
+                                chart.textGroup = chart.renderer.g('textGroup').add().toFront()
+                                chart.series[0].data.forEach(function (value) {
+                                    sum += value.y;
+                                })
+
+                                var customText = chart.myCustomText = chart.renderer.text(
+                                        '總件數' + '<br></br>' + sum, chart.plotWidth / 2, chart .plotHeight / 1.55
+                                    )
+                                    .css({
+                                        fontSize: '26px',
+                                    })
+                                    .add(chart.textGroup);
+                                chart.textGroup.translate(-chart.myCustomText.getBBox().width / 3);
+
+                            }
+                        }
+                    },
+                    colors: ['#00e396', '#feb019', '#444'],
+                    title: {
+                        text: '113年資訊資源效率調查問卷<br>問卷回收情形',
+                    },
+                    credits: {
+                        enabled: false,
+                    },
+                    legend: {
+                        //enabled: false
+                        // layout: 'vertical',
+                        labelFormatter: function () {
+                            return this.name + '  ' + this.percentage.toFixed(2) + '%';
+                        },
+                        itemStyle: {
+                            fontSize: '16px',
+                            font: 'Microsoft JhengHei , Verdana, sans-serif',
+                            // color: '#A0A0A0'
+                        },
+                        itemMarginTop: 5,
+                        margin: 20,
+                    },
+                    
+                    tooltip: {
+                        headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                        pointFormat: '<span style="font-size: 1rem;">共 {point.y:1f}件</span><br/>' +
+                            '{series.name}: <b>{point.percentage:.2f}%</b>' 
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.y:1f}件  ' +'(' + '{point.percentage:.2f} %'  +')'
+                            },
+                            showInLegend: true
+                        },
+                        series: {
+                            cursor: 'pointer',
+                            point: {
+                                events: {
+                                    click: function () {
+                                        location.href = this.options.url;
+                                    }
+                                }
+                            }
+                        }
+                    },
+
+                    exporting: {
+                        enabled: false
+                    },
+                    series: [{
+                        name: '百分比',
+                        colorByPoint: true,
+                        innerSize: '80%',
+                        data: [{
+                            name: '已填報-已確認     ',
+                            y: 4604,
+                            // sliced: true,
+                            // selected: true
+                        }, {
+                            name: '已填報-待處理',
+                            y: 1628,
+                        }, {
+                            name: '未填報',
+                            y: 1984,
+                        }]
+                    }]
+                });
+
+                
         });
 
 
