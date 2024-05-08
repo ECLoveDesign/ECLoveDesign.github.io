@@ -453,7 +453,7 @@
                 },
                 legend: {
                     //enabled: false
-                    layout: 'vertical',
+                    // layout: 'vertical',
                     labelFormatter: function () {
                         return this.name + '  ' + this.percentage.toFixed(2) + '%';
                     },
@@ -465,8 +465,10 @@
                     itemMarginTop: 5,
                     margin: 20,
                 },
+                
                 tooltip: {
-                    pointFormat: '共 {point.y:1f}件<br/>' +
+                    headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                    pointFormat: '<span style="font-size: 1rem;">共 {point.y:1f}件</span><br/>' +
                         '{series.name}: <b>{point.percentage:.2f}%</b>' 
                 },
                 plotOptions: {
@@ -558,7 +560,7 @@
                 },
                 legend: {
                     //enabled: false
-                    layout: 'vertical',
+                    // layout: 'vertical',
                     labelFormatter: function () {
                         return this.name + '  ' + this.percentage.toFixed(2) + '%';
                     },
@@ -571,7 +573,8 @@
                     margin: 20,
                 },
                 tooltip: {
-                    pointFormat: '共 {point.y:1f}件<br/>' +
+                    headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                    pointFormat: '<span style="font-size: 1rem;">共 {point.y:1f}件</span><br/>' +
                         '{series.name}: <b>{point.percentage:.2f}%</b>' 
                 },
                 plotOptions: {

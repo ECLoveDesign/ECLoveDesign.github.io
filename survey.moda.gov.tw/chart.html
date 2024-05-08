@@ -136,13 +136,13 @@
                         <label class="col-form-label" for="topicSelect" data-live-search="true">題目</label>
                         <select class="form-control bs-select" id="topicSelect" title="請選擇" data-live-search="true">
                             <option value="none" disabled="">請選擇</option>
-                            <option value="1" selected="">公務使用中之筆記型電腦數量</option>
+                            <option value="1" selected="">資安防護措施項目包含？(複選題)</option>
                             <option value="2">公務使用中之筆記型電腦數量</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="col-md-2 col-lg-3">
+                <!-- <div class="col-md-2 col-lg-3">
                     <button class="btn btn-search" type="button" data-toggle="tooltip" data-placement="bottom" title="查詢">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -154,7 +154,7 @@
                     <button class="btn btn-export" type="button" data-toggle="tooltip" data-placement="bottom" title="匯出">
                         <i class="fa-solid fa-file-export"></i>
                     </button>
-                </div>
+                </div> -->
 
             </div>
             
@@ -167,7 +167,7 @@
                         <label for="sruveySelect">問卷名稱</label>
                         <select class="form-control bs-select" id="sruveySelect" title="請選擇" data-live-search="true">
                             <option value="none" disabled="">請選擇</option>
-                            <option value="1" selected="">113年資訊資源調查問卷</option>
+                            <option value="1" selected="">112年資訊資源調查問卷</option>
                             <option value="2">112年資訊資源調查問卷</option>
                         </select>
                     </div>
@@ -189,7 +189,7 @@
                         <label class="col-form-label" for="topicSelect" data-live-search="true">題目</label>
                         <select class="form-control bs-select" id="topicSelect" title="請選擇" data-live-search="true">
                             <option value="none" disabled="">請選擇</option>
-                            <option value="1" selected="">公務使用中之筆記型電腦數量</option>
+                            <option value="1" selected="">資安防護措施項目包含？(複選題)</option>
                             <option value="2">公務使用中之筆記型電腦數量</option>
                         </select>
                     </div>
@@ -353,7 +353,7 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
+    <script src="js/megamenu.js"></script>
     <script src="js/script.js"></script>
 
     <script>
@@ -365,11 +365,11 @@
                     type: 'column'
                 },
                 title: {
-                    text: '公務使用中之筆記型電腦數量'
+                    text: '資安防護措施項目包含？(複選題)'
                 },
-                // xAxis: {
-                //     categories: ['公務使用中之筆記型電腦數量', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-                // },
+                xAxis: {
+                    categories: ['A 防毒', 'B 網路防火牆', 'C 入侵偵測防禦', 'D 漏洞偵測(弱點掃瞄)', 'E 資安監控中心(SOC)', 'F 進階持續性威脅攻擊防禦措施', 'G 電子郵件過濾機制', 'H 滲透測試', 'I 應用程式防火牆(WAF)']
+                },
                 credits: {
                     enabled: false
                 },
@@ -379,15 +379,18 @@
                         borderRadius: '25%'
                     }
                 },
+                tooltip: {
+                    headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>'
+                },
                 series: [{
                     name: '資料一',
-                    data: [5]
+                    data: [ 5 , 8 , 3 , 14 , 0 , 0 , 1 , 8 , 1 ]
                 }, {
                     name: '資料二',
-                    data: [2]
+                    data: [ 2 , 4 , 6 , 7 , 1 , 0 , 2 , 4 , 0 ]
                 }, {
                     name: '差異數',
-                    data: [3]
+                    data: [ 3 , 4 , -3 , 7 , -1 , 0 , -1 , 3 , 1 ]
                 }]
             });
 
