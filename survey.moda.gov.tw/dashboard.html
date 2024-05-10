@@ -133,11 +133,52 @@
 
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <div class="chart-cont chart-01"></div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-cont chart-01"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-md-6 col-sm-12">
-                    <div class="chart-cont chart-02"></div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-cont chart-02"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-cont chart-03"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-cont chart-04"></div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-cont chart-05"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-cont chart-06"></div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -309,14 +350,15 @@
                             })
 
                             var customText = chart.myCustomText = chart.renderer.text(
-                                    '總件數' + '<br>'  + '<span style="font-size:33px">' + sum+ '</span>', chart.plotWidth / 2, chart.plotHeight / 1.35 
+                                    '總件數' + '<br>'  + '<span style="font-size:33px">' + sum+ '</span>', chart.plotWidth / 1.78, chart.plotHeight / 1.35 
                                 )
                                 .css({
                                     fontSize: '26px',
                                     fontWeight: 'Bold',
+                                    textAnchor:'middle'
                                 })
                                 .add(chart.textGroup);
-                            chart.textGroup.translate(-chart.myCustomText.getBBox().width / 3);
+                            chart.textGroup.translate(-chart.myCustomText.getBBox().width / 2);
 
                         }
                     }
@@ -336,11 +378,11 @@
                     //enabled: false
                     // layout: 'vertical',
                     labelFormatter: function () {
-                        return this.name + '  ' + this.percentage.toFixed(2) + '%';
+                        return '<b>'+this.name + '  ' +  this.percentage.toFixed(2) + ' %'+ '</b>';
                     },
                     itemStyle: {
-                        fontSize: '16px',
-                        font: 'Microsoft JhengHei , Verdana, sans-serif',
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',                        
+                        fontSize: '14px',
                         // color: '#A0A0A0'
                     },
                     itemMarginTop: 5,
@@ -383,8 +425,6 @@
                     data: [{
                         name: '已填報-已確認     ',
                         y: 4604,
-                        // sliced: true,
-                        // selected: true
                     }, {
                         name: '已填報-待處理',
                         y: 1628,
@@ -419,14 +459,15 @@
                             })
 
                             var customText = chart.myCustomText = chart.renderer.text(
-                                    '總件數' + '<br>'  + '<span style="font-size:33px">' + sum+ '</span>', chart.plotWidth / 2, chart.plotHeight / 1.35 
+                                    '總件數' + '<br>'  + '<span style="font-size:33px">' + sum+ '</span>', chart.plotWidth / 1.78, chart.plotHeight / 1.35 
                                 )
                                 .css({
                                     fontSize: '26px',
                                     fontWeight: 'Bold',
+                                    textAnchor:'middle'
                                 })
                                 .add(chart.textGroup);
-                            chart.textGroup.translate(-chart.myCustomText.getBBox().width / 3);
+                            chart.textGroup.translate(-chart.myCustomText.getBBox().width / 2);
 
                         }
                     }
@@ -446,11 +487,11 @@
                     //enabled: false
                     // layout: 'vertical',
                     labelFormatter: function () {
-                        return this.name + '  ' + this.percentage.toFixed(2) + '%';
+                        return '<b>'+this.name + '  ' +  this.percentage.toFixed(2) + ' %'+ '</b>';
                     },
                     itemStyle: {
-                        fontSize: '16px',
-                        font: 'Microsoft JhengHei , Verdana, sans-serif',
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',                        
+                        fontSize: '14px',
                         // color: '#A0A0A0'
                     },
                     itemMarginTop: 5,
@@ -492,11 +533,447 @@
                     data: [{
                         name: '已上傳',
                         y: 1763,
-                        // sliced: true,
-                        // selected: true
                     }, {
                         name: '未上傳',
                         y: 6453,
+                    }]
+                }]
+            });
+
+            //chart-03
+            $('.chart-03').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: true,
+                    type: 'pie',
+
+                    events: {
+                        render: function () {
+                            var chart = this,
+                                sum = 0;
+
+                            if (chart.textGroup) {
+                                chart.textGroup.destroy()
+                                chart.textGroup = undefined;
+                            }
+
+                            chart.textGroup = chart.renderer.g('textGroup').add().toFront()
+                            chart.series[0].data.forEach(function (value) {
+                                sum += value.y;
+                            })
+
+                            var customText = chart.myCustomText = chart.renderer.text(
+                                    '總件數' + '<br>'  + '<span style="font-size:33px">' + sum+ '</span>', chart.plotWidth / 1.78, chart.plotHeight / 1.45 
+                                )
+                                .css({
+                                    fontSize: '26px',
+                                    fontWeight: 'Bold',
+                                    textAnchor:'middle'
+                                })
+                                .add(chart.textGroup);
+                            chart.textGroup.translate(-chart.myCustomText.getBBox().width / 2);
+
+                        }
+                    }
+                },
+                colors: ['#00e396', '#feb019', '#444'],
+                title: {
+                    text: '113年資訊資源效率調查問卷<br>問卷回收情形_中央(一)',
+                    style: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',
+                        fontSize: '24px' ,                
+                    }
+                },
+                credits: {
+                    enabled: false,
+                },
+                legend: {
+                    //enabled: false
+                    // layout: 'vertical',
+                    labelFormatter: function () {
+                        return '<b>'+this.name + '  ' +  this.percentage.toFixed(2) + ' %'+ '</b>';
+                    },
+                    itemStyle: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',                        
+                        fontSize: '14px',
+                        // color: '#A0A0A0'
+                    },
+                    itemMarginTop: 5,
+                    margin: 20,
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="color:{point.color}">\u25CF</span> <span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                    pointFormat: '<span style="font-size: 1rem;"><b>{point.percentage:.2f}%</b> (共 <b>{point.y:1f}</b> 件) </span>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name} <br> <b>{point.y:1f}件</b> ( {point.percentage:.2f} % ) </b>'
+                        },
+                        showInLegend: true
+                    },
+                    series: {
+                        cursor: 'pointer',
+                        point: {
+                            events: {
+                                click: function () {
+                                    location.href = this.options.url;
+                                }
+                            }
+                        }
+                    }
+                },
+
+                exporting: {
+                    enabled: false
+                },
+                series: [{
+                    name: '百分比',
+                    colorByPoint: true,
+                    innerSize: '70%',
+                    data: [{
+                        name: '已填報-已確認     ',
+                        y: 2,
+                    }, {
+                        name: '已填報-待處理',
+                        y: 3,
+                    }, {
+                        name: '未填報',
+                        y: 2,
+                    }]
+                }]
+            });
+
+            //chart-04
+            $('.chart-04').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: true,
+                    type: 'pie',
+
+                    events: {
+                        render: function () {
+                            var chart = this,
+                                sum = 0;
+
+                            if (chart.textGroup) {
+                                chart.textGroup.destroy()
+                                chart.textGroup = undefined;
+                            }
+
+                            chart.textGroup = chart.renderer.g('textGroup').add().toFront()
+                            chart.series[0].data.forEach(function (value) {
+                                sum += value.y;
+                            })
+
+                            var customText = chart.myCustomText = chart.renderer.text(
+                                    '總件數' + '<br>'  + '<span style="font-size:33px">' + sum+ '</span>', chart.plotWidth / 1.78, chart.plotHeight / 1.25 
+                                )
+                                .css({
+                                    fontSize: '26px',
+                                    fontWeight: 'Bold',
+                                    textAnchor:'middle'
+                                })
+                                .add(chart.textGroup);
+                            chart.textGroup.translate(-chart.myCustomText.getBBox().width / 2);
+
+                        }
+                    }
+                },
+                colors: ['#00e396', '#feb019', '#444'],
+                title: {
+                    text: '113年資訊資源效率調查問卷<br>問卷回收情形_中央(二三)',
+                    style: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',
+                        fontSize: '24px' ,                
+                    },          
+                },
+                credits: {
+                    enabled: false,
+                },
+                legend: {
+                    //enabled: false
+                    // layout: 'vertical',
+                    labelFormatter: function () {
+                        return '<b>'+this.name + '  ' +  this.percentage.toFixed(2) + ' %'+ '</b>';
+                    },
+                    itemStyle: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',                        
+                        fontSize: '14px',
+                        // color: '#A0A0A0'
+                    },
+                    itemMarginTop: 5,
+                    margin: 20,
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="color:{point.color}">\u25CF</span> <span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                    pointFormat: '<span style="font-size: 1rem;"><b>{point.percentage:.2f}%</b> (共 <b>{point.y:1f}</b> 件) </span>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name} <br> <b>{point.y:1f}件</b> ( {point.percentage:.2f} % ) </b>'
+                        },
+                        showInLegend: true
+                    },
+                    series: {
+                        cursor: 'pointer',
+                        point: {
+                            events: {
+                                click: function () {
+                                    location.href = this.options.url;
+                                }
+                            }
+                        }
+                    }
+                },
+
+                exporting: {
+                    enabled: false
+                },
+                series: [{
+                    name: '百分比',
+                    colorByPoint: true,
+                    innerSize: '70%',
+                    data: [{
+                        name: '已填報-已確認     ',
+                        y: 14,
+                    }, {
+                        name: '已填報-待處理',
+                        y: 66,
+                    }, {
+                        name: '未填報',
+                        y: 163,
+                    }]
+                }]
+            });
+
+
+            //chart-05
+            $('.chart-05').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: true,
+                    type: 'pie',
+
+                    events: {
+                        render: function () {
+                            var chart = this,
+                                sum = 0;
+
+                            if (chart.textGroup) {
+                                chart.textGroup.destroy()
+                                chart.textGroup = undefined;
+                            }
+
+                            chart.textGroup = chart.renderer.g('textGroup').add().toFront()
+                            chart.series[0].data.forEach(function (value) {
+                                sum += value.y;
+                            })
+
+                            var customText = chart.myCustomText = chart.renderer.text(
+                                    '總件數' + '<br>'  + '<span style="font-size:33px">' + sum+ '</span>', chart.plotWidth / 1.78, chart.plotHeight / 1.3 
+                                )
+                                .css({
+                                    fontSize: '26px',
+                                    fontWeight: 'Bold',
+                                    textAnchor:'middle'
+                                })
+                                .add(chart.textGroup);
+                            chart.textGroup.translate(-chart.myCustomText.getBBox().width / 2);
+
+                        }
+                    }
+                },
+                colors: ['#00e396', '#feb019', '#444'],
+                title: {
+                    text: '113年資訊資源效率調查問卷<br>問卷回收情形_地方(一)',
+                    style: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',
+                        fontSize: '24px' ,                
+                    },          
+                },
+                credits: {
+                    enabled: false,
+                },
+                legend: {
+                    //enabled: false
+                    // layout: 'vertical',
+                    labelFormatter: function () {
+                        return '<b>'+this.name + '  ' +  this.percentage.toFixed(2) + ' %'+ '</b>';
+                    },
+                    itemStyle: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',                        
+                        fontSize: '14px',
+                        // color: '#A0A0A0'
+                    },
+                    itemMarginTop: 5,
+                    margin: 20,
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="color:{point.color}">\u25CF</span> <span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                    pointFormat: '<span style="font-size: 1rem;"><b>{point.percentage:.2f}%</b> (共 <b>{point.y:1f}</b> 件) </span>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name} <br> <b>{point.y:1f}件</b> ( {point.percentage:.2f} % ) </b>'
+                        },
+                        showInLegend: true
+                    },
+                    series: {
+                        cursor: 'pointer',
+                        point: {
+                            events: {
+                                click: function () {
+                                    location.href = this.options.url;
+                                }
+                            }
+                        }
+                    }
+                },
+
+                exporting: {
+                    enabled: false
+                },
+                series: [{
+                    name: '百分比',
+                    colorByPoint: true,
+                    innerSize: '70%',
+                    data: [{
+                        name: '已填報-已確認     ',
+                        y: 6,
+                    }, {
+                        name: '已填報-待處理',
+                        y: 18,
+                    }, {
+                        name: '未填報',
+                        y: 20,
+                    }]
+                }]
+            });
+            
+
+            //chart-06
+            $('.chart-06').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: true,
+                    type: 'pie',
+
+                    events: {
+                        render: function () {
+                            var chart = this,
+                                sum = 0;
+
+                            if (chart.textGroup) {
+                                chart.textGroup.destroy()
+                                chart.textGroup = undefined;
+                            }
+
+                            chart.textGroup = chart.renderer.g('textGroup').add().toFront()
+                            chart.series[0].data.forEach(function (value) {
+                                sum += value.y;
+                            })
+
+                            var customText = chart.myCustomText = chart.renderer.text(
+                                    '總件數' + '<br>'  + '<span style="font-size:33px">' + sum+ '</span>', chart.plotWidth / 1.78, chart.plotHeight / 1.3 
+                                )
+                                .css({
+                                    fontSize: '26px',
+                                    fontWeight: 'Bold',
+                                    textAnchor:'middle'
+                                })
+                                .add(chart.textGroup);
+                            chart.textGroup.translate(-chart.myCustomText.getBBox().width / 2);
+
+                        }
+                    }
+                },
+                colors: ['#00e396', '#feb019', '#444'],
+                title: {
+                    text: '113年資訊資源效率調查問卷<br>問卷回收情形_地方(二三)',
+                    style: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',
+                        fontSize: '24px' ,                
+                    },          
+                },
+                credits: {
+                    enabled: false,
+                },
+                legend: {
+                    //enabled: false
+                    // layout: 'vertical',
+                    labelFormatter: function () {
+                        return '<b>'+this.name + '  ' +  this.percentage.toFixed(2) + ' %'+ '</b>';
+                    },
+                    itemStyle: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',                        
+                        fontSize: '14px',
+                        // color: '#A0A0A0'
+                    },
+                    itemMarginTop: 5,
+                    margin: 20,
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="color:{point.color}">\u25CF</span> <span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                    pointFormat: '<span style="font-size: 1rem;"><b>{point.percentage:.2f}%</b> (共 <b>{point.y:1f}</b> 件) </span>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name} <br> <b>{point.y:1f}件</b> ( {point.percentage:.2f} % ) </b>'
+                        },
+                        showInLegend: true
+                    },
+                    series: {
+                        cursor: 'pointer',
+                        point: {
+                            events: {
+                                click: function () {
+                                    location.href = this.options.url;
+                                }
+                            }
+                        }
+                    }
+                },
+
+                exporting: {
+                    enabled: false
+                },
+                series: [{
+                    name: '百分比',
+                    colorByPoint: true,
+                    innerSize: '70%',
+                    data: [{
+                        name: '已填報-已確認     ',
+                        y: 228,
+                    }, {
+                        name: '已填報-待處理',
+                        y: 842,
+                    }, {
+                        name: '未填報',
+                        y: 1977,
                     }]
                 }]
             });
