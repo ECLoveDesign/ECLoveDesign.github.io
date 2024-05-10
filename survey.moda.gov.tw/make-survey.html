@@ -123,13 +123,10 @@
         </div>
 
         <div class="functionmenu">
-            <ul class="nav nav-line">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">編輯問卷
-                        <span class="surveyCode">MODA113030001</span>
-                    </a>
-                </li>
-            </ul>
+            <div class="info">
+                <div class="title">編輯問卷</div>
+                <div class="surveyCode">MODA113030001</div>
+            </div>
 
             <div class="functionactions">
                 <a href="make-setting.html" class="btn btn-back">
@@ -161,7 +158,7 @@
                 <div class="d-block d-lg-none">
                     <button type="button" class="btn btn-offcanvas" data-toggle="offcanvas">
                         <div class="title">新增題目</div>
-                        <i class="fa fa-bars"></i>
+                        <i class="fa-solid fa-square-caret-right"></i>
                     </button>
 
                 </div>
@@ -385,16 +382,16 @@
                         </div>
                     </section>
 
-                    <!-- 分類線 -->
+                    <!-- 分隔線 -->
                     <section id="divider">
                         <div class="section-header" id="headingDivider">
                             <div class="section-title">
                                 <button class="topic-toggle line" type="button">
                                     <i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i>
                                     <div class="badge badge-form">
-                                        <i class="fa fa-window-minimize"></i>
+                                        <i class="fa-solid fa-grip-lines"></i>
                                     </div>
-                                    <span>分類線</span>
+                                    <span>分隔線</span>
                                 </button>
 
                             </div>
@@ -721,6 +718,40 @@
                                             </div>
                                         </div>
 
+                                        <!--上傳圖片-->
+                                        <div class="form-group">
+                                            <label class="control-label">上傳圖片</label>
+                                            <div class="preview-zone d-none">
+                                                <div class="box box-solid">
+                                                    <div class="box-header with-border">
+                                                        <div class="title">預覽</div>
+                                                        <div class="box-tools pull-right">
+                                                            <button type="button"
+                                                                class="btn btn-danger btn-remove remove-preview">
+                                                                <i class="fa fa-times"></i> 移除圖片
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box-body"></div>
+                                                </div>
+                                            </div>
+                                            <div class="dropzone-wrapper">
+                                                <div class="dropzone-desc">
+                                                    <i class="fa fa-cloud-upload"></i>
+                                                    <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                    <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                                </div>
+                                                <input type="file" name="img_logo" class="dropzone">
+                                            </div>
+                                        </div>
+        
+                                        <!--增加備註-->
+                                        <div class="form-group">
+                                            <label for="CheckboxNote">備註<span class="text-danger">*</span></label>
+                                            <textarea class="form-control" id="CheckboxNote" rows="3" placeholder="請輸入文字內容"
+                                            required=""></textarea>
+                                        </div>
+
                                         <div class="input-group" data-ciaoyu-toggle="RadioOther">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text">
@@ -728,8 +759,8 @@
                                                     <span class="label-text">C</span>
                                                 </div>
                                             </div>
-                                            <label class="d-none" for="RadioC">回答C</label>
-                                            <input type="text" class="form-control" id="RadioC" placeholder="請輸入選項內容"
+                                            <label class="d-none" for="RadioOther">其他</label>
+                                            <input type="text" class="form-control" id="RadioOther" placeholder="請輸入選項內容"
                                                 value="其他" disabled>
 
                                             <button class="btn btn-outline-secondary btn-removechoice" type="button">
@@ -949,6 +980,40 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        
+                                        <!--上傳圖片-->
+                                        <div class="form-group">
+                                            <label class="control-label">上傳圖片</label>
+                                            <div class="preview-zone d-none">
+                                                <div class="box box-solid">
+                                                    <div class="box-header with-border">
+                                                        <div class="title">預覽</div>
+                                                        <div class="box-tools pull-right">
+                                                            <button type="button"
+                                                                class="btn btn-danger btn-remove remove-preview">
+                                                                <i class="fa fa-times"></i> 移除圖片
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box-body"></div>
+                                                </div>
+                                            </div>
+                                            <div class="dropzone-wrapper">
+                                                <div class="dropzone-desc">
+                                                    <i class="fa fa-cloud-upload"></i>
+                                                    <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                    <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                                </div>
+                                                <input type="file" name="img_logo" class="dropzone">
+                                            </div>
+                                        </div>
+        
+                                        <!--增加備註-->
+                                        <div class="form-group">
+                                            <label for="CheckboxNote">備註<span class="text-danger">*</span></label>
+                                            <textarea class="form-control" id="CheckboxNote" rows="3" placeholder="請輸入文字內容"
+                                            required=""></textarea>
+                                        </div>
 
                                         <div class="input-group" data-ciaoyu-toggle="CheckboxOther">
                                             <div class="input-group-prepend">
@@ -957,8 +1022,8 @@
                                                     <span class="label-text">C</span>
                                                 </div>
                                             </div>
-                                            <label class="d-none" for="CheckboxC">回答C</label>
-                                            <input type="text" class="form-control" id="CheckboxC" placeholder="請輸入選項內容"
+                                            <label class="d-none" for="CheckboxOther">其他</label>
+                                            <input type="text" class="form-control" id="CheckboxOther" placeholder="請輸入選項內容"
                                                 value="其他" disabled>
 
                                             <button class="btn btn-outline-secondary btn-removechoice" type="button">
@@ -1764,6 +1829,13 @@
                                             <i class="fa fa-table"></i> 矩陣題
                                         </button>
 
+                                        <button type="button" class="btn btn-block btn-add-header">
+                                            <i class="fa fa-header"></i> 分類標題
+                                        </button>
+
+                                        <button type="button" class="btn btn-block btn-add-divider">
+                                            <i class="fa-solid fa-grip-lines"></i> 分隔線
+                                        </button>                                        
 
                                     </div>
                                 </div>

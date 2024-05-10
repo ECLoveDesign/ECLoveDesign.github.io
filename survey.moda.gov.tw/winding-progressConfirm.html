@@ -125,18 +125,22 @@
 
         
         <div class="functionmenu">
+            <div class="info">
+                <div class="title">查看問卷</div>
+                <div class="surveyCode">MODA113030001</div>
+            </div>
             
             <ul class="nav nav-line">
-                <li class="nav-item active">
-                    <a class="nav-link" href="winding-todolist.html">待處理</a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="winding-confirm.html">已確認</a>
+                    <a class="nav-link" href="winding-progressTodolist.html">待處理</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="winding-progressConfirm.html">已確認</a>
                 </li>
             </ul>
 
             <div class="functionactions">
-                <a href="make-setting.html" class="btn btn-back">
+                <a href="winding-progress.html" class="btn btn-back">
                     <i class="fa fa-chevron-left"></i>回列表
                 </a>
                 <a href="#" class="btn btn-export">
@@ -164,12 +168,15 @@
                     <td data-title="備註文字">3/16已確認第五大題，可從第六大題接續確認</td>
                     <td data-title="最新處理人員時間">李慧玲 2024/03/18 16:55</td>
                     <td data-title="動作">
-                        <a class="btn btn-view" href="winding-view.html">
+                        <a class="btn btn-view" href="winding-progressConfirmView.html">
                             <i class="fa fa-eye"></i>查看
                         </a>
                         <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#remarkEdit">
                             <i class="fa fa-edit"></i>備註
                         </a>
+                        <button class="btn btn-return" onclick="window.location.href='winding-progressTodolist.html';">
+                            <i class="fa-solid fa-arrow-left-long"></i>退回
+                        </button>
                     </td>
                 </tr>
                 <tr>
@@ -179,12 +186,15 @@
                     <td data-title="備註文字">3/16已確認第五大題，可從第六大題接續確認</td>
                     <td data-title="最新處理人員時間">李慧玲 2024/03/18 16:55</td>
                     <td data-title="動作">
-                        <a class="btn btn-view" href="winding-view.html">
+                        <a class="btn btn-view" href="winding-progressConfirmView.html">
                             <i class="fa fa-eye"></i>查看
                         </a>
                         <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#remarkEdit">
                             <i class="fa fa-edit"></i>備註
                         </a>
+                        <button class="btn btn-return" onclick="window.location.href='winding-progressTodolist.html';">
+                            <i class="fa-solid fa-arrow-left-long"></i>退回
+                        </button>
                     </td>
                 </tr>
                 <tr>
@@ -194,12 +204,15 @@
                     <td data-title="備註文字">3/16已確認第五大題，可從第六大題接續確認</td>
                     <td data-title="最新處理人員時間">李慧玲 2024/03/18 16:55</td>
                     <td data-title="動作">
-                        <a class="btn btn-view" href="winding-view.html">
+                        <a class="btn btn-view" href="winding-progressConfirmView.html">
                             <i class="fa fa-eye"></i>查看
                         </a>
                         <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#remarkEdit">
                             <i class="fa fa-edit"></i>備註
                         </a>
+                        <button class="btn btn-return" onclick="window.location.href='winding-progressTodolist.html';">
+                            <i class="fa-solid fa-arrow-left-long"></i>退回
+                        </button>
                     </td>
                 </tr>
             </tbody>
@@ -302,7 +315,6 @@
             </div>
         </div>
     </div>
-       
 
     <!-- 編輯備註 -->
     <div class="modal fade" id="remarkEdit" data-backdrop="static" data-keyboard="false" tabindex="-1"

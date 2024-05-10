@@ -134,10 +134,10 @@
                     <td data-title="回收情形">
                         <span class="badge badge-success">已填報</span> (186份，9.05%)<br>
                         <span class="badge badge-warning">未填報</span> (1837份，89.35%)<br>
-                        <span class="badge badge-info">主計處資料申請</span> (33份，1.61%)
+                        <span class="badge badge-info">機關上傳主計總處決算資料</span> (33份，1.61%)
                     </td>
                     <td data-title="動作">
-                        <a class="btn btn-view" href="winding-todolist.html">
+                        <a class="btn btn-view" href="winding-progressTodolist.html">
                             <i class="fa fa-eye"></i>查看
                         </a>
                         <a class="btn btn-chart" href="#" data-toggle="modal" data-target="#windingChart">
@@ -154,10 +154,10 @@
                         <span class="badge badge-warning">未填報</span> (159份，73.95%)<br>
                     </td>
                     <td data-title="動作">
-                        <a class="btn btn-view" href="winding-todolist.html">
+                        <a class="btn btn-view" href="winding-progressTodolist.html">
                             <i class="fa fa-eye"></i>查看
                         </a>
-                        <a class="btn btn-chart" href="#" data-toggle="modal" data-target="#windingChart2">
+                        <a class="btn btn-chart" href="#" data-toggle="modal" data-target="#windingChart">
                             <i class="fa-solid fa-chart-pie"></i>圖表
                         </a>
                     </td>
@@ -265,7 +265,7 @@
     <!-- 查看圖表 -->
     <div class="modal fade" id="windingChart" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="windingChartLabel">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title" id="windingChartLabel">查看圖表</div>
@@ -274,36 +274,43 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <div class="card">
+                        <div class="card-header">
 
-                    <div class="chart-01" style="height: 450px;"></div>
+                            <div class="form-group row">
+                                <label for="selectTopic" class="col-md-2 col-form-label">所有題目</label>
+                                <div class="col-md-10">
+                                    <select class="bs-select form-control" data-live-search="true" required="" data-ciaoyu="toggle" id="selectTopic">
+                                        <option disabled value="">請選擇</option>
+                                        <option value="1" selected>資料中心(含雲端資料中心)有無建置資安防護措施？</option>
+                                        <option value="2">資安防護措施項目包含？(複選題)</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        請選擇題目
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+
+                            <div class="survey-cont" data-ciaoyu-toggle="selectTopic" data-ciaoyu-val="1">
+                                <div class="chart-cont chart-01"></div>
+                            </div>
+                            
+                            <div class="survey-cont" data-ciaoyu-toggle="selectTopic" data-ciaoyu-val="2">
+                                <div class="chart-cont chart-02"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
 
                 </div>
 
             </div>
         </div>
     </div>
-
-    <!-- 查看圖表2 -->
-    <div class="modal fade" id="windingChart2" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="windingChart2Label">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title" id="windingChart2Label">查看圖表</div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span>&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="chart-02" style="height: 450px;"></div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
 
     <script src='js/jquery-3.2.1.min.js'></script>
     <script src='js/popper-1.12.9.min.js'></script>
@@ -319,14 +326,89 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="js/ciaoyuToggle.min.js"></script>
     <script src="js/megamenu.js"></script>
     <script src="js/script.js"></script>
     <script>
 
         //highcharts
         $(function () {
+                //chart-01
+                $('.chart-01').highcharts({
+                    chart: {
+                        type: 'bar'
+                    },
+                    title: {
+                        text: '資料中心(含雲端資料中心)有無建置資安防護措施？',
+                        align: 'left'
+                    },
+                    // subtitle: {
+                    //     text: 'Source: <a ' +
+                    //         'href="https://en.wikipedia.org/wiki/List_of_continents_and_continental_subregions_by_population"' +
+                    //         'target="_blank">Wikipedia.org</a>',
+                    //     align: 'left'
+                    // },
+                    xAxis: {
+                        categories: ['中央(一)', '行政院中央(二三)', '非行政院中央(二三)', '中央(四五)'],
+                        title: {
+                            text: null
+                        },
+                        gridLineWidth: 1,
+                        lineWidth: 0
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: '選項',
+                            align: 'high'
+                        },
+                        labels: {
+                            overflow: 'justify'
+                        },
+                        gridLineWidth: 0
+                    },
+                    
+                    tooltip: {
+                        headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                        valueSuffix: ' 人'
+                    },
+                    plotOptions: {
+                        bar: {
+                            borderRadius: '50%',
+                            dataLabels: {
+                                enabled: true
+                            },
+                            groupPadding: 0.1
+                        }
+                    },
+                    legend: {
+                        // layout: 'vertical',
+                        // align: 'right',
+                        // verticalAlign: 'top',
+                        // x: -40,
+                        // y: 80,
+                        // floating: true,
+                        borderWidth: 1,
+                        backgroundColor:
+                            Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                        shadow: true
+                    },
+                    exporting: { enabled: false },
+                    credits: {
+                        enabled: false
+                    },
+                    series: [{
+                        name: 'A 無',
+                        data: [631, 727, 3202, 721]
+                    }, {
+                        name: 'B 有',
+                        data: [814, 841, 3714, 726]
+                    }]
+                });
 
-                $('.chart').highcharts({
+
+                //chart-02
+                $('.chart-02').highcharts({
                     chart: {
                         type: 'bar'
                     },
@@ -416,215 +498,6 @@
                     }, {
                         name: 'I 應用程式防火牆(WAF)',
                         data: [1276, 1007, 4561, 746]
-                    }]
-                });
-
-                //chart-01
-                $('.chart-01').highcharts({
-                    chart: {
-                        plotBackgroundColor: null,
-                        plotBorderWidth: null,
-                        plotShadow: true,
-                        type: 'pie',
-                        
-                        events: {
-                            render: function () {
-                                var chart = this,
-                                    sum = 0;
-
-                                if (chart.textGroup) {
-                                    chart.textGroup.destroy()
-                                    chart.textGroup = undefined;
-                                }
-
-                                chart.textGroup = chart.renderer.g('textGroup').add().toFront()
-                                chart.series[0].data.forEach(function (value) {
-                                    sum += value.y;
-                                })
-
-                                var customText = chart.myCustomText = chart.renderer.text(
-                                        '總件數' + '<br></br>' + sum, chart.plotWidth / 2, chart .plotHeight / 1.55
-                                    )
-                                    .css({
-                                        fontSize: '26px',
-                                    })
-                                    .add(chart.textGroup);
-                                chart.textGroup.translate(-chart.myCustomText.getBBox().width / 3);
-
-                            }
-                        }
-                    },
-                    colors: ['#28a745', '#ffc107', '#17a2b8'],
-                    title: {
-                        text: '113年資訊資源效率調查問卷<br>問卷回收情形',
-                    },
-                    credits: {
-                        enabled: false,
-                    },
-                    legend: {
-                        //enabled: false
-                        // layout: 'vertical',
-                        labelFormatter: function () {
-                            return this.name + '  ' + this.percentage.toFixed(2) + '%';
-                        },
-                        itemStyle: {
-                            fontSize: '16px',
-                            font: 'Microsoft JhengHei , Verdana, sans-serif',
-                            // color: '#A0A0A0'
-                        },
-                        itemMarginTop: 5,
-                        margin: 20,
-                    },
-                    
-                    tooltip: {
-                        headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
-                        pointFormat: '<span style="font-size: 1rem;">共 {point.y:1f}件</span><br/>' +
-                            '{series.name}: <b>{point.percentage:.2f}%</b>' 
-                    },
-                    plotOptions: {
-                        pie: {
-                            allowPointSelect: true,
-                            cursor: 'pointer',
-                            dataLabels: {
-                                enabled: true,
-                                format: '<b>{point.name}</b>: {point.y:1f}件  ' +'(' + '{point.percentage:.2f} %'  +')'
-                            },
-                            showInLegend: true
-                        },
-                        series: {
-                            cursor: 'pointer',
-                            point: {
-                                events: {
-                                    click: function () {
-                                        location.href = this.options.url;
-                                    }
-                                }
-                            }
-                        }
-                    },
-
-                    exporting: {
-                        enabled: false
-                    },
-                    series: [{
-                        name: '百分比',
-                        colorByPoint: true,
-                        innerSize: '80%',
-                        data: [{
-                            name: '已填報     ',
-                            y: 186,
-                            // sliced: true,
-                            // selected: true
-                        }, {
-                            name: '未填報',
-                            y: 1837,
-                        }, {
-                            name: '主計處資料申請',
-                            y: 33,
-                        }]
-                    }]
-                });
-
-                //chart-01
-                $('.chart-02').highcharts({
-                    chart: {
-                        plotBackgroundColor: null,
-                        plotBorderWidth: null,
-                        plotShadow: true,
-                        type: 'pie',
-                        
-                        events: {
-                            render: function () {
-                                var chart = this,
-                                    sum = 0;
-
-                                if (chart.textGroup) {
-                                    chart.textGroup.destroy()
-                                    chart.textGroup = undefined;
-                                }
-
-                                chart.textGroup = chart.renderer.g('textGroup').add().toFront()
-                                chart.series[0].data.forEach(function (value) {
-                                    sum += value.y;
-                                })
-
-                                var customText = chart.myCustomText = chart.renderer.text(
-                                        '總件數' + '<br></br>' + sum, chart.plotWidth / 2, chart .plotHeight / 1.55
-                                    )
-                                    .css({
-                                        fontSize: '26px',
-                                    })
-                                    .add(chart.textGroup);
-                                chart.textGroup.translate(-chart.myCustomText.getBBox().width / 3);
-
-                            }
-                        }
-                    },
-                    colors: ['#28a745', '#ffc107'],
-                    title: {
-                        text: '各行各業數位轉型問卷調查',
-                    },
-                    credits: {
-                        enabled: false,
-                    },
-                    legend: {
-                        //enabled: false
-                        // layout: 'vertical',
-                        labelFormatter: function () {
-                            return this.name + '  ' + this.percentage.toFixed(2) + '%';
-                        },
-                        itemStyle: {
-                            fontSize: '16px',
-                            font: 'Microsoft JhengHei , Verdana, sans-serif',
-                            // color: '#A0A0A0'
-                        },
-                        itemMarginTop: 5,
-                        margin: 20,
-                    },
-                    
-                    tooltip: {
-                        headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
-                        pointFormat: '<span style="font-size: 1rem;">共 {point.y:1f}件</span><br/>' +
-                            '{series.name}: <b>{point.percentage:.2f}%</b>' 
-                    },
-                    plotOptions: {
-                        pie: {
-                            allowPointSelect: true,
-                            cursor: 'pointer',
-                            dataLabels: {
-                                enabled: true,
-                                format: '<b>{point.name}</b>: {point.y:1f}件  ' +'(' + '{point.percentage:.2f} %'  +')'
-                            },
-                            showInLegend: true
-                        },
-                        series: {
-                            cursor: 'pointer',
-                            point: {
-                                events: {
-                                    click: function () {
-                                        location.href = this.options.url;
-                                    }
-                                }
-                            }
-                        }
-                    },
-
-                    exporting: {
-                        enabled: false
-                    },
-                    series: [{
-                        name: '百分比',
-                        colorByPoint: true,
-                        innerSize: '80%',
-                        data: [{
-                            name: '已填報     ',
-                            y: 56,
-                            // sliced: true,
-                            // selected: true
-                        }, {
-                            name: '未填報',
-                            y: 159,
-                        }]
                     }]
                 });
 

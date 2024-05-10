@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/datatables/dataTables.bootstrap5.min.css" />
     <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/sweetalert2/css/sweetalert2.min.css" />
     <link rel="stylesheet" href="css/survey.css" />
     <title>資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</title>
 </head>
@@ -59,25 +60,25 @@
                     <div class="form-group">
                         <div class="badge badge-form">1<span class="text-danger">*</span></div>
                         <label for="Q1">公務使用中之實體桌上型電腦或工作站，總計幾台？</label>               
-                        <input type="number" class="form-control" id="Q1" placeholder="請輸入數字" value="555" disabled>
+                        <input type="number" class="form-control" id="Q1" placeholder="請輸入數字" value="555">
                     </div>
 
                     <div class="form-group indent">
                         <div class="badge badge-form">(1)</div>
                         <label for="Q1q1">其中，電腦教室用電腦幾台？</label>
-                        <input type="number" class="form-control" id="Q1q1" placeholder="請輸入數字" value="555" disabled>
+                        <input type="number" class="form-control" id="Q1q1" placeholder="請輸入數字" value="555">
                     </div>
 
                     <div class="form-group">
                         <div class="badge badge-form">2</div>
                         <label for="Q2">公務使用中之筆記型電腦幾台？</label>
-                        <input type="number" class="form-control" id="Q2" placeholder="請輸入數字" value="7444" disabled>
+                        <input type="number" class="form-control" id="Q2" placeholder="請輸入數字" value="7444">
                     </div>
 
                     <div class="form-group">
                         <div class="badge badge-form">3<span class="text-danger">*</span></div>
                         <label for="Q3">公務使用中之可攜式設備(平板電腦、智慧型手機)幾台？</label>
-                        <input type="number" class="form-control" id="Q3" placeholder="請輸入數字" value="154" disabled>
+                        <input type="number" class="form-control" id="Q3" placeholder="請輸入數字" value="154">
                     </div>
 
                     <div class="divider"></div>
@@ -92,11 +93,11 @@
                         <label for="Q4">資料中心(含雲端資料中心)有無建置資安防護措施？</label>
                         <div class="radio-custom">
                             <div class="check-group">
-                                <input type="radio" class="custom-input" id="Q4A" name="Q4" checked disabled>
+                                <input type="radio" class="custom-input" id="Q4A" name="Q4" checked>
                                 <label class="custom-label" for="Q4A">(A) 無 </label>
                             </div>
                             <div class="check-group">
-                                <input type="radio" class="custom-input" id="Q4B" name="Q4" disabled>
+                                <input type="radio" class="custom-input" id="Q4B" name="Q4">
                                 <label class="custom-label" for="Q4B">(B) 有</label>
                             </div>
                         </div>
@@ -107,48 +108,60 @@
                         <label for="Q5">資安防護措施項目包含？ (複選)</label>
                         <div class="check-custom">
                             <div class="check-group">
-                                <input type="checkbox" class="custom-input" id="Q5A" name="Q5" checked disabled>
+                                <input type="checkbox" class="custom-input" id="Q5A" name="Q5" checked>
                                 <label class="custom-label" for="Q5A">(A) 防毒 </label>
                             </div>
                             <div class="check-group">
-                                <input type="checkbox" class="custom-input" id="Q5B" name="Q5" disabled>
+                                <input type="checkbox" class="custom-input" id="Q5B" name="Q5">
                                 <label class="custom-label" for="Q5B">(B) 網路防火牆</label>
                             </div>
                             <div class="check-group">
-                                <input type="checkbox" class="custom-input" id="Q5C" name="Q5" disabled>
+                                <input type="checkbox" class="custom-input" id="Q5C" name="Q5">
                                 <label class="custom-label" for="Q5C">(C) 入侵偵測防禦</label>
                             </div>
                             <div class="check-group">
-                                <input type="checkbox" class="custom-input" id="Q5D" name="Q5" disabled>
+                                <input type="checkbox" class="custom-input" id="Q5D" name="Q5">
                                 <label class="custom-label" for="Q5D">(D) 漏洞偵測(弱點掃瞄)</label>
                             </div>
                             <div class="check-group">
-                                <input type="checkbox" class="custom-input" id="Q5E" name="Q5" disabled>
+                                <input type="checkbox" class="custom-input" id="Q5E" name="Q5">
                                 <label class="custom-label" for="Q5E">(E) 資安監控中心(SOC)</label>
                             </div>
                             <div class="check-group">
-                                <input type="checkbox" class="custom-input" id="Q5F" name="Q5" disabled>
+                                <input type="checkbox" class="custom-input" id="Q5F" name="Q5">
                                 <label class="custom-label" for="Q5F">(F) 進階持續性威脅攻擊防禦措施</label>
                             </div>
                             <div class="check-group">
-                                <input type="checkbox" class="custom-input" id="Q5G" name="Q5" disabled>
+                                <input type="checkbox" class="custom-input" id="Q5G" name="Q5">
                                 <label class="custom-label" for="Q5G">(G) 電子郵件過濾機制</label>
                             </div>
                             <div class="check-group">
-                                <input type="checkbox" class="custom-input" id="Q5H" name="Q5" disabled>
+                                <input type="checkbox" class="custom-input" id="Q5H" name="Q5">
                                 <label class="custom-label" for="Q5H">(H) 滲透測試</label>
                             </div>
                             <div class="check-group">
-                                <input type="checkbox" class="custom-input" id="Q5I" name="Q5" disabled>
+                                <input type="checkbox" class="custom-input" id="Q5I" name="Q5">
                                 <label class="custom-label" for="Q5I">(I) 應用程式防火牆(WAF) </label>
                             </div>
                         </div>
                     </div>
 
+                    <div class="collapse" id="remarkCont">
+                        <form class="remark-cont">
 
+                            <div class="form-group">
+                                <label for="remarkText">備註</label>
+                                <textarea class="form-control" id="remarkText" rows="3" placeholder="請輸入備註文字"></textarea>
+                            </div>
+
+                        </form>
+                    </div>
 
                     <div class="actions">
-                        <button type="button" class="btn btn-dark btn-back" onclick="window.location.href='survey-history.html';">返回列表</button>
+                        <button type="button" class="btn btn-warning btn-remark" data-toggle="collapse" data-target="#remarkCont" aria-expanded="false" aria-controls="remarkCont">備註</button>
+                        <a class="btn btn-dark btn-save" href="#">保存</a>
+                        <button type="button" class="btn btn-primary btn-confirm" onclick="window.location.href='winding-progressConfirm.html';">問卷確認</button>
+                        <button type="button" class="btn btn-dark btn-back" onclick="window.location.href='winding-progressTodolist.html';">返回列表</button>                        
                     </div>
                 </form>
 
@@ -165,6 +178,7 @@
     <script src='js/popper-1.12.9.min.js'></script>
     <script src='assets/bootstrap/js/bootstrap.min.js'></script>
     <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src='assets/sweetalert2/js/sweetalert2.all.min.js'></script>
     <script src="js/survey.js"></script>
 </body>
 

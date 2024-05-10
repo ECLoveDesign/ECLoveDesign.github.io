@@ -20,7 +20,9 @@
   })();
 
   
-// save
+
+
+// sweetalert
 $('.btn-save').on('click', function () {
     Swal.fire({
       type: "success",
@@ -29,6 +31,64 @@ $('.btn-save').on('click', function () {
       timer: 1000
     });
 });
+
+$('.btn-del').on('click', function () {
+  Swal.fire({
+    title: '確認刪除此項目?',
+    text: "一旦刪除無法復原!",
+    type: 'warning',
+    showCancelButton: true,
+    // confirmButtonColor: '#3085d6',
+    // cancelButtonColor: '#d33',
+    cancelButtonText: '取消 ',
+    confirmButtonText: '確認刪除',
+    confirmButtonClass: 'btn btn-dark',
+    cancelButtonClass: 'btn btn-light ml-1',
+    buttonsStyling: false,
+  }).then(function (result) {
+    if (result.value) {
+      Swal.fire({
+        type: "success",
+        title: '刪除成功!',
+        text: '已刪除此項目',
+        showConfirmButton: false,
+        timer: 1500
+        // confirmButtonClass: 'btn btn-success',
+        // confirmButtonText: '關閉',
+      })
+    }
+  })
+});
+
+
+
+// $('.btn-return').on('click', function () {
+//   Swal.fire({
+//     title: '確認退回此問卷?',
+//     text: "退回問卷可編輯填答!",
+//     type: 'info',
+//     showCancelButton: true,
+//     // confirmButtonColor: '#3085d6',
+//     // cancelButtonColor: '#d33',
+//     cancelButtonText: '取消 ',
+//     confirmButtonText: '確認退回',
+//     confirmButtonClass: 'btn btn-dark',
+//     cancelButtonClass: 'btn btn-light ml-1',
+//     buttonsStyling: false,
+//   }).then(function (result) {
+//     if (result.value) {
+//       Swal.fire({
+//         type: "success",
+//         title: '退回成功!',
+//         text: '已退回此問卷',
+//         showConfirmButton: false,
+//         timer: 1500
+//         // confirmButtonClass: 'btn btn-success',
+//         // confirmButtonText: '關閉',
+//       })
+//     }
+//   })
+// });
 
 
 // affix top

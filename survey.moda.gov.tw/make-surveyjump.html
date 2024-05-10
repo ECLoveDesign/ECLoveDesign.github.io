@@ -123,12 +123,10 @@
         </div>
 
         <div class="functionmenu">
-            <ul class="nav nav-line">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">編輯問卷
-                        <span class="surveyCode">MODA113030001</span>
-                    </a>
-                </li>
+            <div class="info">
+                <div class="title">編輯問卷</div>
+                <div class="surveyCode">MODA113030001</div>
+            </div>
             </ul>
 
             <div class="functionactions">
@@ -156,11 +154,9 @@
         </div>
 
         <div class="functionmenu">
-            <ul class="nav nav-line">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">跳題列表</a>
-                </li>
-            </ul>
+            <div class="info">
+                <div class="title">跳題列表</div>
+            </div>
 
             <div class="functionactions">
                 <a href="#" class="btn btn-add" data-toggle="modal" data-target="#jumpAdd">
@@ -313,7 +309,7 @@
     <!-- 新增跳題 -->
     <div class="modal fade" id="jumpAdd" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="jumpAddLabel">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title" id="jumpAddLabel">新增跳題</div>
@@ -323,72 +319,156 @@
                 </div>
                 <div class="modal-body">
 
-                    <form class="form jumpSet-cont needs-validation" novalidate>
+                    <form class="form row jumpSet-cont needs-validation" novalidate>
+                        <div class="col-md-6">
 
-                        <div class="card">
-                            <div class="card-header">
-
-                                <div class="form-group row">
-                                    <label for="selectTopic" class="col-md-2 col-form-label">題目</label>
-                                    <div class="col-md-10">
-                                        <select id="selectTopic" class="bs-select form-control" data-live-search="true" required="">                                           
-                                            <option disabled selected value="">請選擇</option>
-                                            <option value="1">有無資訊相關經費支出?</option>
-                                            <option value="2">有無資訊相關經費支出?</option>
-                                            <option value="3">有無資訊相關經費支出?</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            請選擇題目
+                            <div class="card">
+                                <div class="card-header">
+    
+                                    <div class="form-group row">
+                                        <label for="selectTopic" class="col-md-2 col-form-label">題目</label>
+                                        <div class="col-md-10">
+                                            <select class="bs-select form-control" data-live-search="true" required="" data-ciaoyu="toggle" id="selectTopic">                                           
+                                                <option disabled selected value="">請選擇</option>
+                                                <option value="1">資料中心(含雲端資料中心)有無建置資安防護措施？</option>
+                                                <option value="2">有無資訊相關經費支出?</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                請選擇題目
+                                            </div>
                                         </div>
                                     </div>
+    
                                 </div>
+                                <div class="card-body">
+    
+                                    <div class="survey-cont">
 
+                                        <div class="form-group" data-ciaoyu-toggle="selectTopic" data-ciaoyu-val="1">
+                                            <div class="badge badge-form">1</div>
+                                            <label for="Q4">資料中心(含雲端資料中心)有無建置資安防護措施？</label>
+                                            <div class="radio-custom">
+                                                <div class="check-group">
+                                                    <input type="radio" class="custom-input" id="Q4A" name="Q4" required="">
+                                                    <label class="custom-label" for="Q4A">(A) 無 </label>
+                                                </div>
+                                                <div class="check-group">
+                                                    <input type="radio" class="custom-input" id="Q4B" name="Q4" required="">
+                                                    <label class="custom-label" for="Q4B">(B) 有</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" data-ciaoyu-toggle="selectTopic" data-ciaoyu-val="2">
+                                            <div class="badge badge-form">2</div>
+                                            <label for="radioType">有無資訊相關經費支出?</label>
+                                            <div class="radio-custom">
+                                                <div class="check-group">
+                                                    <input type="radio" class="custom-input" id="radioA" name="radioType" required="">
+                                                    <label class="custom-label" for="radioA">(A) 無 </label>
+                                                </div>
+                                                <div class="check-group">
+                                                    <input type="radio" class="custom-input" id="radioB" name="radioType" required="">
+                                                    <label class="custom-label" for="radioB">(B) 有</label>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="form-group row">
+                                        <label for="jumpTopic" class="col-md-2 col-form-label">跳題題目</label>
+                                        <div class="col-md-10">
+                                            <select class="bs-select form-control" data-live-search="true" required="" data-ciaoyu="toggle" id="jumpTopic">
+                                                <option disabled selected value="">請選擇</option>
+                                                <option value="3">公務使用中之筆記型電腦幾台？</option>
+                                                <option value="4">資安防護措施項目包含？ (複選)</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                請選擇題目
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                <div class="card-body">
+    
+                                    <div class="survey-cont">
+                                        
+                                        <div class="form-group" data-ciaoyu-toggle="jumpTopic" data-ciaoyu-val="3">
+                                            <div class="badge badge-form">3</div>
+                                            <label for="Q2">公務使用中之筆記型電腦幾台？</label>
+                                            <input type="number" class="form-control" id="Q2" placeholder="請輸入數字">
+                                        </div>
 
-                                <div class="survey-cont">
-
-
+                                        <div class="form-group" data-ciaoyu-toggle="jumpTopic" data-ciaoyu-val="4">
+                                            <div class="badge badge-form">4</div>
+                                            <label for="Q5">資安防護措施項目包含？ (複選)</label>
+                                            <div class="check-custom">
+                                                <div class="check-group">
+                                                    <input type="checkbox" class="custom-input" id="Q5A" name="Q5" required="">
+                                                    <label class="custom-label" for="Q5A">(A) 防毒 </label>
+                                                </div>
+                                                <div class="check-group">
+                                                    <input type="checkbox" class="custom-input" id="Q5B" name="Q5" required="">
+                                                    <label class="custom-label" for="Q5B">(B) 網路防火牆</label>
+                                                </div>
+                                                <div class="check-group">
+                                                    <input type="checkbox" class="custom-input" id="Q5C" name="Q5" required="">
+                                                    <label class="custom-label" for="Q5C">(C) 入侵偵測防禦</label>
+                                                </div>
+                                                <div class="check-group">
+                                                    <input type="checkbox" class="custom-input" id="Q5D" name="Q5" required="">
+                                                    <label class="custom-label" for="Q5D">(D) 漏洞偵測(弱點掃瞄)</label>
+                                                </div>
+                                                <div class="check-group">
+                                                    <input type="checkbox" class="custom-input" id="Q5E" name="Q5" required="">
+                                                    <label class="custom-label" for="Q5E">(E) 資安監控中心(SOC)</label>
+                                                </div>
+                                                <div class="check-group">
+                                                    <input type="checkbox" class="custom-input" id="Q5F" name="Q5" required="">
+                                                    <label class="custom-label" for="Q5F">(F) 進階持續性威脅攻擊防禦措施</label>
+                                                </div>
+                                                <div class="check-group">
+                                                    <input type="checkbox" class="custom-input" id="Q5G" name="Q5" required="">
+                                                    <label class="custom-label" for="Q5G">(G) 電子郵件過濾機制</label>
+                                                </div>
+                                                <div class="check-group">
+                                                    <input type="checkbox" class="custom-input" id="Q5H" name="Q5" required="">
+                                                    <label class="custom-label" for="Q5H">(H) 滲透測試</label>
+                                                </div>
+                                                <div class="check-group">
+                                                    <input type="checkbox" class="custom-input" id="Q5I" name="Q5" required="">
+                                                    <label class="custom-label" for="Q5I">(I) 應用程式防火牆(WAF) </label>
+                                                </div>
+                                            </div>
+                    
+                                            <div class="invalid-feedback">
+                                                請選擇
+                                            </div>
+                                        </div>
+                                    </div>
+    
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="form-group row">
-                                    <label for="jumpTopic" class="col-md-2 col-form-label">跳題題目</label>
-                                    <div class="col-md-10">
-                                        <select id="jumpTopic" class="bs-select form-control" data-live-search="true" required="">
-                                            <option disabled selected value="">請選擇</option>
-                                            <option value="1">截至111年底有無從事資訊人員?</option>
-                                            <option value="2">截至111年底有無從事資訊人員?</option>
-                                            <option value="3">截至111年底有無從事資訊人員?</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            請選擇題目
-                                        </div>
-                                    </div>
-                                </div>
-
+                        <div class="col-12">
+                            <div class="actions">
+                                <button type="submit" class="btn btn-success btn-save">
+                                    <i class="fa-solid fa-floppy-disk"></i>儲存
+                                </button>
+                                <button type="button" class="btn btn-danger btn-del">
+                                    <i class="fa-solid fa-trash-can" aria-hidden="true"></i>刪除
+                                </button>
                             </div>
-                            <div class="card-body">
-
-                                <div class="survey-cont">
-
-                                </div>
-
-                            </div>
-                        </div>
-
+                        </div>                        
                         
-                        <div class="actions">
-                            <button type="submit" class="btn btn-success btn-save">
-                                <i class="fa-solid fa-floppy-disk"></i>儲存
-                            </button>
-                            <button type="button" class="btn btn-danger btn-del">
-                                <i class="fa-solid fa-trash-can" aria-hidden="true"></i>刪除
-                            </button>
-                        </div>
                     </form>
 
 
@@ -405,7 +485,7 @@
     <!-- 編輯跳題 -->
     <div class="modal fade" id="jumpEdit" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="jumpEditLabel">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title" id="jumpEditLabel">編輯跳題</div>
@@ -415,19 +495,20 @@
                 </div>
                 <div class="modal-body">
 
-                    <form class="form jumpSet-cont needs-validation" novalidate>
+                    <form class="form row jumpSet-cont needs-validation" novalidate>
 
+                        <div class="col-md-6">
+                            
                         <div class="card">
                             <div class="card-header">
 
                                 <div class="form-group row">
-                                    <label for="selectTopic" class="col-md-2 col-form-label">題目</label>
+                                    <label for="selectTopicEdit" class="col-md-2 col-form-label">題目</label>
                                     <div class="col-md-10">
-                                        <select id="selectTopic" class="bs-select form-control" data-live-search="true" required="">
+                                        <select class="bs-select form-control" data-live-search="true" required="" data-ciaoyu="toggle" id="selectTopicEdit">
                                             <option disabled value="">請選擇</option>
                                             <option value="1" selected>有無資訊相關經費支出?</option>
-                                            <option value="2">有無資訊相關經費支出?</option>
-                                            <option value="3">有無資訊相關經費支出?</option>
+                                            <option value="2">公務使用中之實體桌上型電腦或工作站，總計幾台？</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             請選擇題目
@@ -440,7 +521,7 @@
 
                                 <div class="survey-cont">
 
-                                    <div class="form-group">
+                                    <div class="form-group" data-ciaoyu-toggle="selectTopicEdit" data-ciaoyu-val="1">
                                         <div class="badge badge-form">5</div>
                                         <label for="radioType">有無資訊相關經費支出?</label>
                                         <div class="radio-custom">
@@ -457,62 +538,89 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group" data-ciaoyu-toggle="selectTopicEdit" data-ciaoyu-val="2">
+                                        <div class="badge badge-form">1</div>
+                                        <label for="Q1">公務使用中之實體桌上型電腦或工作站，總計幾台？</label>
+                                        <input type="number" class="form-control" id="Q1" placeholder="請輸入數字" required="">
+                
+                                        <div class="invalid-feedback">
+                                            請輸入數字
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="form-group row">
-                                    <label for="jumpTopic" class="col-md-2 col-form-label">跳題題目</label>
-                                    <div class="col-md-10">
-                                        <select id="jumpTopic" class="bs-select form-control" data-live-search="true" required="">
-                                            <option disabled value="">請選擇</option>
-                                            <option value="1" selected>截至111年底有無從事資訊人員?</option>
-                                            <option value="2">截至111年底有無從事資訊人員?</option>
-                                            <option value="3">截至111年底有無從事資訊人員?</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            請選擇題目
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="form-group row">
+                                        <label for="jumpTopicEidt" class="col-md-2 col-form-label">跳題題目</label>
+                                        <div class="col-md-10">
+                                            <select class="bs-select form-control" data-live-search="true" required="" data-ciaoyu="toggle" id="jumpTopicEidt">
+                                                <option disabled value="">請選擇</option>
+                                                <option value="1" selected>截至111年底有無從事資訊人員?</option>
+                                                <option value="2">公務使用中之可攜式設備(平板電腦、智慧型手機)幾台？</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                請選擇題目
+                                            </div>
                                         </div>
                                     </div>
+    
                                 </div>
+                                <div class="card-body">
+    
+                                    <div class="survey-cont">
+    
+                                        <div class="form-group" data-ciaoyu-toggle="jumpTopicEidt" data-ciaoyu-val="1">
+                                            <div class="badge badge-form">6</div>
+                                            <label for="radioType">截至111年底有無從事資訊人員?</label>
+                                            <div class="radio-custom">
+                                                <div class="check-group">
+                                                    <input type="radio" class="custom-input" id="radioA" name="radioType"
+                                                        required="">
+                                                    <label class="custom-label" for="radioA">(A) 無 </label>
+                                                </div>
+                                                <div class="check-group">
+                                                    <input type="radio" class="custom-input" id="radioB" name="radioType"
+                                                        required="">
+                                                    <label class="custom-label" for="radioB">(B) 有</label>
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <div class="form-group" data-ciaoyu-toggle="jumpTopicEidt" data-ciaoyu-val="2">
+                                            <div class="badge badge-form">3</div>
+                                            <label for="Q3">公務使用中之可攜式設備(平板電腦、智慧型手機)幾台？</label>
+                                            <input type="number" class="form-control" id="Q3" placeholder="請輸入數字" required="">
+                    
+                                            <div class="invalid-feedback">
+                                                請輸入數字
+                                            </div>
+                                        </div>
+    
+                                    </div>
+    
+                                </div>
                             </div>
-                            <div class="card-body">
 
-                                <div class="survey-cont">
+                        </div>
+                        <div class="col-md-12">
 
-                                    <div class="form-group">
-                                        <div class="badge badge-form">6</div>
-                                        <label for="radioType">截至111年底有無從事資訊人員?</label>
-                                        <div class="radio-custom">
-                                            <div class="check-group">
-                                                <input type="radio" class="custom-input" id="radioA" name="radioType"
-                                                    required="">
-                                                <label class="custom-label" for="radioA">(A) 無 </label>
-                                            </div>
-                                            <div class="check-group">
-                                                <input type="radio" class="custom-input" id="radioB" name="radioType"
-                                                    required="">
-                                                <label class="custom-label" for="radioB">(B) 有</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
+                            <div class="actions">
+                                <button type="submit" class="btn btn-success btn-edit">
+                                    <i class="fa fa-edit"></i>編輯
+                                </button>
+                                <button type="button" class="btn btn-danger btn-del">
+                                    <i class="fa-solid fa-trash-can" aria-hidden="true"></i>刪除
+                                </button>
                             </div>
                         </div>
                         
-                        <div class="actions">
-                            <button type="submit" class="btn btn-success btn-edit">
-                                <i class="fa fa-edit"></i>編輯
-                            </button>
-                            <button type="button" class="btn btn-danger btn-del">
-                                <i class="fa-solid fa-trash-can" aria-hidden="true"></i>刪除
-                            </button>
-                        </div>
 
                     </div>
 

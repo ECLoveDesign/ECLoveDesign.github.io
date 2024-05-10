@@ -109,31 +109,18 @@
 
                 <div class="col-md-5 col-lg-3">
                     <div class="form-group">
-                        <label for="sruveySelect">問卷名稱</label>
+                        <label for="sruveySelect">問卷類型</label>
                         <select class="form-control bs-select" id="sruveySelect" title="請選擇" data-live-search="true">
-                            <option value="none" selected="" disabled="">請選擇</option>
-                            <option value="1">113年資訊資源調查問卷</option>
-                            <option value="2">112年資訊資源調查問卷</option>
+                            <option value="none" disabled="">請選擇</option>
+                            <option selected="" value="1">查調問卷</option>
+                            <option value="2">通用性問卷</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="col-md-5 col-lg-3">
-                    <div class="form-group">
-                        <label class="col-form-label" for="beginDate">開始日期</label>
-                        <input type="date" id="beginDate" class="form-control" placeholder="請選擇開始日期">
-                    </div>
-                </div>
-
-                <div class="col-md-5 col-lg-3">
-                    <div class="form-group">
-                        <label class="col-form-label" for="endDate">結束日期</label>
-                        <input type="date" id="endDate" class="form-control" placeholder="請選擇結束日期">
-                    </div>
-                </div>
-
                 <div class="col-md-2 col-lg-3">
-                    <button class="btn btn-search" type="button" data-toggle="tooltip" data-placement="bottom" title="查詢">
+                    <button class="btn btn-search" type="button" data-toggle="tooltip" data-placement="bottom"
+                        title="查詢">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
@@ -143,14 +130,14 @@
         </div>
 
         <div class="chart-wrap">
-            
+
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <div class="chart-01" style="height: 600px;"></div>
+                    <div class="chart-cont chart-01"></div>
                 </div>
 
                 <div class="col-md-6 col-sm-12">
-                    <div class="chart-02" style="height: 600px;"></div>
+                    <div class="chart-cont chart-02"></div>
                 </div>
 
             </div>
@@ -298,114 +285,6 @@
         //highcharts
         $(function () {
 
-            //chart-test
-
-            $('.chart-test').highcharts({
-                colors: ['#72dee7', '#68b6dd', '#6993dd', '#6671db', '#8067dc', '#a267db', '#c667dd',
-                    '#dc67ab', '#dc6868', '#dc8c67'
-                ],
-                chart: {
-                    type: 'variablepie',
-                    events: {
-                        render: function () {
-                            var chart = this,
-                                sum = 0;
-
-                            if (chart.textGroup) {
-                                chart.textGroup.destroy()
-                                chart.textGroup = undefined;
-                            }
-
-                            chart.textGroup = chart.renderer.g('textGroup').add().toFront()
-                            chart.series[0].data.forEach(function (value) {
-                                sum += value.y;
-                            })
-
-                            var customText = chart.myCustomText = chart.renderer.text(
-                                    '工作日' + '<br></br>' + sum, chart.plotWidth / 2, chart
-                                    .plotHeight / 2
-                                )
-                                .css({
-                                    fontSize: '26px',
-                                })
-                                .add(chart.textGroup);
-                            chart.textGroup.translate(-chart.myCustomText.getBBox().width / 2);
-
-                        }
-                    }
-                },
-                exporting: {
-                    enabled: false,
-                },
-                plotOptions: {
-                    series: {
-                        borderColor: 'rgba(255, 255, 255, 0.2)',
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b> {point.y:1f} ',
-                            /*distance: -50,*/
-
-                        },
-                    },
-                },
-                
-                title: {
-                    text: '不安全行為的類型',
-                    x: 0,
-                    y: undefined,
-                    style: {
-                        fontFamily: 'Roboto',
-                        color: '#bec1d1',
-                        fontSize: '0',
-                        height: '0'
-                    }
-                },
-                
-                credits: {
-                    enabled: false,
-                },
-                tooltip: {
-                    headerFormat: '',
-                    pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
-                        'Area (square km): <b>{point.y}</b><br/>' +
-                        'Population density (people per square km):<b>{point.z}</b><br/>'
-                },
-                series: [{
-                    minPointSize: 10,
-                    innerSize: '75%',
-                    zMin: 0,
-                    name: 'countries',
-                    data:
-                        [{
-                            name: '工人反應',
-                            y: 86,
-                            z: 100
-                        }, {
-                            name: '個人保護設備',
-                            y: 128,
-                            z: 100
-                        }, {
-                            name: '作業工具和設備',
-                            y: 01,
-                            z: 100
-                        }, {
-                            name: '工人的位置',
-                            y: 43,
-                            z: 100
-                        }, {
-                            name: '工作程式',
-                            y: 64,
-                            z: 100
-                        }, {
-                            name: '有組織',
-                            y: 150,
-                            z: 100
-                        }]
-
-                }]
-            });
-
-
             //chart-01
             $('.chart-01').highcharts({
                 chart: {
@@ -413,7 +292,7 @@
                     plotBorderWidth: null,
                     plotShadow: true,
                     type: 'pie',
-                    
+
                     events: {
                         render: function () {
                             var chart = this,
@@ -430,10 +309,11 @@
                             })
 
                             var customText = chart.myCustomText = chart.renderer.text(
-                                    '總件數' + '<br></br>' + sum, chart.plotWidth / 2, chart .plotHeight / 1.55
+                                    '總件數' + '<br>'  + '<span style="font-size:33px">' + sum+ '</span>', chart.plotWidth / 2, chart.plotHeight / 1.35 
                                 )
                                 .css({
                                     fontSize: '26px',
+                                    fontWeight: 'Bold',
                                 })
                                 .add(chart.textGroup);
                             chart.textGroup.translate(-chart.myCustomText.getBBox().width / 3);
@@ -444,6 +324,10 @@
                 colors: ['#00e396', '#feb019', '#444'],
                 title: {
                     text: '113年資訊資源效率調查問卷<br>問卷回收情形',
+                    style: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',
+                        fontSize: '24px' ,                
+                    }
                 },
                 credits: {
                     enabled: false,
@@ -462,11 +346,10 @@
                     itemMarginTop: 5,
                     margin: 20,
                 },
-                
+
                 tooltip: {
-                    headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
-                    pointFormat: '<span style="font-size: 1rem;">共 {point.y:1f}件</span><br/>' +
-                        '{series.name}: <b>{point.percentage:.2f}%</b>' 
+                    headerFormat: '<span style="color:{point.color}">\u25CF</span> <span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                    pointFormat: '<span style="font-size: 1rem;"><b>{point.percentage:.2f}%</b> (共 <b>{point.y:1f}</b> 件) </span>'
                 },
                 plotOptions: {
                     pie: {
@@ -474,7 +357,7 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.y:1f}件  ' +'(' + '{point.percentage:.2f} %'  +')'
+                            format: '<b>{point.name} <br> <b>{point.y:1f}件</b> ( {point.percentage:.2f} % ) </b>'
                         },
                         showInLegend: true
                     },
@@ -496,7 +379,7 @@
                 series: [{
                     name: '百分比',
                     colorByPoint: true,
-                    innerSize: '80%',
+                    innerSize: '70%',
                     data: [{
                         name: '已填報-已確認     ',
                         y: 4604,
@@ -512,7 +395,7 @@
                 }]
             });
 
-            
+
             //chart-02
             $('.chart-02').highcharts({
                 chart: {
@@ -520,7 +403,6 @@
                     plotBorderWidth: null,
                     plotShadow: true,
                     type: 'pie',
-                    
                     events: {
                         render: function () {
                             var chart = this,
@@ -537,10 +419,11 @@
                             })
 
                             var customText = chart.myCustomText = chart.renderer.text(
-                                    '總件數' + '<br></br>' + sum, chart.plotWidth / 2, chart .plotHeight / 1.55
+                                    '總件數' + '<br>'  + '<span style="font-size:33px">' + sum+ '</span>', chart.plotWidth / 2, chart.plotHeight / 1.35 
                                 )
                                 .css({
                                     fontSize: '26px',
+                                    fontWeight: 'Bold',
                                 })
                                 .add(chart.textGroup);
                             chart.textGroup.translate(-chart.myCustomText.getBBox().width / 3);
@@ -551,6 +434,10 @@
                 colors: ['#00e396', '#444'],
                 title: {
                     text: '113年資訊資源效率調查問卷<br>機關上傳主計總處決算資料',
+                    style: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',
+                        fontSize: '24px' ,                
+                    }
                 },
                 credits: {
                     enabled: false,
@@ -570,9 +457,8 @@
                     margin: 20,
                 },
                 tooltip: {
-                    headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
-                    pointFormat: '<span style="font-size: 1rem;">共 {point.y:1f}件</span><br/>' +
-                        '{series.name}: <b>{point.percentage:.2f}%</b>' 
+                    headerFormat: '<span style="color:{point.color}">\u25CF</span> <span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                    pointFormat: '<span style="font-size: 1rem;"><b>{point.percentage:.2f}%</b> (共 <b>{point.y:1f}</b> 件) </span>'
                 },
                 plotOptions: {
                     pie: {
@@ -580,7 +466,7 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.y:1f}件  ' +'(' + '{point.percentage:.2f} %'  +')'
+                            format: '<b>{point.name} <br> <b>{point.y:1f}件</b> ( {point.percentage:.2f} % ) </b>'
                         },
                         showInLegend: true
                     },
@@ -602,7 +488,7 @@
                 series: [{
                     name: '百分比',
                     colorByPoint: true,
-                    innerSize: '80%',
+                    innerSize: '70%',
                     data: [{
                         name: '已上傳',
                         y: 1763,

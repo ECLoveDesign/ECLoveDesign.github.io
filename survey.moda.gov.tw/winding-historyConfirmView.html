@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/datatables/dataTables.bootstrap5.min.css" />
     <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/sweetalert2/css/sweetalert2.min.css" />
     <link rel="stylesheet" href="css/survey.css" />
     <title>資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</title>
 </head>
@@ -145,10 +146,22 @@
                         </div>
                     </div>
 
+                    <div class="collapse" id="remarkCont">
+                        <form class="remark-cont">
 
+                            <div class="form-group">
+                                <label for="remarkText">備註</label>
+                                <textarea class="form-control" id="remarkText" rows="3" placeholder="請輸入備註文字"></textarea>
+                            </div>
+
+                        </form>
+                    </div>
 
                     <div class="actions">
-                        <button type="button" class="btn btn-dark btn-back" onclick="window.location.href='survey-history.html';">返回列表</button>
+                        <button type="button" class="btn btn-warning btn-remark" data-toggle="collapse" data-target="#remarkCont" aria-expanded="false" aria-controls="remarkCont">備註</button>
+                        <a class="btn btn-dark btn-save" href="#">保存</a>
+                        <button type="button" class="btn btn-danger btn-return" onclick="window.location.href='winding-historyTodolist.html';">退回</button>
+                        <button type="button" class="btn btn-dark btn-back" onclick="window.location.href='winding-historyConfirm.html';">返回列表</button>                        
                     </div>
                 </form>
 
@@ -165,6 +178,7 @@
     <script src='js/popper-1.12.9.min.js'></script>
     <script src='assets/bootstrap/js/bootstrap.min.js'></script>
     <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src='assets/sweetalert2/js/sweetalert2.all.min.js'></script>
     <script src="js/survey.js"></script>
 </body>
 

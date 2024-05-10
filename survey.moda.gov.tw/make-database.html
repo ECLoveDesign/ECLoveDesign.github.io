@@ -585,8 +585,7 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                                                       
+                                    
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
@@ -613,7 +612,41 @@
                                             </div>
                                         </div>
                                     </div>
-                                                                       
+                                    
+                                    <!--上傳圖片-->
+                                    <div class="form-group">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+    
+                                    <!--增加備註-->
+                                    <div class="form-group">
+                                        <label for="CheckboxNote">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="CheckboxNote" rows="3" placeholder="請輸入文字內容"
+                                        required=""></textarea>
+                                    </div>
+
                                     <div class="input-group" data-ciaoyu-toggle="RadioOther">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
@@ -621,8 +654,8 @@
                                                 <span class="label-text">C</span>
                                             </div>
                                         </div>
-                                        <label class="d-none" for="RadioC">回答C</label> 
-                                        <input type="text" class="form-control" id="RadioC" placeholder="請輸入選項內容" value="其他" disabled>
+                                        <label class="d-none" for="RadioOther">其他</label> 
+                                        <input type="text" class="form-control" id="RadioOther" placeholder="請輸入選項內容" value="其他" disabled>
                                         
                                         <button class="btn btn-outline-secondary btn-removechoice" type="button">
                                             <i class="fa fa-minus"></i>
@@ -766,7 +799,41 @@
                                             </div>
                                         </div>
                                     </div>
-                                                                       
+
+                                    <!--上傳圖片-->
+                                    <div class="form-group">
+                                        <label class="control-label">上傳圖片</label>
+                                        <div class="preview-zone d-none">
+                                            <div class="box box-solid">
+                                                <div class="box-header with-border">
+                                                    <div class="title">預覽</div>
+                                                    <div class="box-tools pull-right">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-remove remove-preview">
+                                                            <i class="fa fa-times"></i> 移除圖片
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="fa fa-cloud-upload"></i>
+                                                <p>將圖片拖曳進來或點擊選擇圖片</p>
+                                                <small class="text-muted">可以上傳 jpg、jpeg、png，檔案大小要在 3MB 以下</small>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+    
+                                    <!--增加備註-->
+                                    <div class="form-group">
+                                        <label for="CheckboxNote">備註<span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="CheckboxNote" rows="3" placeholder="請輸入文字內容"
+                                        required=""></textarea>
+                                    </div>
+
                                     <div class="input-group" data-ciaoyu-toggle="CheckboxOther">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
@@ -774,8 +841,8 @@
                                                 <span class="label-text">C</span>
                                             </div>
                                         </div>
-                                        <label class="d-none" for="CheckboxC">回答C</label> 
-                                        <input type="text" class="form-control" id="CheckboxC" placeholder="請輸入選項內容" value="其他" disabled>
+                                        <label class="d-none" for="CheckboxOther">其他</label> 
+                                        <input type="text" class="form-control" id="CheckboxOther" placeholder="請輸入選項內容" value="其他" disabled>
                                         
                                         <button class="btn btn-outline-secondary btn-removechoice" type="button">
                                             <i class="fa fa-minus"></i>
@@ -1322,10 +1389,6 @@
                                 <div class="check-group">
                                     <input type="checkbox" class="custom-input" id="Q5F" name="Q5" required="">
                                     <label class="custom-label" for="Q5F">(F) 進階持續性威脅攻擊防禦措施</label>
-                                </div>
-                                <div class="check-group">
-                                    <input type="checkbox" class="custom-input" id="Q5D" name="Q5" required="">
-                                    <label class="custom-label" for="Q5D">(D) 漏洞偵測(弱點掃瞄)</label>
                                 </div>
                                 <div class="check-group">
                                     <input type="checkbox" class="custom-input" id="Q5G" name="Q5" required="">
@@ -1898,8 +1961,8 @@
                                                 <span class="label-text">C</span>
                                             </div>
                                         </div>
-                                        <label class="d-none" for="RadioC">回答C</label> 
-                                        <input type="text" class="form-control" id="RadioC" placeholder="請輸入選項內容" value="其他" disabled>
+                                        <label class="d-none" for="RadioOther">其他</label> 
+                                        <input type="text" class="form-control" id="RadioOther" placeholder="請輸入選項內容" value="其他" disabled>
                                         
                                         <button class="btn btn-outline-secondary btn-removechoice" type="button">
                                             <i class="fa fa-minus"></i>
@@ -2051,8 +2114,8 @@
                                                 <span class="label-text">C</span>
                                             </div>
                                         </div>
-                                        <label class="d-none" for="CheckboxC">回答C</label> 
-                                        <input type="text" class="form-control" id="CheckboxC" placeholder="請輸入選項內容" value="其他" disabled>
+                                        <label class="d-none" for="CheckboxOther">其他</label> 
+                                        <input type="text" class="form-control" id="CheckboxOther" placeholder="請輸入選項內容" value="其他" disabled>
                                         
                                         <button class="btn btn-outline-secondary btn-removechoice" type="button">
                                             <i class="fa fa-minus"></i>
