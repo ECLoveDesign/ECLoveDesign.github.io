@@ -124,9 +124,11 @@
                     <div class="form-group">                        
                         <label class="col-form-label" for="fillUser" data-live-search="true">填卷人名稱</label>
                         <select class="form-control bs-select" id="fillUser" title="請選擇" data-live-search="true">
-                            <option value="none" selected="" disabled="">請選擇</option>
-                            <option value="1">王大明</option>
-                            <option value="2">葉小美</option>
+                            <option value="none" disabled="">請選擇</option>
+                            <option value="1">經濟部</option>
+                            <option value="2">文化部</option>
+                            <option value="3">教育部</option>
+                            <option selected="" value="4">數位發展部</option>
                         </select>
                     </div>
                 </div>
@@ -177,9 +179,11 @@
                     <div class="form-group">                        
                         <label class="col-form-label" for="fillUser" data-live-search="true">填卷人名稱</label>
                         <select class="form-control bs-select" id="fillUser" title="請選擇" data-live-search="true">
-                            <option value="none" selected="" disabled="">請選擇</option>
-                            <option value="1">王大明</option>
-                            <option value="2">葉小美</option>
+                            <option value="none" disabled="">請選擇</option>
+                            <option value="1">經濟部</option>
+                            <option value="2">文化部</option>
+                            <option selected="" value="3">教育部</option>
+                            <option value="4">數位發展部</option>
                         </select>
                     </div>
                 </div>
@@ -201,7 +205,7 @@
                     </button>
                     
                     <button class="btn btn-reset" type="button" data-toggle="tooltip" data-placement="bottom" title="重設">
-                        <i class="fa-solid fa-rotate"></i>
+                        <i class="fa-solid fa-rotate-right"></i>
                     </button>
                     
                     <button class="btn btn-export" type="button" data-toggle="tooltip" data-placement="bottom" title="匯出">
@@ -213,11 +217,52 @@
 
         </div>
 
-        <div class="chart-wrap">
-                <div class="chart" style="height: 600px;"></div>
+        
 
+        <!--一種資料兩個來源-->
+        <div class="chart-wrap">
+
+            <div class="row">
+
+                <div class="col-md">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-cont chart"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
+
+        
+        <!--兩種資料兩個來源-->
+        <div class="chart-wrap">
+
+            <div class="row">
+
+                <div class="col-md">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-cont chart-01"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-cont chart-02"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
 
     </main>
 
@@ -360,12 +405,17 @@
         //highcharts
         $(function () {
 
+            // chart
             $('.chart').highcharts({
                 chart: {
                     type: 'column'
                 },
                 title: {
-                    text: '資安防護措施項目包含？(複選題)'
+                    text: '資安防護措施項目包含？(複選題)',
+                    style: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',
+                        fontSize: '24px' ,                
+                    }
                 },
                 xAxis: {
                     categories: ['A 防毒', 'B 網路防火牆', 'C 入侵偵測防禦', 'D 漏洞偵測(弱點掃瞄)', 'E 資安監控中心(SOC)', 'F 進階持續性威脅攻擊防禦措施', 'G 電子郵件過濾機制', 'H 滲透測試', 'I 應用程式防火牆(WAF)']
