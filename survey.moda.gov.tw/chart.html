@@ -444,6 +444,76 @@
                 }]
             });
 
+            
+            // chart-01
+            $('.chart-01').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: '資安防護措施項目包含？(複選題)',
+                    style: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',
+                        fontSize: '24px' ,                
+                    }
+                },
+                xAxis: {
+                    categories: ['A 防毒', 'B 網路防火牆', 'C 入侵偵測防禦', 'D 漏洞偵測(弱點掃瞄)', 'E 資安監控中心(SOC)', 'F 進階持續性威脅攻擊防禦措施', 'G 電子郵件過濾機制', 'H 滲透測試', 'I 應用程式防火牆(WAF)']
+                },
+                credits: {
+                    enabled: false
+                },
+                exporting: { enabled: false },
+                plotOptions: {
+                    column: {
+                        borderRadius: '25%'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>'
+                },
+                // colors: ['#00e396'],
+                series: [{
+                    name: '資料一',
+                    data: [ 5 , 8 , 3 , 14 , 0 , 0 , 1 , 8 , 1 ]
+                }]
+            });
+
+            // chart-02
+            $('.chart-02').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: '資料中心(含雲端資料中心)有無建置資安防護措施？',
+                    style: {
+                        font: 'Microsoft JhengHei , Verdana, sans-serif',
+                        fontSize: '24px' ,                
+                    }
+                },
+                xAxis: {
+                    categories: ['A 無', 'B 有']
+                },
+                credits: {
+                    enabled: false
+                },
+                exporting: { enabled: false },
+                plotOptions: {
+                    column: {
+                        borderRadius: '25%'
+                    }
+                },                
+                colors: ['#544fc5'],
+                tooltip: {
+                    headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>'
+                },
+                series: [{
+                    name: '資料二',
+                    data: [  14 ,  8  ]
+                }]
+            });
+
+
         });
     </script>
 </body>
