@@ -775,12 +775,12 @@ footer p {
 }
 .functionmenu.affix-top {
     position: fixed;
-    top: 90px;
+    top: 70px;
     z-index: 2;
     background: rgba(0, 0, 0, 0.7);
     width: 100%;
     left: 0;
-    padding: 15px 15px 0;
+    padding: 7px 15px 0;
 }
 .functionmenu.affix-top .nav-line .nav-link {
     color: #fff;
@@ -792,6 +792,10 @@ footer p {
     display: flex;
     align-items: center;
     padding: 7px 0 7px 15px;
+}
+
+.functionmenu.affix-top .info {
+    color: #fff;
 }
 .functionmenu .info .title {
     font-size: 15px;
@@ -1282,7 +1286,7 @@ table.table.dataTable>tbody>tr.selected>* {
     margin: 0;
 }
 .preview-zone .btn-remove {
-    padding-left: 35px;
+    padding-left: 15px;
 }
 
 /* input-group */
@@ -1918,7 +1922,7 @@ section + section  {
 /* .affix-top .topicSet-cont, */
 .affix-top .topicSet-wrap {
     position: fixed;
-    top: 170px;
+    top: 155px;
     width: calc(25% - 30px);
 }
 
