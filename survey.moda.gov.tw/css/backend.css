@@ -20,14 +20,370 @@
 
 * {
     font-family: var(--font-Sans);
-    /* font-size: 14px; */
+    font-size: 14px;
 }
 
-body {    
+body {
     position: relative;
     height: 100%;
     /* overflow: hidden; */
 }
+
 img {
     width: 100%;
+}
+
+.wrap {
+    position: relative;
+}
+
+.wrap a {
+    position: absolute;
+    display: block;
+}
+
+.btn-login {
+    right: 24px;
+    top: 26px;
+    width: 50px;
+    height: 50px;
+    border: blue solid 6px;
+}
+
+.btn-modal {
+    left: 285px;
+    top: 218px;
+    width: 145px;
+    height: 50px;
+    border: blue solid 6px;
+}
+
+/* modal */
+.modal-header {
+    background: var(--normalYellow);
+    border-color: transparent;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+.modal-header .close {
+    transform: scale(1.5);
+    margin-top: -8px;
+    margin-right: -6px;
+}
+
+.card-header .form-group {
+    margin-bottom: 0;
+}
+
+/* .modal-body {
+    overflow-x: hidden;
+} */
+.modal-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.modal-content {
+    border-radius: 20px;
+}
+
+.modal .actions,
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    border-color: transparent;
+}
+
+.modal .actions>[class*="btn-"]:not(.dropdown-toggle) {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    letter-spacing: 20px;
+    text-indent: 20px;
+    font-weight: 500;
+    box-shadow: 0px 0px 9px rgb(0, 0, 0, .1);
+}
+
+.modal .actions [class*="btn-"] i {
+    margin-left: -20px;
+}
+
+.modal .actions [class*="btn-"]+[class*="btn-"] {
+    margin-left: 20px;
+}
+
+.modal-backdrop.show {
+    opacity: .8;
+}
+
+.form-group.row>label {
+    text-align: right;
+}
+
+.custom-control-inline {
+    margin-top: .5rem;
+}
+
+@media (min-width:1025px) {
+    .modal-body {
+        padding: 25px;
+    }
+}
+
+/* #addTopic .modal-dialog-scrollable .modal-body {
+    overflow: a;
+} */
+
+
+.form-section {
+    position: relative;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.form-section span {
+    position: relative;
+    background: #fff;
+    left: 20px;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.form-section::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 8px;
+    background: var(--primaryColor);
+    z-index: 0;
+    top: 9px;
+}
+
+.question-title {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    padding-left: 45px;
+}
+
+.badge-form {
+    background: var(--normalYellow);
+    padding: .5em .75em;
+    margin-right: .25em;
+    margin-left: -45px;
+    width: 40px;
+    font-size: .9rem;
+}
+
+.form-group.indent {
+    margin-left: 45px;
+}
+
+.divider {
+    width: calc(100% + 40px);
+    margin: 33px 0 20px -20px;
+    border: #d6d6d6 dashed 1px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.actions.affix-top {
+    position: fixed;
+    z-index: 1;
+    bottom: 25px;
+    width: 100%;
+    left: 0;
+}
+
+.actions [class*="btn-"] {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    letter-spacing: 20px;
+    text-indent: 20px;
+    font-weight: 500;
+    box-shadow: 0px 0px 9px rgb(0, 0, 0, .1);
+}
+
+.actions [class*="btn-"]+[class*="btn-"] {
+    margin-left: 20px;
+}
+
+.actions .btn-confirm,
+.actions .btn-back {
+    letter-spacing: 5px;
+    text-indent: 5px;
+}
+
+.survey-finish {
+    margin: 30px auto;
+    width: 500px;
+}
+
+.btn-save {
+    color: #fff;
+    background: #00c200;
+    border: #00c200 solid 1px;
+}
+
+.btn-save:hover,
+.btn-save:active {
+    color: #fff;
+    background: #007900;
+}
+
+
+/* treeview */
+.treeview-wrap.type-square {
+    padding: 1.25rem 0;
+}
+
+.treeview-wrap.type-square .list-group.treeview {
+    font-size: 0.9375rem;
+}
+
+.treeview-wrap.type-square .list-group.treeview>.list-group-item {
+    padding: 0;
+}
+.treeview-wrap.type-square .treeview .list-group-item {
+    padding: 0.5rem 1.25rem;
+    padding-right: 0;
+}
+
+.treeview-wrap.type-square .treeview .list-group-item a {
+    color: #333;
+    padding: 0.25rem 0.25rem;
+}
+
+.treeview-wrap.type-square .treeview-line ul .list-group-item>a.active {
+    color: #0280fa;
+}
+
+.treeview-wrap.type-square .treeview-line ul>.list-group-item ul {
+    line-height: 1.2;
+}
+
+.treeview-wrap.type-square .treeview-line ul>.list-group-item:after {
+    top: 1.25rem;
+}
+
+.treeview-wrap.type-square .treeview-line ul>.list-group-item ul>.list-group-item:after {
+    top: 1rem;
+}
+
+.treeview-wrap.type-square .treeview-line ul .list-group-item:last-child:before {
+    height: 1.5rem;
+}
+
+.treeview-wrap.type-square .treeview-line ul .list-group-item:before {
+    height: 100%;
+}
+
+.treeview-wrap.type-square .treeview-line ul>.list-group-item ul>.list-group-item:last-child:before {
+    height: 1.25rem;
+}
+
+.treeview-wrap.type-square .treeview-line ul .list-group-item>ul>ul .list-group-item:last-child:before {
+    height: 1.375rem;
+}
+
+.treeview-wrap.type-square .list-group-item>i.fa-plus-square::before {
+    content: "\f0fe";
+}
+
+.treeview-wrap.type-square .list-group-item.treeview-expanded>i.fa-plus-square::before {
+    content: "\f146";
+}
+
+.treeview-wrap.type-square .treeview-check {
+    padding-left: 0;
+}
+
+.treeview-wrap.type-square .treeview-check .form-check-label {
+    padding: 0.375rem 0.75rem 0.375rem 1.5rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.treeview-wrap.type-square .treeview-check .form-check-label::after,
+.treeview-wrap.type-square .treeview-check .form-check-label::before {
+    left: 2px;
+    top: 8px;
+}
+
+.treeview-wrap.type-square .treeview-check ul .list-group-item:before {
+    /* top: -4px; */
+    height: 100%;
+}
+
+.treeview-wrap.type-square .treeview-check .form-check-input:checked+.form-check-label {
+    color: #000;
+    font-weight: bold;
+}
+
+.treeview-wrap.type-square .treeview-check .form-check-input:checked+.form-check-label::before,
+.treeview-wrap.type-square .treeview-check .form-check-input:checked+.form-check-label::after {
+    top: 8px;
+}
+
+.treeview-wrap.type-square .treeview-check i {
+    margin: 0;
+}
+
+.treeview-wrap.type-square .treeview-check li ul {
+    margin: 0rem 0 0 1rem;
+}
+
+.treeview-wrap.type-square .treeview-check li ul .list-group-item {
+    padding: 0;
+}
+
+.treeview-wrap.type-square .treeview-check.treeview-line.form-check ul>.list-group-item ul:before {
+    left: -26px;
+}
+
+.treeview-wrap.type-square .treeview-check.treeview-line ul>.list-group-item ul .list-group-item:last-child:after {
+    top: 1rem;
+}
+
+.treeview-wrap.type-square .treeview-check.treeview-line.form-check ul>.list-group-item:after {
+    top: 1rem;
+}
+
+.treeview-wrap.type-square .treeview-check.treeview-line.form-check li ul>.list-group-item:last-child:before {
+    top: -7px;
+}
+
+.treeview-wrap.type-square .treeview-check.treeview-line.form-check li li ul>.list-group-item:last-child:before {
+    top: -3px;
+}
+
+.treeview-wrap .form-check-input {
+    position: absolute;
+    margin-top: .65rem;
+    margin-left: .25rem;
+}
+
+/* V-TAB */
+.nav .nav-item button.active {
+    background-color: transparent;
+    color: var(--bs-danger) !important;
+}
+
+.nav .nav-item button.active::after {
+    content: "";
+    border-right: 4px solid var(--bs-danger);
+    height: 100%;
+    position: absolute;
+    right: -1px;
+    top: 0;
+    border-radius: 5px 0 0 5px;
 }

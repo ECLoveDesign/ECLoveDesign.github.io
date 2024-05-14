@@ -21,25 +21,191 @@
     <link rel="apple-touch-icon" href="touch-icon.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
-    <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css" /> 
+    <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/treeview/treeview.min.css" />
     <link rel="stylesheet" href="css/backend.css" />
     <title>資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</title>
 </head>
 
 <body>
     <h1 class="d-none">資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</h1>
-        
-    <a href="index.html">
+
+    <div class="wrap">
+        <a href="login.html" class="btn-login"></a>
+        <a href="#" class="btn-modal" data-toggle="modal" data-target="#modal"></a>
         <img src="images/bg-backend.jpg">
-    </a>
-        
+    </div>
+
+    <!-- 權限 -->
+    <div class="modal fade" id="modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="modalLabel">新增角色</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                aria-orientation="vertical">
+                                <button class="nav-link active" id="v-pills-home-tab" data-toggle="pill"
+                                    data-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                                    aria-selected="true">
+                                    <i class="fa-solid fa-gear"></i> 基本設定
+                                </button>
+                                <button class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
+                                    data-target="#v-pills-profile" type="button" role="tab"
+                                    aria-controls="v-pills-profile" aria-selected="false">
+                                    <i class="fa-solid fa-lock"></i> 權限設定
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                    aria-labelledby="v-pills-home-tab">
+
+
+                                    <form class="form form-modal needs-validation" novalidate>
+
+                                        <div class="form-group row">
+                                            <label for="name" class="col-2 col-md-1 col-form-label">名稱</label>
+                                            <div class="col-10 col-md-11">
+                                                <input type="text" id="name" class="form-control" placeholder="請輸入名稱">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="remark" class="col-2 col-md-1 col-form-label">備註</label>
+                                            <div class="col-10 col-md-11">
+                                                <textarea id="remark" class="form-control" rows="3"></textarea>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="actions">
+                                            <button type="submit" class="btn btn-dark btn-submit">送出</button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                    aria-labelledby="v-pills-profile-tab">
+
+
+                                    <div class="treeview-wrap type-square">
+                                        <ul class="list-group treeview treeview-line form-check treeview-check ">
+                                            <li class="list-group-item treeview-expanded">
+                                                <i class="fa-regular fa-plus-square"></i>
+                                                <input type="checkbox" name="userSet" value="儀表板"
+                                                    class="form-check-input" id="Dashboard">
+                                                <label class="form-check-label tree-parent" for="Dashboard">儀表板</label>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                        <input type="checkbox" name="DashboardSet" value="一般人員"
+                                                            class="form-check-input" id="item2-normal">
+                                                        <label class="form-check-label" for="item2-normal">一般人員</label>
+                                                    </li>
+                                                    <li class="list-group-item treeview-expanded">
+                                                        <input type="checkbox" name="DashboardSet" value="管理人員"
+                                                            class="form-check-input" id="item2-management" checked>
+                                                        <label class="form-check-label"
+                                                            for="item2-management">管理人員</label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            
+                                            <li class="list-group-item">
+                                                <i class="fa-regular fa-plus-square"></i>
+                                                <input type="checkbox" name="userSet" value="SurveyMake"
+                                                    class="form-check-input" id="item2-SurveyMake">
+                                                <label class="form-check-label"
+                                                    for="item2-SurveyMake">問卷製作</label>
+
+                                                <ul class="list-group" style="display: none;">
+                                                    <li class="list-group-item treeview-expanded">
+                                                        <input type="checkbox" name="userSet" value="一般人員"
+                                                            class="form-check-input" id="item3-normal">
+                                                        <label class="form-check-label"
+                                                            for="item3-normal">一般人員</label>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <input type="checkbox" name="userSet" value="管理人員"
+                                                            class="form-check-input" id="item3-management">
+                                                        <label class="form-check-label"
+                                                            for="item3-management">管理人員</label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa-regular fa-plus-square"></i>
+                                                <input type="checkbox" name="userSet" value="問卷回收情形"
+                                                    class="form-check-input" id="item2-SurveyWindling">
+                                                <label class="form-check-label"
+                                                    for="item2-SurveyWindling">問卷回收情形</label>
+                                                    
+                                                <ul class="list-group" style="display: none;">
+                                                    <li class="list-group-item treeview-expanded">
+                                                        <input type="checkbox" name="userSet" value="一般人員"
+                                                            class="form-check-input" id="item3-normal">
+                                                        <label class="form-check-label"
+                                                            for="item3-normal">一般人員</label>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <input type="checkbox" name="userSet" value="管理人員"
+                                                            class="form-check-input" id="item3-management">
+                                                        <label class="form-check-label"
+                                                            for="item3-management">管理人員</label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+
+                                    <div class="actions">
+                                        <button type="submit" class="btn btn-success btn-save">保存</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
 
 
 
     <script src='js/jquery-3.2.1.min.js'></script>
     <script src='js/popper-1.12.9.min.js'></script>
     <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/treeview/treeview.min.js'></script>
     <script src="js/backend.js"></script>
+
+    <script>
+        //demo
+        $(document).ready(function () {
+            $('.btn-modal').click(function () {
+                $('.treeview-line>.list-group-item:first-child').addClass('treeview-expanded');
+                
+            });
+        });
+    </script>
 </body>
 
 </html>

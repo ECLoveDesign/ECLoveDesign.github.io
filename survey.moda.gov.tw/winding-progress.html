@@ -349,7 +349,7 @@
                     //     align: 'left'
                     // },
                     xAxis: {
-                        categories: ['中央(一)', '行政院中央(二三)', '非行政院中央(二三)', '中央(四五)'],
+                        categories: ['填答人數'],
                         title: {
                             text: null
                         },
@@ -369,7 +369,9 @@
                     },
                     
                     tooltip: {
-                        headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                        headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',                        
+                        pointFormat: '<div style="font-size: 1rem; font-weight:bold; color: {series.color}">{series.name}</div>：' +
+                            '<div><b>{point.y} </b> </div>',
                         valueSuffix: ' 人'
                     },
                     plotOptions: {
@@ -398,14 +400,13 @@
                         enabled: false
                     },
                     series: [{
-                        name: 'A 無',
-                        data: [631, 727, 3202, 721]
+                        name: '(A) 無',
+                        data: [631, ]
                     }, {
-                        name: 'B 有',
-                        data: [814, 841, 3714, 726]
+                        name: '(B) 有',
+                        data: [814, ]
                     }]
                 });
-
 
                 //chart-02
                 $('.chart-02').highcharts({
@@ -423,7 +424,7 @@
                     //     align: 'left'
                     // },
                     xAxis: {
-                        categories: ['中央(一)', '行政院中央(二三)', '非行政院中央(二三)', '中央(四五)'],
+                        categories: ['填答人數'],
                         title: {
                             text: null
                         },
@@ -443,7 +444,9 @@
                     },
                     
                     tooltip: {
-                        headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
+                        headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',                        
+                        pointFormat: '<div style="font-size: 1rem; font-weight:bold; color: {series.color}">{series.name}</div>：' +
+                            '<div><b>{point.y} </b> </div>',
                         valueSuffix: ' 人'
                     },
                     plotOptions: {
@@ -472,32 +475,32 @@
                         enabled: false
                     },
                     series: [{
-                        name: 'A 防毒',
-                        data: [631, 727, 3202, 721]
+                        name: '(A) 防毒',
+                        data: [631 ]
                     }, {
-                        name: 'B 網路防火牆',
-                        data: [814, 841, 3714, 726]
+                        name: '(B) 網路防火牆',
+                        data: [814 ]
                     }, {
-                        name: 'C 入侵偵測防禦',
-                        data: [1276, 1007, 4561, 746]
+                        name: '(C) 入侵偵測防禦',
+                        data: [1276 ]
                     }, {
-                        name: 'D 漏洞偵測(弱點掃瞄)',
-                        data: [814, 841, 3714, 726]
+                        name: '(D) 漏洞偵測(弱點掃瞄)',
+                        data: [814 ]
                     }, {
-                        name: 'E 資安監控中心(SOC)',
-                        data: [1276, 1007, 4561, 746]
+                        name: '(E) 資安監控中心(SOC)',
+                        data: [1276 ]
                     }, {
-                        name: 'F 進階持續性威脅攻擊防禦措施',
-                        data: [814, 841, 3714, 726]
+                        name: '(F) 進階持續性威脅攻擊防禦措施',
+                        data: [814 ]
                     }, {
-                        name: 'G 電子郵件過濾機制',
-                        data: [1276, 1007, 4561, 746]
+                        name: '(G) 電子郵件過濾機制',
+                        data: [1276 ]
                     }, {
-                        name: 'H 滲透測試',
-                        data: [814, 841, 3714, 726]
+                        name: '(H) 滲透測試',
+                        data: [814 ]
                     }, {
-                        name: 'I 應用程式防火牆(WAF)',
-                        data: [1276, 1007, 4561, 746]
+                        name: '(I) 應用程式防火牆(WAF)',
+                        data: [1276 ]
                     }]
                 });
 

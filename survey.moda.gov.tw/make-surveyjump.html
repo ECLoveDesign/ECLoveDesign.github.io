@@ -162,7 +162,7 @@
                 <a href="#" class="btn btn-add" data-toggle="modal" data-target="#jumpAdd">
                     <i class="fa fa-plus"></i>新增
                 </a>
-                
+
                 <a href="#" class="btn btn-map" data-toggle="modal" data-target="#jumpChart">
                     <i class="fa-solid fa-sitemap"></i>跳題設定圖
                 </a>
@@ -184,7 +184,7 @@
                 <tr>
                     <td data-title="序號">1</td>
                     <td data-title="題目">5. 有無資訊相關經費支出 </td>
-                    <td data-title="選擇條件">(A) 無</td>
+                    <td data-title="選擇條件">(A) 是</td>
                     <td data-title="跳題題目">6. 截至111年底有無從事資訊人員?</td>
                     <td data-title="動作">
                         <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#jumpEdit">
@@ -198,7 +198,7 @@
                 <tr>
                     <td data-title="序號">2</td>
                     <td data-title="題目">5. 有無資訊相關經費支出 </td>
-                    <td data-title="選擇條件">(A) 無</td>
+                    <td data-title="選擇條件">(A) 是</td>
                     <td data-title="跳題題目">6. 截至111年底有無從事資訊人員?</td>
                     <td data-title="動作">
                         <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#jumpEdit">
@@ -328,11 +328,12 @@
 
                             <div class="card">
                                 <div class="card-header">
-    
+
                                     <div class="form-group row">
                                         <label for="selectTopic" class="col-md-2 col-form-label">題目</label>
                                         <div class="col-md-10">
-                                            <select class="bs-select form-control" data-live-search="true" required="" data-ciaoyu="toggle" id="selectTopic">                                           
+                                            <select class="bs-select form-control" data-live-search="true" required=""
+                                                data-ciaoyu="toggle" id="selectTopic">
                                                 <option disabled selected value="">請選擇</option>
                                                 <option value="1">資料中心(含雲端資料中心)有無建置資安防護措施？</option>
                                                 <option value="2">有無資訊相關經費支出?</option>
@@ -342,10 +343,10 @@
                                             </div>
                                         </div>
                                     </div>
-    
+
                                 </div>
                                 <div class="card-body">
-    
+
                                     <div class="survey-cont">
 
                                         <div class="form-group" data-ciaoyu-toggle="selectTopic" data-ciaoyu-val="1">
@@ -353,11 +354,13 @@
                                             <label for="Q4">資料中心(含雲端資料中心)有無建置資安防護措施？</label>
                                             <div class="radio-custom">
                                                 <div class="check-group">
-                                                    <input type="radio" class="custom-input" id="Q4A" name="Q4" required="">
-                                                    <label class="custom-label" for="Q4A">(A) 無 </label>
+                                                    <input type="radio" class="custom-input" id="Q4A" name="Q4"
+                                                        required="">
+                                                    <label class="custom-label" for="Q4A">(A) 是 </label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="radio" class="custom-input" id="Q4B" name="Q4" required="">
+                                                    <input type="radio" class="custom-input" id="Q4B" name="Q4"
+                                                        required="">
                                                     <label class="custom-label" for="Q4B">(B) 有</label>
                                                 </div>
                                             </div>
@@ -368,16 +371,18 @@
                                             <label for="radioType">有無資訊相關經費支出?</label>
                                             <div class="radio-custom">
                                                 <div class="check-group">
-                                                    <input type="radio" class="custom-input" id="radioA" name="radioType" required="">
-                                                    <label class="custom-label" for="radioA">(A) 無 </label>
+                                                    <input type="radio" class="custom-input" id="radioA"
+                                                        name="radioType" required="">
+                                                    <label class="custom-label" for="radioA">(A) 是 </label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="radio" class="custom-input" id="radioB" name="radioType" required="">
+                                                    <input type="radio" class="custom-input" id="radioB"
+                                                        name="radioType" required="">
                                                     <label class="custom-label" for="radioB">(B) 有</label>
                                                 </div>
                                             </div>
                                         </div>
-    
+
                                     </div>
                                 </div>
                             </div>
@@ -388,7 +393,8 @@
                                     <div class="form-group row">
                                         <label for="jumpTopic" class="col-md-2 col-form-label">跳題題目</label>
                                         <div class="col-md-10">
-                                            <select class="bs-select form-control" data-live-search="true" required="" data-ciaoyu="toggle" id="jumpTopic">
+                                            <select class="bs-select form-control" data-live-search="true" required=""
+                                                data-ciaoyu="toggle" id="jumpTopic">
                                                 <option disabled selected value="">請選擇</option>
                                                 <option value="3">公務使用中之筆記型電腦幾台？</option>
                                                 <option value="4">資安防護措施項目包含？ (複選)</option>
@@ -398,12 +404,12 @@
                                             </div>
                                         </div>
                                     </div>
-    
+
                                 </div>
                                 <div class="card-body">
-    
+
                                     <div class="survey-cont">
-                                        
+
                                         <div class="form-group" data-ciaoyu-toggle="jumpTopic" data-ciaoyu-val="3">
                                             <div class="badge badge-form">3</div>
                                             <label for="Q2">公務使用中之筆記型電腦幾台？</label>
@@ -415,49 +421,58 @@
                                             <label for="Q5">資安防護措施項目包含？ (複選)</label>
                                             <div class="check-custom">
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5A" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5A" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5A">(A) 防毒 </label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5B" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5B" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5B">(B) 網路防火牆</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5C" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5C" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5C">(C) 入侵偵測防禦</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5D" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5D" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5D">(D) 漏洞偵測(弱點掃瞄)</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5E" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5E" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5E">(E) 資安監控中心(SOC)</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5F" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5F" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5F">(F) 進階持續性威脅攻擊防禦措施</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5G" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5G" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5G">(G) 電子郵件過濾機制</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5H" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5H" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5H">(H) 滲透測試</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5I" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5I" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5I">(I) 應用程式防火牆(WAF) </label>
                                                 </div>
                                             </div>
-                    
+
                                             <div class="invalid-feedback">
                                                 請選擇
                                             </div>
                                         </div>
                                     </div>
-    
+
                                 </div>
                             </div>
                         </div>
@@ -471,8 +486,8 @@
                                     <i class="fa-solid fa-trash-can" aria-hidden="true"></i>刪除
                                 </button>
                             </div>
-                        </div>                        
-                        
+                        </div>
+
                     </form>
 
 
@@ -502,14 +517,15 @@
                     <form class="form row jumpSet-cont needs-validation" novalidate>
 
                         <div class="col-md-6">
-                                
+
                             <div class="card">
                                 <div class="card-header">
 
                                     <div class="form-group row">
                                         <label for="selectTopicEdit" class="col-md-2 col-form-label">題目</label>
                                         <div class="col-md-10">
-                                            <select class="bs-select form-control" data-live-search="true" required="" data-ciaoyu="toggle" id="selectTopicEdit">
+                                            <select class="bs-select form-control" data-live-search="true" required=""
+                                                data-ciaoyu="toggle" id="selectTopicEdit">
                                                 <option disabled value="">請選擇</option>
                                                 <option value="1" selected>有無資訊相關經費支出?</option>
                                                 <option value="2">資料中心(含雲端資料中心)有無建置資安防護措施？</option>
@@ -525,33 +541,37 @@
 
                                     <div class="survey-cont">
 
-                                        <div class="form-group" data-ciaoyu-toggle="selectTopicEdit" data-ciaoyu-val="1">
+                                        <div class="form-group" data-ciaoyu-toggle="selectTopicEdit"
+                                            data-ciaoyu-val="1">
                                             <div class="badge badge-form">5</div>
                                             <label for="radioType">有無資訊相關經費支出?</label>
                                             <div class="radio-custom">
                                                 <div class="check-group">
-                                                    <input type="radio" class="custom-input" id="radioA" name="radioType"
-                                                        required="">
-                                                    <label class="custom-label" for="radioA">(A) 無 </label>
+                                                    <input type="radio" class="custom-input" id="radioA"
+                                                        name="radioType" required="">
+                                                    <label class="custom-label" for="radioA">(A) 是 </label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="radio" class="custom-input" id="radioB" name="radioType"
-                                                        required="">
+                                                    <input type="radio" class="custom-input" id="radioB"
+                                                        name="radioType" required="">
                                                     <label class="custom-label" for="radioB">(B) 有</label>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="form-group" data-ciaoyu-toggle="selectTopicEdit" data-ciaoyu-val="2">
+                                        <div class="form-group" data-ciaoyu-toggle="selectTopicEdit"
+                                            data-ciaoyu-val="2">
                                             <div class="badge badge-form">1</div>
                                             <label for="Q4">資料中心(含雲端資料中心)有無建置資安防護措施？</label>
                                             <div class="radio-custom">
                                                 <div class="check-group">
-                                                    <input type="radio" class="custom-input" id="Q4A" name="Q4" required="">
-                                                    <label class="custom-label" for="Q4A">(A) 無 </label>
+                                                    <input type="radio" class="custom-input" id="Q4A" name="Q4"
+                                                        required="">
+                                                    <label class="custom-label" for="Q4A">(A) 是 </label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="radio" class="custom-input" id="Q4B" name="Q4" required="">
+                                                    <input type="radio" class="custom-input" id="Q4B" name="Q4"
+                                                        required="">
                                                     <label class="custom-label" for="Q4B">(B) 有</label>
                                                 </div>
                                             </div>
@@ -569,7 +589,8 @@
                                     <div class="form-group row">
                                         <label for="jumpTopicEidt" class="col-md-2 col-form-label">跳題題目</label>
                                         <div class="col-md-10">
-                                            <select class="bs-select form-control" data-live-search="true" required="" data-ciaoyu="toggle" id="jumpTopicEidt">
+                                            <select class="bs-select form-control" data-live-search="true" required=""
+                                                data-ciaoyu="toggle" id="jumpTopicEidt">
                                                 <option disabled value="">請選擇</option>
                                                 <option value="1" selected>截至111年底有無從事資訊人員?</option>
                                                 <option value="2">資安防護措施項目包含？ (複選)</option>
@@ -579,24 +600,24 @@
                                             </div>
                                         </div>
                                     </div>
-    
+
                                 </div>
                                 <div class="card-body">
-    
+
                                     <div class="survey-cont">
-    
+
                                         <div class="form-group" data-ciaoyu-toggle="jumpTopicEidt" data-ciaoyu-val="1">
                                             <div class="badge badge-form">2</div>
                                             <label for="radioType">截至111年底有無從事資訊人員?</label>
                                             <div class="radio-custom">
                                                 <div class="check-group">
-                                                    <input type="radio" class="custom-input" id="radioA" name="radioType"
-                                                        required="">
-                                                    <label class="custom-label" for="radioA">(A) 無 </label>
+                                                    <input type="radio" class="custom-input" id="radioA"
+                                                        name="radioType" required="">
+                                                    <label class="custom-label" for="radioA">(A) 是 </label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="radio" class="custom-input" id="radioB" name="radioType"
-                                                        required="">
+                                                    <input type="radio" class="custom-input" id="radioB"
+                                                        name="radioType" required="">
                                                     <label class="custom-label" for="radioB">(B) 有</label>
                                                 </div>
                                             </div>
@@ -607,50 +628,59 @@
                                             <label for="Q5">資安防護措施項目包含？ (複選)</label>
                                             <div class="check-custom">
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5A" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5A" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5A">(A) 防毒 </label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5B" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5B" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5B">(B) 網路防火牆</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5C" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5C" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5C">(C) 入侵偵測防禦</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5D" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5D" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5D">(D) 漏洞偵測(弱點掃瞄)</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5E" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5E" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5E">(E) 資安監控中心(SOC)</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5F" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5F" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5F">(F) 進階持續性威脅攻擊防禦措施</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5G" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5G" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5G">(G) 電子郵件過濾機制</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5H" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5H" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5H">(H) 滲透測試</label>
                                                 </div>
                                                 <div class="check-group">
-                                                    <input type="checkbox" class="custom-input" id="Q5I" name="Q5" required="">
+                                                    <input type="checkbox" class="custom-input" id="Q5I" name="Q5"
+                                                        required="">
                                                     <label class="custom-label" for="Q5I">(I) 應用程式防火牆(WAF) </label>
                                                 </div>
                                             </div>
-                    
+
                                             <div class="invalid-feedback">
                                                 請選擇
                                             </div>
                                         </div>
-    
+
                                     </div>
-    
+
                                 </div>
                             </div>
 
@@ -666,7 +696,7 @@
                                 </button>
                             </div>
                         </div>
-                        
+
 
                     </form>
 
@@ -691,6 +721,266 @@
                 </div>
                 <div class="modal-body">
 
+                    <div class="surveyJumpTitle">
+                        <div class="surveyCode">MODA113030001</div> 113年政府機關電腦作業效率調查問卷
+                    </div>
+
+                    <!--1-->
+                    <div class="jump-item">
+                        <!-- <div class="jumpItemTitle">跳題(一)</div> -->
+
+                        <!--第一層-->
+                        <div class="topic-item" data-toggle="collapse" data-target="#jump1" aria-expanded="true">
+                            <div class="badge badge-form">1</div>
+                            <div class="topic-title">一看到對方的臉就知道他(她)對你有沒有好感</div>
+                        </div>
+
+                        <!--第二層-->
+                        <div id="jump1" class="collapse show">
+
+                            <div class="row">
+                                <div class="col-6">
+
+                                    <!--條件-->
+                                    <div class="text-center">
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                        <p>
+                                            <span class="btn btn-primary btn-lg">(A) 是</span>
+                                        </p>
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                    </div>
+
+                                    <div class="topic-item">
+                                        <div class="badge badge-form">2</div>
+                                        <div class="topic-title">休閑的時候與其看電視，你比較喜歡看書</div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-6">
+
+                                    <!--條件-->
+                                    <div class="text-center">
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                        <p>
+                                            <span class="btn btn-primary btn-lg">(B) 否</span>
+                                        </p>
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                    </div>
+
+                                    <div class="topic-item">
+                                        <div class="badge badge-form">3</div>
+                                        <div class="topic-title">不論是游泳或一般球類等運動，都可以達到一般的水準</div>
+                                    </div>
+
+                                    <!--第三層-->
+                                    <div class="row d-none">
+
+                                        <div class="col-6">
+
+                                            <!--條件-->
+                                            <div class="text-center">
+                                                <p>
+                                                    <i class="fa-solid fa-down-long"></i>
+                                                </p>
+                                                <p>
+                                                    <span class="btn btn-primary btn-lg">(A) 是</span>
+                                                </p>
+                                                <p>
+                                                    <i class="fa-solid fa-down-long"></i>
+                                                </p>
+                                            </div>
+
+                                            <div class="topic-item">
+                                                <div class="badge badge-form">4</div>
+                                                <div class="topic-title">對讀書或工作以外的事情興趣缺缺</div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-6">
+                                            <!--條件-->
+                                            <div class="text-center">
+                                                <p>
+                                                    <i class="fa-solid fa-down-long"></i>
+                                                </p>
+                                                <p>
+                                                    <span class="btn btn-primary btn-lg">(B) 否</span>
+                                                </p>
+                                                <p>
+                                                    <i class="fa-solid fa-down-long"></i>
+                                                </p>
+                                            </div>
+
+                                            <div class="topic-item">
+                                                <div class="badge badge-form">5</div>
+                                                <div class="topic-title">你對電腦、網路都很有概念</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!--2-->
+                    <div class="jump-item">
+                        <!-- <div class="jumpItemTitle">跳題(二)</div> -->
+
+                        <!--第一層-->
+                        <div class="topic-item" data-toggle="collapse" data-target="#jump2" aria-expanded="true">
+                            <div class="badge badge-form">3</div>
+                            <div class="topic-title">不論是游泳或一般球類等運動，都可以達到一般的水準</div>
+                        </div>
+
+                        <!--第二層-->
+                        <div id="jump2" class="collapse show">
+
+                            <div class="row">
+                                <div class="col-6">
+
+                                    <!--條件-->
+                                    <div class="text-center">
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                        <p>
+                                            <span class="btn btn-primary btn-lg">(A) 是</span>
+                                        </p>
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                    </div>
+
+                                    <div class="topic-item">
+                                        <div class="badge badge-form">4</div>
+                                        <div class="topic-title">對讀書或工作以外的事情興趣缺缺</div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-6">
+
+                                    <!--條件-->
+                                    <div class="text-center">
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                        <p>
+                                            <span class="btn btn-primary btn-lg">(B) 否</span>
+                                        </p>
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                    </div>
+
+                                    <div class="topic-item">
+                                        <div class="badge badge-form">5</div>
+                                        <div class="topic-title">你對電腦、網路都很有概念</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!--3-->
+                    <div class="jump-item">
+                        <!-- <div class="jumpItemTitle">跳題(二)</div> -->
+
+                        <!--第一層-->
+                        <div class="topic-item" data-toggle="collapse" data-target="#jump3" aria-expanded="true">
+                            <div class="badge badge-form">7</div>
+                            <div class="topic-title">學生時期，你會暗自和朋友比誰長得好看或誰的成績更好嗎？</div>
+                        </div>
+
+                        <!--第二層-->
+                        <div id="jump3" class="collapse show">
+
+                            <div class="row">
+                                <div class="col-4">
+
+                                    <!--條件-->
+                                    <div class="text-center">
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                        <p>
+                                            <span class="btn btn-primary btn-lg">(A) 是</span>
+                                        </p>
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                    </div>
+
+                                    <div class="topic-item">
+                                        <div class="badge badge-form">8</div>
+                                        <div class="topic-title">對於一些不想做的事情，你會找借口避開嗎？</div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-4">
+
+                                    <!--條件-->
+                                    <div class="text-center">
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                        <p>
+                                            <span class="btn btn-primary btn-lg">(B) 否</span>
+                                        </p>
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                    </div>
+
+                                    <div class="topic-item">
+                                        <div class="badge badge-form">9</div>
+                                        <div class="topic-title">你從小到大經常被親戚誇讚嗎？</div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-4">
+
+                                    <!--條件-->
+                                    <div class="text-center">
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                        <p>
+                                            <span class="btn btn-primary btn-lg">(C) 偶爾</span>
+                                        </p>
+                                        <p>
+                                            <i class="fa-solid fa-down-long"></i>
+                                        </p>
+                                    </div>
+
+                                    <div class="topic-item">
+                                        <div class="badge badge-form">10</div>
+                                        <div class="topic-title">如果喜歡一個人，你會想要知道關於他的一切嗎？</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    
 
                 </div>
 
