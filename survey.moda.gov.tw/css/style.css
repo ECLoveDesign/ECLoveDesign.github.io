@@ -2045,7 +2045,9 @@ section + section  {
     margin-bottom: 15px;
 }
 .jump-item .collapse {    
-    margin-bottom: 50px;
+    margin-bottom: 45px;
+    border-bottom: #d4d4d4 solid 1px;
+    padding-bottom: 35px;
 }
 .jumpItemTitle {
     font-size: 1.4rem;

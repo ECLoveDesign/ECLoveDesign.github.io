@@ -101,70 +101,185 @@
 
                                     <div class="treeview-wrap type-square">
                                         <ul class="list-group treeview treeview-line form-check treeview-check ">
+
                                             <li class="list-group-item treeview-expanded">
                                                 <i class="fa-regular fa-plus-square"></i>
-                                                <input type="checkbox" name="userSet" value="儀表板"
-                                                    class="form-check-input" id="Dashboard">
-                                                <label class="form-check-label tree-parent" for="Dashboard">儀表板</label>
+                                                <input type="checkbox" name="userSet" value="系統設定"
+                                                    class="form-check-input" id="System">
+                                                <label class="form-check-label tree-parent" for="System">系統設定</label>
                                                 <ul class="list-group">
                                                     <li class="list-group-item">
-                                                        <input type="checkbox" name="DashboardSet" value="一般人員"
+                                                        <input type="checkbox" name="SystemSet" value="一般人員"
                                                             class="form-check-input" id="item2-normal">
                                                         <label class="form-check-label" for="item2-normal">一般人員</label>
                                                     </li>
                                                     <li class="list-group-item treeview-expanded">
-                                                        <input type="checkbox" name="DashboardSet" value="管理人員"
+                                                        <input type="checkbox" name="SystemSet" value="管理人員"
                                                             class="form-check-input" id="item2-management" checked>
                                                         <label class="form-check-label"
                                                             for="item2-management">管理人員</label>
                                                     </li>
                                                 </ul>
                                             </li>
+
+                                            <li class="list-group-item">
+                                                <i class="fa-regular fa-plus-square"></i>
+                                                <input type="checkbox" name="userSet" value="公告設定"
+                                                    class="form-check-input" id="Announcement">
+                                                <label class="form-check-label tree-parent" for="Announcement">公告設定</label>
+                                                
+                                                <ul class="list-group" style="display: none;">
+                                                    <li class="list-group-item">
+                                                        <input type="checkbox" name="AnnouncementSet" value="一般人員"
+                                                            class="form-check-input" id="item2-normal">
+                                                        <label class="form-check-label" for="item2-normal">一般人員</label>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <input type="checkbox" name="AnnouncementSet" value="管理人員"
+                                                            class="form-check-input" id="item2-management">
+                                                        <label class="form-check-label"
+                                                            for="item2-management">管理人員</label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="list-group-item">
+                                                <i class="fa-regular fa-plus-square"></i>
+                                                <input type="checkbox" name="log" value="帳號登入日誌"
+                                                    class="form-check-input" id="log">
+                                                <label class="form-check-label tree-parent" for="log">帳號登入日誌</label>
+                                                
+                                                <ul class="list-group" style="display: none;">
+                                                    <li class="list-group-item">
+                                                        <input type="checkbox" name="logSet" value="一般人員"
+                                                            class="form-check-input" id="item2-normal">
+                                                        <label class="form-check-label" for="item2-normal">一般人員</label>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <input type="checkbox" name="logSet" value="管理人員"
+                                                            class="form-check-input" id="item2-management">
+                                                        <label class="form-check-label"
+                                                            for="item2-management">管理人員</label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            
                                             
                                             <li class="list-group-item">
                                                 <i class="fa-regular fa-plus-square"></i>
-                                                <input type="checkbox" name="userSet" value="SurveyMake"
+                                                <input type="checkbox" name="SurveyFill" value="SurveyFill"
+                                                    class="form-check-input" id="item2-SurveyMake">
+                                                <label class="form-check-label"
+                                                    for="item2-SurveyMake">問卷填寫</label>
+
+                                                <ul class="list-group" style="display: none;">
+                                                    <li class="list-group-item treeview-expanded">
+                                                        <input type="checkbox" name="SurveyFillSet" value="一般人員"
+                                                            class="form-check-input" id="item3-normal">
+                                                        <label class="form-check-label"
+                                                            for="item3-normal">一般人員</label>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <input type="checkbox" name="SurveyFillSet" value="管理人員"
+                                                            class="form-check-input" id="item3-management">
+                                                        <label class="form-check-label"
+                                                            for="item3-management">管理人員</label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            
+                                            
+                                            <li class="list-group-item">
+                                                <i class="fa-regular fa-plus-square"></i>
+                                                <input type="checkbox" name="SurveyMake" value="SurveyMake"
                                                     class="form-check-input" id="item2-SurveyMake">
                                                 <label class="form-check-label"
                                                     for="item2-SurveyMake">問卷製作</label>
 
                                                 <ul class="list-group" style="display: none;">
                                                     <li class="list-group-item treeview-expanded">
-                                                        <input type="checkbox" name="userSet" value="一般人員"
+                                                        <input type="checkbox" name="SurveyMakeSet" value="一般人員"
                                                             class="form-check-input" id="item3-normal">
                                                         <label class="form-check-label"
                                                             for="item3-normal">一般人員</label>
                                                     </li>
                                                     <li class="list-group-item">
-                                                        <input type="checkbox" name="userSet" value="管理人員"
+                                                        <input type="checkbox" name="SurveyMakeSet" value="管理人員"
                                                             class="form-check-input" id="item3-management">
                                                         <label class="form-check-label"
                                                             for="item3-management">管理人員</label>
                                                     </li>
                                                 </ul>
                                             </li>
+                                            
+
                                             <li class="list-group-item">
                                                 <i class="fa-regular fa-plus-square"></i>
-                                                <input type="checkbox" name="userSet" value="問卷回收情形"
+                                                <input type="checkbox" name="SurveyWindling" value="問卷回收情形"
                                                     class="form-check-input" id="item2-SurveyWindling">
                                                 <label class="form-check-label"
                                                     for="item2-SurveyWindling">問卷回收情形</label>
                                                     
                                                 <ul class="list-group" style="display: none;">
                                                     <li class="list-group-item treeview-expanded">
-                                                        <input type="checkbox" name="userSet" value="一般人員"
+                                                        <input type="checkbox" name="SurveyWindlingSet" value="一般人員"
                                                             class="form-check-input" id="item3-normal">
                                                         <label class="form-check-label"
                                                             for="item3-normal">一般人員</label>
                                                     </li>
                                                     <li class="list-group-item">
-                                                        <input type="checkbox" name="userSet" value="管理人員"
+                                                        <input type="checkbox" name="SurveyWindlingSet" value="管理人員"
                                                             class="form-check-input" id="item3-management">
                                                         <label class="form-check-label"
                                                             for="item3-management">管理人員</label>
                                                     </li>
                                                 </ul>
                                             </li>
+
+                                            <li class="list-group-item">
+                                                <i class="fa-regular fa-plus-square"></i>
+                                                <input type="checkbox" name="userSet" value="儀表板"
+                                                    class="form-check-input" id="Dashboard">
+                                                <label class="form-check-label tree-parent" for="Dashboard">儀表板</label>
+                                                
+                                                <ul class="list-group" style="display: none;">
+                                                    <li class="list-group-item">
+                                                        <input type="checkbox" name="DashboardSet" value="一般人員"
+                                                            class="form-check-input" id="item2-normal">
+                                                        <label class="form-check-label" for="item2-normal">一般人員</label>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <input type="checkbox" name="DashboardSet" value="管理人員"
+                                                            class="form-check-input" id="item2-management">
+                                                        <label class="form-check-label"
+                                                            for="item2-management">管理人員</label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="list-group-item">
+                                                <i class="fa-regular fa-plus-square"></i>
+                                                <input type="checkbox" name="surveyReport" value="查調報告檢視"
+                                                    class="form-check-input" id="item2-surveyReport">
+                                                <label class="form-check-label"
+                                                    for="item2-surveyReport">查調報告檢視</label>
+                                                    
+                                                <ul class="list-group" style="display: none;">
+                                                    <li class="list-group-item treeview-expanded">
+                                                        <input type="checkbox" name="surveyReportSet" value="一般人員"
+                                                            class="form-check-input" id="surveyReport-normal">
+                                                        <label class="form-check-label"
+                                                            for="surveyReport-normal">一般人員</label>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <input type="checkbox" name="surveyReportSet" value="管理人員"
+                                                            class="form-check-input" id="surveyReport-management">
+                                                        <label class="form-check-label"
+                                                            for="surveyReport-management">管理人員</label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
                                         </ul>
                                     </div>
                                     
