@@ -28,13 +28,6 @@
     <link rel="stylesheet" href="css/megamenu.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</title>
-    <style>
-        table.dataTable thead>tr>th.dt-orderable-asc:first-child,
-        table.dataTable thead>tr>th.dt-orderable-desc:first-child,
-        table.dataTable tr td:first-child {
-            text-align: left;
-        }
-    </style>
 </head>
 
 <body>
@@ -55,19 +48,19 @@
                             <li><a href="survey-history.html">歷史問卷</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="javascript:void(0)">問卷製作 <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="nav-dropdown">
                             <li><a href="make-database.html">題庫設定</a></li>
-                            <li><a href="make-setting.html">問卷設定</a></li>
+                            <li class="active"><a href="make-setting.html">問卷設定</a></li>
                             <li><a href="make-user.html">填卷人設定</a></li>
                             <li><a href="make-group.html">群組設定</a></li>
                         </ul>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="javascript:void(0)">問卷回收情形 <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="nav-dropdown">
-                            <li class="active"><a href="winding-progress.html">調查中問卷</a></li>
+                            <li><a href="winding-progress.html">調查中問卷</a></li>
                             <li><a href="winding-history.html">歷史問卷</a></li>
                         </ul>
                     </li>
@@ -106,7 +99,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">資訊資源效率查調系統</a></li>
         <!-- <li class="breadcrumb-item"><a href="#">問卷填寫</a></li> -->
-        <li class="breadcrumb-item active">問卷回收情形</li>
+        <li class="breadcrumb-item active">問卷設定</li>
     </ol>
 
     <main>
@@ -115,110 +108,149 @@
 
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link" href="winding-progress.html">調查中問卷</a>
+                    <a class="nav-link" href="make-database.html">題庫設定</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="winding-history.html">歷史問卷</a>
+                    <a class="nav-link" href="make-setting.html">問卷設定</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="make-user.html">填卷人設定</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="make-group.html">群組設定</a>
                 </li>
             </ul>
         </div>
 
-        
         <div class="functionmenu">
             <div class="info">
-                <div class="title">查看問卷</div>
-                <div class="surveyCode">MODA113030001</div>
+                <div class="title">編輯問卷</div>
+                <div class="surveyCode">MODA112030001</div>
             </div>
-            
-            <ul class="nav nav-line">
-                <li class="nav-item">
-                    <a class="nav-link" href="winding-historyTodolist.html">待處理</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="winding-historyConfirm.html">已確認</a>
-                </li>
-            </ul>
 
             <div class="functionactions">
-                <a href="winding-history.html" class="btn btn-back">
+                <a href="make-setting.html" class="btn btn-back">
                     <i class="fa fa-chevron-left"></i>回列表
                 </a>
-                <a href="#" class="btn btn-export">
-                    <i class="fa-solid fa-file-export"></i>清單匯出
-                </a>
+                <button type="submit" class="btn btn-save">
+                    <i class="fa fa-save"></i>儲存
+                </button>
             </div>
         </div>
 
-        <table class="table table-striped listTable table-rwd">
-            <thead>
-                <tr>
-                    <th width:="50">項次</th>
-                    <th>代碼</th>
-                    <th>名稱</th>
-                    <th>備註文字</th>
-                    <th>最新處理人員時間</th>
-                    <th>動作</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td data-title="項次">1</td>
-                    <td data-title="代碼">387143100I</td>
-                    <td data-title="名稱">臺中市潭子區衛生所</td>
-                    <td data-title="備註文字">3/16已確認第五大題，可從第六大題接續確認</td>
-                    <td data-title="最新處理人員時間">李慧玲 2024/03/18 16:55</td>
-                    <td data-title="動作">
-                        <a class="btn btn-view" href="winding-historyConfirmView.html">
-                            <i class="fa fa-eye"></i>查看
-                        </a>
-                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#remarkEdit">
-                            <i class="fa fa-edit"></i>備註
-                        </a>
-                        <button class="btn btn-return" onclick="window.location.href='winding-historyTodolist.html';">
-                            <i class="fa-solid fa-arrow-left-long"></i>退回
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="項次">1</td>
-                    <td data-title="代碼">387143100I</td>
-                    <td data-title="名稱">臺中市潭子區衛生所</td>
-                    <td data-title="備註文字">3/16已確認第五大題，可從第六大題接續確認</td>
-                    <td data-title="最新處理人員時間">李慧玲 2024/03/18 16:55</td>
-                    <td data-title="動作">
-                        <a class="btn btn-view" href="winding-historyConfirmView.html">
-                            <i class="fa fa-eye"></i>查看
-                        </a>
-                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#remarkEdit">
-                            <i class="fa fa-edit"></i>備註
-                        </a>
-                        <button class="btn btn-return" onclick="window.location.href='winding-historyTodolist.html';">
-                            <i class="fa-solid fa-arrow-left-long"></i>退回
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="項次">1</td>
-                    <td data-title="代碼">387143100I</td>
-                    <td data-title="名稱">臺中市潭子區衛生所</td>
-                    <td data-title="備註文字">3/16已確認第五大題，可從第六大題接續確認</td>
-                    <td data-title="最新處理人員時間">李慧玲 2024/03/18 16:55</td>
-                    <td data-title="動作">
-                        <a class="btn btn-view" href="winding-historyConfirmView.html">
-                            <i class="fa fa-eye"></i>查看
-                        </a>
-                        <a class="btn btn-edit" href="#" data-toggle="modal" data-target="#remarkEdit">
-                            <i class="fa fa-edit"></i>備註
-                        </a>
-                        <button class="btn btn-return" onclick="window.location.href='winding-historyTodolist.html';">
-                            <i class="fa-solid fa-arrow-left-long"></i>退回
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="editmenu">
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item active">
+                    <a class="nav-link" href="make-surveyinfoPast.html">問卷基本資料</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="make-surveyPast.html">問卷題目設定</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="make-surveyjumpPast.html">跳題設定</a>
+                </li>
+            </ul>
+        </div>
 
+        <form class="form form-addSurvey needs-validation" novalidate>
+            <div class="form-group row">
+                <label for="abbr" class="col-md-3 col-form-label">問卷代號
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="col-md-9">
+                    <input type="text" id="abbr" class="form-control" placeholder="請輸入您的機關英文縮寫" value="MODA112030001" disabled>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label for="surveyName" class="col-md-3 col-form-label">問卷名稱
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="col-md-9">
+                    <input type="text" id="surveyName" class="form-control" placeholder="請輸入問卷名稱" value="112年政府機關電腦作業效率調查問卷" disabled>
+                    <div class="invalid-feedback">
+                        請輸入問卷名稱
+                    </div>
+                </div>
+            </div>
 
+            <div class="form-group row">
+                <label for="beginDate" class="col-md-3 col-form-label">開始日期
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="col-md-9">
+                    <input type="date" id="beginDate" class="form-control" placeholder="請選擇開始日期" value="2023-02-01" disabled>
+                    <div class="invalid-feedback">
+                        請選擇開始日期
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="endDate" class="col-md-3 col-form-label">結束日期
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="col-md-9">
+                    <input type="date" id="endDate" class="form-control" placeholder="請選擇結束日期" value="2023-03-31" disabled>
+                    <div class="invalid-feedback">
+                        請選擇結束日期
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="beginSurvey" class="col-md-3 col-form-label">問卷開頭語</label>
+
+                <div class="col-md-9">
+                    <textarea class="form-control" id="beginSurvey" rows="3" placeholder="請輸入文字">
+一、本表旨為瞭解政府機關數位應用符合我國政府數位資通訊應用服務發展，為審議各機關資源之參考。
+二、調查結果僅供原填寫機關及其上級主管機關參考。
+三、「資訊相關經費支出」可由系統帶入「主計總處決算數(含審計部審定增減數)」資料。如您欲帶入相關資料，須請貴機關主計人員至主計總處「歲計會計資訊管理系統」進行資料申請。</textarea>
+                    <span class="form-text">此欄文字將顯示於問卷開頭</span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="endSurvey" class="col-md-3 col-form-label">問卷結束語</label>
+
+                <div class="col-md-9">
+                    <textarea class="form-control" id="endSurvey" rows="3" placeholder="請輸入文字"></textarea>
+                    <span class="form-text">此欄文字將於填卷人交件後顯示</span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="correspond" class="col-md-3 col-form-label">對應問卷</label>
+                <div class="col-md-9">
+                    <select class="bs-select" data-live-search="true" id="correspond">
+                        <option disabled value="">請選擇</option>
+                        <option selected>112年政府機關電腦作業效率調查問卷</option>
+                        <option>對應問卷2</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="correspond" class="col-md-3 col-form-label">填卷方式
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="col-md-9">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="loginfillLimit" name="correspond" class="custom-control-input" checked required>
+                        <label class="custom-control-label" for="loginfillLimit">登入填寫(限定填卷人)</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="loginfill" name="correspond" class="custom-control-input" required>
+                        <label class="custom-control-label" for="loginfill">登入填寫</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="anonymous" name="correspond" class="custom-control-input" required>
+                        <label class="custom-control-label" for="anonymous">匿名填寫</label>
+                    </div>
+                </div>
+            </div>
+
+        </form>
     </main>
 
     <footer>
@@ -301,39 +333,6 @@
                                 </div>
                                 <span
                                     class="form-text text-danger">問卷製作權限目前僅開放「數位發展部」同仁申請，請填寫moda.gov信箱。</span>
-                            </div>
-                        </div>
-
-                        <div class="actions">
-                            <button type="submit" class="btn btn-primary btn-submit">送出</button>
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- 編輯備註 -->
-    <div class="modal fade" id="remarkEdit" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="remarkEditLabel">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title" id="remarkEditLabel">編輯備註</div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span>&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form class="form form-remarkEdit needs-validation" novalidate>
-                        <div class="form-group row">
-                            <label for="remarkCont" class="col-md-3 col-form-label">備註</label>
-                            <div class="col-md-9">
-                                <textarea class="form-control" id="remarkCont" rows="3" placeholder="請輸入備註文字"></textarea>
                             </div>
                         </div>
 

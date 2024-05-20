@@ -220,7 +220,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="correspond" class="col-md-3 col-form-label">填卷方式</label>
+                <label for="correspond" class="col-md-3 col-form-label">對應問卷</label>
                 <div class="col-md-9">
                     <select class="bs-select" data-live-search="true" id="correspond">
                         <option disabled value="">請選擇</option>
@@ -231,12 +231,16 @@
             </div>
 
             <div class="form-group row">
-                <label for="correspond" class="col-md-3 col-form-label">對應問卷
+                <label for="correspond" class="col-md-3 col-form-label">填卷方式
                     <span class="text-danger">*</span>
                 </label>
                 <div class="col-md-9">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="loginfill" name="correspond" class="custom-control-input" checked required>
+                        <input type="radio" id="loginfillLimit" name="correspond" class="custom-control-input" checked required>
+                        <label class="custom-control-label" for="loginfillLimit">登入填寫(限定填卷人)</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="loginfill" name="correspond" class="custom-control-input" required>
                         <label class="custom-control-label" for="loginfill">登入填寫</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
@@ -328,7 +332,7 @@
                                     請填寫公務信箱
                                 </div>
                                 <span
-                                    class="form-text text-danger">請以gov電子信箱為主。如為其他電子信箱，須待系統管理員進行身分認證後，方能開通問卷製作權限。</span>
+                                    class="form-text text-danger">問卷製作權限目前僅開放「數位發展部」同仁申請，請填寫moda.gov信箱。</span>
                             </div>
                         </div>
 
