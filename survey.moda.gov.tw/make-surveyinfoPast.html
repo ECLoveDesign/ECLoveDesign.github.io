@@ -191,7 +191,7 @@
                     <span class="text-danger">*</span>
                 </label>
                 <div class="col-md-9">
-                    <input type="date" id="endDate" class="form-control" placeholder="請選擇結束日期" value="2023-03-31" disabled>
+                    <input type="date" id="endDate" class="form-control" placeholder="請選擇結束日期" value="2023-03-31" required>
                     <div class="invalid-feedback">
                         請選擇結束日期
                     </div>
@@ -236,15 +236,15 @@
                 </label>
                 <div class="col-md-9">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="loginfillLimit" name="correspond" class="custom-control-input" checked required>
+                        <input type="radio" id="loginfillLimit" name="correspond" class="custom-control-input" checked disabled>
                         <label class="custom-control-label" for="loginfillLimit">登入填寫(限定填卷人)</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="loginfill" name="correspond" class="custom-control-input" required>
+                        <input type="radio" id="loginfill" name="correspond" class="custom-control-input" disabled>
                         <label class="custom-control-label" for="loginfill">登入填寫</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="anonymous" name="correspond" class="custom-control-input" required>
+                        <input type="radio" id="anonymous" name="correspond" class="custom-control-input" disabled>
                         <label class="custom-control-label" for="anonymous">匿名填寫</label>
                     </div>
                 </div>
