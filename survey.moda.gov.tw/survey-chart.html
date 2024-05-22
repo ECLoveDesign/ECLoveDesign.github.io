@@ -45,7 +45,7 @@
                 </ul>
 
 
-                <div class="jump-item">
+                <div class="statistic-item">
 
                     <div class="topic-item" data-toggle="collapse" data-target="#chartitem1" aria-expanded="true">
                         <div class="badge badge-form">1</div>
@@ -53,13 +53,18 @@
                     </div>
 
                     <div id="chartitem1" class="collapse show">
-
-
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="chart04" class="chart-cont chart_box chart_box-wordcloud" 
+                                data-chart-color="#2caffe,#544fc5,#00e272" 
+                                data-chart-keyword="積極的,中立性,否認"></div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
 
-                <div class="jump-item">
+                <div class="statistic-item">
 
                     <div class="topic-item" data-toggle="collapse" data-target="#chartitem2" aria-expanded="true">
                         <div class="badge badge-form">2</div>
@@ -93,7 +98,7 @@
 
                 </div>
 
-                <div class="jump-item">
+                <div class="statistic-item">
 
                     <div class="topic-item" data-toggle="collapse" data-target="#chartitem3" aria-expanded="true">
                         <div class="badge badge-form">3</div>
@@ -111,7 +116,7 @@
                 </div>
 
 
-                <div class="jump-item">
+                <div class="statistic-item">
 
                     <!--第一層-->
                     <div class="topic-item" data-toggle="collapse" data-target="#chartitem4" aria-expanded="true">
@@ -131,7 +136,7 @@
 
                 </div>
 
-                <div class="jump-item">
+                <div class="statistic-item">
 
                     <div class="topic-item" data-toggle="collapse" data-target="#chartitem4" aria-expanded="true">
                         <div class="badge badge-form">4</div>
@@ -168,7 +173,7 @@
                 </div>
 
 
-                <div class="jump-item">
+                <div class="statistic-item">
 
                     <div class="topic-item" data-toggle="collapse" data-target="#chartitem5" aria-expanded="true">
                         <div class="badge badge-form">5</div>
@@ -207,7 +212,8 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>    
+    <script src="https://code.highcharts.com/modules/wordcloud.js"></script>
     <script src="js/survey.js"></script>
 
     <script>
@@ -478,7 +484,137 @@
                 }]
             });
 
+            //chart-04
+            const ajaxData = [
+                {"keyword" : "否認", "sentiment" : "乙太網路(Ethernet)", "value" : 1347},
+                {"keyword" : "否認", "sentiment" : "10Base-T/100Base-T", "value" : 284},
+                {"keyword" : "否認", "sentiment" : "(Token Ring)", "value" : 174},
+                {"keyword" : "否認", "sentiment" : "Arcnet", "value" : 311},
+                {"keyword" : "中立性", "sentiment" : "網路", "value" : 246},
+                {"keyword" : "積極的", "sentiment" : "方式", "value" : 101},
+                {"keyword" : "否認", "sentiment" : "使用", "value" : 154},
+                {"keyword" : "否認", "sentiment" : "架構", "value" : 103},
+                {"keyword" : "積極的", "sentiment" : "速度", "value" : 94},
+                {"keyword" : "否認", "sentiment" : "線路", "value" : 88},
+                {"keyword" : "中立性", "sentiment" : "資料", "value" : 78},
+                {"keyword" : "積極的", "sentiment" : "傳輸", "value" : 71},
+                {"keyword" : "否認", "sentiment" : "連接", "value" : 54},
+                {"keyword" : "中立性", "sentiment" : "數位", "value" : 61},
+                {"keyword" : "積極的", "sentiment" : "專線", "value" : 24},
+                {"keyword" : "積極的", "sentiment" : "電話", "value" : 34},
+                {"keyword" : "否認", "sentiment" : "Token", "value" : 77},
+                {"keyword" : "否認", "sentiment" : "交換", "value" : 57},
+                {"keyword" : "否認", "sentiment" : "區段", "value" : 44},
+            ]
+            const chartWordCloud = ($chart) => {
+            $chart = document.getElementById($chart);
+            var chart, chartData = ajaxData;
+            // var chartColor = $chart.getAttribute('data-chart-color').split(',');
+            var keyword = $chart.getAttribute('data-chart-keyword').split(',');
+            var options = {
+                chart: {
+                    type: 'wordcloud',
+                    // width: 384,
+                    // height: 300,
+                    alignTicks: false,
+                    spacing: [0, 0, 0, 0],
+                    margin: [0, 0, 0, 0],
+                    backgroundColor: 'transparent',
+                    style: {
+                        fontFamily: 'inherit',
+                    },
+                },
+                title: {
+                    text: '',
+                    style: {
+                        fontSize: 0,
+                        color: '#ffffff'
+                    }
+                },
+                legend: {
+                enabled: false,
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size: 20px"><b>{point.key}</b>' +
+                        '</span><br>'
+                },
+                plotOptions: {
+                    series: {
+                        name: '數量',
+                        placementStrategy: 'random',
+                        spiral: 'rectangular',
+                        centerInCategory: true,
+                        rotation: {
+                            from: 0,
+                            to: 0
+                        },
+                        minFontSize: 10,
+                        maxFontSize: 20,
+                        states: {
+                        hover: {
+                            enabled: false,
+                            brightness: 0,
+                            halo: {
+                            opacity: 1,
+                            }
+                        },
+                        inactive: {
+                            enabled: false,
+                        },
+                        select: {
+                            enabled: false,
+                        }
+                        },
+                        showInLegend: false,
+                        animation: {
+                            duration: 500,
+                        },
+                    },
+                },
+                loading: {
+                    style: {
+                        opacity: 1,
+                    }
+                },
+                exporting: {
+                    enabled: false,
+                },
+                credits: {
+                    enabled: false
+                },
+            }
+            var keys = Object.keys(chartData[0]);
 
+            // 僅每個關鍵字的前 20 名
+            var rank = new Array();
+            for (var k = 0; k < keyword.length; k++) {
+                rank.push( ...chartData.filter((f) => f.keyword == keyword[k]).slice(0, 20) );
+            }
+
+            // 系列設定
+            options.series = new Array();
+            var optionSeriesData = new Object();
+            optionSeriesData.data = new Array();
+            optionSeriesData.wordSpaces = 1;
+            for (var k = 0; k < keyword.length; k++) {
+                for (var i = 0; i < rank.length; i++){
+                if( keyword[k] == rank[i].keyword ){
+                    var optionSeriesDataEl = new Object();
+                    optionSeriesDataEl.name = rank[i].sentiment;
+                    optionSeriesDataEl.weight = rank[i].value;
+                    // optionSeriesDataEl.color = chartColor[keyword.indexOf(rank[i].keyword)];
+                    optionSeriesDataEl.custom = new Object();
+                    optionSeriesDataEl.custom.keyword = keyword[k];
+                    optionSeriesData.data.push(optionSeriesDataEl);
+                }
+                }
+            }
+            options.series.push(optionSeriesData);
+
+            // 散點圖
+            chart = Highcharts.chart($chart, options);
+            }
+            chartWordCloud('chart04');
 
         });
     </script>
