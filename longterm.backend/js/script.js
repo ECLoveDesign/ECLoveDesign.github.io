@@ -141,7 +141,20 @@ if ($(document).width() > 900) {
 
 // dataTable
 $(document).ready(function () {
-  let myTable = $('#example').DataTable({
+
+  // datatable
+  var datatable = $('.datatable').DataTable( {
+    language: {
+        url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+    },          
+    searching: false,
+    lengthChange: false,
+} );
+
+
+
+  // selectTable
+  let myTable = $('.selectTable').DataTable({
     columnDefs: [{
       orderable: false,
       className: 'select-checkbox',

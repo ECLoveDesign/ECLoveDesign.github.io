@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css?1" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
 </head>
 
 <body>
@@ -30,20 +30,35 @@
                 <form class="form-signin">
                     <div class="brand-text">
                         <img src="images/logo.png" alt="臺南市政府社會局─長期照顧管理中心">
+                        <span>聯護管理系統</span>
                     </div>
 
                     <div class="title">登入
-                        <a class="register" href="#">註冊</a>
+                        <a class="register" href="register.html">註冊</a>
                     </div>
             
-                    <div class="form-group">
-                        <label class="sr-only" for="account">使用者名稱或電子信箱地址</label>
-                        <input type="account" class="form-control" id="account" placeholder="請輸入使用者名稱">
+                    <div class="form-group has-float-label">
+                        <input type="text" class="form-control" id="taxID" placeholder="請輸入公司統編" onfocus="this.placeholder = ''" required autofocus>
+                        <label for="taxID">請輸入公司統編</label>
+                    </div>
+                    <div class="form-group has-float-label">
+                        <input type="text" class="form-control" id="FinancialInstitutionsCode" placeholder="請輸入機構代碼" onfocus="this.placeholder = ''" required autofocus>
+                        <label for="FinancialInstitutionsCode">請輸入機構代碼</label>
                     </div>
                     
+                    <div class="form-group has-float-label">
+                        <input type="password" class="form-control" id="password" placeholder="請輸入密碼" onfocus="this.placeholder = ''" required autofocus>
+                        <label for="password">請輸入密碼</label>
+                    </div>
+
                     <div class="form-group">
-                        <label class="sr-only" for="password">密碼</label>
-                        <input type="password" class="form-control" id="password" placeholder="請輸入密碼">
+                        <label class="sr-only" for="vcode">驗證碼</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="vcode" placeholder="請輸入驗證碼" required="">
+                            <div class="input-group-append" id="button-addon4">
+                                <img src="images/captcha-img.png" alt="captcha">
+                            </div>
+                        </div>
                     </div>
 
                     <!-- <fieldset class="form-group">
@@ -51,13 +66,13 @@
                             <input type="checkbox" class="form-check-input" id="remember">
                             <label class="form-check-label" for="remember">記住我</label>
                         </div>
-                    </fieldset> -->
+                    </fieldset>
 
                     <div class="reCAPTCHA">
                         <a href="#">
                             <img src="images/reCAPTCHA.jpg">
                         </a>
-                    </div>
+                    </div> -->
                     
                     <button class="btn btn-lg btn-block btn-signin" type="button" onclick="window.location.href='layout.html';">登入</button>
                     

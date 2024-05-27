@@ -61,15 +61,28 @@ header .nav-link {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 .brand-text {
-    color: var(--normalBlue);
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
-    font-family: 'Oswald', sans-serif;
-    margin: 0 0 1rem;
+    font-family: var(--font-Sans);
+    font-weight: 500;
+    margin: 0 0 1.5rem;
+}
+.brand-text.d-md-flex {
+    align-items: end;
 }
 .brand-text img {
     max-width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+}
+.brand-text span {
+    color: #754c24;
+    font-size: 2.5rem;
+}
+.brand-text.d-md-flex span {
+    margin-bottom: 10px;
+}
+.brand-text.d-md-flex img {
+    width: 285px;
 }
 body.card-center {
     height: 100%;
@@ -83,16 +96,7 @@ body.card-center {
 html, body.card-center {
     height: 100%;
 }
-
-.form-wrap .form-signin {
-    width: 100%;
-    max-width: 367px;
-    padding: 25px;
-    margin: auto;
-    position: relative;
-    background: #fff;
-}
-.form-wrap .form-signin .title {
+.form-wrap .title {
     font-size: 1.6rem;
     font-weight: bold;
     padding-bottom: 15px;
@@ -101,6 +105,14 @@ html, body.card-center {
     display: flex;
     justify-content: space-between;
     align-items: end;
+}
+.form-wrap .form-signin {
+    width: 100%;
+    max-width: 367px;
+    padding: 25px;
+    margin: auto;
+    position: relative;
+    background: #fff;
 }
 .reCAPTCHA img {
     max-width: 100%;
@@ -122,6 +134,8 @@ html, body.card-center {
 }
 .form-wrap .form-signin .form-control:focus {
     z-index: 2;
+    box-shadow: none;
+    border-color: #e9c121;
 }
 
 .form-wrap .form-signin .img_logo{
@@ -130,7 +144,47 @@ html, body.card-center {
     margin: 28px auto;
 }
 .form-wrap .form-signin label{
-    margin-top: 10px;
+    margin-top: 1px;
+    background: #fff;
+    padding: 0 5px;
+}
+.form-wrap .has-float-label {
+    position: relative;
+    font-size: 80%;
+}
+.form-wrap .has-float-label label {
+    position: absolute;
+    opacity: 1;
+    transition: all .2s;
+    top: -.5em;
+    left: .75rem;
+    z-index: 3;
+    line-height: 1;
+    padding: 0 7px;
+}
+.form-wrap .has-float-label .form-control:focus+label {
+    left: .4rem;
+}
+
+.form-wrap .has-float-label label::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    background: #fff;
+    height: 2px;
+    top: 50%;
+    left: -.2em;
+    right: -.2em;
+    z-index: -1
+}
+.form-wrap .has-float-label .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+    opacity: 0
+}
+.form-wrap .has-float-label .form-control:placeholder-shown:not(:focus)+label {
+    font-size: 135%;
+    opacity: .65;
+    top: 0.7em;
+    padding: 0;
 }
 
 .form-wrap .form-signin .radiobox{
@@ -164,6 +218,14 @@ html, body.card-center {
     transform: scale(1.2);
     margin-top: 0.95rem;
 }
+.btn.dropdown-toggle {
+    border: 1px solid #ced4da;
+    background: #fff;
+}
+.bootstrap-select>.dropdown-toggle.bs-placeholder:hover,
+.bootstrap-select>.dropdown-toggle.bs-placeholder {
+    color: #495057;
+}
 .copyright {
     margin-top: 15px;
     text-align: center;
@@ -181,4 +243,9 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
+}
+
+.has-float-label {
+    position: relative;
+      /* font-size: 70%; */
 }
