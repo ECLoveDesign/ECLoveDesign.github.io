@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>後台管理系統│臺南市政府社會局─長期照顧管理中心</title>
+    <link rel="shortcut icon" href='images/favicon.ico' />
+    <link rel="image_src" href='images/favicon.ico' type="image/jpeg" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500&family=Oswald:wght@500&display=swap">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css'>
+    <link rel='stylesheet' href='https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css'>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css?6" />
+</head>
+
+<body>
+
+    <div class="container main-container">
+
+        <div class="wrapper main-wrapper fixed-navbar">
+            <header>
+                <nav class="header-navbar navbar-expand-md navbar fixed-top navbar-hide-on-scroll navbar-border navbar-shadow headroom header"
+                    data-nav="brand-center">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-header">
+                            <ul class="nav navbar-nav flex-row">
+                                <li class="nav-item mr-auto1">
+                                    <button type="button" class="mobile-menu sidebar-toggle-box"
+                                        aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
+                                        data-target="#navBar">
+                                        <span></span>
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="navbar-brand" href="#">
+                                        <img src="images/logo.png">
+                                        <h1>聯護管理系統</h1>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-globe"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">中文</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">英文</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa fa-user mr-1"></i>帳戶管理
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="login.html">
+                                            <i class="fa fa-sign-out mr-1" title="登出"></i>登出
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-mobile">
+                            <ul class="nav navbar-nav justify-content-end w-100">
+
+                                <li class="dropdown dropdown-language nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-bell"></i>
+                                        <!-- <span class="user-name">語言</span> -->
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">訊息1</a>
+                                        <a class="dropdown-item" href="#">訊息2</a>
+                                    </div>
+
+                                </li>
+
+                                <li class="dropdown dropdown-user-info nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                        <span class="user-name">admin</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-gears"></i>我的帳戶
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="login.html">
+                                            <i class="fa-solid fa-power-off"></i>登出
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <!--左邊選單-->
+            <aside>
+                <div class="sidebar" id="navBar">
+                    <ul id="navigation" class="sidebar-menu">
+
+                        <li class="nav-item active">
+                            <a href="company.html" title="申請服務">
+                                <i class="fa-solid fa-pen-to-square"></i>申請服務
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" title="帳號管理">
+                                <i class="fa fa-users"></i>帳號管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" title="系統設定">
+                                <i class="fa fa-sitemap"></i>系統設定
+                            </a>
+                        </li>
+                        <!--長照服務-->
+                        <li class="nav-item">
+                            <a href="#" title="長照服務" class="menu-item" data-toggle="collapse" data-target="#management"
+                                aria-expanded="false">
+                                <i class="fas fa-hand-holding-heart"></i>長照服務
+                            </a>
+                            <ul id="management" class="collapse" data-parent="#navigation">
+                                <!--長照服務1-->
+                                <li>
+                                    <a href="#" title="長照服務1">
+                                        <i class="fas fa-hand-holding-heart"></i>長照服務1
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" title="操作紀錄">
+                                <i class="fa fa-history"></i>操作紀錄
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/sidebar-->
+            </aside>
+
+            <!-- MAIN CONT -->
+            <main role="main" class="main-content container-fluid">
+
+                <!-------------------- 主要內容 -------------------->
+                <div class="content-wrapper">
+                    <div class="page-header">
+                        <h2 class="content-header-title">申請服務</h2>
+
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">聯護管理系統</li>
+                                <li class="breadcrumb-item">
+                                    <a href="#">申請服務</a>
+                                </li>
+                                <li class="breadcrumb-item active">特約服務資料</li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+
+                    <!--查詢-->
+
+                    <div class="function-wrap">
+                        <ul class="submenu">
+                            <li>
+                                <a href="company.html">公司資料</a>
+                            </li>
+                            <li class="active">
+                                <a href="companylist.html">特約服務資料</a>
+                            </li>
+                        </ul>
+
+                        <!-- <ul class="nav nav-tabs">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul> -->
+
+
+                    </div>
+
+                    <!--內容區塊-->
+                    <div class="page-content-area">
+                        <div class="cont-title">臺南市柳營奇美居家服務機構</div>
+                        
+                        <form class="form form-horizontal">
+                            <div class="form-body">
+                                <div class="form-section">機構/單位資料</div>               
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="FinancialInstitutionsName">機構名稱
+                                        (全名)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="FinancialInstitutionsName" class="form-control"
+                                            placeholder="請輸入機構全名" value="臺南市柳營奇美居家服務機構">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="ShortName">機構名稱
+                                        (簡稱)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="ShortName" class="form-control" placeholder="請輸入機構簡稱"
+                                            value="柳營奇美">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="taxID">機構代碼</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="FinancialInstitutionsCode" class="form-control"
+                                            value="7741090510" placeholder="請輸入機構代碼" name="FinancialInstitutionsCode">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="taxID">機構統編</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="taxID" class="form-control" value="85590935"
+                                            placeholder="請輸入機構統編" name="taxID">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="setDate">機構設立許可日期</label>
+                                    <div class="col-md-9">
+                                        <div class="form-row">
+                                            <div class="col-md-4">
+                                                <div class="form-group mb-0">
+
+                                                    <select class="form-control selectpicker" title="請選擇西元年" required>
+                                                        <option value="2000">2000</option>
+                                                        <option selected value="2001">2001</option>
+                                                        <option value="2002">2002</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group mb-0">
+
+                                                    <select class="form-control selectpicker" title="請選擇月份" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option selected value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group mb-0">
+
+                                                    <select class="form-control selectpicker" title="請選擇日期" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option selected value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="serviceType">服務類型</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control selectpicker" title="請選擇服務類型" data-live-search="true" required>
+                                            <option selected value="居家服務">居家服務</option>
+                                            <option value="社區整合服務中心">社區整合服務中心</option>
+                                            <option value="日間照顧">日間照顧</option>
+                                            <option value="小規模多機能">小規模多機能</option>
+                                            <option value="家庭托顧">家庭托顧</option>
+                                            <option value="團體家屋">團體家屋</option>
+                                            <option value="輔具管理">輔具管理</option>
+                                            <option value="營養餐食">營養餐食</option>
+                                            <option value="交通接送">交通接送</option>
+                                            <option value="專業服務">專業服務</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="companyPerson">機構負責人</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="companyPerson" class="form-control"
+                                            placeholder="請輸入機構負責人名" value="陳大幅">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="personID">機構負責人身分證</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="personID" class="form-control"
+                                            placeholder="請輸入機構負責人身分證" value="A123456789">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="businessOwner">業務負責人</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="businessOwner" class="form-control"
+                                            placeholder="請輸入業務負責人" value="陳小美">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="businessPersonID">業務負責人身分證</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="businessPersonID" class="form-control"
+                                            placeholder="請輸入業務負責人身分證" value="A123456789">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="companyAddress">機構地址</label>
+                                    <div class="col-md-9">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+
+                                                    <select class="form-control selectpicker" title="請選擇地址"
+                                                        data-live-search="true" required>
+                                                        <option value="基隆市">基隆市</option>
+                                                        <option value="臺北市">臺北市</option>
+                                                        <option value="新北市">新北市</option>
+                                                        <option value="桃園市">桃園市</option>
+                                                        <option value="新竹市">新竹市</option>
+                                                        <option value="新竹縣">新竹縣</option>
+                                                        <option value="苗栗縣">苗栗縣</option>
+                                                        <option value="臺中市">臺中市</option>
+                                                        <option value="彰化縣">彰化縣</option>
+                                                        <option value="南投縣">南投縣</option>
+                                                        <option value="雲林縣">雲林縣</option>
+                                                        <option value="嘉義市">嘉義市</option>
+                                                        <option value="嘉義縣">嘉義縣</option>
+                                                        <option selected value="臺南市">臺南市</option>
+                                                        <option value="高雄市">高雄市</option>
+                                                        <option value="屏東縣">屏東縣</option>
+                                                        <option value="臺東縣">臺東縣</option>
+                                                        <option value="花蓮縣">花蓮縣</option>
+                                                        <option value="宜蘭縣">宜蘭縣</option>
+                                                        <option value="澎湖縣">澎湖縣</option>
+                                                        <option value="金門縣">金門縣</option>
+                                                        <option value="連江縣">連江縣</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+
+                                                    <select class="form-control selectpicker" title="請選擇區域" required>
+                                                        <option value="中西區">中西區</option>
+                                                        <option value="東區">東區</option>
+                                                        <option value="南區">南區</option>
+                                                        <option value="北區">北區</option>
+                                                        <option value="安平區">安平區</option>
+                                                        <option value="安南區">安南區</option>
+                                                        <option value="永康區">永康區</option>
+                                                        <option value="歸仁區">歸仁區</option>
+                                                        <option value="新化區">新化區</option>
+                                                        <option value="左鎮區">左鎮區</option>
+                                                        <option value="玉井區">玉井區</option>
+                                                        <option value="楠西區">楠西區</option>
+                                                        <option value="南化區">南化區</option>
+                                                        <option value="仁德區">仁德區</option>
+                                                        <option value="關廟區">關廟區</option>
+                                                        <option value="龍崎區">龍崎區</option>
+                                                        <option value="官田區">官田區</option>
+                                                        <option value="麻豆區">麻豆區</option>
+                                                        <option value="佳里區">佳里區</option>
+                                                        <option value="西港區">西港區</option>
+                                                        <option value="七股區">七股區</option>
+                                                        <option value="將軍區">將軍區</option>
+                                                        <option value="學甲區">學甲區</option>
+                                                        <option value="北門區">北門區</option>
+                                                        <option value="新營區">新營區</option>
+                                                        <option value="後壁區">後壁區</option>
+                                                        <option value="白河區">白河區</option>
+                                                        <option value="東山區">東山區</option>
+                                                        <option value="六甲區">六甲區</option>
+                                                        <option value="下營區">下營區</option>
+                                                        <option selected value="柳營區">柳營區</option>
+                                                        <option value="鹽水區">鹽水區</option>
+                                                        <option value="善化區">善化區</option>
+                                                        <option value="大內區">大內區</option>
+                                                        <option value="山上區">山上區</option>
+                                                        <option value="新市區">新市區</option>
+                                                        <option value="安定區">安定區</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="form-group mb-0">
+                                                    <label class="sr-only" for="detailAddress">詳細地址</label>
+                                                    <input type="text" class="form-control" id="detailAddress"
+                                                        placeholder="請輸入詳細地址" value="太康里太康201號">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="companyPhone">連絡電話</label>
+                                    <div class="col-md-9">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="companyPhone1">連絡電話1</label>
+                                                    <input type="tel" id="companyPhone1" class="form-control"
+                                                    placeholder="請輸入連絡電話(1)" value="(06)6226999">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="companyPhone2">連絡電話2</label>
+                                                    <input type="tel" id="companyPhone2" class="form-control"
+                                                    placeholder="請輸入連絡電話(2)">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="companyMobile">手機號碼</label>
+                                    <div class="col-md-9">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="companyMobile1">手機號碼1</label>
+                                                    <input type="text" id="companyMobile1" class="form-control"
+                                                    placeholder="請輸入手機號碼(1)" value="0911222333">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="companyMobile2">手機號碼2</label>
+                                                    <input type="text" id="companyMobile2" class="form-control"
+                                                    placeholder="請輸入手機號碼(2)">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="companyMail">電子郵件</label>
+                                    <div class="col-md-9">
+                                        <input type="email" id="companyMail" class="form-control"
+                                            placeholder="請輸入電子郵件" value="test@gmail.com">
+                                    </div>
+                                </div>
+
+                                
+                                <div class="form-section">申請人資料</div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="applyName">申請人姓名</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="applyName" class="form-control"
+                                            placeholder="請輸入申請人姓名" value="陳小華">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="applycode">申請人統一編號</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="applycode" class="form-control"
+                                            placeholder="請輸入申請人統一編號" value="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="applyID">申請人身分證</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="applyID" class="form-control"
+                                            placeholder="請輸入申請人身分證" value="A111222333">
+                                    </div>
+                                </div>                                
+                                
+                                <div class="form-section">服務項目</div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="serviceCity">服務縣市別</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control selectpicker" title="請選擇服務縣市別"
+                                            data-live-search="true" required>
+                                            <option value="基隆市">基隆市</option>
+                                            <option value="臺北市">臺北市</option>
+                                            <option value="新北市">新北市</option>
+                                            <option value="桃園市">桃園市</option>
+                                            <option value="新竹市">新竹市</option>
+                                            <option value="新竹縣">新竹縣</option>
+                                            <option value="苗栗縣">苗栗縣</option>
+                                            <option value="臺中市">臺中市</option>
+                                            <option value="彰化縣">彰化縣</option>
+                                            <option value="南投縣">南投縣</option>
+                                            <option value="雲林縣">雲林縣</option>
+                                            <option value="嘉義市">嘉義市</option>
+                                            <option value="嘉義縣">嘉義縣</option>
+                                            <option selected value="臺南市">臺南市</option>
+                                            <option value="高雄市">高雄市</option>
+                                            <option value="屏東縣">屏東縣</option>
+                                            <option value="臺東縣">臺東縣</option>
+                                            <option value="花蓮縣">花蓮縣</option>
+                                            <option value="宜蘭縣">宜蘭縣</option>
+                                            <option value="澎湖縣">澎湖縣</option>
+                                            <option value="金門縣">金門縣</option>
+                                            <option value="連江縣">連江縣</option>
+                                        </select>
+                                    </div>
+                                </div>    
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="serviceArea">特約行政區</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control selectpicker" title="請選擇行政區"
+                                            data-live-search="true" required multiple>
+                                            <option value="中西區">中西區</option>
+                                                    <option value="東區">東區</option>
+                                                    <option value="南區">南區</option>
+                                                    <option value="北區">北區</option>
+                                                    <option selected value="安平區">安平區</option>
+                                                    <option value="安南區">安南區</option>
+                                                    <option value="永康區">永康區</option>
+                                                    <option value="歸仁區">歸仁區</option>
+                                                    <option value="新化區">新化區</option>
+                                                    <option value="左鎮區">左鎮區</option>
+                                                    <option value="玉井區">玉井區</option>
+                                                    <option value="楠西區">楠西區</option>
+                                                    <option value="南化區">南化區</option>
+                                                    <option value="仁德區">仁德區</option>
+                                                    <option value="關廟區">關廟區</option>
+                                                    <option value="龍崎區">龍崎區</option>
+                                                    <option value="官田區">官田區</option>
+                                                    <option value="麻豆區">麻豆區</option>
+                                                    <option value="佳里區">佳里區</option>
+                                                    <option value="西港區">西港區</option>
+                                                    <option value="七股區">七股區</option>
+                                                    <option value="將軍區">將軍區</option>
+                                                    <option value="學甲區">學甲區</option>
+                                                    <option value="北門區">北門區</option>
+                                                    <option value="新營區">新營區</option>
+                                                    <option value="後壁區">後壁區</option>
+                                                    <option selected value="白河區">白河區</option>
+                                                    <option value="東山區">東山區</option>
+                                                    <option value="六甲區">六甲區</option>
+                                                    <option value="下營區">下營區</option>
+                                                    <option selected value="柳營區">柳營區</option>
+                                                    <option value="鹽水區">鹽水區</option>
+                                                    <option value="善化區">善化區</option>
+                                                    <option value="大內區">大內區</option>
+                                                    <option value="山上區">山上區</option>
+                                                    <option value="新市區">新市區</option>
+                                                    <option value="安定區">安定區</option>
+                                        </select>
+                                    </div>
+                                </div>   
+                                
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="serviceItem">服務項目</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control selectpicker" title="請選擇服務項目"
+                                            data-live-search="true" required multiple>
+                                            <option selected value="身體照顧服務、日常生活服務">身體照顧服務、日常生活服務</option>                                            
+                                            <option selected value="醫事照護服務">醫事照護服務</option>
+                                            <option value="喘息服務">喘息服務</option>
+                                            <option value="輔具服務">輔具服務</option>
+                                            <option value="餐飲及營養服務">餐飲及營養服務</option>
+                                            <option value="緊急救援服務">緊急救援服務</option>
+                                        </select>
+                                    </div>
+                                </div> 
+
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-save btn-primary">儲存</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </main>
+
+            <!-- MAIN CONT end-->
+            <footer>
+                <div class="copyright">
+                    <ul>
+                        <li>Copyright © 臺南市政府社會局─長期照顧管理中心 2024</li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!--JS-->
+    <script src='js/jquery-3.5.1.min.js'></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+    <script src="js/popper.min.js"></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
+    <!-- <script src="assets/datatables/jquery.dataTables.min.js"></script> -->
+    <script src='https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/plug-ins/2.0.3/i18n/zh-HANT.json'></script>
+    <script src='https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js'></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
