@@ -47,15 +47,15 @@
             display: none;
         }
 
-        .login-wrap {
-            width: 360px;
+        .maintain-wrap {
+            width: 80%;
             max-width: 80%;
             text-align: center;
             height: fit-content;
             border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(146, 47, 0, 0.19), 0 6px 6px rgba(146, 47, 0, 0.23);
+            /* box-shadow: 0 10px 20px rgba(146, 47, 0, 0.19), 0 6px 6px rgba(146, 47, 0, 0.23);
             padding: 30px 50px 0;
-            border: #fff2da solid 1px;
+            border: #fff2da solid 1px; */
         }
         h2 {
             font-size: 2rem;
@@ -90,17 +90,23 @@
             color: #0062cc;
             background: #fff;
         }
-        .login-wrap p {
+        .maintain-wrap p {
             margin: 2rem 0;
             font-size: 1.6rem;
             text-align: center;
+        }
+        @media (max-width:768px) {
+            .maintain-wrap {
+                text-align: center;
+            }
+
         }
     </style>
 </head>
 
 <body>
     <h1>資訊資源效率查調系統 — moda 數位發展部 Ministry of Digital Affairs</h1>
-    <div class="login-wrap">
+    <div class="maintain-wrap">
         <img src="images/logo.svg" width="275">
         <h2>非問卷填寫時間</h2>
         <p>親愛的用戶，您好：<br>目前非問卷填寫時間，謝謝。</p>
