@@ -55,9 +55,8 @@
                     <div id="chartitem1" class="collapse show">
                         <div class="card">
                             <div class="card-body">
-                                <div id="chart04" class="chart-cont chart_box chart_box-wordcloud" 
-                                data-chart-color="#2caffe,#544fc5,#00e272" 
-                                data-chart-keyword="積極的,中立性,否認"></div>
+                                <div id="chart04" class="chart-cont chart_box chart_box-wordcloud"
+                                    data-chart-color="#2caffe,#544fc5,#00e272" data-chart-keyword="積極的,中立性,否認"></div>
                             </div>
                         </div>
                     </div>
@@ -212,7 +211,7 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>    
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="https://code.highcharts.com/modules/wordcloud.js"></script>
     <script src="js/survey.js"></script>
 
@@ -222,8 +221,75 @@
             //chart-01
             $('.chart-01').highcharts({
                 chart: {
+                    type: 'column'
+                },
+                colors: ['#fdb813', '#915907', '#005387', '#8cb811', '#4d2177', '#83941f', '#38434f', '#f5987e', '#44712e', '#38434f'],
+                title: {
+                    text: '資料中心(含雲端資料中心)有無建置資安防護措施？',
+                    align: 'left'
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal',
+                        boostThreshold: 3
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">填答人數：</span><br/>',
+                    pointFormat: '<div style="font-size: 1rem; font-weight:bold; color: {series.color}">{series.name}</div><span style="font-size: 1rem;">：<b>{point.y:1f}</b> 人 (<b>{point.percentage:.2f}%</b>) </span>',                    
+                    borderWidth: 2
+                },
+                xAxis: {
+                    categories: ['填答人數'],
+                    title: {
+                        text: null
+                    },
+                    gridLineWidth: 1,
+                    lineWidth: 0
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: '數量',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify'
+                    },
+                    gridLineWidth: 0
+                },
+                legend: {
+                    itemStyle: {
+                        fontWeight: 'bold',
+                        fontSize: '1em'
+                    },
+                    // borderWidth: 1,
+                    // backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                    // shadow: true
+                },
+                exporting: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    name: '(A) 無',
+                    data: [631, ]
+                }, {
+                    name: '(B) 有',
+                    data: [814, ]
+                }]
+            });
+
+
+
+            $('.chart-000').highcharts({
+                chart: {
                     type: 'bar'
                 },
+                colors: ['#fdb813', '#915907', '#005387', '#8cb811', '#4d2177', '#83941f', '#38434f', '#f5987e', '#44712e', '#38434f'],
                 title: {
                     text: '資料中心(含雲端資料中心)有無建置資安防護措施？',
                     align: 'left'
@@ -329,12 +395,13 @@
                     },
                     gridLineWidth: 0
                 },
-
+                colors: ['#fdb813', '#915907', '#005387', '#8cb811', '#4d2177', '#83941f', '#38434f', '#f5987e', '#44712e', '#38434f'],
                 tooltip: {
                     headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
                     pointFormat: '<div style="font-size: 1rem; font-weight:bold; color: {series.color}">{series.name}</div>：' +
                         '<div><b>{point.y} </b> </div>',
-                    valueSuffix: ' 人'
+                    valueSuffix: ' 人',
+                    borderWidth: 2
                 },
                 plotOptions: {
                     bar: {
@@ -346,15 +413,13 @@
                     }
                 },
                 legend: {
-                    // layout: 'vertical',
-                    // align: 'right',
-                    // verticalAlign: 'top',
-                    // x: -40,
-                    // y: 80,
-                    // floating: true,
-                    borderWidth: 1,
-                    backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-                    shadow: true
+                    itemStyle: {
+                        fontWeight: 'bold',
+                        fontSize: '1em'
+                    },
+                    // borderWidth: 1,
+                    // backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                    // shadow: true
                 },
                 exporting: {
                     enabled: false
@@ -370,29 +435,29 @@
                     data: [814]
                 }, {
                     name: '(C) 入侵偵測防禦',
-                    data: [1276]
+                    data: [711]
                 }, {
                     name: '(D) 漏洞偵測(弱點掃瞄)',
-                    data: [814]
+                    data: [598]
                 }, {
                     name: '(E) 資安監控中心(SOC)',
-                    data: [1276]
+                    data: [341]
                 }, {
                     name: '(F) 進階持續性威脅攻擊防禦措施',
-                    data: [814]
+                    data: [231]
                 }, {
                     name: '(G) 電子郵件過濾機制',
-                    data: [1276]
+                    data: [594]
                 }, {
                     name: '(H) 滲透測試',
-                    data: [814]
+                    data: [341]
                 }, {
                     name: '(I) 應用程式防火牆(WAF)',
-                    data: [1276]
+                    data: [422]
                 }]
             });
 
-            
+
             //chart-03
             $('.chart-03').highcharts({
                 chart: {
@@ -402,6 +467,7 @@
                     text: '商品3D展示性',
                     align: 'left'
                 },
+                colors: ['#fdb813', '#915907', '#005387', '#8cb811', '#4d2177', '#83941f', '#38434f', '#f5987e', '#44712e', '#38434f'],
                 // subtitle: {
                 //     text: 'Source: <a ' +
                 //         'href="https://en.wikipedia.org/wiki/List_of_continents_and_continental_subregions_by_population"' +
@@ -418,6 +484,11 @@
                     ],
                     title: {
                         text: null
+                    },
+                    labels: {
+                        style: {
+                            fontSize: '1em'
+                        }
                     },
                     gridLineWidth: 1,
                     lineWidth: 0
@@ -438,7 +509,8 @@
                     headerFormat: '<span style="font-size: 1rem; font-weight:bold; margin-bottom:20px;">{point.key}</span><br/>',
                     pointFormat: '<div style="font-size: 1rem; font-weight:bold; color: {series.color}">{series.name}</div>：' +
                         '<div><b>{point.y} </b> </div>',
-                    valueSuffix: ' 人'
+                    valueSuffix: ' 人',
+                    borderWidth: 2
                 },
                 plotOptions: {
                     bar: {
@@ -450,15 +522,13 @@
                     }
                 },
                 legend: {
-                    // layout: 'vertical',
-                    // align: 'right',
-                    // verticalAlign: 'top',
-                    // x: -40,
-                    // y: 80,
-                    // floating: true,
-                    borderWidth: 1,
-                    backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-                    shadow: true
+                    itemStyle: {
+                        fontWeight: 'bold',
+                        fontSize: '1em'
+                    },
+                    // borderWidth: 1,
+                    // backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                    // shadow: true
                 },
                 exporting: {
                     enabled: false
@@ -468,151 +538,228 @@
                 },
                 series: [{
                     name: '非常不重要',
-                    data: [631,101,132,441,101]
+                    data: [631, 101, 132, 441, 101]
                 }, {
                     name: '不重要',
-                    data: [814,246,214,548,334]
+                    data: [814, 246, 214, 548, 334]
                 }, {
                     name: '無意見',
-                    data: [876,154,318,945,645]
+                    data: [876, 154, 318, 945, 645]
                 }, {
                     name: '重要',
-                    data: [814,546,614,832,894]
+                    data: [814, 546, 614, 832, 894]
                 }, {
                     name: '非常重要',
-                    data: [641,241,842,245,914]
+                    data: [641, 241, 842, 245, 914]
                 }]
             });
 
             //chart-04
-            const ajaxData = [
-                {"keyword" : "否認", "sentiment" : "乙太網路(Ethernet)", "value" : 1347},
-                {"keyword" : "否認", "sentiment" : "10Base-T/100Base-T", "value" : 284},
-                {"keyword" : "否認", "sentiment" : "(Token Ring)", "value" : 174},
-                {"keyword" : "否認", "sentiment" : "Arcnet", "value" : 311},
-                {"keyword" : "中立性", "sentiment" : "網路", "value" : 246},
-                {"keyword" : "積極的", "sentiment" : "方式", "value" : 101},
-                {"keyword" : "否認", "sentiment" : "使用", "value" : 154},
-                {"keyword" : "否認", "sentiment" : "架構", "value" : 103},
-                {"keyword" : "積極的", "sentiment" : "速度", "value" : 94},
-                {"keyword" : "否認", "sentiment" : "線路", "value" : 88},
-                {"keyword" : "中立性", "sentiment" : "資料", "value" : 78},
-                {"keyword" : "積極的", "sentiment" : "傳輸", "value" : 71},
-                {"keyword" : "否認", "sentiment" : "連接", "value" : 54},
-                {"keyword" : "中立性", "sentiment" : "數位", "value" : 61},
-                {"keyword" : "積極的", "sentiment" : "專線", "value" : 24},
-                {"keyword" : "積極的", "sentiment" : "電話", "value" : 34},
-                {"keyword" : "否認", "sentiment" : "Token", "value" : 77},
-                {"keyword" : "否認", "sentiment" : "交換", "value" : 57},
-                {"keyword" : "否認", "sentiment" : "區段", "value" : 44},
+            const ajaxData = [{
+                    "keyword": "否認",
+                    "sentiment": "乙太網路(Ethernet)",
+                    "value": 1347
+                },
+                {
+                    "keyword": "否認",
+                    "sentiment": "10Base-T/100Base-T",
+                    "value": 284
+                },
+                {
+                    "keyword": "否認",
+                    "sentiment": "(Token Ring)",
+                    "value": 174
+                },
+                {
+                    "keyword": "否認",
+                    "sentiment": "Arcnet",
+                    "value": 311
+                },
+                {
+                    "keyword": "中立性",
+                    "sentiment": "網路",
+                    "value": 246
+                },
+                {
+                    "keyword": "積極的",
+                    "sentiment": "方式",
+                    "value": 101
+                },
+                {
+                    "keyword": "否認",
+                    "sentiment": "使用",
+                    "value": 154
+                },
+                {
+                    "keyword": "否認",
+                    "sentiment": "架構",
+                    "value": 103
+                },
+                {
+                    "keyword": "積極的",
+                    "sentiment": "速度",
+                    "value": 94
+                },
+                {
+                    "keyword": "否認",
+                    "sentiment": "線路",
+                    "value": 88
+                },
+                {
+                    "keyword": "中立性",
+                    "sentiment": "資料",
+                    "value": 78
+                },
+                {
+                    "keyword": "積極的",
+                    "sentiment": "傳輸",
+                    "value": 71
+                },
+                {
+                    "keyword": "否認",
+                    "sentiment": "連接",
+                    "value": 54
+                },
+                {
+                    "keyword": "中立性",
+                    "sentiment": "數位",
+                    "value": 61
+                },
+                {
+                    "keyword": "積極的",
+                    "sentiment": "專線",
+                    "value": 24
+                },
+                {
+                    "keyword": "積極的",
+                    "sentiment": "電話",
+                    "value": 34
+                },
+                {
+                    "keyword": "否認",
+                    "sentiment": "Token",
+                    "value": 77
+                },
+                {
+                    "keyword": "否認",
+                    "sentiment": "交換",
+                    "value": 57
+                },
+                {
+                    "keyword": "否認",
+                    "sentiment": "區段",
+                    "value": 44
+                },
             ]
             const chartWordCloud = ($chart) => {
-            $chart = document.getElementById($chart);
-            var chart, chartData = ajaxData;
-            // var chartColor = $chart.getAttribute('data-chart-color').split(',');
-            var keyword = $chart.getAttribute('data-chart-keyword').split(',');
-            var options = {
-                chart: {
-                    type: 'wordcloud',
-                    // width: 384,
-                    // height: 300,
-                    alignTicks: false,
-                    spacing: [0, 0, 0, 0],
-                    margin: [0, 0, 0, 0],
-                    backgroundColor: 'transparent',
-                    style: {
-                        fontFamily: 'inherit',
+                $chart = document.getElementById($chart);
+                var chart, chartData = ajaxData;
+                // var chartColor = $chart.getAttribute('data-chart-color').split(',');
+                var keyword = $chart.getAttribute('data-chart-keyword').split(',');
+                var options = {
+                    chart: {
+                        type: 'wordcloud',
+                        // width: 384,
+                        // height: 300,
+                        alignTicks: false,
+                        spacing: [0, 0, 0, 0],
+                        margin: [0, 0, 0, 0],
+                        backgroundColor: 'transparent',
+                        style: {
+                            fontFamily: 'inherit',
+                        },
                     },
-                },
-                title: {
-                    text: '',
-                    style: {
-                        fontSize: 0,
-                        color: '#ffffff'
-                    }
-                },
-                legend: {
-                enabled: false,
-                },
-                tooltip: {
-                    headerFormat: '<span style="font-size: 20px"><b>{point.key}</b>' +
-                        '</span><br>'
-                },
-                plotOptions: {
-                    series: {
-                        name: '數量',
-                        placementStrategy: 'random',
-                        spiral: 'rectangular',
-                        centerInCategory: true,
-                        rotation: {
-                            from: 0,
-                            to: 0
-                        },
-                        minFontSize: 10,
-                        maxFontSize: 20,
-                        states: {
-                        hover: {
-                            enabled: false,
-                            brightness: 0,
-                            halo: {
-                            opacity: 1,
-                            }
-                        },
-                        inactive: {
-                            enabled: false,
-                        },
-                        select: {
-                            enabled: false,
+                    title: {
+                        text: '',
+                        style: {
+                            fontSize: 0,
+                            color: '#ffffff'
                         }
-                        },
-                        showInLegend: false,
-                        animation: {
-                            duration: 500,
+                    },
+                    colors: ['#fdb813', '#915907', '#005387', '#8cb811', '#4d2177', '#83941f', '#38434f', '#f5987e', '#44712e', '#38434f'],
+                    legend: {
+                        enabled: false,
+                    },
+                    tooltip: {
+                        headerFormat: '<span style="font-size: 20px"><b>{point.key}</b>' +
+                            '</span><br>',
+                        borderWidth: 2
+                    },
+                    plotOptions: {
+                        series: {
+                            name: '數量',
+                            placementStrategy: 'random',
+                            spiral: 'rectangular',
+                            centerInCategory: true,
+                            rotation: {
+                                from: 0,
+                                to: 0
+                            },
+                            minFontSize: 10,
+                            maxFontSize: 20,
+                            states: {
+                                hover: {
+                                    enabled: false,
+                                    brightness: 0,
+                                    halo: {
+                                        opacity: 1,
+                                    }
+                                },
+                                inactive: {
+                                    enabled: false,
+                                },
+                                select: {
+                                    enabled: false,
+                                }
+                            },
+                            showInLegend: false,
+                            animation: {
+                                duration: 500,
+                            },
                         },
                     },
-                },
-                loading: {
-                    style: {
-                        opacity: 1,
+                    loading: {
+                        style: {
+                            opacity: 1,
+                        }
+                    },
+                    exporting: {
+                        enabled: false,
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                }
+                var keys = Object.keys(chartData[0]);
+
+                // 僅每個關鍵字的前 20 名
+                var rank = new Array();
+                for (var k = 0; k < keyword.length; k++) {
+                    rank.push(...chartData.filter((f) => f.keyword == keyword[k]).slice(0, 20));
+                }
+
+                // 系列設定
+                options.series = new Array();
+                var optionSeriesData = new Object();
+                optionSeriesData.data = new Array();
+                optionSeriesData.wordSpaces = 1;
+                for (var k = 0; k < keyword.length; k++) {
+                    for (var i = 0; i < rank.length; i++) {
+                        if (keyword[k] == rank[i].keyword) {
+                            var optionSeriesDataEl = new Object();
+                            optionSeriesDataEl.name = rank[i].sentiment;
+                            optionSeriesDataEl.weight = rank[i].value;
+                            // optionSeriesDataEl.color = chartColor[keyword.indexOf(rank[i].keyword)];
+                            optionSeriesDataEl.custom = new Object();
+                            optionSeriesDataEl.custom.keyword = keyword[k];
+                            optionSeriesData.data.push(optionSeriesDataEl);
+                        }
                     }
-                },
-                exporting: {
-                    enabled: false,
-                },
-                credits: {
-                    enabled: false
-                },
-            }
-            var keys = Object.keys(chartData[0]);
-
-            // 僅每個關鍵字的前 20 名
-            var rank = new Array();
-            for (var k = 0; k < keyword.length; k++) {
-                rank.push( ...chartData.filter((f) => f.keyword == keyword[k]).slice(0, 20) );
-            }
-
-            // 系列設定
-            options.series = new Array();
-            var optionSeriesData = new Object();
-            optionSeriesData.data = new Array();
-            optionSeriesData.wordSpaces = 1;
-            for (var k = 0; k < keyword.length; k++) {
-                for (var i = 0; i < rank.length; i++){
-                if( keyword[k] == rank[i].keyword ){
-                    var optionSeriesDataEl = new Object();
-                    optionSeriesDataEl.name = rank[i].sentiment;
-                    optionSeriesDataEl.weight = rank[i].value;
-                    // optionSeriesDataEl.color = chartColor[keyword.indexOf(rank[i].keyword)];
-                    optionSeriesDataEl.custom = new Object();
-                    optionSeriesDataEl.custom.keyword = keyword[k];
-                    optionSeriesData.data.push(optionSeriesDataEl);
                 }
-                }
-            }
-            options.series.push(optionSeriesData);
+                options.series.push(optionSeriesData);
 
-            // 散點圖
-            chart = Highcharts.chart($chart, options);
+                // 散點圖
+                chart = Highcharts.chart($chart, options);
             }
             chartWordCloud('chart04');
 
