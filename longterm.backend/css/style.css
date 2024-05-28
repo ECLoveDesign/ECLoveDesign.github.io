@@ -1724,6 +1724,7 @@ table.dataTable .select-checkbox {
 }
 table.dataTable .badge {
     font-size: 100%;
+    margin-bottom: 5px;
 }
 .badge-outline-dark {
     color: #2a2a2a;
