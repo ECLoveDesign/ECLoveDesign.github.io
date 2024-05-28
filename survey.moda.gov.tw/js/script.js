@@ -251,6 +251,12 @@ $('.btn-enable').on('click', function () {
 });
 
 
+// marquee
+$(document).ready(function(){
+  $('.marquee-item').clone().prependTo('.marquee');
+});
+
+
 
 
 // bs-select
