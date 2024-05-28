@@ -84,6 +84,32 @@ header .nav-link {
 .brand-text.d-md-flex img {
     width: 285px;
 }
+.brand-text .management {
+    position: relative;
+}
+.brand-text .management::before {
+    content: '';
+    display: block;
+    width: 75%;
+    height: 1px;
+    background: var(--normalBG);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+}
+.brand-text .management,
+.brand-text .management span {
+    font-size: 1.4rem;
+}
+.brand-text .management span {
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    padding: 0 10px;
+}
 body.card-center {
     height: 100%;
     display: flex;
