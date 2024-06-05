@@ -59,7 +59,7 @@ a:hover {
     transform: none;
 }
 
-.submenu-item.active .submenu-link {
+.submenu-item.active>.submenu-link {
     color: var(--normalColor);
     text-decoration: none;
 }
@@ -298,8 +298,20 @@ a:hover {
     .menu-link.linkedin {
         background: var(--linkedinColor);
     }
+    .menu {
+        width: calc(100% - 45px);
+    }    
+    .submenu-list {
+        padding-inline-start: 20px;
+        margin: 0;
+    }
+    .submenu-link {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+    }
 }
-
 @media (max-width:902px) {
     .menu .social ul {
         display: -ms-flexbox;
@@ -1592,6 +1604,25 @@ article img {
 .main-content section {
     padding-bottom: 4rem;
 }
+@media (min-width:1201px) {
+    .main-content .img-full {
+        display: block;
+        width: 100vw;
+        margin-left: calc(-50vw + 555px);
+        margin-bottom: 40px;
+    }
+}
+
+.btn-href {
+    color: #979900;
+    border: #979900 solid 1px;
+    border-radius: 20px;
+}
+.btn-href:hover {
+    color: #fff;
+    background: #979900;
+}
+
 .main-content h3 {
     font-weight: 600;
     margin-top: 2rem;
@@ -1818,9 +1849,11 @@ article img {
     color: #fff;
     border-bottom: none;
     background: var(--normalColor);
+    vertical-align: middle;
 }
 .table tbody td {
-    border: none;
+    /* border: none; */    
+    vertical-align: middle;
 }
 .table tbody tr:nth-child(even) td {
     background: rgba(115, 137, 58, 0.15);
