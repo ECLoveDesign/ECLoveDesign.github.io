@@ -1617,6 +1617,7 @@ article img {
     color: #979900;
     border: #979900 solid 1px;
     border-radius: 20px;
+    text-transform: none;
 }
 .btn-href:hover {
     color: #fff;
