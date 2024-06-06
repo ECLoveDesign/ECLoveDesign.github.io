@@ -687,7 +687,7 @@ aside {
 #navigation::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-    background-color: #0088d6;
+    background-color: #ac8c0e;
 }
 
 #navigation>li {
@@ -730,6 +730,12 @@ aside ul a:hover {
 #navigation>li.active a {
     background: #dfc045;
 }
+/* #navigation>li.active ul li.active a {
+    background: #dfc045;
+}
+#navigation>li.active ul li.active a.menu-item:after {
+    color: #5e5700;
+} */
 
 #navigation a i {
     margin-right: 12px;
@@ -787,7 +793,7 @@ aside ul li>ul li a {
 }
 
 aside ul li>ul li>ul li a {
-    font-size: 0.875em;
+    /* font-size: 0.875em; */
     padding: 10px 7px 10px 70px;
 }
 
@@ -1786,6 +1792,37 @@ form .form-section {
     font-size: 1.2rem;
 }
 .accordion .card .card-header .btn-link:hover  {
-    background: #613f2f;
+    background: #a4611b;
     
+}
+
+
+.accordion .card .card-header .btn-link::after {
+    content: "\f078";
+    font-size: 0.875em;
+    color: #fff;
+    font-family: "FontAwesome";
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    transition: transform .3s ease-in-out;
+    -webkit-transition: transform .3s ease-in-out;
+    -moz-transition: transform .3s ease-in-out;
+    -ms-transition: transform .3s ease-in-out;
+    -o-transition: transform .3s ease-in-out;
+    
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+}
+
+.accordion .card .card-header .btn-link[aria-expanded="false"]:after {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
 }
