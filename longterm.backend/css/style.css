@@ -781,7 +781,7 @@ aside ul li>ul li {
 aside ul li>ul li a {
     display: block;
     background: transparent;
-    color: rgba(255, 255, 255, 0.7);
+    /* color: rgba(255, 255, 255, 0.7); */
     border: transparent;
     padding: 12px 7px 12px 44px;
 }
@@ -804,10 +804,10 @@ aside ul li>ul li a:hover {
 
 #navigation li>ul li.active a,
 aside ul li>ul li.active a {
-    color: var(--normalBrown);
+    color: #5e5700;
     font-weight: bold;
     /* background: rgba(255, 255, 255, .4); */
-    background: #f2f3f7;
+    background: #ffe900;
 }
 
 @media(min-width:1366px) {
@@ -1772,4 +1772,20 @@ form .form-section {
 .form-actions {
     display: flex;
     justify-content: center;
+}
+/* accordion */
+.accordion .card .card-header {
+    padding: 0;
+    background: transparent;
+}
+.accordion .card .card-header .btn-link  {
+    background: #534741;
+    color: #fff;
+    text-decoration: none;    
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.accordion .card .card-header .btn-link:hover  {
+    background: #613f2f;
+    
 }
