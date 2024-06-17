@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     font-family: "Public Sans", sans-serif;
@@ -7,6 +7,7 @@
 :root {
     --font-Sans: 'Noto Sans TC', sans-serif;
     --font-Serif: 'Noto Serif TC', serif;
+    --font-Other: 'Bebas Neue', serif;
     --font-Size: 1.2em;
     --font-Title: 3rem;
     --font-p: 1.5rem;
@@ -2038,6 +2039,85 @@ h3 .btn-href::before {
     .subjects-item .img {
         width: 60px;
     }
+}
+
+/* program-wrap */
+.program-item {    
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.program-item .title {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    display: flex;
+}
+.program-item .title .text {
+    font-size: 13rem;
+    font-family: var(--font-Other);
+    line-height: 210px;
+    color: #cdc314;
+    margin-left: 10px;
+}
+.program-item .arrow {
+    position: relative;
+    background: #cdc314;
+    width: 65px;
+    height: calc(100% - 32px);
+}
+.program-item .arrow::after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 33px solid transparent;
+    border-right: 32px solid transparent;
+    border-top: 22px solid #cdc314;
+    position: absolute;
+    top: 100%;
+    margin-left: 1px;
+    bottom: 100%;
+    z-index: 1;
+}
+.program-item .description {
+    padding: 20px;
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    background: #cdc314;
+    color: #fff;
+}
+.program-item .description p:last-child {
+    margin-bottom: 0;
+}
+.IABTP.program-item .title .text {
+    font-size: 10rem;
+}
+.IABTP.program-item .title .text {
+    color: #a2cd04;
+}
+.IABTP.program-item .arrow,
+.IABTP.program-item .description {
+    background: #a2cd04;
+}
+.IABTP.program-item .arrow::after {
+    border-top: 22px solid #a2cd04;
+}
+.BEAP.program-item .title .text {
+    font-size: 11rem;
+}
+.BEAP.program-item .title .text {
+    color: #567a00;
+}
+.BEAP.program-item .arrow,
+.BEAP.program-item .description {
+    background: #567a00;
+}
+.BEAP.program-item .arrow::after {
+    border-top: 22px solid #567a00;
 }
 
 /* figure */
