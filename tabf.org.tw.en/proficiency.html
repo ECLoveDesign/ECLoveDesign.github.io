@@ -24,6 +24,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/aos/aos.css">
     <link rel='stylesheet' href='fonts/boxicons-2.1.4/css/boxicons.min.css'>
     <link rel="stylesheet" href="css/megamenu.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -85,7 +86,7 @@
                                 </div>
                                 <div class="submenu-inner">
                                     <ul class="submenu-list">
-                                        <li class="submenu-item active">
+                                        <li class="submenu-item">
                                             <a href="development.html" class="submenu-link">Financial Talent
                                                 Development</a>
                                             <ul class="submenu-list">
@@ -93,7 +94,7 @@
                                                     <a href="training.html" class="submenu-link">Financial Training
                                                         Service</a>
                                                 </li>
-                                                <li class="submenu-item">
+                                                <li class="submenu-item active">
                                                     <a href="proficiency.html" class="submenu-link">Financial
                                                         Proficiency Testing</a>
                                                 </li>
@@ -260,8 +261,8 @@
 
                             <div class="testing-wrap">
 
-                                <div class="testing-item">
-                                    <div class="img">
+                                <div class="testing-item" data-aos="fade-left" data-aos-duration="1000">
+                                    <div class="img effect">
                                         <img src="images/functions/proficiency/testing-icon-01.png"
                                             alt="Proficiency Testing for Banking Practitioners">
                                     </div>
@@ -273,8 +274,8 @@
                                     </div>
                                 </div>
 
-                                <div class="testing-item">
-                                    <div class="img">
+                                <div class="testing-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+                                    <div class="img effect">
                                         <img src="images/functions/proficiency/testing-icon-02.png"
                                             alt="Recruitment & Competency Assessment Services">
                                     </div>
@@ -287,8 +288,8 @@
                                     </div>
                                 </div>
 
-                                <div class="testing-item">
-                                    <div class="img">
+                                <div class="testing-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">
+                                    <div class="img effect">
                                         <img src="images/functions/proficiency/testing-icon-03.png"
                                             alt="Recruitment & Competency Assessment Services">
                                     </div>
@@ -488,19 +489,19 @@
                             <div class="row">
                                 
                                 <div class="col-md-4 mb-4">
-                                    <figure class="figure">
+                                    <figure class="figure effect">
                                         <img src="images/functions/proficiency/figure-01.jpg" class="figure-img img-fluid" alt="figure-01">
                                         <figcaption class="figure-caption">Written Test</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-md-4 mb-4">
-                                    <figure class="figure">
+                                    <figure class="figure effect">
                                         <img src="images/functions/proficiency/figure-02.jpg" class="figure-img img-fluid" alt="figure-01">
                                         <figcaption class="figure-caption">Computer Based Testing (CBT)</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-md-4 mb-4">
-                                    <figure class="figure">
+                                    <figure class="figure effect">
                                         <img src="images/functions/proficiency/figure-03.jpg" class="figure-img img-fluid" alt="figure-01">
                                         <figcaption class="figure-caption">Portable Computer Based Testing (PCBT)</figcaption>
                                     </figure>
@@ -535,7 +536,9 @@
                                     
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="images/functions/proficiency/proficiency-07.png" alt="title-07">
+                                    <div class="img effect effect">
+                                        <img src="images/functions/proficiency/proficiency-07.png" alt="title-07">
+                                    </div>
                                 </div>
                             </div>
 
@@ -654,22 +657,18 @@
         </div>
     </div>
 
-    <a class="btn-social fb" data-toggle="tooltip" data-placement="top" title="facebook"
-        href="https://www.facebook.com/tabf.org/" target="_blank">
+    <!-- <a class="btn-social fb" data-toggle="tooltip" data-placement="top" title="facebook" href="https://www.facebook.com/tabf.org/" target="_blank">
         <img src="images/btn-facebook.png" alt="tabf facebook">
     </a>
-    <a class="btn-social yt" data-toggle="tooltip" data-placement="top" title="youtube"
-        href="https://www.youtube.com/@TABFChannel" target="_blank">
+    <a class="btn-social yt" data-toggle="tooltip" data-placement="top" title="youtube" href="https://www.youtube.com/@TABFChannel" target="_blank">
         <img src="images/btn-youtube.png" alt="tabf youtube">
     </a>
-    <a class="btn-social apple" data-toggle="tooltip" data-placement="top" title="apple store"
-        href="https://web.tabf.org.tw/app/" target="_blank">
+    <a class="btn-social apple" data-toggle="tooltip" data-placement="top" title="apple store" href="https://web.tabf.org.tw/app/" target="_blank">
         <img src="images/btn-ios.png" alt="tabf apple store">
     </a>
-    <a class="btn-social linkedin" data-toggle="tooltip" data-placement="top" title="linkedin"
-        href="https://www.linkedin.com/company/tabf/" target="_blank">
-        <img src="images/btn-linkedin.png" alt="tabf linkedin">
-    </a>
+    <a class="btn-social linkedin" data-toggle="tooltip" data-placement="top" title="linkedin" href="https://www.linkedin.com/company/tabf/" target="_blank">
+        <img src="images/btn-linkedin.png"  alt="tabf linkedin">
+    </a>-->
     <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="go to top">
         <span class="d-none">go to top</span>
         <i class='bx bx-chevron-up'></i>
@@ -678,8 +677,12 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper-1.12.9.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/aos/aos.js"></script>
     <script src="js/megamenu.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 

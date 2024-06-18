@@ -1,9 +1,24 @@
 
+// page load
+var onEnterViewPort = function(entries, observer) {
+  entries.forEach(function(entry) {
+    console.log(entry);
+    // Fade in when we enter the viewport
+    if (entry.intersectionRatio !== 0) {
+      entry.target.classList.add('in');
+    }
+    // Fade back out when we leave the viewport
+    else {
+      entry.target.classList.remove('in');
+    }
+  })
+}
+var observer =  new IntersectionObserver(onEnterViewPort , {
+});
 
-if ($(document).width() > 900) {
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
+var hidemes= document.querySelectorAll('.effect');
+for(var i = 0; i < hidemes.length; ++i) {
+  observer.observe(hidemes[i]);
 }
 
 // scolltop
@@ -32,11 +47,11 @@ $(window).scroll(function () {
 });
 
 // overlay
-$('.btn-search,.search-wrap .btn-close').click(function() {
-  
+$('.btn-search,.search-wrap .btn-close').click(function () {
+
   $('.search-wrap').toggleClass('open');
   return false;
-  
+
 });
 // $('.overlay-menu a').click(function() {
 //   $('.search-cont').toggleClass('open');
@@ -45,16 +60,16 @@ $('.btn-search,.search-wrap .btn-close').click(function() {
 
 
 // twbsPagination
-if ( $('.twbsPagination').length ) {
+if ($('.twbsPagination').length) {
   $('.twbsPagination').twbsPagination({
     totalPages: 16,
     visiblePages: 6,
-    first:'&laquo',
-    last:'&raquo',
+    first: '&laquo',
+    last: '&raquo',
     prev: '&lt',
     next: '&gt',
     // totalPages: data.total_pages,
-    visiblePages:5,
+    visiblePages: 5,
     initiateStartPageClick: false,
     // onPageClick: function (event, page) {
     //     $('#page-content').text('Page ' + page) + ' content here';
@@ -99,27 +114,29 @@ $(window).scroll(function () {
   }
 });
 
+
+
 // submit
-if ( $('.needs-validation').length ) {
-    
-  
+if ($('.needs-validation').length) {
+
+
   // Example starter JavaScript for disabling form submissions if there are invalid fields
-  (function() {
+  (function () {
     'use strict';
-    window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
-            }
-            form.classList.add('was-validated');
+          }
+          form.classList.add('was-validated');
         }, false);
-        });
+      });
     }, false);
-    })();
+  })();
 
 }
