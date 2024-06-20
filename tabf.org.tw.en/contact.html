@@ -211,6 +211,14 @@
 
 
                 <div class="main-content">
+                  
+                    <div class="card card-body collapse" id="collapseTks">
+                        <div class="title">
+                            <i class='bx bx-check'></i>
+                            Thank You
+                        </div>
+                        <div class="text">We will reply you as soon as possible</div>
+                    </div>
 
                     <form id="contact" class="text-left needs-validation effect" novalidate="">
 
@@ -248,8 +256,8 @@
                                     <label for="mail" class="col-md-2 col-form-label">Email <span
                                             class="text-danger">*</span></label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="mail" required="">
-                                        <div class="invalid-feedback">Please choose your Email</div>
+                                        <input type="email" class="form-control" id="mail" required="">
+                                        <div class="invalid-feedback">Please enter your Email</div>
                                     </div>
                                 </div>
                             </div>
@@ -301,7 +309,8 @@
                                         </small>
                                     </div>
                                     <div class="col-md-3">
-                                        <button id="submitClick" class="btn btn-apply btn-block float-right">Submit</button>
+                                        <button id="submitClick" type="submit" class="btn btn-apply btn-block float-right">Submit (檢核用)</button>
+                                        <button type="button" data-toggle="collapse" data-target="#collapseTks" aria-expanded="false" aria-controls="thankCollapse" class="btn btn-apply btn-block float-right">Submit (彈出感謝)</button>
                                     </div>
                                 </div>
                             </div>
