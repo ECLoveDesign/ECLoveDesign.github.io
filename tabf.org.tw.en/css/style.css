@@ -2080,7 +2080,7 @@ h3 .btn-href::before {
 .program-cont .title {
     padding: 10px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     margin-top: 30px;
 }
 
@@ -2107,6 +2107,8 @@ h3 .btn-href::before {
 .program-cont .description {
     padding: 60px 30px 20px;
     margin-top: -30px;
+    z-index: 1;
+    position: relative;
 }
 
 .program-cont .description::before {
@@ -2126,6 +2128,58 @@ h3 .btn-href::before {
 .program-cont .description p {
     position: relative;
     z-index: 1;
+}
+@media (max-width:1240px) {
+    .program-intro {
+        margin-bottom: 2rem;
+    }
+    .program-cont {
+        width: 90%;
+        position: relative;
+        right: -10%;
+    }
+    .program-intro .img {
+        margin-top: -7rem;
+    }
+}
+@media (max-width:768px) {
+    .program-intro .img {
+        margin-top: -5rem;
+    }
+    .program-cont {
+        width: 100%;
+        right: -15px;
+    }
+    .program-cont .description::before {
+        width: 110%;
+        left: 0;
+        transform: skew(-5deg);
+    }
+    .program-cont .title::before {
+        left: -15px;
+        transform: skew(-5deg);
+    }
+    .program-intro .img {
+        margin-top: -2rem;
+    }
+}
+@media (max-width:500px) {
+    .program-cont .title::before {
+        left: -30px;
+    }
+    .program-cont .title span {
+        font-size: 1.2rem;
+        margin-left: -20px;
+    }
+    .program-cont .description {
+        padding: 40px 15px 10px;
+    }
+    .program-cont .description::before {
+        transform: none;
+    }   
+    .program-intro .img {
+        margin-top: 0;
+    }
 }
 
 /* program-wrap */
@@ -2237,6 +2291,25 @@ h3 .btn-href::before {
 
 .BEAP.program-item .arrow::after {
     border-top: 22px solid #567a00;
+}
+@media (max-width:1100px) {
+    .program-item .arrow {
+        display: none;
+    }
+}
+@media (max-width:910px) {
+    .program-item {
+        display: block;
+    }
+    .program-item .description {
+        display: block;
+        max-width: 100%;
+    }
+    .BEAP.program-item .title .text,
+    .IABTP.program-item .title .text,
+    .program-item .title .text {
+        font-size: 10rem;
+    }
 }
 
 /* fincourse-wrap */
@@ -2442,7 +2515,13 @@ h3 .btn-href::before {
     margin-bottom: 5px;
     padding-right: 140px;
 }
-@media (min-width: 1366px) {
+.core-wrap [class*="layer-"] {
+    display: none;
+} 
+@media (min-width:1100px) {
+    .core-wrap [class*="layer-"]:not(.layer-mb) {
+        display: block;
+    } 
     .core-item::before {
         content: '';
         display: block;
@@ -2478,13 +2557,90 @@ h3 .btn-href::before {
     }
     .core-item:last-child::after {
         left: 0;
+    } 
+}
+@media (max-width:1130px) {
+    .core-wrap>.pyramid {
+        -ms-flex: 0 0 40%;
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    .core-wrap>.cont {
+        -ms-flex: 0 0 60%;
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    .core-item {
+        margin-bottom: 10px;
+    }
+    .core-item:first-child {
+        margin-bottom: 20px;
+    }
+    .core-item::before {
+        width: 170px;
+        left: -215px;
+    }
+    .core-item:nth-child(2)::before {
+        left: -185px;
+    }
+    .core-item:last-child::before {
+        left: -165px;       
+    }
+    .core-wrap [class*="layer-"]:nth-child(3) {
+        margin-top: -10px;
     }
 }
-@media (min-width:1240px) {
+@media (max-width:1100px) {   
+    .core-wrap {
+        margin-bottom: 0;
+    } 
     .core-wrap .layer-mb {
-        display: none;
+        display: block;
+        margin-bottom: 20px;
     }
-    
+    .core-wrap>.pyramid {
+        margin-bottom: 20px;
+    }
+    .core-wrap>.pyramid,
+    .core-wrap>.cont {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .core-item .img {
+        position: relative;
+        display: flex;
+    }
+    .core-item .img img {
+        margin-right: 15px;
+    }
+    .core-item:nth-child(2),
+    .core-item:last-child{
+        padding-left: 0;
+    }
+    .core-wrap .title {        
+        border-bottom: #c9912e solid 1px;
+    }
+    .core-item .description {
+        display: flex;
+        justify-content: space-between;
+    }
+    .core-item .img {
+        -ms-flex: 0 0 40%;
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    .core-item {
+        margin-bottom: 30px;
+    }
+    .core-item .description ul {
+        padding-right: 0;
+    }
+}
+@media (max-width:768px) {
+    .core-item .description {
+        display: block;
+    }    
 }
 
 /* figure */
