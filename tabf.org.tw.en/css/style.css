@@ -487,7 +487,12 @@ a:hover {
 }
 
 main {
-    padding-top: 5rem;
+    padding-top: 80px;
+}
+@media (max-width:1920px) {
+    main {
+        padding-top: 0;
+    }  
 }
 
 main>section {
@@ -517,8 +522,10 @@ section h2 {
     }
 }
 
+
 /* kv */
 .kv {
+    display: none;
     padding: 0;
     width: 100%;
     height: calc(100vh - 5rem);
@@ -531,17 +538,16 @@ section h2 {
 .kv .img-cont {
     height: 100%;
 }
-
 .kv .img-cont .img-kv {
     height: 100%;
-    background-image: url(https://www.tabf.org.tw/English/Uploads/KeyView/ff4712c659b74def9a10e75a28740b8a.jpg);
+    background-image: url(../images/img-kv.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
 }
 
 .kv .img-cont .img-kv .keyword {
-    background-image: url(https://www.tabf.org.tw/English/Uploads/KeyView/Keyviewword.png);
+    background-image: url(../images/Keyviewword.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 100%;
@@ -557,22 +563,48 @@ section h2 {
     left: 0;
     margin: 1.5em auto;
 }
-
-.kv .scroll-group {
+.scroll-group {
     width: 100%;
     position: absolute;
     bottom: 30px;
     margin: auto;
     text-align: center;
 }
-
-.kv .scroll-group>img {
+.scroll-group>img {
     width: 50px;
 }
 
-@media screen and (min-width: 1920px) {
+.kv-pc {
+    padding: 0;
+    width: 100%;  
+    height: auto;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+    overflow: hidden;
+}
+.anibox {
+    display: flex;
+    align-items: end;    
+    height: auto;
+}
+@media(min-width: 1920px) {
     .kv .img-cont .img-kv .keyword {
         background-size: contain;
+    }
+}
+@media (max-width:1280px) {
+    .kv {
+        display: block;
+    }
+    .kv-pc {
+        display: none;
+    }
+    
+}
+@media (max-width:767px) {
+    .kv .img-cont .img-kv .keyword  {
+        background-image: url(../images/Keyviewword-s.svg);
+        background-size: 90% auto;
     }
 }
 
