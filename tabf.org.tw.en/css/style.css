@@ -106,6 +106,7 @@ a:hover {
 
     .navbar-right.toolmenu {
         display: flex;
+        justify-content: space-evenly;
     }
 
     .navbar-right.toolmenu .menu-link>i.bx {
@@ -117,8 +118,10 @@ a:hover {
     }
 
     .menu-link {
+        font-size: 1.1rem;
         padding: 1.75rem 0.25rem;
     }
+
 
     .menu-link>i {
         transition: all 0.2s linear;
@@ -129,24 +132,33 @@ a:hover {
     }
 
     .navbar-right .menu-link {
-        background: var(--normalColor);
         color: #fff;
+        background: var(--normalColor);
         text-decoration: none;
+        border-radius: 25px;
+        margin-left: 10px;
     }
 
-    .navbar-right .menu-link:hover {
-        background: #768b1a;
+    .navbar-right .menu-item:hover .menu-link {        
+        color: var(--normalColor);
+        background: #fff;
+    }
+    .navbar-right .menu-item {        
+        display: flex;
+    }
+    .navbar-right>.menu-inner>.menu-item>.menu-link {
+        padding: 10px;
     }
 
-    .navbar-right .btn-search {
-        padding: 1.85rem 0.5rem;
+    .navbar-right .btn-search .menu-link i {
+        margin: 0;
     }
 
     .navbar-right .menu-item {
         position: relative;
     }
 
-    .navbar-right .menu-item+.menu-item::before {
+    /* .navbar-right .menu-item+.menu-item::before {
         content: '';
         width: 2px;
         height: 1.5rem;
@@ -157,7 +169,7 @@ a:hover {
         top: 0;
         bottom: 0;
         margin: auto;
-    }
+    } */
 
     .megamenu-column-4 {
         max-width: 100%;
@@ -489,11 +501,11 @@ a:hover {
 main {
     padding-top: 80px;
 }
-@media (max-width:1920px) {
+/* @media (max-width:1920px) {
     main {
         padding-top: 0;
     }  
-}
+} */
 
 main>section {
     position: relative;
@@ -1159,6 +1171,7 @@ section h2 {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: 2rem;
+    justify-content: center;
 }
 
 .partnership-item {
@@ -1193,11 +1206,16 @@ section h2 {
         max-width: 25%;
     }
 
-    .partnership-item:first-child,
-    .partnership-item:nth-child(2) {
+    .partnerships .partnership-item:first-child,
+    .partnerships .partnership-item:nth-child(2) {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
+    }
+    .main-content .partnership-item:first-child {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
 
@@ -1593,7 +1611,8 @@ footer nav+.row {
     z-index: 0;
     left: 0;
     top: 0;
-    background: linear-gradient(to bottom, rgba(113, 131, 27, 0.2) 0%, rgba(113, 131, 27, 0.8) 30%, rgba(113, 131, 27, 0.8) 80%);
+    /* background: linear-gradient(to bottom, rgba(35, 41, 2, 0) 0%, rgba(35, 41, 2, 0.05) 35%, rgba(35, 41, 2, 0.45) 45%, rgba(35, 41, 2, 0.7) 80%); */
+    background: linear-gradient(to bottom, rgba(48, 56, 7, 0) 20%, rgba(48, 56, 7, 0.3) 40%, rgba(48, 56, 7, 0.35) 50%, rgba(48, 56, 7, 0.8) 75%, rgba(48, 56, 7) 100%);
 }
 
 .jumbotron>* {
