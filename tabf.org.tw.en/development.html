@@ -5,9 +5,6 @@
     <meta http-equiv="Content-Language" content="zh-en" />
     <meta http-equiv="X-UA-Compatible" content="IE=11;IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <!-- <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; connect-src 'self' https://vc.hotjar.io; frame-src 'self' https://fraud.tappaysdk.com/ https://js.tappaysdk.com/ https://vars.hotjar.com/ https://www.youtube.com/ https://www.google.com/; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data: https://www.google-analytics.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google-analytics.com https://pay.google.com https://js.tappaysdk.com https://ajax.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com https://maps.googleapis.com https://static.hotjar.com https://script.hotjar.com; media-src 'self' https://service.tabf.org.tw " />
-    <title> -->
     <meta name="keywords" content="TABF, Taiwan Academy of Banking and Finance" />
     <meta name="description"
         content="TABF is a non-profit organization, advised by Financial Supervisory Commission (FSC) of Taiwan. We are a pioneer in Taiwan for research, training, proficiency testing, and publication services for banking professionals." />
@@ -51,6 +48,8 @@
                         <span class="menu-title"></span>
                     </div>
 
+                    <a href="#u" id="u" accesskey="u" class="acc acc_u" title="Upper block(U)">:::</a>
+
                     <ul class="menu-inner">
                         <li class="menu-item menu-dropdown">
                             <span class="menu-link">About<i class="bx bx-chevron-right"></i></span>
@@ -88,10 +87,10 @@
                                             <a href="development.html" class="submenu-link">Financial Talent Development</a>
                                             <ul class="submenu-list">
                                                 <li class="submenu-item">
-                                                    <a href="training.html" class="submenu-link">Financial Training Service</a>
+                                                    <a href="training.html" class="submenu-link">Financial Training Services</a>
                                                 </li>
                                                 <li class="submenu-item">
-                                                    <a href="proficiency.html" class="submenu-link">Financial Proficiency Testing</a>
+                                                    <a href="assessment.html" class="submenu-link">Assessment and Certification</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -228,6 +227,7 @@
                         <li class="breadcrumb-item">Functions</li>
                         <li class="breadcrumb-item active">Financial Talent Development</li>
                     </ul>
+                    <a href="#c" id="c" accesskey="c" class="acc acc_c" title="Main content area(C)">:::</a>
                     <h2><span>Financial Talent Development</span></h2>
                 </div>
                 
@@ -260,9 +260,9 @@
                                 </div>
                                 <div class="development-item">
                                     <div class="thumnail effect">
-                                        <a href="proficiency.html">
+                                        <a href="assessment.html">
                                             <img src="images/functions/development/proficiency.jpg" alt="...">
-                                            <div class="title"><span>Proficiency Testing</span></div>
+                                            <div class="title"><span>Assessment and Certification</span></div>
                                         </a>
                                     </div>
                                     <div class="description">
@@ -274,7 +274,7 @@
                                             <div class="title">Financial tests</div>
                                             <div class="counter-box"><span class="counter" data-number="7428"></span>/ year</div>
                                         </div>
-                                        <a class="viewmore" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000" href="proficiency.html">view more</a>
+                                        <a class="viewmore" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000" href="assessment.html">view more</a>
                                     </div>
                                 </div>
                             </div>
@@ -294,6 +294,7 @@
 
     <footer>
         <div class="container">
+            <a href="#b" id="b" accesskey="b" class="acc acc_b" title="Bottom Link area(B)">:::</a>
             <div class="row">
                 <div class="col-md-6">
                     <img class="logo" src="images/logo-footer.svg" alt="tabf logo">
@@ -317,7 +318,7 @@
                     <a class="nav-link" href="#">Privacy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Site Map</a>
+                    <a class="nav-link" href="sitemap.html">Site Map</a>
                 </li>
             </ul>
             <div class="row">
@@ -408,6 +409,46 @@
     <script src="js/script.js"></script>
     <script>
         AOS.init();
+
+        
+// count 
+  var a = 0;
+  $(window).scroll(function () {
+    var oTop = $(".counter-box").offset().top - window.innerHeight;
+    if (a == 0 && $(window).scrollTop() > oTop) {
+      $(".counter").each(function () {
+        var $this = $(this),
+          countTo = $this.attr("data-number");
+        $({
+          countNum: $this.text()
+        }).animate(
+          {
+            countNum: countTo
+          },
+
+          {
+            duration: 5000,
+            easing: "swing",
+            step: function () {
+              //$this.text(Math.ceil(this.countNum));
+              $this.text(
+                Math.ceil(this.countNum).toLocaleString("en")
+              );
+            },
+            complete: function () {
+              $this.text(
+                Math.ceil(this.countNum).toLocaleString("en")
+              );
+              //alert('finished');
+            }
+          }
+        );
+      });
+      a = 1;
+    }
+  });
+
+
     </script>
 
 </body>
