@@ -1984,7 +1984,7 @@ figcaption {
 @media (min-width:992px) {
     article .col2 {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
     }
 
 
