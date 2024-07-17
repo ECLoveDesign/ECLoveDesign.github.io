@@ -1940,7 +1940,7 @@ h4 .btn-href {
 }
 
 figcaption {
-    text-align: center;
+    /* text-align: center; */
     font-size: 1.6rem;
     font-weight: 600;
 }
@@ -2977,9 +2977,13 @@ figcaption {
 }
 
 /* figure */
+.figure {
+    width: 100%;
+}
 .figure img {
     margin: 0;
     border-radius: 0;
+    width: 100%;
 }
 
 .figure-caption {
@@ -2991,7 +2995,7 @@ figcaption {
     min-height: 140px;
     line-height: 1.5rem;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .figure-caption::before {
