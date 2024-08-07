@@ -1955,7 +1955,14 @@ h4 .btn-href {
     margin-bottom: 2rem;
     position: relative;
 }
-
+.main-content h3.title-team a {
+    color: #212529;
+    text-decoration: underline;
+}
+.main-content h3.title-team a:hover {
+    text-decoration: none;
+    color: var(--normalColor);
+}
 /* .main-content h3::before {
     content: '';
     display: block;
@@ -3479,7 +3486,8 @@ figcaption {
 
 .info-head .title {
     color: #878787;
-    font-size: 1.1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .info-head .name {
