@@ -752,33 +752,8 @@
                                                                             class="form-control formText {required:true}"
                                                                             name="patient.caseSourceUnit" value="無"
                                                                             length=30 placeHolder="請輸入轉介單位名稱..">
-                                                                    </div> -->
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group ">
-                                                                                <label>居住狀況</label>
-                                                                                <div class="input-group">
-                                                                                    <label><input type="radio"
-                                                                                            value="10"
-                                                                                            name="patient.livingCondition"
-                                                                                            class="iradio" />獨居</label><b>&nbsp;&nbsp;</b>
-                                                                                    <label><input type="radio"
-                                                                                            value="20"
-                                                                                            name="patient.livingCondition"
-                                                                                            class="iradio" />與______同住</label><b>&nbsp;&nbsp;</b>
-                                                                                </div><!-- /.input group -->
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group ">
-                                                                                <label>同住人</label>
-                                                                                <input type="text"
-                                                                                    name="patient.livingConditionElse"
-                                                                                    class="form-control formText { }" />
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </div>
+                                                                    </div> 
+                                                                    
 
 
                                                                     <script type="text/javascript">
@@ -827,6 +802,34 @@
                                                                             $('#caseSource').trigger('change');
                                                                         });
                                                                     </script>
+                                                                
+                                                                -->
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group ">
+                                                                                <label>居住狀況</label>
+                                                                                <div class="input-group">
+                                                                                    <label><input type="radio"
+                                                                                            value="10"
+                                                                                            name="patient.livingCondition"
+                                                                                            class="iradio" />獨居</label><b>&nbsp;&nbsp;</b>
+                                                                                    <label><input type="radio"
+                                                                                            value="20"
+                                                                                            name="patient.livingCondition"
+                                                                                            class="iradio" />與______同住</label><b>&nbsp;&nbsp;</b>
+                                                                                </div><!-- /.input group -->
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group ">
+                                                                                <label>同住人</label>
+                                                                                <input type="text"
+                                                                                    name="patient.livingConditionElse"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
 
 
@@ -1811,6 +1814,7 @@
                                                                         <th>午點</th>
                                                                         <th>晚餐</th>
                                                                         <th>晚點</th>
+                                                                        <th>食物份量</th>
                                                                     </tr>
 
                                                                     <tr>
@@ -1845,6 +1849,7 @@
                                                                                 <input type="text" name="dietContDinner2" class="form-control formText {  }">
                                                                             </div>
                                                                         </td>
+                                                                        <th></th>
                                                                     </tr>
                                                                     <tr>
                                                                         <th>未精緻主食類</th>
@@ -1884,6 +1889,12 @@
                                                                                     class="form-control formText {  required: true,number: true       }">
                                                                             </div>
                                                                         </td>
+                                                                        <th>  
+                                                                            <div class="form-group ">
+                                                                                <input type="text" value="6" name="wholeFoodCount"
+                                                                                    class="form-control formText " disabled>
+                                                                            </div>
+                                                                        </th>
                                                                     </tr>
                                                                     <tr>
                                                                         <th>精緻主食類</th>
@@ -1923,6 +1934,12 @@
                                                                                     class="form-control formText {  required: true,number: true       }">
                                                                             </div>
                                                                         </td>
+                                                                        <th>  
+                                                                            <div class="form-group ">
+                                                                                <input type="text" value="6" name="fineDiningCount"
+                                                                                    class="form-control formText " disabled>
+                                                                            </div>
+                                                                        </th>
                                                                     </tr>
                                                                     <tr>
                                                                         <th>豆魚蛋肉類</th>
@@ -1962,6 +1979,12 @@
                                                                                     class="form-control formText {  required: true,number: true       }">
                                                                             </div>
                                                                         </td>
+                                                                        <th>  
+                                                                            <div class="form-group ">
+                                                                                <input type="text" value="6" name="meats&proteinCount"
+                                                                                    class="form-control formText " disabled>
+                                                                            </div>
+                                                                        </th>
                                                                     </tr>
                                                                     <tr>
                                                                         <th>蔬菜類</th>
@@ -2001,6 +2024,12 @@
                                                                                     class="form-control formText {  required: true,number: true       }">
                                                                             </div>
                                                                         </td>
+                                                                        <th>  
+                                                                            <div class="form-group ">
+                                                                                <input type="text" value="6" name="vegetableCount"
+                                                                                    class="form-control formText " disabled>
+                                                                            </div>
+                                                                        </th>
                                                                     </tr>
                                                                     <tr>
                                                                         <th>油脂類</th>
@@ -2040,6 +2069,12 @@
                                                                                     class="form-control formText {  required: true,number: true       }">
                                                                             </div>
                                                                         </td>
+                                                                        <th>  
+                                                                            <div class="form-group ">
+                                                                                <input type="text" value="6" name="fatsCount"
+                                                                                    class="form-control formText " disabled>
+                                                                            </div>
+                                                                        </th>
                                                                     </tr>
                                                                     <tr>
                                                                         <th>水果類</th>
@@ -2079,6 +2114,12 @@
                                                                                     class="form-control formText {  required: true,number: true       }">
                                                                             </div>
                                                                         </td>
+                                                                        <th>  
+                                                                            <div class="form-group ">
+                                                                                <input type="text" value="6" name="fruitsCount"
+                                                                                    class="form-control formText " disabled>
+                                                                            </div>
+                                                                        </th>
                                                                     </tr>
                                                                     <tr>
                                                                         <th>乳品類</th>
@@ -2118,9 +2159,285 @@
                                                                                     class="form-control formText {  required: true,number: true       }">
                                                                             </div>
                                                                         </td>
+                                                                        <th>  
+                                                                            <div class="form-group ">
+                                                                                <input type="text" value="6" name="milkCount"
+                                                                                    class="form-control formText " disabled>
+                                                                            </div>
+                                                                        </th>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
+
+
+                                                            <h4
+                                                            style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
+                                                            營養補充品</h4>
+
+                                                            <!--營養補充品-->
+                                                            <div class="form-group">
+                                                                <label class="sr-only">營養補充品</label>
+                                                                <select id="supplementFoods" name="patient.supplementFoods"
+                                                                    class="form-control">
+                                                                    <option value="10" selected>無</option>
+                                                                    <option value="30">有</option>
+    
+                                                                </select>
+                                                            </div>
+                                                            <script>
+                                                                addLoadEvent(function () {
+        
+                                                                    $('#supplementFoods').on('change', function () {
+                                                                        var value = $(
+                                                                            "select[name='patient.supplementFoods']"
+                                                                            ).val();
+                                                                        if ($.trim(value) != "") {
+                                                                            if (value == '30') {
+                                                                                $('#supplementFoodsUnit')
+                                                                                .fadeIn();
+                                                                                $('#supplementFoodsHospital')
+                                                                                    .fadeIn();
+                                                                                if ($(
+                                                                                        "input[name='patient.supplementFoodsUnit']")
+                                                                                    .val() == '無') {
+                                                                                    $("input[name='patient.supplementFoodsUnit']")
+                                                                                        .val('');
+                                                                                }
+                                                                            } else {
+                                                                                $('#supplementFoodsHospital')
+                                                                                    .fadeOut();
+                                                                                $('#supplementFoodsUnit')
+                                                                                    .fadeOut();
+                                                                                $("input[name='patient.supplementFoodsUnit']")
+                                                                                    .val('無').trigger(
+                                                                                        'keyup');
+                                                                            }
+    
+                                                                        } else {
+                                                                            $('#supplementFoodsUnit').fadeIn();
+                                                                        }
+    
+                                                                    });
+                                                                    $('#supplementFoods').trigger('change');
+                                                                });
+                                                            </script>
+
+                                                            <!--品項-->
+                                                            <div class="form-group" id="supplementFoodsUnit">
+                                                                
+                                                                <div class="row">
+                                                                    <div class="col-xs-4">
+                                                                        <div class="form-group ">
+                                                                            <label>品名</label>
+                                                                            <input type="text"
+                                                                                name="patient.foodName"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <div class="form-group ">
+                                                                            <label>份量</label>
+                                                                            <input type="text"
+                                                                                name="patient.foodQuantity"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <div class="form-group ">
+                                                                            <label>熱量(kcal)</label>
+                                                                            <input type="text"
+                                                                                name="patient.foodCalorie"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <div class="form-group ">
+                                                                            <label>蛋白質(公克)</label>
+                                                                            <input type="text"
+                                                                                name="patient.foodProtein"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+                                                                    </div>   
+                                                                </div>
+                                                                
+                                                                <div class="row">
+                                                                    <div class="col-xs-4">
+                                                                        <div class="form-group ">
+                                                                            <label>品名</label>
+                                                                            <input type="text"
+                                                                                name="patient.foodName"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <div class="form-group ">
+                                                                            <label>份量</label>
+                                                                            <input type="text"
+                                                                                name="patient.foodQuantity"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <div class="form-group ">
+                                                                            <label>熱量(kcal)</label>
+                                                                            <input type="text"
+                                                                                name="patient.foodCalorie"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <div class="form-group ">
+                                                                            <label>蛋白質(公克)</label>
+                                                                            <input type="text"
+                                                                                name="patient.foodProtein"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+                                                                    </div>      
+                                                                </div>
+
+                                                                <div class="entry">
+                                                                    
+                                                                    <div class="row">
+                                                                        <div class="col-xs-4">
+                                                                            <div class="form-group ">
+                                                                                <label>品名</label>
+                                                                                <input type="text"
+                                                                                    name="patient.foodName"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col-xs-2">
+                                                                            <div class="form-group ">
+                                                                                <label>份量</label>
+                                                                                <input type="text"
+                                                                                    name="patient.foodQuantity"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col-xs-2">
+                                                                            <div class="form-group ">
+                                                                                <label>熱量(kcal)</label>
+                                                                                <input type="text"
+                                                                                    name="patient.foodCalorie"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col-xs-2">
+                                                                            <div class="form-group ">
+                                                                                <label>蛋白質(公克)</label>
+                                                                                <input type="text"
+                                                                                    name="patient.foodProtein"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+                                                                        </div>                              
+                                                                        
+                                                                        <div class="col-xs-2">
+                                                                            <div style="height:25px;"></div>
+                                                                            <button class="btn btn-success btn-add"
+                                                                            type="button">
+                                                                                <span class="glyphicon glyphicon-plus"></span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <!--input-group entry -->
+                                                            </div>
+    
+                                                            <script>
+                                                                addLoadEvent(function () {
+                                                                    $(document).off('click', '.btn-add').on('click',
+                                                                        '.btn-add',
+                                                                        function (e) {
+                                                                            e.preventDefault();
+    
+                                                                            var controlGroup = $(this).parents(
+                                                                                    '.form-group:first'),
+                                                                                currentEntry = $(this).parents(
+                                                                                    '.entry:first'),
+                                                                                newEntry = $(currentEntry
+                                                                                .clone()).appendTo(
+                                                                                controlGroup);
+    
+                                                                            newEntry.find('input').val('');
+                                                                            controlGroup.find(
+                                                                                    '.entry:not(:last) .btn-add'
+                                                                                    )
+                                                                                .removeClass('btn-add')
+                                                                                .addClass('btn-remove')
+                                                                                .removeClass('btn-success')
+                                                                                .addClass('btn-danger')
+                                                                                .html(
+                                                                                    '<span class="glyphicon glyphicon-minus"></span>'
+                                                                                    );
+                                                                        }).on('click', '.btn-remove', function (
+                                                                        e) {
+                                                                        $(this).parents('.entry:first')
+                                                                            .remove();
+    
+                                                                        e.preventDefault();
+                                                                        return false;
+                                                                    });
+                                                                });
+                                                                </script>
+                                                                
+                                                                
+                                                            
+                                                            <h4
+                                                            style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-top: 40px; color: #0066CC">
+                                                            實際攝取量</h4>
+<!--品項-->
+                                                            <!--實際攝取量-->
+                                                            <div class="form-group" id="actualIntake">
+                                                                
+                                                                <div class="row">
+                                                                    <div class="col-xs-4">
+                                                                        <div class="form-group ">
+                                                                            <label>熱量(kcal)</label>
+                                                                            <input type="text"
+                                                                                name="patient.actualIntakeCalorie"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-xs-4">
+                                                                        <div class="form-group ">
+                                                                            <label>蛋白質(公克)</label>
+                                                                            <input type="text"
+                                                                                name="patient.actualIntakeProtein"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-4">
+                                                                        <div class="form-group ">
+                                                                            <label>水分</label>
+                                                                            <input type="text"
+                                                                                name="patient.actualIntakeWater"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-xs-12">
+                                                                        <div class="form-group ">
+                                                                            <label>其他</label>
+                                                                            <input type="text"
+                                                                                name="patient.actualIntakeOther"
+                                                                                class="form-control formText { }" />
+                                                                        </div>
+
+                                                                    </div>   
+                                                                </div>
+                                                                <!--input-group entry -->
+                                                            </div>
 
                                                         </div>
                                                         <!-- ./card-box -->
