@@ -1,0 +1,32 @@
+/* Community Nutrition Counseling Style */
+.toggleCont .card-header a {
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    cursor: pointer;
+    background: #534641;    
+    display: block;
+    border-radius: 5px;
+}
+.toggleCont .card-header {
+    margin-bottom: 10px;
+}
+.recordCode {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.toggleCont .card-header a::after {    
+    font-size: 2rem;
+    font-family: 'Material Design Iconic Font'; 
+    content: "\f1b6";
+    display: inline-block;
+    transition: all 0.2 linear;
+    transform: rotate(90deg);
+    float: right;
+    margin-top: -2px;
+}
+.toggleCont .card-header a[aria-expanded="true"]::after {
+    transform: rotate(270deg);
+}
