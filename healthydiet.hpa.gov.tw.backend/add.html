@@ -199,30 +199,32 @@
                                             <div id="personalInfo" class="collapse" data-parent="#accordionExample">
                                                 <div class="card-body">
 
-                                                    <form id="personalInfoForm" class="validate" action="patient!update.action"
-                                                        method="post" enctype="multipart/form-data">
+                                                    <form id="personalInfoForm" class="validate"
+                                                        action="patient!update.action" method="post"
+                                                        enctype="multipart/form-data">
                                                         <input type="hidden" name="id"
                                                             value="8a0c808891466e18019158f9e45d01ad" />
                                                         <div class="card-box">
 
                                                             <!-- Main row -->
                                                             <div class="row">
-                                                                
+
                                                                 <div class="col-md-6">
                                                                     <div class="row">
                                                                         <div class="col-sm-4">
-                                                                            
+
                                                                             <!--大頭-->
                                                                             <div class="kv-avatar center-block text-center"
-                                                                            style="width:200px; margin-bottom: 20px;">
-                                                                                <img src="https://healthydiet.hpa.gov.tw/NCAP/page/common/images/users/default_avatar_male.jpg ">
+                                                                                style="width:200px; margin-bottom: 20px;">
+                                                                                <img
+                                                                                    src="https://healthydiet.hpa.gov.tw/NCAP/page/common/images/users/default_avatar_male.jpg ">
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-sm-1">
                                                                             <!--會蓋到所以留白 -->
                                                                         </div>
                                                                         <div class="col-sm-7">
-                                                                            
+
                                                                             <!--姓名-->
                                                                             <div class="form-group ">
                                                                                 <label>*姓名</label>
@@ -230,7 +232,7 @@
                                                                                     name="patient.caseName"
                                                                                     class="form-control formText { required: true }" />
                                                                             </div>
-                                                                            
+
 
                                                                             <!--身分證字號-->
                                                                             <div class="form-group ">
@@ -240,10 +242,10 @@
                                                                                     class="form-control formText {}" />
                                                                             </div>
 
-                                                                            <div class="row">                                                                                          
+                                                                            <div class="row">
                                                                                 <!--性別-->
                                                                                 <label class="col-md-12">性別</label>
-                                                                                <div class="col-md-6">  
+                                                                                <div class="col-md-6">
                                                                                     <div class="form-group ">
                                                                                         <div class="input-group">
                                                                                             <label><input type="radio"
@@ -260,7 +262,7 @@
                                                                                 </div>
 
                                                                                 <!--為原住民-->
-                                                                                <div class="col-md-6">                                                                                    
+                                                                                <div class="col-md-6">
                                                                                     <div class="form-group">
                                                                                         <input type="checkbox" value="Y"
                                                                                             id="isAboriginal"
@@ -270,11 +272,12 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            
+
                                                                         </div>
                                                                     </div>
 
-                                                                    <!--縣市／行政區-->                                                            <!--行政區-->
+                                                                    <!--縣市／行政區-->
+                                                                    <!--行政區-->
                                                                     <div class="row">
                                                                         <label class="col-xs-12">縣市／行政區</label>
                                                                         <br>
@@ -353,7 +356,7 @@
 
                                                                         </div>
                                                                         <div class="col-md-4">
-                                                                            
+
                                                                             <!--年齡-->
                                                                             <div class="form-group ">
                                                                                 <label>年齡</label>
@@ -378,14 +381,14 @@
                                                                                                     value
                                                                                                     .split(
                                                                                                         "-"
-                                                                                                        );
+                                                                                                    );
                                                                                                 var dt =
                                                                                                     new Date(
                                                                                                         (
                                                                                                             parseInt(
                                                                                                                 parts[
                                                                                                                     0
-                                                                                                                    ],
+                                                                                                                ],
                                                                                                                 10
                                                                                                             ) +
                                                                                                             1911
@@ -393,17 +396,17 @@
                                                                                                         parseInt(
                                                                                                             parts[
                                                                                                                 1
-                                                                                                                ],
+                                                                                                            ],
                                                                                                             10
-                                                                                                            ) -
+                                                                                                        ) -
                                                                                                         1,
                                                                                                         parseInt(
                                                                                                             parts[
                                                                                                                 2
-                                                                                                                ],
+                                                                                                            ],
                                                                                                             10
-                                                                                                            )
-                                                                                                        );
+                                                                                                        )
+                                                                                                    );
 
                                                                                                 var birthday =
                                                                                                     dt;
@@ -418,16 +421,16 @@
                                                                                                     .setFullYear(
                                                                                                         today
                                                                                                         .getFullYear()
-                                                                                                        );
+                                                                                                    );
                                                                                                 if (today <
                                                                                                     birthday
-                                                                                                    ) {
+                                                                                                ) {
                                                                                                     years--;
                                                                                                 }
                                                                                                 $('#caseAge')
                                                                                                     .val(
                                                                                                         years
-                                                                                                        );
+                                                                                                    );
                                                                                             }
                                                                                         });
                                                                                     $('#birthday').trigger(
@@ -483,23 +486,23 @@
                                                                                                 entry => {
                                                                                                     if (entry ==
                                                                                                         ""
-                                                                                                        ) {
+                                                                                                    ) {
                                                                                                         var index =
                                                                                                             selects
                                                                                                             .indexOf(
                                                                                                                 entry
-                                                                                                                );
+                                                                                                            );
                                                                                                         if (index >
                                                                                                             -
                                                                                                             1
-                                                                                                            ) {
+                                                                                                        ) {
                                                                                                             select_
                                                                                                                 =
                                                                                                                 selects
                                                                                                                 .splice(
                                                                                                                     index,
                                                                                                                     1
-                                                                                                                    );
+                                                                                                                );
                                                                                                         }
                                                                                                     }
                                                                                                 });
@@ -511,13 +514,13 @@
                                                                                                     selects)
                                                                                                 .trigger(
                                                                                                     "change"
-                                                                                                    );
+                                                                                                );
                                                                                         }
                                                                                     } else if (selects ==
                                                                                         null) {
                                                                                         $(this).find(
                                                                                                 "select option:eq(0)"
-                                                                                                )
+                                                                                            )
                                                                                             .prop(
                                                                                                 "selected",
                                                                                                 true);
@@ -535,15 +538,16 @@
                                                                                         "select[name='patient.useLanguage']"
                                                                                     ).val()];
                                                                                     if ($.trim(
-                                                                                        selectValue) != ""
-                                                                                        ) {
+                                                                                            selectValue) !=
+                                                                                        ""
+                                                                                    ) {
                                                                                         $.each(selectValue,
                                                                                             function (
                                                                                                 key,
                                                                                                 value) {
                                                                                                 if (value ==
                                                                                                     '99'
-                                                                                                    ) {
+                                                                                                ) {
                                                                                                     $('#useLanguageElse')
                                                                                                         .fadeIn();
                                                                                                 } else {
@@ -618,23 +622,23 @@
                                                                                                 entry => {
                                                                                                     if (entry ==
                                                                                                         ""
-                                                                                                        ) {
+                                                                                                    ) {
                                                                                                         var index =
                                                                                                             selects
                                                                                                             .indexOf(
                                                                                                                 entry
-                                                                                                                );
+                                                                                                            );
                                                                                                         if (index >
                                                                                                             -
                                                                                                             1
-                                                                                                            ) {
+                                                                                                        ) {
                                                                                                             select_
                                                                                                                 =
                                                                                                                 selects
                                                                                                                 .splice(
                                                                                                                     index,
                                                                                                                     1
-                                                                                                                    );
+                                                                                                                );
                                                                                                         }
                                                                                                     }
                                                                                                 });
@@ -646,13 +650,13 @@
                                                                                                     selects)
                                                                                                 .trigger(
                                                                                                     "change"
-                                                                                                    );
+                                                                                                );
                                                                                         }
                                                                                     } else if (selects ==
                                                                                         null) {
                                                                                         $(this).find(
                                                                                                 "select option:eq(0)"
-                                                                                                )
+                                                                                            )
                                                                                             .prop(
                                                                                                 "selected",
                                                                                                 true);
@@ -670,15 +674,16 @@
                                                                                         "select[name='patient.education']"
                                                                                     ).val()];
                                                                                     if ($.trim(
-                                                                                        selectValue) != ""
-                                                                                        ) {
+                                                                                            selectValue) !=
+                                                                                        ""
+                                                                                    ) {
                                                                                         $.each(selectValue,
                                                                                             function (
                                                                                                 key,
                                                                                                 value) {
                                                                                                 if (value ==
                                                                                                     '99'
-                                                                                                    ) {
+                                                                                                ) {
                                                                                                     $('#educationTypeElse')
                                                                                                         .fadeIn();
                                                                                                 } else {
@@ -727,7 +732,7 @@
                                                                         </div><!-- /.input group -->
                                                                     </div>
 
-<!-- 
+                                                                    <!-- 
                                                                     <div class="form-group">
                                                                         <label>個案來源</label>
                                                                         <select id="caseSource"
@@ -794,12 +799,12 @@
                                                                                                 .fadeIn();
                                                                                             if ($(
                                                                                                     "input[name='patient.caseSourceUnit']"
-                                                                                                    )
+                                                                                                )
                                                                                                 .val() ==
                                                                                                 '無') {
                                                                                                 $("input[name='patient.caseSourceUnit']")
                                                                                                     .val(
-                                                                                                    '');
+                                                                                                        '');
                                                                                             }
                                                                                         } else {
                                                                                             $('#caseSourceHospital')
@@ -810,7 +815,7 @@
                                                                                                 .val('無')
                                                                                                 .trigger(
                                                                                                     'keyup'
-                                                                                                    );
+                                                                                                );
                                                                                         }
 
                                                                                     } else {
@@ -825,8 +830,8 @@
                                                                 </div>
 
 
-                                                                <div class="col-md-6">   
-                                                                    
+                                                                <div class="col-md-6">
+
                                                                     <!--來源-->
                                                                     <div class="form-group ">
                                                                         <label>來源</label>
@@ -847,15 +852,15 @@
                                                                                     name="patient.caseSource"
                                                                                     class="icheckbox" />社區其他篩檢／服務</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="20"
-                                                                                name="patient.caseSource"
-                                                                                class="icheckbox"
-                                                                                name="patient.caseSource"
-                                                                                class="icheckbox" />ICOPE</label><b>&nbsp;&nbsp;</b>
+                                                                                    name="patient.caseSource"
+                                                                                    class="icheckbox"
+                                                                                    name="patient.caseSource"
+                                                                                    class="icheckbox" />ICOPE</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="20"
-                                                                                name="patient.caseSource"
-                                                                                class="icheckbox"
-                                                                                name="patient.caseSource"
-                                                                                class="icheckbox" />營養篩檢</label><b>&nbsp;&nbsp;</b>
+                                                                                    name="patient.caseSource"
+                                                                                    class="icheckbox"
+                                                                                    name="patient.caseSource"
+                                                                                    class="icheckbox" />營養篩檢</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="99"
                                                                                     name="patient.caseSource"
                                                                                     class="icheckbox"
@@ -867,8 +872,7 @@
                                                                     <!--MNA-SF 分數-->
                                                                     <div class="form-group ">
                                                                         <label>MNA-SF 分數</label>
-                                                                        <input type="text"
-                                                                            name="patient.MNAScore"
+                                                                        <input type="text" name="patient.MNAScore"
                                                                             class="form-control formText {  }" />
                                                                     </div>
 
@@ -879,7 +883,7 @@
                                                                             name="patient.caseSourceOther"
                                                                             class="form-control formText {  }" />
                                                                     </div>
-                                                                    
+
                                                                     <!--諮詢方式-->
                                                                     <div class="form-group ">
                                                                         <label>諮詢方式</label>
@@ -910,8 +914,7 @@
                                                                     <!--面訪地點-->
                                                                     <div class="form-group ">
                                                                         <label>面訪地點</label>
-                                                                        <input type="text"
-                                                                            name="patient.consultAddress"
+                                                                        <input type="text" name="patient.consultAddress"
                                                                             class="form-control formText {  }" />
                                                                     </div>
 
@@ -995,7 +998,7 @@
 
 
                                                                 </div>
-                                                                
+
                                                                 <div>
 
                                                                 </div>
@@ -1020,22 +1023,24 @@
                                             </div>
                                             <div id="foodHistory" class="collapse" data-parent="#accordionExample">
                                                 <div class="card-body">
-                                                    
 
-                                                    <form id="FoodInfoForm" class="validate" action="patient!update.action"
-                                                        method="post" enctype="multipart/form-data">
+
+                                                    <form id="FoodInfoForm" class="validate"
+                                                        action="patient!update.action" method="post"
+                                                        enctype="multipart/form-data">
                                                         <input type="hidden" name="id"
                                                             value="8a0c808891466e18019158f9e45d01ad" />
                                                         <div class="card-box">
 
                                                             <!-- Main row -->
                                                             <div class="row">
-                                                                
+
                                                                 <div class="col-md-6">
-                                                                    <h4 style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
+                                                                    <h4
+                                                                        style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
                                                                         身體活動與功能</h4>
-                                                                   
-                                                                    <!--行動能力-->  
+
+                                                                    <!--行動能力-->
                                                                     <div class="form-group">
                                                                         <label>行動能力</label>
                                                                         <select id="caseSource"
@@ -1050,7 +1055,7 @@
                                                                         </select>
                                                                     </div>
 
-                                                                    <!--活動範圍-->  
+                                                                    <!--活動範圍-->
                                                                     <div class="form-group">
                                                                         <label>活動範圍</label>
                                                                         <select id="motionRange"
@@ -1097,23 +1102,23 @@
                                                                                                 entry => {
                                                                                                     if (entry ==
                                                                                                         ""
-                                                                                                        ) {
+                                                                                                    ) {
                                                                                                         var index =
                                                                                                             selects
                                                                                                             .indexOf(
                                                                                                                 entry
-                                                                                                                );
+                                                                                                            );
                                                                                                         if (index >
                                                                                                             -
                                                                                                             1
-                                                                                                            ) {
+                                                                                                        ) {
                                                                                                             select_
                                                                                                                 =
                                                                                                                 selects
                                                                                                                 .splice(
                                                                                                                     index,
                                                                                                                     1
-                                                                                                                    );
+                                                                                                                );
                                                                                                         }
                                                                                                     }
                                                                                                 });
@@ -1125,13 +1130,13 @@
                                                                                                     selects)
                                                                                                 .trigger(
                                                                                                     "change"
-                                                                                                    );
+                                                                                                );
                                                                                         }
                                                                                     } else if (selects ==
                                                                                         null) {
                                                                                         $(this).find(
                                                                                                 "select option:eq(0)"
-                                                                                                )
+                                                                                            )
                                                                                             .prop(
                                                                                                 "selected",
                                                                                                 true);
@@ -1147,15 +1152,16 @@
                                                                                         "select[name='patient.motionRange']"
                                                                                     ).val()];
                                                                                     if ($.trim(
-                                                                                        selectValue) != ""
-                                                                                        ) {
+                                                                                            selectValue) !=
+                                                                                        ""
+                                                                                    ) {
                                                                                         $.each(selectValue,
                                                                                             function (
                                                                                                 key,
                                                                                                 value) {
                                                                                                 if (value ==
                                                                                                     '99'
-                                                                                                    ) {
+                                                                                                ) {
                                                                                                     $('#motionRangeElse')
                                                                                                         .fadeIn();
                                                                                                 } else {
@@ -1179,8 +1185,7 @@
                                                                     <!--活動／運動型態／頻率-->
                                                                     <div class="form-group ">
                                                                         <label>活動／運動型態／頻率</label>
-                                                                        <input type="text"
-                                                                            name="patient.consultAddress"
+                                                                        <input type="text" name="patient.consultAddress"
                                                                             class="form-control formText {  }" />
                                                                     </div>
 
@@ -1205,10 +1210,10 @@
                                                                                     name="patient.drugType"
                                                                                     class="icheckbox" />血脂藥</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="20"
-                                                                                name="patient.drugType"
-                                                                                class="icheckbox"
-                                                                                name="patient.drugType"
-                                                                                class="icheckbox" />軟便劑</label><b>&nbsp;&nbsp;</b>                                                                            
+                                                                                    name="patient.drugType"
+                                                                                    class="icheckbox"
+                                                                                    name="patient.drugType"
+                                                                                    class="icheckbox" />軟便劑</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="99"
                                                                                     name="patient.drugType"
                                                                                     class="icheckbox"
@@ -1226,14 +1231,13 @@
                                                                     </div>
 
 
-                                                                    
-                                                                    
                                                                 </div>
 
 
-                                                                <div class="col-md-6">   
+                                                                <div class="col-md-6">
 
-                                                                    <h4 style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
+                                                                    <h4
+                                                                        style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
                                                                         食物來源及製備</h4>
 
                                                                     <!--食物來源及製備-->
@@ -1279,23 +1283,23 @@
                                                                                                 entry => {
                                                                                                     if (entry ==
                                                                                                         ""
-                                                                                                        ) {
+                                                                                                    ) {
                                                                                                         var index =
                                                                                                             selects
                                                                                                             .indexOf(
                                                                                                                 entry
-                                                                                                                );
+                                                                                                            );
                                                                                                         if (index >
                                                                                                             -
                                                                                                             1
-                                                                                                            ) {
+                                                                                                        ) {
                                                                                                             select_
                                                                                                                 =
                                                                                                                 selects
                                                                                                                 .splice(
                                                                                                                     index,
                                                                                                                     1
-                                                                                                                    );
+                                                                                                                );
                                                                                                         }
                                                                                                     }
                                                                                                 });
@@ -1307,20 +1311,19 @@
                                                                                                     selects)
                                                                                                 .trigger(
                                                                                                     "change"
-                                                                                                    );
+                                                                                                );
                                                                                         }
                                                                                     } else if (selects ==
                                                                                         null) {
                                                                                         $(this).find(
                                                                                                 "select option:eq(0)"
-                                                                                                )
+                                                                                            )
                                                                                             .prop(
                                                                                                 "selected",
                                                                                                 true);
                                                                                     }
 
                                                                                 });
-
 
 
                                                                             //增加選擇「其他欄位」的操作功能
@@ -1331,15 +1334,16 @@
                                                                                         "select[name='patient.foodSource']"
                                                                                     ).val()];
                                                                                     if ($.trim(
-                                                                                        selectValue) != ""
-                                                                                        ) {
+                                                                                            selectValue) !=
+                                                                                        ""
+                                                                                    ) {
                                                                                         $.each(selectValue,
                                                                                             function (
                                                                                                 key,
                                                                                                 value) {
                                                                                                 if (value ==
                                                                                                     '99'
-                                                                                                    ) {
+                                                                                                ) {
                                                                                                     $('#foodSourceElse')
                                                                                                         .fadeIn();
                                                                                                 } else {
@@ -1357,7 +1361,7 @@
                                                                             $('#foodSource').trigger('change');
 
                                                                         });
-                                                                    </script>                                                                    
+                                                                    </script>
 
                                                                     <!--其他來源說明-->
                                                                     <div class="form-group ">
@@ -1366,26 +1370,32 @@
                                                                             name="patient.foodSourceOther"
                                                                             class="form-control formText {  }" />
                                                                     </div>
-                                                                    
+
                                                                     <!--接受送餐-->
                                                                     <div class="row">
                                                                         <div class="col-md-6">
                                                                             <div class="form-group ">
                                                                                 <label>接受送餐</label>
                                                                                 <div class="input-group">
-                                                                                    <label><input type="checkbox" value="0"
-                                                                                            name="patient.disableStatus" class="icheckbox"
+                                                                                    <label><input type="checkbox"
+                                                                                            value="0"
+                                                                                            name="patient.disableStatus"
+                                                                                            class="icheckbox"
                                                                                             name="patient.disableStatus"
                                                                                             class="icheckbox" />早餐</label><b>&nbsp;&nbsp;</b>
-                                                                                    <label><input type="checkbox" value="10"
-                                                                                            name="patient.disableStatus" class="icheckbox"
+                                                                                    <label><input type="checkbox"
+                                                                                            value="10"
+                                                                                            name="patient.disableStatus"
+                                                                                            class="icheckbox"
                                                                                             name="patient.disableStatus"
                                                                                             class="icheckbox" />午餐</label><b>&nbsp;&nbsp;</b>
-                                                                                    <label><input type="checkbox" value="20"
-                                                                                            name="patient.disableStatus" class="icheckbox"
+                                                                                    <label><input type="checkbox"
+                                                                                            value="20"
+                                                                                            name="patient.disableStatus"
+                                                                                            class="icheckbox"
                                                                                             name="patient.disableStatus"
                                                                                             class="icheckbox" />晚餐</label><b>&nbsp;&nbsp;</b>
-                                                                                    
+
                                                                                 </div><!-- /.input group -->
                                                                             </div>
                                                                         </div>
@@ -1399,7 +1409,7 @@
 
                                                                         </div>
                                                                         <!--參加共餐-->
-                                                                        <div class="col-md-6">                                                                                    
+                                                                        <div class="col-md-6">
                                                                             <div class="form-group">
                                                                                 <label>參加共餐</label>
                                                                                 <div class="input-group">
@@ -1441,12 +1451,12 @@
                                                                                                 .fadeIn();
                                                                                             if ($(
                                                                                                     "input[name='patient.caseMobility']"
-                                                                                                    )
+                                                                                                )
                                                                                                 .val() ==
                                                                                                 '無') {
                                                                                                 $("input[name='patient.caseMobility']")
                                                                                                     .val(
-                                                                                                    '');
+                                                                                                        '');
                                                                                             }
                                                                                         } else {
                                                                                             $('#motionRangeHospital')
@@ -1457,7 +1467,7 @@
                                                                                                 .val('無')
                                                                                                 .trigger(
                                                                                                     'keyup'
-                                                                                                    );
+                                                                                                );
                                                                                         }
 
                                                                                     } else {
@@ -1470,11 +1480,10 @@
                                                                         });
                                                                     </script>
 
-                                                                    <!--素食型態-->  
+                                                                    <!--素食型態-->
                                                                     <div class="form-group">
                                                                         <label>素食型態</label>
-                                                                        <select id="VegeType"
-                                                                            name="patient.VegeType"
+                                                                        <select id="VegeType" name="patient.VegeType"
                                                                             class="form-control select2">
                                                                             <option value="0" selected>無</option>
                                                                             <option value="10">全素</option>
@@ -1518,23 +1527,23 @@
                                                                                                 entry => {
                                                                                                     if (entry ==
                                                                                                         ""
-                                                                                                        ) {
+                                                                                                    ) {
                                                                                                         var index =
                                                                                                             selects
                                                                                                             .indexOf(
                                                                                                                 entry
-                                                                                                                );
+                                                                                                            );
                                                                                                         if (index >
                                                                                                             -
                                                                                                             1
-                                                                                                            ) {
+                                                                                                        ) {
                                                                                                             select_
                                                                                                                 =
                                                                                                                 selects
                                                                                                                 .splice(
                                                                                                                     index,
                                                                                                                     1
-                                                                                                                    );
+                                                                                                                );
                                                                                                         }
                                                                                                     }
                                                                                                 });
@@ -1546,13 +1555,13 @@
                                                                                                     selects)
                                                                                                 .trigger(
                                                                                                     "change"
-                                                                                                    );
+                                                                                                );
                                                                                         }
                                                                                     } else if (selects ==
                                                                                         null) {
                                                                                         $(this).find(
                                                                                                 "select option:eq(0)"
-                                                                                                )
+                                                                                            )
                                                                                             .prop(
                                                                                                 "selected",
                                                                                                 true);
@@ -1568,15 +1577,16 @@
                                                                                         "select[name='patient.VegeType']"
                                                                                     ).val()];
                                                                                     if ($.trim(
-                                                                                        selectValue) != ""
-                                                                                        ) {
+                                                                                            selectValue) !=
+                                                                                        ""
+                                                                                    ) {
                                                                                         $.each(selectValue,
                                                                                             function (
                                                                                                 key,
                                                                                                 value) {
                                                                                                 if (value ==
                                                                                                     '99'
-                                                                                                    ) {
+                                                                                                ) {
                                                                                                     $('#VegeTypeElse')
                                                                                                         .fadeIn();
                                                                                                 } else {
@@ -1615,7 +1625,7 @@
                                                                                     name="patient.mealsNum"
                                                                                     class="icheckbox"
                                                                                     name="patient.mealsNum"
-                                                                                    class="icheckbox" />晚餐</label><b>&nbsp;&nbsp;</b>                                                                            
+                                                                                    class="icheckbox" />晚餐</label><b>&nbsp;&nbsp;</b>
                                                                         </div><!-- /.input group -->
                                                                     </div>
 
@@ -1637,16 +1647,16 @@
                                                                                     name="patient.dessertNum"
                                                                                     class="icheckbox"
                                                                                     name="patient.dessertNum"
-                                                                                    class="icheckbox" />午點</label><b>&nbsp;&nbsp;</b>                                                                            
+                                                                                    class="icheckbox" />午點</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="20"
-                                                                                name="patient.dessertNum"
-                                                                                class="icheckbox"
-                                                                                name="patient.dessertNum"
-                                                                                class="icheckbox" />晚點</label><b>&nbsp;&nbsp;</b>
+                                                                                    name="patient.dessertNum"
+                                                                                    class="icheckbox"
+                                                                                    name="patient.dessertNum"
+                                                                                    class="icheckbox" />晚點</label><b>&nbsp;&nbsp;</b>
                                                                         </div><!-- /.input group -->
                                                                     </div>
 
-                                                                    <!--食物質地-->  
+                                                                    <!--食物質地-->
                                                                     <div class="form-group">
                                                                         <label>食物質地</label>
                                                                         <select id="foodTexture"
@@ -1696,23 +1706,23 @@
                                                                                                 entry => {
                                                                                                     if (entry ==
                                                                                                         ""
-                                                                                                        ) {
+                                                                                                    ) {
                                                                                                         var index =
                                                                                                             selects
                                                                                                             .indexOf(
                                                                                                                 entry
-                                                                                                                );
+                                                                                                            );
                                                                                                         if (index >
                                                                                                             -
                                                                                                             1
-                                                                                                            ) {
+                                                                                                        ) {
                                                                                                             select_
                                                                                                                 =
                                                                                                                 selects
                                                                                                                 .splice(
                                                                                                                     index,
                                                                                                                     1
-                                                                                                                    );
+                                                                                                                );
                                                                                                         }
                                                                                                     }
                                                                                                 });
@@ -1724,13 +1734,13 @@
                                                                                                     selects)
                                                                                                 .trigger(
                                                                                                     "change"
-                                                                                                    );
+                                                                                                );
                                                                                         }
                                                                                     } else if (selects ==
                                                                                         null) {
                                                                                         $(this).find(
                                                                                                 "select option:eq(0)"
-                                                                                                )
+                                                                                            )
                                                                                             .prop(
                                                                                                 "selected",
                                                                                                 true);
@@ -1746,15 +1756,16 @@
                                                                                         "select[name='patient.foodTexture']"
                                                                                     ).val()];
                                                                                     if ($.trim(
-                                                                                        selectValue) != ""
-                                                                                        ) {
+                                                                                            selectValue) !=
+                                                                                        ""
+                                                                                    ) {
                                                                                         $.each(selectValue,
                                                                                             function (
                                                                                                 key,
                                                                                                 value) {
                                                                                                 if (value ==
                                                                                                     '99'
-                                                                                                    ) {
+                                                                                                ) {
                                                                                                     $('#foodTextureElse')
                                                                                                         .fadeIn();
                                                                                                 } else {
@@ -1774,16 +1785,342 @@
 
                                                                         });
                                                                     </script>
-                                                                    
+
 
                                                                 </div>
-                                                                
+
                                                                 <div>
 
                                                                 </div>
                                                                 <!-- ./col-md-6 -->
                                                             </div>
                                                             <!-- ./Main Row End -->
+
+                                                            
+                                                            <h4
+                                                            style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
+                                                            飲食內容</h4>
+
+                                                            <table class="table">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <th>早餐</th>
+                                                                        <th>早點</th>
+                                                                        <th>午餐</th>
+                                                                        <th>午點</th>
+                                                                        <th>晚餐</th>
+                                                                        <th>晚點</th>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <th>飲食內容</th>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" name="dietContBreakfast" class="form-control formText {  }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>                                                                            
+                                                                            <div class="form-group ">
+                                                                                <input type="text" name="dietContBreakfast2" class="form-control formText {  }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>                                                                            
+                                                                            <div class="form-group ">
+                                                                                <input type="text" name="dietContLunch" class="form-control formText {  }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>                                                                            
+                                                                            <div class="form-group ">
+                                                                                <input type="text" name="dietContLunch2" class="form-control formText {  }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>                                                                            
+                                                                            <div class="form-group ">
+                                                                                <input type="text" name="dietContDinner" class="form-control formText {  }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>                                                                            
+                                                                            <div class="form-group ">
+                                                                                <input type="text" name="dietContDinner2" class="form-control formText {  }">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>未精緻主食類</th>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="wholeFoodBreakFast"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="wholeFoodBreakFast2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="wholeFoodLunch"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="wholeFoodLunch2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="wholeFoodDinner"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="wholeFoodDinner2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>精緻主食類</th>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fineDiningBreakFast"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fineDiningBreakFast2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fineDiningLunch"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fineDiningLunch2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fineDiningDinner"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fineDiningDinner2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>豆魚蛋肉類</th>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="meats&proteinBreakFast"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="meats&proteinBreakFast2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="meats&proteinLunch"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="meats&proteinLunch2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="meats&proteinDinner"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="meats&proteinDinner2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>蔬菜類</th>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="vegetableBreakFast"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="vegetableBreakFast2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="vegetableLunch"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="vegetableLunch2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="vegetableDinner"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="vegetableDinner2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>油脂類</th>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fatsBreakFast"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fatsBreakFast2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fatsLunch"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fatsLunch2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fatsDinner"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fatsDinner2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>水果類</th>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fruitsBreakFast"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fruitsBreakFast2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fruitsLunch"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fruitsLunch2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fruitsDinner"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="fruitsDinner2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>乳品類</th>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="milkBreakFast"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="milkBreakFast2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="milkLunch"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="milkLunch2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="milkDinner"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group ">
+                                                                                <input type="text" placeholder="請輸入數字" name="milkDinner2"
+                                                                                    class="form-control formText {  required: true,number: true       }">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
 
                                                         </div>
                                                         <!-- ./card-box -->
