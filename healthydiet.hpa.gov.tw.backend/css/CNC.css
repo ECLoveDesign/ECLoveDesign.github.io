@@ -5,7 +5,7 @@
     font-weight: bold;
     font-size: 1.6rem;
     cursor: pointer;
-    background: #534641;    
+    background: #414253;    
     display: block;
     border-radius: 5px;
 }
@@ -29,4 +29,8 @@
 }
 .toggleCont .card-header a[aria-expanded="true"]::after {
     transform: rotate(270deg);
+}
+          
+.form-group .select2-container {
+    width: 100% !important;
 }
