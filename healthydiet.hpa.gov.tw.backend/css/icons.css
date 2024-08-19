@@ -6981,11 +6981,11 @@ MIT License: https://github.com/driftyco/ionicons
 }
 @font-face {
   font-family: 'themify';
-  src: url('http://ap1.tlsiano.com:8080/NCAP/page/common/fonts/themify.eot?-fvbane');
-  src: url('http://ap1.tlsiano.com:8080/NCAP/page/common/fonts/themify.eot?#iefix-fvbane') format('embedded-opentype'), 
-  url('http://ap1.tlsiano.com:8080/NCAP/page/common/fonts/themify.woff?-fvbane') format('woff'), 
-  url('http://ap1.tlsiano.com:8080/NCAP/page/common/fonts/themify.ttf?-fvbane') format('truetype'), 
-  url('http://ap1.tlsiano.com:8080/NCAP/page/common/fonts/themify.svg?-fvbane#themify') format('svg');
+  src: url('https://healthydiet.hpa.gov.tw/NCAP/page/common/fonts/themify.eot?-fvbane');
+  src: url('https://healthydiet.hpa.gov.tw/NCAP/page/common/fonts/themify.eot?#iefix-fvbane') format('embedded-opentype'), 
+  url('https://healthydiet.hpa.gov.tw/NCAP/page/common/fonts/themify.woff?-fvbane') format('woff'), 
+  url('https://healthydiet.hpa.gov.tw/NCAP/page/common/fonts/themify.ttf?-fvbane') format('truetype'), 
+  url('https://healthydiet.hpa.gov.tw/NCAP/page/common/fonts/themify.svg?-fvbane#themify') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -8081,12 +8081,12 @@ MIT License: https://github.com/driftyco/ionicons
  */
 @font-face {
   font-family: 'weathericons';
-  src: url('http://ap1.tlsiano.com:8080/NCAP/page/common/fonts/weathericons-regular-webfont.eot');
-  src: url('http://ap1.tlsiano.com:8080/NCAP/page/common/fonts/weathericons-regular-webfont.eot?#iefix') format('embedded-opentype'), 
-  url('http://ap1.tlsiano.com:8080/NCAP/page/common/fonts/weathericons-regular-webfont.woff2') format('woff2'), 
-  url('http://ap1.tlsiano.com:8080/NCAP/page/common/fonts/weathericons-regular-webfont.woff') format('woff'), 
-  url('http://ap1.tlsiano.com:8080/NCAP/page/common/fonts/weathericons-regular-webfont.ttf') format('truetype'), 
-  url('http://ap1.tlsiano.com:8080/NCAP/page/common/fonts/weathericons-regular-webfont.svg#weather_iconsregular') format('svg');
+  src: url('https://healthydiet.hpa.gov.tw/NCAP/page/common/fonts/weathericons-regular-webfont.eot');
+  src: url('https://healthydiet.hpa.gov.tw/NCAP/page/common/fonts/weathericons-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+  url('https://healthydiet.hpa.gov.tw/NCAP/page/common/fonts/weathericons-regular-webfont.woff2') format('woff2'), 
+  url('https://healthydiet.hpa.gov.tw/NCAP/page/common/fonts/weathericons-regular-webfont.woff') format('woff'), 
+  url('https://healthydiet.hpa.gov.tw/NCAP/page/common/fonts/weathericons-regular-webfont.ttf') format('truetype'), 
+  url('https://healthydiet.hpa.gov.tw/NCAP/page/common/fonts/weathericons-regular-webfont.svg#weather_iconsregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
