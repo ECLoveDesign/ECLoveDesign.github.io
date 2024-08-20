@@ -1138,10 +1138,12 @@
                                                                             class="form-control formText {  }" />
                                                                     </div>
 
-
+                                                                    <h4
+                                                                    style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-top: 35px; color: #0066CC">
+                                                                    藥物</h4>
                                                                     <!--藥物-->
                                                                     <div class="form-group ">
-                                                                        <label>藥物</label>
+                                                                        <label class="sr-only">藥物</label>
                                                                         <div class="input-group">
                                                                             <label><input type="checkbox" value="0"
                                                                                     name="patient.drugType"
@@ -1161,9 +1163,21 @@
                                                                         </div><!-- /.input group -->
                                                                     </div>
 
+                                                                    <!--其他藥物說明-->
+                                                                    <div class="form-group ">
+                                                                        <label>其他藥物說明</label>
+                                                                        <input type="text"
+                                                                            name="patient.drugTypeOther"
+                                                                            class="form-control formText {  }" />
+                                                                    </div>
+
+                                                                    <h4
+                                                                    style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-top: 35px; color: #0066CC">
+                                                                    輔助及替代療法</h4>
+
                                                                     <!--輔助及替代療法-->
                                                                     <div class="form-group ">
-                                                                        <label>輔助及替代療法(如： 中草藥 /營養補充劑等)</label>
+                                                                        <label>(如： 中草藥 /營養補充劑等)</label>
                                                                         <input type="text"
                                                                             name="patient.replaceMedicine"
                                                                             class="form-control formText {  }" />
@@ -1176,7 +1190,7 @@
                                                                 <div class="col-md-6">
 
                                                                     <h4
-                                                                        style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
+                                                                        style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-top: 13px; color: #0066CC">
                                                                         食物來源及製備</h4>
 
                                                                     <!--食物來源及製備-->
@@ -2454,7 +2468,7 @@
 
                                                                 <h4
                                                                     style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
-                                                                    近期3個月身體數值</h4>
+                                                                    最近3個月體重改變</h4>
 
                                                                 <div class="col-md-6">
 
@@ -2462,7 +2476,7 @@
                                                                     <div class="row">
                                                                         <div class="col-md-6">
                                                                             <div class="form-group ">
-                                                                                <label>體重變化</label>
+                                                                                <label class="sr-only">最近3個月體重改變</label>
                                                                                 <div class="input-group">
                                                                                     <label><input type="radio"
                                                                                             value="10"
@@ -2503,27 +2517,6 @@
                                                                         </div>
                                                                     </div>
 
-                                                                    <!--身高-->
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group ">
-                                                                                <label>身高變化(cm)</label>
-                                                                                <input type="number"
-                                                                                    name="patient.heightChangeNum"
-                                                                                    class="form-control formText { }" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group ">
-                                                                                <label>由手 /膝長推估(cm)</label>
-                                                                                <input type="number"
-                                                                                    name="patient.heightChangeNum2"
-                                                                                    class="form-control formText { }" />
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </div>
-
                                                                     <!--體重-->
                                                                     <div class="row">
                                                                         <div class="col-md-6">
@@ -2545,11 +2538,31 @@
                                                                         </div>
                                                                     </div>
 
-
                                                                 </div>
 
 
                                                                 <div class="col-md-6">
+
+                                                                    <!--身高-->
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group ">
+                                                                                <label>身高變化(cm)</label>
+                                                                                <input type="number"
+                                                                                    name="patient.heightChangeNum"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group ">
+                                                                                <label>由手 /膝長推估(cm)</label>
+                                                                                <input type="number"
+                                                                                    name="patient.heightChangeNum2"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
 
                                                                     <div class="row">
                                                                         <div class="col-md-6">
@@ -2573,6 +2586,9 @@
                                                                         </div>
                                                                     </div>
 
+                                                                </div>                                                             
+                                                                
+                                                                <div class="col-md-12">
                                                                     <!--其他-->
                                                                     <div class="form-group ">
                                                                         <label>其他</label>
@@ -2580,14 +2596,19 @@
                                                                             name="patient.ChangeOther"
                                                                             class="form-control formText { }" />
                                                                     </div>
-
                                                                 </div>
 
-                                                                
-                                                                <h4
-                                                                    style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
-                                                                    估算營養素需求</h4>
 
+
+                                                            </div>
+                                                            <!-- ./Main Row End -->
+
+
+                                                            <h4
+                                                            style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-top: 40px; color: #0066CC">
+                                                            估算營養素需求</h4>
+
+                                                            <div class="row">
 
                                                                 <div class="col-md-6">
                                                                     <!--手握力-->
@@ -2624,11 +2645,8 @@
                                                                             class="form-control formText { }" />
                                                                     </div>
                                                                 </div>
-
                                                             </div>
-                                                            <!-- ./Main Row End -->
-
-
+                                                            
 
                                                             <h4
                                                                 style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-top: 40px; color: #0066CC">
@@ -2933,96 +2951,38 @@
                                                     <div class="card-body">
                                                         <div class="card-box">
 
-                                                            <h4
-                                                                style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
-                                                                檢驗紀錄</h4>
-
-                                                            <!--營養補充品-->
-                                                            <div class="form-group">
-                                                                <label class="sr-only">檢驗紀錄</label>
-                                                                <select id="inspectionRecords"
-                                                                    name="patient.inspectionRecords" class="form-control">
-                                                                    <option value="10" selected>無</option>
-                                                                    <option value="30">有</option>
-
-                                                                </select>
-                                                            </div>
-                                                            <script>
-                                                                addLoadEvent(function () {
-
-                                                                    $('#inspectionRecords').on('change',
-                                                                        function () {
-                                                                            var value = $(
-                                                                                "select[name='patient.inspectionRecords']"
-                                                                            ).val();
-                                                                            if ($.trim(value) != "") {
-                                                                                if (value == '30') {
-                                                                                    $('#inspectionRecordsUnit')
-                                                                                        .fadeIn();
-                                                                                    $('#inspectionRecordsHospital')
-                                                                                        .fadeIn();
-                                                                                    if ($(
-                                                                                            "input[name='patient.inspectionRecordsUnit']"
-                                                                                            )
-                                                                                        .val() == '無') {
-                                                                                        $("input[name='patient.inspectionRecordsUnit']")
-                                                                                            .val('');
-                                                                                    }
-                                                                                } else {
-                                                                                    $('#inspectionRecordsHospital')
-                                                                                        .fadeOut();
-                                                                                    $('#inspectionRecordsUnit')
-                                                                                        .fadeOut();
-                                                                                    $("input[name='patient.inspectionRecordsUnit']")
-                                                                                        .val('無').trigger(
-                                                                                            'keyup');
-                                                                                }
-
-                                                                            } else {
-                                                                                $('#inspectionRecordsUnit')
-                                                                                    .fadeIn();
-                                                                            }
-
-                                                                        });
-                                                                    $('#inspectionRecords').trigger('change');
-                                                                });
-                                                            </script>
-
-                                                            <!--品項-->
-                                                            <div class="form-group" id="inspectionRecordsUnit">
+                                                            <!--營養診斷-->
+                                                            <div class="form-group" id="nutritionalRecordsUnit">
 
                                                                 <div class="entry">
                                                                     <div class="row">
-                                                                        <div class="col-xs-2">
-                                                                            <!--檢驗日期-->
+                                                                        <div class="col-xs-4">
+                                                                            <!--營養問題-->
                                                                             <div class="form-group">
-                                                                                <label>檢驗日期</label><input type="text"
-                                                                                    id="recordsDate" name="patient.recordsDate"
-                                                                                    class="form-control formText recordsDate { dateISO: true}" />
-                                                                            </div>    
-                                                                            <script type="text/javascript">
-                                                                                addLoadEvent(function () {
-                                                                                    $('.recordsDate').datepicker({
-                                                                                        format: 'twy-mm-dd',
-                                                                                        language: 'zh-TW',
-                                                                                        autoclose: true,
-                                                                                        todayHighlight: true
-                                                                                    });
-            
-                                                                                });
-                                                                            </script>                                                                           
+                                                                                <label>P(營養問題)</label>
+                                                                                <input type="text" name="patient.nutritionalP" class="form-control formText {  }">
+                                                                            </div>                                                                         
 
                                                                         </div>
-                                                                        <div class="col-xs-8">
+                                                                        <div class="col-xs-3">
+                                                                            <!--病因-->
                                                                             <div class="form-group ">
-                                                                                <label>檢驗數據</label>
-                                                                                <input type="text" name="patient.recordsData"
-                                                                                    class="form-control formText { }" />
+                                                                                <label>E(病因)</label>
+                                                                                <input type="text" name="patient.nutritionalE" class="form-control formText {  }">
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-xs-4">
+                                                                            <!--病因-->
+                                                                            <div class="form-group ">
+                                                                                <label>S(症狀／徵候)</label>
+                                                                                <input type="text" name="patient.nutritionalS" class="form-control formText {  }">
                                                                             </div>
 
                                                                         </div>
                                                                         
-                                                                        <div class="col-xs-2">
+                                                                        <div class="col-xs-1">
                                                                             <div style="height:25px;"></div>
                                                                             <button class="btn btn-success btn-add"
                                                                                 type="button">
@@ -3034,9 +2994,7 @@
 
                                                                 </div>
                                                                 <!-- entry -->                                                                    
-                                                                
-                                                                
-                                                                
+                                                                                                                                
                                                             </div>
 
                                                             <script>
@@ -3099,152 +3057,109 @@
                                                     <div class="card-body">
                                                         <div class="card-box">
 
-                                                            <h4
-                                                                style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
-                                                                檢驗紀錄</h4>
+                                                            <!-- Main row -->
+                                                            <div class="row">
 
-                                                            <!--營養補充品-->
-                                                            <div class="form-group">
-                                                                <label class="sr-only">檢驗紀錄</label>
-                                                                <select id="inspectionRecords"
-                                                                    name="patient.inspectionRecords" class="form-control">
-                                                                    <option value="10" selected>無</option>
-                                                                    <option value="30">有</option>
-
-                                                                </select>
-                                                            </div>
-                                                            <script>
-                                                                addLoadEvent(function () {
-
-                                                                    $('#inspectionRecords').on('change',
-                                                                        function () {
-                                                                            var value = $(
-                                                                                "select[name='patient.inspectionRecords']"
-                                                                            ).val();
-                                                                            if ($.trim(value) != "") {
-                                                                                if (value == '30') {
-                                                                                    $('#inspectionRecordsUnit')
-                                                                                        .fadeIn();
-                                                                                    $('#inspectionRecordsHospital')
-                                                                                        .fadeIn();
-                                                                                    if ($(
-                                                                                            "input[name='patient.inspectionRecordsUnit']"
-                                                                                            )
-                                                                                        .val() == '無') {
-                                                                                        $("input[name='patient.inspectionRecordsUnit']")
-                                                                                            .val('');
-                                                                                    }
-                                                                                } else {
-                                                                                    $('#inspectionRecordsHospital')
-                                                                                        .fadeOut();
-                                                                                    $('#inspectionRecordsUnit')
-                                                                                        .fadeOut();
-                                                                                    $("input[name='patient.inspectionRecordsUnit']")
-                                                                                        .val('無').trigger(
-                                                                                            'keyup');
-                                                                                }
-
-                                                                            } else {
-                                                                                $('#inspectionRecordsUnit')
-                                                                                    .fadeIn();
-                                                                            }
-
-                                                                        });
-                                                                    $('#inspectionRecords').trigger('change');
-                                                                });
-                                                            </script>
-
-                                                            <!--品項-->
-                                                            <div class="form-group" id="inspectionRecordsUnit">
-
-                                                                <div class="entry">
-                                                                    <div class="row">
-                                                                        <div class="col-xs-2">
-                                                                            <!--檢驗日期-->
-                                                                            <div class="form-group">
-                                                                                <label>檢驗日期</label><input type="text"
-                                                                                    id="recordsDate" name="patient.recordsDate"
-                                                                                    class="form-control formText recordsDate { dateISO: true}" />
-                                                                            </div>    
-                                                                            <script type="text/javascript">
-                                                                                addLoadEvent(function () {
-                                                                                    $('.recordsDate').datepicker({
-                                                                                        format: 'twy-mm-dd',
-                                                                                        language: 'zh-TW',
-                                                                                        autoclose: true,
-                                                                                        todayHighlight: true
-                                                                                    });
-            
-                                                                                });
-                                                                            </script>                                                                           
-
-                                                                        </div>
-                                                                        <div class="col-xs-8">
-                                                                            <div class="form-group ">
-                                                                                <label>檢驗數據</label>
-                                                                                <input type="text" name="patient.recordsData"
-                                                                                    class="form-control formText { }" />
-                                                                            </div>
-
-                                                                        </div>
+                                                                <div class="col-md-6">
                                                                         
-                                                                        <div class="col-xs-2">
-                                                                            <div style="height:25px;"></div>
-                                                                            <button class="btn btn-success btn-add"
-                                                                                type="button">
-                                                                                <span
-                                                                                    class="glyphicon glyphicon-plus"></span>
-                                                                            </button>
-                                                                        </div>
+                                                                    <!--目標設定-->
+                                                                    <div class="form-group ">
+                                                                        <label>目標設定</label>
+                                                                        <input type="text"
+                                                                            name="patient.targetSet"
+                                                                            class="form-control formText {  }" />
                                                                     </div>
 
+                                                                    <!--營養處方-->
+                                                                    <div class="form-group ">
+                                                                        <label>營養處方</label>
+                                                                        <textarea class="form-control formText {  }" id="prescriptionAdvice" rows="3"></textarea>
+                                                                    </div>
+
+                                                                    
+                                                                    <!--食物質地-->
+                                                                    <div class="form-group ">
+                                                                        <label>食物質地</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="checkbox" value="0"
+                                                                                    name="patient.nutritionalfoodTexture"
+                                                                                    class="icheckbox" />一般質地</label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="checkbox" value="10"
+                                                                                    name="patient.nutritionalfoodTexture"
+                                                                                    class="icheckbox" />容易咬軟質食</label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="checkbox" value="20"
+                                                                                    name="patient.nutritionalfoodTexture"
+                                                                                    class="icheckbox" />牙齦碎軟質食</label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="checkbox" value="30"
+                                                                                    name="patient.nutritionalfoodTexture"
+                                                                                    class="icheckbox" />舌頭壓碎軟食</label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="checkbox" value="40"
+                                                                                    name="patient.nutritionalfoodTexture"
+                                                                                    class="icheckbox" />不需咬細泥食</label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="checkbox" value="50"
+                                                                                    name="patient.nutritionalfoodTexture"
+                                                                                    class="icheckbox" />均質化糊狀食</label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="checkbox" value="99"
+                                                                                    name="patient.nutritionalfoodTexture"
+                                                                                    class="icheckbox" />其他</label><b>&nbsp;&nbsp;</b>
+                                                                        </div><!-- /.input group -->
+                                                                    </div>
+
+                                                                    <!--其他食物質地-->
+                                                                    <div class="form-group ">
+                                                                        <label>其他食物質地</label>
+                                                                        <input type="text"
+                                                                            name="patient.nutritionalfoodTextureOther"
+                                                                            class="form-control formText {  }" />
+                                                                    </div>
+                                                                    
+                                                                    <!--飲食計畫-->
+                                                                    <div class="form-group ">
+                                                                        <label>飲食計畫</label>
+                                                                        <textarea class="form-control formText {  }" id="dietPlan" rows="3"></textarea>
+                                                                    </div>
+                                                                    
+
                                                                 </div>
-                                                                <!-- entry -->                                                                    
-                                                                
-                                                                
-                                                                
+
+                                                                <div class="col-md-6">
+
+                                                                    <!--監測／追蹤項目-->
+                                                                    <div class="form-group ">
+                                                                        <label>監測／追蹤項目</label>
+                                                                        <textarea class="form-control formText {  }" id="trackItme" rows="5"></textarea>
+                                                                    </div>
+
+                                                                    <!--營養教育及諮商-->
+                                                                    <div class="form-group ">
+                                                                        <label>營養教育及諮商</label>
+                                                                        <textarea class="form-control formText {  }" id="eduConsultation" rows="8"></textarea>
+                                                                    </div>
+
+                                                                    <!--營養教育回覆示教-->
+                                                                    <div class="form-group ">
+                                                                        <label>營養教育回覆示教</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio"
+                                                                                    value="10"
+                                                                                    name="patient.replyTeach"
+                                                                                    class="iradio" />可完整說出</label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio"
+                                                                                    value="20"
+                                                                                    name="patient.replyTeach"
+                                                                                    class="iradio" />大部分可說出</label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio"
+                                                                                    value="30"
+                                                                                    name="patient.replyTeach"
+                                                                                    class="iradio" />少部分說出</label><b>&nbsp;&nbsp;</b>
+                                                                        </div><!-- /.input group -->
+                                                                    </div>
+
+
+                                                                </div>
+                                                                <!-- ./col-md-6 -->
                                                             </div>
-
-                                                            <script>
-                                                                addLoadEvent(function () {
-                                                                    $(document).off('click', '.btn-add').on(
-                                                                        'click',
-                                                                        '.btn-add',
-                                                                        function (e) {
-                                                                            e.preventDefault();
-
-                                                                            var controlGroup = $(this)
-                                                                                .parents(
-                                                                                    '.form-group:first'),
-                                                                                currentEntry = $(this)
-                                                                                .parents(
-                                                                                    '.entry:first'),
-                                                                                newEntry = $(currentEntry
-                                                                                    .clone()).appendTo(
-                                                                                    controlGroup);
-
-                                                                            newEntry.find('input').val('');
-                                                                            controlGroup.find(
-                                                                                    '.entry:not(:last) .btn-add'
-                                                                                )
-                                                                                .removeClass('btn-add')
-                                                                                .addClass('btn-remove')
-                                                                                .removeClass('btn-success')
-                                                                                .addClass('btn-danger')
-                                                                                .html(
-                                                                                    '<span class="glyphicon glyphicon-minus"></span>'
-                                                                                );
-                                                                        }).on('click', '.btn-remove',
-                                                                        function (
-                                                                            e) {
-                                                                            $(this).parents('.entry:first')
-                                                                                .remove();
-
-                                                                            e.preventDefault();
-                                                                            return false;
-                                                                        });
-                                                                });
-                                                            </script>
+                                                            <!-- ./Main Row End -->
 
                                                         </div>
                                                         <!-- ./card-box -->
