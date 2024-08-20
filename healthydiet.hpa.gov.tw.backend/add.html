@@ -923,78 +923,6 @@
                                                                         </div><!-- /.input group -->
                                                                     </div>
 
-                                                                    <!-- 
-                                                                    <div class="form-group">
-                                                                        <label>個案來源</label>
-                                                                        <select id="caseSource"
-                                                                            name="patient.caseSource"
-                                                                            class="form-control">
-                                                                            <option value="10" selected>自行約診</option>
-                                                                            <option value="20">營養篩檢/評估</option>
-                                                                            <option value="30">轉介</option>
-                                                                            <option value="99">其他</option>
-
-                                                                        </select>
-                                                                    </div>
-
-                                                                    <div class="form-group" id="caseSourceUnit">
-                                                                        <label>轉介單位名稱</label>
-                                                                        <input type="text"
-                                                                            class="form-control formText {required:true}"
-                                                                            name="patient.caseSourceUnit" value="無"
-                                                                            length=30 placeHolder="請輸入轉介單位名稱..">
-                                                                    </div> 
-                                                                    
-
-
-                                                                    <script type="text/javascript">
-                                                                        addLoadEvent(function () {
-
-
-                                                                            $('#caseSource').on('change',
-                                                                                function () {
-                                                                                    var value = $(
-                                                                                        "select[name='patient.caseSource']"
-                                                                                    ).val();
-                                                                                    if ($.trim(value) !=
-                                                                                        "") {
-                                                                                        if (value == '30') {
-                                                                                            $('#caseSourceUnit')
-                                                                                                .fadeIn();
-                                                                                            $('#caseSourceHospital')
-                                                                                                .fadeIn();
-                                                                                            if ($(
-                                                                                                    "input[name='patient.caseSourceUnit']"
-                                                                                                )
-                                                                                                .val() ==
-                                                                                                '無') {
-                                                                                                $("input[name='patient.caseSourceUnit']")
-                                                                                                    .val(
-                                                                                                        '');
-                                                                                            }
-                                                                                        } else {
-                                                                                            $('#caseSourceHospital')
-                                                                                                .fadeOut();
-                                                                                            $('#caseSourceUnit')
-                                                                                                .fadeOut();
-                                                                                            $("input[name='patient.caseSourceUnit']")
-                                                                                                .val('無')
-                                                                                                .trigger(
-                                                                                                    'keyup'
-                                                                                                );
-                                                                                        }
-
-                                                                                    } else {
-                                                                                        $('#caseSourceUnit')
-                                                                                            .fadeIn();
-                                                                                    }
-
-                                                                                });
-                                                                            $('#caseSource').trigger('change');
-                                                                        });
-                                                                    </script>
-                                                                
-                                                                -->
                                                                     <div class="row">
                                                                         <div class="col-md-6">
                                                                             <div class="form-group ">
@@ -2654,12 +2582,12 @@
 
                                                         <div class="card-box">
 
+                                                            <h4
+                                                            style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
+                                                            最近3個月體重改變</h4>
+
                                                             <!-- Main row -->
                                                             <div class="row">
-
-                                                                <h4
-                                                                    style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
-                                                                    最近3個月體重改變</h4>
 
                                                                 <div class="col-md-6">
 
@@ -3646,21 +3574,21 @@
                                         <span class="recordSheetID">A-b-00000053</span>
                                     </div>
                                     <!-- toggleCont -->
-                                    <div class="toggleCont accordion" id="accordionExample">
+                                    <div class="toggleCont accordion" id="accordionExample2">
 
-                                        <form id="recordInfoForm" class="validate" action="patient!update.action" method="post" enctype="multipart/form-data">
+                                        <form id="recordInfoForm2" class="validate" action="patient!update.action" method="post" enctype="multipart/form-data">
                                             <input type="hidden" name="id" value="8a0c808891466e18019158f9e45d01ad" />
                                                          
                                             <!--個案基本資料-->
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <a class="collapsed" data-toggle="collapse" data-target="#personalInfo"
+                                                    <a class="collapsed" data-toggle="collapse" data-target="#personalInfo2"
                                                         aria-expanded="false" aria-controls="personalInfo">
                                                         個案基本資料
                                                     </a>
                                                 </div>
 
-                                                <div id="personalInfo" class="collapse" data-parent="#accordionExample">
+                                                <div id="personalInfo2" class="collapse" data-parent="#accordionExample2">
                                                     <div class="card-body">
 
                                                         <div class="card-box">
@@ -4191,78 +4119,7 @@
                                                                         </div><!-- /.input group -->
                                                                     </div>
 
-                                                                    <!-- 
-                                                                    <div class="form-group">
-                                                                        <label>個案來源</label>
-                                                                        <select id="caseSource"
-                                                                            name="patient.caseSource"
-                                                                            class="form-control">
-                                                                            <option value="10" selected>自行約診</option>
-                                                                            <option value="20">營養篩檢/評估</option>
-                                                                            <option value="30">轉介</option>
-                                                                            <option value="99">其他</option>
-
-                                                                        </select>
-                                                                    </div>
-
-                                                                    <div class="form-group" id="caseSourceUnit">
-                                                                        <label>轉介單位名稱</label>
-                                                                        <input type="text"
-                                                                            class="form-control formText {required:true}"
-                                                                            name="patient.caseSourceUnit" value="無"
-                                                                            length=30 placeHolder="請輸入轉介單位名稱..">
-                                                                    </div> 
                                                                     
-
-
-                                                                    <script type="text/javascript">
-                                                                        addLoadEvent(function () {
-
-
-                                                                            $('#caseSource').on('change',
-                                                                                function () {
-                                                                                    var value = $(
-                                                                                        "select[name='patient.caseSource']"
-                                                                                    ).val();
-                                                                                    if ($.trim(value) !=
-                                                                                        "") {
-                                                                                        if (value == '30') {
-                                                                                            $('#caseSourceUnit')
-                                                                                                .fadeIn();
-                                                                                            $('#caseSourceHospital')
-                                                                                                .fadeIn();
-                                                                                            if ($(
-                                                                                                    "input[name='patient.caseSourceUnit']"
-                                                                                                )
-                                                                                                .val() ==
-                                                                                                '無') {
-                                                                                                $("input[name='patient.caseSourceUnit']")
-                                                                                                    .val(
-                                                                                                        '');
-                                                                                            }
-                                                                                        } else {
-                                                                                            $('#caseSourceHospital')
-                                                                                                .fadeOut();
-                                                                                            $('#caseSourceUnit')
-                                                                                                .fadeOut();
-                                                                                            $("input[name='patient.caseSourceUnit']")
-                                                                                                .val('無')
-                                                                                                .trigger(
-                                                                                                    'keyup'
-                                                                                                );
-                                                                                        }
-
-                                                                                    } else {
-                                                                                        $('#caseSourceUnit')
-                                                                                            .fadeIn();
-                                                                                    }
-
-                                                                                });
-                                                                            $('#caseSource').trigger('change');
-                                                                        });
-                                                                    </script>
-                                                                
-                                                                -->
                                                                     <div class="row">
                                                                         <div class="col-md-6">
                                                                             <div class="form-group ">
@@ -4294,38 +4151,32 @@
 
                                                                 <div class="col-md-6">
 
-                                                                    <!--來源-->
-                                                                    <div class="form-group ">
-                                                                        <label>來源</label>
-                                                                        <div class="input-group">
-                                                                            <label><input type="checkbox" value="0" name="patient.caseSource"
-                                                                                    class="icheckbox" />健檢</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="10" name="patient.caseSource"
-                                                                                    class="icheckbox" />基層醫院／社區診所／衛生局所</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="20" name="patient.caseSource"
-                                                                                    class="icheckbox" />社區其他篩檢／服務</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="20" name="patient.caseSource"
-                                                                                    class="icheckbox" />ICOPE</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="20" name="patient.caseSource"
-                                                                                    class="icheckbox" />營養篩檢</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="99" name="patient.caseSource"
-                                                                                    class="icheckbox" />其他</label><b>&nbsp;&nbsp;</b>
-                                                                        </div><!-- /.input group -->
-                                                                    </div>
+                                                                    <!--近期個人及家庭狀況有無重大改變-->
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group ">
+                                                                                <label>近期個人及家庭狀況有無重大改變</label>
+                                                                                <div class="input-group">
+                                                                                    <label><input type="radio"
+                                                                                            value="10"
+                                                                                            name="patient.personalChange"
+                                                                                            class="iradio" />無</label><b>&nbsp;&nbsp;</b>
+                                                                                    <label><input type="radio"
+                                                                                            value="20"
+                                                                                            name="patient.personalChange"
+                                                                                            class="iradio" />有</label><b>&nbsp;&nbsp;</b>
+                                                                                </div><!-- /.input group -->
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group ">
+                                                                                <label>請填寫</label>
+                                                                                <input type="text"
+                                                                                    name="patient.personalChangeElse"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
 
-                                                                    <!--MNA-SF 分數-->
-                                                                    <div class="form-group ">
-                                                                        <label>MNA-SF 分數</label>
-                                                                        <input type="text" name="patient.MNAScore"
-                                                                            class="form-control formText {  }" />
-                                                                    </div>
-
-                                                                    <!--其他來源說明-->
-                                                                    <div class="form-group ">
-                                                                        <label>其他來源說明</label>
-                                                                        <input type="text"
-                                                                            name="patient.caseSourceOther"
-                                                                            class="form-control formText {  }" />
+                                                                        </div>
                                                                     </div>
 
                                                                     <!--諮詢方式-->
@@ -4430,12 +4281,12 @@
                                             <!--飲食與營養相關史-->
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <a class="collapsed" data-toggle="collapse" data-target="#foodHistory"
+                                                    <a class="collapsed" data-toggle="collapse" data-target="#foodHistory2"
                                                         aria-expanded="false" aria-controls="foodHistory">
                                                         飲食與營養相關史
                                                     </a>
                                                 </div>
-                                                <div id="foodHistory" class="collapse" data-parent="#accordionExample">
+                                                <div id="foodHistory2" class="collapse" data-parent="#accordionExample2">
                                                     <div class="card-body">
 
                                                         <div class="card-box">
@@ -5912,30 +5763,30 @@
                                             <!--體位測量-->
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <a class="collapsed" data-toggle="collapse" data-target="#bodyMeas"
+                                                    <a class="collapsed" data-toggle="collapse" data-target="#bodyMeas2"
                                                         aria-expanded="false" aria-controls="bodyMeas">
                                                         體位測量
                                                     </a>
                                                 </div>
-                                                <div id="bodyMeas" class="collapse" data-parent="#accordionExample">
+                                                <div id="bodyMeas2" class="collapse" data-parent="#accordionExample2">
                                                     <div class="card-body">
 
                                                         <div class="card-box">
 
+                                                            <h4
+                                                            style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
+                                                            與前次諮詢相比</h4>
+
                                                             <!-- Main row -->
                                                             <div class="row">
-
-                                                                <h4
-                                                                    style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
-                                                                    最近3個月體重改變</h4>
-
+                                                                
                                                                 <div class="col-md-6">
 
                                                                     <!--體重-->
                                                                     <div class="row">
                                                                         <div class="col-md-6">
                                                                             <div class="form-group ">
-                                                                                <label class="sr-only">最近3個月體重改變</label>
+                                                                                <label class="sr-only">與前次諮詢相比</label>
                                                                                 <div class="input-group">
                                                                                     <label><input type="radio"
                                                                                             value="10"
@@ -6153,12 +6004,12 @@
                                             <!--生化數值、醫療檢驗-->
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <a class="collapsed" data-toggle="collapse" data-target="#medicalExam"
+                                                    <a class="collapsed" data-toggle="collapse" data-target="#medicalExam2"
                                                         aria-expanded="false" aria-controls="medicalExam">
                                                         生化數值、醫療檢驗
                                                     </a>
                                                 </div>
-                                                <div id="medicalExam" class="collapse" data-parent="#accordionExample">
+                                                <div id="medicalExam2" class="collapse" data-parent="#accordionExample2">
                                                     <div class="card-body">
 
                                                         <div class="card-box">
@@ -6321,12 +6172,12 @@
                                             <div class="card">
                                                 <div class="card-header">
                                                     <a class="collapsed" data-toggle="collapse"
-                                                        data-target="#physicalSymptoms" aria-expanded="false"
+                                                        data-target="#physicalSymptoms2" aria-expanded="false"
                                                         aria-controls="physicalSymptoms">
                                                         與營養相關的身體症狀
                                                     </a>
                                                 </div>
-                                                <div id="physicalSymptoms" class="collapse" data-parent="#accordionExample">
+                                                <div id="physicalSymptoms2" class="collapse" data-parent="#accordionExample2">
                                                     <div class="card-body">
                                                         <div class="card-box">
 
@@ -6397,15 +6248,47 @@
                                             <div class="card">
                                                 <div class="card-header">
                                                     <a class="collapsed" data-toggle="collapse"
-                                                        data-target="#nutritionalDiagnosis" aria-expanded="false"
+                                                        data-target="#nutritionalDiagnosis2" aria-expanded="false"
                                                         aria-controls="nutritionalDiagnosis">
                                                         營養診斷
                                                     </a>
                                                 </div>
-                                                <div id="nutritionalDiagnosis" class="collapse"
-                                                    data-parent="#accordionExample">
+                                                <div id="nutritionalDiagnosis2" class="collapse"
+                                                    data-parent="#accordionExample2">
                                                     <div class="card-body">
                                                         <div class="card-box">
+
+                                                            <!--前次諮詢的目標-->
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group ">
+                                                                        <label>前次諮詢的目標</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio"
+                                                                                    value="10"
+                                                                                    name="patient.consultTarget"
+                                                                                    class="iradio" />達成</label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio"
+                                                                                    value="20"
+                                                                                    name="patient.consultTarget"
+                                                                                    class="iradio" />部分達成</label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio"
+                                                                                    value="20"
+                                                                                    name="patient.consultTarget"
+                                                                                    class="iradio" />未達成</label><b>&nbsp;&nbsp;</b>
+                                                                        </div><!-- /.input group -->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="form-group ">
+                                                                        <label>原因</label>
+                                                                        <input type="text"
+                                                                            name="patient.consultTargetReason"
+                                                                            class="form-control formText { }" />
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
 
                                                             <!--營養診斷-->
                                                             <div class="form-group" id="nutritionalRecordsUnit">
@@ -6504,12 +6387,12 @@
                                             <div class="card">
                                                 <div class="card-header">
                                                     <a class="collapsed" data-toggle="collapse"
-                                                        data-target="#nutritionInter" aria-expanded="false"
+                                                        data-target="#nutritionInter2" aria-expanded="false"
                                                         aria-controls="nutritionInter">
                                                         營養介入
                                                     </a>
                                                 </div>
-                                                <div id="nutritionInter" class="collapse" data-parent="#accordionExample">
+                                                <div id="nutritionInter2" class="collapse" data-parent="#accordionExample2">
                                                     <div class="card-body">
                                                         <div class="card-box">
 
