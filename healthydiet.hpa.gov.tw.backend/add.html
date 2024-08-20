@@ -2782,9 +2782,167 @@
                                             </div>
                                             <div id="medicalExam" class="collapse" data-parent="#accordionExample">
                                                 <div class="card-body">
-                                                    And lastly, the placeholder content for the third and final
-                                                    accordion
-                                                    panel. This panel is hidden by default.
+
+                                                    <form id="medicalInfoForm" class="validate"
+                                                        action="patient!update.action" method="post"
+                                                        enctype="multipart/form-data">
+                                                        <input type="hidden" name="id"
+                                                            value="8a0c808891466e18019158f9e45d01ad" />
+                                                        <div class="card-box">
+
+                                                            <h4
+                                                                style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
+                                                                檢驗紀錄</h4>
+
+                                                            <!--營養補充品-->
+                                                            <div class="form-group">
+                                                                <label class="sr-only">檢驗紀錄</label>
+                                                                <select id="inspectionRecords"
+                                                                    name="patient.inspectionRecords" class="form-control">
+                                                                    <option value="10" selected>無</option>
+                                                                    <option value="30">有</option>
+
+                                                                </select>
+                                                            </div>
+                                                            <script>
+                                                                addLoadEvent(function () {
+
+                                                                    $('#inspectionRecords').on('change',
+                                                                        function () {
+                                                                            var value = $(
+                                                                                "select[name='patient.inspectionRecords']"
+                                                                            ).val();
+                                                                            if ($.trim(value) != "") {
+                                                                                if (value == '30') {
+                                                                                    $('#inspectionRecordsUnit')
+                                                                                        .fadeIn();
+                                                                                    $('#inspectionRecordsHospital')
+                                                                                        .fadeIn();
+                                                                                    if ($(
+                                                                                            "input[name='patient.inspectionRecordsUnit']"
+                                                                                            )
+                                                                                        .val() == '無') {
+                                                                                        $("input[name='patient.inspectionRecordsUnit']")
+                                                                                            .val('');
+                                                                                    }
+                                                                                } else {
+                                                                                    $('#inspectionRecordsHospital')
+                                                                                        .fadeOut();
+                                                                                    $('#inspectionRecordsUnit')
+                                                                                        .fadeOut();
+                                                                                    $("input[name='patient.inspectionRecordsUnit']")
+                                                                                        .val('無').trigger(
+                                                                                            'keyup');
+                                                                                }
+
+                                                                            } else {
+                                                                                $('#inspectionRecordsUnit')
+                                                                                    .fadeIn();
+                                                                            }
+
+                                                                        });
+                                                                    $('#inspectionRecords').trigger('change');
+                                                                });
+                                                            </script>
+
+                                                            <!--品項-->
+                                                            <div class="form-group" id="inspectionRecordsUnit">
+
+                                                                <div class="entry">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-2">
+                                                                            <!--檢驗日期-->
+                                                                            <div class="form-group">
+                                                                                <label>檢驗日期</label><input type="text"
+                                                                                    id="recordsDate" name="patient.recordsDate"
+                                                                                    class="form-control formText recordsDate { dateISO: true}" />
+                                                                            </div>    
+                                                                            <script type="text/javascript">
+                                                                                addLoadEvent(function () {
+                                                                                    $('.recordsDate').datepicker({
+                                                                                        format: 'twy-mm-dd',
+                                                                                        language: 'zh-TW',
+                                                                                        autoclose: true,
+                                                                                        todayHighlight: true
+                                                                                    });
+            
+                                                                                });
+                                                                            </script>                                                                           
+    
+                                                                        </div>
+                                                                        <div class="col-xs-8">
+                                                                            <div class="form-group ">
+                                                                                <label>檢驗數據</label>
+                                                                                <input type="text" name="patient.recordsData"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+    
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-xs-2">
+                                                                            <div style="height:25px;"></div>
+                                                                            <button class="btn btn-success btn-add"
+                                                                                type="button">
+                                                                                <span
+                                                                                    class="glyphicon glyphicon-plus"></span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <!-- entry -->                                                                    
+                                                                
+                                                                
+                                                                
+                                                            </div>
+
+                                                            <script>
+                                                                addLoadEvent(function () {
+                                                                    $(document).off('click', '.btn-add').on(
+                                                                        'click',
+                                                                        '.btn-add',
+                                                                        function (e) {
+                                                                            e.preventDefault();
+
+                                                                            var controlGroup = $(this)
+                                                                                .parents(
+                                                                                    '.form-group:first'),
+                                                                                currentEntry = $(this)
+                                                                                .parents(
+                                                                                    '.entry:first'),
+                                                                                newEntry = $(currentEntry
+                                                                                    .clone()).appendTo(
+                                                                                    controlGroup);
+
+                                                                            newEntry.find('input').val('');
+                                                                            controlGroup.find(
+                                                                                    '.entry:not(:last) .btn-add'
+                                                                                )
+                                                                                .removeClass('btn-add')
+                                                                                .addClass('btn-remove')
+                                                                                .removeClass('btn-success')
+                                                                                .addClass('btn-danger')
+                                                                                .html(
+                                                                                    '<span class="glyphicon glyphicon-minus"></span>'
+                                                                                );
+                                                                        }).on('click', '.btn-remove',
+                                                                        function (
+                                                                            e) {
+                                                                            $(this).parents('.entry:first')
+                                                                                .remove();
+
+                                                                            e.preventDefault();
+                                                                            return false;
+                                                                        });
+                                                                });
+                                                            </script>
+
+                                                        </div>
+                                                        <!-- ./card-box -->
+                                                    </form>
+                                                    
+                                                    
+
                                                 </div>
                                             </div>
                                         </div>
