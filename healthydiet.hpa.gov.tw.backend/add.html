@@ -188,22 +188,22 @@
                                     </div>
                                     <!-- toggleCont -->
                                     <div class="toggleCont accordion" id="accordionExample">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <a class="collapsed" data-toggle="collapse" data-target="#personalInfo"
-                                                    aria-expanded="false" aria-controls="personalInfo">
-                                                    個案基本資料
-                                                </a>
-                                            </div>
 
-                                            <div id="personalInfo" class="collapse" data-parent="#accordionExample">
-                                                <div class="card-body">
+                                        <form id="recordInfoForm" class="validate" action="patient!update.action" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" name="id" value="8a0c808891466e18019158f9e45d01ad" />
+                                                         
+                                            <!--個案基本資料-->
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <a class="collapsed" data-toggle="collapse" data-target="#personalInfo"
+                                                        aria-expanded="false" aria-controls="personalInfo">
+                                                        個案基本資料
+                                                    </a>
+                                                </div>
 
-                                                    <form id="personalInfoForm" class="validate"
-                                                        action="patient!update.action" method="post"
-                                                        enctype="multipart/form-data">
-                                                        <input type="hidden" name="id"
-                                                            value="8a0c808891466e18019158f9e45d01ad" />
+                                                <div id="personalInfo" class="collapse" data-parent="#accordionExample">
+                                                    <div class="card-body">
+
                                                         <div class="card-box">
 
                                                             <!-- Main row -->
@@ -839,35 +839,17 @@
                                                                     <div class="form-group ">
                                                                         <label>來源</label>
                                                                         <div class="input-group">
-                                                                            <label><input type="checkbox" value="0"
-                                                                                    name="patient.caseSource"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.caseSource"
+                                                                            <label><input type="checkbox" value="0" name="patient.caseSource"
                                                                                     class="icheckbox" />健檢</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="10"
-                                                                                    name="patient.caseSource"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.caseSource"
+                                                                            <label><input type="checkbox" value="10" name="patient.caseSource"
                                                                                     class="icheckbox" />基層醫院／社區診所／衛生局所</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="20"
-                                                                                    name="patient.caseSource"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.caseSource"
+                                                                            <label><input type="checkbox" value="20" name="patient.caseSource"
                                                                                     class="icheckbox" />社區其他篩檢／服務</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="20"
-                                                                                    name="patient.caseSource"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.caseSource"
+                                                                            <label><input type="checkbox" value="20" name="patient.caseSource"
                                                                                     class="icheckbox" />ICOPE</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="20"
-                                                                                    name="patient.caseSource"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.caseSource"
+                                                                            <label><input type="checkbox" value="20" name="patient.caseSource"
                                                                                     class="icheckbox" />營養篩檢</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="99"
-                                                                                    name="patient.caseSource"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.caseSource"
+                                                                            <label><input type="checkbox" value="99" name="patient.caseSource"
                                                                                     class="icheckbox" />其他</label><b>&nbsp;&nbsp;</b>
                                                                         </div><!-- /.input group -->
                                                                     </div>
@@ -891,25 +873,13 @@
                                                                     <div class="form-group ">
                                                                         <label>諮詢方式</label>
                                                                         <div class="input-group">
-                                                                            <label><input type="checkbox" value="0"
-                                                                                    name="patient.consultType"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.consultType"
+                                                                            <label><input type="checkbox" value="0" name="patient.consultType"
                                                                                     class="icheckbox" />面訪</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="10"
-                                                                                    name="patient.consultType"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.consultType"
+                                                                            <label><input type="checkbox" value="10" name="patient.consultType"
                                                                                     class="icheckbox" />電訪</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="20"
-                                                                                    name="patient.consultType"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.consultType"
+                                                                            <label><input type="checkbox" value="20" name="patient.consultType"
                                                                                     class="icheckbox" />視訊</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="99"
-                                                                                    name="patient.consultType"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.consultType"
+                                                                            <label><input type="checkbox" value="99" name="patient.consultType"
                                                                                     class="icheckbox" />其他</label><b>&nbsp;&nbsp;</b>
                                                                         </div><!-- /.input group -->
                                                                     </div>
@@ -935,47 +905,29 @@
                                                                         <div class="input-group">
                                                                             <label><input type="checkbox" value="0"
                                                                                     name="patient.sickHistory"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.sickHistory"
                                                                                     class="icheckbox" />無</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="10"
-                                                                                    name="patient.sickHistory"
-                                                                                    class="icheckbox"
                                                                                     name="patient.sickHistory"
                                                                                     class="icheckbox" />糖尿病</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="20"
                                                                                     name="patient.sickHistory"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.sickHistory"
                                                                                     class="icheckbox" />高血壓</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="30"
-                                                                                    name="patient.sickHistory"
-                                                                                    class="icheckbox"
                                                                                     name="patient.sickHistory"
                                                                                     class="icheckbox" />中風</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="40"
                                                                                     name="patient.sickHistory"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.sickHistory"
                                                                                     class="icheckbox" />心臟病</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="50"
-                                                                                    name="patient.sickHistory"
-                                                                                    class="icheckbox"
                                                                                     name="patient.sickHistory"
                                                                                     class="icheckbox" />腎臟病</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="60"
                                                                                     name="patient.sickHistory"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.sickHistory"
                                                                                     class="icheckbox" />癌症(腫瘤)</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="70"
                                                                                     name="patient.sickHistory"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.sickHistory"
                                                                                     class="icheckbox" />失智症</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="80"
-                                                                                    name="patient.sickHistory"
-                                                                                    class="icheckbox"
                                                                                     name="patient.sickHistory"
                                                                                     class="icheckbox" />其他</label><b>&nbsp;&nbsp;</b>
                                                                         </div><!-- /.input group -->
@@ -1011,27 +963,22 @@
 
                                                         </div>
                                                         <!-- ./card-box -->
-                                                    </form>
 
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <a class="collapsed" data-toggle="collapse" data-target="#foodHistory"
-                                                    aria-expanded="false" aria-controls="foodHistory">
-                                                    飲食與營養相關史
-                                                </a>
-                                            </div>
-                                            <div id="foodHistory" class="collapse" data-parent="#accordionExample">
-                                                <div class="card-body">
+                                            <!--飲食與營養相關史-->
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <a class="collapsed" data-toggle="collapse" data-target="#foodHistory"
+                                                        aria-expanded="false" aria-controls="foodHistory">
+                                                        飲食與營養相關史
+                                                    </a>
+                                                </div>
+                                                <div id="foodHistory" class="collapse" data-parent="#accordionExample">
+                                                    <div class="card-body">
 
-                                                    <form id="FoodInfoForm" class="validate"
-                                                        action="patient!update.action" method="post"
-                                                        enctype="multipart/form-data">
-                                                        <input type="hidden" name="id"
-                                                            value="8a0c808891466e18019158f9e45d01ad" />
                                                         <div class="card-box">
 
                                                             <!-- Main row -->
@@ -1198,27 +1145,17 @@
                                                                         <div class="input-group">
                                                                             <label><input type="checkbox" value="0"
                                                                                     name="patient.drugType"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.drugType"
                                                                                     class="icheckbox" />血糖藥</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="10"
-                                                                                    name="patient.drugType"
-                                                                                    class="icheckbox"
                                                                                     name="patient.drugType"
                                                                                     class="icheckbox" />血壓藥</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="20"
                                                                                     name="patient.drugType"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.drugType"
                                                                                     class="icheckbox" />血脂藥</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="20"
                                                                                     name="patient.drugType"
-                                                                                    class="icheckbox"
-                                                                                    name="patient.drugType"
                                                                                     class="icheckbox" />軟便劑</label><b>&nbsp;&nbsp;</b>
                                                                             <label><input type="checkbox" value="99"
-                                                                                    name="patient.drugType"
-                                                                                    class="icheckbox"
                                                                                     name="patient.drugType"
                                                                                     class="icheckbox" />其他</label><b>&nbsp;&nbsp;</b>
                                                                         </div><!-- /.input group -->
@@ -1380,22 +1317,13 @@
                                                                                 <label>接受送餐</label>
                                                                                 <div class="input-group">
                                                                                     <label><input type="checkbox"
-                                                                                            value="0"
-                                                                                            name="patient.disableStatus"
-                                                                                            class="icheckbox"
-                                                                                            name="patient.disableStatus"
+                                                                                            value="0" name="patient.disableStatus"
                                                                                             class="icheckbox" />早餐</label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox"
-                                                                                            value="10"
-                                                                                            name="patient.disableStatus"
-                                                                                            class="icheckbox"
-                                                                                            name="patient.disableStatus"
+                                                                                            value="10"name="patient.disableStatus"
                                                                                             class="icheckbox" />午餐</label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox"
-                                                                                            value="20"
-                                                                                            name="patient.disableStatus"
-                                                                                            class="icheckbox"
-                                                                                            name="patient.disableStatus"
+                                                                                            value="20" name="patient.disableStatus"
                                                                                             class="icheckbox" />晚餐</label><b>&nbsp;&nbsp;</b>
 
                                                                                 </div><!-- /.input group -->
@@ -1616,22 +1544,13 @@
                                                                                 <label>進食餐數</label>
                                                                                 <div class="input-group">
                                                                                     <label><input type="checkbox"
-                                                                                            value="0"
-                                                                                            name="patient.mealsNum"
-                                                                                            class="icheckbox"
-                                                                                            name="patient.mealsNum"
+                                                                                            value="0" name="patient.mealsNum"
                                                                                             class="icheckbox" />早餐</label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox"
-                                                                                            value="10"
-                                                                                            name="patient.mealsNum"
-                                                                                            class="icheckbox"
-                                                                                            name="patient.mealsNum"
+                                                                                            value="10" name="patient.mealsNum"
                                                                                             class="icheckbox" />午餐</label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox"
-                                                                                            value="20"
-                                                                                            name="patient.mealsNum"
-                                                                                            class="icheckbox"
-                                                                                            name="patient.mealsNum"
+                                                                                            value="20" name="patient.mealsNum"
                                                                                             class="icheckbox" />晚餐</label><b>&nbsp;&nbsp;</b>
                                                                                 </div><!-- /.input group -->
                                                                             </div>
@@ -1643,28 +1562,16 @@
                                                                                 <label>點心</label>
                                                                                 <div class="input-group">
                                                                                     <label><input type="checkbox"
-                                                                                            value="0"
-                                                                                            name="patient.dessertNum"
-                                                                                            class="icheckbox"
-                                                                                            name="patient.dessertNum"
+                                                                                            value="0" name="patient.dessertNum"
                                                                                             class="icheckbox" />無</label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox"
-                                                                                            value="10"
-                                                                                            name="patient.dessertNum"
-                                                                                            class="icheckbox"
-                                                                                            name="patient.dessertNum"
+                                                                                            value="10" name="patient.dessertNum"
                                                                                             class="icheckbox" />早點</label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox"
-                                                                                            value="20"
-                                                                                            name="patient.dessertNum"
-                                                                                            class="icheckbox"
-                                                                                            name="patient.dessertNum"
+                                                                                            value="20" name="patient.dessertNum"
                                                                                             class="icheckbox" />午點</label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox"
-                                                                                            value="20"
-                                                                                            name="patient.dessertNum"
-                                                                                            class="icheckbox"
-                                                                                            name="patient.dessertNum"
+                                                                                            value="20" name="patient.dessertNum"
                                                                                             class="icheckbox" />晚點</label><b>&nbsp;&nbsp;</b>
                                                                                 </div><!-- /.input group -->
                                                                             </div>
@@ -2525,25 +2432,21 @@
 
                                                         </div>
                                                         <!-- ./card-box -->
-                                                    </form>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <a class="collapsed" data-toggle="collapse" data-target="#bodyMeas"
-                                                    aria-expanded="false" aria-controls="bodyMeas">
-                                                    體位測量
-                                                </a>
-                                            </div>
-                                            <div id="bodyMeas" class="collapse" data-parent="#accordionExample">
-                                                <div class="card-body">
+                                            
+                                            <!--體位測量-->
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <a class="collapsed" data-toggle="collapse" data-target="#bodyMeas"
+                                                        aria-expanded="false" aria-controls="bodyMeas">
+                                                        體位測量
+                                                    </a>
+                                                </div>
+                                                <div id="bodyMeas" class="collapse" data-parent="#accordionExample">
+                                                    <div class="card-body">
 
-                                                    <form id="FoodInfoForm" class="validate"
-                                                        action="patient!update.action" method="post"
-                                                        enctype="multipart/form-data">
-                                                        <input type="hidden" name="id"
-                                                            value="8a0c808891466e18019158f9e45d01ad" />
                                                         <div class="card-box">
 
                                                             <!-- Main row -->
@@ -2768,26 +2671,22 @@
 
                                                         </div>
                                                         <!-- ./card-box -->
-                                                    </form>
 
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <a class="collapsed" data-toggle="collapse" data-target="#medicalExam"
-                                                    aria-expanded="false" aria-controls="medicalExam">
-                                                    生化數值、醫療檢驗
-                                                </a>
-                                            </div>
-                                            <div id="medicalExam" class="collapse" data-parent="#accordionExample">
-                                                <div class="card-body">
+                                            
+                                            <!--生化數值、醫療檢驗-->
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <a class="collapsed" data-toggle="collapse" data-target="#medicalExam"
+                                                        aria-expanded="false" aria-controls="medicalExam">
+                                                        生化數值、醫療檢驗
+                                                    </a>
+                                                </div>
+                                                <div id="medicalExam" class="collapse" data-parent="#accordionExample">
+                                                    <div class="card-body">
 
-                                                    <form id="medicalInfoForm" class="validate"
-                                                        action="patient!update.action" method="post"
-                                                        enctype="multipart/form-data">
-                                                        <input type="hidden" name="id"
-                                                            value="8a0c808891466e18019158f9e45d01ad" />
                                                         <div class="card-box">
 
                                                             <h4
@@ -2868,7 +2767,7 @@
             
                                                                                 });
                                                                             </script>                                                                           
-    
+
                                                                         </div>
                                                                         <div class="col-xs-8">
                                                                             <div class="form-group ">
@@ -2876,7 +2775,7 @@
                                                                                 <input type="text" name="patient.recordsData"
                                                                                     class="form-control formText { }" />
                                                                             </div>
-    
+
                                                                         </div>
                                                                         
                                                                         <div class="col-xs-2">
@@ -2939,62 +2838,421 @@
 
                                                         </div>
                                                         <!-- ./card-box -->
-                                                    </form>
-                                                    
-                                                    
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!--與營養相關的身體症狀-->
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <a class="collapsed" data-toggle="collapse"
+                                                        data-target="#physicalSymptoms" aria-expanded="false"
+                                                        aria-controls="physicalSymptoms">
+                                                        與營養相關的身體症狀
+                                                    </a>
+                                                </div>
+                                                <div id="physicalSymptoms" class="collapse" data-parent="#accordionExample">
+                                                    <div class="card-body">
+                                                        <div class="card-box">
 
+                                                            <!--身體症狀-->
+                                                            <div class="form-group ">
+                                                                <label class="sr-only">身體症狀</label>
+                                                                <div class="input-group">
+                                                                    <label><input type="checkbox" value="0" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />無異常</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="1" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />缺牙</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="2" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />假牙裝戴</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="3" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />口角炎</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="4" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />口乾</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="5" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />味覺減退</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="6" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />口腔衛生</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="7" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />吞嚥嗆咳</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="8" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />咀嚼困難</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="9" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />便秘</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="10" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />腹瀉</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="11" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />噁心</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="12" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />嘔吐</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="13" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />腹脹</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="14" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />腹痛</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="15" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />虛弱</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="16" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />步態異常</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="17" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />憂鬰／失智</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="18" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />暈眩</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="19" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />畏寒</label><b>&nbsp;&nbsp;</b>
+                                                                    <label><input type="checkbox" value="99" name="patient.physicalSymptoms"
+                                                                            class="icheckbox" />其他症狀</label><b>&nbsp;&nbsp;</b>
+                                                                </div><!-- /.input group -->
+                                                            </div>
+
+                                                            <!--其他症狀-->
+                                                            <div class="form-group ">
+                                                                <label>其他症狀說明</label>
+                                                                <input type="text" name="patient.physicalSymptomsOther" class="form-control formText {  }">
+                                                            </div>
+
+
+                                                        </div>
+                                                        <!-- ./card-box -->
+
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <a class="collapsed" data-toggle="collapse"
-                                                    data-target="#physicalSymptoms" aria-expanded="false"
-                                                    aria-controls="physicalSymptoms">
-                                                    與營養相關的身體症狀
-                                                </a>
-                                            </div>
-                                            <div id="physicalSymptoms" class="collapse" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    And lastly, the placeholder content for the third and final
-                                                    accordion
-                                                    panel. This panel is hidden by default.
+                                            
+                                            <!--營養診斷-->
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <a class="collapsed" data-toggle="collapse"
+                                                        data-target="#nutritionalDiagnosis" aria-expanded="false"
+                                                        aria-controls="nutritionalDiagnosis">
+                                                        營養診斷
+                                                    </a>
+                                                </div>
+                                                <div id="nutritionalDiagnosis" class="collapse"
+                                                    data-parent="#accordionExample">
+                                                    <div class="card-body">
+                                                        <div class="card-box">
+
+                                                            <h4
+                                                                style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
+                                                                檢驗紀錄</h4>
+
+                                                            <!--營養補充品-->
+                                                            <div class="form-group">
+                                                                <label class="sr-only">檢驗紀錄</label>
+                                                                <select id="inspectionRecords"
+                                                                    name="patient.inspectionRecords" class="form-control">
+                                                                    <option value="10" selected>無</option>
+                                                                    <option value="30">有</option>
+
+                                                                </select>
+                                                            </div>
+                                                            <script>
+                                                                addLoadEvent(function () {
+
+                                                                    $('#inspectionRecords').on('change',
+                                                                        function () {
+                                                                            var value = $(
+                                                                                "select[name='patient.inspectionRecords']"
+                                                                            ).val();
+                                                                            if ($.trim(value) != "") {
+                                                                                if (value == '30') {
+                                                                                    $('#inspectionRecordsUnit')
+                                                                                        .fadeIn();
+                                                                                    $('#inspectionRecordsHospital')
+                                                                                        .fadeIn();
+                                                                                    if ($(
+                                                                                            "input[name='patient.inspectionRecordsUnit']"
+                                                                                            )
+                                                                                        .val() == '無') {
+                                                                                        $("input[name='patient.inspectionRecordsUnit']")
+                                                                                            .val('');
+                                                                                    }
+                                                                                } else {
+                                                                                    $('#inspectionRecordsHospital')
+                                                                                        .fadeOut();
+                                                                                    $('#inspectionRecordsUnit')
+                                                                                        .fadeOut();
+                                                                                    $("input[name='patient.inspectionRecordsUnit']")
+                                                                                        .val('無').trigger(
+                                                                                            'keyup');
+                                                                                }
+
+                                                                            } else {
+                                                                                $('#inspectionRecordsUnit')
+                                                                                    .fadeIn();
+                                                                            }
+
+                                                                        });
+                                                                    $('#inspectionRecords').trigger('change');
+                                                                });
+                                                            </script>
+
+                                                            <!--品項-->
+                                                            <div class="form-group" id="inspectionRecordsUnit">
+
+                                                                <div class="entry">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-2">
+                                                                            <!--檢驗日期-->
+                                                                            <div class="form-group">
+                                                                                <label>檢驗日期</label><input type="text"
+                                                                                    id="recordsDate" name="patient.recordsDate"
+                                                                                    class="form-control formText recordsDate { dateISO: true}" />
+                                                                            </div>    
+                                                                            <script type="text/javascript">
+                                                                                addLoadEvent(function () {
+                                                                                    $('.recordsDate').datepicker({
+                                                                                        format: 'twy-mm-dd',
+                                                                                        language: 'zh-TW',
+                                                                                        autoclose: true,
+                                                                                        todayHighlight: true
+                                                                                    });
+            
+                                                                                });
+                                                                            </script>                                                                           
+
+                                                                        </div>
+                                                                        <div class="col-xs-8">
+                                                                            <div class="form-group ">
+                                                                                <label>檢驗數據</label>
+                                                                                <input type="text" name="patient.recordsData"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-xs-2">
+                                                                            <div style="height:25px;"></div>
+                                                                            <button class="btn btn-success btn-add"
+                                                                                type="button">
+                                                                                <span
+                                                                                    class="glyphicon glyphicon-plus"></span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <!-- entry -->                                                                    
+                                                                
+                                                                
+                                                                
+                                                            </div>
+
+                                                            <script>
+                                                                addLoadEvent(function () {
+                                                                    $(document).off('click', '.btn-add').on(
+                                                                        'click',
+                                                                        '.btn-add',
+                                                                        function (e) {
+                                                                            e.preventDefault();
+
+                                                                            var controlGroup = $(this)
+                                                                                .parents(
+                                                                                    '.form-group:first'),
+                                                                                currentEntry = $(this)
+                                                                                .parents(
+                                                                                    '.entry:first'),
+                                                                                newEntry = $(currentEntry
+                                                                                    .clone()).appendTo(
+                                                                                    controlGroup);
+
+                                                                            newEntry.find('input').val('');
+                                                                            controlGroup.find(
+                                                                                    '.entry:not(:last) .btn-add'
+                                                                                )
+                                                                                .removeClass('btn-add')
+                                                                                .addClass('btn-remove')
+                                                                                .removeClass('btn-success')
+                                                                                .addClass('btn-danger')
+                                                                                .html(
+                                                                                    '<span class="glyphicon glyphicon-minus"></span>'
+                                                                                );
+                                                                        }).on('click', '.btn-remove',
+                                                                        function (
+                                                                            e) {
+                                                                            $(this).parents('.entry:first')
+                                                                                .remove();
+
+                                                                            e.preventDefault();
+                                                                            return false;
+                                                                        });
+                                                                });
+                                                            </script>
+
+                                                        </div>
+                                                        <!-- ./card-box -->
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <a class="collapsed" data-toggle="collapse"
-                                                    data-target="#nutritionalDiagnosis" aria-expanded="false"
-                                                    aria-controls="nutritionalDiagnosis">
-                                                    營養診斷
-                                                </a>
-                                            </div>
-                                            <div id="nutritionalDiagnosis" class="collapse"
-                                                data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    And lastly, the placeholder content for the third and final
-                                                    accordion
-                                                    panel. This panel is hidden by default.
+
+                                            <!--營養介入-->
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <a class="collapsed" data-toggle="collapse"
+                                                        data-target="#nutritionInter" aria-expanded="false"
+                                                        aria-controls="nutritionInter">
+                                                        營養介入
+                                                    </a>
+                                                </div>
+                                                <div id="nutritionInter" class="collapse" data-parent="#accordionExample">
+                                                    <div class="card-body">
+                                                        <div class="card-box">
+
+                                                            <h4
+                                                                style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'; line-height: 1; margin-bottom: 13px; color: #0066CC">
+                                                                檢驗紀錄</h4>
+
+                                                            <!--營養補充品-->
+                                                            <div class="form-group">
+                                                                <label class="sr-only">檢驗紀錄</label>
+                                                                <select id="inspectionRecords"
+                                                                    name="patient.inspectionRecords" class="form-control">
+                                                                    <option value="10" selected>無</option>
+                                                                    <option value="30">有</option>
+
+                                                                </select>
+                                                            </div>
+                                                            <script>
+                                                                addLoadEvent(function () {
+
+                                                                    $('#inspectionRecords').on('change',
+                                                                        function () {
+                                                                            var value = $(
+                                                                                "select[name='patient.inspectionRecords']"
+                                                                            ).val();
+                                                                            if ($.trim(value) != "") {
+                                                                                if (value == '30') {
+                                                                                    $('#inspectionRecordsUnit')
+                                                                                        .fadeIn();
+                                                                                    $('#inspectionRecordsHospital')
+                                                                                        .fadeIn();
+                                                                                    if ($(
+                                                                                            "input[name='patient.inspectionRecordsUnit']"
+                                                                                            )
+                                                                                        .val() == '無') {
+                                                                                        $("input[name='patient.inspectionRecordsUnit']")
+                                                                                            .val('');
+                                                                                    }
+                                                                                } else {
+                                                                                    $('#inspectionRecordsHospital')
+                                                                                        .fadeOut();
+                                                                                    $('#inspectionRecordsUnit')
+                                                                                        .fadeOut();
+                                                                                    $("input[name='patient.inspectionRecordsUnit']")
+                                                                                        .val('無').trigger(
+                                                                                            'keyup');
+                                                                                }
+
+                                                                            } else {
+                                                                                $('#inspectionRecordsUnit')
+                                                                                    .fadeIn();
+                                                                            }
+
+                                                                        });
+                                                                    $('#inspectionRecords').trigger('change');
+                                                                });
+                                                            </script>
+
+                                                            <!--品項-->
+                                                            <div class="form-group" id="inspectionRecordsUnit">
+
+                                                                <div class="entry">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-2">
+                                                                            <!--檢驗日期-->
+                                                                            <div class="form-group">
+                                                                                <label>檢驗日期</label><input type="text"
+                                                                                    id="recordsDate" name="patient.recordsDate"
+                                                                                    class="form-control formText recordsDate { dateISO: true}" />
+                                                                            </div>    
+                                                                            <script type="text/javascript">
+                                                                                addLoadEvent(function () {
+                                                                                    $('.recordsDate').datepicker({
+                                                                                        format: 'twy-mm-dd',
+                                                                                        language: 'zh-TW',
+                                                                                        autoclose: true,
+                                                                                        todayHighlight: true
+                                                                                    });
+            
+                                                                                });
+                                                                            </script>                                                                           
+
+                                                                        </div>
+                                                                        <div class="col-xs-8">
+                                                                            <div class="form-group ">
+                                                                                <label>檢驗數據</label>
+                                                                                <input type="text" name="patient.recordsData"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-xs-2">
+                                                                            <div style="height:25px;"></div>
+                                                                            <button class="btn btn-success btn-add"
+                                                                                type="button">
+                                                                                <span
+                                                                                    class="glyphicon glyphicon-plus"></span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <!-- entry -->                                                                    
+                                                                
+                                                                
+                                                                
+                                                            </div>
+
+                                                            <script>
+                                                                addLoadEvent(function () {
+                                                                    $(document).off('click', '.btn-add').on(
+                                                                        'click',
+                                                                        '.btn-add',
+                                                                        function (e) {
+                                                                            e.preventDefault();
+
+                                                                            var controlGroup = $(this)
+                                                                                .parents(
+                                                                                    '.form-group:first'),
+                                                                                currentEntry = $(this)
+                                                                                .parents(
+                                                                                    '.entry:first'),
+                                                                                newEntry = $(currentEntry
+                                                                                    .clone()).appendTo(
+                                                                                    controlGroup);
+
+                                                                            newEntry.find('input').val('');
+                                                                            controlGroup.find(
+                                                                                    '.entry:not(:last) .btn-add'
+                                                                                )
+                                                                                .removeClass('btn-add')
+                                                                                .addClass('btn-remove')
+                                                                                .removeClass('btn-success')
+                                                                                .addClass('btn-danger')
+                                                                                .html(
+                                                                                    '<span class="glyphicon glyphicon-minus"></span>'
+                                                                                );
+                                                                        }).on('click', '.btn-remove',
+                                                                        function (
+                                                                            e) {
+                                                                            $(this).parents('.entry:first')
+                                                                                .remove();
+
+                                                                            e.preventDefault();
+                                                                            return false;
+                                                                        });
+                                                                });
+                                                            </script>
+
+                                                        </div>
+                                                        <!-- ./card-box -->
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <a class="collapsed" data-toggle="collapse"
-                                                    data-target="#nutritionInter" aria-expanded="false"
-                                                    aria-controls="nutritionInter">
-                                                    營養介入
-                                                </a>
-                                            </div>
-                                            <div id="nutritionInter" class="collapse" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    And lastly, the placeholder content for the third and final
-                                                    accordion
-                                                    panel. This panel is hidden by default.
-                                                </div>
-                                            </div>
-                                        </div>
+                                            
+                                        </form>
                                     </div>
 
 
