@@ -6410,69 +6410,98 @@
                                                                     </div>
 
                                                                     <!--營養處方-->
-                                                                    <div class="form-group ">
-                                                                        <label>營養處方</label>
-                                                                        <textarea class="form-control formText {  }" id="prescriptionAdvice" rows="3"></textarea>
+                                                                    <div class="row">
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group ">
+                                                                                <label>營養處方是否改變</label>
+                                                                                <div class="input-group">
+                                                                                    <label><input type="radio"
+                                                                                            value="10"
+                                                                                            name="patient.prescriptionChange"
+                                                                                            class="iradio" />否</label><b>&nbsp;&nbsp;</b>
+                                                                                    <label><input type="radio"
+                                                                                            value="20"
+                                                                                            name="patient.prescriptionChange"
+                                                                                            class="iradio" />是</label><b>&nbsp;&nbsp;</b>
+                                                                                </div><!-- /.input group -->
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-9">
+                                                                            <div class="form-group ">
+                                                                                <label>說明</label>
+                                                                                <input type="text"
+                                                                                    name="patient.prescriptionChangeCont"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+
+                                                                        </div>
                                                                     </div>
 
-                                                                    
+
                                                                     <!--食物質地-->
-                                                                    <div class="form-group ">
-                                                                        <label>食物質地</label>
-                                                                        <div class="input-group">
-                                                                            <label><input type="checkbox" value="0"
-                                                                                    name="patient.nutritionalfoodTexture"
-                                                                                    class="icheckbox" />一般質地</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="10"
-                                                                                    name="patient.nutritionalfoodTexture"
-                                                                                    class="icheckbox" />容易咬軟質食</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="20"
-                                                                                    name="patient.nutritionalfoodTexture"
-                                                                                    class="icheckbox" />牙齦碎軟質食</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="30"
-                                                                                    name="patient.nutritionalfoodTexture"
-                                                                                    class="icheckbox" />舌頭壓碎軟食</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="40"
-                                                                                    name="patient.nutritionalfoodTexture"
-                                                                                    class="icheckbox" />不需咬細泥食</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="50"
-                                                                                    name="patient.nutritionalfoodTexture"
-                                                                                    class="icheckbox" />均質化糊狀食</label><b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="checkbox" value="99"
-                                                                                    name="patient.nutritionalfoodTexture"
-                                                                                    class="icheckbox" />其他</label><b>&nbsp;&nbsp;</b>
-                                                                        </div><!-- /.input group -->
+                                                                    <div class="row">
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group ">
+                                                                                <label>食物質地</label>
+                                                                                <div class="input-group">
+                                                                                    <label><input type="radio"
+                                                                                            value="10"
+                                                                                            name="patient.nutritionalfoodChange"
+                                                                                            class="iradio" />否</label><b>&nbsp;&nbsp;</b>
+                                                                                    <label><input type="radio"
+                                                                                            value="20"
+                                                                                            name="patient.nutritionalfoodChange"
+                                                                                            class="iradio" />是</label><b>&nbsp;&nbsp;</b>
+                                                                                </div><!-- /.input group -->
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-9">
+                                                                            <div class="form-group ">
+                                                                                <label>說明</label>
+                                                                                <input type="text"
+                                                                                    name="patient.nutritionalfoodChangeCont"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+
+                                                                        </div>
                                                                     </div>
 
-                                                                    <!--其他食物質地-->
-                                                                    <div class="form-group ">
-                                                                        <label>其他食物質地</label>
-                                                                        <input type="text"
-                                                                            name="patient.nutritionalfoodTextureOther"
-                                                                            class="form-control formText {  }" />
-                                                                    </div>
-                                                                    
                                                                     <!--飲食計畫-->
-                                                                    <div class="form-group ">
-                                                                        <label>飲食計畫</label>
-                                                                        <textarea class="form-control formText {  }" id="dietPlan" rows="3"></textarea>
-                                                                    </div>
-                                                                    
+                                                                    <div class="row">
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group ">
+                                                                                <label>飲食計畫</label>
+                                                                                <div class="input-group">
+                                                                                    <label><input type="radio"
+                                                                                            value="10"
+                                                                                            name="patient.dietPlanChange"
+                                                                                            class="iradio" />否</label><b>&nbsp;&nbsp;</b>
+                                                                                    <label><input type="radio"
+                                                                                            value="20"
+                                                                                            name="patient.dietPlanChange"
+                                                                                            class="iradio" />是</label><b>&nbsp;&nbsp;</b>
+                                                                                </div><!-- /.input group -->
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-9">
+                                                                            <div class="form-group ">
+                                                                                <label>說明</label>
+                                                                                <input type="text"
+                                                                                    name="patient.dietPlanChangeCont"
+                                                                                    class="form-control formText { }" />
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>                                                                    
 
                                                                 </div>
 
                                                                 <div class="col-md-6">
 
-                                                                    <!--監測／追蹤項目-->
-                                                                    <div class="form-group ">
-                                                                        <label>監測／追蹤項目</label>
-                                                                        <textarea class="form-control formText {  }" id="trackItme" rows="5"></textarea>
-                                                                    </div>
-
                                                                     <!--營養教育及諮商-->
                                                                     <div class="form-group ">
                                                                         <label>營養教育及諮商</label>
-                                                                        <textarea class="form-control formText {  }" id="eduConsultation" rows="8"></textarea>
+                                                                        <textarea class="form-control formText {  }" id="eduConsultation" rows="5"></textarea>
                                                                     </div>
 
                                                                     <!--營養教育回覆示教-->
@@ -6516,7 +6545,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group text-right m-b-0">
-                                                            <button type="button" id="save" class="btn btn-primary" onclick="location.href='#';">
+                                                            <button type="button" id="save2" class="btn btn-primary" onclick="location.href='#';">
                                                                 <i class="fa fa-save"></i> 確認送出
                                                             </button>
                                                 <button type="button" class="btn btn-default" onclick="location.href='list.html';" hidefocus="true" /> <!-- onclick="location.href='/NCAP/admin/care_org!listFromNpo.action?careOrg.npoOrg.id=';" -->
@@ -6881,12 +6910,26 @@
             }
         });
 
-        //確認送出
+        //確認送出-初版
         $(document).ready(function() {
             $("#save").click(function(){
                 eModal.alert({
                     size: eModal.size.lg,
-                    message: '本案健諮詢結果需要追蹤，將於 <b class="text-danger">2024/08/17</b> 發送追蹤提醒至 <a href="mailto:aaa@ntp.com.tw">aaa@ntp.com.tw</a>。',
+                    message: '本案件諮詢結果需要追蹤，將於 <b class="text-danger">2024/08/17</b> 發送追蹤提醒至 <a href="mailto:aaa@ntp.com.tw">aaa@ntp.com.tw</a>。',
+                    title: '確定送出',
+                    buttons: [
+                        { text: '確定', close: true },
+                    ],
+                })
+            }); 
+        });
+
+        //確認送出-追蹤
+        $(document).ready(function() {
+            $("#save2").click(function(){
+                eModal.alert({
+                    size: eModal.size.lg,
+                    message: '本案件追蹤結果已無需持續追蹤，已結案。',
                     title: '確定送出',
                     buttons: [
                         { text: '確定', close: true },
