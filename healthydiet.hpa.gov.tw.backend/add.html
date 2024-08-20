@@ -131,7 +131,7 @@
                                         <div class="form-group">
                                             <label>評估時間</label><input type="text" value="113-08-14"
                                                 id="AssessmentDate" name="patient.recordsDate"
-                                                class="form-control required formText assessmentDate { dateISO: true}" />
+                                                class="form-control required formText assessmentDate { dateISO: true}" disabled />
                                         </div>   
                                         <script type="text/javascript">
                                             addLoadEvent(function () {
@@ -3388,7 +3388,7 @@
                         <div class="col-md-12">
                             <div class="card-box">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label>評估時間</label><input type="text" value="113-08-14"
                                                 id="AssessmentDate" name="patient.recordsDate"
@@ -3407,35 +3407,30 @@
                                         </script>
                                         
                                     </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>據初診或前次諮詢週數</label>
+                                            <input type="number" id="AssessmentUser" value="4"
+                                                class="form-control required formText" />
+                                        </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>評估人員</label>
-                                            <input type="text" id="AssessmentUser" placeholder="OOO"
-                                                class="form-control required formText" disabled />
+                                            <input type="text" id="AssessmentUser" value="廖小花"
+                                                class="form-control required formText" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group ">
                                             <label>需要追蹤</label>
                                             <div class="input-group">
-                                                <label><input type="radio" value="none" name="track"
-                                                        class="iradio" />否</label>
-                                                <b>&nbsp;&nbsp;</b>
-
-                                                <label><input type="radio" value="4weeks" name="track"
-                                                        class="iradio" />4週內</label>
-                                                <b>&nbsp;&nbsp;</b>
-
-                                                <label><input type="radio" value="8weeks" name="track"
-                                                        class="iradio" />8週內</label>
-                                                <b>&nbsp;&nbsp;</b>
-
-                                                <label><input type="radio" value="customDate" name="track"
-                                                        class="iradio" />自訂日期</label>
+                                                <label><input type="radio" value="customDate" name="trackDate"
+                                                        class="iradio" />是</label>
                                                 <b>&nbsp;&nbsp;</b>
 
                                                 <div class="form-group" style="display: inline-flex;">
-                                                    <label class="sr-only">自訂日期</label>
+                                                    <label class="sr-only">追蹤日期</label>
                                                     <input type="text" id="customDate" name="track.customDate"
                                                         class="form-control formText { dateISO: true}" /></div>
                                                 <script type="text/javascript">
@@ -3449,6 +3444,17 @@
 
                                                     });
                                                 </script>
+                                                <b>&nbsp;&nbsp;</b>
+                                                
+                                                <label><input type="radio" value="none" name="track"
+                                                    class="iradio" />監測／追蹤項目</label>
+                                                <b>&nbsp;&nbsp;</b>
+                                                <div class="form-group" style="display: inline-flex;">
+                                                    <label class="sr-only">監測／追蹤項目</label>
+                                                    <input type="text" id="trackItem" name="trackItem"
+                                                        class="form-control formText" /></div>
+
+                                                
                                             </div>
                                         </div><!-- /.input group -->
                                     </div>
@@ -3457,8 +3463,8 @@
                                         <!--是否結案-->
                                         <div class="form-group">
                                             <label>結案</label>
-                                            <select id="caseClose"
-                                                name="patient.caseClose" class="form-control">
+                                            <select id="caseClose2"
+                                                name="patient.caseClose2" class="form-control">
                                                 <option value="0" selected>請選擇</option>
                                                 <option value="10">是</option>
                                                 <option value="30">否</option>
@@ -3467,49 +3473,49 @@
                                         <script>
                                             addLoadEvent(function () {
 
-                                                $('#caseClose').on('change',
+                                                $('#caseClose2').on('change',
                                                     function () {
                                                         var value = $(
-                                                            "select[name='patient.caseClose']"
+                                                            "select[name='patient.caseClose2']"
                                                         ).val();
                                                         if ($.trim(value) != "") {
                                                             if (value == '30') {
-                                                                $('#caseCloseUnit')
+                                                                $('#caseClose2Unit')
                                                                     .fadeIn();
-                                                                $('#caseCloseHospital')
+                                                                $('#caseClose2Hospital')
                                                                     .fadeIn();
                                                                 if ($(
-                                                                        "input[name='patient.caseCloseUnit']"
+                                                                        "input[name='patient.caseClose2Unit']"
                                                                         )
                                                                     .val() == '無') {
-                                                                    $("input[name='patient.caseCloseUnit']")
+                                                                    $("input[name='patient.caseClose2Unit']")
                                                                         .val('');
                                                                 }
                                                             } else {
-                                                                $('#caseCloseHospital')
+                                                                $('#caseClose2Hospital')
                                                                     .fadeOut();
-                                                                $('#caseCloseUnit')
+                                                                $('#caseClose2Unit')
                                                                     .fadeOut();
-                                                                $("input[name='patient.caseCloseUnit']")
+                                                                $("input[name='patient.caseClose2Unit']")
                                                                     .val('無').trigger(
                                                                         'keyup');
                                                             }
 
                                                         } else {
-                                                            $('#caseCloseUnit')
+                                                            $('#caseClose2Unit')
                                                                 .fadeIn();
                                                         }
 
                                                     });
-                                                $('#caseClose').trigger('change');
+                                                $('#caseClose2').trigger('change');
                                             });
                                         </script>
 
                                         <!--未結案-->
-                                        <div class="form-group" id="caseCloseUnit">
+                                        <div class="form-group" id="caseClose2Unit">
                                             <label>未結案原因</label>
-                                            <select id="caseCloseUnitSelect"
-                                                name="patient.caseCloseUnitSelect" class="form-control">
+                                            <select id="caseClose2UnitSelect"
+                                                name="patient.caseClose2UnitSelect" class="form-control">
                                                 <option value="0" selected>請選擇</option>
                                                 <option value="1">個案營養問題已解決</option>
                                                 <option value="2">個案已達成階段性營養照護目標</option>
@@ -3525,59 +3531,59 @@
                                         <script>
                                             addLoadEvent(function () {
 
-                                                $('#caseCloseUnitSelect').on('change',
+                                                $('#caseClose2UnitSelect').on('change',
                                                     function () {
                                                         var value = $(
-                                                            "select[name='patient.caseCloseUnitSelect']"
+                                                            "select[name='patient.caseClose2UnitSelect']"
                                                         ).val();
                                                         if ($.trim(value) != "") {
                                                             if (value == '30') {
-                                                                $('#caseCloseUnitSelectUnit')
+                                                                $('#caseClose2UnitSelectUnit')
                                                                     .fadeIn();
-                                                                $('#caseCloseUnitSelectHospital')
+                                                                $('#caseClose2UnitSelectHospital')
                                                                     .fadeIn();
                                                                 if ($(
-                                                                        "input[name='patient.caseCloseUnitSelectUnit']"
+                                                                        "input[name='patient.caseClose2UnitSelectUnit']"
                                                                         )
                                                                     .val() == '個案轉介') {
-                                                                    $("input[name='patient.caseCloseUnitSelectUnit']")
+                                                                    $("input[name='patient.caseClose2UnitSelectUnit']")
                                                                         .val('');
                                                                 }
                                                             } else {
-                                                                $('#caseCloseUnitSelectHospital')
+                                                                $('#caseClose2UnitSelectHospital')
                                                                     .fadeOut();
-                                                                $('#caseCloseUnitSelectUnit')
+                                                                $('#caseClose2UnitSelectUnit')
                                                                     .fadeOut();
-                                                                $("input[name='patient.caseCloseUnitSelectUnit']")
+                                                                $("input[name='patient.caseClose2UnitSelectUnit']")
                                                                     .val('個案轉介').trigger(
                                                                         'keyup');
                                                             }
 
                                                         } else {
-                                                            $('#caseCloseUnitSelectUnit')
+                                                            $('#caseClose2UnitSelectUnit')
                                                                 .fadeIn();
                                                         }
 
                                                     });
-                                                $('#caseCloseUnitSelect').trigger('change');
+                                                $('#caseClose2UnitSelect').trigger('change');
                                             });
                                         </script>
 
                                         <!--其他-->
-                                        <div class="form-group" id="caseCloseUnitSelectElse">
+                                        <div class="form-group" id="caseClose2UnitSelectElse">
                                             <input type="text" class="form-control"
-                                                name="patient.caseCloseUnitSelectElse" value=""
+                                                name="patient.caseClose2UnitSelectElse" value=""
                                                 length=30>
                                         </div>
                                         <script type="text/javascript">
                                             addLoadEvent(function () {
 
                                                 //增加選擇「其他欄位」的操作功能
-                                                $('#caseCloseUnitSelect').on('change',
+                                                $('#caseClose2UnitSelect').on('change',
                                                     function () {
                                                         //james 原寫法造成edit時，jquery報錯，把selectValue改為陣列。 					
                                                         var selectValue = [$(
-                                                            "select[name='patient.caseCloseUnitSelect']"
+                                                            "select[name='patient.caseClose2UnitSelect']"
                                                         ).val()];
                                                         if ($.trim(
                                                                 selectValue) !=
@@ -3590,28 +3596,28 @@
                                                                     if (value ==
                                                                         '99'
                                                                     ) {
-                                                                        $('#caseCloseUnitSelectElse')
+                                                                        $('#caseClose2UnitSelectElse')
                                                                             .fadeIn();
                                                                     } else {
-                                                                        $('#caseCloseUnitSelectElse')
+                                                                        $('#caseClose2UnitSelectElse')
                                                                             .fadeOut();
                                                                     }
                                                                 });
                                                         } else {
-                                                            $('#caseCloseUnitSelectElse')
+                                                            $('#caseClose2UnitSelectElse')
                                                                 .fadeOut();
                                                         }
 
                                                     });
 
-                                                $('#caseCloseUnitSelect').trigger(
+                                                $('#caseClose2UnitSelect').trigger(
                                                     'change');
 
                                             });
                                         </script>
 
                                         <!--個案轉介-->
-                                        <div class="form-group" id="caseCloseUnitSelectUnit">
+                                        <div class="form-group" id="caseClose2UnitSelectUnit">
                                             <label class="sr-only">個案轉介</label>
                                             <div class="input-group">
                                                 <label><input type="radio" value="20" name="caseReferral"
