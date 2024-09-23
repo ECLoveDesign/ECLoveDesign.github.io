@@ -224,14 +224,25 @@ html, body.card-center {
     margin-top: 5px;
 }
 
-.form-wrap .btn-signin{
+.form-wrap .btn-signin,
+.form-wrap .btn-submit{
     margin: 20px auto 15px;
     background: var(--normalBG);
     color: #fff;
     font-weight: bold;
 }
-.form-wrap .btn-signin:hover{
+.form-wrap .btn-signin:hover,
+.form-wrap .btn-submit:hover{
     background:#d4ad0e;
+}
+.form-wrap .btn-back{
+    margin: 20px auto 15px;
+    background: #ef9039;
+    color: #fff;
+    font-weight: bold;
+}
+.form-wrap .btn-back:hover{
+    background: #da6900;
 }
 
 .form-wrap .forgot-register a {    
@@ -276,3 +287,13 @@ footer {
       /* font-size: 70%; */
 }
 
+
+/* forget */
+.forget.form-wrap {
+    max-width: 375px;
+}
+.forget.form-wrap .title {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+}
