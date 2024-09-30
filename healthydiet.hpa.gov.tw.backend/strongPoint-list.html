@@ -80,10 +80,10 @@
 
     <!-- tmhtc Style -->
     <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/tmhtc.css" rel="stylesheet" type="text/css">
-    
+
     <!-- Community Nutrition Counseling Style -->
     <link href="css/CNC.css" rel="stylesheet" type="text/css">
-    
+
     <style>
         .form-group .select2-container {
             width: 100% !important;
@@ -770,13 +770,48 @@
                                                     class="form-control formText {      }" value="123456" disabled>
                                             </div>
 
-                                            <!--社區名稱-->
-                                            <div class="form-group ">
-                                                <label>社區名稱</label>
-                                                <input type="text" name="strongPoint.Name"
-                                                    class="form-control formText {      }" value="">
+
+
+                                            <!--聯絡人/職稱-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>聯絡人</label>
+                                                        <input type="text" name="strongPoint.contactName"
+                                                            class="form-control formText { }">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>聯絡人職稱</label>
+                                                        <input type="text" name="strongPoint.contactJob"
+                                                            class="form-control formText { }">
+                                                    </div>
+
+                                                </div>
                                             </div>
 
+                                            <!--聯絡人電話 /手機-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>聯絡人電話</label>
+                                                        <input type="text" name="strongPoint.contactTel"
+                                                            class="form-control formText { }">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>聯絡人手機</label>
+                                                        <input type="text" name="strongPoint.contactMobile"
+                                                            class="form-control formText { }">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
                                             <!--類型-->
                                             <div class="form-group ">
                                                 <label>類型</label>
@@ -805,8 +840,13 @@
                                                     class="form-control formText {  }" />
                                             </div>
 
-                                        </div>
-                                        <div class="col-md-6">
+                                            <!--社區名稱-->
+                                            <div class="form-group ">
+                                                <label>社區名稱</label>
+                                                <input type="text" name="strongPoint.Name"
+                                                    class="form-control formText {      }" value="">
+                                            </div>
+
 
                                             <!--社區地址-->
                                             <div class="row">
@@ -856,44 +896,6 @@
                                                 </div>
                                                 <!--end col-xs-4-->
                                                 <div class="col-xs-12" style="height:20px;">
-                                                </div>
-                                            </div>
-
-                                            <!--聯絡人/職稱-->
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>聯絡人</label>
-                                                        <input type="number" name="strongPoint.contactName"
-                                                            class="form-control formText { }">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>聯絡人職稱</label>
-                                                        <input type="number" name="strongPoint.contactJob"
-                                                            class="form-control formText { }">
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <!--聯絡人電話 /手機-->
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>聯絡人電話</label>
-                                                        <input type="number" name="strongPoint.contactTel"
-                                                            class="form-control formText { }">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>聯絡人手機</label>
-                                                        <input type="number" name="strongPoint.contactMobile"
-                                                            class="form-control formText { }">
-                                                    </div>
-
                                                 </div>
                                             </div>
 
@@ -1257,321 +1259,657 @@
 
                                     <!-- Main row3 -->
                                     <div class="row">
-                                        <h4
-                                            style="font-family:'微軟正黑體','Microsoft JhengHei UI';line-height:1;margin-left:13px;color:#0066CC">
-                                            餐飲之資訊及營養相關評估</h4>
 
                                         <div class="col-md-6">
-                                            <table class="table">
-                                                <tbody>
-                                                    <tr>
-                                                        <th width="150">A 質地調整飲食</th>
-                                                        <td>
-                                                            <!--A 質地調整飲食-->
-                                                            <div class="form-group ">
-                                                                <label class="sr-only">A 質地調整飲食</label>
-                                                                <div class="input-group">
-                                                                    <label><input type="radio" value="A1"
-                                                                            name="strongPoint.agefriendlyA"
-                                                                            class="iradio"
-                                                                            disabled />A1</label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="A2"
-                                                                            name="strongPoint.agefriendlyA"
-                                                                            class="iradio"
-                                                                            disabled />A2</label><b>&nbsp;&nbsp;</b>
-                                                                </div><!-- /.input group -->
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th width="150">B 衛生安全</th>
-                                                        <td>
-                                                            <!--B 衛生安全-->
-                                                            <div class="form-group ">
-                                                                <label class="sr-only">B 衛生安全</label>
-                                                                <div class="input-group">
-                                                                    <label><input type="radio" value="B1"
-                                                                            name="strongPoint.agefriendlyB"
-                                                                            class="iradio" disabled />B1
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="B2"
-                                                                            name="strongPoint.agefriendlyB"
-                                                                            class="iradio" disabled />B2
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="B3"
-                                                                            name="strongPoint.agefriendlyB"
-                                                                            class="iradio" disabled />B3
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="B4"
-                                                                            name="strongPoint.agefriendlyB"
-                                                                            class="iradio" disabled />B4
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="B5"
-                                                                            name="strongPoint.agefriendlyB"
-                                                                            class="iradio" disabled />B5
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="B6"
-                                                                            name="strongPoint.agefriendlyB"
-                                                                            class="iradio" disabled />B6
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="B7"
-                                                                            name="strongPoint.agefriendlyB"
-                                                                            class="iradio" disabled />B7
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                </div><!-- /.input group -->
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th width="150">C 用餐環境</th>
-                                                        <td>
-                                                            <!--C 用餐環境-->
-                                                            <div class="form-group ">
-                                                                <label class="sr-only">C 用餐環境</label>
-                                                                <div class="input-group">
-                                                                    <label><input type="radio" value="C1"
-                                                                            name="strongPoint.agefriendlyC"
-                                                                            class="iradio" disabled />C1
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="C2"
-                                                                            name="strongPoint.agefriendlyC"
-                                                                            class="iradio" disabled />C2
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="C3"
-                                                                            name="strongPoint.agefriendlyC"
-                                                                            class="iradio" disabled />C3
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="C4"
-                                                                            name="strongPoint.agefriendlyC"
-                                                                            class="iradio" disabled />C4
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="C5"
-                                                                            name="strongPoint.agefriendlyC"
-                                                                            class="iradio" disabled />C5
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="C6"
-                                                                            name="strongPoint.agefriendlyC"
-                                                                            class="iradio" disabled />C6
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="C7"
-                                                                            name="strongPoint.agefriendlyC"
-                                                                            class="iradio" disabled />C7
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                </div><!-- /.input group -->
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th width="150">D 服務流程</th>
-                                                        <td>
-                                                            <!--D 服務流程-->
-                                                            <div class="form-group ">
-                                                                <label class="sr-only">D 服務流程</label>
-                                                                <div class="input-group">
-                                                                    <label><input type="radio" value="D1"
-                                                                            name="strongPoint.agefriendlyD"
-                                                                            class="iradio" disabled />D1
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="D2"
-                                                                            name="strongPoint.agefriendlyD"
-                                                                            class="iradio" disabled />D2
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="D3"
-                                                                            name="strongPoint.agefriendlyD"
-                                                                            class="iradio" disabled />D3
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="D4"
-                                                                            name="strongPoint.agefriendlyD"
-                                                                            class="iradio" disabled />D4
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="D5"
-                                                                            name="strongPoint.agefriendlyD"
-                                                                            class="iradio" disabled />D5
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="D6"
-                                                                            name="strongPoint.agefriendlyD"
-                                                                            class="iradio" disabled />D6
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="D7"
-                                                                            name="strongPoint.agefriendlyD"
-                                                                            class="iradio" disabled />D7
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                </div><!-- /.input group -->
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th width="150">E 用餐器具</th>
-                                                        <td>
-                                                            <!--E 用餐器具-->
-                                                            <div class="form-group ">
-                                                                <label class="sr-only">E 用餐器具</label>
-                                                                <div class="input-group">
-                                                                    <label><input type="radio" value="E1"
-                                                                            name="strongPoint.agefriendlyE"
-                                                                            class="iradio" disabled />E1
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="E2"
-                                                                            name="strongPoint.agefriendlyE"
-                                                                            class="iradio" disabled />E2
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                </div><!-- /.input group -->
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th width="150">F 外袋包裝</th>
-                                                        <td>
-                                                            <!--F 外袋包裝-->
-                                                            <div class="form-group ">
-                                                                <label class="sr-only">F 外袋包裝</label>
-                                                                <div class="input-group">
-                                                                    <label><input type="radio" value="F1"
-                                                                            name="strongPoint.agefriendlyF"
-                                                                            class="iradio" disabled />F1
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="F2"
-                                                                            name="strongPoint.agefriendlyF"
-                                                                            class="iradio" disabled />F2
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="F3"
-                                                                            name="strongPoint.agefriendlyF"
-                                                                            class="iradio" disabled />F3
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                    <label><input type="radio" value="F4"
-                                                                            name="strongPoint.agefriendlyF"
-                                                                            class="iradio" disabled />F4
-                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                </div><!-- /.input group -->
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
 
+                                            <!-- 用餐環境設施是否符合高齡友善安全舒適面向 -->
                                             <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>每週提供【全穀及未精製雜糧】次數 (次/週)</label>
-                                                        <input type="number" name="strongPoint.grainsWeek"
-                                                            class="form-control formText { }">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>每週提供【水果】次數 (次/週)</label>
-                                                        <input type="number" name="strongPoint.grainsFruit"
-                                                            class="form-control formText { }">
+                                                
+                                                <h5>用餐環境設施是否符合高齡友善安全舒適面向</h5>
+                                                <div class="col-md-12">
+                                                    
+                                                    <table class="table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th width="150">A 質地調整飲食</th>
+                                                                <td>
+                                                                    <!--A 質地調整飲食-->
+                                                                    <div class="form-group ">
+                                                                        <label class="sr-only">A 質地調整飲食</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="A1"
+                                                                                    name="strongPoint.agefriendlyA"
+                                                                                    class="iradio"
+                                                                                    disabled />A1</label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="A2"
+                                                                                    name="strongPoint.agefriendlyA"
+                                                                                    class="iradio"
+                                                                                    disabled />A2</label><b>&nbsp;&nbsp;</b>
+                                                                        </div><!-- /.input group -->
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="150">B 衛生安全</th>
+                                                                <td>
+                                                                    <!--B 衛生安全-->
+                                                                    <div class="form-group ">
+                                                                        <label class="sr-only">B 衛生安全</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="B1"
+                                                                                    name="strongPoint.agefriendlyB"
+                                                                                    class="iradio" disabled />B1
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="B2"
+                                                                                    name="strongPoint.agefriendlyB"
+                                                                                    class="iradio" disabled />B2
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="B3"
+                                                                                    name="strongPoint.agefriendlyB"
+                                                                                    class="iradio" disabled />B3
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="B4"
+                                                                                    name="strongPoint.agefriendlyB"
+                                                                                    class="iradio" disabled />B4
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="B5"
+                                                                                    name="strongPoint.agefriendlyB"
+                                                                                    class="iradio" disabled />B5
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="B6"
+                                                                                    name="strongPoint.agefriendlyB"
+                                                                                    class="iradio" disabled />B6
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="B7"
+                                                                                    name="strongPoint.agefriendlyB"
+                                                                                    class="iradio" disabled />B7
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                        </div><!-- /.input group -->
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="150">C 用餐環境</th>
+                                                                <td>
+                                                                    <!--C 用餐環境-->
+                                                                    <div class="form-group ">
+                                                                        <label class="sr-only">C 用餐環境</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="C1"
+                                                                                    name="strongPoint.agefriendlyC"
+                                                                                    class="iradio" disabled />C1
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="C2"
+                                                                                    name="strongPoint.agefriendlyC"
+                                                                                    class="iradio" disabled />C2
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="C3"
+                                                                                    name="strongPoint.agefriendlyC"
+                                                                                    class="iradio" disabled />C3
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="C4"
+                                                                                    name="strongPoint.agefriendlyC"
+                                                                                    class="iradio" disabled />C4
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="C5"
+                                                                                    name="strongPoint.agefriendlyC"
+                                                                                    class="iradio" disabled />C5
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="C6"
+                                                                                    name="strongPoint.agefriendlyC"
+                                                                                    class="iradio" disabled />C6
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="C7"
+                                                                                    name="strongPoint.agefriendlyC"
+                                                                                    class="iradio" disabled />C7
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                        </div><!-- /.input group -->
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="150">D 服務流程</th>
+                                                                <td>
+                                                                    <!--D 服務流程-->
+                                                                    <div class="form-group ">
+                                                                        <label class="sr-only">D 服務流程</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="D1"
+                                                                                    name="strongPoint.agefriendlyD"
+                                                                                    class="iradio" disabled />D1
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="D2"
+                                                                                    name="strongPoint.agefriendlyD"
+                                                                                    class="iradio" disabled />D2
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="D3"
+                                                                                    name="strongPoint.agefriendlyD"
+                                                                                    class="iradio" disabled />D3
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="D4"
+                                                                                    name="strongPoint.agefriendlyD"
+                                                                                    class="iradio" disabled />D4
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="D5"
+                                                                                    name="strongPoint.agefriendlyD"
+                                                                                    class="iradio" disabled />D5
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="D6"
+                                                                                    name="strongPoint.agefriendlyD"
+                                                                                    class="iradio" disabled />D6
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="D7"
+                                                                                    name="strongPoint.agefriendlyD"
+                                                                                    class="iradio" disabled />D7
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                        </div><!-- /.input group -->
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="150">E 用餐器具</th>
+                                                                <td>
+                                                                    <!--E 用餐器具-->
+                                                                    <div class="form-group ">
+                                                                        <label class="sr-only">E 用餐器具</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="E1"
+                                                                                    name="strongPoint.agefriendlyE"
+                                                                                    class="iradio" disabled />E1
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="E2"
+                                                                                    name="strongPoint.agefriendlyE"
+                                                                                    class="iradio" disabled />E2
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                        </div><!-- /.input group -->
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th width="150">F 外袋包裝</th>
+                                                                <td>
+                                                                    <!--F 外袋包裝-->
+                                                                    <div class="form-group ">
+                                                                        <label class="sr-only">F 外袋包裝</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="F1"
+                                                                                    name="strongPoint.agefriendlyF"
+                                                                                    class="iradio" disabled />F1
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="F2"
+                                                                                    name="strongPoint.agefriendlyF"
+                                                                                    class="iradio" disabled />F2
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="F3"
+                                                                                    name="strongPoint.agefriendlyF"
+                                                                                    class="iradio" disabled />F3
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="F4"
+                                                                                    name="strongPoint.agefriendlyF"
+                                                                                    class="iradio" disabled />F4
+                                                                            </label><b>&nbsp;&nbsp;</b>
+                                                                        </div><!-- /.input group -->
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">                                                                    
+                                                            <!--每週提供【全穀及未精製雜糧】次數-->
+                                                            <div class="form-group ">
+                                                                <label>每週提供【全穀及未精製雜糧】次數 (次/週)</label>
+                                                                <input type="number" name="strongPoint.grainsWeek"
+                                                                    class="form-control formText { }">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+
+                                                            <!--每週提供【水果】次數-->
+                                                            <div class="form-group ">
+                                                                <label>每週提供【水果】次數 (次/週)</label>
+                                                                <input type="number" name="strongPoint.grainsFruit"
+                                                                    class="form-control formText { }">
+                                                            </div>
+
+                                                        </div>
                                                     </div>
 
-                                                </div>
-                                                <div class="col-md-6">
+                                                    <!--用鹽-->
                                                     <div class="form-group">
                                                         <label>用鹽</label>
-                                                        <select id="useSalt" name="strongPoint.useSalt"
-                                                            class="form-control">
-                                                            <option value="0" selected>請選擇</option>
-                                                            <option value="1">加碘鹽</option>
-                                                            <option value="2">非加碘鹽</option>
-                                                            <option value="3">不知道</option>
-                                                        </select>
+                                                        <div class="input-group">
+                                                            <label><input type="radio" value="10" name="useSalt"
+                                                                    class="iradio" />加碘鹽</label>
+                                                            <b>&nbsp;&nbsp;</b>
+                                                            <label><input type="radio" value="20" name="useSalt"
+                                                                    class="iradio" />非加碘鹽</label>
+                                                            <b>&nbsp;&nbsp;</b>
+                                                            <label><input type="radio" value="30" name="useSalt"
+                                                                    class="iradio" />不知道</label>
+                                                            <b>&nbsp;&nbsp;</b>
+                                                        </div>
                                                     </div>
 
                                                 </div>
+
+                                            </div>
+                                            
+                                            <!-- 一人份供應量／菜色 -->
+                                            <div class="row">
+                                                <h5>一人份供應量／菜色</h5>  
+                                                <div class="col-md-12">
+                                                    <!--菜色／供應量(菜勺/碗)-->
+                                                    <div class="form-group" id="perServing">
+
+                                                        <div class="entry">
+                                                            <div class="row">
+                                                                <div class="col-xs-6">
+                                                                    <!--菜色-->   
+                                                                    <div class="form-group">
+                                                                        <label>菜色</label>
+                                                                        <input type="text" name="patient.perServingLook"
+                                                                            class="form-control formText {  }">
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-xs-5">
+                                                                    <!--供應量(菜勺/碗)-->
+                                                                    <div class="form-group ">
+                                                                        <label>供應量(菜勺/碗)</label>
+                                                                        <input type="text" name="patient.perServingDishes"
+                                                                            class="form-control formText {  }">
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="col-xs-1">
+                                                                    <div style="height:25px;"></div>
+                                                                    <button class="btn btn-success btn-add" type="button">
+                                                                        <span class="glyphicon glyphicon-plus"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <!-- entry -->
+
+                                                    </div>
+
+                                                    <script>
+                                                        addLoadEvent(function () {
+                                                            $(document).off('click', '.btn-add').on(
+                                                                'click',
+                                                                '.btn-add',
+                                                                function (e) {
+                                                                    e.preventDefault();
+
+                                                                    var controlGroup = $(this)
+                                                                        .parents(
+                                                                            '.form-group:first'),
+                                                                        currentEntry = $(this)
+                                                                        .parents(
+                                                                            '.entry:first'),
+                                                                        newEntry = $(currentEntry
+                                                                            .clone()).appendTo(
+                                                                            controlGroup);
+
+                                                                    newEntry.find('input').val('');
+                                                                    controlGroup.find(
+                                                                            '.entry:not(:last) .btn-add'
+                                                                        )
+                                                                        .removeClass('btn-add')
+                                                                        .addClass('btn-remove')
+                                                                        .removeClass('btn-success')
+                                                                        .addClass('btn-danger')
+                                                                        .html(
+                                                                            '<span class="glyphicon glyphicon-minus"></span>'
+                                                                        );
+                                                                }).on('click', '.btn-remove',
+                                                                function (
+                                                                    e) {
+                                                                    $(this).parents('.entry:first')
+                                                                        .remove();
+
+                                                                    e.preventDefault();
+                                                                    return false;
+                                                                });
+                                                        });
+                                                    </script>
+                                                </div>
                                             </div>
 
+                                            <!-- 質地調整飲食 -->
+                                            <div class="row">
+                                                <h5>質地調整飲食</h5>  
+                                                <div class="col-md-12">
+                                                    
+                                                    <!--食材挑選能提供-->
+                                                    <div class="form-group ">
+                                                        <label>將食物透過食材挑選、切割烹煮技巧等方式改變食物軟硬度和流動性，能提供：</label>
+                                                        <div class="input-group">
+                                                            <label><input type="checkbox" value="0" name="strongPoint.choiceA"
+                                                                    class="icheckbox" />一般飲食</label><b>&nbsp;&nbsp;</b>
+                                                            <label><input type="checkbox" value="10" name="strongPoint.choiceB"
+                                                                    class="icheckbox" />容易咬軟質食</label><b>&nbsp;&nbsp;</b>
+                                                            <label><input type="checkbox" value="20" name="strongPoint.choiceC"
+                                                                    class="icheckbox" />牙齦碎軟質食</label><b>&nbsp;&nbsp;</b>
+                                                        </div><!-- /.input group -->
+                                                    </div>
+
+                                                    <!--建議改善-->
+                                                    <div class="form-group ">
+                                                        <label>建議改善</label>
+                                                        <input type="text" name="strongPoint.mealSuggest"
+                                                            class="form-control formText { }">
+                                                    </div>
+                                                            
+                                                </div>
+                                            </div>
+
+                                            
+
+                                            <!-- 質地調整飲食 -->
+                                            <div class="row">
+                                                <h5>一人份可提供的六大類食物份量</h5>  
+                                                <div class="col-md-12">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-md-6">                                                                    
+                                                            <!--主食類(精製)-->
+                                                            <div class="form-group ">
+                                                                <label>主食類(精製)／份</label>
+                                                                <input type="number" name="strongPoint.perFoodRefined"
+                                                                    class="form-control formText { }">
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="col-md-6">
+            
+                                                            <!--主食類(未精製)-->
+                                                            <div class="form-group ">
+                                                                <label>主食類(未精製)／份</label>
+                                                                <input type="number" name="strongPoint.perFoodUn"
+                                                                    class="form-control formText { }">
+                                                            </div>
+            
+                                                        </div>
+
+                                                        
+                                                        <div class="col-md-6">
+            
+                                                             <!--豆魚蛋肉類-->
+                                                            <div class="form-group ">
+                                                                <label>豆魚蛋肉類／份</label>
+                                                                <input type="number" name="strongPoint.perFoodmainM&P"
+                                                                    class="form-control formText { }">                                                        
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                             <!--蔬菜類-->
+                                                            <div class="form-group ">
+                                                                <label>蔬菜類／份</label>
+                                                                <input type="text"
+                                                                    name="perFoodmainV"
+                                                                    class="form-control formText {  }">
+                                                            </div>
+            
+                                                        </div>
+
+                                                        
+                                                        <div class="col-md-6">
+                                                            <div class="form-group ">
+                                                                <label>水果類／份</label>
+                                                                <input type="text"
+                                                                    name="perFoodmainF"
+                                                                    class="form-control formText {  }">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group ">
+                                                                <label>乳品類／份</label>
+                                                                <input type="text"
+                                                                    name="perFoodmainM"
+                                                                    class="form-control formText {  }">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group ">
+                                                                <label>油脂與堅果種子類(油脂)／份</label>
+                                                                <input type="text"
+                                                                    name="perFoodmainO"
+                                                                    class="form-control formText {  }">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group ">
+                                                                <label>油脂與堅果種子類(堅果種子)／份</label>
+                                                                <input type="text"
+                                                                    name="perFoodmainN"
+                                                                    class="form-control formText {  }">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group ">
+                                                                <label>熱量(大卡)</label>
+                                                                <input type="text"
+                                                                    name="perFoodmainHeat"
+                                                                    class="form-control formText {  }"> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group ">
+                                                                <label>蛋白質(克)</label>
+                                                                <input type="text"
+                                                                    name="perFoodmainProtein"
+                                                                    class="form-control formText {  }"> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        
+                                                   
+                                                            
+                                                </div>
+                                            </div>
+                                            
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-6">                                            
 
-                                            <div class="entry">
-                                                <div class="row">
-                                                    <div class="col-xs-4">
-                                                        <!--營養問題-->
-                                                        <div class="form-group">
-                                                            <label>P(營養問題)</label>
-                                                            <input type="text" name="patient.nutritionalP"
-                                                                class="form-control formText {  }">
-                                                        </div>
+                                            <!-- 餐食營養 -->
+                                            <div class="row">
+                                                
+                                                <h5>輔導項目</h5>
+                                                <div class="col-md-12">
+                                                    
+                                            
+                                                <table class="table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>餐食營養</th>
+                                                            <td>
+                                                                <!--餐食營養-->
+                                                                <div class="form-group ">
+                                                                    <label class="sr-only">餐食營養</label>
+                                                                    <div class="input-group">
+                                                                        <label><input type="checkbox" value="0" name="strongPoint.mealNutrition"
+                                                                                class="icheckbox" />符合健康飲食原則</label><b>&nbsp;&nbsp;</b>
+                                                                        <label><input type="checkbox" value="10" name="strongPoint.mealNutrition"
+                                                                                class="icheckbox" />使用新鮮、在地、多元食材</label><b>&nbsp;&nbsp;</b>
+                                                                        <label><input type="checkbox" value="20" name="strongPoint.mealNutrition"
+                                                                                class="icheckbox" />提供全穀及未精製雜糧達主食 1/3</label><b>&nbsp;&nbsp;</b>
+                                                                        <label><input type="checkbox" value="30" name="strongPoint.mealNutrition"
+                                                                                class="icheckbox" />提供足夠蛋白質、蔬菜量等</label><b>&nbsp;&nbsp;</b>
+                                                                        <label><input type="checkbox" value="99" name="strongPoint.mealNutrition"
+                                                                                class="icheckbox" />其他</label><b>&nbsp;&nbsp;</b>
+                                                                    </div><!-- /.input group -->
+                                                                </div>
 
-                                                    </div>
-                                                    <div class="col-xs-3">
-                                                        <!--病因-->
-                                                        <div class="form-group ">
-                                                            <label>E(病因)</label>
-                                                            <input type="text" name="patient.nutritionalE"
-                                                                class="form-control formText {  }">
-                                                        </div>
+                                                                <!--其他類型說明-->
+                                                                <div class="form-group ">
+                                                                    <label>其他說明</label>
+                                                                    <input type="text" name="strongPoint.mealNutritionOther"
+                                                                        class="form-control formText {  }" />
+                                                                </div>
 
-                                                    </div>
+                                                                
+                                                                <!--輔導/追蹤內容-->
+                                                                <div class="form-group ">
+                                                                    <label>輔導/追蹤內容</label>
+                                                                    <textarea class="form-control formText {  }" name="strongPoint.mealNutritionOther" rows="3"></textarea>
+                                                                </div>
 
-                                                    <div class="col-xs-4">
-                                                        <!--病因-->
-                                                        <div class="form-group ">
-                                                            <label>S(症狀／徵候)</label>
-                                                            <input type="text" name="patient.nutritionalS"
-                                                                class="form-control formText {  }">
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="col-xs-1">
-                                                        <div style="height:25px;"></div>
-                                                        <button class="btn btn-success btn-add" type="button">
-                                                            <span class="glyphicon glyphicon-plus"></span>
-                                                        </button>
-                                                    </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="150">
+                                                                <div class="input-group">
+                                                                    <label><input type="checkbox" value="0" name="strongPoint.coachA"
+                                                                            class="icheckbox" />&nbsp;A 質地調整飲食</label><b>&nbsp;&nbsp;</b>
+                                                                </div>
+                                                            </th>
+                                                            <td>
+                                                                <!--餐食營養-->
+                                                                <div class="form-group ">
+                                                                    <label>具質地調整飲食知能且達成下列任一內容:</label>
+                                                                    <div class="input-group">
+                                                                        <label><input type="checkbox" value="0" name="strongPoint.mealNutrition"
+                                                                                class="icheckbox" />符合健康飲食原則</label><b>&nbsp;&nbsp;</b>
+                                                                        <label><input type="checkbox" value="10" name="strongPoint.mealNutrition"
+                                                                                class="icheckbox" />使用新鮮、在地、多元食材</label><b>&nbsp;&nbsp;</b>
+                                                                        <label><input type="checkbox" value="20" name="strongPoint.mealNutrition"
+                                                                                class="icheckbox" />提供全穀及未精製雜糧達主食 1/3</label><b>&nbsp;&nbsp;</b>
+                                                                        <label><input type="checkbox" value="30" name="strongPoint.mealNutrition"
+                                                                                class="icheckbox" />提供足夠蛋白質、蔬菜量等</label><b>&nbsp;&nbsp;</b>
+                                                                        <label><input type="checkbox" value="99" name="strongPoint.mealNutrition"
+                                                                                class="icheckbox" />其他</label><b>&nbsp;&nbsp;</b>
+                                                                    </div><!-- /.input group -->
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="150">B 衛生安全</th>
+                                                            <td>
+                                                                <!--B 衛生安全-->
+                                                                <div class="form-group ">
+                                                                    <label class="sr-only">B 衛生安全</label>
+                                                                    <div class="input-group">
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="B1" name="strongPoint.agefriendlyB" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>B1
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="B2" name="strongPoint.agefriendlyB" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>B2
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="B3" name="strongPoint.agefriendlyB" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>B3
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="B4" name="strongPoint.agefriendlyB" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>B4
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="B5" name="strongPoint.agefriendlyB" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>B5
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="B6" name="strongPoint.agefriendlyB" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>B6
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="B7" name="strongPoint.agefriendlyB" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>B7
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                    </div><!-- /.input group -->
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="150">C 用餐環境</th>
+                                                            <td>
+                                                                <!--C 用餐環境-->
+                                                                <div class="form-group ">
+                                                                    <label class="sr-only">C 用餐環境</label>
+                                                                    <div class="input-group">
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="C1" name="strongPoint.agefriendlyC" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>C1
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="C2" name="strongPoint.agefriendlyC" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>C2
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="C3" name="strongPoint.agefriendlyC" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>C3
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="C4" name="strongPoint.agefriendlyC" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>C4
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="C5" name="strongPoint.agefriendlyC" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>C5
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="C6" name="strongPoint.agefriendlyC" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>C6
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="C7" name="strongPoint.agefriendlyC" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>C7
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                    </div><!-- /.input group -->
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="150">D 服務流程</th>
+                                                            <td>
+                                                                <!--D 服務流程-->
+                                                                <div class="form-group ">
+                                                                    <label class="sr-only">D 服務流程</label>
+                                                                    <div class="input-group">
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="D1" name="strongPoint.agefriendlyD" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>D1
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="D2" name="strongPoint.agefriendlyD" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>D2
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="D3" name="strongPoint.agefriendlyD" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>D3
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="D4" name="strongPoint.agefriendlyD" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>D4
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="D5" name="strongPoint.agefriendlyD" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>D5
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="D6" name="strongPoint.agefriendlyD" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>D6
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="D7" name="strongPoint.agefriendlyD" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>D7
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                    </div><!-- /.input group -->
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="150">E 用餐器具</th>
+                                                            <td>
+                                                                <!--E 用餐器具-->
+                                                                <div class="form-group ">
+                                                                    <label class="sr-only">E 用餐器具</label>
+                                                                    <div class="input-group">
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="E1" name="strongPoint.agefriendlyE" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>E1
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="E2" name="strongPoint.agefriendlyE" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>E2
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                    </div><!-- /.input group -->
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th width="150">F 外袋包裝</th>
+                                                            <td>
+                                                                <!--F 外袋包裝-->
+                                                                <div class="form-group ">
+                                                                    <label class="sr-only">F 外袋包裝</label>
+                                                                    <div class="input-group">
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="F1" name="strongPoint.agefriendlyF" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>F1
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="F2" name="strongPoint.agefriendlyF" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>F2
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="F3" name="strongPoint.agefriendlyF" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>F3
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                        <label><div class="iradio_minimal-blue disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="radio" value="F4" name="strongPoint.agefriendlyF" class="iradio" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>F4
+                                                                        </label><b>&nbsp;&nbsp;</b>
+                                                                    </div><!-- /.input group -->
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                                 </div>
-
                                             </div>
-                                            <!-- entry -->
 
-
-                                            <script>
-                                                addLoadEvent(function () {
-                                                    $(document).off('click', '.btn-add').on(
-                                                        'click',
-                                                        '.btn-add',
-                                                        function (e) {
-                                                            e.preventDefault();
-
-                                                            var controlGroup = $(this)
-                                                                .parents(
-                                                                    '.form-group:first'),
-                                                                currentEntry = $(this)
-                                                                .parents(
-                                                                    '.entry:first'),
-                                                                newEntry = $(currentEntry
-                                                                    .clone()).appendTo(
-                                                                    controlGroup);
-
-                                                            newEntry.find('input').val('');
-                                                            controlGroup.find(
-                                                                    '.entry:not(:last) .btn-add'
-                                                                )
-                                                                .removeClass('btn-add')
-                                                                .addClass('btn-remove')
-                                                                .removeClass('btn-success')
-                                                                .addClass('btn-danger')
-                                                                .html(
-                                                                    '<span class="glyphicon glyphicon-minus"></span>'
-                                                                );
-                                                        }).on('click', '.btn-remove',
-                                                        function (
-                                                            e) {
-                                                            $(this).parents('.entry:first')
-                                                                .remove();
-
-                                                            e.preventDefault();
-                                                            return false;
-                                                        });
-                                                });
-                                            </script>
-
-
+                                            
                                         </div>
 
                                     </div>
+
 
                                     <!-- ./Main Row End -->
 
@@ -1688,6 +2026,7 @@
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/editor.bootstrap.min.js"></script>
     <!-- <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/editor.foundation.min.js"></script>
 	    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/editor.jqueryui.min.js"></script> -->
+
     <!-- Select2 -->
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/select2/select2.full.js"></script>
 
