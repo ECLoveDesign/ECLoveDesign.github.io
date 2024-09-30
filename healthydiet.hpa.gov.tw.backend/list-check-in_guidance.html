@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>長者營養評估工具平台|新增/編輯個案資料資料</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <!-- Include Common CSS -->
+    <!-- new style -->
+    <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/switchery/switchery.min.css" rel="stylesheet" />
+    <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Theme style 在css後增加顏色模組資料夾名稱：green/、blue/、blue_b/、blue_w/...-->
+    <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/blue_w/core.css" rel="stylesheet" type="text/css">
+
+    <!--此段展示用  請勿使用-->
+    <!-- <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/blue_w/icons.css" rel="stylesheet" type="text/css"> -->
+    <link href="css/icons.css" rel="stylesheet" type="text/css">
+    <!--此段展示用  請勿使用-->
+
+    <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/blue_w/components.css" rel="stylesheet"
+        type="text/css">
+    <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/blue_w/pages.css" rel="stylesheet" type="text/css">
+    <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/blue_w/menu.css" rel="stylesheet" type="text/css">
+    <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/blue_w/responsive.css" rel="stylesheet"
+        type="text/css">
+
+    <!-- DataTables -->
+    <link rel="stylesheet"
+        href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet"
+        href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/buttons.dataTables.min.css">
+
+    <!-- DataTables Editor-->
+    <link rel="stylesheet"
+        href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/css/editor.bootstrap.css">
+    <link rel="stylesheet"
+        href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/css/editor.dataTables.min.css">
+    <link rel="stylesheet"
+        href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/css/select.dataTables.min.css">
+    <link rel="stylesheet"
+        href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/css/jquery.dataTables.min.css">
+
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/select2/select2.min.css">
+
+    <!-- iCheck -->
+    <link rel="stylesheet" href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/iCheck/flat/blue.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/iCheck/all.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet"
+        href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/timepicker/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet"
+        href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/daterangepicker/daterangepicker-bs3.css">
+
+    <!-- Fileinput-->
+    <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/fileinput/fileinput.min.css" media="all"
+        rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet"
+        href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/colorpicker/bootstrap-colorpicker.min.css">
+
+    <!-- Bootstrap Rating -->
+    <link rel="stylesheet"
+        href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/bootstrap-rating/bootstrap-rating.css">
+
+    <!-- Bootstrap Slider -->
+    <link rel="stylesheet"
+        href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/bootstrap-slider/bootstrap-slider.min.css">
+
+
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/modernizr.min.js"></script>
+
+    <!-- tmhtc Style -->
+    <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/tmhtc.css" rel="stylesheet" type="text/css">
+    <style>
+        .form-group .select2-container {
+            width: 100% !important;
+        }
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <!-- 載入TAG -->
+
+    <script type="text/javascript">
+        //載入tag內建js 
+        function addLoadEvent(func) {
+            var oldOnLoad = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function () {
+                    oldOnLoad();
+                    func();
+                }
+            }
+        }
+    </script>
+
+
+    <style>
+        .kv-avatar .krajee-default.file-preview-frame,
+        .kv-avatar .krajee-default.file-preview-frame:hover {
+            margin: 0;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+            text-align: center;
+        }
+
+        .kv-avatar .file-input {
+            display: table-cell;
+            max-width: 220px;
+        }
+
+        .kv-reqd {
+            color: red;
+            font-family: monospace;
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+
+<body class="fixed-left">
+    <!-- Begin page -->
+    <div id="wrapper">
+
+
+        <!-- Top Bar Start -->
+        <!-- Top Bar Start -->
+        <div class="topbar">
+            <!-- Logo -->
+            <div class="topbar-left">
+                <div class="text-center">
+                    <div class="logo">
+                        <!-- mini logo for sidebar mini 50x50 pixels -->
+                        <span style="font-family: '微軟正黑體', 'Microsoft JhengHei UI'">長者營養評估工具平台</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navbar -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="">
+                        <div class="pull-left">
+                            <button class="button-menu-mobile open-left waves-effect">
+                                <i class="md md-menu"></i>
+                            </button>
+                            <span class="clearfix"></span>
+                        </div>
+                        <div class="pull-right">
+                            <button class="button-menu-mobile open-left waves-effect">
+                                【ADMIN】
+                            </button>
+
+                        </div>
+                        <ul class="nav navbar-nav navbar-right pull-right">
+                            <!--第一層 功能選單-->
+                        </ul>
+                    </div>
+                </div><!-- container End -->
+            </div><!-- Navbar End -->
+        </div><!-- Top Bar End -->
+
+        <input type="hidden" id="header_case_id" value="">
+        <!-- myModal 帳號資料修改-->
+        <!-- myModal 帳號資料修改-->
+        <!-- 訊息視窗 -->
+        <div class="modal fade" id="messageWindow" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content" style="padding:0px">
+                    <div class="modal-header" style="background-color:#FFDD99;padding:15px;">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel"
+                            style="font-family:'微軟正黑體','Microsoft JhengHei UI Light';">
+                            <i class="fa fa-exclamation-triangle"></i>系統訊息</h4>
+                    </div>
+                    <div class="modal-body" style="padding:15px;">
+                        <h5 style="font-family:'微軟正黑體','Microsoft JhengHei UI Light';"><span id="messageText"></span>
+                        </h5>
+                        <!-- 
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-default" data-dismiss="modal" id="messageButton">關閉</button>
+				</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel"
+                            style="font-family: '微軟正黑體', 'Microsoft JhengHei UI Light'">帳號資料修改</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control" placeholder="姓名" id="user_name" value="管理者" />
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control" placeholder="身分證號" id="user_caseId" value="" />
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+
+                            <input type="text" class="form-control" disabled placeholder="帳號" value="ADMIN" />
+                            <input type="hidden" name="user.username" class="form-control" id="user_username"
+                                placeholder="身分證號" value="ADMIN" />
+                            <span class="glyphicon glyphicon-credit-card form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control" name="user.tel" id="tel" placeholder="電話號碼">
+                            <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="email" class="form-control" placeholder="電子郵件" id="user_email"
+                                value="terryfu1972@gmail.com">
+                            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="password" class="form-control" id="user_password" placeholder="密碼"
+                                onkeyup="checkPW(this);">
+                            <input type="checkbox" onclick="showPW(this, 'user_password');" />顯示明碼
+                            <span id="pwmsg" class="info-box-text"
+                                style="color:#FF0000;display:none;"><b>規定至少12碼，由英文大小寫．數字及特殊符號組成</b></span>
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="password"
+                                class="form-control {required: true, password: true, remote: 'admin!checkPwd.action', minlength: 12, maxlength: 20, messages: {remote:'密碼強度不足，請重新輸入!'}}"
+                                id="user_repassword" placeholder="確認密碼">
+                            <input type="checkbox" onclick="showPW(this, 'user_repassword');" />顯示明碼
+                            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <span class="info-box-text" style="color: #FF0000"><b>如果要修改密碼，請填寫密碼,若空白,則密碼保持不變!</b></span>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="modifyPerson" class="btn btn-primary"
+                            data-dismiss="modal">確認送出</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function showPW(ele, id) {
+                if (ele.checked) {
+                    $("#" + id).attr("type", "text");
+                } else {
+                    $("#" + id).attr("type", "password");
+                }
+            }
+            var testPassword = /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)(?=.*?[!#@*&.])[a-zA-Z\d!#@*&.]*$/;
+
+            function checkPW(ele) {
+                $('#pwmsg').css('display', 'none');
+                var val = ele.value;
+                if (val === '') return;
+                if (val.length < 12) {
+                    $('#pwmsg').css('display', 'block');
+                } else if (testPassword.test(val) === false) {
+                    $('#pwmsg').css('display', 'block');
+                }
+            }
+        </script>
+        <!-- ./帳號資料修改-->
+        <!-- ./帳號資料修改-->
+        <!-- Top Bar End -->
+
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="sidebar-inner slimscrollleft">
+
+                <!-- sidebar: style can be found in sidebar.less -->
+                <div id="sidebar-menu">
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul>
+                        <!--第一層 功能選單-->
+                        <li class="text-muted menu-title">功能選單</li>
+                        <!--第二層 功能選單-->
+                        <li class="has_sub">
+                            <a href="board!list.action" class="waves-effect waves-primary">
+                                <i class="fa fa-home"></i>
+                                <span>首頁&nbsp;</span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect waves-primary">
+                                <i class="fa fa-files-o"></i>
+                                <span>營養個案管理&nbsp;</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="patient!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        營養個案管理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="patient!list1.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        營養風險管理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="visitor_case!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        網站自測個案
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="member!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        網站會員管理
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect waves-primary">
+                                <i class="fa fa-bank"></i>
+                                <span>推廣中心服務&nbsp;</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="check-in_guidance!list.action">
+                                        <i class="fa fa-circle-o text-yellow"></i>
+                                        據點及餐廳輔導紀錄表
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="counsel_site!list.action">
+                                        <i class="fa fa-circle-o text-yellow"></i>
+                                        輔導長者共餐據點
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="friendly_community!list.action">
+                                        <i class="fa fa-circle-o text-yellow"></i>
+                                        媒合社區夥伴
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="public_education!list.action">
+                                        <i class="fa fa-circle-o text-yellow"></i>
+                                        辦理團體營養教育
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="person_training!list.action">
+                                        <i class="fa fa-circle-o text-yellow"></i>
+                                        辦理人員培訓課程
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="contact_meeting!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        溝通聯繫會議
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="nur_survey!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        長者營養認知調查
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="nur_division!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        設立分中心
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="result_seminar!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        多元行銷活動
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect waves-primary">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>年度執行成果&nbsp;</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="gov_target112!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        112年度目標計畫111
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="kpi_gov112!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        112年度主管機關服務績效維護管理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="kpi112!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        112年度服務績效維護管理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="gov_target111!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        111年度目標計畫
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="kpi_gov111!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        111年度縣市執行報表
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="kpi111!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        111年度中心執行報表
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="kpi_gov!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        110年度縣市執行報表
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="kpi!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        110年度中心執行報表
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect waves-primary">
+                                <i class="fa fa-bar-chart"></i>
+                                <span>統計分析&nbsp;</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="gov_question!list.action" class="waves-effect waves-primary">
+                                <i class="fa fa-bar-chart"></i>
+                                <span>社區長者飲食問卷&nbsp;</span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect waves-primary subdrop">
+                                <i class="fa fa-envelope"></i>
+                                <span>社區營養推廣中心管理&nbsp;</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="care_org!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        推廣中心管理
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="org_sub!list.action">
+                                        <i class="fa fa-user"></i>
+                                        營養資源地圖
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect waves-primary">
+                                <i class="fa fa-gear"></i>
+                                <span>專家委員審查&nbsp;</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="examiner!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        委員管理
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="coaching_form!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        審查表管理
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect waves-primary">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>線上課程&nbsp;</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="teacher!list.action">
+                                        <i class="fa fa-user"></i>
+                                        教師資訊
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="course!list.action">
+                                        <i class="fa fa-files-o"></i>
+                                        開課資訊
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="course!list2.action">
+                                        <i class="fa fa-files-o"></i>
+                                        課程考試管理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="course!list1.action">
+                                        <i class="fa fa-folder-o"></i>
+                                        報名課程管理
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="committee_master!list.action" class="waves-effect waves-primary">
+                                <i class="fa fa-check-square-o"></i>
+                                <span>委員會資訊交流&nbsp;</span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="share_doc_master!list.action" class="waves-effect waves-primary">
+                                <i class="fa fa-check-square-o"></i>
+                                <span>營養資訊交流&nbsp;</span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect waves-primary">
+                                <i class="fa fa-bank"></i>
+                                <span>系統管理作業&nbsp;</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="board!inputList.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        公告管理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="contribute_notice!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        操作手冊管理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="resource!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        資源管理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="admin!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        帳號管理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="role!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        角色管理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="sys_cd!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        系統代碼管理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="sys_city!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        縣市代碼管理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="log!list.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        異動記錄查詢
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="sys_setting!add.action">
+                                        <i class="fa fa-circle-o"></i>
+                                        系統設定
+                                    </a>
+                                </li>
+
+                            </ul>
+
+
+                            <!--第三層 功能選單 end -->
+
+                        <li class="text-muted menu-title">其他</li>
+                        <!--第二層 功能選單-->
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect waves-primary" data-toggle="modal" data-target="#myModal">
+                                <i class="fa fa-circle-o text-blue"></i>
+                                <span>帳號資料修改&nbsp;</span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+                            <!--第三層 功能選單 end -->
+
+                        <li class="has_sub">
+                            <a href="logout" class="waves-effect waves-primary">
+                                <i class="fa fa-circle-o text-yellow"></i>
+                                <span>登出&nbsp;</span>
+                            </a>
+
+                            <!--第三層 功能選單-->
+                            <!--第三層 功能選單 end -->
+
+                            <!--第一層 功能選單 end-->
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container">
+                    <!-- Page Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <ol class="breadcrumb pull-right">
+                                    <li>據點及餐廳輔導紀錄表</li>
+                                    <li class="active">據點及餐廳輔導紀錄表管理</li>
+                                </ol>
+                                <h4 class="page-title">據點及餐廳輔導紀錄表</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page Body -->
+                    <div class="row">
+                        
+                        <div class="col-md-12">
+                            <div class="card-box">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group form-inline">
+
+                                            <div class="dropdown" style="display: inline;">
+                                                <button type="button" class="btn btn-primary dropdown-toggle"
+                                                    data-toggle="dropdown">
+                                                    <i class="fa fa-plus"></i> 新增 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="strongPoint-list.html">據點</a></li>
+                                                    <li><a href="restaurant.html">餐廳</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary" id="delete_btn">
+                                                <i class="fa fa-trash"></i> 刪除</button>
+
+                                            <select id="search_year" class="form-control">
+                                                <option value="">年份篩選</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                            </select>
+
+                                            <select id="strongPointType" class="form-control">
+                                                <option value="">所屬推廣中心</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+
+                                            <select id="strongPointType" class="form-control">
+                                                <option value="">據點類型</option>
+                                                <option value="社區發展協會">社區發展協會</option>
+                                                <option value="社區發展協會2">社區發展協會2</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- <div class="col-md-4">
+
+                                        <label>請選擇「營養評估-個案匯入表.xlsx」:</label>
+                                        <input type="file" id="file_upload" name="fileUpload" multiple>
+                                    </div> -->
+                                </div>
+
+                                <div class="row" style="margin-top: 20px;">
+                                    <div class="col-md-12">
+                                        <table id="example1" class="table table-bordered table-striped responsive"
+                                            style="width:100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th><input name="select_all" value="1" type="checkbox"></th>
+                                                    <th>所屬推廣中心</th>
+                                                    <th>名稱</th>
+                                                    <th>類型</th>
+                                                    <th>輔導日期</th>
+                                                    <th>訪視資訊</th>
+                                                    <th>聯絡人／職稱</th>
+                                                    <th>連絡電話／手機</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr role="row" class="odd">
+                                                    <td class=" dt-body-center">
+                                                        <input type="checkbox" name="ids" value="1">
+                                                    </td>
+                                                    <td>台北市營養推廣中心(台北市衛生福利局)</td>
+                                                    <td><a href="#">社團法人台北市光鹽關懷發展協會</a></td>
+                                                    <td>社區發展協會</td>
+                                                    <td>2024-12-31</td>
+                                                    <td>初訪</td>
+                                                    <td>陳圈圈／社工</td>
+                                                    <td>無／0912321123</td>
+                                                    <td>
+                                                        <a href="#"> 編輯</a> | <a href="#"
+                                                            onclick="return show_confirm();"> 刪除</a>
+                                                    </td>
+                                                </tr>
+                                                <tr role="row" class="even">
+                                                    <td class=" dt-body-center">
+                                                        <input type="checkbox" name="ids" value="2">
+                                                    </td>
+                                                    <td>台北市營養推廣中心(台北市衛生福利局)</td>
+                                                    <td><a href="#">社團法人台北市光鹽關懷發展協會</a></td>
+                                                    <td>社區發展協會</td>
+                                                    <td>2024-12-31</td>
+                                                    <td>初訪</td>
+                                                    <td>陳圈圈／社工</td>
+                                                    <td>無／0912321123</td>
+                                                    <td>
+                                                        <a href="#"> 編輯</a> | <a href="#"
+                                                            onclick="return show_confirm();"> 刪除</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div><!-- ./card-box -->
+                        </div><!-- ./col-md-12 -->
+                    </div><!-- ./row -->
+
+                </div><!-- end container -->
+            </div>
+            <!-- end content -->
+            <!-- Include Common JS -->
+            <!-- FOOTER -->
+            <footer class="footer text-right">
+                2020 © 衛生福利部國民健康署
+            </footer>
+            <!-- End FOOTER -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- Include Common JS -->
+    <script>
+        var resizefunc = [];
+    </script>
+
+    <!-- jQuery  -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.min.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/bootstrap.min.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/detect.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/fastclick.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.slimscroll.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.blockUI.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/waves.min.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/wow.min.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.nicescroll.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.scrollTo.min.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/switchery/switchery.min.js"></script>
+
+    <!-- Moment  -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/moment/moment.js"></script>
+
+    <!-- Counter Up  -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/waypoints/lib/jquery.waypoints.js">
+    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/counterup/jquery.counterup.min.js">
+    </script>
+
+    <!-- Sweet Alert  -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/sweetalert/dist/sweetalert.min.js">
+    </script>
+
+    <!-- Sparkline -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/jquery-sparkline/jquery.sparkline.min.js">
+    </script>
+
+    <!-- skycons -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/skyicons/skycons.min.js"
+        type="text/javascript">
+    </script>
+
+    <!-- Todojs  -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/pages/jquery.todo.js"></script>
+
+    <!-- chatjs  -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/pages/jquery.chat.js"></script>
+
+    <!-- Circliful -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/jquery-circliful/js/jquery.circliful.min.js">
+    </script>
+
+    <!-- Rating -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/bootstrap-rating/bootstrap-rating.js">
+    </script>
+
+    <!-- Slider -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/bootstrap-slider/bootstrap-slider.min.js">
+    </script>
+
+    <!-- DataTables -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/jquery.dataTables.min.js">
+    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.bootstrap.min.js">
+    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/buttons.html5.min.js">
+    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/buttons.print.min.js">
+    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.buttons.min.js">
+    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/pdfmake.min.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/vfs_fonts.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/jszip.min.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.select.min.js">
+    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/eModal.js"></script>
+
+    <!-- DataTables Editor -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.editor.min.js">
+    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/editor.bootstrap.min.js">
+    </script>
+    <!-- <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/editor.foundation.min.js"></script>
+	    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/editor.jqueryui.min.js"></script> -->
+    <!-- Select2 -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/select2/select2.full.js"></script>
+
+    <!-- messagebox -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/bootbox.min.js"></script>
+
+    <!--ckEditor -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/ckeditor/ckeditor.js"></script>
+
+    <!-- InputMask -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/input-mask/jquery.inputmask.js">
+    </script>
+    <script
+        src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/input-mask/jquery.inputmask.date.extensions.js">
+    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/input-mask/jquery.inputmask.extensions.js">
+    </script>
+
+    <!--Bootstrap timeout -->
+    <script
+        src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/bootstrap-timeout/bootstrap-session-timeout.min.js">
+    </script>
+
+    <!-- iCheck 1.0.1 -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/iCheck/icheck.min.js"></script>
+
+
+
+    <!-- bootstrap time picker -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/timepicker/bootstrap-timepicker.min.js">
+    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/daterangepicker/daterangepicker.js">
+    </script>
+    <!-- datepicker -->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datepicker/bootstrap-datepicker.js">
+    </script>
+
+    <!-- fileinput-->
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/fileinput/fileinput.min.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/fileinput/fileinput_locale_zh_TW.js">
+    </script>
+
+
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.core.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.app.js"></script>
+
+
+
+    <!-- JQuery 驗證 -->
+    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.form.js">
+    </script>
+    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.metadata.js">
+    </script>
+    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.validate.js">
+    </script>
+    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.validate.methods.js">
+    </script>
+    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.validate.zh-TW.js">
+    </script>
+    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.qtip.js">
+    </script>
+    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/base.js"></script>
+
+    <script type="text/javascript"
+        src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/jQuery/jquery.placeholder.js"></script>
+    <script>
+        $('input, textarea').placeholder();
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#caseAge').blur(function () {
+                var value = $('#caseAge').val();
+                if (value != null) {
+                    var today = new Date();
+                    var years = today.getFullYear() - value - 1911;
+
+                    if (years < 100) {
+                        years = "0" + years;
+                    }
+                    $('#birthday').val(years + "-01-01");
+                }
+            });
+            if ("" != "") {
+                $('#livCityCode').val("");
+                cityChage("", 0, "");
+                townChage("", 0, "");
+            }
+
+            var url = "check-in_guidance!list.action";
+            //alert(url);
+            $('ul.list-unstyled a[href="' + url + '"]').parent("li").addClass('active');
+            //$('ul.list-unstyled a[href="'+ url +'"]').parent().parent().parent().children("a").addClass('subdrop');
+            $('ul.list-unstyled a[href="' + url + '"]').parent().parent().parent().children("a")
+                .click();
+
+
+
+        });
+
+        $("#add_row").on('click', function () {
+            var index = Math.round($("input[name*='caseContacts']").length / 2) + 5 //避免刪除控制
+
+            $("tbody.addCaseContact").append('<tr><td><input type="text" name="caseContacts[' + index +
+                '].contactName" value="" placeholder="姓名" class="form-control required"/></td>' +
+                '<td><select  name="caseContacts[' + index +
+                '].contactSexuality" class="form-control required" ><option value="">請選擇..</option>	<option value="10">男</option><option value="20">女</option></select></td>' +
+                '<td><select  name="caseContacts[' + index +
+                '].relationship" class="form-control required" ><option value="">請選擇..</option>	<option value="10">父母</option>	<option value="20">配偶</option>	<option value="30">子女</option>	<option value="40">媳婦</option>	<option value="50">女婿</option>	<option value="60">孫子女</option>	<option value="70">鄰里長</option>	<option value="99">其他</option>	</select></td>' +
+                '<td><input type="text" name="caseContacts[' + index +
+                '].contactTel" value="" placeholder="聨絡電話" class="form-control required"/></td>' +
+                '<td><input type="text" name="caseContacts[' + index +
+                '].contactAddr" value="" placeholder="聨絡地址" class="form-control required"/></td>' +
+                '<td><button type="button" class="btn btn-danger glyphicon glyphicon-remove delete_row" ></button></td></tr>'
+            );
+            $(".delete_row").one('click', function () { // 新增的部份再bind乙次 用live 較吃資源
+                $(this).parent().parent().remove();
+            });
+        });
+
+        $(".delete_row").one('click', function () {
+            $(this).parent().parent().remove();
+        });
+
+
+        $('#save').on('click', function () {
+            //加入全部地址欄位   
+            var str = "";
+            str = $("#livCityCode").find("option:selected").text();
+            str += $("#livTownCode").find("option:selected").text();
+            str += $("#livVillCode").find("option:selected").text();
+            str += $("#livAddr").val();
+            $("#allLivAddr").val(str);
+
+            $("#inputForm").submit();
+
+        });
+
+
+        //加入身分證字號判定男女
+        $('#caseId').on('change', function () {
+            var id = $('#caseId').val();
+            if (id.length == 10) {
+                var s = id.substring(1, 2);
+                if (s == '1') {
+                    $('input:radio[name="patient.caseSexuality"]').filter('[value="10"]').iCheck(
+                        'check');
+                } else if (s == '2') {
+                    $('input:radio[name="patient.caseSexuality"]').filter('[value="20"]').iCheck(
+                        'check');
+                }
+
+            }
+        });
+
+
+        //異動記錄原因
+        $('#activeFlag').on('change', function () {
+            //加入異動記錄
+            var _activeFlag = $("#activeFlag").val();
+            if (_rawRecord != _activeFlag) {
+                eModal.prompt({
+                    size: eModal.size.lg,
+                    message: '請輸入異動原因?',
+                    title: '異動原因',
+                    label: '確定'
+                }).then(
+                    function (input) {
+                        $("#activeFlagText").val(input);
+                    },
+                    function () {});
+            }
+        });
+        $('.select2').select2();
+
+        //iCheck for checkbox and radio inputs
+        $('input[type="checkbox"].icheckbox, input[type="radio"].iradio').iCheck({
+            checkboxClass: 'icheckbox_minimal-blue',
+            radioClass: 'iradio_minimal-blue'
+        });
+
+        $('#certifiedDisabilityElse').hide();
+
+        $('#certifiedDisability').on('ifClicked', function (e) {
+            if (!e.target.checked) {
+                $('#certifiedDisabilityElse').fadeIn();
+            } else
+                $('#certifiedDisabilityElse').fadeOut();
+        })
+
+        $('#majorInjuryCardElse').hide();
+
+
+        $('#majorInjuryCard').on('ifClicked', function (e) {
+            if (!e.target.checked)
+                $('#majorInjuryCardElse').fadeIn();
+            else
+                $('#majorInjuryCardElse').fadeOut();
+        })
+
+        $('#otherCardElse').hide();
+
+
+        $('#otherCard').on('ifClicked', function (e) {
+            if (!e.target.checked)
+                $('#otherCardElse').fadeIn();
+            else
+                $('#otherCardElse').fadeOut();
+        })
+
+        //加入異動記錄處理
+        var _rawRecord = 10;
+    </script>
+
+
+
+    <!--無法封裝也可能會調整結構，故放在頁面 -->
+    <script>
+        var btnCust = '<a  class="btn btn-default" title="下載照片" ' +
+            'href="">' +
+            '<i class="glyphicon glyphicon-arrow-down"></i>' +
+            '</a>';
+        $("#personalPhoto").fileinput({
+            language: 'zh-TW',
+            overwriteInitial: true,
+            //maxFileSize: 1500,
+            showClose: false,
+            showCaption: false,
+            browseLabel: '',
+            removeLabel: '',
+            browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
+            removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+            removeTitle: '變更或還原預設值',
+            elErrorContainer: '#kv-avatar-errors-1',
+            msgErrorClass: 'alert alert-block alert-danger',
+            defaultPreviewContent: '<img src="https://healthydiet.hpa.gov.tw/NCAP/page/common/images/users/default_avatar_male.jpg" alt="個人照片" style="width:160px">',
+            layoutTemplates: {
+                main2: '{preview} ' + btnCust + ' {remove} {browse}'
+            },
+            allowedFileExtensions: ["jpg", "png", "gif"]
+        });
+
+
+
+        var $el2 = $("#file_upload");
+        var footerTemplate = '<div class="file-thumbnail-footer">\n' +
+            '   <div style="margin:3px 0 8px 0">\n' +
+            '   <div class="file-footer-caption" title="{caption}">{caption}{size}</div>\n' +
+            '   </div>\n' +
+            '   {actions}\n' +
+            '</div>';
+
+        $el2.fileinput({
+            language: 'zh-TW',
+            layoutTemplates: {
+                footer: footerTemplate
+            },
+            initialPreview: [],
+            initialPreviewAsData: true,
+            initialPreviewConfig: [],
+            initialPreviewThumbTags: []
+        });
+
+        $el2.on("filepredelete", function (jqXHR) {
+            var abort = true;
+            if (confirm("您確定要刪除這個附加檔案嗎?")) {
+                abort = false;
+            }
+            return abort;
+        });
+
+        function autoResize(frameid) {
+            alert($(frameid).contents().context.documentElement.scrollHeight);
+            $(frameid).css("height", $(frameid).contents().context.documentElement.scrollHeight + 60 + "px");
+            //  $(".embed-responsive-16by9").css("padding-bottom","95%");
+            //alert($(frameid).contents().height());
+        }
+
+
+        //載入外部的iframe
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            if (history.pushState) {
+                history.pushState(null, null, e.target.hash);
+            } else {
+                window.location.hash = e.target.hash; //Polyfill for old browsers
+            }
+            paneID = $(e.target).attr('href');
+            src = $(paneID).attr('data-src');
+            // if the iframe hasn't already been loaded once
+            if ($(paneID + " iframe").attr("src") == "") {
+                $(paneID + " iframe").attr("src", src);
+
+                //var frameid = paneID.replace("#dv", "frm");                        
+                //autoResize(frameid);
+            }
+        });
+        // Javascript to enable link to tab
+        var url = document.location.toString();
+        if (url.match('#')) {
+            $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+        }
+
+        // With HTML5 history API, we can easily prevent scrolling!
+        $('.nav-tabs a').on('shown.bs.tab', function (e) {
+            if (history.pushState) {
+                history.pushState(null, null, e.target.hash);
+            } else {
+                window.location.hash = e.target.hash; //Polyfill for old browsers
+            }
+        });
+    </script>
+
+    <!-- page script -->
+    <script>
+        $(function () {
+            var table = $("#example1").DataTable({
+                columnDefs: [{
+                    orderable: false,
+                    // className: 'select-checkbox',
+                    targets: 0
+                }],
+                select: {
+                    style: 'multi+shift',
+                    selector: 'td'
+                },
+                order: [
+                    [1, 'asc']
+                ]
+            });
+
+        });
+    </script>
+    <script type="text/javascript">
+        function show_confirm() {
+            var r = confirm("是否要刪除!");
+            if (r == true) {
+                //alert("資料已刪除");					 
+            } else {
+                alert("取消刪除!");
+                return false;
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
