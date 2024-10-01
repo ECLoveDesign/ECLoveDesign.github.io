@@ -744,9 +744,9 @@
                                 <ol class="breadcrumb pull-right">
                                     <li>據點及餐廳輔導紀錄表</li>
                                     <li>據點及餐廳輔導紀錄表管理</li>
-                                    <li class="active">新增據點</li>
+                                    <li class="active">新增餐廳</li>
                                 </ol>
-                                <h4 class="page-title">新增據點</h4>
+                                <h4 class="page-title">新增餐廳</h4>
                             </div>
                         </div>
                     </div>
@@ -763,22 +763,22 @@
                                     <div class="row">
                                         <h4
                                             style="font-family:'微軟正黑體','Microsoft JhengHei UI';line-height:1;margin-left:13px;color:#0066CC">
-                                            社區資訊</h4>
+                                            餐廳資訊</h4>
                                         <div class="col-md-6">
 
-                                            <!--ID/社區名稱-->
+                                            <!--ID/餐廳名稱-->
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group ">
                                                         <label>ID</label>
-                                                        <input type="text" name="strongPoint.IDNo"
+                                                        <input type="text" name="restaurantCaterer.IDNo"
                                                             class="form-control formText {      }" value="123456" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="form-group ">
-                                                        <label>社區名稱</label>
-                                                        <input type="text" name="strongPoint.Name"
+                                                        <label>餐廳名稱</label>
+                                                        <input type="text" name="restaurantCaterer.Name"
                                                             class="form-control formText {      }" value="">
                                                     </div>
 
@@ -786,12 +786,12 @@
                                             </div>
 
                                             
-                                            <!--社區地址-->
+                                            <!--餐廳地址-->
                                             <div class="row">
-                                                <label class="col-xs-12">社區地址</label>
+                                                <label class="col-xs-12">餐廳地址</label>
                                                 <br>
                                                 <div class="col-xs-4">
-                                                    <select id="livCityCode" name="strongPoint.livCityCode"
+                                                    <select id="livCityCode" name="restaurantCaterer.livCityCode"
                                                         class="city form-control">
                                                         <option value="" selected="selected">請選擇
                                                         </option>
@@ -823,13 +823,13 @@
                                                 <!--end col-xs-4-->
 
                                                 <div class="col-xs-4">
-                                                    <select id="livTownCode" name="strongPoint.livTownCode"
+                                                    <select id="livTownCode" name="restaurantCaterer.livTownCode"
                                                         class="town form-control"></select>
                                                 </div>
                                                 <!--end col-xs-4-->
 
                                                 <div class="col-xs-4">
-                                                    <select id="livVillCode" name="strongPoint.livVillCode"
+                                                    <select id="livVillCode" name="restaurantCaterer.livVillCode"
                                                         class="vill form-control"></select>
                                                 </div>
                                                 <!--end col-xs-4-->
@@ -853,14 +853,14 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group ">
                                                         <label>聯絡人</label>
-                                                        <input type="text" name="strongPoint.contactName"
+                                                        <input type="text" name="restaurantCaterer.contactName"
                                                             class="form-control formText { }">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group ">
                                                         <label>聯絡人職稱</label>
-                                                        <input type="text" name="strongPoint.contactJob"
+                                                        <input type="text" name="restaurantCaterer.contactJob"
                                                             class="form-control formText { }">
                                                     </div>
 
@@ -872,14 +872,14 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group ">
                                                         <label>聯絡人電話</label>
-                                                        <input type="text" name="strongPoint.contactTel"
+                                                        <input type="text" name="restaurantCaterer.contactTel"
                                                             class="form-control formText { }">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group ">
                                                         <label>聯絡人手機</label>
-                                                        <input type="text" name="strongPoint.contactMobile"
+                                                        <input type="text" name="restaurantCaterer.contactMobile"
                                                             class="form-control formText { }">
                                                     </div>
 
@@ -889,63 +889,44 @@
                                         </div>
                                         <div class="col-md-6">                                            
                                             
-                                            <!--類型-->
+                                            <!--餐飲業者類型-->
                                             <div class="form-group ">
-                                                <label>類型</label>
-                                                
+                                                <label>餐飲業者類型</label>
                                                 <div class="funkyradio">
                                                     <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="0" id="strongPoint.Type0"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <input type="checkbox" value="0" id="restaurantCaterer.Type0"
+                                                            name="restaurantCaterer.Type" class="funkyradio-warning" />
                                                         <label
-                                                            for="strongPoint.Type0">社區關懷據點</label>
+                                                            for="restaurantCaterer.Type0">觀光旅館及星級旅館附設餐廳</label>
                                                     </span>
                                                     <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="1" id="strongPoint.Type1"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <input type="checkbox" value="1" id="restaurantCaterer.Type1"
+                                                            name="restaurantCaterer.Type" class="funkyradio-warning" />
                                                         <label
-                                                            for="strongPoint.Type1">社區發展協會</label>
+                                                            for="restaurantCaterer.Type1">餐廳</label>
                                                     </span>
                                                     <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="2" id="strongPoint.Type2"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <input type="checkbox" value="2" id="restaurantCaterer.Type2"
+                                                            name="restaurantCaterer.Type" class="funkyradio-warning" />
                                                         <label
-                                                            for="strongPoint.Type2">長照C據點</label>
+                                                            for="restaurantCaterer.Type2">自助餐</label>
                                                     </span>
                                                     <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="3" id="strongPoint.Type3"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <input type="checkbox" value="3" id="restaurantCaterer.Type3"
+                                                            name="restaurantCaterer.Type" class="funkyradio-warning" />
                                                         <label
-                                                            for="strongPoint.Type3">巷弄長照站</label>
+                                                            for="restaurantCaterer.Type3">便當業：餐盒業者</label>
                                                     </span>
                                                     <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="4" id="strongPoint.Type4"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <input type="checkbox" value="4" id="restaurantCaterer.Type4"
+                                                            name="restaurantCaterer.Type" class="funkyradio-warning" />
                                                         <label
-                                                            for="strongPoint.Type4">文化健康站</label>
-                                                    </span>
-                                                    <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="5" id="strongPoint.Type5"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
-                                                        <label
-                                                            for="strongPoint.Type5">綠色照顧站</label>
-                                                    </span>
-                                                    <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="6" id="strongPoint.Type6"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
-                                                        <label
-                                                            for="strongPoint.Type6">其他</label>
+                                                            for="restaurantCaterer.Type4">攤販：從事調理餐食供立即食用之固定或流動攤販</label>
                                                     </span>
                                                 </div>
+
                                             </div>
 
-                                            <!--其他類型說明-->
-                                            <div class="form-group ">
-                                                <label>其他類型說明</label>
-                                                <input type="text" name="strongPoint.TypeOther"
-                                                    class="form-control formText {  }" />
-                                            </div>
-                                            
                                             <!--持續追蹤 /追蹤日期-->                                            
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -990,14 +971,14 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group ">
                                                         <label>輔導者姓名</label>
-                                                        <input type="text" name="strongPoint.counselor"
+                                                        <input type="text" name="restaurantCaterer.counselor"
                                                             class="form-control formText { }">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group ">
                                                         <label>當區負責營養師姓名</label>
-                                                        <input type="text" name="strongPoint.nutritionist"
+                                                        <input type="text" name="restaurantCaterer.nutritionist"
                                                             class="form-control formText { }">
                                                     </div>
 
@@ -1025,7 +1006,7 @@
                                                     <!--現況描述每次供/共餐人數-->
                                                     <div class="form-group ">
                                                         <label>現況描述每次供/共餐人數</label>
-                                                        <select id="peopleMeals" name="strongPoint.peopleMeals"
+                                                        <select id="peopleMeals" name="restaurantCaterer.peopleMeals"
                                                             class="form-control">
                                                             <option value="0" selected>請選擇</option>
                                                             <option value="1">20人以下</option>
@@ -1042,7 +1023,7 @@
                                                     <!--每週供餐次數-->
                                                     <div class="form-group ">
                                                         <label>每週供餐次數</label>
-                                                        <select id="mealsNum" name="strongPoint.mealsNum" class="form-control">
+                                                        <select id="mealsNum" name="restaurantCaterer.mealsNum" class="form-control">
                                                             <option value="0" selected>請選擇</option>
                                                             <option value="1">1次</option>
                                                             <option value="2">1-2次</option>
@@ -1055,7 +1036,7 @@
                                                     <!--每週供餐時間-->
                                                     <div class="form-group">
                                                         <label>每週供餐時間(可複選)</label>
-                                                        <select id="mealsTime" multiple name="strongPoint.mealsTime"
+                                                        <select id="mealsTime" multiple name="restaurantCaterer.mealsTime"
                                                             class="form-control select2">
                                                             <option value="10">週一</option>
                                                             <option value="20">週二</option>
@@ -1070,7 +1051,7 @@
                                                     <!--志工服務人員人數-->
                                                     <div class="form-group ">
                                                         <label>志工服務人員人數</label>
-                                                        <select id="volunteerNum" name="strongPoint.volunteerNum"
+                                                        <select id="volunteerNum" name="restaurantCaterer.volunteerNum"
                                                             class="form-control">
                                                             <option value="0" selected>請選擇</option>
                                                             <option value="1">1-5人</option>
@@ -1086,7 +1067,7 @@
                                                     <!--烹調餐食者-->
                                                     <div class="form-group">
                                                         <label>烹調餐食者</label>
-                                                        <select id="fookCooker" name="strongPoint.fookCooker"
+                                                        <select id="fookCooker" name="restaurantCaterer.fookCooker"
                                                             class="form-control">
                                                             <option value="0" selected>請選擇</option>
                                                             <option value="1">據點聘用廚師</option>
@@ -1100,7 +1081,7 @@
                                                             $('#fookCooker').on('change',
                                                                 function () {
                                                                     var value = $(
-                                                                        "select[name='strongPoint.fookCooker']"
+                                                                        "select[name='restaurantCaterer.fookCooker']"
                                                                     ).val();
                                                                     if ($.trim(value) != "") {
                                                                         if (value == '30') {
@@ -1109,10 +1090,10 @@
                                                                             $('#fookCookerHospital')
                                                                                 .fadeIn();
                                                                             if ($(
-                                                                                    "input[name='strongPoint.fookCookerUnit']"
+                                                                                    "input[name='restaurantCaterer.fookCookerUnit']"
                                                                                 )
                                                                                 .val() == '無') {
-                                                                                $("input[name='strongPoint.fookCookerUnit']")
+                                                                                $("input[name='restaurantCaterer.fookCookerUnit']")
                                                                                     .val('');
                                                                             }
                                                                         } else {
@@ -1120,7 +1101,7 @@
                                                                                 .fadeOut();
                                                                             $('#fookCookerUnit')
                                                                                 .fadeOut();
-                                                                            $("input[name='strongPoint.fookCookerUnit']")
+                                                                            $("input[name='restaurantCaterer.fookCookerUnit']")
                                                                                 .val('無').trigger(
                                                                                     'keyup');
                                                                         }
@@ -1138,7 +1119,7 @@
                                                     <!--其他烹調餐食者說明-->
                                                     <div class="form-group" id="fookCookerUnit">
                                                         <label>其他烹調餐食者說明</label>
-                                                        <input type="text" name="strongPoint.fookCookerOther"
+                                                        <input type="text" name="restaurantCaterer.fookCookerOther"
                                                             class="form-control formText {  }" />
                                                     </div>
 
@@ -1159,11 +1140,11 @@
                                                     <div class="form-group ">
                                                         <label>餐食(可複選)</label>
                                                         <div class="input-group">
-                                                            <label><input type="checkbox" value="0" name="strongPoint.mealType"
+                                                            <label><input type="checkbox" value="0" name="restaurantCaterer.mealType"
                                                                     class="icheckbox" />葷</label><b>&nbsp;&nbsp;</b>
-                                                            <label><input type="checkbox" value="10" name="strongPoint.mealType"
+                                                            <label><input type="checkbox" value="10" name="restaurantCaterer.mealType"
                                                                     class="icheckbox" />素</label><b>&nbsp;&nbsp;</b>
-                                                            <label><input type="checkbox" value="20" name="strongPoint.mealType"
+                                                            <label><input type="checkbox" value="20" name="restaurantCaterer.mealType"
                                                                     class="icheckbox" />主要提供葷食，有提供方便素食</label><b>&nbsp;&nbsp;</b>
                                                         </div><!-- /.input group -->
                                                     </div>
@@ -1171,7 +1152,7 @@
                                                     <!--供餐型式-->
                                                     <div class="form-group">
                                                         <label>供餐型式</label>
-                                                        <select id="pickType" name="strongPoint.pickType" class="form-control">
+                                                        <select id="pickType" name="restaurantCaterer.pickType" class="form-control">
                                                             <option value="0" selected>請選擇</option>
                                                             <option value="1">桶餐(排隊打菜)</option>
                                                             <option value="2">每人打好一份</option>
@@ -1187,7 +1168,7 @@
                                                             $('#pickType').on('change',
                                                                 function () {
                                                                     var value = $(
-                                                                        "select[name='strongPoint.pickType']"
+                                                                        "select[name='restaurantCaterer.pickType']"
                                                                     ).val();
                                                                     if ($.trim(value) != "") {
                                                                         if (value == '30') {
@@ -1196,10 +1177,10 @@
                                                                             $('#pickTypeHospital')
                                                                                 .fadeIn();
                                                                             if ($(
-                                                                                    "input[name='strongPoint.pickTypeUnit']"
+                                                                                    "input[name='restaurantCaterer.pickTypeUnit']"
                                                                                 )
                                                                                 .val() == '無') {
-                                                                                $("input[name='strongPoint.pickTypeUnit']")
+                                                                                $("input[name='restaurantCaterer.pickTypeUnit']")
                                                                                     .val('');
                                                                             }
                                                                         } else {
@@ -1207,7 +1188,7 @@
                                                                                 .fadeOut();
                                                                             $('#pickTypeUnit')
                                                                                 .fadeOut();
-                                                                            $("input[name='strongPoint.pickTypeUnit']")
+                                                                            $("input[name='restaurantCaterer.pickTypeUnit']")
                                                                                 .val('無').trigger(
                                                                                     'keyup');
                                                                         }
@@ -1225,14 +1206,14 @@
                                                     <!--其他供餐型式說明-->
                                                     <div class="form-group" id="pickTypeUnit">
                                                         <label>其他供餐型式說明</label>
-                                                        <input type="text" name="strongPoint.pickTypeOther"
+                                                        <input type="text" name="restaurantCaterer.pickTypeOther"
                                                             class="form-control formText {  }" />
                                                     </div>
 
                                                     <!--打餐方式-->
                                                     <div class="form-group">
                                                         <label>打餐方式</label>
-                                                        <select id="getType" name="strongPoint.getType" class="form-control">
+                                                        <select id="getType" name="restaurantCaterer.getType" class="form-control">
                                                             <option value="0" selected>請選擇</option>
                                                             <option value="1">工作人員協助</option>
                                                             <option value="2">自己打餐量</option>
@@ -1245,7 +1226,7 @@
                                                             $('#getType').on('change',
                                                                 function () {
                                                                     var value = $(
-                                                                        "select[name='strongPoint.getType']"
+                                                                        "select[name='restaurantCaterer.getType']"
                                                                     ).val();
                                                                     if ($.trim(value) != "") {
                                                                         if (value == '30') {
@@ -1254,10 +1235,10 @@
                                                                             $('#getTypeHospital')
                                                                                 .fadeIn();
                                                                             if ($(
-                                                                                    "input[name='strongPoint.getTypeUnit']"
+                                                                                    "input[name='restaurantCaterer.getTypeUnit']"
                                                                                 )
                                                                                 .val() == '無') {
-                                                                                $("input[name='strongPoint.getTypeUnit']")
+                                                                                $("input[name='restaurantCaterer.getTypeUnit']")
                                                                                     .val('');
                                                                             }
                                                                         } else {
@@ -1265,7 +1246,7 @@
                                                                                 .fadeOut();
                                                                             $('#getTypeUnit')
                                                                                 .fadeOut();
-                                                                            $("input[name='strongPoint.getTypeUnit']")
+                                                                            $("input[name='restaurantCaterer.getTypeUnit']")
                                                                                 .val('無').trigger(
                                                                                     'keyup');
                                                                         }
@@ -1283,7 +1264,7 @@
                                                     <!--其他供餐型式說明-->
                                                     <div class="form-group" id="getTypeUnit">
                                                         <label>其他打餐方式說明</label>
-                                                        <input type="text" name="strongPoint.getTypeOther"
+                                                        <input type="text" name="restaurantCaterer.getTypeOther"
                                                             class="form-control formText {  }" />
                                                     </div>
 
@@ -1294,10 +1275,10 @@
                                                         <div class="funkyradio">
                                                             <div class="funkyradio-warning">
                                                                 <input type="checkbox" value="0"
-                                                                    id="strongPoint.strongPoint.foodSource0"
-                                                                    name="strongPoint.strongPoint.foodSource"
+                                                                    id="restaurantCaterer.restaurantCaterer.foodSource0"
+                                                                    name="restaurantCaterer.restaurantCaterer.foodSource"
                                                                     class="funkyradio-warning" />
-                                                                <label for="strongPoint.strongPoint.foodSource0">據點自行烹煮</label>
+                                                                <label for="restaurantCaterer.restaurantCaterer.foodSource0">據點自行烹煮</label>
                                                             </div>                                                    
                                                         </div>
 
@@ -1307,18 +1288,18 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="1"
-                                                                            id="strongPoint.strongPoint.foodSource1"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="restaurantCaterer.restaurantCaterer.foodSource1"
+                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource1">自助餐廳送餐</label>
+                                                                            for="restaurantCaterer.restaurantCaterer.foodSource1">自助餐廳送餐</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
                                                                     <label class="sr-only">業者名稱</label>
-                                                                    <input type="text" id="strongPoint.cafeteriaDelivery"
+                                                                    <input type="text" id="restaurantCaterer.cafeteriaDelivery"
                                                                         placeholder="請填寫業者名稱"
                                                                         class="form-control required formText { required: true }" />
                                                                 </div>
@@ -1331,18 +1312,18 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="2"
-                                                                            id="strongPoint.strongPoint.foodSource2"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="restaurantCaterer.restaurantCaterer.foodSource2"
+                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource2">一般中式餐廳</label>
+                                                                            for="restaurantCaterer.restaurantCaterer.foodSource2">一般中式餐廳</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
                                                                     <label class="sr-only">業者名稱</label>
-                                                                    <input type="text" id="strongPoint.restaurant"
+                                                                    <input type="text" id="restaurantCaterer.restaurant"
                                                                         placeholder="請填寫業者名稱"
                                                                         class="form-control required formText { required: true }" />
                                                                 </div>
@@ -1355,18 +1336,18 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="3"
-                                                                            id="strongPoint.strongPoint.foodSource3"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="restaurantCaterer.restaurantCaterer.foodSource3"
+                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource3">HACCP盒餐業者(中央廚房)</label>
+                                                                            for="restaurantCaterer.restaurantCaterer.foodSource3">HACCP盒餐業者(中央廚房)</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
                                                                     <label class="sr-only">業者名稱</label>
-                                                                    <input type="text" id="strongPoint.centralKitchen"
+                                                                    <input type="text" id="restaurantCaterer.centralKitchen"
                                                                         placeholder="請填寫業者名稱"
                                                                         class="form-control required formText { required: true }" />
                                                                 </div>
@@ -1379,18 +1360,18 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="4"
-                                                                            id="strongPoint.strongPoint.foodSource4"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="restaurantCaterer.restaurantCaterer.foodSource4"
+                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource4">GHP餐飲業者</label>
+                                                                            for="restaurantCaterer.restaurantCaterer.foodSource4">GHP餐飲業者</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
                                                                     <label class="sr-only">業者名稱</label>
-                                                                    <input type="text" id="strongPoint.GHP"
+                                                                    <input type="text" id="restaurantCaterer.GHP"
                                                                         placeholder="請填寫業者名稱"
                                                                         class="form-control required formText { required: true }" />
                                                                 </div>
@@ -1403,18 +1384,18 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="5"
-                                                                            id="strongPoint.strongPoint.foodSource5"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="restaurantCaterer.restaurantCaterer.foodSource5"
+                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource5">醫院</label>
+                                                                            for="restaurantCaterer.restaurantCaterer.foodSource5">醫院</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
                                                                     <label class="sr-only">醫院名稱</label>
-                                                                    <input type="text" id="strongPoint.hopsital"
+                                                                    <input type="text" id="restaurantCaterer.hopsital"
                                                                         placeholder="請填寫醫院名稱"
                                                                         class="form-control required formText { required: true }" />
                                                                 </div>
@@ -1427,18 +1408,18 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="6"
-                                                                            id="strongPoint.strongPoint.foodSource6"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="restaurantCaterer.restaurantCaterer.foodSource6"
+                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource6">其他</label>
+                                                                            for="restaurantCaterer.restaurantCaterer.foodSource6">其他</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
                                                                     <label class="sr-only">其他說明</label>
-                                                                    <input type="text" id="strongPoint.other"
+                                                                    <input type="text" id="restaurantCaterer.other"
                                                                         placeholder="請填寫其他說明"
                                                                         class="form-control required formText { required: true }" />
                                                                 </div>
@@ -1463,12 +1444,12 @@
                                                                                 <label class="sr-only">A 質地調整飲食</label>
                                                                                 <div class="input-group">
                                                                                     <label><input type="checkbox" value="1"
-                                                                                            name="strongPoint.agefriendlyA"
+                                                                                            name="restaurantCaterer.agefriendlyA"
                                                                                             class="icheckbox" checked
                                                                                             disabled />A1
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="2"
-                                                                                            name="strongPoint.agefriendlyA"
+                                                                                            name="restaurantCaterer.agefriendlyA"
                                                                                             class="icheckbox" disabled />A2
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                 </div><!-- /.input group -->
@@ -1483,32 +1464,32 @@
                                                                                 <label class="sr-only">B 衛生安全</label>
                                                                                 <div class="input-group">
                                                                                     <label><input type="checkbox" value="1"
-                                                                                            name="strongPoint.agefriendlyB"
+                                                                                            name="restaurantCaterer.agefriendlyB"
                                                                                             class="icheckbox" checked
                                                                                             disabled />B1
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="2"
-                                                                                            name="strongPoint.agefriendlyB"
+                                                                                            name="restaurantCaterer.agefriendlyB"
                                                                                             class="icheckbox" disabled />B2
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="3"
-                                                                                            name="strongPoint.agefriendlyB"
+                                                                                            name="restaurantCaterer.agefriendlyB"
                                                                                             class="icheckbox" disabled />B3
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="4"
-                                                                                            name="strongPoint.agefriendlyB"
+                                                                                            name="restaurantCaterer.agefriendlyB"
                                                                                             class="icheckbox" disabled />B4
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="5"
-                                                                                            name="strongPoint.agefriendlyB"
+                                                                                            name="restaurantCaterer.agefriendlyB"
                                                                                             class="icheckbox" disabled />B5
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="6"
-                                                                                            name="strongPoint.agefriendlyB"
+                                                                                            name="restaurantCaterer.agefriendlyB"
                                                                                             class="icheckbox" disabled />B6
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="7"
-                                                                                            name="strongPoint.agefriendlyB"
+                                                                                            name="restaurantCaterer.agefriendlyB"
                                                                                             class="icheckbox" disabled />B7
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                 </div><!-- /.input group -->
@@ -1523,32 +1504,32 @@
                                                                                 <label class="sr-only">C 用餐環境</label>
                                                                                 <div class="input-group">
                                                                                     <label><input type="checkbox" value="1"
-                                                                                            name="strongPoint.agefriendlyC"
+                                                                                            name="restaurantCaterer.agefriendlyC"
                                                                                             class="icheckbox" checked
                                                                                             disabled />C1
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="2"
-                                                                                            name="strongPoint.agefriendlyC"
+                                                                                            name="restaurantCaterer.agefriendlyC"
                                                                                             class="icheckbox" disabled />C2
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="3"
-                                                                                            name="strongPoint.agefriendlyC"
+                                                                                            name="restaurantCaterer.agefriendlyC"
                                                                                             class="icheckbox" disabled />C3
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="4"
-                                                                                            name="strongPoint.agefriendlyC"
+                                                                                            name="restaurantCaterer.agefriendlyC"
                                                                                             class="icheckbox" disabled />C4
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="5"
-                                                                                            name="strongPoint.agefriendlyC"
+                                                                                            name="restaurantCaterer.agefriendlyC"
                                                                                             class="icheckbox" disabled />C5
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="6"
-                                                                                            name="strongPoint.agefriendlyC"
+                                                                                            name="restaurantCaterer.agefriendlyC"
                                                                                             class="icheckbox" disabled />C6
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="7"
-                                                                                            name="strongPoint.agefriendlyC"
+                                                                                            name="restaurantCaterer.agefriendlyC"
                                                                                             class="icheckbox" disabled />C7
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                 </div><!-- /.input group -->
@@ -1563,32 +1544,32 @@
                                                                                 <label class="sr-only">D 服務流程</label>
                                                                                 <div class="input-group">
                                                                                     <label><input type="checkbox" value="1"
-                                                                                            name="strongPoint.agefriendlyD"
+                                                                                            name="restaurantCaterer.agefriendlyD"
                                                                                             class="icheckbox" checked
                                                                                             disabled />D1
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="2"
-                                                                                            name="strongPoint.agefriendlyD"
+                                                                                            name="restaurantCaterer.agefriendlyD"
                                                                                             class="icheckbox" disabled />D2
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="3"
-                                                                                            name="strongPoint.agefriendlyD"
+                                                                                            name="restaurantCaterer.agefriendlyD"
                                                                                             class="icheckbox" disabled />D3
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="4"
-                                                                                            name="strongPoint.agefriendlyD"
+                                                                                            name="restaurantCaterer.agefriendlyD"
                                                                                             class="icheckbox" disabled />D4
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="5"
-                                                                                            name="strongPoint.agefriendlyD"
+                                                                                            name="restaurantCaterer.agefriendlyD"
                                                                                             class="icheckbox" disabled />D5
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="6"
-                                                                                            name="strongPoint.agefriendlyD"
+                                                                                            name="restaurantCaterer.agefriendlyD"
                                                                                             class="icheckbox" disabled />D6
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="7"
-                                                                                            name="strongPoint.agefriendlyD"
+                                                                                            name="restaurantCaterer.agefriendlyD"
                                                                                             class="icheckbox" disabled />D7
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                 </div><!-- /.input group -->
@@ -1603,20 +1584,20 @@
                                                                                 <label class="sr-only">E 用餐器具</label>
                                                                                 <div class="input-group">
                                                                                     <label><input type="checkbox" value="1"
-                                                                                            name="strongPoint.agefriendlyE"
+                                                                                            name="restaurantCaterer.agefriendlyE"
                                                                                             class="icheckbox" checked
                                                                                             disabled />E1
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="2"
-                                                                                            name="strongPoint.agefriendlyE"
+                                                                                            name="restaurantCaterer.agefriendlyE"
                                                                                             class="icheckbox" disabled />E2
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="3"
-                                                                                            name="strongPoint.agefriendlyE"
+                                                                                            name="restaurantCaterer.agefriendlyE"
                                                                                             class="icheckbox" disabled />E3
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="4"
-                                                                                            name="strongPoint.agefriendlyE"
+                                                                                            name="restaurantCaterer.agefriendlyE"
                                                                                             class="icheckbox" disabled />E4
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                 </div><!-- /.input group -->
@@ -1631,20 +1612,20 @@
                                                                                 <label class="sr-only">F 外袋包裝</label>
                                                                                 <div class="input-group">
                                                                                     <label><input type="checkbox" value="1"
-                                                                                            name="strongPoint.agefriendlyF"
+                                                                                            name="restaurantCaterer.agefriendlyF"
                                                                                             class="icheckbox" checked
                                                                                             disabled />F1
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="2"
-                                                                                            name="strongPoint.agefriendlyF"
+                                                                                            name="restaurantCaterer.agefriendlyF"
                                                                                             class="icheckbox" disabled />F2
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="3"
-                                                                                            name="strongPoint.agefriendlyF"
+                                                                                            name="restaurantCaterer.agefriendlyF"
                                                                                             class="icheckbox" disabled />F3
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                     <label><input type="checkbox" value="4"
-                                                                                            name="strongPoint.agefriendlyF"
+                                                                                            name="restaurantCaterer.agefriendlyF"
                                                                                             class="icheckbox" disabled />F4
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                 </div><!-- /.input group -->
@@ -1659,7 +1640,7 @@
                                                                     <!--每週提供【全穀及未精製雜糧】次數-->
                                                                     <div class="form-group ">
                                                                         <label>每週提供【全穀及未精製雜糧】次數 (次/週)</label>
-                                                                        <input type="number" name="strongPoint.grainsWeek"
+                                                                        <input type="number" name="restaurantCaterer.grainsWeek"
                                                                             class="form-control formText { }">
                                                                     </div>
                                                                 </div>
@@ -1669,7 +1650,7 @@
                                                                     <!--每週提供【水果】次數-->
                                                                     <div class="form-group ">
                                                                         <label>每週提供【水果】次數 (次/週)</label>
-                                                                        <input type="number" name="strongPoint.grainsFruit"
+                                                                        <input type="number" name="restaurantCaterer.grainsFruit"
                                                                             class="form-control formText { }">
                                                                     </div>
 
@@ -1793,22 +1774,22 @@
                                                                 
                                                                 <div class="funkyradio">
                                                                     <span class="funkyradio-warning">
-                                                                        <input type="checkbox" value="0" id="strongPoint.choice0"
-                                                                            name="strongPoint.choice" class="funkyradio-warning" />
+                                                                        <input type="checkbox" value="0" id="restaurantCaterer.choice0"
+                                                                            name="restaurantCaterer.choice" class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.choice0">一般飲食</label>
+                                                                            for="restaurantCaterer.choice0">一般飲食</label>
                                                                     </span>
                                                                     <span class="funkyradio-warning">
-                                                                        <input type="checkbox" value="1" id="strongPoint.choice1"
-                                                                            name="strongPoint.choice" class="funkyradio-warning" />
+                                                                        <input type="checkbox" value="1" id="restaurantCaterer.choice1"
+                                                                            name="restaurantCaterer.choice" class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.choice1">容易咬軟質食</label>
+                                                                            for="restaurantCaterer.choice1">容易咬軟質食</label>
                                                                     </span>
                                                                     <span class="funkyradio-warning">
-                                                                        <input type="checkbox" value="2" id="strongPoint.choice2"
-                                                                            name="strongPoint.choice" class="funkyradio-warning" />
+                                                                        <input type="checkbox" value="2" id="restaurantCaterer.choice2"
+                                                                            name="restaurantCaterer.choice" class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.choice2">牙齦碎軟質食</label>
+                                                                            for="restaurantCaterer.choice2">牙齦碎軟質食</label>
                                                                     </span>
                                                                 </div>
 
@@ -1817,7 +1798,7 @@
                                                             <!--建議改善-->
                                                             <div class="form-group ">
                                                                 <label>建議改善</label>
-                                                                <input type="text" name="strongPoint.mealSuggest"
+                                                                <input type="text" name="restaurantCaterer.mealSuggest"
                                                                     class="form-control formText { }">
                                                             </div>
 
@@ -1834,7 +1815,7 @@
                                                                     <!--主食類(精製)-->
                                                                     <div class="form-group ">
                                                                         <label>主食類(精製)／份</label>
-                                                                        <input type="number" name="strongPoint.perFoodRefined"
+                                                                        <input type="number" name="restaurantCaterer.perFoodRefined"
                                                                             class="form-control formText { }">
                                                                     </div>
                                                                 </div>
@@ -1844,7 +1825,7 @@
                                                                     <!--主食類(未精製)-->
                                                                     <div class="form-group ">
                                                                         <label>主食類(未精製)／份</label>
-                                                                        <input type="number" name="strongPoint.perFoodUn"
+                                                                        <input type="number" name="restaurantCaterer.perFoodUn"
                                                                             class="form-control formText { }">
                                                                     </div>
 
@@ -1856,7 +1837,7 @@
                                                                     <!--豆魚蛋肉類-->
                                                                     <div class="form-group ">
                                                                         <label>豆魚蛋肉類／份</label>
-                                                                        <input type="number" name="strongPoint.perFoodmainM&P"
+                                                                        <input type="number" name="restaurantCaterer.perFoodmainM&P"
                                                                             class="form-control formText { }">
                                                                     </div>
 
@@ -1943,34 +1924,34 @@
                                                                     <!--餐食營養-->
                                                                     <div class="funkyradio">
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="0" id="strongPoint.mealNutrition0"
-                                                                                name="strongPoint.mealNutrition" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="0" id="restaurantCaterer.mealNutrition0"
+                                                                                name="restaurantCaterer.mealNutrition" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.mealNutrition0">符合健康飲食原則</label>
+                                                                                for="restaurantCaterer.mealNutrition0">符合健康飲食原則</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="1" id="strongPoint.mealNutrition1"
-                                                                                name="strongPoint.mealNutrition" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="1" id="restaurantCaterer.mealNutrition1"
+                                                                                name="restaurantCaterer.mealNutrition" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.mealNutrition1">使用新鮮、在地、多元食材</label>
+                                                                                for="restaurantCaterer.mealNutrition1">使用新鮮、在地、多元食材</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="2" id="strongPoint.mealNutrition2"
-                                                                                name="strongPoint.mealNutrition" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="2" id="restaurantCaterer.mealNutrition2"
+                                                                                name="restaurantCaterer.mealNutrition" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.mealNutrition2">提供全穀及未精製雜糧達主食</label>
+                                                                                for="restaurantCaterer.mealNutrition2">提供全穀及未精製雜糧達主食</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="3" id="strongPoint.mealNutrition3"
-                                                                                name="strongPoint.mealNutrition" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="3" id="restaurantCaterer.mealNutrition3"
+                                                                                name="restaurantCaterer.mealNutrition" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.mealNutrition3">提供足夠蛋白質、蔬菜量等</label>
+                                                                                for="restaurantCaterer.mealNutrition3">提供足夠蛋白質、蔬菜量等</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="4" id="strongPoint.mealNutrition4"
-                                                                                name="strongPoint.mealNutrition" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="4" id="restaurantCaterer.mealNutrition4"
+                                                                                name="restaurantCaterer.mealNutrition" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.mealNutrition4">其他</label>
+                                                                                for="restaurantCaterer.mealNutrition4">其他</label>
                                                                         </span>
                                                                     </div>
 
@@ -1978,7 +1959,7 @@
                                                                     <div class="form-group ">
                                                                         <label>其他說明</label>
                                                                         <input type="text"
-                                                                            name="strongPoint.mealNutritionOther"
+                                                                            name="restaurantCaterer.mealNutritionOther"
                                                                             class="form-control formText {  }" />
                                                                     </div>
 
@@ -1987,7 +1968,7 @@
                                                                     <div class="form-group ">
                                                                         <label>輔導/追蹤內容</label>
                                                                         <textarea class="form-control formText {  }"
-                                                                            name="strongPoint.mealNutritionOther"
+                                                                            name="restaurantCaterer.mealNutritionOther"
                                                                             rows="3"></textarea>
                                                                     </div>
 
@@ -1997,7 +1978,7 @@
                                                                 <th width="150">
                                                                     <div class="input-group">
                                                                         <label><input type="checkbox" value="0"
-                                                                                name="strongPoint.coachA"
+                                                                                name="restaurantCaterer.coachA"
                                                                                 class="icheckbox" />&nbsp;A 質地調整飲食</label><b>&nbsp;&nbsp;</b>
                                                                     </div>
                                                                 </th>
@@ -2007,20 +1988,20 @@
                                                                     <div class="funkyradio">
                                                                         <div class="funkyradio-warning">
                                                                             <input type="checkbox" value="0"
-                                                                                id="strongPoint.coachAitem0"
-                                                                                name="strongPoint.coachAitem"
+                                                                                id="restaurantCaterer.coachAitem0"
+                                                                                name="restaurantCaterer.coachAitem"
                                                                                 class="funkyradio-warning" />
-                                                                            <label for="strongPoint.coachAitem0">每月至少 1
+                                                                            <label for="restaurantCaterer.coachAitem0">每月至少 1
                                                                                 次提供包含如全穀及未精製雜糧類、豆魚蛋肉類或蔬菜類 符合容
                                                                                 易咬軟質食或牙齦碎軟質食之餐點，可分散於不同時間提供</label>
                                                                         </div>
                                                                         <div class="funkyradio-warning">
                                                                             <input type="checkbox" value="1"
-                                                                                id="strongPoint.coachAitem1"
-                                                                                name="strongPoint.coachAitem"
+                                                                                id="restaurantCaterer.coachAitem1"
+                                                                                name="restaurantCaterer.coachAitem"
                                                                                 class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachAitem1">針對據點內有需求之長者，可提供符
+                                                                                for="restaurantCaterer.coachAitem1">針對據點內有需求之長者，可提供符
                                                                                 合個別化需求之餐點</label>
                                                                         </div>
                                                                     </div>
@@ -2031,7 +2012,7 @@
                                                                 <th width="150">
                                                                     <div class="input-group">
                                                                         <label><input type="checkbox" value="0"
-                                                                                name="strongPoint.coachB"
+                                                                                name="restaurantCaterer.coachB"
                                                                                 class="icheckbox" />&nbsp;B 衛生安全</label><b>&nbsp;&nbsp;</b>
                                                                     </div>
                                                                 </th>
@@ -2039,46 +2020,46 @@
                                                                     <!--B 衛生安全-->                                                                    
                                                                     <div class="funkyradio">
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="0" id="strongPoint.coachBitem0"
-                                                                                name="strongPoint.coachBitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="0" id="restaurantCaterer.coachBitem0"
+                                                                                name="restaurantCaterer.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem0">食材採購來源</label>
+                                                                                for="restaurantCaterer.coachBitem0">食材採購來源</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="1" id="strongPoint.coachBitem1"
-                                                                                name="strongPoint.coachBitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="1" id="restaurantCaterer.coachBitem1"
+                                                                                name="restaurantCaterer.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem1">儲存、開封(日期標示)</label>
+                                                                                for="restaurantCaterer.coachBitem1">儲存、開封(日期標示)</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="2" id="strongPoint.coachBitem2"
-                                                                                name="strongPoint.coachBitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="2" id="restaurantCaterer.coachBitem2"
+                                                                                name="restaurantCaterer.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem2">食材分類存放，保持乾淨</label>
+                                                                                for="restaurantCaterer.coachBitem2">食材分類存放，保持乾淨</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="3" id="strongPoint.coachBitem3"
-                                                                                name="strongPoint.coachBitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="3" id="restaurantCaterer.coachBitem3"
+                                                                                name="restaurantCaterer.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem3">供餐器具衛生</label>
+                                                                                for="restaurantCaterer.coachBitem3">供餐器具衛生</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="4" id="strongPoint.coachBitem4"
-                                                                                name="strongPoint.coachBitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="4" id="restaurantCaterer.coachBitem4"
+                                                                                name="restaurantCaterer.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem4">烹調／用餐環境乾淨衛生</label>
+                                                                                for="restaurantCaterer.coachBitem4">烹調／用餐環境乾淨衛生</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="5" id="strongPoint.coachBitem5"
-                                                                                name="strongPoint.coachBitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="5" id="restaurantCaterer.coachBitem5"
+                                                                                name="restaurantCaterer.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem5">廚餘、垃圾桶加蓋</label>
+                                                                                for="restaurantCaterer.coachBitem5">廚餘、垃圾桶加蓋</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="6" id="strongPoint.coachBitem6"
-                                                                                name="strongPoint.coachBitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="6" id="restaurantCaterer.coachBitem6"
+                                                                                name="restaurantCaterer.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem6">其他</label>
+                                                                                for="restaurantCaterer.coachBitem6">其他</label>
                                                                         </span>
                                                                     </div>
 
@@ -2086,7 +2067,7 @@
                                                                     <div class="form-group ">
                                                                         <label>其他衛生安全說明</label>
                                                                         <input type="text"
-                                                                            name="strongPoint.coachBitemOther"
+                                                                            name="restaurantCaterer.coachBitemOther"
                                                                             class="form-control formText {  }" />
                                                                     </div>
 
@@ -2094,7 +2075,7 @@
                                                                     <div class="form-group ">
                                                                         <label>輔導/追蹤內容</label>
                                                                         <textarea class="form-control formText {  }"
-                                                                            name="strongPoint.coachBitemTrack"
+                                                                            name="restaurantCaterer.coachBitemTrack"
                                                                             rows="3"></textarea>
                                                                     </div>
 
@@ -2104,7 +2085,7 @@
                                                                 <th width="150">
                                                                     <div class="input-group">
                                                                         <label><input type="checkbox" value="0"
-                                                                                name="strongPoint.coachC"
+                                                                                name="restaurantCaterer.coachC"
                                                                                 class="icheckbox" />&nbsp;C 用餐環境</label><b>&nbsp;&nbsp;</b>
                                                                     </div>                                                                    
                                                                 </th>
@@ -2112,46 +2093,46 @@
                                                                     <!--C 用餐環境-->                                                                 
                                                                     <div class="funkyradio">
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="0" id="strongPoint.coachCitem0"
-                                                                                name="strongPoint.coachCitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="0" id="restaurantCaterer.coachCitem0"
+                                                                                name="restaurantCaterer.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem0">導引及動線標示清楚</label>
+                                                                                for="restaurantCaterer.coachCitem0">導引及動線標示清楚</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="1" id="strongPoint.coachCitem1"
-                                                                                name="strongPoint.coachCitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="1" id="restaurantCaterer.coachCitem1"
+                                                                                name="restaurantCaterer.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem1">台階有標示警語，有防滑設計</label>
+                                                                                for="restaurantCaterer.coachCitem1">台階有標示警語，有防滑設計</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="2" id="strongPoint.coachCitem2"
-                                                                                name="strongPoint.coachCitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="2" id="restaurantCaterer.coachCitem2"
+                                                                                name="restaurantCaterer.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem2">張貼洗手海報</label>
+                                                                                for="restaurantCaterer.coachCitem2">張貼洗手海報</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="3" id="strongPoint.coachCitem3"
-                                                                                name="strongPoint.coachCitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="3" id="restaurantCaterer.coachCitem3"
+                                                                                name="restaurantCaterer.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem3">營養宣導相關海報</label>
+                                                                                for="restaurantCaterer.coachCitem3">營養宣導相關海報</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="4" id="strongPoint.coachCitem4"
-                                                                                name="strongPoint.coachCitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="4" id="restaurantCaterer.coachCitem4"
+                                                                                name="restaurantCaterer.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem4">餐椅及餐桌高度適當，餐椅有椅背及軟墊</label>
+                                                                                for="restaurantCaterer.coachCitem4">餐椅及餐桌高度適當，餐椅有椅背及軟墊</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="5" id="strongPoint.coachCitem5"
-                                                                                name="strongPoint.coachCitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="5" id="restaurantCaterer.coachCitem5"
+                                                                                name="restaurantCaterer.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem5">用餐區及空調溫度適當</label>
+                                                                                for="restaurantCaterer.coachCitem5">用餐區及空調溫度適當</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="6" id="strongPoint.coachCitem6"
-                                                                                name="strongPoint.coachCitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="6" id="restaurantCaterer.coachCitem6"
+                                                                                name="restaurantCaterer.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem6">其他</label>
+                                                                                for="restaurantCaterer.coachCitem6">其他</label>
                                                                         </span>
                                                                     </div>
 
@@ -2159,7 +2140,7 @@
                                                                     <div class="form-group ">
                                                                         <label>其他用餐環境說明</label>
                                                                         <input type="text"
-                                                                            name="strongPoint.coachCitemOther"
+                                                                            name="restaurantCaterer.coachCitemOther"
                                                                             class="form-control formText {  }" />
                                                                     </div>
 
@@ -2167,7 +2148,7 @@
                                                                     <div class="form-group ">
                                                                         <label>輔導/追蹤內容</label>
                                                                         <textarea class="form-control formText {  }"
-                                                                            name="strongPoint.coachCitemTrack"
+                                                                            name="restaurantCaterer.coachCitemTrack"
                                                                             rows="3"></textarea>
                                                                     </div>
                                                                 </td>
@@ -2176,7 +2157,7 @@
                                                                 <th width="150">                                                                    
                                                                     <div class="input-group">
                                                                         <label><input type="checkbox" value="0"
-                                                                                name="strongPoint.coachD"
+                                                                                name="restaurantCaterer.coachD"
                                                                                 class="icheckbox" />&nbsp;D 服務流程</label><b>&nbsp;&nbsp;</b>
                                                                     </div>                                                                    
                                                                 </th>
@@ -2184,28 +2165,28 @@
                                                                     <!--D 服務流程-->
                                                                     <div class="funkyradio">
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="0" id="strongPoint.coachDitem0"
-                                                                                name="strongPoint.coachDitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="0" id="restaurantCaterer.coachDitem0"
+                                                                                name="restaurantCaterer.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachDitem0">依長者需求，提供去骨、分切的服務</label>
+                                                                                for="restaurantCaterer.coachDitem0">依長者需求，提供去骨、分切的服務</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="1" id="strongPoint.coachDitem1"
-                                                                                name="strongPoint.coachDitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="1" id="restaurantCaterer.coachDitem1"
+                                                                                name="restaurantCaterer.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachDitem1">服務人員能關懷用餐者</label>
+                                                                                for="restaurantCaterer.coachDitem1">服務人員能關懷用餐者</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="2" id="strongPoint.coachDitem2"
-                                                                                name="strongPoint.coachDitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="2" id="restaurantCaterer.coachDitem2"
+                                                                                name="restaurantCaterer.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachDitem2">餐點溫熱服務，提供溫水</label>
+                                                                                for="restaurantCaterer.coachDitem2">餐點溫熱服務，提供溫水</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="3" id="strongPoint.coachDitem3"
-                                                                                name="strongPoint.coachDitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="3" id="restaurantCaterer.coachDitem3"
+                                                                                name="restaurantCaterer.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachDitem3">其他</label>
+                                                                                for="restaurantCaterer.coachDitem3">其他</label>
                                                                         </span>
                                                                     </div>
 
@@ -2213,7 +2194,7 @@
                                                                     <div class="form-group ">
                                                                         <label>其他服務流程說明</label>
                                                                         <input type="text"
-                                                                            name="strongPoint.coachDitemOther"
+                                                                            name="restaurantCaterer.coachDitemOther"
                                                                             class="form-control formText {  }" />
                                                                     </div>
 
@@ -2221,7 +2202,7 @@
                                                                     <div class="form-group ">
                                                                         <label>輔導/追蹤內容</label>
                                                                         <textarea class="form-control formText {  }"
-                                                                            name="strongPoint.coachDitemTrack"
+                                                                            name="restaurantCaterer.coachDitemTrack"
                                                                             rows="3"></textarea>
                                                                     </div>
                                                                 </td>
@@ -2230,7 +2211,7 @@
                                                                 <th width="150">
                                                                     <div class="input-group">
                                                                         <label><input type="checkbox" value="0"
-                                                                                name="strongPoint.coachD"
+                                                                                name="restaurantCaterer.coachD"
                                                                                 class="icheckbox" />&nbsp;E 用餐器具</label><b>&nbsp;&nbsp;</b>
                                                                     </div>                                                                    
                                                                 </th>
@@ -2238,16 +2219,16 @@
                                                                     <!--E 用餐器具-->
                                                                     <div class="funkyradio">
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="0" id="strongPoint.coachEitem0"
-                                                                                name="strongPoint.coachEitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="0" id="restaurantCaterer.coachEitem0"
+                                                                                name="restaurantCaterer.coachEitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachEitem0">餐具防滑、防燙，安全、易使用</label>
+                                                                                for="restaurantCaterer.coachEitem0">餐具防滑、防燙，安全、易使用</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="1" id="strongPoint.coachEitem1"
-                                                                                name="strongPoint.coachEitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="1" id="restaurantCaterer.coachEitem1"
+                                                                                name="restaurantCaterer.coachEitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachEitem1">其他</label>
+                                                                                for="restaurantCaterer.coachEitem1">其他</label>
                                                                         </span>
                                                                     </div>
 
@@ -2255,7 +2236,7 @@
                                                                     <div class="form-group ">
                                                                         <label>其他用餐環境說明</label>
                                                                         <input type="text"
-                                                                            name="strongPoint.coachEitemOther"
+                                                                            name="restaurantCaterer.coachEitemOther"
                                                                             class="form-control formText {  }" />
                                                                     </div>
 
@@ -2263,7 +2244,7 @@
                                                                     <div class="form-group ">
                                                                         <label>輔導/追蹤內容</label>
                                                                         <textarea class="form-control formText {  }"
-                                                                            name="strongPoint.coachEitemTrack"
+                                                                            name="restaurantCaterer.coachEitemTrack"
                                                                             rows="3"></textarea>
                                                                     </div>
                                                                 </td>
@@ -2272,7 +2253,7 @@
                                                                 <th width="150">
                                                                     <div class="input-group">
                                                                         <label><input type="checkbox" value="0"
-                                                                                name="strongPoint.coachF"
+                                                                                name="restaurantCaterer.coachF"
                                                                                 class="icheckbox" />&nbsp;F 外袋包裝</label><b>&nbsp;&nbsp;</b>
                                                                     </div>                                                                    
                                                                 </th>
@@ -2280,28 +2261,28 @@
                                                                     <!--F 外袋包裝-->
                                                                     <div class="funkyradio">
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="0" id="strongPoint.coachFitem0"
-                                                                                name="strongPoint.coachFitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="0" id="restaurantCaterer.coachFitem0"
+                                                                                name="restaurantCaterer.coachFitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachFitem0">用餐器具包裝具開封標示及容易開啟</label>
+                                                                                for="restaurantCaterer.coachFitem0">用餐器具包裝具開封標示及容易開啟</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="1" id="strongPoint.coachFitem1"
-                                                                                name="strongPoint.coachFitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="1" id="restaurantCaterer.coachFitem1"
+                                                                                name="restaurantCaterer.coachFitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachFitem1">標示衛生安全或質地等級之警語，字體需達 0.5 公分以上</label>
+                                                                                for="restaurantCaterer.coachFitem1">標示衛生安全或質地等級之警語，字體需達 0.5 公分以上</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="2" id="strongPoint.coachFitem2"
-                                                                                name="strongPoint.coachFitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="2" id="restaurantCaterer.coachFitem2"
+                                                                                name="restaurantCaterer.coachFitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachFitem2">包裝需備有檢驗報告</label>
+                                                                                for="restaurantCaterer.coachFitem2">包裝需備有檢驗報告</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
-                                                                            <input type="checkbox" value="3" id="strongPoint.coachFitem3"
-                                                                                name="strongPoint.coachFitem" class="funkyradio-warning" />
+                                                                            <input type="checkbox" value="3" id="restaurantCaterer.coachFitem3"
+                                                                                name="restaurantCaterer.coachFitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachFitem3">其他</label>
+                                                                                for="restaurantCaterer.coachFitem3">其他</label>
                                                                         </span>
                                                                     </div>
 
@@ -2309,7 +2290,7 @@
                                                                     <div class="form-group ">
                                                                         <label>其他用餐環境說明</label>
                                                                         <input type="text"
-                                                                            name="strongPoint.coachFitemOther"
+                                                                            name="restaurantCaterer.coachFitemOther"
                                                                             class="form-control formText {  }" />
                                                                     </div>
 
@@ -2317,7 +2298,7 @@
                                                                     <div class="form-group ">
                                                                         <label>輔導/追蹤內容</label>
                                                                         <textarea class="form-control formText {  }"
-                                                                            name="strongPoint.coachFitemTrack"
+                                                                            name="restaurantCaterer.coachFitemTrack"
                                                                             rows="3"></textarea>
                                                                     </div>
                                                                 </td>
