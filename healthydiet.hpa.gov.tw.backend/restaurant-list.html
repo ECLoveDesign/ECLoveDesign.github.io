@@ -1246,6 +1246,55 @@
                                                         </div>
                                                     </div>
 
+                                                    <!--供餐種類-->
+                                                    <div class="form-group">
+                                                        <label>供餐種類</label>
+
+                                                        <div class="funkyradio">
+                                                            <span class="funkyradio-warning">
+                                                                <input type="radio" value="0" id="restaurantCaterer.provideType0"
+                                                                    name="restaurantCaterer.provideType" class="funkyradio-warning" />
+                                                                <label
+                                                                    for="restaurantCaterer.provideType0">中式</label>
+                                                            </span>
+                                                            <span class="funkyradio-warning">
+                                                                <input type="radio" value="1" id="restaurantCaterer.provideType1"
+                                                                    name="restaurantCaterer.provideType" class="funkyradio-warning" />
+                                                                <label
+                                                                    for="restaurantCaterer.provideType1">西式</label>
+                                                            </span>
+                                                            <span class="funkyradio-warning">
+                                                                <input type="radio" value="2" id="restaurantCaterer.provideType2"
+                                                                    name="restaurantCaterer.provideType" class="funkyradio-warning" />
+                                                                <label
+                                                                    for="restaurantCaterer.provideType2">日式</label>
+                                                            </span>
+                                                            <span class="funkyradio-warning">
+                                                                <input type="radio" value="3" id="restaurantCaterer.provideType3"
+                                                                    name="restaurantCaterer.provideType" class="funkyradio-warning" />
+                                                                <label
+                                                                    for="restaurantCaterer.provideType3">泰式</label>
+                                                            </span>
+                                                            <span class="funkyradio-warning">
+                                                                <input type="radio" value="4" id="restaurantCaterer.provideType4"
+                                                                    name="restaurantCaterer.provideType" class="funkyradio-warning" />
+                                                                <label
+                                                                    for="restaurantCaterer.provideType4">其他</label>
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-xs-12" style="height:10px;">
+                                                        </div>
+
+                                                        <!--其他供餐種類說明-->
+                                                        <div class="form-group ">
+                                                            <label>其他供餐種類說明</label>
+                                                            <input type="text"
+                                                                name="restaurantCaterer.provideTypeOther"
+                                                                class="form-control formText {  }" />
+                                                        </div>
+
+                                                    </div>
+
                                                     <!--供餐型式-->
                                                     <div class="form-group">
                                                         <label>供餐型式</label>
@@ -1362,166 +1411,7 @@
                                                         <input type="text" name="restaurantCaterer.getTypeOther"
                                                             class="form-control formText {  }" />
                                                     </div>
-
-                                                    <!--供餐來源-->
-                                                    <div class="form-group">
-                                                        <label>供餐來源</label>
-                                                        <!--據點自行烹煮-->
-                                                        <div class="funkyradio">
-                                                            <div class="funkyradio-warning">
-                                                                <input type="checkbox" value="0"
-                                                                    id="restaurantCaterer.restaurantCaterer.foodSource0"
-                                                                    name="restaurantCaterer.restaurantCaterer.foodSource"
-                                                                    class="funkyradio-warning" />
-                                                                <label for="restaurantCaterer.restaurantCaterer.foodSource0">據點自行烹煮</label>
-                                                            </div>                                                    
-                                                        </div>
-
-                                                        <!--自助餐廳送餐-->
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="funkyradio">
-                                                                    <div class="funkyradio-warning">
-                                                                        <input type="checkbox" value="1"
-                                                                            id="restaurantCaterer.restaurantCaterer.foodSource1"
-                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
-                                                                            class="funkyradio-warning" />
-                                                                        <label
-                                                                            for="restaurantCaterer.restaurantCaterer.foodSource1">自助餐廳送餐</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
-                                                                    <label class="sr-only">業者名稱</label>
-                                                                    <input type="text" id="restaurantCaterer.cafeteriaDelivery"
-                                                                        placeholder="請填寫業者名稱"
-                                                                        class="form-control required formText { required: true }" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--一般中式餐廳-->
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="funkyradio">
-                                                                    <div class="funkyradio-warning">
-                                                                        <input type="checkbox" value="2"
-                                                                            id="restaurantCaterer.restaurantCaterer.foodSource2"
-                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
-                                                                            class="funkyradio-warning" />
-                                                                        <label
-                                                                            for="restaurantCaterer.restaurantCaterer.foodSource2">一般中式餐廳</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
-                                                                    <label class="sr-only">業者名稱</label>
-                                                                    <input type="text" id="restaurantCaterer.restaurant"
-                                                                        placeholder="請填寫業者名稱"
-                                                                        class="form-control required formText { required: true }" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--HACCP盒餐業者(中央廚房)-->
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="funkyradio">
-                                                                    <div class="funkyradio-warning">
-                                                                        <input type="checkbox" value="3"
-                                                                            id="restaurantCaterer.restaurantCaterer.foodSource3"
-                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
-                                                                            class="funkyradio-warning" />
-                                                                        <label
-                                                                            for="restaurantCaterer.restaurantCaterer.foodSource3">HACCP盒餐業者(中央廚房)</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
-                                                                    <label class="sr-only">業者名稱</label>
-                                                                    <input type="text" id="restaurantCaterer.centralKitchen"
-                                                                        placeholder="請填寫業者名稱"
-                                                                        class="form-control required formText { required: true }" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--GHP餐飲業者-->
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="funkyradio">
-                                                                    <div class="funkyradio-warning">
-                                                                        <input type="checkbox" value="4"
-                                                                            id="restaurantCaterer.restaurantCaterer.foodSource4"
-                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
-                                                                            class="funkyradio-warning" />
-                                                                        <label
-                                                                            for="restaurantCaterer.restaurantCaterer.foodSource4">GHP餐飲業者</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
-                                                                    <label class="sr-only">業者名稱</label>
-                                                                    <input type="text" id="restaurantCaterer.GHP"
-                                                                        placeholder="請填寫業者名稱"
-                                                                        class="form-control required formText { required: true }" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--醫院-->
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="funkyradio">
-                                                                    <div class="funkyradio-warning">
-                                                                        <input type="checkbox" value="5"
-                                                                            id="restaurantCaterer.restaurantCaterer.foodSource5"
-                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
-                                                                            class="funkyradio-warning" />
-                                                                        <label
-                                                                            for="restaurantCaterer.restaurantCaterer.foodSource5">醫院</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
-                                                                    <label class="sr-only">醫院名稱</label>
-                                                                    <input type="text" id="restaurantCaterer.hopsital"
-                                                                        placeholder="請填寫醫院名稱"
-                                                                        class="form-control required formText { required: true }" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--其他-->
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="funkyradio">
-                                                                    <div class="funkyradio-warning">
-                                                                        <input type="checkbox" value="6"
-                                                                            id="restaurantCaterer.restaurantCaterer.foodSource6"
-                                                                            name="restaurantCaterer.restaurantCaterer.foodSource"
-                                                                            class="funkyradio-warning" />
-                                                                        <label
-                                                                            for="restaurantCaterer.restaurantCaterer.foodSource6">其他</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group" style="margin-bottom:0; margin-top: 10px;">
-                                                                    <label class="sr-only">其他說明</label>
-                                                                    <input type="text" id="restaurantCaterer.other"
-                                                                        placeholder="請填寫其他說明"
-                                                                        class="form-control required formText { required: true }" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
+                                                    
 
                                                     <!-- 用餐環境設施是否符合高齡友善安全舒適面向 -->
                                                     <div class="row">
@@ -1736,10 +1626,10 @@
                                                                     <div class="form-group">
                                                                         <label>是否有提供【全穀及未精製雜糧】</label>
                                                                         <div class="input-group">
-                                                                            <label><input type="radio" value="10" name="grainN"
+                                                                            <label><input type="radio" value="10" name="forGrain"
                                                                                     class="iradio" />否</label>
                                                                             <b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="radio" value="20" name="grainY"
+                                                                            <label><input type="radio" value="20" name="forGrain"
                                                                                     class="iradio" />是</label>
                                                                             <b>&nbsp;&nbsp;</b>
                                                                         </div>
@@ -1752,10 +1642,73 @@
                                                                     <div class="form-group">
                                                                         <label>是否有提供【豆魚蛋肉類】</label>
                                                                         <div class="input-group">
-                                                                            <label><input type="radio" value="10" name="M&PN"
+                                                                            <label><input type="radio" value="10" name="forM&P"
                                                                                     class="iradio" />否</label>
                                                                             <b>&nbsp;&nbsp;</b>
-                                                                            <label><input type="radio" value="20" name="M&PY"
+                                                                            <label><input type="radio" value="20" name="forM&P"
+                                                                                    class="iradio" />是</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <!--提供【蔬菜類】-->
+                                                                    <div class="form-group">
+                                                                        <label>是否有提供【蔬菜類】</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="10" name="forVeget"
+                                                                                    class="iradio" />否</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="20" name="forVeget"
+                                                                                    class="iradio" />是</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+
+                                                                    <!--提供【水果類】-->
+                                                                    <div class="form-group">
+                                                                        <label>是否有提供【水果類】</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="10" name="forFruit"
+                                                                                    class="iradio" />否</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="20" name="forFruit"
+                                                                                    class="iradio" />是</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                
+                                                                <div class="col-md-6">
+                                                                    <!--提供【油脂類】-->
+                                                                    <div class="form-group">
+                                                                        <label>是否有提供【油脂類】</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="10" name="forOil"
+                                                                                    class="iradio" />否</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="20" name="forOil"
+                                                                                    class="iradio" />是</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+
+                                                                    <!--提供【乳品類】-->
+                                                                    <div class="form-group">
+                                                                        <label>是否有提供【乳品類】</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="10" name="forMilk"
+                                                                                    class="iradio" />否</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="20" name="forMilk"
                                                                                     class="iradio" />是</label>
                                                                             <b>&nbsp;&nbsp;</b>
                                                                         </div>
@@ -1784,16 +1737,16 @@
 
                                                     </div>
 
-                                                    <!-- 一人份供應量／菜色 -->
+                                                    <!-- 供應量／菜色 -->
                                                     <div class="row">
-                                                        <h5>一人份供應量／菜色</h5>
+                                                        <h5>供應量／菜色</h5>
                                                         <div class="col-md-12">
-                                                            <!--菜色／供應量(菜勺/碗)-->
+                                                            <!--供應量／菜色-->
                                                             <div class="form-group" id="perServing">
 
                                                                 <div class="entry">
                                                                     <div class="row">
-                                                                        <div class="col-xs-6">
+                                                                        <div class="col-xs-2">
                                                                             <!--菜色-->
                                                                             <div class="form-group">
                                                                                 <label>菜色</label>
@@ -1802,12 +1755,32 @@
                                                                             </div>
 
                                                                         </div>
-                                                                        <div class="col-xs-5">
-                                                                            <!--供應量(菜勺/碗)-->
-                                                                            <div class="form-group ">
-                                                                                <label>供應量(菜勺/碗)</label>
+                                                                        <div class="col-xs-3">
+                                                                            <!--烹調方式(煎、燉、炸等)-->
+                                                                            <div class="form-group">
+                                                                                <label>烹調方式(煎、燉、炸等)</label>
                                                                                 <input type="text"
-                                                                                    name="restaurantCaterer.perServingDishes"
+                                                                                    name="restaurantCaterer.perServingWays"
+                                                                                    class="form-control formText {  }">
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col-xs-5">
+                                                                            <!--烹調方式(煎、燉、炸等)-->
+                                                                            <div class="form-group">
+                                                                                <label>供應量 (請提供單位如：盤/湯匙/菜勺/碗)</label>
+                                                                                <input type="text"
+                                                                                    name="restaurantCaterer.perServingAmount"
+                                                                                    class="form-control formText {  }">
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col-xs-1">
+                                                                            <!--約O人份-->
+                                                                            <div class="form-group">
+                                                                                <label>幾人份</label>
+                                                                                <input type="number"
+                                                                                    name="restaurantCaterer.perServingOne"
                                                                                     class="form-control formText {  }">
                                                                             </div>
 
@@ -1911,104 +1884,7 @@
 
                                                         </div>
                                                     </div>
-
-                                                    <!-- 質地調整飲食 -->
-                                                    <div class="row">
-                                                        <h5>一人份可提供的六大類食物份量</h5>
-                                                        <div class="col-md-12">
-
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <!--主食類(精製)-->
-                                                                    <div class="form-group ">
-                                                                        <label>主食類(精製)／份</label>
-                                                                        <input type="number" name="restaurantCaterer.perFoodRefined"
-                                                                            class="form-control formText { }">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-md-6">
-
-                                                                    <!--主食類(未精製)-->
-                                                                    <div class="form-group ">
-                                                                        <label>主食類(未精製)／份</label>
-                                                                        <input type="number" name="restaurantCaterer.perFoodUn"
-                                                                            class="form-control formText { }">
-                                                                    </div>
-
-                                                                </div>
-
-
-                                                                <div class="col-md-6">
-
-                                                                    <!--豆魚蛋肉類-->
-                                                                    <div class="form-group ">
-                                                                        <label>豆魚蛋肉類／份</label>
-                                                                        <input type="number" name="restaurantCaterer.perFoodmainM&P"
-                                                                            class="form-control formText { }">
-                                                                    </div>
-
-                                                                </div>
-
-                                                                <div class="col-md-6">
-                                                                    <!--蔬菜類-->
-                                                                    <div class="form-group ">
-                                                                        <label>蔬菜類／份</label>
-                                                                        <input type="text" name="perFoodmainV"
-                                                                            class="form-control formText {  }">
-                                                                    </div>
-
-                                                                </div>
-
-
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group ">
-                                                                        <label>水果類／份</label>
-                                                                        <input type="text" name="perFoodmainF"
-                                                                            class="form-control formText {  }">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group ">
-                                                                        <label>乳品類／份</label>
-                                                                        <input type="text" name="perFoodmainM"
-                                                                            class="form-control formText {  }">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group ">
-                                                                        <label>油脂與堅果種子類(油脂)／份</label>
-                                                                        <input type="text" name="perFoodmainO"
-                                                                            class="form-control formText {  }">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group ">
-                                                                        <label>油脂與堅果種子類(堅果種子)／份</label>
-                                                                        <input type="text" name="perFoodmainN"
-                                                                            class="form-control formText {  }">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group ">
-                                                                        <label>熱量(大卡)</label>
-                                                                        <input type="text" name="perFoodmainHeat"
-                                                                            class="form-control formText {  }">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group ">
-                                                                        <label>蛋白質(克)</label>
-                                                                        <input type="text" name="perFoodmainProtein"
-                                                                            class="form-control formText {  }">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-
-
-                                                        </div>
-                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -2061,6 +1937,8 @@
                                                                                 for="restaurantCaterer.mealNutrition4">其他</label>
                                                                         </span>
                                                                     </div>
+                                                                    <div class="col-xs-12" style="height:10px;">
+                                                                    </div>
 
                                                                     <!--其他類型說明-->
                                                                     <div class="form-group ">
@@ -2098,9 +1976,8 @@
                                                                                 id="restaurantCaterer.coachAitem0"
                                                                                 name="restaurantCaterer.coachAitem"
                                                                                 class="funkyradio-warning" />
-                                                                            <label for="restaurantCaterer.coachAitem0">每月至少 1
-                                                                                次提供包含如全穀及未精製雜糧類、豆魚蛋肉類或蔬菜類 符合容
-                                                                                易咬軟質食或牙齦碎軟質食之餐點，可分散於不同時間提供</label>
+                                                                            <label for="restaurantCaterer.coachAitem0">提供一套符合容易咬軟質食或牙齦碎
+                                                                                軟質食之餐食</label>
                                                                         </div>
                                                                         <div class="funkyradio-warning">
                                                                             <input type="checkbox" value="1"
@@ -2108,8 +1985,17 @@
                                                                                 name="restaurantCaterer.coachAitem"
                                                                                 class="funkyradio-warning" />
                                                                             <label
-                                                                                for="restaurantCaterer.coachAitem1">針對據點內有需求之長者，可提供符
-                                                                                合個別化需求之餐點</label>
+                                                                                for="restaurantCaterer.coachAitem1">菜單上標示容易咬軟質食或牙齦碎軟
+                                                                                質食之餐食</label>
+                                                                        </div>
+                                                                        <div class="funkyradio-warning">
+                                                                            <input type="checkbox" value="2"
+                                                                                id="restaurantCaterer.coachAitem2"
+                                                                                name="restaurantCaterer.coachAitem"
+                                                                                class="funkyradio-warning" />
+                                                                            <label
+                                                                                for="restaurantCaterer.coachAitem2">設置一區高齡友善飲食區或料理菜卡
+                                                                                標示質地調整飲食</label>
                                                                         </div>
                                                                     </div>
 
@@ -2168,6 +2054,9 @@
                                                                             <label
                                                                                 for="restaurantCaterer.coachBitem6">其他</label>
                                                                         </span>
+                                                                    </div>
+
+                                                                    <div class="col-xs-12" style="height:10px;">
                                                                     </div>
 
                                                                     <!--其他衛生安全說明-->
@@ -2243,6 +2132,9 @@
                                                                         </span>
                                                                     </div>
 
+                                                                    <div class="col-xs-12" style="height:10px;">
+                                                                    </div>
+
                                                                     <!--其他用餐環境說明-->
                                                                     <div class="form-group ">
                                                                         <label>其他用餐環境說明</label>
@@ -2275,26 +2167,49 @@
                                                                             <input type="checkbox" value="0" id="restaurantCaterer.coachDitem0"
                                                                                 name="restaurantCaterer.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="restaurantCaterer.coachDitem0">依長者需求，提供去骨、分切的服務</label>
+                                                                                for="restaurantCaterer.coachDitem0">協助長者入席，適時提供輪椅</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="1" id="restaurantCaterer.coachDitem1"
                                                                                 name="restaurantCaterer.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="restaurantCaterer.coachDitem1">服務人員能關懷用餐者</label>
+                                                                                for="restaurantCaterer.coachDitem1">菜單字體須達 0.5公分以上，並提供說明
+                                                                            </label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="2" id="restaurantCaterer.coachDitem2"
                                                                                 name="restaurantCaterer.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="restaurantCaterer.coachDitem2">餐點溫熱服務，提供溫水</label>
+                                                                                for="restaurantCaterer.coachDitem2">提供老花眼鏡或放大鏡
+                                                                            </label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="3" id="restaurantCaterer.coachDitem3"
                                                                                 name="restaurantCaterer.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="restaurantCaterer.coachDitem3">其他</label>
+                                                                                for="restaurantCaterer.coachDitem3">依長者需求，提供去骨、分切的服務</label>
                                                                         </span>
+                                                                        <span class="funkyradio-warning">
+                                                                            <input type="checkbox" value="4" id="restaurantCaterer.coachDitem4"
+                                                                                name="restaurantCaterer.coachDitem" class="funkyradio-warning" />
+                                                                            <label
+                                                                                for="restaurantCaterer.coachDitem4">服務人員能關懷用餐者</label>
+                                                                        </span>
+                                                                        <span class="funkyradio-warning">
+                                                                            <input type="checkbox" value="5" id="restaurantCaterer.coachDitem5"
+                                                                                name="restaurantCaterer.coachDitem" class="funkyradio-warning" />
+                                                                            <label
+                                                                                for="restaurantCaterer.coachDitem5">餐點溫熱服務，提供溫水</label>
+                                                                        </span>
+                                                                        <span class="funkyradio-warning">
+                                                                            <input type="checkbox" value="6" id="restaurantCaterer.coachDitem6"
+                                                                                name="restaurantCaterer.coachDitem" class="funkyradio-warning" />
+                                                                            <label
+                                                                                for="restaurantCaterer.coachDitem6">其他</label>
+                                                                        </span>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col-xs-12" style="height:10px;">
                                                                     </div>
 
                                                                     <!--其他服務流程說明-->
@@ -2337,6 +2252,9 @@
                                                                             <label
                                                                                 for="restaurantCaterer.coachEitem1">其他</label>
                                                                         </span>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col-xs-12" style="height:10px;">
                                                                     </div>
 
                                                                     <!--其他用餐環境說明-->
@@ -2429,9 +2347,8 @@
                                                                 <div class="col-xs-6">
                                                                     <!--照片-->
                                                                     <div class="form-group">
-                                                                        <label>照片</label>
-                                                                        <input type="text" name="restaurantCaterer.counselingPic"
-                                                                            class="form-control formText {  }">
+                                                                        <label>照片</label>                                                                        		     		
+						     		                	                <input type="file" class="form-control file_upload" id="counselingfile_upload" name="fileUpload" multiple>    
                                                                     </div>
 
                                                                 </div>
@@ -2440,7 +2357,7 @@
                                                                     <div class="form-group ">
                                                                         <label>文字說明</label>
                                                                         <input type="text"
-                                                                            name="restaurantCaterer.counselingRecordTxt"
+                                                                            name="strongPoint.counselingRecordTxt"
                                                                             class="form-control formText {  }">
                                                                     </div>
 
@@ -2516,7 +2433,7 @@
                                                                     <!--照片-->
                                                                     <div class="form-group">
                                                                         <label>照片</label>				     		
-						     		                	                <input type="file" class="form-control" id="file_upload" name="fileUpload" multiple>    
+						     		                	                <input type="file" class="form-control file_upload" id="improveRecordfile_upload" name="fileUpload" multiple>    
                                                                     </div>
 
                                                                 </div>
@@ -2525,7 +2442,7 @@
                                                                     <div class="form-group ">
                                                                         <label>文字說明</label>
                                                                         <input type="text"
-                                                                            name="restaurantCaterer.improveRecordTxt"
+                                                                            name="strongPoint.improveRecordTxt"
                                                                             class="form-control formText {  }">
                                                                     </div>
 
@@ -2975,7 +2892,7 @@
 
 
 
-        var $el2 = $("#file_upload");
+        var $el2 = $(".file_upload");
         var footerTemplate = '<div class="file-thumbnail-footer">\n' +
             '   <div style="margin:3px 0 8px 0">\n' +
             '   <div class="file-footer-caption" title="{caption}">{caption}{size}</div>\n' +

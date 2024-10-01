@@ -1840,7 +1840,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <!-- 質地調整飲食 -->
+                                                    <!-- 一人份可提供的六大類食物份量 -->
                                                     <div class="row">
                                                         <h5>一人份可提供的六大類食物份量</h5>
                                                         <div class="col-md-12">
@@ -1989,6 +1989,9 @@
                                                                                 for="strongPoint.mealNutrition4">其他</label>
                                                                         </span>
                                                                     </div>
+                                                                    
+                                                                    <div class="col-xs-12" style="height:10px;">
+                                                                    </div>
 
                                                                     <!--其他類型說明-->
                                                                     <div class="form-group ">
@@ -2097,6 +2100,9 @@
                                                                                 for="strongPoint.coachBitem6">其他</label>
                                                                         </span>
                                                                     </div>
+                                                                    
+                                                                    <div class="col-xs-12" style="height:10px;">
+                                                                    </div>
 
                                                                     <!--其他衛生安全說明-->
                                                                     <div class="form-group ">
@@ -2170,6 +2176,9 @@
                                                                                 for="strongPoint.coachCitem6">其他</label>
                                                                         </span>
                                                                     </div>
+                                                                    
+                                                                    <div class="col-xs-12" style="height:10px;">
+                                                                    </div>
 
                                                                     <!--其他用餐環境說明-->
                                                                     <div class="form-group ">
@@ -2225,6 +2234,9 @@
                                                                         </span>
                                                                     </div>
 
+                                                                    <div class="col-xs-12" style="height:10px;">
+                                                                    </div>
+
                                                                     <!--其他服務流程說明-->
                                                                     <div class="form-group ">
                                                                         <label>其他服務流程說明</label>
@@ -2265,6 +2277,9 @@
                                                                             <label
                                                                                 for="strongPoint.coachEitem1">其他</label>
                                                                         </span>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col-xs-12" style="height:10px;">
                                                                     </div>
 
                                                                     <!--其他用餐環境說明-->
@@ -2320,6 +2335,9 @@
                                                                                 for="strongPoint.coachFitem3">其他</label>
                                                                         </span>
                                                                     </div>
+                                                                    
+                                                                    <div class="col-xs-12" style="height:10px;">
+                                                                    </div>
 
                                                                     <!--其他用餐環境說明-->
                                                                     <div class="form-group ">
@@ -2357,9 +2375,8 @@
                                                                 <div class="col-xs-6">
                                                                     <!--照片-->
                                                                     <div class="form-group">
-                                                                        <label>照片</label>
-                                                                        <input type="text" name="strongPoint.counselingPic"
-                                                                            class="form-control formText {  }">
+                                                                        <label>照片</label>                                                                        		     		
+						     		                	                <input type="file" class="form-control file_upload" id="counselingfile_upload" name="fileUpload" multiple>    
                                                                     </div>
 
                                                                 </div>
@@ -2444,7 +2461,7 @@
                                                                     <!--照片-->
                                                                     <div class="form-group">
                                                                         <label>照片</label>				     		
-						     		                	                <input type="file" class="form-control" id="file_upload" name="fileUpload" multiple>    
+						     		                	                <input type="file" class="form-control file_upload" id="improveRecordfile_upload" name="fileUpload" multiple>    
                                                                     </div>
 
                                                                 </div>
@@ -2903,7 +2920,7 @@
 
 
 
-        var $el2 = $("#file_upload");
+        var $el2 = $(".file_upload");
         var footerTemplate = '<div class="file-thumbnail-footer">\n' +
             '   <div style="margin:3px 0 8px 0">\n' +
             '   <div class="file-footer-caption" title="{caption}">{caption}{size}</div>\n' +
