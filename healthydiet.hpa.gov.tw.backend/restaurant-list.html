@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>長者營養評估工具平台|新增/編輯個案資料資料</title>
+    <title>據點及餐廳輔導紀錄表|新增/編輯餐廳資料</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
@@ -839,14 +839,13 @@
                                                     <input type="text"  class="form-control zipCode" disabled="disabled">
                                                 </div>
                                                 <div class="col-xs-10" >
-                                                    <input type="text" id="livAddr" name="patient.livAddr" value="" class="form-control " placeholder="請輸入地址" >
-                                                    <input type="hidden" name="patient.allLivAddr" id="allLivAddr" value="" />
+                                                    <input type="text" id="livAddr" name="restaurantCaterer.livAddr" value="" class="form-control " placeholder="請輸入地址" >
+                                                    <input type="hidden" name="restaurantCaterer.allLivAddr" id="allLivAddr" value="" />
                                                 </div>
                                                 
                                                 <div class="col-xs-12" style="height:20px;">
                                                 </div>
                                             </div>  
-
                                             
                                             <!--聯絡人/職稱-->
                                             <div class="row">
@@ -884,7 +883,8 @@
                                                     </div>
 
                                                 </div>
-                                            </div>                                          
+                                            </div>   
+                                            
 
                                         </div>
                                         <div class="col-md-6">                                            
@@ -925,6 +925,87 @@
                                                     </span>
                                                 </div>
 
+                                            </div>                                            
+                                            
+                                            <!--是否參與餐飲相關認證-->
+                                            <div class="form-group">
+                                                <label>是否參與餐飲相關認證</label>
+                                                <select id="certification"
+                                                    name="restaurantCaterer.certification" class="form-control">
+                                                    <option value="0" selected>請選擇</option>
+                                                    <option value="30">是</option>
+                                                    <option value="10">否</option>
+                                                </select>
+                                            </div>
+                                            <script>
+                                                addLoadEvent(function () {
+
+                                                    $('#certification').on('change',
+                                                        function () {
+                                                            var value = $(
+                                                                "select[name='restaurantCaterer.certification']"
+                                                            ).val();
+                                                            if ($.trim(value) != "") {
+                                                                if (value == '30') {
+                                                                    $('#certificationUnit')
+                                                                        .fadeIn();
+                                                                    $('#certificationHospital')
+                                                                        .fadeIn();
+                                                                    if ($(
+                                                                            "input[name='restaurantCaterer.certificationUnit']"
+                                                                            )
+                                                                        .val() == '無') {
+                                                                        $("input[name='restaurantCaterer.certificationUnit']")
+                                                                            .val('');
+                                                                    }
+                                                                } else {
+                                                                    $('#certificationHospital')
+                                                                        .fadeOut();
+                                                                    $('#certificationUnit')
+                                                                        .fadeOut();
+                                                                    $("input[name='restaurantCaterer.certificationUnit']")
+                                                                        .val('無').trigger(
+                                                                            'keyup');
+                                                                }
+
+                                                            } else {
+                                                                $('#certificationUnit')
+                                                                    .fadeIn();
+                                                            }
+
+                                                        });
+                                                    $('#certification').trigger('change');
+                                                });
+                                            </script>
+
+                                            <!--認證名稱/有效期限-->
+                                            <div class="row" id="certificationUnit">
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>認證名稱</label>
+                                                        <input type="text" name="restaurantCaterer.certificationTitle"
+                                                            class="form-control formText { }">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>有效期限</label>
+                                                        <input type="text" id="validityPeriod" name="track.validityPeriod"
+                                                            class="form-control formText { dateISO: true}" />
+                                                        <script type="text/javascript">
+                                                            addLoadEvent(function () {
+                                                                $('#validityPeriod').datepicker({
+                                                                    format: 'twy-mm-dd',
+                                                                    language: 'zh-TW',
+                                                                    autoclose: true,
+                                                                    todayHighlight: true
+                                                                });
+
+                                                            });
+                                                        </script>
+                                                    </div>
+
+                                                </div>
                                             </div>
 
                                             <!--持續追蹤 /追蹤日期-->                                            
@@ -1690,7 +1771,7 @@
                                                                             <!--菜色-->
                                                                             <div class="form-group">
                                                                                 <label>菜色</label>
-                                                                                <input type="text" name="patient.perServingLook"
+                                                                                <input type="text" name="restaurantCaterer.perServingLook"
                                                                                     class="form-control formText {  }">
                                                                             </div>
 
@@ -1700,7 +1781,7 @@
                                                                             <div class="form-group ">
                                                                                 <label>供應量(菜勺/碗)</label>
                                                                                 <input type="text"
-                                                                                    name="patient.perServingDishes"
+                                                                                    name="restaurantCaterer.perServingDishes"
                                                                                     class="form-control formText {  }">
                                                                             </div>
 
@@ -2323,7 +2404,7 @@
                                                                     <!--照片-->
                                                                     <div class="form-group">
                                                                         <label>照片</label>
-                                                                        <input type="text" name="patient.counselingPic"
+                                                                        <input type="text" name="restaurantCaterer.counselingPic"
                                                                             class="form-control formText {  }">
                                                                     </div>
 
@@ -2333,7 +2414,7 @@
                                                                     <div class="form-group ">
                                                                         <label>文字說明</label>
                                                                         <input type="text"
-                                                                            name="patient.counselingRecordTxt"
+                                                                            name="restaurantCaterer.counselingRecordTxt"
                                                                             class="form-control formText {  }">
                                                                     </div>
 
@@ -2418,7 +2499,7 @@
                                                                     <div class="form-group ">
                                                                         <label>文字說明</label>
                                                                         <input type="text"
-                                                                            name="patient.improveRecordTxt"
+                                                                            name="restaurantCaterer.improveRecordTxt"
                                                                             class="form-control formText {  }">
                                                                     </div>
 
