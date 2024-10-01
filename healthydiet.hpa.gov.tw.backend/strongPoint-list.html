@@ -1158,14 +1158,30 @@
                                                     <!--餐食（可複選)-->
                                                     <div class="form-group ">
                                                         <label>餐食(可複選)</label>
-                                                        <div class="input-group">
-                                                            <label><input type="checkbox" value="0" name="strongPoint.mealType"
-                                                                    class="icheckbox" />葷</label><b>&nbsp;&nbsp;</b>
-                                                            <label><input type="checkbox" value="10" name="strongPoint.mealType"
-                                                                    class="icheckbox" />素</label><b>&nbsp;&nbsp;</b>
-                                                            <label><input type="checkbox" value="20" name="strongPoint.mealType"
-                                                                    class="icheckbox" />主要提供葷食，有提供方便素食</label><b>&nbsp;&nbsp;</b>
-                                                        </div><!-- /.input group -->
+                                                        <div class="funkyradio">
+                                                            <span class="funkyradio-warning">
+                                                                <input type="checkbox" value="0"
+                                                                    id="strongPoint.mealType0"
+                                                                    name="strongPoint.mealType"
+                                                                    class="funkyradio-warning" />
+                                                                <label for="strongPoint.mealType0">葷</label>
+                                                            </span>    
+                                                            <span class="funkyradio-warning">
+                                                                <input type="checkbox" value="1"
+                                                                    id="strongPoint.mealType1"
+                                                                    name="strongPoint.mealType"
+                                                                    class="funkyradio-warning" />
+                                                                <label for="strongPoint.mealType1">素</label>
+                                                            </span>   
+                                                            <span class="funkyradio-warning">
+                                                                <input type="checkbox" value="2"
+                                                                    id="strongPoint.mealType2"
+                                                                    name="strongPoint.mealType"
+                                                                    class="funkyradio-warning" />
+                                                                <label for="strongPoint.mealType2">主要提供葷食，有提供方便素食</label>
+                                                            </span>                                                        
+                                                        </div>
+
                                                     </div>
 
                                                     <!--供餐型式-->
@@ -1294,10 +1310,10 @@
                                                         <div class="funkyradio">
                                                             <div class="funkyradio-warning">
                                                                 <input type="checkbox" value="0"
-                                                                    id="strongPoint.strongPoint.foodSource0"
-                                                                    name="strongPoint.strongPoint.foodSource"
+                                                                    id="strongPoint.foodSource0"
+                                                                    name="strongPoint.foodSource"
                                                                     class="funkyradio-warning" />
-                                                                <label for="strongPoint.strongPoint.foodSource0">據點自行烹煮</label>
+                                                                <label for="strongPoint.foodSource0">據點自行烹煮</label>
                                                             </div>                                                    
                                                         </div>
 
@@ -1307,11 +1323,11 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="1"
-                                                                            id="strongPoint.strongPoint.foodSource1"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="strongPoint.foodSource1"
+                                                                            name="strongPoint.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource1">自助餐廳送餐</label>
+                                                                            for="strongPoint.foodSource1">自助餐廳送餐</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1331,11 +1347,11 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="2"
-                                                                            id="strongPoint.strongPoint.foodSource2"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="strongPoint.foodSource2"
+                                                                            name="strongPoint.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource2">一般中式餐廳</label>
+                                                                            for="strongPoint.foodSource2">一般中式餐廳</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1355,11 +1371,11 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="3"
-                                                                            id="strongPoint.strongPoint.foodSource3"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="strongPoint.foodSource3"
+                                                                            name="strongPoint.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource3">HACCP盒餐業者(中央廚房)</label>
+                                                                            for="strongPoint.foodSource3">HACCP盒餐業者(中央廚房)</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1379,11 +1395,11 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="4"
-                                                                            id="strongPoint.strongPoint.foodSource4"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="strongPoint.foodSource4"
+                                                                            name="strongPoint.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource4">GHP餐飲業者</label>
+                                                                            for="strongPoint.foodSource4">GHP餐飲業者</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1403,11 +1419,11 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="5"
-                                                                            id="strongPoint.strongPoint.foodSource5"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="strongPoint.foodSource5"
+                                                                            name="strongPoint.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource5">醫院</label>
+                                                                            for="strongPoint.foodSource5">醫院</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1427,11 +1443,11 @@
                                                                 <div class="funkyradio">
                                                                     <div class="funkyradio-warning">
                                                                         <input type="checkbox" value="6"
-                                                                            id="strongPoint.strongPoint.foodSource6"
-                                                                            name="strongPoint.strongPoint.foodSource"
+                                                                            id="strongPoint.foodSource6"
+                                                                            name="strongPoint.foodSource"
                                                                             class="funkyradio-warning" />
                                                                         <label
-                                                                            for="strongPoint.strongPoint.foodSource6">其他</label>
+                                                                            for="strongPoint.foodSource6">其他</label>
                                                                     </div>
                                                                 </div>
                                                             </div>

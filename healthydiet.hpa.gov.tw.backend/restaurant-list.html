@@ -1220,15 +1220,30 @@
 
                                                     <!--餐食（可複選)-->
                                                     <div class="form-group ">
-                                                        <label>餐食(可複選)</label>
-                                                        <div class="input-group">
-                                                            <label><input type="checkbox" value="0" name="restaurantCaterer.mealType"
-                                                                    class="icheckbox" />葷</label><b>&nbsp;&nbsp;</b>
-                                                            <label><input type="checkbox" value="10" name="restaurantCaterer.mealType"
-                                                                    class="icheckbox" />素</label><b>&nbsp;&nbsp;</b>
-                                                            <label><input type="checkbox" value="20" name="restaurantCaterer.mealType"
-                                                                    class="icheckbox" />主要提供葷食，有提供方便素食</label><b>&nbsp;&nbsp;</b>
-                                                        </div><!-- /.input group -->
+                                                        <label>餐食(可複選)</label>                                                        
+                                                        <div class="funkyradio">
+                                                            <span class="funkyradio-warning">
+                                                                <input type="checkbox" value="0"
+                                                                    id="restaurantCaterer.mealType0"
+                                                                    name="restaurantCaterer.mealType"
+                                                                    class="funkyradio-warning" />
+                                                                <label for="restaurantCaterer.mealType0">葷</label>
+                                                            </span>    
+                                                            <span class="funkyradio-warning">
+                                                                <input type="checkbox" value="1"
+                                                                    id="restaurantCaterer.mealType1"
+                                                                    name="restaurantCaterer.mealType"
+                                                                    class="funkyradio-warning" />
+                                                                <label for="restaurantCaterer.mealType1">素</label>
+                                                            </span>   
+                                                            <span class="funkyradio-warning">
+                                                                <input type="checkbox" value="2"
+                                                                    id="restaurantCaterer.mealType2"
+                                                                    name="restaurantCaterer.mealType"
+                                                                    class="funkyradio-warning" />
+                                                                <label for="restaurantCaterer.mealType2">主要提供葷食，有提供方便素食</label>
+                                                            </span>                                                        
+                                                        </div>
                                                     </div>
 
                                                     <!--供餐型式-->
@@ -1236,11 +1251,9 @@
                                                         <label>供餐型式</label>
                                                         <select id="pickType" name="restaurantCaterer.pickType" class="form-control">
                                                             <option value="0" selected>請選擇</option>
-                                                            <option value="1">桶餐(排隊打菜)</option>
-                                                            <option value="2">每人打好一份</option>
-                                                            <option value="3">環保盤餐盒</option>
-                                                            <option value="4">一次性便當盒</option>
-                                                            <option value="5">桌菜（合菜）</option>
+                                                            <option value="1">桌菜 (合菜)</option>
+                                                            <option value="2">套餐</option>
+                                                            <option value="3">單點</option>
                                                             <option value="30">其他</option>
                                                         </select>
                                                     </div>
@@ -1292,13 +1305,13 @@
                                                             class="form-control formText {  }" />
                                                     </div>
 
-                                                    <!--打餐方式-->
+                                                    <!--供餐方式-->
                                                     <div class="form-group">
-                                                        <label>打餐方式</label>
+                                                        <label>供餐方式</label>
                                                         <select id="getType" name="restaurantCaterer.getType" class="form-control">
                                                             <option value="0" selected>請選擇</option>
-                                                            <option value="1">工作人員協助</option>
-                                                            <option value="2">自己打餐量</option>
+                                                            <option value="1">服務人員提供</option>
+                                                            <option value="2">自行取用</option>
                                                             <option value="30">其他</option>
                                                         </select>
                                                     </div>
@@ -1343,9 +1356,9 @@
                                                         });
                                                     </script>
 
-                                                    <!--其他供餐型式說明-->
+                                                    <!--其他供餐方式說明-->
                                                     <div class="form-group" id="getTypeUnit">
-                                                        <label>其他打餐方式說明</label>
+                                                        <label>其他供餐方式說明</label>
                                                         <input type="text" name="restaurantCaterer.getTypeOther"
                                                             class="form-control formText {  }" />
                                                     </div>
@@ -1719,21 +1732,33 @@
 
                                                             <div class="row">
                                                                 <div class="col-md-6">
-                                                                    <!--每週提供【全穀及未精製雜糧】次數-->
-                                                                    <div class="form-group ">
-                                                                        <label>每週提供【全穀及未精製雜糧】次數 (次/週)</label>
-                                                                        <input type="number" name="restaurantCaterer.grainsWeek"
-                                                                            class="form-control formText { }">
+                                                                    <!--提供【全穀及未精製雜糧】-->
+                                                                    <div class="form-group">
+                                                                        <label>是否有提供【全穀及未精製雜糧】</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="10" name="grainN"
+                                                                                    class="iradio" />否</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="20" name="grainY"
+                                                                                    class="iradio" />是</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="col-md-6">
 
-                                                                    <!--每週提供【水果】次數-->
-                                                                    <div class="form-group ">
-                                                                        <label>每週提供【水果】次數 (次/週)</label>
-                                                                        <input type="number" name="restaurantCaterer.grainsFruit"
-                                                                            class="form-control formText { }">
+                                                                    <!--提供【豆魚蛋肉類】-->
+                                                                    <div class="form-group">
+                                                                        <label>是否有提供【豆魚蛋肉類】</label>
+                                                                        <div class="input-group">
+                                                                            <label><input type="radio" value="10" name="M&PN"
+                                                                                    class="iradio" />否</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                            <label><input type="radio" value="20" name="M&PY"
+                                                                                    class="iradio" />是</label>
+                                                                            <b>&nbsp;&nbsp;</b>
+                                                                        </div>
                                                                     </div>
 
                                                                 </div>
