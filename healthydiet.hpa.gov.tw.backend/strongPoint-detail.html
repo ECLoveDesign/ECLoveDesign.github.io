@@ -745,9 +745,9 @@
                                     <li>據點及餐廳輔導紀錄表</li>
                                     <li>據點及餐廳輔導紀錄表管理</li>
                                     <li>據點歷史紀錄</li>
-                                    <li class="active">新增據點</li>
+                                    <li class="active">據點資訊</li>
                                 </ol>
-                                <h4 class="page-title">新增據點</h4>
+                                <h4 class="page-title">社團法人台北市光鹽關懷發展協會</h4>
                             </div>
                         </div>
                     </div>
@@ -761,257 +761,6 @@
                                 <div class="card-box">
 
                                     <!-- Main row -->
-                                    <div class="row">
-                                        <h4
-                                            style="font-family:'微軟正黑體','Microsoft JhengHei UI';line-height:1;margin-left:13px;color:#0066CC">
-                                            社區資訊</h4>
-                                        <div class="col-md-6">
-
-                                            <!--ID/社區名稱-->
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="form-group ">
-                                                        <label>ID</label>
-                                                        <input type="text" name="strongPoint.IDNo"
-                                                            class="form-control formText {      }" value="123456" disabled>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="form-group ">
-                                                        <label>社區名稱</label>
-                                                        <input type="text" name="strongPoint.Name"
-                                                            class="form-control formText {      }" value="">
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            
-                                            <!--社區地址-->
-                                            <div class="row">
-                                                <label class="col-xs-12">社區地址</label>
-                                                <br>
-                                                <div class="col-xs-4">
-                                                    <select id="livCityCode" name="strongPoint.livCityCode"
-                                                        class="city form-control">
-                                                        <option value="" selected="selected">請選擇
-                                                        </option>
-                                                        <option value="0900700000">連江縣</option>
-                                                        <option value="1000200000">宜蘭縣</option>
-                                                        <option value="1001700000">基隆市</option>
-                                                        <option value="6500000000">新北市</option>
-                                                        <option value="6300000000">臺北市</option>
-                                                        <option value="6800000000">桃園市</option>
-                                                        <option value="1000400000">新竹縣</option>
-                                                        <option value="1001800000">新竹市</option>
-                                                        <option value="1000500000">苗栗縣</option>
-                                                        <option value="6600000000">臺中市</option>
-                                                        <option value="1000700000">彰化縣</option>
-                                                        <option value="1000800000">南投縣</option>
-                                                        <option value="1000900000">雲林縣</option>
-                                                        <option value="1001000000">嘉義縣</option>
-                                                        <option value="1002000000">嘉義市</option>
-                                                        <option value="6700000000">臺南市</option>
-                                                        <option value="6400000000">高雄市</option>
-                                                        <option value="1001300000">屏東縣</option>
-                                                        <option value="1001500000">花蓮縣</option>
-                                                        <option value="1001400000">臺東縣</option>
-                                                        <option value="1001600000">澎湖縣</option>
-                                                        <option value="0900700000">連江縣</option>
-                                                        <option value="0902000000">金門縣</option>
-                                                    </select>
-                                                </div>
-                                                <!--end col-xs-4-->
-
-                                                <div class="col-xs-4">
-                                                    <select id="livTownCode" name="strongPoint.livTownCode"
-                                                        class="town form-control"></select>
-                                                </div>
-                                                <!--end col-xs-4-->
-
-                                                <div class="col-xs-4">
-                                                    <select id="livVillCode" name="strongPoint.livVillCode"
-                                                        class="vill form-control"></select>
-                                                </div>
-                                                <!--end col-xs-4-->
-                                                <div class="col-xs-12" style="height:20px;">
-                                                </div>
-                                                <div class="col-xs-2" >
-                                                    <input type="text"  class="form-control zipCode" disabled="disabled">
-                                                </div>
-                                                <div class="col-xs-10" >
-                                                    <input type="text" id="livAddr" name="strongPoint.livAddr" value="" class="form-control " placeholder="請輸入地址" >
-                                                    <input type="hidden" name="strongPoint.allLivAddr" id="allLivAddr" value="" />
-                                                </div>
-                                                
-                                                <div class="col-xs-12" style="height:20px;">
-                                                </div>
-                                            </div>  
-
-                                            
-                                            <!--聯絡人/職稱-->
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>聯絡人</label>
-                                                        <input type="text" name="strongPoint.contactName"
-                                                            class="form-control formText { }">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>聯絡人職稱</label>
-                                                        <input type="text" name="strongPoint.contactJob"
-                                                            class="form-control formText { }">
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <!--聯絡人電話 /手機-->
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>聯絡人電話</label>
-                                                        <input type="text" name="strongPoint.contactTel"
-                                                            class="form-control formText { }">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>聯絡人手機</label>
-                                                        <input type="text" name="strongPoint.contactMobile"
-                                                            class="form-control formText { }">
-                                                    </div>
-
-                                                </div>
-                                            </div>                                          
-
-                                        </div>
-                                        <div class="col-md-6">                                            
-                                            
-                                            <!--類型-->
-                                            <div class="form-group ">
-                                                <label>類型</label>
-                                                
-                                                <div class="funkyradio">
-                                                    <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="0" id="strongPoint.Type0"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
-                                                        <label
-                                                            for="strongPoint.Type0">社區關懷據點</label>
-                                                    </span>
-                                                    <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="1" id="strongPoint.Type1"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
-                                                        <label
-                                                            for="strongPoint.Type1">社區發展協會</label>
-                                                    </span>
-                                                    <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="2" id="strongPoint.Type2"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
-                                                        <label
-                                                            for="strongPoint.Type2">長照C據點</label>
-                                                    </span>
-                                                    <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="3" id="strongPoint.Type3"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
-                                                        <label
-                                                            for="strongPoint.Type3">巷弄長照站</label>
-                                                    </span>
-                                                    <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="4" id="strongPoint.Type4"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
-                                                        <label
-                                                            for="strongPoint.Type4">文化健康站</label>
-                                                    </span>
-                                                    <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="5" id="strongPoint.Type5"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
-                                                        <label
-                                                            for="strongPoint.Type5">綠色照顧站</label>
-                                                    </span>
-                                                    <span class="funkyradio-warning">
-                                                        <input type="checkbox" value="6" id="strongPoint.Type6"
-                                                            name="strongPoint.Type" class="funkyradio-warning" />
-                                                        <label
-                                                            for="strongPoint.Type6">其他</label>
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                            <!--其他類型說明-->
-                                            <div class="form-group ">
-                                                <label>其他類型說明</label>
-                                                <input type="text" name="strongPoint.TypeOther"
-                                                    class="form-control formText {  }" />
-                                            </div>
-                                            
-                                            <!--持續追蹤 /追蹤日期-->                                            
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <!--持續追蹤-->
-                                                    <div class="form-group ">
-                                                        <label>持續追蹤</label>
-                                                        <div class="input-group">
-                                                            <label><input type="radio" value="Y" name="track"
-                                                                    class="iradio" />是</label>
-                                                            <b>&nbsp;&nbsp;</b>
-                                                            
-                                                            <label><input type="radio" value="N" name="track"
-                                                                class="iradio" />否</label>
-                                                            <b>&nbsp;&nbsp;</b>
-                                                            
-                                                        </div>
-                                                    </div><!-- /.input group -->
-                                                </div>
-                                                <div class="col-md-6">                                                    
-                                                    <div class="form-group ">
-                                                        <label>追蹤日期</label>
-                                                        <input type="text" id="customDate" name="track.customDate"
-                                                            class="form-control formText { dateISO: true}" />
-                                                        <script type="text/javascript">
-                                                            addLoadEvent(function () {
-                                                                $('#customDate').datepicker({
-                                                                    format: 'twy-mm-dd',
-                                                                    language: 'zh-TW',
-                                                                    autoclose: true,
-                                                                    todayHighlight: true
-                                                                });
-
-                                                            });
-                                                        </script>
-                                                    </div><!-- /.input group -->
-
-                                                </div>
-                                            </div>
-
-                                            <!--輔導者姓名 /、當區負責營養師姓名-->
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>輔導者姓名</label>
-                                                        <input type="text" name="strongPoint.counselor"
-                                                            class="form-control formText { }">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>當區負責營養師姓名</label>
-                                                        <input type="text" name="strongPoint.nutritionist"
-                                                            class="form-control formText { }">
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            
-
-
-                                        </div><!-- ./col-md-6 -->
-
-                                    </div>
-
-                                    <!-- Main row3 -->
                                     <div class="row">
                                         <h4
                                         style="font-family:'微軟正黑體','Microsoft JhengHei UI';line-height:1;margin-left:13px;color:#0066CC">
@@ -1951,6 +1700,64 @@
 
                                                 <h5>輔導項目</h5>
                                                 <div class="col-md-12">
+                                                    
+                                                <!--持續追蹤 /追蹤日期-->                                            
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <!--持續追蹤-->
+                                                        <div class="form-group ">
+                                                            <label>持續追蹤</label>
+                                                            <div class="input-group">
+                                                                <label><input type="radio" value="Y" name="track"
+                                                                        class="iradio" />是</label>
+                                                                <b>&nbsp;&nbsp;</b>
+                                                                
+                                                                <label><input type="radio" value="N" name="track"
+                                                                    class="iradio" />否</label>
+                                                                <b>&nbsp;&nbsp;</b>
+                                                                
+                                                            </div>
+                                                        </div><!-- /.input group -->
+                                                    </div>
+                                                    <div class="col-md-6">                                                    
+                                                        <div class="form-group ">
+                                                            <label>追蹤日期</label>
+                                                            <input type="text" id="customDate" name="track.customDate"
+                                                                class="form-control formText { dateISO: true}" />
+                                                            <script type="text/javascript">
+                                                                addLoadEvent(function () {
+                                                                    $('#customDate').datepicker({
+                                                                        format: 'twy-mm-dd',
+                                                                        language: 'zh-TW',
+                                                                        autoclose: true,
+                                                                        todayHighlight: true
+                                                                    });
+
+                                                                });
+                                                            </script>
+                                                        </div><!-- /.input group -->
+
+                                                    </div>
+                                                </div>
+
+                                                <!--輔導者姓名 /、當區負責營養師姓名-->
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label>輔導者姓名</label>
+                                                            <input type="text" name="strongPoint.counselor"
+                                                                class="form-control formText { }">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label>當區負責營養師姓名</label>
+                                                            <input type="text" name="strongPoint.nutritionist"
+                                                                class="form-control formText { }">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
 
                                                     <table class="table">
                                                         <tbody>

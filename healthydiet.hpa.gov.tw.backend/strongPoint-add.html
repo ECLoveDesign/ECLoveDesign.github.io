@@ -3,14 +3,18 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>據點及餐廳輔導紀錄表|新增/編輯個案資料資料</title>
+    <title>據點及餐廳輔導紀錄表|新增/編輯點資料資料</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <!-- Include Common CSS -->
     <!-- new style -->
     <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/switchery/switchery.min.css" rel="stylesheet" />
-    <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <!--此段展示用  請勿使用-->
+    <!-- <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <!--此段展示用  請勿使用-->
 
     <!-- Theme style 在css後增加顏色模組資料夾名稱：green/、blue/、blue_b/、blue_w/...-->
     <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/blue_w/core.css" rel="stylesheet" type="text/css">
@@ -80,6 +84,10 @@
 
     <!-- tmhtc Style -->
     <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/tmhtc.css" rel="stylesheet" type="text/css">
+
+    <!-- Community Nutrition Counseling Style -->
+    <link href="css/CNC.css" rel="stylesheet" type="text/css">
+
     <style>
         .form-group .select2-container {
             width: 100% !important;
@@ -735,123 +743,241 @@
                             <div class="page-title-box">
                                 <ol class="breadcrumb pull-right">
                                     <li>據點及餐廳輔導紀錄表</li>
-                                    <li class="active">據點及餐廳輔導紀錄表管理</li>
+                                    <li>據點及餐廳輔導紀錄表管理</li>
+                                    <li>據點歷史紀錄</li>
+                                    <li class="active">新增據點</li>
                                 </ol>
-                                <h4 class="page-title">據點及餐廳輔導紀錄表</h4>
+                                <h4 class="page-title">新增據點</h4>
                             </div>
                         </div>
                     </div>
 
                     <!-- Page Body -->
                     <div class="row">
-                        
                         <div class="col-md-12">
-                            <div class="card-box">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group form-inline">
+                            <form id="inputForm" class="validate" action="result_seminar!save.action" method="post"
+                                enctype="multipart/form-data">
+                                <input type="hidden" name="id" value="" />
+                                <div class="card-box">
 
-                                            <div class="dropdown" style="display: inline;">
-                                                <button type="button" class="btn btn-primary dropdown-toggle"
-                                                    data-toggle="dropdown">
-                                                    <i class="fa fa-plus"></i> 新增 <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="strongPoint-add.html">據點</a></li>
-                                                    <li><a href="restaurant-add.html">餐廳</a></li>
-                                                </ul>
+                                    <!-- Main row -->
+                                    <div class="row">
+                                        <h4
+                                            style="font-family:'微軟正黑體','Microsoft JhengHei UI';line-height:1;margin-left:13px;color:#0066CC">
+                                            社區資訊</h4>
+                                        <div class="col-md-6">
+
+                                            <!--ID/社區名稱-->
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group ">
+                                                        <label>ID</label>
+                                                        <input type="text" name="strongPoint.IDNo"
+                                                            class="form-control formText {      }" value="123456" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="form-group ">
+                                                        <label>社區名稱</label>
+                                                        <input type="text" name="strongPoint.Name"
+                                                            class="form-control formText {      }" value="">
+                                                    </div>
+
+                                                </div>
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary" id="delete_btn">
-                                                <i class="fa fa-trash"></i> 刪除</button>
+                                            
+                                            <!--社區地址-->
+                                            <div class="row">
+                                                <label class="col-xs-12">社區地址</label>
+                                                <br>
+                                                <div class="col-xs-4">
+                                                    <select id="livCityCode" name="strongPoint.livCityCode"
+                                                        class="city form-control">
+                                                        <option value="" selected="selected">請選擇
+                                                        </option>
+                                                        <option value="0900700000">連江縣</option>
+                                                        <option value="1000200000">宜蘭縣</option>
+                                                        <option value="1001700000">基隆市</option>
+                                                        <option value="6500000000">新北市</option>
+                                                        <option value="6300000000">臺北市</option>
+                                                        <option value="6800000000">桃園市</option>
+                                                        <option value="1000400000">新竹縣</option>
+                                                        <option value="1001800000">新竹市</option>
+                                                        <option value="1000500000">苗栗縣</option>
+                                                        <option value="6600000000">臺中市</option>
+                                                        <option value="1000700000">彰化縣</option>
+                                                        <option value="1000800000">南投縣</option>
+                                                        <option value="1000900000">雲林縣</option>
+                                                        <option value="1001000000">嘉義縣</option>
+                                                        <option value="1002000000">嘉義市</option>
+                                                        <option value="6700000000">臺南市</option>
+                                                        <option value="6400000000">高雄市</option>
+                                                        <option value="1001300000">屏東縣</option>
+                                                        <option value="1001500000">花蓮縣</option>
+                                                        <option value="1001400000">臺東縣</option>
+                                                        <option value="1001600000">澎湖縣</option>
+                                                        <option value="0900700000">連江縣</option>
+                                                        <option value="0902000000">金門縣</option>
+                                                    </select>
+                                                </div>
+                                                <!--end col-xs-4-->
 
-                                            <select id="search_year" class="form-control">
-                                                <option value="">年份篩選</option>
-                                                <option value="2021">2021</option>
-                                                <option value="2022">2022</option>
-                                                <option value="2023">2023</option>
-                                                <option value="2024">2024</option>
-                                            </select>
+                                                <div class="col-xs-4">
+                                                    <select id="livTownCode" name="strongPoint.livTownCode"
+                                                        class="town form-control"></select>
+                                                </div>
+                                                <!--end col-xs-4-->
 
-                                            <select id="strongPointType" class="form-control">
-                                                <option value="">所屬推廣中心</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                                <div class="col-xs-4">
+                                                    <select id="livVillCode" name="strongPoint.livVillCode"
+                                                        class="vill form-control"></select>
+                                                </div>
+                                                <!--end col-xs-4-->
+                                                <div class="col-xs-12" style="height:20px;">
+                                                </div>
+                                                <div class="col-xs-2" >
+                                                    <input type="text"  class="form-control zipCode" disabled="disabled">
+                                                </div>
+                                                <div class="col-xs-10" >
+                                                    <input type="text" id="livAddr" name="strongPoint.livAddr" value="" class="form-control " placeholder="請輸入地址" >
+                                                    <input type="hidden" name="strongPoint.allLivAddr" id="allLivAddr" value="" />
+                                                </div>
+                                                
+                                                <div class="col-xs-12" style="height:20px;">
+                                                </div>
+                                            </div>  
 
-                                            <select id="strongPointType" class="form-control">
-                                                <option value="">據點類型</option>
-                                                <option value="社區發展協會">社區發展協會</option>
-                                                <option value="社區發展協會2">社區發展協會2</option>
-                                            </select>
+                                            
+                                            <!--聯絡人/職稱-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>聯絡人</label>
+                                                        <input type="text" name="strongPoint.contactName"
+                                                            class="form-control formText { }">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>聯絡人職稱</label>
+                                                        <input type="text" name="strongPoint.contactJob"
+                                                            class="form-control formText { }">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <!--聯絡人電話 /手機-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>聯絡人電話</label>
+                                                        <input type="text" name="strongPoint.contactTel"
+                                                            class="form-control formText { }">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>聯絡人手機</label>
+                                                        <input type="text" name="strongPoint.contactMobile"
+                                                            class="form-control formText { }">
+                                                    </div>
+
+                                                </div>
+                                            </div>                                          
 
                                         </div>
+                                        <div class="col-md-6">                                            
+                                            
+                                            <!--類型-->
+                                            <div class="form-group ">
+                                                <label>類型</label>
+                                                
+                                                <div class="funkyradio">
+                                                    <span class="funkyradio-warning">
+                                                        <input type="checkbox" value="0" id="strongPoint.Type0"
+                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <label
+                                                            for="strongPoint.Type0">社區關懷據點</label>
+                                                    </span>
+                                                    <span class="funkyradio-warning">
+                                                        <input type="checkbox" value="1" id="strongPoint.Type1"
+                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <label
+                                                            for="strongPoint.Type1">社區發展協會</label>
+                                                    </span>
+                                                    <span class="funkyradio-warning">
+                                                        <input type="checkbox" value="2" id="strongPoint.Type2"
+                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <label
+                                                            for="strongPoint.Type2">長照C據點</label>
+                                                    </span>
+                                                    <span class="funkyradio-warning">
+                                                        <input type="checkbox" value="3" id="strongPoint.Type3"
+                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <label
+                                                            for="strongPoint.Type3">巷弄長照站</label>
+                                                    </span>
+                                                    <span class="funkyradio-warning">
+                                                        <input type="checkbox" value="4" id="strongPoint.Type4"
+                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <label
+                                                            for="strongPoint.Type4">文化健康站</label>
+                                                    </span>
+                                                    <span class="funkyradio-warning">
+                                                        <input type="checkbox" value="5" id="strongPoint.Type5"
+                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <label
+                                                            for="strongPoint.Type5">綠色照顧站</label>
+                                                    </span>
+                                                    <span class="funkyradio-warning">
+                                                        <input type="checkbox" value="6" id="strongPoint.Type6"
+                                                            name="strongPoint.Type" class="funkyradio-warning" />
+                                                        <label
+                                                            for="strongPoint.Type6">其他</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <!--其他類型說明-->
+                                            <div class="form-group ">
+                                                <label>其他類型說明</label>
+                                                <input type="text" name="strongPoint.TypeOther"
+                                                    class="form-control formText {  }" />
+                                            </div>
+                                            
+                                            
+
+
+                                        </div><!-- ./col-md-6 -->
 
                                     </div>
 
-                                    <!-- <div class="col-md-4">
+                                    <!-- ./Main Row End -->
 
-                                        <label>請選擇「營養評估-個案匯入表.xlsx」:</label>
-                                        <input type="file" id="file_upload" name="fileUpload" multiple>
-                                    </div> -->
-                                </div>
 
-                                <div class="row" style="margin-top: 20px;">
-                                    <div class="col-md-12">
-                                        <table id="example1" class="table table-bordered table-striped responsive"
-                                            style="width:100%;">
-                                            <thead>
-                                                <tr>
-                                                    <th><input name="select_all" value="1" type="checkbox"></th>
-                                                    <th>所屬推廣中心</th>
-                                                    <th>名稱</th>
-                                                    <th>類型</th>
-                                                    <th>輔導日期</th>
-                                                    <th>訪視資訊</th>
-                                                    <th>聯絡人／職稱</th>
-                                                    <th>連絡電話／手機</th>
-                                                    <th>操作</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr role="row" class="odd">
-                                                    <td class=" dt-body-center">
-                                                        <input type="checkbox" name="ids" value="1">
-                                                    </td>
-                                                    <td>台北市營養推廣中心(台北市衛生福利局)</td>
-                                                    <td><a href="strongPoint-list.html">社團法人台北市光鹽關懷發展協會(據點)</a></td>
-                                                    <td>社區發展協會</td>
-                                                    <td>2024-12-31</td>
-                                                    <td>初訪</td>
-                                                    <td>陳圈圈／社工</td>
-                                                    <td>無／0912321123</td>
-                                                    <td>
-                                                        <a href="#"> 編輯</a> | <a href="#"
-                                                            onclick="return show_confirm();"> 刪除</a>
-                                                    </td>
-                                                </tr>
-                                                <tr role="row" class="even">
-                                                    <td class=" dt-body-center">
-                                                        <input type="checkbox" name="ids" value="2">
-                                                    </td>
-                                                    <td>台北市營養推廣中心(台北市衛生福利局)</td>
-                                                    <td><a href="restaurant-detail.html">社團法人台北市光鹽關懷發展協會(餐廳)</a></td>
-                                                    <td>社區發展協會</td>
-                                                    <td>2024-12-31</td>
-                                                    <td>初訪</td>
-                                                    <td>陳圈圈／社工</td>
-                                                    <td>無／0912321123</td>
-                                                    <td>
-                                                        <a href="#"> 編輯</a> | <a href="#"
-                                                            onclick="return show_confirm();"> 刪除</a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class="box-footer" style="margin-top: 15px;">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group text-right m-b-0">
+
+                                                    <button type="button" id="save2" class="btn btn-primary"
+                                                        onclick="location.href='list-check-in_guidance.html';">
+                                                        <i class="fa fa-save"></i> 確認送出
+                                                    </button>
+                                                    <button type="button" class="btn btn-default"
+                                                        onclick="window.history.back(); return false;"
+                                                        hidefocus="true" /><i class="fa fa-reply"></i> 返回</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div><!-- ./card-box -->
+
+                                </div><!-- ./card-box -->
+                            </form>
                         </div><!-- ./col-md-12 -->
+
                     </div><!-- ./row -->
 
                 </div><!-- end container -->
@@ -893,14 +1019,11 @@
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/moment/moment.js"></script>
 
     <!-- Counter Up  -->
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/waypoints/lib/jquery.waypoints.js">
-    </script>
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/counterup/jquery.counterup.min.js">
-    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/counterup/jquery.counterup.min.js"></script>
 
     <!-- Sweet Alert  -->
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/sweetalert/dist/sweetalert.min.js">
-    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Sparkline -->
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/jquery-sparkline/jquery.sparkline.min.js">
@@ -922,38 +1045,31 @@
     </script>
 
     <!-- Rating -->
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/bootstrap-rating/bootstrap-rating.js">
-    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/bootstrap-rating/bootstrap-rating.js"></script>
 
     <!-- Slider -->
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/bootstrap-slider/bootstrap-slider.min.js">
     </script>
 
     <!-- DataTables -->
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/jquery.dataTables.min.js">
-    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.bootstrap.min.js">
     </script>
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/buttons.html5.min.js">
-    </script>
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/buttons.print.min.js">
-    </script>
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.buttons.min.js">
-    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/buttons.print.min.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.buttons.min.js"></script>
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/pdfmake.min.js"></script>
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/vfs_fonts.js"></script>
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/jszip.min.js"></script>
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.select.min.js">
-    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.select.min.js"></script>
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/eModal.js"></script>
 
     <!-- DataTables Editor -->
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.editor.min.js">
-    </script>
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/editor.bootstrap.min.js">
-    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/dataTables.editor.min.js"></script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/editor.bootstrap.min.js"></script>
     <!-- <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/editor.foundation.min.js"></script>
 	    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datatables/editor.jqueryui.min.js"></script> -->
+
     <!-- Select2 -->
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/select2/select2.full.js"></script>
 
@@ -964,8 +1080,7 @@
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/ckeditor/ckeditor.js"></script>
 
     <!-- InputMask -->
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/input-mask/jquery.inputmask.js">
-    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/input-mask/jquery.inputmask.js"></script>
     <script
         src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/input-mask/jquery.inputmask.date.extensions.js">
     </script>
@@ -985,16 +1100,13 @@
     <!-- bootstrap time picker -->
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/timepicker/bootstrap-timepicker.min.js">
     </script>
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/daterangepicker/daterangepicker.js">
-    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- datepicker -->
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datepicker/bootstrap-datepicker.js">
-    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/datepicker/bootstrap-datepicker.js"></script>
 
     <!-- fileinput-->
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/fileinput/fileinput.min.js"></script>
-    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/fileinput/fileinput_locale_zh_TW.js">
-    </script>
+    <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/fileinput/fileinput_locale_zh_TW.js"></script>
 
 
     <script src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.core.js"></script>
@@ -1003,18 +1115,14 @@
 
 
     <!-- JQuery 驗證 -->
-    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.form.js">
-    </script>
-    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.metadata.js">
-    </script>
-    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.validate.js">
-    </script>
+    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.form.js"></script>
+    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.validate.js"></script>
     <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.validate.methods.js">
     </script>
     <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.validate.zh-TW.js">
     </script>
-    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.qtip.js">
-    </script>
+    <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/jquery.qtip.js"></script>
     <script type="text/javascript" src="https://healthydiet.hpa.gov.tw/NCAP/page/common/js/base.js"></script>
 
     <script type="text/javascript"
@@ -1046,8 +1154,7 @@
             //alert(url);
             $('ul.list-unstyled a[href="' + url + '"]').parent("li").addClass('active');
             //$('ul.list-unstyled a[href="'+ url +'"]').parent().parent().parent().children("a").addClass('subdrop');
-            $('ul.list-unstyled a[href="' + url + '"]').parent().parent().parent().children("a")
-                .click();
+            $('ul.list-unstyled a[href="' + url + '"]').parent().parent().parent().children("a").click();
 
 
 
@@ -1098,11 +1205,9 @@
             if (id.length == 10) {
                 var s = id.substring(1, 2);
                 if (s == '1') {
-                    $('input:radio[name="patient.caseSexuality"]').filter('[value="10"]').iCheck(
-                        'check');
+                    $('input:radio[name="patient.caseSexuality"]').filter('[value="10"]').iCheck('check');
                 } else if (s == '2') {
-                    $('input:radio[name="patient.caseSexuality"]').filter('[value="20"]').iCheck(
-                        'check');
+                    $('input:radio[name="patient.caseSexuality"]').filter('[value="20"]').iCheck('check');
                 }
 
             }
@@ -1126,6 +1231,36 @@
                     function () {});
             }
         });
+
+        //確認送出-持續追蹤：是
+        $(document).ready(function() {
+            $("#save2").click(function(){
+                eModal.alert({
+                    size: eModal.size.lg,
+                    message: '本輔導紀錄結果需要追蹤，將於 <b class="text-danger">2024/07/26</b> 發送追蹤提醒至 <a href="mailto:aaa@ntp.com.tw">aaa@ntp.com.tw</a>。',
+                    title: '確定送出',
+                    buttons: [
+                        { text: '確定', close: true },
+                    ],
+                })
+            }); 
+        });
+
+        //確認送出-持續追蹤：否
+        $(document).ready(function() {
+            $("#save3").click(function(){
+                eModal.alert({
+                    size: eModal.size.lg,
+                    message: '此輔導紀錄結果已無須持續追蹤，已結案。',
+                    title: '確定送出',
+                    buttons: [
+                        { text: '確定', close: true },
+                    ],
+                })
+            }); 
+        });
+
+
         $('.select2').select2();
 
         //iCheck for checkbox and radio inputs
@@ -1197,7 +1332,7 @@
 
 
 
-        var $el2 = $("#file_upload");
+        var $el2 = $(".file_upload");
         var footerTemplate = '<div class="file-thumbnail-footer">\n' +
             '   <div style="margin:3px 0 8px 0">\n' +
             '   <div class="file-footer-caption" title="{caption}">{caption}{size}</div>\n' +
