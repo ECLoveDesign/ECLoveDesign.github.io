@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>據點及餐廳輔導紀錄表|新增/編輯點資料資料</title>
+    <title>新增/編輯點資料資料|據點及餐廳輔導紀錄表</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
@@ -744,8 +744,8 @@
                                 <ol class="breadcrumb pull-right">
                                     <li>據點及餐廳輔導紀錄表</li>
                                     <li>據點及餐廳輔導紀錄表管理</li>
-                                    <li>據點歷史紀錄</li>
-                                    <li class="active">據點資訊</li>
+                                    <li>社團法人台北市光鹽關懷發展協會</li>
+                                    <li class="active">社團法人台北市光鹽關懷發展協會</li>
                                 </ol>
                                 <h4 class="page-title">社團法人台北市光鹽關懷發展協會</h4>
                             </div>
@@ -1700,6 +1700,111 @@
 
                                                 <h5>輔導項目</h5>
                                                 <div class="col-md-12">
+
+                                                    <!--輔導日期 / 訪視資訊-->
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                                                                      
+                                                            <div class="form-group ">
+                                                                <label>輔導日期</label>
+                                                                <input type="text" id="tutorialDate" name="track.tutorialDate"
+                                                                    class="form-control formText { dateISO: true}" />
+                                                                <script type="text/javascript">
+                                                                    addLoadEvent(function () {
+                                                                        $('#tutorialDate').datepicker({
+                                                                            format: 'twy-mm-dd',
+                                                                            language: 'zh-TW',
+                                                                            autoclose: true,
+                                                                            todayHighlight: true
+                                                                        });
+
+                                                                    });
+                                                                </script>
+                                                            </div><!-- /.input group -->
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <!--訪視資訊-->
+                                                            <div class="form-group" id="visitInfoUnit">
+                                                                <label>訪視資訊</label>
+                                                                <select id="visitInfoUnitSelect"
+                                                                    name="patient.visitInfoUnitSelect" class="form-control">
+                                                                    <option value="0" selected>請選擇</option>
+                                                                    <option value="1">初訪(實體)</option>
+                                                                    <option value="30">追蹤</option>
+                                                                </select>
+                                                            </div>
+                                                            <script>
+                                                                addLoadEvent(function () {
+
+                                                                    $('#visitInfoUnitSelect').on('change',
+                                                                        function () {
+                                                                            var value = $(
+                                                                                "select[name='patient.visitInfoUnitSelect']"
+                                                                            ).val();
+                                                                            if ($.trim(value) != "") {
+                                                                                if (value == '30') {
+                                                                                    $('#visitInfoUnitSelectUnit')
+                                                                                        .fadeIn();
+                                                                                    $('#visitInfoUnitSelectHospital')
+                                                                                        .fadeIn();
+                                                                                    if ($(
+                                                                                            "input[name='patient.visitInfoUnitSelectUnit']"
+                                                                                            )
+                                                                                        .val() == '個案轉介') {
+                                                                                        $("input[name='patient.visitInfoUnitSelectUnit']")
+                                                                                            .val('');
+                                                                                    }
+                                                                                } else {
+                                                                                    $('#visitInfoUnitSelectHospital')
+                                                                                        .fadeOut();
+                                                                                    $('#visitInfoUnitSelectUnit')
+                                                                                        .fadeOut();
+                                                                                    $("input[name='patient.visitInfoUnitSelectUnit']")
+                                                                                        .val('個案轉介').trigger(
+                                                                                            'keyup');
+                                                                                }
+
+                                                                            } else {
+                                                                                $('#visitInfoUnitSelectUnit')
+                                                                                    .fadeIn();
+                                                                            }
+
+                                                                        });
+                                                                    $('#visitInfoUnitSelect').trigger('change');
+                                                                });
+                                                            </script>
+
+
+                                                            <!--個案轉介-->
+                                                            <div class="form-group" id="visitInfoUnitSelectUnit">
+                                                                <label class="sr-only">個案轉介</label>
+                                                                <div class="input-group">
+                                                                    
+                                                                    <label><input type="radio" value="arriveVist" name="visitInfoUnitSelectUnit"
+                                                                        class="iradio" />實體</label>
+                                                                    <b>&nbsp;&nbsp;</b>
+                                                                        
+                                                                    <label><input type="radio" value="telVist" name="visitInfoUnitSelectUnit"
+                                                                        class="iradio" />電訪</label>
+                                                                    <b>&nbsp;&nbsp;</b>
+
+                                                                    <label><input type="radio" value="20" name="visitInfoUnitSelectUnit"
+                                                                            class="iradio" />其他</label>
+                                                                    <b>&nbsp;&nbsp;</b>
+
+                                                                    <div class="form-group" style="display: inline-flex;">
+                                                                        <label class="sr-only">其他</label>
+                                                                        <input type="text" id="referralAgency" placeholder="請填寫轉介機構"
+                                                                        class="form-control required formText { required: true }" />
+                                                                    </div>
+                                                                    <b>&nbsp;&nbsp;</b>
+                                                                    
+                                                                </div>
+                                                            </div><!-- /.input group -->
+
+
+                                                        </div>
+                                                    </div>
                                                     
                                                 <!--持續追蹤 /追蹤日期-->                                            
                                                 <div class="row">
@@ -1758,9 +1863,13 @@
 
                                                     </div>
                                                 </div>
+                                                
 
                                                     <table class="table">
                                                         <tbody>
+                                                            <tr>
+                                                                <th colspan="2" style="background: #505458; color: #fff;">必選輔導項目</th>
+                                                            </tr>
                                                             <tr>
                                                                 <th>餐食營養</th>
                                                                 <td>
@@ -1821,6 +1930,9 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
+                                                                <th colspan="2" style="background: #505458; color: #fff;">勾選輔導項目</th>
+                                                            </tr>
+                                                            <tr>
                                                                 <th width="150">
                                                                     <div class="input-group">
                                                                         <label><input type="checkbox" value="0"
@@ -1837,7 +1949,7 @@
                                                                                 id="strongPoint.coachAitem0"
                                                                                 name="strongPoint.coachAitem"
                                                                                 class="funkyradio-warning" />
-                                                                            <label for="strongPoint.coachAitem0">每月至少 1
+                                                                            <label for="strongPoint.coachAitem0">1. 每月至少 1
                                                                                 次提供包含如全穀及未精製雜糧類、豆魚蛋肉類或蔬菜類 符合容
                                                                                 易咬軟質食或牙齦碎軟質食之餐點，可分散於不同時間提供</label>
                                                                         </div>
@@ -1847,7 +1959,7 @@
                                                                                 name="strongPoint.coachAitem"
                                                                                 class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachAitem1">針對據點內有需求之長者，可提供符
+                                                                                for="strongPoint.coachAitem1">2. 針對據點內有需求之長者，可提供符
                                                                                 合個別化需求之餐點</label>
                                                                         </div>
                                                                     </div>
@@ -1869,43 +1981,43 @@
                                                                             <input type="checkbox" value="0" id="strongPoint.coachBitem0"
                                                                                 name="strongPoint.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem0">食材採購來源</label>
+                                                                                for="strongPoint.coachBitem0">1. 食材採購來源</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="1" id="strongPoint.coachBitem1"
                                                                                 name="strongPoint.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem1">儲存、開封(日期標示)</label>
+                                                                                for="strongPoint.coachBitem1">2. 儲存、開封(日期標示)</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="2" id="strongPoint.coachBitem2"
                                                                                 name="strongPoint.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem2">食材分類存放，保持乾淨</label>
+                                                                                for="strongPoint.coachBitem2">3. 食材分類存放，保持乾淨</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="3" id="strongPoint.coachBitem3"
                                                                                 name="strongPoint.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem3">供餐器具衛生</label>
+                                                                                for="strongPoint.coachBitem3">4. 供餐器具衛生</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="4" id="strongPoint.coachBitem4"
                                                                                 name="strongPoint.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem4">烹調／用餐環境乾淨衛生</label>
+                                                                                for="strongPoint.coachBitem4">5. 烹調／用餐環境乾淨衛生</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="5" id="strongPoint.coachBitem5"
                                                                                 name="strongPoint.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem5">廚餘、垃圾桶加蓋</label>
+                                                                                for="strongPoint.coachBitem5">6. 廚餘、垃圾桶加蓋</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="6" id="strongPoint.coachBitem6"
                                                                                 name="strongPoint.coachBitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachBitem6">其他</label>
+                                                                                for="strongPoint.coachBitem6">7. 其他</label>
                                                                         </span>
                                                                     </div>
                                                                     
@@ -1945,43 +2057,43 @@
                                                                             <input type="checkbox" value="0" id="strongPoint.coachCitem0"
                                                                                 name="strongPoint.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem0">導引及動線標示清楚</label>
+                                                                                for="strongPoint.coachCitem0">1. 導引及動線標示清楚</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="1" id="strongPoint.coachCitem1"
                                                                                 name="strongPoint.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem1">台階有標示警語，有防滑設計</label>
+                                                                                for="strongPoint.coachCitem1">2. 台階有標示警語，有防滑設計</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="2" id="strongPoint.coachCitem2"
                                                                                 name="strongPoint.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem2">張貼洗手海報</label>
+                                                                                for="strongPoint.coachCitem2">3. 張貼洗手海報</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="3" id="strongPoint.coachCitem3"
                                                                                 name="strongPoint.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem3">營養宣導相關海報</label>
+                                                                                for="strongPoint.coachCitem3">4. 營養宣導相關海報</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="4" id="strongPoint.coachCitem4"
                                                                                 name="strongPoint.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem4">餐椅及餐桌高度適當，餐椅有椅背及軟墊</label>
+                                                                                for="strongPoint.coachCitem4">5. 餐椅及餐桌高度適當，餐椅有椅背及軟墊</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="5" id="strongPoint.coachCitem5"
                                                                                 name="strongPoint.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem5">用餐區及空調溫度適當</label>
+                                                                                for="strongPoint.coachCitem5">6. 用餐區及空調溫度適當</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="6" id="strongPoint.coachCitem6"
                                                                                 name="strongPoint.coachCitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachCitem6">其他</label>
+                                                                                for="strongPoint.coachCitem6">7. 其他</label>
                                                                         </span>
                                                                     </div>
                                                                     
@@ -2020,25 +2132,25 @@
                                                                             <input type="checkbox" value="0" id="strongPoint.coachDitem0"
                                                                                 name="strongPoint.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachDitem0">依長者需求，提供去骨、分切的服務</label>
+                                                                                for="strongPoint.coachDitem0">1. 依長者需求，提供去骨、分切的服務</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="1" id="strongPoint.coachDitem1"
                                                                                 name="strongPoint.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachDitem1">服務人員能關懷用餐者</label>
+                                                                                for="strongPoint.coachDitem1">2. 服務人員能關懷用餐者</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="2" id="strongPoint.coachDitem2"
                                                                                 name="strongPoint.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachDitem2">餐點溫熱服務，提供溫水</label>
+                                                                                for="strongPoint.coachDitem2">3. 餐點溫熱服務，提供溫水</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="3" id="strongPoint.coachDitem3"
                                                                                 name="strongPoint.coachDitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachDitem3">其他</label>
+                                                                                for="strongPoint.coachDitem3">4. 其他</label>
                                                                         </span>
                                                                     </div>
 
@@ -2077,13 +2189,13 @@
                                                                             <input type="checkbox" value="0" id="strongPoint.coachEitem0"
                                                                                 name="strongPoint.coachEitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachEitem0">餐具防滑、防燙，安全、易使用</label>
+                                                                                for="strongPoint.coachEitem0">1. 餐具防滑、防燙，安全、易使用</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="1" id="strongPoint.coachEitem1"
                                                                                 name="strongPoint.coachEitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachEitem1">其他</label>
+                                                                                for="strongPoint.coachEitem1">2. 其他</label>
                                                                         </span>
                                                                     </div>
                                                                     
@@ -2122,25 +2234,25 @@
                                                                             <input type="checkbox" value="0" id="strongPoint.coachFitem0"
                                                                                 name="strongPoint.coachFitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachFitem0">用餐器具包裝具開封標示及容易開啟</label>
+                                                                                for="strongPoint.coachFitem0">1. 用餐器具包裝具開封標示及容易開啟</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="1" id="strongPoint.coachFitem1"
                                                                                 name="strongPoint.coachFitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachFitem1">標示衛生安全或質地等級之警語，字體需達 0.5 公分以上</label>
+                                                                                for="strongPoint.coachFitem1">2. 標示衛生安全或質地等級之警語，字體需達 0.5 公分以上</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="2" id="strongPoint.coachFitem2"
                                                                                 name="strongPoint.coachFitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachFitem2">包裝需備有檢驗報告</label>
+                                                                                for="strongPoint.coachFitem2">3. 包裝需備有檢驗報告</label>
                                                                         </span>
                                                                         <span class="funkyradio-warning">
                                                                             <input type="checkbox" value="3" id="strongPoint.coachFitem3"
                                                                                 name="strongPoint.coachFitem" class="funkyradio-warning" />
                                                                             <label
-                                                                                for="strongPoint.coachFitem3">其他</label>
+                                                                                for="strongPoint.coachFitem3">4. 其他</label>
                                                                         </span>
                                                                     </div>
                                                                     

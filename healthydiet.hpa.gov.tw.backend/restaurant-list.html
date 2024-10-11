@@ -3,14 +3,17 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>據點及餐廳輔導紀錄表|餐廳歷史紀錄</title>
+    <title>家常在自助餐|據點及餐廳輔導紀錄表</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <!-- Include Common CSS -->
     <!-- new style -->
     <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/plugins/switchery/switchery.min.css" rel="stylesheet" />
-    <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--此段展示用  請勿使用-->
+    <!-- <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <!--此段展示用  請勿使用-->
 
     <!-- Theme style 在css後增加顏色模組資料夾名稱：green/、blue/、blue_b/、blue_w/...-->
     <link href="https://healthydiet.hpa.gov.tw/NCAP/page/common/css/blue_w/core.css" rel="stylesheet" type="text/css">
@@ -736,9 +739,9 @@
                                 <ol class="breadcrumb pull-right">
                                     <li>據點及餐廳輔導紀錄表</li>
                                     <li>據點及餐廳輔導紀錄表管理</li>
-                                    <li class="active">餐廳歷史紀錄</li>
+                                    <li class="active">家常在自助餐</li>
                                 </ol>
-                                <h4 class="page-title">餐廳歷史紀錄</h4>
+                                <h4 class="page-title">家常在自助餐</h4>
                             </div>
                         </div>
                     </div>
@@ -777,6 +780,18 @@
                                                 <option value="社區發展協會2">社區發展協會2</option>
                                             </select>
 
+                                            <button type="button" class="btn btn-primary" id="import_btn">
+                                                <span class="glyphicon glyphicon-copy"></span> 匯入
+                                            </button>
+
+                                            <button type="button" class="btn btn-primary" id="export_btn">
+                                                <span class="glyphicon glyphicon-paste"></span> 匯出
+                                            </button>
+
+                                            <button type="button" class="btn btn-default"
+                                                    onclick="window.history.back(); return false;"
+                                                    hidefocus="true" /><i class="fa fa-reply"></i> 返回</button>
+
                                         </div>
 
                                     </div>
@@ -802,6 +817,7 @@
                                                     <th>訪視資訊</th>
                                                     <th>聯絡人／職稱</th>
                                                     <th>連絡電話／手機</th>
+                                                    <th>追蹤日期</th>
                                                     <th>操作</th>
                                                 </tr>
                                             </thead>
@@ -810,13 +826,14 @@
                                                     <td class=" dt-body-center">
                                                         <input type="checkbox" name="ids" value="1">
                                                     </td>
-                                                    <td>台北市營養推廣中心(台北市衛生福利局)</td>
-                                                    <td><a href="restaurant-detail.html">社團法人台北市光鹽關懷發展協會(餐廳)</a></td>
-                                                    <td>社區發展協會</td>
+                                                    <td>南投縣營養推廣中心(南投縣政府衛生局)</td>
+                                                    <td><a href="restaurant-detail.html">家常在自助餐</a></td>
+                                                    <td>餐飲業者</td>
                                                     <td>2024-12-31</td>
-                                                    <td>初訪</td>
+                                                    <td>複訪</td>
                                                     <td>陳圈圈／社工</td>
                                                     <td>無／0912321123</td>
+                                                    <td>2024-12-31</td>
                                                     <td>
                                                         <a href="#"> 編輯</a> | <a href="#"
                                                             onclick="return show_confirm();"> 刪除</a>
@@ -826,13 +843,14 @@
                                                     <td class=" dt-body-center">
                                                         <input type="checkbox" name="ids" value="2">
                                                     </td>
-                                                    <td>台北市營養推廣中心(台北市衛生福利局)</td>
-                                                    <td><a href="restaurant-detail.html">社團法人台北市光鹽關懷發展協會(餐廳)</a></td>
-                                                    <td>社區發展協會</td>
-                                                    <td>2024-12-31</td>
+                                                    <td>南投縣營養推廣中心(南投縣政府衛生局)</td>
+                                                    <td><a href="restaurant-detail.html">家常在自助餐</a></td>
+                                                    <td>餐飲業者</td>
+                                                    <td>2024-05-31</td>
                                                     <td>初訪</td>
                                                     <td>陳圈圈／社工</td>
                                                     <td>無／0912321123</td>
+                                                    <td>2024-12-31</td>
                                                     <td>
                                                         <a href="#"> 編輯</a> | <a href="#"
                                                             onclick="return show_confirm();"> 刪除</a>
@@ -842,6 +860,7 @@
                                         </table>
                                     </div>
                                 </div>
+
                             </div><!-- ./card-box -->
                         </div><!-- ./col-md-12 -->
                     </div><!-- ./row -->
