@@ -794,11 +794,11 @@
                                                         <label>每週供餐次數</label>
                                                         <select id="mealsNum" name="strongPoint.mealsNum" class="form-control">
                                                             <option value="0" selected>請選擇</option>
-                                                            <option value="1">1次</option>
+                                                            <option value="1">小於1次</option>
                                                             <option value="2">1-2次</option>
                                                             <option value="3">3-4次</option>
                                                             <option value="4">5-6次</option>
-                                                            <option value="5">6次</option>
+                                                            <option value="5">大於6次</option>
                                                         </select>
                                                     </div><!-- /.input group -->
 
@@ -828,7 +828,7 @@
                                                             <option value="3">11-20人</option>
                                                             <option value="4">21-30人</option>
                                                             <option value="5">31-40人</option>
-                                                            <option value="6">50人</option>
+                                                            <option value="6">大於50人</option>
                                                         </select>
                                                     </div><!-- /.input group -->
 
@@ -935,65 +935,117 @@
                                                     </div>
 
                                                     <!--供餐型式-->
-                                                    <div class="form-group">
+                                                    <div class="form-group" id="pickTypeUnit">
                                                         <label>供餐型式</label>
-                                                        <select id="pickType" name="strongPoint.pickType" class="form-control">
+                                                        <select id="pickTypeUnitSelect"
+                                                            name="patient.pickTypeUnitSelect" class="form-control">
                                                             <option value="0" selected>請選擇</option>
-                                                            <option value="1">桶餐(排隊打菜)</option>
-                                                            <option value="2">每人打好一份</option>
-                                                            <option value="3">環保盤餐盒</option>
-                                                            <option value="4">一次性便當盒</option>
-                                                            <option value="5">桌菜（合菜）</option>
-                                                            <option value="30">其他</option>
+                                                            <option value="1">桶餐（排隊打菜）</option>                                                            
+                                                            <option value="30">每人打好一份</option>
+                                                            <option value="2">桌菜（合菜）</option>
+                                                            <option value="99">其他</option>
                                                         </select>
                                                     </div>
                                                     <script>
                                                         addLoadEvent(function () {
 
-                                                            $('#pickType').on('change',
+                                                            $('#pickTypeUnitSelect').on('change',
                                                                 function () {
                                                                     var value = $(
-                                                                        "select[name='strongPoint.pickType']"
+                                                                        "select[name='patient.pickTypeUnitSelect']"
                                                                     ).val();
                                                                     if ($.trim(value) != "") {
                                                                         if (value == '30') {
-                                                                            $('#pickTypeUnit')
+                                                                            $('#pickTypeUnitSelectUnit')
                                                                                 .fadeIn();
-                                                                            $('#pickTypeHospital')
+                                                                            $('#pickTypeUnitSelectHospital')
                                                                                 .fadeIn();
                                                                             if ($(
-                                                                                    "input[name='strongPoint.pickTypeUnit']"
-                                                                                )
-                                                                                .val() == '無') {
-                                                                                $("input[name='strongPoint.pickTypeUnit']")
+                                                                                    "input[name='patient.pickTypeUnitSelectUnit']"
+                                                                                    )
+                                                                                .val() == '每人打好一份') {
+                                                                                $("input[name='patient.pickTypeUnitSelectUnit']")
                                                                                     .val('');
                                                                             }
                                                                         } else {
-                                                                            $('#pickTypeHospital')
+                                                                            $('#pickTypeUnitSelectHospital')
                                                                                 .fadeOut();
-                                                                            $('#pickTypeUnit')
+                                                                            $('#pickTypeUnitSelectUnit')
                                                                                 .fadeOut();
-                                                                            $("input[name='strongPoint.pickTypeUnit']")
-                                                                                .val('無').trigger(
+                                                                            $("input[name='patient.pickTypeUnitSelectUnit']")
+                                                                                .val('每人打好一份').trigger(
                                                                                     'keyup');
                                                                         }
 
                                                                     } else {
-                                                                        $('#pickTypeUnit')
+                                                                        $('#pickTypeUnitSelectUnit')
                                                                             .fadeIn();
                                                                     }
 
                                                                 });
-                                                            $('#pickType').trigger('change');
+                                                            $('#pickTypeUnitSelect').trigger('change');
                                                         });
                                                     </script>
 
-                                                    <!--其他供餐型式說明-->
-                                                    <div class="form-group" id="pickTypeUnit">
-                                                        <label>其他供餐型式說明</label>
-                                                        <input type="text" name="strongPoint.pickTypeOther"
-                                                            class="form-control formText {  }" />
+                                                    <!--其他-->
+                                                    <div class="form-group" id="pickTypeUnitSelectElse">
+                                                        <input type="text" class="form-control"
+                                                            name="patient.pickTypeUnitSelectElse" value=""
+                                                            length=30>
                                                     </div>
+                                                    <script type="text/javascript">
+                                                        addLoadEvent(function () {
+
+                                                            //增加選擇「其他欄位」的操作功能
+                                                            $('#pickTypeUnitSelect').on('change',
+                                                                function () {
+                                                                    //james 原寫法造成edit時，jquery報錯，把selectValue改為陣列。 					
+                                                                    var selectValue = [$(
+                                                                        "select[name='patient.pickTypeUnitSelect']"
+                                                                    ).val()];
+                                                                    if ($.trim(
+                                                                            selectValue) !=
+                                                                        ""
+                                                                    ) {
+                                                                        $.each(selectValue,
+                                                                            function (
+                                                                                key,
+                                                                                value) {
+                                                                                if (value ==
+                                                                                    '99'
+                                                                                ) {
+                                                                                    $('#pickTypeUnitSelectElse')
+                                                                                        .fadeIn();
+                                                                                } else {
+                                                                                    $('#pickTypeUnitSelectElse')
+                                                                                        .fadeOut();
+                                                                                }
+                                                                            });
+                                                                    } else {
+                                                                        $('#pickTypeUnitSelectElse')
+                                                                            .fadeOut();
+                                                                    }
+
+                                                                });
+
+                                                            $('#pickTypeUnitSelect').trigger(
+                                                                'change');
+
+                                                        });
+                                                    </script>
+
+                                                    <!--每人打好一份-->
+                                                    <div class="form-group" id="pickTypeUnitSelectUnit">
+                                                        <label class="sr-only">每人打好一份</label>
+                                                        <div class="input-group">
+                                                            <label><input type="radio" value="20" name="pickTypeUnitSelectUnit"
+                                                                    class="iradio" />環保盤餐（盒）</label>
+                                                            <b>&nbsp;&nbsp;</b>
+                                                            
+                                                            <label><input type="radio" value="none" name="pickTypeUnitSelectUnit"
+                                                                    class="iradio" />一次性便當盒</label>
+                                                        </div>
+                                                    </div><!-- /.input group -->
 
                                                     <!--打餐方式-->
                                                     <div class="form-group">
@@ -1345,18 +1397,6 @@
                                                                                             name="strongPoint.agefriendlyD"
                                                                                             class="icheckbox" disabled />D4
                                                                                     </label><b>&nbsp;&nbsp;</b>
-                                                                                    <label><input type="checkbox" value="5"
-                                                                                            name="strongPoint.agefriendlyD"
-                                                                                            class="icheckbox" disabled />D5
-                                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                                    <label><input type="checkbox" value="6"
-                                                                                            name="strongPoint.agefriendlyD"
-                                                                                            class="icheckbox" disabled />D6
-                                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                                    <label><input type="checkbox" value="7"
-                                                                                            name="strongPoint.agefriendlyD"
-                                                                                            class="icheckbox" disabled />D7
-                                                                                    </label><b>&nbsp;&nbsp;</b>
                                                                                 </div><!-- /.input group -->
                                                                             </div>
                                                                         </td>
@@ -1376,14 +1416,6 @@
                                                                                     <label><input type="checkbox" value="2"
                                                                                             name="strongPoint.agefriendlyE"
                                                                                             class="icheckbox" disabled />E2
-                                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                                    <label><input type="checkbox" value="3"
-                                                                                            name="strongPoint.agefriendlyE"
-                                                                                            class="icheckbox" disabled />E3
-                                                                                    </label><b>&nbsp;&nbsp;</b>
-                                                                                    <label><input type="checkbox" value="4"
-                                                                                            name="strongPoint.agefriendlyE"
-                                                                                            class="icheckbox" disabled />E4
                                                                                     </label><b>&nbsp;&nbsp;</b>
                                                                                 </div><!-- /.input group -->
                                                                             </div>
@@ -1750,7 +1782,7 @@
                                                                                     if ($(
                                                                                             "input[name='patient.visitInfoUnitSelectUnit']"
                                                                                             )
-                                                                                        .val() == '個案轉介') {
+                                                                                        .val() == '追蹤') {
                                                                                         $("input[name='patient.visitInfoUnitSelectUnit']")
                                                                                             .val('');
                                                                                     }
@@ -1760,7 +1792,7 @@
                                                                                     $('#visitInfoUnitSelectUnit')
                                                                                         .fadeOut();
                                                                                     $("input[name='patient.visitInfoUnitSelectUnit']")
-                                                                                        .val('個案轉介').trigger(
+                                                                                        .val('追蹤').trigger(
                                                                                             'keyup');
                                                                                 }
 
