@@ -1,0 +1,396 @@
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="keywords" content="國軍醫院聯合掛號系統">
+    <meta name="description" content="國軍醫院聯合掛號系統" />
+    <meta property="og:title" content="國軍醫院聯合掛號系統" />
+    <meta property="og:description" content="國軍醫院聯合掛號系統" />
+    <meta property="og:url" content="https://www.google.com.tw/" />
+    <meta property="og:image" content="https://www.google.com.tw//images/og-image.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="國軍醫院聯合掛號系統" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-multiselect/css/bootstrap-multiselect.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>科目掛號 │ 國軍醫院聯合掛號系統</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
+                    <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁" alt="國軍醫院聯合掛號系統首頁">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Nav"
+                    aria-controls="Nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="Nav">
+                    <div class="container">
+                        <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
+                            <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁" alt="國軍醫院聯合掛號系統首頁">
+                        </a>
+                        <ul id="mainNav" class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="subject-01.html" title="科別掛號">科別掛號</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="doctor-01.html" title="醫生掛號">醫生掛號</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="search-01.html" title="掛號查詢/取消">掛號查詢/取消</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="info-grid.html" title="院區資訊">院區資訊</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="topNav">
+                        <div class="container">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="accesskey" href="#U" accesskey="U" name="U" title="上方導覽區 ALT + U">:::</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn-home" href="index.html" title="回首頁">
+                                        回首頁
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn-sitemap" href="sitemap.html" title="網站導覽">
+                                        網站導覽
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn-sitemap" href="sitemap.html" title="國防部軍醫局">
+                                        國防部軍醫局
+                                    </a>
+                                </li>
+                                <li class="nav-item fontset">
+                                    <a href="#" class="nav-link font-s" title="字級調小">小</a>
+                                    <a href="#" class="nav-link font-m" title="字級調中">中</a>
+                                    <a href="#" class="nav-link font-l" title="字級調大">大</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-globe"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                                        <a class="dropdown-item" href="#" title="英文版">English</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item search">
+                                    <a class="nav-link" title="搜尋" data-toggle="collapse" href="#searchBox"
+                                        role="button" aria-expanded="false">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+
+                                    <div class="collapse" id="searchBox">
+                                        <div class="card card-body">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="請輸入關鍵字查詢">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary" type="button"
+                                                        id="btnSearch">全站查詢</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="jumbotron">
+
+                <h1>科別掛號</h1>
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" title="首頁">首頁</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">科別掛號</li>
+                    </ol>
+                </nav>
+
+            </div>
+
+            <div class="main-content">
+
+                <div class="page-header">
+                    <div class="step-wrap">
+                        <ol class="step-cont">
+                            <li class="current">
+                                <a href="javascript:void(0)" title="選擇醫院">
+                                    <span class="icon">1</span>
+                                    <div class="title">選擇醫院</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="選擇科別">
+                                    <span class="icon">2</span>
+                                    <div class="title">選擇科別</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="選擇醫師">
+                                    <span class="icon">3</span>
+                                    <div class="title">選擇醫師</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="填寫資料">
+                                    <span class="icon">4</span>
+                                    <div class="title">填寫資料</div>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+
+                </div>
+
+                <!-- <ul class="nav justify-content-center anchorNav">
+                    <li class="nav-item">
+                      <a class="nav-link btn-anchor" href="#sec1">北部</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link btn-anchor" href="#sec2">中部</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link btn-anchor" href="#sec3">南部</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link btn-anchor" href="#sec4">東部</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link btn-anchor" href="#sec5">離島</a>
+                    </li>
+                </ul> -->
+                
+                <form class="subject-wrap">
+                    
+                    <div class="form-body">
+
+                        <div id="sec1" class="anchorSec form-row">
+                            <div class="col">                               
+                                <fieldset class="form-group row">
+                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">基隆市</label>
+                                    <div class="col-sm-11">
+                                        <div class="form-row">
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="三軍總醫院基隆分院(孝二院區)" id="keelung01">
+                                                <label class="form-check-label" for="keelung01">三軍總醫院基隆分院(孝二院區)</label>
+                                            </div>
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="三軍總醫院基隆分院(正榮院區)" id="keelung02">
+                                                <label class="form-check-label" for="keelung02">三軍總醫院基隆分院(正榮院區)</label>
+                                            </div>                  
+                                        </div>                        
+                                    </div>
+                                </fieldset>
+                                                            
+                                <fieldset class="form-group row">
+                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">台北市</label>
+                                    <div class="col-sm-11">
+                                        <div class="form-row">
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="三軍總醫院(汀州院區)" id="taipei01">
+                                                <label class="form-check-label" for="taipei01">三軍總醫院(汀州院區)</label>
+                                            </div>
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="三軍總醫院(內湖院區)" id="taipei02">
+                                                <label class="form-check-label" for="taipei02">三軍總醫院(內湖院區)</label>
+                                            </div>   
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="三軍總醫院北投分院(院本部)" id="taipei03">
+                                                <label class="form-check-label" for="taipei03">三軍總醫院北投分院(院本部)</label>
+                                            </div>   
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="三軍總醫院北投分院(中和街門診)" id="taipei04">
+                                                <label class="form-check-label" for="taipei04">三軍總醫院北投分院(中和街門診)</label>
+                                            </div> 
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="三軍總醫院松山分院" id="taipei05">
+                                                <label class="form-check-label" for="taipei05">三軍總醫院松山分院</label>
+                                            </div>                    
+                                        </div>                        
+                                    </div>
+                                </fieldset>
+                                                                
+                                <fieldset class="form-group row">
+                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">新竹市</label>
+                                    <div class="col-sm-11">
+                                        <div class="form-row">
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="國軍桃園總醫院新竹分院" id="hsinchu01">
+                                                <label class="form-check-label" for="hsinchu01">國軍桃園總醫院新竹分院</label>
+                                            </div>
+                                        </div>                        
+                                    </div>
+                                </fieldset>
+    
+                            </div>
+                        </div>  
+                        
+                        <div id="sec2" class="anchorSec form-row">
+                            <div class="col">                               
+                                <fieldset class="form-group row">
+                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">台中市</label>
+                                    <div class="col-sm-11">
+                                        <div class="form-row">
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="國軍台中總醫院中清分院" id="taichung01">
+                                                <label class="form-check-label" for="taichung01">國軍台中總醫院中清分院</label>
+                                            </div>
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="國軍臺中總醫院" id="taichung02">
+                                                <label class="form-check-label" for="taichung02">國軍臺中總醫院</label>
+                                            </div>                  
+                                        </div>                        
+                                    </div>
+                                </fieldset>
+    
+                            </div>
+                        </div>  
+                        
+                        <div id="sec3" class="anchorSec form-row">
+                            <div class="col">                               
+                                <fieldset class="form-group row">
+                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">高雄市</label>
+                                    <div class="col-sm-11">
+                                        <div class="form-row">
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="國軍高雄總醫院(總院區、門診部)" id="kaohsiung01">
+                                                <label class="form-check-label" for="kaohsiung01">國軍高雄總醫院(總院區、門診部)</label>
+                                            </div>
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="國軍高雄總醫院岡山分院" id="kaohsiung02">
+                                                <label class="form-check-label" for="kaohsiung02">國軍高雄總醫院岡山分院</label>
+                                            </div>  
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="國軍高雄總醫院左營分院" id="kaohsiung03">
+                                                <label class="form-check-label" for="kaohsiung03">國軍高雄總醫院左營分院</label>
+                                            </div>                   
+                                        </div>                        
+                                    </div>
+                                </fieldset>
+                                                            
+                                <fieldset class="form-group row">
+                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">屏東縣</label>
+                                    <div class="col-sm-11">
+                                        <div class="form-row">
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="國軍高雄總醫院屏東分院" id="pingtung01">
+                                                <label class="form-check-label" for="pingtung01">國軍高雄總醫院屏東分院</label>
+                                            </div>         
+                                        </div>                        
+                                    </div>
+                                </fieldset>
+    
+                            </div>
+                        </div>  
+                        
+                        <div id="sec4" class="anchorSec form-row">
+                            <div class="col">                               
+                                <fieldset class="form-group row">
+                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">花蓮縣</label>
+                                    <div class="col-sm-11">
+                                        <div class="form-row">
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="國軍花蓮總醫院(北埔總院區)" id="hualien01">
+                                                <label class="form-check-label" for="hualien01">國軍花蓮總醫院(北埔總院區)</label>
+                                            </div>
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="國軍花蓮總醫院(進豐門診處)" id="hualien02">
+                                                <label class="form-check-label" for="hualien02">國軍花蓮總醫院(進豐門診處)</label>
+                                            </div>   
+                                            <div class="form-check col-4 pl-4">
+                                                <input class="form-check-input" type="checkbox" value="國軍花蓮總醫院(富世門診中心)" id="hualien03">
+                                                <label class="form-check-label" for="hualien03">國軍花蓮總醫院(富世門診中心)</label>
+                                            </div>                
+                                        </div>                        
+                                    </div>
+                                </fieldset>
+    
+                            </div>
+                        </div>  
+                    </div>
+
+                </form>  
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-back">
+                        <i class="fa fa-angle-left"></i> 上一步
+                    </button>
+                    <button type="button" class="btn btn-next" onclick="window.location.href='subject-02.html';">
+                        <i class="fa fa-angle-right"></i> 下一步
+                    </button>
+                </div>
+
+
+
+            </div>
+            <a class="accesskey" href="#C" accesskey="C" name="C" title="中間主要內容 ALT + C">:::</a>
+
+
+
+        </div>
+
+    </main>
+
+    <footer>
+        <ul class="foot-link">
+            <li>
+                <a href="#" title="網站隱私權政策">網站隱私權政策</a>
+            </li>
+            <li>
+                <a href="#" title="網站安全政策宣告">網站安全政策宣告</a>
+            </li>
+            <li>
+                <a href="#" title="政府網站資料開放宣告">政府網站資料開放宣告</a>
+            </li>
+            <li>
+                <a href="#" title="個資法保護聲明">個資法保護聲明</a>
+            </li>
+        </ul>
+        <div class="copyright">
+            <p>Copyright © 國軍醫院. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="#" class="btn-top" data-toggle="tooltip" data-placement="top" title="回到頁首">
+        <i class="fa fa-angle-up"></i>
+        <span class="d-none">回到頁首</span>
+    </a>
+
+    <script src='js/jquery-3.5.1.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src='assets/bootstrap-multiselect/js/bootstrap-multiselect.min.js'></script>
+    <script src='assets/bootstrap-multiselect/js/i18n/defaults-zh_TW.js'></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js?4"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
