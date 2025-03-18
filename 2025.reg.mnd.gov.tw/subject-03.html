@@ -166,17 +166,114 @@
 
                 </div>
 
-                <div class="booking-wrap">
+                <div class="function-wrap">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <label class="mr-3" for="location">目前選擇醫院</label>
+        
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="location" placeholder="Recipient's username" value="三軍總醫院(汀州院區)">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary btn-choose" type="button">重選醫院</button>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                        
+                            </div>
+                            <div class="form-inline">
+                                    
+                                <div class="form-group mr-3">                                    
+                                    <label class="mr-3" for="subject">選擇科別</label>
+                                    <select class="form-control selectpicker" title="請選擇科別">
+                                        <optgroup label="內科">
+                                            <option value="一般內科">一般內科</option>
+                                            <option value="腸胃內科">腸胃內科</option>
+                                            <option value="心臟內科">心臟內科</option>
+                                            <option value="胸腔內科">胸腔內科</option>
+                                            <option value="神經內科">神經內科</option>
+                                        </optgroup>
+                                        <optgroup label="外科">
+                                            <option value="一般外科" selected>一般外科</option>
+                                            <option value="神經外科">神經外科</option>
+                                            <option value="胸腔外科">胸腔外科</option>
+                                            <option value="整形外科">整形外科</option>
+                                            <option value="直腸外科">直腸外科</option>
+                                            <option value="心臟血管外科">心臟血管外科</option>
+                                        </optgroup>
+                                        <optgroup label="其它專科">
+                                            <option value="家醫科">家醫科</option>
+                                            <option value="感染科">感染科</option>
+                                            <option value="骨科">骨科</option>
+                                            <option value="身心醫學科">身心醫學科</option>
+                                            <option value="復健科">復健科</option>
+                                            <option value="婦產科">婦產科</option>
+                                            <option value="小兒科">小兒科</option>
+                                            <option value="耳鼻喉科">耳鼻喉科</option>
+                                            <option value="眼科">眼科</option>
+                                            <option value="牙科">牙科</option>
+                                            <option value="腎臟科">腎臟科</option>
+                                            <option value="新陳代謝科">新陳代謝科</option>
+                                            <option value="泌尿科">泌尿科</option>
+                                            <option value="血液腫瘤科">血液腫瘤科</option>
+                                            <option value="減肥門診">減肥門診</option>
+                                            <option value="中醫科">中醫科</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                                <div class="form-group mr-3">                
+                                    <label class="mr-3" for="doctor">選擇醫師</label>
+                                    <select class="form-control multiselect-doctor" multiple title="全部醫生">
+                                            <option value="徐國峯">徐國峯</option>
+                                            <option value="陳登偉">陳登偉</option>
+                                            <option value="張浩銘">張浩銘</option>
+                                            <option value="張浩銘">施銘朗</option>                                        
+                                            <option value="廖國秀">廖國秀</option>
+                                            <option value="伍希元">伍希元</option>
+                                            <option value="張子明">張子明</option>
+                                            <option value="許聖德">許聖德</option>
+                                            <option value="謝宗保">謝宗保</option>
+                                            <option value="洪志杰">洪志杰</option>
+                                            <option value="陳正榮">陳正榮</option>
+                                            <option value="梁家銘">梁家銘</option>
+                                            <option value="李定穎">李定穎</option>
+                                            <option value="沈國樑">沈國樑</option>
+                                            <option value="何孟興">何孟興</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">                
+                                    <label class="mr-3" for="doctor">選擇時段</label>
+                                    <select class="form-control selectpicker" title="全部時段">
+                                            <option value="上午">上午</option>
+                                            <option value="下午">下午</option>
+                                            <option value="晚上">晚上</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                     
+
+                </div>
+
+                <div class="booking-wrap">
+
                     <div class="btn btn-back">
                         <i class="fa fa-angle-left"></i> 上一週
                     </div>
 
                     <div class="table-responsive">
-    
-                        <table class="table table-hover bookingTable table-rwd" cellspacing="0" width="100%" 
-                        summary="此為該科別本周醫生可看診列表，第一欄為該醫生看診的時間及院區，第二欄為上午時段，第三欄為下午時段，第四欄為夜間時段">
-                        <caption>該科別本周醫生可看診列表</caption>
+
+                        <table class="table table-hover bookingTable table-rwd" cellspacing="0" width="100%"
+                            summary="此為該科別本周醫生可看診列表，第一欄為該醫生看診的時間及院區，第二欄為上午時段，第三欄為下午時段，第四欄為夜間時段">
+                            <caption>該科別本周醫生可看診列表</caption>
                             <thead>
                                 <tr>
                                     <th width="30">時段</th>
@@ -192,14 +289,18 @@
                             <tbody>
                                 <tr>
                                     <td data-label="時段">
-                                        <span>上午</span> 
-                                        <span>0830</span> 
-                                        <span>~</span> 
+                                        <span>上午</span>
+                                        <span>0830</span>
+                                        <span>~</span>
                                         <span>1200</span>
                                     </td>
                                     <td data-label="03/17(一)">
-
-                                        <a href="register-step3-form.html" title="廖國秀-9:00開始看診">廖國秀<span class="text-danger">9:00開始看診</span></a>
+                                        <div class="card">
+                                            <span class="doctor">廖國秀</span>
+                                            <span class="room">診室128</span>
+                                            <span class="number">預約人數 <em>32</em>人</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                        </div>
 
                                     </td>
                                     <td data-label="03/18(二)"></td>
@@ -211,13 +312,20 @@
                                 </tr>
                                 <tr>
                                     <td data-label="時段">
-                                        <span>上午</span> 
-                                        <span>0830</span> 
-                                        <span>~</span> 
+                                        <span>上午</span>
+                                        <span>0830</span>
+                                        <span>~</span>
                                         <span>1200</span>
                                     </td>
                                     <td data-label="03/17(一)"></td>
-                                    <td data-label="03/18(二)"></td>
+                                    <td data-label="03/18(二)">
+                                        <div class="card">
+                                            <span class="doctor">廖國秀</span>
+                                            <span class="room">診室128</span>
+                                            <span class="number">預約人數 <em>32</em>人</span>
+                                            <a href="#" class="btn btn-dark disabled">請現場掛號</a>
+                                        </div>
+                                    </td>
                                     <td data-label="03/19(三)"></td>
                                     <td data-label="03/20(四)"></td>
                                     <td data-label="03/21(五)"></td>
@@ -226,9 +334,9 @@
                                 </tr>
                                 <tr>
                                     <td data-label="時段">
-                                        <span>上午</span> 
-                                        <span>0830</span> 
-                                        <span>~</span> 
+                                        <span>上午</span>
+                                        <span>0830</span>
+                                        <span>~</span>
                                         <span>1200</span>
                                     </td>
                                     <td data-label="03/17(一)"></td>
@@ -239,7 +347,7 @@
                                     <td data-label="03/22(六)"></td>
                                     <td data-label="03/23(日)"></td>
                                 </tr>
-    
+
                             </tbody>
                         </table>
                     </div>
@@ -248,7 +356,7 @@
                     </div>
 
                 </div>
-                
+
                 <div class="form-actions">
                     <button type="button" class="btn btn-back" onclick="window.location.href='subject-02.html';">
                         <i class="fa fa-angle-left"></i> 上一步
