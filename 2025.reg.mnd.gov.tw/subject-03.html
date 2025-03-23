@@ -42,7 +42,7 @@
                                 <a class="nav-link" href="subject-01.html" title="科別掛號">科別掛號</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="doctor-01.html" title="醫生掛號">醫生掛號</a>
+                                <a class="nav-link" href="doctor-01.html" title="醫師掛號">醫師掛號</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="search-01.html" title="掛號查詢/取消">掛號查詢/取消</a>
@@ -168,22 +168,18 @@
 
                 <div class="function-wrap">
 
-                    <div class="card">
+                    <div class="card bg">
                         <div class="card-body">
+                            
                             <div class="form-inline">
-                                <div class="form-group">
-                                    <label class="mr-3" for="location">目前選擇醫院</label>
-        
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="location" placeholder="Recipient's username" value="三軍總醫院(汀州院區)">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary btn-choose" type="button">重選醫院</button>
-                                        </div>
-                                    </div>
-        
+                                <div class="form-group mb-3">
+                                    <label for="location">目前選擇醫院</label>
+                                    <input type="text" readonly id="location" class="form-control mx-sm-3"
+                                        value="三軍總醫院(汀州院區)">
+                                    <button type="button" class="btn btn-primary btn-choose" onclick="window.location.href='subject-02.html';">重選醫院</button>
                                 </div>
-                        
                             </div>
+
                             <div class="form-inline">
                                     
                                 <div class="form-group mr-3">                                    

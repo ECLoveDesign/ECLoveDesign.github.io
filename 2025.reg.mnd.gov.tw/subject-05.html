@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-multiselect/css/bootstrap-multiselect.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>網站導覽 │ 國軍醫院聯合掛號系統</title>
+    <title>科目掛號 │ 國軍醫院聯合掛號系統</title>
 </head>
 
 <body>
@@ -38,13 +38,13 @@
                             <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁" alt="國軍醫院聯合掛號系統首頁">
                         </a>
                         <ul id="mainNav" class="navbar-nav">
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="subject-01.html" title="科別掛號">科別掛號</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="doctor-01.html" title="醫師掛號">醫師掛號</a>
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="search-01.html" title="掛號查詢/取消">掛號查詢/取消</a>
                             </li>
                             <li class="nav-item">
@@ -121,12 +121,12 @@
 
             <div class="jumbotron">
 
-                <h1>網站導覽</h1>
+                <h1>科別掛號</h1>
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#" title="首頁">首頁</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">網站導覽</li>
+                        <li class="breadcrumb-item active" aria-current="page">科別掛號</li>
                     </ol>
                 </nav>
 
@@ -134,139 +134,115 @@
 
             <div class="main-content">
 
-                <!-- <div class="page-header">
-                    <p>陳○明您好，您的看診資訊如下：</p>
+                <div class="page-header">
+                    <div class="step-wrap">
+                        <ol class="step-cont">
+                            <li class="previous">
+                                <a href="javascript:void(0)" title="選擇醫院">
+                                    <span class="icon">1</span>
+                                    <div class="title">選擇醫院</div>
+                                </a>
+                            </li>
+                            <li class="previous">
+                                <a href="javascript:void(0)" title="選擇科別">
+                                    <span class="icon">2</span>
+                                    <div class="title">選擇科別</div>
+                                </a>
+                            </li>
+                            <li class="previous">
+                                <a href="javascript:void(0)" title="選擇醫師">
+                                    <span class="icon">3</span>
+                                    <div class="title">選擇醫師</div>
+                                </a>
+                            </li>
+                            <li class="current">
+                                <a href="javascript:void(0)" title="填寫資料">
+                                    <span class="icon">4</span>
+                                    <div class="title">填寫資料</div>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
 
-                </div> -->
+                </div>
 
-                <div class="sitemapCont">
-                    <div class="card bg">
-                        <div class="card-body">
-                            <div class="intro">
-                                <p> 本網站依無障礙網頁設計原則建置，網站的主要內容分為三大區塊：
-                                    <br> 1. 上方導覽連結區、2. 中間主要內容區、3. 下方功能區。
-                                </p>
-                                <p>本網站的快速鍵﹝Accesskey﹞設定如下：</p>
+                <div class="booking-page">
+                    
+                    <div class="row"> 
+                        <div class="col-md-12">
 
-                                <ul>
-                                    <li><span class="badge badge-danger">Alt+U</span>
-                                        上方導覽連結區，此區塊列有本網站的主要連結。
-                                    </li>
-                                    <li><span class="badge badge-danger">Alt+C</span>
-                                        中間主要內容區，此區塊呈現各網頁的網頁內容。
-                                        <!-- </li>
-                                    <li><span class="badge badge-danger">Alt+L</span>
-                                                左方相關內容區，此區塊包括本頁的其他相關資訊。
-                                    </li>
-                                    <li><span class="badge badge-danger">Alt+R</span>
-                                                右方相關內容區，此區塊包括本頁的其他相關資訊。
-                                    </li> -->
+                            <div class="success-box text-center">
 
-                                    <li><span class="badge badge-danger">Alt+B</span>
-                                        下方功能區，此區塊包括本站版權等相關資訊。
-                                    </li>
-                                </ul>
+                                <div class="checkmark-circle">
+                                    <div class="background"></div>
+                                    <div class="checkmark draw"></div>
+                                </div>
 
-                                <p>
-                                    ※當本網站項目頁籤無法以滑鼠點選時，您可利用以下鍵盤操作方式瀏覽資料</p>
-                                <p>
-                                    <span class="badge badge-dark"> ← </span>
-                                    <span class="badge badge-dark"> → </span>or
-                                    <span class="badge badge-dark"> ↑ </span>
-                                    <span class="badge badge-dark"> ↓ </span>：按左右鍵或上下鍵移動標籤順序。
-                                </p>
-                                <p>
-                                    <span class="badge badge-dark"> Home </span>or
-                                    <span class="badge badge-dark"> End </span>
-                                    <span class="badge badge-dark"> → </span>：可直接跳至標籤第一項或者最後一項。
-                                </p>
-                                <p>
-                                    <span class="badge badge-dark"> Tab </span>：停留於該標籤後,可利用Tab鍵跳至內容瀏覽該筆資料，遇到radio按鈕時請配合使
-                                    <span class="badge badge-dark"> ← </span>
-                                    <span class="badge badge-dark"> → </span> or
-                                    <span class="badge badge-dark"> ↑ </span>
-                                    <span class="badge badge-dark"> ↓ </span>鍵移動項目順序。
-                                </p>
-                                <p>
-                                    <span class="badge badge-dark"> Tab </span>+ <span class="badge badge-dark"> Shift
-                                    </span>：按
-                                    <span class="badge badge-dark"> Tab </span>+ <span class="badge badge-dark"> Shift
-                                    </span>可往回跳至上一筆資料；
-                                    <br> 當跳回至標籤項目時您可繼續利用
-                                    <span class="badge badge-dark"> ← </span>
-                                    <span class="badge badge-dark"> → </span> or
-                                    <span class="badge badge-dark"> ↑ </span>
-                                    <span class="badge badge-dark"> ↓ </span>鍵移動標籤順序。
-                                </p>
+                                <div class="title">掛號成功</div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-5">
+
+                            <ul>
+                                <li>預約院別：三軍總醫院(汀州院區)</li>
+                                <li>預約日期：2025/03/20(三)</li>
+                                <li>預約時段：上午</li>
+                                <li>預約科別：一般外科</li>
+                                <li>預約醫師：廖國秀</li>
+                                <li>診室：一般外科138診室</li>
+                                <li>預估診號：32</li>
+                            </ul>
+
+                        </div>
+
+                        <div class="col-md-7">
+
+                            <div class="alert alert-primary" role="alert">
+                                <h3>注意事項：</h3>
+                                <p>貼心提醒：請記得提早帶健保卡於診間旁插卡報到，謝謝~<br>
+                                    ※掛COVID19疫苗(莫德納)夜間診者請於晚上八點前報到！</p>
+                            </div>
+
+                            <div class="btn-group row">
+                                <div class="col-sm-6">
+                                    <a href="#" class="btn btn-block btn-outline-dark" title="加入 Google 行事曆">加入 Google 行事曆</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="#" class="btn btn-block btn-outline-dark" title="加入 Yahoo! 行事曆">加入 Yahoo! 行事曆</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="#" class="btn btn-block btn-outline-dark" title="加入 iCal 行事曆">加入 iCal 行事曆</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="#" class="btn btn-block btn-outline-dark" title="加入 Outlook 行事曆">加入 Outlook 行事曆</a>
+                                </div>
                             </div>
 
 
-                            <div class="card">
+                        </div>
 
-                                <h2>網站地圖</h2>
-                                <div class="row">
+                        <div class="col-md-12">
 
-                                    <div class="col-md-6">
-                                        <h3 class="title">
-                                            <a href="subject-01.html" title="科別掛號">1. 科別掛號</a>
-                                        </h3>
-                                        <!-- <ul>
-                                    <li>
-                                        <i class="fa fa-caret-right"></i>
-                                        <a href="#" title="中心簡介">
-                                            1-1. 中心簡介
-                                        </a>
-                                    </li>
-                                </ul> -->
-
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <h3 class="title">
-                                            <a href="doctor-01.html" title="醫生掛號">2. 醫生掛號</a>
-                                        </h3>
-                                        <!-- <ul>
-                                    <li>
-                                        <i class="fa fa-caret-right"></i>
-                                        <a href="#" title="中心簡介">
-                                            1-1. 中心簡介
-                                        </a>
-                                    </li>
-                                </ul> -->
-
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <h3 class="title">
-                                            <a href="search-01.html" title="掛號查詢/取消">3. 掛號查詢/取消</a>
-                                        </h3>
-                                        <!-- <ul>
-                                    <li>
-                                        <i class="fa fa-caret-right"></i>
-                                        <a href="#" title="中心簡介">
-                                            1-1. 中心簡介
-                                        </a>
-                                    </li>
-                                </ul> -->
-
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <h3 class="title">
-                                            <a href="info-grid.html" title="院區資訊">4. 院區資訊</a>
-                                        </h3>
-
-                                    </div>
-
-
+                            <div class="btn-group row">
+                                <div class="col-md-4">
+                                    <a href="#" class="btn btn-block btn-primary" title="列印"><i class="fa fa-print"
+                                            aria-hidden="true"></i> 列印</a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="subject-01.html" class="btn btn-block btn-outline-primary" title="繼續掛號">繼續掛號</a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="index.html" class="btn btn-block btn-outline-primary" title="改約其他人">改約其他人</a>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-
-
-
+                        
+                   
                 </div>
+                
 
             </div>
             <a class="accesskey" href="#C" accesskey="C" name="C" title="中間主要內容 ALT + C">:::</a>

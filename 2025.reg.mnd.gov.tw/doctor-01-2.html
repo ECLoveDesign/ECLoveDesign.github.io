@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-multiselect/css/bootstrap-multiselect.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>科目掛號 │ 國軍醫院聯合掛號系統</title>
+    <title>醫師掛號 │ 國軍醫院聯合掛號系統</title>
 </head>
 
 <body>
@@ -38,11 +38,11 @@
                             <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁" alt="國軍醫院聯合掛號系統首頁">
                         </a>
                         <ul id="mainNav" class="navbar-nav">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="subject-01.html" title="科別掛號">科別掛號</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="doctor-01.html" title="醫生掛號">醫生掛號</a>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="doctor-01.html" title="醫師掛號">醫師掛號</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="search-01.html" title="掛號查詢/取消">掛號查詢/取消</a>
@@ -121,12 +121,12 @@
 
             <div class="jumbotron">
 
-                <h1>科別掛號</h1>
+                <h1>醫師掛號</h1>
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#" title="首頁">首頁</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">科別掛號</li>
+                        <li class="breadcrumb-item active" aria-current="page">醫師掛號</li>
                     </ol>
                 </nav>
 
@@ -137,25 +137,25 @@
                 <div class="page-header">
                     <div class="step-wrap">
                         <ol class="step-cont">
-                            <li class="previous">
-                                <a href="javascript:void(0)" title="選擇醫院">
+                            <li class="current">
+                                <a href="javascript:void(0)" title="選擇醫師">
                                     <span class="icon">1</span>
-                                    <div class="title">選擇醫院</div>
+                                    <div class="title">選擇醫師</div>
                                 </a>
                             </li>
-                            <li class="previous">
+                            <li>
                                 <a href="javascript:void(0)" title="選擇科別">
                                     <span class="icon">2</span>
                                     <div class="title">選擇科別</div>
                                 </a>
                             </li>
-                            <li class="previous">
-                                <a href="javascript:void(0)" title="選擇醫師">
+                            <li>
+                                <a href="javascript:void(0)" title="選擇時間">
                                     <span class="icon">3</span>
-                                    <div class="title">選擇醫師</div>
+                                    <div class="title">選擇時間</div>
                                 </a>
                             </li>
-                            <li class="current">
+                            <li>
                                 <a href="javascript:void(0)" title="填寫資料">
                                     <span class="icon">4</span>
                                     <div class="title">填寫資料</div>
@@ -166,85 +166,110 @@
 
                 </div>
 
-                <div class="booking-page">
-                    
-                    <div class="row"> 
-                        <div class="col-md-12">
+                <div class="doctor-wrap">
 
-                            <div class="success-box text-center">
+                    <div class="form">
+                        <div class="form-group">
+                            <label class="mr-3" for="location">欲查詢的醫事人員</label>
 
-                                <div class="checkmark-circle">
-                                    <div class="background"></div>
-                                    <div class="checkmark draw"></div>
-                                </div>
-
-                                <div class="title">掛號成功</div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-5">
-
-                            <h2>您的掛號資料</h2>
-
-                            <ul>
-                                <li>預約院別：國軍高雄總醫院左營分院</li>
-                                <li>預約日期：2025/03/19(三)</li>
-                                <li>預約時段：上午</li>
-                                <li>預約科別：一般外科</li>
-                                <li>預約醫師：蘇明山</li>
-                                <li>診室：一般外科5診室</li>
-                                <li>診號：32</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="col-md-7">
-
-                            <div class="alert alert-primary" role="alert">
-                                <h3>注意事項：</h3>
-                                <p>貼心提醒：請記得提早帶健保卡於診間旁插卡報到，謝謝~<br>
-                                    ※掛COVID19疫苗(莫德納)夜間診者請於晚上八點前報到！</p>
-                            </div>
-
-                            <div class="btn-group row">
-                                <div class="col-sm-6">
-                                    <a href="#" class="btn btn-block btn-outline-dark" title="加入 Google 行事曆">加入 Google 行事曆</a>
-                                </div>
-                                <div class="col-sm-6">
-                                    <a href="#" class="btn btn-block btn-outline-dark" title="加入 Yahoo! 行事曆">加入 Yahoo! 行事曆</a>
-                                </div>
-                                <div class="col-sm-6">
-                                    <a href="#" class="btn btn-block btn-outline-dark" title="加入 iCal 行事曆">加入 iCal 行事曆</a>
-                                </div>
-                                <div class="col-sm-6">
-                                    <a href="#" class="btn btn-block btn-outline-dark" title="加入 Outlook 行事曆">加入 Outlook 行事曆</a>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="location" value="廖" placeholder="請輸入欲查詢的醫事人員姓名(例：陳)">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary btn-search" type="button">查詢</button>
                                 </div>
                             </div>
 
-
-                        </div>
-
-                        <div class="col-md-12">
-
-                            <div class="btn-group row">
-                                <div class="col-md-4">
-                                    <a href="#" class="btn btn-block btn-primary" title="列印"><i class="fa fa-print"
-                                            aria-hidden="true"></i> 列印</a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="index.html" class="btn btn-block btn-outline-primary" title="繼續掛號">繼續掛號</a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="index.html" class="btn btn-block btn-outline-primary" title="改約其他人">改約其他人</a>
-                                </div>
-                            </div>
                         </div>
 
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-1-5">
+                            <div class="item">
+                                <div class="name">
+                                    <button type="button" class="btn btn-block btn-doctor" onclick="window.location.href='doctor-02.html';">
+                                        廖國秀
+                                    </button>
+                                </div>
+                                <a href="#" class="btn btn-detail" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+
+                            </div>
+                            <div class="info-popup" tabindex="-1">
+                                <div class="name">廖國秀</div>
+                                <div class="tag">一般外科, 乳房外科</div>
+                                <a class="btn btn-link" href="#" target="_blank">醫師介紹</a>
+                                <a class="close" href="#"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
                         
-                   
+
+                        <div class="col-md-1-5">
+                            <div class="item">
+                                <div class="name">
+                                    <button type="button" class="btn btn-block btn-doctor" onclick="window.location.href='doctor-02.html';">
+                                        廖芳藝
+                                    </button>                                    
+                                </div>
+                                <a href="#" class="btn btn-detail" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+
+                            </div>
+                            <div class="info-popup" tabindex="-1">
+                                <div class="name">廖芳藝</div>
+                                <div class="tag">家庭醫學科</div>
+                                <a class="btn btn-link" href="#" target="_blank">醫師介紹</a>
+                                <a class="close" href="#"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1-5">
+                            <div class="item">
+                                <div class="name">
+                                    <button type="button" class="btn btn-block btn-doctor" onclick="window.location.href='doctor-02.html';">
+                                        廖文章
+                                    </button>    
+                                    <!-- <a class="btn btn-doctor" href="#">廖文章</a> -->
+                                </div>
+                                <a href="#" class="btn btn-detail" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+
+                            </div>
+                            <div class="info-popup" tabindex="-1">
+                                <div class="name">廖文章</div>
+                                <div class="tag">皮膚科</div>
+                                <a class="btn btn-link" href="#" target="_blank">醫師介紹</a>
+                                <a class="close" href="#"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-1-5">
+                            <div class="item">
+                                <div class="name">
+                                    <button type="button" class="btn btn-block btn-doctor" onclick="window.location.href='doctor-02.html';">
+                                        廖敏策
+                                    </button> 
+                                </div>
+                                <a href="#" class="btn btn-detail" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+
+                            </div>
+                            <div class="info-popup" tabindex="-1">
+                                <div class="name">廖敏策</div>
+                                <div class="tag">小兒科</div>
+                                <a class="btn btn-link" href="#" target="_blank">醫師介紹</a>
+                                <a class="close" href="#"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-back" onclick="window.location.href='doctor-01.html';">
+                        <i class="fa fa-angle-left"></i> 上一步
+                    </button>
+                    <button type="button" class="btn btn-next" onclick="window.location.href='doctor-02.html';">
+                        <i class="fa fa-angle-right"></i> 下一步
+                    </button>
+                </div>
+
+
 
             </div>
             <a class="accesskey" href="#C" accesskey="C" name="C" title="中間主要內容 ALT + C">:::</a>

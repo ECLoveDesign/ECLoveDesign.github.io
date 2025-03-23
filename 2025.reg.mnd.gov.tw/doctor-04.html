@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-multiselect/css/bootstrap-multiselect.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>掛號查詢/取消 │ 國軍醫院聯合掛號系統</title>
+    <title>醫師掛號 │ 國軍醫院聯合掛號系統</title>
 </head>
 
 <body>
@@ -41,10 +41,10 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="subject-01.html" title="科別掛號">科別掛號</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="doctor-01.html" title="醫師掛號">醫師掛號</a>
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="search-01.html" title="掛號查詢/取消">掛號查詢/取消</a>
                             </li>
                             <li class="nav-item">
@@ -121,12 +121,12 @@
 
             <div class="jumbotron">
 
-                <h1>掛號查詢/取消</h1>
+                <h1>醫師掛號</h1>
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#" title="首頁">首頁</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">掛號查詢/取消</li>
+                        <li class="breadcrumb-item active" aria-current="page">醫師掛號</li>
                     </ol>
                 </nav>
 
@@ -135,14 +135,61 @@
             <div class="main-content">
 
                 <div class="page-header">
-                    <p>請您完成下方填寫資訊，進行掛號查詢/取消!</p>
+                    <div class="step-wrap">
+                        <ol class="step-cont">
+                            <li class="finish">
+                                <a href="javascript:void(0)" title="選擇醫師">
+                                    <span class="icon">1</span>
+                                    <div class="title">選擇醫師</div>
+                                </a>
+                            </li>
+                            <li class="finish">
+                                <a href="javascript:void(0)" title="選擇科別">
+                                    <span class="icon">2</span>
+                                    <div class="title">選擇科別</div>
+                                </a>
+                            </li>
+                            <li class="finish">
+                                <a href="javascript:void(0)" title="選擇時間">
+                                    <span class="icon">3</span>
+                                    <div class="title">選擇時間</div>
+                                </a>
+                            </li>
+                            <li class="current">
+                                <a href="javascript:void(0)" title="填寫資料">
+                                    <span class="icon">4</span>
+                                    <div class="title">填寫資料</div>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
 
                 </div>
 
                 <div class="booking-page">
                     
-                    <div class="row justify-content-center">
-                        <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-5">
+
+                            <!-- <h2>掛號資料</h2> -->
+                             <div class="alert">(尚未完成掛號，請填妥資料)</div>
+                            
+
+                            <ul>
+                                <li>預約院別：三軍總醫院(汀州院區)</li>
+                                <li>預約日期：2025/03/20(三)</li>
+                                <li>預約時段：上午</li>
+                                <li>預約科別：一般外科</li>
+                                <li>預約醫師：廖國秀</li>
+                                <li>診室：一般外科138診室</li>
+                                <li>預估診號：32</li>
+                            </ul>
+
+                            <small class="text-danger notice">(此號為估算，不代表正式掛號可掛到此號)</small>
+
+                        </div>
+
+                        <div class="col-md-7">
 
                             <div class="card">
                                 <div class="card-body">
@@ -441,16 +488,17 @@
                     </div>
                         
                     <div class="form-actions">
-                        <button type="button" class="btn btn-back" onclick="window.location.href='search-02.html';">
-                            清空
+                        <button type="button" class="btn btn-back" onclick="window.location.href='doctor-03.html';">
+                            <i class="fa fa-angle-left"></i> 上一步
                         </button>
-                        <button type="button" class="btn btn-next" onclick="window.location.href='search-02.html';">
+                        <button type="button" class="btn btn-next" onclick="window.location.href='doctor-05.html';">
                             送出
                         </button>
                     </div>
     
                 </div>
                 
+
 
             </div>
             <a class="accesskey" href="#C" accesskey="C" name="C" title="中間主要內容 ALT + C">:::</a>
