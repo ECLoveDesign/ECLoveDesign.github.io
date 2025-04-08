@@ -138,13 +138,13 @@
                     <div class="step-wrap">
                         <ol class="step-cont">
                             <li class="previous">
-                                <a href="javascript:void(0)" title="選擇醫院">
+                                <a href="subject-01.html" title="選擇醫院">
                                     <span class="icon">1</span>
                                     <div class="title">選擇醫院</div>
                                 </a>
                             </li>
                             <li class="previous">
-                                <a href="javascript:void(0)" title="選擇科別">
+                                <a href="subject-02.html" title="選擇科別">
                                     <span class="icon">2</span>
                                     <div class="title">選擇科別</div>
                                 </a>
@@ -267,81 +267,230 @@
 
                     <div class="table-responsive">
 
-                        <table class="table table-hover bookingTable table-rwd" cellspacing="0" width="100%"
+                        <table class="table table-hover bookingTable" cellspacing="0" width="100%"
                             summary="此為該科別本周醫生可看診列表，第一欄為該醫生看診的時間及院區，第二欄為上午時段，第三欄為下午時段，第四欄為夜間時段">
                             <caption>該科別本周醫生可看診列表</caption>
                             <thead>
                                 <tr>
-                                    <th width="30">時段</th>
-                                    <th>03/17<br>(一)</th>
-                                    <th>03/18<br>(二)</th>
-                                    <th>03/19<br>(三)</th>
-                                    <th>03/20<br>(四)</th>
-                                    <th>03/21<br>(五)</th>
-                                    <th>03/22<br>(六)</th>
-                                    <th>03/23<br>(日)</th>
+                                    <th class="time-pc" width="70">時段</th>
+                                    <th>04/21<br>(一)</th>
+                                    <th>04/22<br>(二)</th>
+                                    <th>04/23<br>(三)</th>
+                                    <th>04/24<br>(四)</th>
+                                    <th>04/25<br>(五)</th>
+                                    <th>04/26<br>(六)</th>
+                                    <th>04/27<br>(日)</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr class="time-mb">
+                                    <th colspan="7">上午診 0830 ~ 1200</th>
+                                </tr>
                                 <tr>
-                                    <td data-label="時段">
-                                        <span>上午</span>
+                                    <td class="time-pc" data-label="時段">
+                                        <span>上午診</span>
                                         <span>0830</span>
                                         <span>~</span>
                                         <span>1200</span>
                                     </td>
-                                    <td data-label="03/17(一)">
+                                    <td data-label="04/21(一)">
                                         <div class="card">
-                                            <span class="doctor">廖國秀</span>
-                                            <span class="room">診室128</span>
-                                            <span class="number">預約人數 <em>32</em>人</span>
-                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="text">此時段未有門診</span>
                                         </div>
 
                                     </td>
-                                    <td data-label="03/18(二)"></td>
-                                    <td data-label="03/19(三)"></td>
-                                    <td data-label="03/20(四)"></td>
-                                    <td data-label="03/21(五)"></td>
-                                    <td data-label="03/22(六)"></td>
-                                    <td data-label="03/23(日)"></td>
+                                    <td data-label="04/22(二)">
+                                        <div class="card">
+                                            <span class="doctor">詹德全
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/882" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室215</span>
+                                            <span class="text-danger">癌症熱治療及達文西手術</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="number"><em>26</em> 人預約</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/23(三)">
+                                        <div class="card">
+                                            <span class="doctor">廖國秀
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/888" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室251</span>
+                                            <span class="text-danger">一般外科<br>乳房外科</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="number"><em>41</em> 人預約</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/24(四)">
+                                        <div class="card">
+                                            <span class="doctor">施銘朗
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/884" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室215</span>
+                                            <span class="text-danger">B診時段<br>內分泌(甲狀腺)<br>外科</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="number"><em>7</em> 人預約</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/25(五)">
+                                        <div class="card">
+                                            <span class="doctor">陳登偉
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/880" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室215</span>
+                                            <span class="text-danger">腸胃外科</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="number"><em>12</em> 人預約</span>
+                                        </div>
+                                        <div class="card">
+                                            <span class="doctor">馮安捷
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/4144" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室251</span>
+                                            <span class="text-danger">一般外科<br>乳房外科<br>女性疝氣及腹壁<br>修補</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="number"><em>22</em> 人預約</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/26(六)">
+                                        <div class="card">
+                                            <span class="text">此時段未有門診</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/27(日)">
+                                        <div class="card">
+                                            <span class="text">此時段未有門診</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="time-mb">
+                                    <th colspan="7">下午診 1400 ~ 1700</th>
                                 </tr>
                                 <tr>
-                                    <td data-label="時段">
-                                        <span>上午</span>
-                                        <span>0830</span>
+                                    <td class="time-pc" data-label="時段">
+                                        <span>下午診</span>
+                                        <span>1400</span>
                                         <span>~</span>
-                                        <span>1200</span>
+                                        <span>1700</span>
                                     </td>
-                                    <td data-label="03/17(一)"></td>
-                                    <td data-label="03/18(二)">
+                                    <td data-label="04/21(一)">
                                         <div class="card">
-                                            <span class="doctor">廖國秀</span>
-                                            <span class="room">診室128</span>
-                                            <span class="number">預約人數 <em>32</em>人</span>
+                                            <span class="doctor">張浩銘 
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/887" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室215</span>
+                                            <span class="text-danger">兼肥胖門診及達文西手術</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="number"><em>12</em> 人預約</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/22(二)">
+                                        <div class="card">
+                                            <span class="doctor">蔡雪厂 
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/6664" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室251</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="number"><em>6</em> 人預約</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/23(三)">
+                                        <div class="card">
+                                            <span class="doctor">沈國樑
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/892" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室112</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="number"><em>6</em> 人預約</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/24(四)">                                        
+                                        <div class="card">
+                                            <span class="doctor">何孟興
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/3255" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室215</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="number"><em>6</em> 人預約</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/25(五)">                                   
+                                        <div class="card">
+                                            <span class="doctor">樊修龍
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/889" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室215</span>
+                                            <span class="text-danger">兼細胞治療諮詢門診</span>
+                                            <span class="text-success">休診</span>
                                             <a href="#" class="btn btn-dark disabled">請現場掛號</a>
                                         </div>
                                     </td>
-                                    <td data-label="03/19(三)"></td>
-                                    <td data-label="03/20(四)"></td>
-                                    <td data-label="03/21(五)"></td>
-                                    <td data-label="03/22(六)"></td>
-                                    <td data-label="03/23(日)"></td>
+                                    <td data-label="04/26(六)">
+                                        <div class="card">
+                                            <span class="text">此時段未有門診</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/27(日)">
+                                        <div class="card">
+                                            <span class="text">此時段未有門診</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="time-mb">
+                                    <th colspan="7">晚診 1800 ~ 2000</th>
                                 </tr>
                                 <tr>
-                                    <td data-label="時段">
-                                        <span>上午</span>
-                                        <span>0830</span>
+                                    <td class="time-pc" data-label="時段">
+                                        <span>晚診</span>
+                                        <span>1800</span>
                                         <span>~</span>
-                                        <span>1200</span>
+                                        <span>2000</span>
                                     </td>
-                                    <td data-label="03/17(一)"></td>
-                                    <td data-label="03/18(二)"></td>
-                                    <td data-label="03/19(三)"></td>
-                                    <td data-label="03/20(四)"></td>
-                                    <td data-label="03/21(五)"></td>
-                                    <td data-label="03/22(六)"></td>
-                                    <td data-label="03/23(日)"></td>
+                                    <td data-label="04/21(一)">
+                                        <div class="card">
+                                            <span class="doctor">李定穎
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/3256" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室112</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="number"><em>6</em> 人預約</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/22(二)">
+                                        <div class="card">
+                                            <span class="doctor">陳之凱
+                                                <a href="https://wwwv.tsgh.ndmctsgh.edu.tw/DocDet/191/10203/24975/3256" target="_blank" class="info" data-toggle="tooltip" data-placement="top" title="醫師介紹"><i class="fa fa-info-circle"></i></a>
+                                            </span>
+                                            <span class="room">診室112</span>
+                                            <a href="subject-04.html" class="btn btn-booking">掛號</a>
+                                            <span class="number"><em>6</em> 人預約</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/23(三)">
+                                        <div class="card">
+                                            <span class="text">此時段未有門診</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/24(四)">
+                                        <div class="card">
+                                            <span class="text">此時段未有門診</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/25(五)">
+                                        <div class="card">
+                                            <span class="text">此時段未有門診</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/26(六)">
+                                        <div class="card">
+                                            <span class="text">此時段未有門診</span>
+                                        </div>
+                                    </td>
+                                    <td data-label="04/27(日)">
+                                        <div class="card">
+                                            <span class="text">此時段未有門診</span>
+                                        </div>
+                                    </td>
                                 </tr>
 
                             </tbody>
@@ -358,7 +507,7 @@
                         <i class="fa fa-angle-left"></i> 上一步
                     </button>
                     <button type="button" class="btn btn-next" onclick="window.location.href='subject-04.html';">
-                        <i class="fa fa-angle-right"></i> 下一步
+                        下一步 <i class="fa fa-angle-right"></i>
                     </button>
                 </div>
 
