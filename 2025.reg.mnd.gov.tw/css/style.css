@@ -843,6 +843,7 @@ form .form-check-label {
     height: fit-content;
     border-radius: 20px;
     margin-bottom: 20px;
+    float: left;
 }
 
 .form-check-input {
