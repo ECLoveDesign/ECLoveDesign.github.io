@@ -79,19 +79,15 @@
                                     <a href="#" class="nav-link font-m" title="字級調中">中</a>
                                     <a href="#" class="nav-link font-l" title="字級調大">大</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-globe"></i>
+                                <li class="nav-item language">
+                                    <a class="nav-link btn-sitemap" href="#" title="英文版">
+                                        <i class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="英文版"></i>
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                                        <a class="dropdown-item" href="#" title="英文版">English</a>
-                                    </div>
                                 </li>
                                 <li class="nav-item search">
                                     <a class="nav-link" title="搜尋" data-toggle="collapse" href="#searchBox"
                                         role="button" aria-expanded="false">
-                                        <i class="fa fa-search"></i>
+                                        <i class="fa fa-search" data-toggle="tooltip" data-placement="bottom" title="搜尋"></i>
                                     </a>
 
                                     <div class="collapse" id="searchBox">
@@ -174,13 +170,13 @@
                             <div class="form-inline">
                                 <div class="form-group mb-3">
                                     <label for="doctor">目前選擇醫師</label>
-                                    <input type="text" readonly id="doctor" class="form-control mx-sm-3"
-                                        value="廖國秀">
-                                    <button type="button" class="btn btn-primary btn-choose" onclick="window.location.href='doctor-01.html';">重選醫師</button>
+                                    <input type="text" readonly id="doctor" class="form-control mx-sm-3" value="廖國秀">
+                                    <button type="button" class="btn btn-primary btn-choose"
+                                        onclick="window.location.href='doctor-01.html';">重選醫師</button>
                                 </div>
                             </div>
 
-                            <div class="form-inline">
+                            <!-- <div class="form-inline">
                                 <div class="form-group">
                                     <label for="hospital">選擇就診醫院</label>
                                     <select class="mx-sm-3 selectpicker" title="請選擇就診醫院">
@@ -188,8 +184,17 @@
                                         <option value="三軍總醫院(汀州院區)">三軍總醫院(汀州院區)</option>
                                     </select>
                                 </div>
-                            </div>
-                            
+                            </div> -->
+
+                            <ul class="location-wrap nav justify-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="doctor-03.html">三軍總醫院(內湖院區)</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="doctor-03.html">三軍總醫院(汀州院區)</a>
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
 

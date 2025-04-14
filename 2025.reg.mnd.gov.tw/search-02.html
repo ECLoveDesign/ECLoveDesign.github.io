@@ -79,19 +79,15 @@
                                     <a href="#" class="nav-link font-m" title="字級調中">中</a>
                                     <a href="#" class="nav-link font-l" title="字級調大">大</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-globe"></i>
+                                <li class="nav-item language">
+                                    <a class="nav-link btn-sitemap" href="#" title="英文版">
+                                        <i class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="英文版"></i>
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                                        <a class="dropdown-item" href="#" title="英文版">English</a>
-                                    </div>
                                 </li>
                                 <li class="nav-item search">
                                     <a class="nav-link" title="搜尋" data-toggle="collapse" href="#searchBox"
                                         role="button" aria-expanded="false">
-                                        <i class="fa fa-search"></i>
+                                        <i class="fa fa-search" data-toggle="tooltip" data-placement="bottom" title="搜尋"></i>
                                     </a>
 
                                     <div class="collapse" id="searchBox">
@@ -142,7 +138,7 @@
                 <div class="booking-wrap">
 
                     <div class="table-responsive">
-                        <table class="table table-rwd" cellspacing="0" width="100%" 
+                        <table class="table table-rwd" id="printTable" border="1" cellspacing="0" width="100%" 
                             summary="此為掛號紀錄，第一欄為掛號的院區名稱，第二欄為掛號看診日期，第三欄為掛號看診時段，第四欄為掛號科別，第五欄為掛號醫師，第六欄為看診之診室，第七欄為就診號">
                             <caption>掛號紀錄</caption>
                             <thead>
@@ -160,12 +156,12 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <span class="hospital">三軍總醫院(內湖院區、汀州院區)</td></span>
+                                        <span class="hospital">三軍總醫院(汀州院區)</td></span>
                                     <td>
-                                        <span class="date">2022/08/16 (二)</span>
+                                        <span class="date">2025/04/24(三)</span>
                                     </td>
                                     <td>
-                                        <span class="period">下午</span>
+                                        <span class="period">上午</span>
                                     </td>
                                     <td>
                                         <span class="type">一般外科</span>
@@ -174,37 +170,10 @@
                                         <span class="doctor">廖國秀</span>
                                     </td>
                                     <td>
-                                        <span class="room">診室138 (內湖院區)</span>
+                                        <span class="room">一般外科138診室</span>
                                     </td>
                                     <td>
-                                        <span class="number">22</span>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-block btn-danger btn-cancel"
-                                            data-toggle="modal" data-target="#cancelNotice">我要取消
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="hospital">三軍總醫院(內湖院區、汀州院區)</td></span>
-                                    <td>
-                                        <span class="date">2022/08/20 (六)</span>
-                                    </td>
-                                    <td>
-                                        <span class="period">下午</span>
-                                    </td>
-                                    <td>
-                                        <span class="type">一般外科</span>
-                                    </td>
-                                    <td>
-                                        <span class="doctor">施銘朗</span>
-                                    </td>
-                                    <td>
-                                        <span class="room">診室138 (內湖院區)</span>
-                                    </td>
-                                    <td>
-                                        <span class="number">46</span>
+                                        <span class="number">32</span>
                                     </td>
                                     <td>
                                         <button type="button" class="btn btn-block btn-danger btn-cancel"
@@ -220,13 +189,13 @@
                 
                 <div class="btn-group row">
                     <div class="col-md-4">
-                        <a href="#" class="btn btn-block btn-primary" title="列印"><i class="fa fa-print" aria-hidden="true"></i> 列印</a>
+                        <button type="button" class="btn btn-block btn-primary btn-print" title="列印"><i class="fa fa-print" aria-hidden="true"></i> 列印</button>
                     </div>
                     <div class="col-md-4">
                         <a href="index.html" class="btn btn-block btn-outline-primary" title="繼續掛號">繼續掛號</a>
                     </div>
                     <div class="col-md-4">
-                        <a href="index.html" class="btn btn-block btn-outline-primary" title="改約其他人">改約其他人</a>
+                        <a href="index.html" class="btn btn-block btn-outline-primary" title="回首頁">回首頁</a>
                     </div>
                 </div>
 
@@ -273,7 +242,17 @@
     <script src="js/swiper.min.js"></script>
     <script src="js/script.js?4"></script>
     <script>
+        function printData(){
+            var divToPrint=document.getElementById("printTable");
+            newWin= window.open("");
+            newWin.document.write(divToPrint.outerHTML);
+            newWin.print();
+            newWin.close();
+        }
 
+        $('.btn-print').on('click',function(){
+            printData();
+        })
     </script>
 </body>
 
