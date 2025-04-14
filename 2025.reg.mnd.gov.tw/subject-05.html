@@ -80,8 +80,9 @@
                                     <a href="#" class="nav-link font-l" title="字級調大">大</a>
                                 </li>
                                 <li class="nav-item language">
-                                    <a class="nav-link btn-sitemap" href="#" title="英文版">
-                                        <i class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="英文版"></i>
+                                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-globe"></i>
+                                        <span class="sr-only">英文版</span>
                                     </a>
                                 </li>
                                 <li class="nav-item search">
@@ -93,12 +94,12 @@
                                     <div class="collapse" id="searchBox">
                                         <div class="card card-body">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="請輸入關鍵字查詢">
+                                                <label for="siteSearch" class="sr-only">全站搜尋</label>
+                                                <input id="siteSearch" type="text" class="form-control" placeholder="請輸入關鍵字查詢">
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-primary" type="button"
-                                                        id="btnSearch">全站查詢</button>
+                                                  <button class="btn btn-primary" type="button" id="btnSearch">全站查詢</button>
                                                 </div>
-                                            </div>
+                                            </div> 
                                         </div>
                                     </div>
                         </div>

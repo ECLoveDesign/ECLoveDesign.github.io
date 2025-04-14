@@ -80,8 +80,9 @@
                                     <a href="#" class="nav-link font-l" title="字級調大">大</a>
                                 </li>
                                 <li class="nav-item language">
-                                    <a class="nav-link btn-sitemap" href="#" title="英文版">
-                                        <i class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="英文版"></i>
+                                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-globe"></i>
+                                        <span class="sr-only">英文版</span>
                                     </a>
                                 </li>
                                 <li class="nav-item search">
@@ -93,12 +94,12 @@
                                     <div class="collapse" id="searchBox">
                                         <div class="card card-body">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="請輸入關鍵字查詢">
+                                                <label for="siteSearch" class="sr-only">全站搜尋</label>
+                                                <input id="siteSearch" type="text" class="form-control" placeholder="請輸入關鍵字查詢">
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-primary" type="button"
-                                                        id="btnSearch">全站查詢</button>
+                                                  <button class="btn btn-primary" type="button" id="btnSearch">全站查詢</button>
                                                 </div>
-                                            </div>
+                                            </div> 
                                         </div>
                                     </div>
                         </div>
@@ -187,7 +188,9 @@
                         <div id="sec1" class="anchorSec form-row">
                             <div class="col">                               
                                 <fieldset class="form-group row">
-                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">基隆市</label>
+                                    <div class="col-sm-1 p-0">
+                                        <legend class="col-form-label col-form-label-sm">基隆市</legend>
+                                    </div>
                                     <div class="col-sm-11">
                                         <div class="form-row">
                                             <div class="form-check col-lg-4 pl-lg-4">
@@ -203,7 +206,9 @@
                                 </fieldset>
                                                             
                                 <fieldset class="form-group row">
-                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">台北市</label>
+                                    <div class="col-sm-1 p-0">
+                                        <legend class="col-form-label col-form-label-sm">台北市</legend>
+                                    </div>
                                     <div class="col-sm-11">
                                         <div class="form-row">
                                             <div class="form-check col-lg-4 pl-lg-4">
@@ -231,7 +236,9 @@
                                 </fieldset>
                                                                 
                                 <fieldset class="form-group row">
-                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">新竹市</label>
+                                    <div class="col-sm-1 p-0">
+                                        <legend class="col-form-label col-form-label-sm">新竹市</legend>
+                                    </div>
                                     <div class="col-sm-11">
                                         <div class="form-row">
                                             <div class="form-check col-lg-4 pl-lg-4">
@@ -248,7 +255,9 @@
                         <div id="sec2" class="anchorSec form-row">
                             <div class="col">                               
                                 <fieldset class="form-group row">
-                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">台中市</label>
+                                    <div class="col-sm-1 p-0">
+                                        <legend class="col-form-label col-form-label-sm">台中市</legend>
+                                    </div>
                                     <div class="col-sm-11">
                                         <div class="form-row">
                                             <div class="form-check col-lg-4 pl-lg-4">
@@ -269,7 +278,9 @@
                         <div id="sec3" class="anchorSec form-row">
                             <div class="col">                               
                                 <fieldset class="form-group row">
-                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">高雄市</label>
+                                    <div class="col-sm-1 p-0">
+                                        <legend class="col-form-label col-form-label-sm">高雄市</legend>
+                                    </div>
                                     <div class="col-sm-11">
                                         <div class="form-row">
                                             <div class="form-check col-lg-4 pl-lg-4">
@@ -289,7 +300,9 @@
                                 </fieldset>
                                                             
                                 <fieldset class="form-group row">
-                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">屏東縣</label>
+                                    <div class="col-sm-1 p-0">
+                                        <legend class="col-form-label col-form-label-sm">屏東縣</legend>
+                                    </div>
                                     <div class="col-sm-11">
                                         <div class="form-row">
                                             <div class="form-check col-lg-4 pl-lg-4">
@@ -306,7 +319,9 @@
                         <div id="sec4" class="anchorSec form-row">
                             <div class="col">                               
                                 <fieldset class="form-group row">
-                                    <label for="area" class="col-sm-1 col-form-label col-form-label-sm">花蓮縣</label>
+                                    <div class="col-sm-1 p-0">
+                                        <legend class="col-form-label col-form-label-sm">花蓮縣</legend>
+                                    </div>                                    
                                     <div class="col-sm-11">
                                         <div class="form-row">
                                             <div class="form-check col-lg-4 pl-lg-4">
