@@ -879,7 +879,12 @@ form .form-check-label {
 .btn-next:not(.disabled):hover {
     background: #ff9d00;
 }
-
+@media (max-width:575px) {
+    .subject-wrap .col-form-label {
+        float: none;
+        display: block;
+    }
+}
 /* doctor-wrap */
 .doctor-wrap {
     padding: 30px 40px;
