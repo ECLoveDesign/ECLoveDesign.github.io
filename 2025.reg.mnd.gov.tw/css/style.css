@@ -1079,9 +1079,10 @@ form .form-check-label {
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 1.5rem;
-    border-color: var(--normalBlue);
+    /* border-color: var(--normalBlue); */
     color: var(--normalBlue);
     padding: 1rem;
+    background: #dff6ff;
 }
 
 .subject-list .btn-type:hover {
