@@ -139,9 +139,9 @@ header .navbar>.container {
     margin: 0 auto;
 }
 
-header .navbar img {
+/* header .navbar img {
     width: 286px;
-}
+} */
 
 .topNav {}
 
@@ -165,6 +165,7 @@ header .navbar img {
     content: '│';
     display: flex;
     align-items: center;
+    color: #000;
 }
 
 .topNav .navbar-nav .nav-link {
@@ -198,10 +199,10 @@ header .navbar img {
     color: #fff;
 }
 
-.navbar-brand img {
+/* .navbar-brand img {
     max-width: 100%;
     width: 340px;
-}
+} */
 
 .topNav .nav-item.language .nav-link,
 .topNav .nav-item.search .nav-link,
@@ -237,11 +238,44 @@ header .navbar img {
         margin-top: 0;
     }
 }
-
+@media (max-width:991px) {
+    .topNav .nav-item.search .nav-link+div {
+        width: 100vw;
+        display: block;
+        top: inherit;
+        position: fixed;
+        left: 0;
+        margin-top: 40px;
+        opacity: 0;
+    }
+    .topNav .nav-item.search .nav-link+div.show {
+        opacity: 1;
+        z-index: 1;
+    }
+}
 @media (max-width: 767px) {
+    .topNav .navbar-nav {
+        text-align: center;
+    }
     .topNav.dropdown:hover .dropdown-menu {
         display: none;
         margin-top: auto;
+    }
+    .topNav .navbar-nav {
+        display: block;
+    }
+    .topNav .navbar-nav li {
+        justify-content: center;        
+        display: inline-flex;
+    }
+    .topNav .navbar-nav li.language,    
+    .topNav .navbar-nav li.search {
+
+    }
+    .topNav .navbar-nav li.language .nav-link,    
+    .topNav .navbar-nav li.search .nav-link {
+        border-radius: 10px;
+        padding: 0 0 0 10px;
     }
 }
 
@@ -284,12 +318,11 @@ header .navbar img {
         width: 100%;
     }
 }
-
-@media (max-width:540px) {
+/* @media (max-width:540px) {
     header .navbar img {
         width: 65vw;
     }
-}
+} */
 
 header .collapse .navbar-expand-lg .navbar-nav {
     -ms-flex-pack: justify !important;
@@ -313,6 +346,30 @@ header .navbar-brand+.navbar-nav .nav-item {
 
 header .navbar-brand+.navbar-nav {
     padding: 0.75rem 0;
+}
+header .navbar img.logo {
+    width: 80px;
+    height: fit-content;
+}
+
+header .navbar-brand {
+    display: flex;
+}
+header .navbar-brand .text {
+    padding-left: 10px;    
+    margin-top: 2px;
+}
+header .navbar-brand .text span {
+    display: block;
+}
+header .navbar-brand .text .title {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+header .navbar-brand .text .title-en {
+    font-size: .8rem;
+    color: #2b78b5;    
+    margin-top: -5px;
 }
 
 #mainNav {
@@ -395,7 +452,15 @@ header .navbar-brand+.navbar-nav {
 
 @media (max-width:991px) {
     header>nav>.container>.navbar-brand {
-        display: block;
+        display: flex;        
+        align-items: center;
+    }
+    header .navbar img.logo {
+        width: 60px;
+    }
+        
+    header>nav>.container>.navbar-brand .text {
+        margin-top: -2px;
     }
 
     .navbar-collapse .navbar-brand {
@@ -423,6 +488,25 @@ header .navbar-brand+.navbar-nav {
         width: 100%;
         flex-direction: row;
         justify-content: center;
+    }
+}
+@media (max-width:768px) {
+    .topNav {
+        padding: 0 0 20px;
+    }
+}
+@media (max-width:414px) {
+    header>nav>.container>.navbar-brand .text {
+        margin-top: 2px;
+    }
+    header .navbar-brand .text .title {
+        font-size: 1.2rem;
+    }
+    header .navbar-brand .text .title-en {
+        font-size: .7rem;
+    }
+    header .navbar img.logo {
+        width: 42px;
     }
 }
 
@@ -707,7 +791,11 @@ body:not(.index) main>.container>.searchArea.affix>* {
 body:not(.index) main>.container>.searchArea.affix>*+* {
     margin-top: 20px;
 }
-
+@media (max-width:768px) {
+    .accesskey {
+        display: none;
+    }
+}
 body {}
 
 main {
@@ -2059,7 +2147,19 @@ footer {
 .infoTable td {
     font-size: 1.1rem;
 }
-
+.infoTable td a {
+    display: block;
+}
+.infoTable td a+a {
+    margin-top: 10px;
+}
+.infoTable td .btn {
+    border: #000 solid 1px;
+}
+.infoTable td .btn:hover {
+    background: #000;
+    color: #fff;
+}
 .infoTable tbody tr:nth-child(odd) {
     background: #f4f9ff;
 }
@@ -2144,6 +2244,9 @@ footer {
     line-height: 2rem;
 }
 
+.infoTable td a:hover i[class*="fa"] {
+    color: #fff;
+}
 a[href$="javascript:void(0)"] {
     cursor: auto;
 }
@@ -2367,7 +2470,8 @@ tr.dt-rowReorder-moving td.dtfc-fixed-right:last-child {
         display: block;
         width: 100%;
         position: relative;
-        padding-left: 38%;
+        padding-left: 38%;        
+        border-top: 1px solid #ffffff;
     }
 
     .table-rwd tr td:before {
@@ -2388,6 +2492,7 @@ tr.dt-rowReorder-moving td.dtfc-fixed-right:last-child {
 
     .table-rwd tr:nth-child(even) td:before {
         background: #005391;
+        color: #fff;
     }
 
     .dataTables_wrapper .table-rwd tr td:nth-child(1):before {
@@ -2398,80 +2503,9 @@ tr.dt-rowReorder-moving td.dtfc-fixed-right:last-child {
         content: attr(data-label);
     }
 
-
-    .table-rwd.infoTable tr td:nth-child(1):before {
-        content: "日期 / 院區";
+    .table-rwd.infoTable tr td:before {
+        content: attr(data-label);
     }
-
-    .table-rwd.infoTable tr td:nth-child(2):before {
-        content: "上午";
-    }
-
-    .table-rwd.infoTable tr td:nth-child(3):before {
-        content: "下午";
-    }
-
-    .table-rwd.infoTable tr td:nth-child(4):before {
-        content: "夜間";
-    }
-
-    .table-rwd.doctorTable tr td:nth-child(1):before {
-        content: "醫師";
-    }
-
-    .table-rwd.doctorTable tr td:nth-child(2):before {
-        content: "服務院區-科別";
-    }
-
-    .table-rwd.doctorTable tr td:nth-child(3):before {
-        content: "掛號";
-    }
-
-    .table-rwd.linkTable tr td:nth-child(1):before {
-        content: "院區";
-    }
-
-    .table-rwd.linkTable tr td:nth-child(2):before {
-        content: "地址 / 電話";
-    }
-
-    .table-rwd.linkTable tr td:nth-child(3):before {
-        content: "門診時間表";
-    }
-
-
-    .table-rwd.detailTable tr td:nth-child(1):before {
-        content: "院區";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(2):before {
-        content: "看診日期";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(3):before {
-        content: "時段";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(4):before {
-        content: "科別";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(5):before {
-        content: "醫師";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(6):before {
-        content: "診室";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(7):before {
-        content: "就診號";
-    }
-
-    .table-rwd.detailTable tr td:nth-child(8):before {
-        content: "";
-    }
-
     .table-rwd tr+tr {
         border-top: 10px solid #f3f8fa;
     }

@@ -26,7 +26,11 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
-                    <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁" alt="國軍醫院聯合掛號系統首頁">
+                    <img class="logo" src="images/logo.png" title="國軍醫院聯合掛號系統首頁" alt="國軍醫院聯合掛號系統首頁">
+                    <div class="text">
+                        <span class="title">國軍醫院聯合掛號系統</span>
+                        <span class="title-en">General Hospital Registration system</span>
+                    </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Nav"
                     aria-controls="Nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +39,11 @@
                 <div class="collapse navbar-collapse" id="Nav">
                     <div class="container">
                         <a class="navbar-brand" href="index.html" title="國軍醫院聯合掛號系統首頁">
-                            <img src="images/logo.png" title="國軍醫院聯合掛號系統首頁" alt="國軍醫院聯合掛號系統首頁">
+                            <img class="logo" src="images/logo.png" title="國軍醫院聯合掛號系統首頁" alt="國軍醫院聯合掛號系統首頁">
+                            <div class="text">
+                                <span class="title">國軍醫院聯合掛號系統</span>
+                                <span class="title-en">General Hospital Registration system</span>
+                            </div>
                         </a>
                         <ul id="mainNav" class="navbar-nav">
                             <li class="nav-item">
@@ -82,13 +90,13 @@
                                 <li class="nav-item language">
                                     <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fa fa-globe"></i>
-                                        <span class="sr-only">英文版</span>
+                                        <span class="d-md-none">英文版</span>
                                     </a>
                                 </li>
                                 <li class="nav-item search">
                                     <a class="nav-link" title="搜尋" data-toggle="collapse" href="#searchBox" role="button" aria-expanded="false">
                                         <i class="fa fa-search"></i>
-                                        <span class="sr-only">搜尋</span>
+                                        <span class="d-md-none">搜尋</span>
                                     </a>
 
                                     <div class="collapse" id="searchBox">
@@ -164,20 +172,20 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">0</span>北部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="三軍總醫院(內湖院區)">
                                     </td>
-                                    <td>三軍總醫院(內湖院區)</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">三軍總醫院(內湖院區)</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/YTxCjcpMdffy5fMG7" target="_blank">114202臺北市內湖區成功路二段325號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:02 8792 3311">02-2361-7511-140</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://www.tsgh.ndmctsgh.edu.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -190,20 +198,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">0</span>北部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="三軍總醫院(汀州院區)">
                                     </td>
-                                    <td>三軍總醫院(汀州院區)</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">三軍總醫院(汀州院區)</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/YTxCjcpMdffy5fMG7" target="_blank">100050 臺北市中正區汀州路三段40號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:02 8792 3311">02-2361-7511-140</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://www.tsgh.ndmctsgh.edu.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -216,20 +224,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">0</span>北部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="三軍總醫院北投分院(院本部)">
                                     </td>
-                                    <td>三軍總醫院北投分院(院本部)</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">三軍總醫院北投分院(院本部)</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/3myvgcaFts4NumN68">112003 臺北市北投區新民路60號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:02 8295 9808">(02)8295-9808</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://beitou.tsgh.ndmctsgh.edu.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -242,20 +250,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">0</span>北部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="三軍總醫院北投分院(山下門診部)">
                                     </td>
-                                    <td>三軍總醫院北投分院(山下門診部)</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">三軍總醫院北投分院(山下門診部)</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/V3J9zc4ZfqzRukyV9">112011 台北市北投區中和街250號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:02 2895 0020">(02)2895-0020</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://beitou.tsgh.ndmctsgh.edu.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -268,20 +276,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">0</span>北部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="三軍總醫院基隆分院(孝二院區)">
                                     </td>
-                                    <td>三軍總醫院基隆分院(孝二院區)</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">三軍總醫院基隆分院(孝二院區)</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/4BEZ8EKy19trepqr7">200002 基隆市仁愛區孝二路39號2樓</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:02 2423 1735">(02)2423-1735</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://keelung.tsgh.ndmctsgh.edu.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -294,20 +302,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">0</span>北部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="三軍總醫院基隆分院(正榮院區)">
                                     </td>
-                                    <td>三軍總醫院基隆分院(正榮院區)</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">三軍總醫院基隆分院(正榮院區)</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/qKNWN7hWfVWdtJQ26">202006 基隆市中正區正榮街100號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:02 2463 3330">(02)2463-3330</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://keelung.tsgh.ndmctsgh.edu.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -320,20 +328,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">0</span>北部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="三軍總醫院松山分院">
                                     </td>
-                                    <td>三軍總醫院松山分院</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">三軍總醫院松山分院</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/xKJ5FwTX4GzjcMp87">105309 臺北市松山區健康路131號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:02 2764 2151">(02)2764-2151</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://songshan.tsgh.ndmctsgh.edu.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -346,20 +354,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">0</span>北部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="國軍桃園總醫院新竹分院">
                                     </td>
-                                    <td>國軍桃園總醫院新竹分院</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">國軍桃園總醫院新竹分院</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/FJB8TWo2dn1GBntV6">30054 新竹市北區武陵路3號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:03 534 8181">(03)534-8181</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://813.mnd.gov.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -372,20 +380,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">1</span>中部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="國軍台中總醫院中清分院">
                                     </td>
-                                    <td>國軍台中總醫院中清分院</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">國軍台中總醫院中清分院</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/DPiP7yKKxDZLsnx17">404313 臺中市北區忠明路500號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:04 2203 3178">(04)2203-3178#12</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://803.mnd.gov.tw/816/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -398,20 +406,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">1</span>中部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="國軍臺中總醫院">
                                     </td>
-                                    <td>國軍臺中總醫院</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">國軍臺中總醫院</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/7Q2aZoDwcCjnfuzP7">411228 臺中市太平區中山路二段348號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:04 2203 3178">(04)2203-3178#12</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://803.mnd.gov.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -424,20 +432,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">2</span>南部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="國軍高雄總醫院(總院區、門診部)">
                                     </td>
-                                    <td>國軍高雄總醫院(總院區、門診部)</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">國軍高雄總醫院(總院區、門診部)</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/MVrehHQcFo7qhjhR9">802301 高雄市苓雅區中正一路2號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:07 749 6751">(07)749-6751-5</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://802.mnd.gov.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -450,20 +458,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">2</span>南部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="國軍高雄總醫院岡山分院">
                                     </td>
-                                    <td>國軍高雄總醫院岡山分院</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">國軍高雄總醫院岡山分院</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/wC5dYp6RHEQRbVXM7">820004 高雄市岡山區大義二路1號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:07 625 0919">(07)625-0919</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://814.mnd.gov.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -476,20 +484,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">2</span>南部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="國軍高雄總醫院左營分院">
                                     </td>
-                                    <td>國軍高雄總醫院左營分院</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">國軍高雄總醫院左營分院</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/mntfvVWE1dZNGpxp6">813204 高雄市左營區軍校路553號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:07 581 7121">(07)581-7121</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://806.mnd.gov.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -502,20 +510,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">2</span>南部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="國軍高雄總醫院屏東分院">
                                     </td>
-                                    <td>國軍高雄總醫院屏東分院</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">國軍高雄總醫院屏東分院</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/ytT5PYW4H2c8VbtP7">900048 屏東縣屏東市大湖路58巷22號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:08 756 0756">(08)756-0756</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://802.mnd.gov.tw/815/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -528,22 +536,22 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">3</span>東部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="國軍花蓮總醫院(北埔總院區)">
                                     </td>
-                                    <td>國軍花蓮總醫院(北埔總院區)</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">國軍花蓮總醫院(北埔總院區)</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/ytT5PYW4H2c8VbtP7">971051花蓮縣新城鄉嘉里村嘉里路163號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:03 826 0601">(03)826-0601</a>
                                         <a class="phone" href="tel:08 826 3151">(03)826-3151</a>
                                         <a class="phone" href="tel:08 826 3152">(03)826-3152</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://805.mnd.gov.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -556,21 +564,21 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">3</span>東部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="國軍花蓮總醫院(進豐門診處)">
                                     </td>
-                                    <td>國軍花蓮總醫院(進豐門診處)</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">國軍花蓮總醫院(進豐門診處)</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/9wSWK7u6tNkUqn4VA">970010花蓮市進豐街100號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:03 833 5730">(03)833-5730</a>
                                         <a class="phone" href="tel:08 833 5736">(03)833-5736</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://805.mnd.gov.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -583,20 +591,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">3</span>東部
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="國軍花蓮總醫院(進豐門診處)">
                                     </td>
-                                    <td>國軍花蓮總醫院(進豐門診處)</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">國軍花蓮總醫院(進豐門診處)</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/x5hwyYMDT2dTipyC8">972003花蓮縣秀林鄉富世村101號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:03 861 0918">(03)861-0918</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://805.mnd.gov.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站
@@ -609,20 +617,20 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="8%">
+                                    <td data-label="區域" width="8%">
                                         <span class="d-none">4</span>離島
                                     </td>
-                                    <td width="8%">
+                                    <td data-label="院區外觀" width="8%">
                                         <img src="images/img-hospital.jpg" class="card-img-top" alt="三軍總醫院澎湖分院">
                                     </td>
-                                    <td>三軍總醫院澎湖分院</td>
-                                    <td width="30%">
+                                    <td data-label="院區名稱">三軍總醫院澎湖分院</td>
+                                    <td data-label="地址" width="30%">
                                         <a class="address" href="https://maps.app.goo.gl/HWUgNXamfASM8Lz47">880026 澎湖縣馬公市前寮里90號</a>
                                     </td>
-                                    <td width="18%">
+                                    <td data-label="電話" width="18%">
                                         <a class="phone" href="tel:06 921 1116">(06)921-1116</a>
                                     </td>
-                                    <td width="15%">
+                                    <td data-label="相關連結" width="15%">
                                         <a class="btn btn-web"
                                             href="https://afph.tsgh.ndmctsgh.edu.tw/" target="_blank" title="院區網站">
                                             <i class="fa fa-hospital-o"></i> 院區網站

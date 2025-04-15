@@ -133,16 +133,16 @@ $(document).ready(function() {
 
   
 // affix top
-// if ($(document).width() < 992) {
-//   $(window).scroll(function () {
-//       if ($(this).scrollTop() > 40) {
-//         $("header").addClass('affix');
-//       } else {
-//         $("header").removeClass('affix');
-//       }
-//   });
+if ($(document).width() < 992) {
+  $(window).scroll(function () {
+      if ($(this).scrollTop() > 40) {
+        $("header").addClass('affix');
+      } else {
+        $("header").removeClass('affix');
+      }
+  });
     
-// }
+}
 
 
 // font size
