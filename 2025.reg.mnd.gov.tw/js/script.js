@@ -141,9 +141,24 @@ if ($(document).width() < 992) {
         $("header").removeClass('affix');
       }
   });
+
+  $(window).scroll(function () {
+      if ($(this).scrollTop() > 70) {
+        $(".booking-wrap .btn-next").addClass('affix');
+      } else {
+        $(".booking-wrap .btn-next").removeClass('affix');
+      }
+  });
+
+  $(window).scroll(function () {
+      if ($(this).scrollTop() > 70) {
+        $(".booking-wrap .btn-back").addClass('affix');
+      } else {
+        $(".booking-wrap .btn-back").removeClass('affix');
+      }
+  });
     
 }
-
 
 // font size
 $(document).ready(function () {
