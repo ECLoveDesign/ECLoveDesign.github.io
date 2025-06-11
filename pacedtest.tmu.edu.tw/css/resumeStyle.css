@@ -473,7 +473,7 @@ p {
 }
 @media (max-width: 1000px) {
   .resume-wrap {
-    margin: 10px;
+    margin: 10px 0;
     grid-template-columns: repeat(1, 1fr);
   }
   .interest ul {
