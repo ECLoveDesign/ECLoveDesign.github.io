@@ -37,7 +37,7 @@
     padding: 40px 20px;    
     margin: 20px;
 }
-.type-peace.resume-wrap .left_Side {
+.type-paced.resume-wrap .left_Side {
   background-color: #711e18;
 }
 .type-academy.resume-wrap .left_Side {
@@ -79,7 +79,7 @@
     border: #fff solid 10px;
     box-shadow: rgba(35, 49, 69, 0.2) 0px 0px 20px;
 }
-.type-peace .profileText .imgBx {
+.type-paced .profileText .imgBx {
     border-radius: 0;
 }
 .profileText .imgBx img {
@@ -171,7 +171,7 @@
 .type-clear .item_cont {
     color: #000;
 }
-.type-peace .item_cont {
+.type-paced .item_cont {
     padding: 0;
 }
 .type-academy .item_cont {
@@ -187,7 +187,7 @@
 .contactInfo ul {
   position: relative;
 }
-.type-peace .contactInfo ul {
+.type-paced .contactInfo ul {
     text-align: center;
 }
 .contactInfo ul li {
@@ -196,7 +196,7 @@
   margin: 10px 0;
   cursor: pointer;
 }
-.type-peace .contactInfo ul li+li {
+.type-paced .contactInfo ul li+li {
     margin-top: 20px;
 }
 .type-academy .contactInfo ul li+li {
@@ -224,16 +224,16 @@
 .type-clear .contactInfo ul li+li {
     margin-top: 20px;
 }
-.type-peace .contactInfo ul li .icon {
+.type-paced .contactInfo ul li .icon {
     display: none;
 }
-.type-peace .contactInfo ul li .item_title {
+.type-paced .contactInfo ul li .item_title {
     background: #fff;
     display: inline-block;
     padding: 5px 20px;
     border-radius: 20px;
 }
-.type-peace .contactInfo ul li span {
+.type-paced .contactInfo ul li span {
     color: #711e18;
     font-weight: 600;
 }
@@ -260,7 +260,7 @@
   color: #fff;
   font-weight: 500;
 }
-.type-peace .item_cont .text {
+.type-paced .item_cont .text {
     font-size: 1.2rem;
     line-height: 1.6rem;
 }
@@ -363,9 +363,9 @@
     content: "\f0c0";
     margin-right: 8px;
 }
-.type-peace .right_Side .edu .title::before,
-.type-peace .right_Side .league .title::before,
-.type-peace .right_Side .leadership .title::before {
+.type-paced .right_Side .edu .title::before,
+.type-paced .right_Side .league .title::before,
+.type-paced .right_Side .leadership .title::before {
    display: none;
 }
 .resume-wrap .right_Side .item-title {
@@ -520,4 +520,18 @@ p {
 }
 .adw70 {
   width: 70%;
+}
+
+.btn-download {
+    padding: 15px 50px;
+    border: #721E18 solid 1px;
+    background-color: #721E18;
+    color: #ffffff;
+    display: table;
+    margin: 50px auto;
+}
+.btn-download:hover {
+    font-weight: 500;
+    background-color: #fff;
+    color: #721E18;
 }
