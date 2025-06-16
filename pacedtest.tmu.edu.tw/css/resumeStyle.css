@@ -17,11 +17,13 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 150px;
+    height: 140px;
     background: #dfd7d4;
     background-size: cover;
 }
-
+.type-clear .about {
+    margin-bottom: 35px;
+}
 .resume-wrap p {
     color: #081921;
     font-size: 1rem;
@@ -41,10 +43,12 @@
   background-color: #711e18;
 }
 .type-academy.resume-wrap .left_Side {
-  background-color: #f6f6f6;
+  /* background-color: #f6f6f6; */
+  background: #f6f6f6 url(../images/img-LeftSide-deco.png) no-repeat top center;
+  background-size: contain;
   position: relative;
 }
-.type-academy.resume-wrap .left_Side::before {
+/* .type-academy.resume-wrap .left_Side::before {
     content: '';
     display: block;
     background: url(../images/img-LeftSide-deco.png) no-repeat top center;
@@ -54,7 +58,7 @@
     top: 0;
     left: 0;
     background-size: contain;
-}
+} */
 .profileText {
   position: relative;
   display: flex;
@@ -107,6 +111,7 @@
 .profileText .subject {
   color: #fff;
   font-size: 1.4rem;
+  text-align: center;
   font-weight: 500;
   margin-bottom: 10px;
 }
@@ -121,6 +126,7 @@
 .type-academy .profileText .subject,
 .type-academy .profileText .IDcode {
     color: #3d577a;
+    text-align: center;
 }
 .contactInfo {
   padding-top: 40px;
@@ -320,7 +326,7 @@
     display: inline;
 }
 .about {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 .about:last-child {
   margin-bottom: 0;
@@ -358,14 +364,22 @@
     content: "\f0f2";
     margin-right: 8px;
 }
+.resume-wrap .right_Side .achievements .title::before {
+    font: normal normal normal 1.6rem / 1 FontAwesome;
+    content: "\f02e";
+    margin-right: 8px;
+}
+.resume-wrap .right_Side .scholarships .title::before {
+    font: normal normal normal 1.6rem / 1 FontAwesome;
+    content: "\f06b";
+    margin-right: 8px;
+}
 .resume-wrap .right_Side .leadership .title::before {
     font: normal normal normal 1.6rem / 1 FontAwesome;
     content: "\f0c0";
     margin-right: 8px;
 }
-.type-paced .right_Side .edu .title::before,
-.type-paced .right_Side .league .title::before,
-.type-paced .right_Side .leadership .title::before {
+.type-paced .right_Side .title::before{
    display: none;
 }
 .resume-wrap .right_Side .item-title {
@@ -474,6 +488,7 @@ p {
 @media (max-width: 1000px) {
   .resume-wrap {
     margin: 10px 0;
+    min-height: auto;
     grid-template-columns: repeat(1, 1fr);
   }
   .interest ul {
@@ -534,4 +549,78 @@ p {
     font-weight: 500;
     background-color: #fff;
     color: #721E18;
+}
+
+@media print {
+  body {
+    padding: 0;
+  }
+  .container {
+    width: 100%;
+    min-height: inherit;
+  }
+  .spaceing-area,
+  .major-fields__title,
+  header,footer,
+  .subTable,
+  .btn-download {
+    display: none!important; 
+  }
+  .page {
+    display: block;
+    margin: 1px auto 20px;
+    transform: inherit;
+  }
+  .resume-wrap {
+    position: relative;
+    width: 98%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background-color: #fff;
+    margin: 50px;
+    display: flex;
+    /* grid-template-columns: 1fr 800px; */
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    border: #c1c1c1 solid 1px;
+  }
+  .profileText .imgBx {
+    width: 150px;
+    height: 150px;
+  }
+  .resume-wrap .left_Side{
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .resume-wrap .right_Side{
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .type-clear::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: #dfd7d4;
+      background-size: cover;
+  }
+  .right_Side .title {
+    font-size: 1.4rem;
+  }
+  .type-clear.resume-wrap .right_Side .title {
+    font-size: 1.2rem;
+  }
+  .type-academy.resume-wrap {
+    background-color: #f6f6f6;
+  }
+  .type-clear .right_Side {
+    padding: 40px 10px;
+  }
+  .type-clear .profileText .imgBx {
+    height: 200px;
+  }
 }
