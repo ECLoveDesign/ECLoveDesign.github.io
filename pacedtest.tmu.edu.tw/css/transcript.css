@@ -1,0 +1,222 @@
+
+:root {
+  --font-DFKai-SB: 'DFKai-SB', sans-serif;
+  --font-Arial: 'Arial', serif;
+  --font-Title: 2.4rem;
+  --font-En: 1.2rem;
+  --font-p: 1.2rem;
+  --font-Cont: 1.4rem;
+  --font-th: 1.3rem;
+}
+
+.transcript-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1024px;
+  
+  /* width: 21cm;
+  height: 29.7cm; */
+
+  background-color: #fff;
+  margin: 50px;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  border: #c1c1c1 solid 1px;
+
+}
+.transcript-wrap:after{
+  content: '';
+  display: block;
+  padding-bottom: 141.2%;
+}
+.transcript-wrap .A4page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 1000px) {
+  .transcript-wrap {
+    margin: 10px 0;
+    min-height: auto;
+  }
+  .transcript-wrap .A4page {
+    transform: scale(.85);
+    margin-top: -10%;
+  }
+}
+
+.page-head {
+  padding: 4rem 0 0;
+  width: 100%;
+  text-align: center;
+}
+.page-head .title {
+  font-size: var(--font-Title);
+  font-weight: bold;
+  font-family: DFKai-SB, Arial, sans-serif;
+  margin-bottom: 10px;
+}
+.en {
+  font-size: var(--font-En);
+  font-family: Arial, sans-serif !important;
+}
+.tw {  
+  font-size: var(--font-p);
+  font-family: DFKai-SB, Arial, sans-serif;
+}
+.student-data {
+  margin: 40px 0;
+  padding: 0 50px;
+}
+.student-data .title,
+.student-data .cont {
+  font-size: var(--font-p);
+  font-family: DFKai-SB, Arial, sans-serif;
+}
+.student-data .item {
+  display: flex;
+  align-items: center;
+}
+.student-data .item+.item {
+  margin-top: 5px;
+}
+.student-data .item .title{
+  display: flex;
+  align-items: center;
+}
+
+.list {
+    margin: 40px 0;
+    padding: 0 50px;
+}
+
+.list li {
+  margin-bottom: 10px;
+}
+.list li>*,
+.list li .title  {
+  display: inline;
+}
+.list .num {
+  font-size: var(--font-p);
+  font-family: DFKai-SB, Arial, sans-serif;
+}
+.list .title {
+  font-size: var(--font-p);
+  font-family: DFKai-SB, Arial, sans-serif;
+}
+.list li>.cont {
+  padding: 5px 0;
+  font-size: var(--font-p);
+}
+
+.list li>.cont.full {
+  display: block;
+}
+.list li>.cont.indent {
+  padding-left: 50px;
+}
+.list .title .en {
+  display: inline;
+}
+.list li>.cont p {
+  color: #000;
+  font-size: var(--font-p);
+  font-family: DFKai-SB, Arial, sans-serif;
+}
+
+.transcript-wrap .table {
+  margin: 1rem 0;
+  min-width: 100%;
+}
+.transcript-wrap .table th {
+  font-size: var(--font-th)m;
+  font-family: DFKai-SB, Arial, sans-serif;
+  text-align: center;
+  font-weight: 500;
+}
+.transcript-wrap .table th span {
+  display: block;
+}
+.transcript-wrap .table tr th,
+.transcript-wrap .table tr td {
+  font-weight: 500;
+  background: transparent;
+  border: #000 solid 1px;
+  padding: 5px;
+  text-align: center;
+}
+.transcript-wrap .table tr td {
+  font-family: Arial, sans-serif !important;
+}
+.btn-download {
+    padding: 15px 50px;
+    border: #721E18 solid 1px;
+    background-color: #721E18;
+    color: #ffffff;
+    display: table;
+    margin: 50px auto;
+}
+.btn-download:hover {
+    font-weight: 500;
+    background-color: #fff;
+    color: #721E18;
+}
+
+@media print {
+  body {
+    padding: 0;
+  }
+  .container {
+    width: 100%;
+    min-height: inherit;
+  }
+  .spaceing-area,
+  .major-fields__title,
+  header,footer,
+  .subTable,
+  .btn-download {
+    display: none!important; 
+  }
+  .page {
+    display: block;
+    margin: 1px auto 20px;
+    transform: inherit;
+  }
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --font-Title: 1.8rem;
+    --font-En: 1rem;
+    --font-p: 1rem;
+    --font-Cont: 1.2rem;
+    --font-th: 1.1rem;
+  }
+}
+@media (max-width: 870px) {
+  .transcript-wrap .table tr th, .transcript-wrap .table tr td {
+    padding: 0;
+  }
+  :root {
+    --font-Title: 1.4rem;
+    --font-En: .8rem;
+    --font-p: .8rem;
+    --font-Cont: 1rem;
+    --font-th: .9rem;
+  }
+}
+@media (max-width:768px) {
+  .transcript-wrap {
+    overflow: auto;
+  }
+  .transcript-wrap .A4page {
+    width: 665px;
+    height: 937px;
+  }
+}
