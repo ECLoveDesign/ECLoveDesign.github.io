@@ -38,6 +38,18 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
+}
+.transcript-wrap::before {
+  content:'';
+  background: url(../images/tmuLogo_B_Original.JPG) no-repeat center;
+  background-size: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 @media (max-width: 1000px) {
   .transcript-wrap {
@@ -218,5 +230,10 @@
   .transcript-wrap .A4page {
     width: 665px;
     height: 937px;
+  }
+}
+@media (max-width:600px) {
+    .transcript-wrap .A4page {
+      margin-left: -13%;
   }
 }
