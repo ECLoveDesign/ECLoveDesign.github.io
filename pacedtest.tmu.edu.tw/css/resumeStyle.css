@@ -552,6 +552,11 @@ p {
 }
 
 @media print {
+  
+  @page {
+    size: A4;
+    margin: 0;
+  }
   body {
     padding: 0;
   }
@@ -573,7 +578,7 @@ p {
   }
   .resume-wrap {
     position: relative;
-    width: 98%;
+    /* width: 98%; */
     max-width: 1000px;
     min-height: 1000px;
     background-color: #fff;
@@ -583,6 +588,8 @@ p {
     box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
     margin: auto;
     border: #c1c1c1 solid 1px;
+    height: 141.421vw;
+    width: 100vw;
   }
   .profileText .imgBx {
     width: 150px;
@@ -592,11 +599,14 @@ p {
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
     max-width: 25%;
+    min-height: 100vh;
   }
   .resume-wrap .right_Side{
-    -ms-flex: 0 0 75%;
-    flex: 0 0 75%;
-    max-width: 75%;
+    -ms-flex: 0 0 55%;
+    flex: 0 0 55%;
+    max-width: 55%;
+    padding-left: 30px;
+    min-height: 100vh;
   }
   .type-clear::before {
       content: '';
@@ -622,5 +632,5 @@ p {
   }
   .type-clear .profileText .imgBx {
     height: 200px;
-  }
+  }  
 }
