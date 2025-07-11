@@ -5,8 +5,7 @@
   min-height: 1000px;
   background-color: #fff;
   margin: 50px;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
   box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
   margin: auto;
   border: #c1c1c1 solid 1px;
@@ -32,6 +31,7 @@
   position: relative;
   background-color: #003147;
   padding: 40px;
+  width: 26%;
 }
 .type-clear.resume-wrap .left_Side {
     border: #000 solid 2px;
@@ -48,17 +48,6 @@
   background-size: contain;
   position: relative;
 }
-/* .type-academy.resume-wrap .left_Side::before {
-    content: '';
-    display: block;
-    background: url(../images/img-LeftSide-deco.png) no-repeat top center;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: contain;
-} */
 .profileText {
   position: relative;
   display: flex;
@@ -447,7 +436,7 @@ p {
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: 150px 1fr;
+  /* grid-template-columns: 150px 1fr; */
   justify-content: center;
   align-items: center;
 }
@@ -472,7 +461,7 @@ p {
 }
 .interest ul {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(4, 1fr); */
 }
 .interest ul li {
   list-style: none;
@@ -489,10 +478,18 @@ p {
   .resume-wrap {
     margin: 10px 0;
     min-height: auto;
-    grid-template-columns: repeat(1, 1fr);
+    display: block;
+    width: 90%;
+  }    
+  .resume-wrap .left_Side {
+    width: auto;
+  }
+  .type-academy.resume-wrap .left_Side {
+    background-position: left top;
+    background-size: 70%;
   }
   .interest ul {
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
   }
 }
 @media (max-width: 600px) {
@@ -503,10 +500,14 @@ p {
     margin-bottom: 5px;
   }
   .interest ul {
-    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-columns: repeat(1, 1fr); */
   }
   .skills .box {
-    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-columns: repeat(1, 1fr); */
+  }
+  
+  .type-academy.resume-wrap .left_Side {
+    background-size: contain;
   }
 }
 .englishw50 {
@@ -573,64 +574,17 @@ p {
   }
   .page {
     display: block;
-    margin: 1px auto 20px;
+    margin: -15px auto 0 ;
     transform: inherit;
-  }
+  } 
   .resume-wrap {
-    position: relative;
-    /* width: 98%; */
-    max-width: 1000px;
-    min-height: 1000px;
-    background-color: #fff;
-    margin: 50px;
+    width: 100%;
     display: flex;
-    /* grid-template-columns: 1fr 800px; */
-    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
-    margin: auto;
-    border: #c1c1c1 solid 1px;
-    height: 141.421vw;
-    width: 100vw;
   }
-  .profileText .imgBx {
-    width: 150px;
-    height: 150px;
+  .resume-wrap .left_Side {
+    width: 26%;
   }
-  .resume-wrap .left_Side{
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    max-width: 25%;
-    min-height: 100vh;
+  .about {
+    margin: 25px 0;
   }
-  .resume-wrap .right_Side{
-    -ms-flex: 0 0 55%;
-    flex: 0 0 55%;
-    max-width: 55%;
-    padding-left: 30px;
-    min-height: 100vh;
-  }
-  .type-clear::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 150px;
-      background: #dfd7d4;
-      background-size: cover;
-  }
-  .right_Side .title {
-    font-size: 1.4rem;
-  }
-  .type-clear.resume-wrap .right_Side .title {
-    font-size: 1.2rem;
-  }
-  .type-academy.resume-wrap {
-    background-color: #f6f6f6;
-  }
-  .type-clear .right_Side {
-    padding: 40px 10px;
-  }
-  .type-clear .profileText .imgBx {
-    height: 200px;
-  }  
 }
