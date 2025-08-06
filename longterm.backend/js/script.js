@@ -152,6 +152,39 @@ $(document).ready(function () {
 } );
 
 
+  // datatableNopage
+  if ($('.datatableNopage').length) {
+
+  $(document).ready(function () {
+    const targets = [];
+
+    $('.datatableNopage thead th').each(function(index) {
+      if ($(this).data('orderable') === false) {
+        targets.push(index);
+      }
+    });
+
+    $('.datatableNopage').DataTable({
+      language: {
+          url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+      },   
+      order: [],
+      searching: false,
+      lengthChange: false,
+      paging: false, 
+      columnDefs: [
+        {
+          targets: targets,
+          orderable: false
+        }
+      ]
+    });
+  });
+
+
+  }
+
+
 
   // selectTable
   let myTable = $('.selectTable').DataTable({
