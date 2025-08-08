@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>後台管理系統│臺南市政府社會局─長期照顧管理中心</title>
+    <link rel="shortcut icon" href='images/favicon.ico' />
+    <link rel="image_src" href='images/favicon.ico' type="image/jpeg" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500&family=Oswald:wght@500&display=swap">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css'>
+    <link rel='stylesheet' href='https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css'>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css?6" />
+</head>
+
+<body>
+
+    <div class="container main-container">
+
+        <div class="wrapper main-wrapper fixed-navbar">
+            <header>
+                <nav class="header-navbar navbar-expand-md navbar fixed-top navbar-hide-on-scroll navbar-border navbar-shadow headroom header"
+                    data-nav="brand-center">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-header">
+                            <ul class="nav navbar-nav flex-row">
+                                <li class="nav-item mr-auto1">
+                                    <button type="button" class="mobile-menu sidebar-toggle-box"
+                                        aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
+                                        data-target="#navBar">
+                                        <span></span>
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="navbar-brand" href="#">
+                                        <img src="images/logo-new.png">
+                                        <!-- <h1>聯護管理系統</h1> -->
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-globe"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">中文</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">英文</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa fa-user mr-1"></i>帳戶管理
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="login.html">
+                                            <i class="fa fa-sign-out mr-1" title="登出"></i>登出
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-mobile">
+                            <ul class="nav navbar-nav justify-content-end w-100">
+
+                                <li class="dropdown dropdown-language nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-bell"></i>
+                                        <!-- <span class="user-name">語言</span> -->
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">訊息1</a>
+                                        <a class="dropdown-item" href="#">訊息2</a>
+                                    </div>
+
+                                </li>
+
+                                <li class="dropdown dropdown-user-info nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                        <span class="user-name">admin</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-gears"></i>我的帳戶
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="login.html">
+                                            <i class="fa-solid fa-power-off"></i>登出
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <!--左邊選單-->
+            <aside>
+                <div class="sidebar" id="navBar">
+                    <ul id="navigation" class="sidebar-menu">
+                        <li class="nav-item active">
+                            <a href="#" title="帳號及基本資料管理管理">
+                                <i class="fa fa-users"></i>帳號管理
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" title="系統設定">
+                                <i class="fa fa-sitemap"></i>系統設定
+                            </a>
+                        </li>
+                        <!--長照服務-->
+                        <li class="nav-item">
+                            <a href="#" title="長照服務" class="menu-item" data-toggle="collapse"
+                                data-target="#longtermService" aria-expanded="false">
+                                <i class="fas fa-hand-holding-heart"></i>長照服務
+                            </a>
+                            <ul id="longtermService" class="collapse" data-parent="#navigation">
+                                <!--長照服務1-->
+                                <li>
+                                    <a href="#" title="長照服務1">
+                                        <i class="fas fa-hand-holding-heart"></i>長照服務1
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" title="操作紀錄">
+                                <i class="fa fa-history"></i>操作紀錄
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/sidebar-->
+            </aside>
+
+            <!-- MAIN CONT -->
+            <main role="main" class="main-content container-fluid">
+
+                <!-------------------- 主要內容 -------------------->
+                <div class="content-wrapper">
+                    <div class="page-header">
+                        <h2 class="content-header-title">每月服務報表</h2>
+
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">社區整合型服務中心(A)</li>
+                                <li class="breadcrumb-item active">
+                                    <a href="#">每月服務報表</a>
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+
+                    <!--內容區塊-->
+                    <div class="page-content-area">
+                        <h3 class="page-content-title">每月服務報表</h3>
+
+                        <!--查詢區-->
+                        <div class="form-wrap">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12">
+
+                                    <div class="form-inline">
+
+                                        <div class="form-group">
+                                            <label class="sr-only my-1 mr-2" for="city">請選擇縣市</label>
+
+                                            <select class="form-control selectpicker" title="請選擇縣市"
+                                                data-live-search="true" required>
+                                                <option value="none" selected="" disabled="">請選擇縣市</option>
+                                                <option value="基隆市">基隆市</option>
+                                                <option value="臺北市">臺北市</option>
+                                                <option value="新北市">新北市</option>
+                                                <option value="桃園市">桃園市</option>
+                                                <option value="新竹市">新竹市</option>
+                                                <option value="新竹縣">新竹縣</option>
+                                                <option value="苗栗縣">苗栗縣</option>
+                                                <option value="臺中市">臺中市</option>
+                                                <option value="彰化縣">彰化縣</option>
+                                                <option value="南投縣">南投縣</option>
+                                                <option value="雲林縣">雲林縣</option>
+                                                <option value="嘉義市">嘉義市</option>
+                                                <option value="嘉義縣">嘉義縣</option>
+                                                <option selected value="臺南市">臺南市</option>
+                                                <option value="高雄市">高雄市</option>
+                                                <option value="屏東縣">屏東縣</option>
+                                                <option value="臺東縣">臺東縣</option>
+                                                <option value="花蓮縣">花蓮縣</option>
+                                                <option value="宜蘭縣">宜蘭縣</option>
+                                                <option value="澎湖縣">澎湖縣</option>
+                                                <option value="金門縣">金門縣</option>
+                                                <option value="連江縣">連江縣</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only my-1 mr-2" for="type">請選擇單位</label>
+                                            <select class="form-control selectpicker" id="unit" data-width="150px">
+                                                <option value="none" selected="" disabled="">請選擇單位</option>
+                                                <option value="A">A單位</option>
+                                                <option value="B">B單位</option>
+                                                <option value="C">C單位</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-dark btn-search mr-auto">
+                                            <i class="fa-solid fa-search"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+
+                                    <div class="form-inline d-md-flex justify-content-end">
+
+                                        <div class="form-group">
+                                            <label class="sr-only my-1 mr-2" for="form">請選擇呈現方式</label>
+
+                                            <select class="form-control selectpicker" title="請選擇呈現方式" required>
+                                                <option value="none" selected="" disabled="">請選擇呈現方式</option>
+                                                <option value="月份呈現">月份呈現</option>
+                                                <option selected value="年度呈現">年度呈現</option>
+                                                <option value="季度呈現">季度呈現</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="sr-only my-1 mr-2" for="type">請選擇年份</label>
+                                            <select class="form-control selectpicker" id="type">
+                                                <option value="none" selected="" disabled="">請選擇年份</option>
+                                                <option selected value="2025">2025</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2024">2023</option>
+                                            </select>
+                                        </div>
+
+                                        <nav class="filter-actions ml-3 mt-1">
+                                            <ul class="pagination">
+                                                <li class="page-item active" aria-current="page">
+                                                    <a class="page-link" href="#">上半年</a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">下半年</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <table class="display table datatableNopage" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th data-orderable="false">項目</th>
+                                    <th>上半年</th>
+                                    <th>上半年合計</th>
+                                    <th>下半年</th>
+                                    <th>下半年合計</th>
+                                    <th data-orderable="false" data-width="100">動作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>單位個館數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>專任個管人數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>兼任個管人數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月列管數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月開案數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月結案數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月自行開發個案數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月申訴(陳情)A單位個案數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月申訴(陳情)B單位個案數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>A單位新案個案管理時效</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>A單位計畫擬定時間</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>A單位計畫核定時間</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>初次照會照會時間</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>BA碼初次服務輸送時效</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>BB碼初次服務輸送時效</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>BC碼初次服務輸送時效</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>C碼初次服務輸送時效</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月特約當區居家服務單位數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月特約當區日照服務單位數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月特約當區家托服務單位數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月特約當區專業服務單位數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月特約當區交通接送單位數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月特約當區輔具環改購置單位數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月特約當區喘息單位數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月特約當區巷弄C單位數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>當月社區內長照相關資源單位數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>辦理社區資源網絡會議場次(聯繫會議)</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>辦理區域跟網絡單位協作機制場次(跨專業會議)</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>辦理社區宣導場次</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>辦理社區宣導場與會人數</td>
+                                     <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary btn-edit" data-toggle="modal"
+                                            data-target="#editModal">
+                                            <i class="far fa-edit"></i> 填報
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+
+            <!-- MAIN CONT end-->
+            <footer>
+                <div class="copyright">
+                    <ul>
+                        <li>Copyright © 臺南市政府社會局─長期照顧管理中心 2024</li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">當月服務報表</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form form-horizontal">
+                        <div class="form-body">
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="fillMonth">填報月份</label>
+                                <div class="col-md-7">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="fillMonth" placeholder="請輸入密碼"
+                                            value="6月" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="totalCaseCount">單位個管數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="totalCaseCount" class="form-control"
+                                        placeholder="請輸入單位個管數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="fullTimeCaseManagers">專任個管人數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="fullTimeCaseManagers" class="form-control"
+                                        placeholder="請輸入專任個管人數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="partTimeCaseManagers">兼任個管人數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="partTimeCaseManagers" class="form-control"
+                                        placeholder="請輸入兼任個管人數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="currentMonthCases">當月列管數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="currentMonthCases" class="form-control"
+                                        placeholder="請輸入當月列管數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="currentMonthOpenedCases">當月開案數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="currentMonthOpenedCases" class="form-control"
+                                        placeholder="請輸入當月開案數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="currentMonthClosedCases">當月結案數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="currentMonthClosedCases" class="form-control"
+                                        placeholder="請輸入當月結案數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="currentMonthSelfDevelopedCases">當月自行開發個案數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="currentMonthSelfDevelopedCases" class="form-control"
+                                        placeholder="請輸入當月自行開發個案數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="complaintsACases">當月申訴(陳情)A單位個案數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="complaintsACases" class="form-control"
+                                        placeholder="請輸入當月申訴(陳情)A單位個案數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="complaintsBCases">當月申訴(陳情)B單位個案數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="complaintsBCases" class="form-control"
+                                        placeholder="請輸入當月申訴(陳情)B單位個案數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="aUnitNewCaseHandlingTime">A單位新案個案管理時效</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="aUnitNewCaseHandlingTime" class="form-control"
+                                        placeholder="請輸入A單位新案個案管理時效" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="aUnitPlanDraftTime">A單位計畫擬定時間</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="aUnitPlanDraftTime" class="form-control"
+                                        placeholder="請輸入A單位計畫擬定時間" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="aUnitPlanApprovalTime">A單位計畫覈定時間</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="aUnitPlanApprovalTime" class="form-control"
+                                        placeholder="請輸入A單位計畫覈定時間" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="initialReferralTime">初次照會照會時間</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="initialReferralTime" class="form-control"
+                                        placeholder="請輸入初次照會照會時間" value="">
+                                 </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="baInitialServiceTime">BA碼初次服務輸送時效</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="baInitialServiceTime" class="form-control"
+                                        placeholder="請輸入BA碼初次服務輸送時效" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="bbInitialServiceTime">BB碼初次服務輸送時效</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="bbInitialServiceTime" class="form-control"
+                                        placeholder="請輸入BB碼初次服務輸送時效" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="bcInitialServiceTime">BC碼初次服務輸送時效</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="bcInitialServiceTime" class="form-control"
+                                        placeholder="請輸入BC碼初次服務輸送時效" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="cInitialServiceTime">C碼初次服務輸送時效</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="cInitialServiceTime" class="form-control"
+                                        placeholder="請輸入C碼初次服務輸送時效" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="homeCareProviders">當月特約當區居家服務單位數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="homeCareProviders" class="form-control"
+                                        placeholder="請輸入當月特約當區居家服務單位數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="dayCareProviders">當月特約當區日照服務單位數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="dayCareProviders" class="form-control"
+                                        placeholder="請輸入當月特約當區日照服務單位數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="familyCareProviders">當月特約當區家託服務單位數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="familyCareProviders" class="form-control"
+                                        placeholder="請輸入當月特約當區家託服務單位數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="professionalServiceProviders">當月特約當區專業服務單位數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="professionalServiceProviders" class="form-control"
+                                        placeholder="請輸入當月特約當區專業服務單位數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="transportServiceProviders">當月特約當區交通接送單位數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="transportServiceProviders" class="form-control"
+                                        placeholder="請輸入當月特約當區交通接送單位數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="equipmentProviders">當月特約當區輔具環改購置單位數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="equipmentProviders" class="form-control"
+                                        placeholder="請輸入當月特約當區輔具環改購置單位數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="respiteCareProviders">當月特約當區喘息單位數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="respiteCareProviders" class="form-control"
+                                        placeholder="請輸入當月特約當區喘息單位數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="alleyCProviders">當月特約當區巷弄C單位數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="alleyCProviders" class="form-control"
+                                        placeholder="請輸入當月特約當區巷弄C單位數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="communityCareResources">當月社區內長照相關資源單位數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="communityCareResources" class="form-control"
+                                        placeholder="請輸入當月社區內長照相關資源單位數" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="resourceNetworkMeetings">辦理社區資源網路會議場次(聯繫會議)</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="resourceNetworkMeetings" class="form-control"
+                                        placeholder="請輸入辦理社區資源網路會議場次(聯繫會議)" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="crossSectorMeetings">辦理區域跟網路單位協作機制場次(跨專業會議)(聯繫會議)</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="crossSectorMeetings" class="form-control"
+                                        placeholder="請輸入辦理區域跟網路單位協作機制場次(跨專業會議)" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="communityOutreachSessions">辦理社區宣導場次(跨專業會議)(聯繫會議)</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="communityOutreachSessions" class="form-control"
+                                        placeholder="請輸入辦理社區宣導場次" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-5 label-control" for="outreachParticipants">辦理社區宣導場與會人數</label>
+                                <div class="col-md-7">
+                                    <input type="number" id="outreachParticipants" class="form-control"
+                                        placeholder="請輸入辦理社區宣導場與會人數" value="">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-save btn-primary">儲存</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--JS-->
+    <script src='js/jquery-3.5.1.min.js'></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+    <script src="js/popper.min.js"></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
+    <!-- <script src="assets/datatables/jquery.dataTables.min.js"></script> -->
+    <script src='https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/plug-ins/2.0.3/i18n/zh-HANT.json'></script>
+    <script src='https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js'></script>
+    <script src="js/script.js?2"></script>
+</body>
+
+</html>
