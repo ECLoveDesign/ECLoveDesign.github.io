@@ -152,6 +152,87 @@ $(document).ready(function () {
 } );
 
 
+  // datatableFixColumn
+  if ($('.datatableFixColumn').length) {
+    
+    
+  $(document).ready(function () {
+    // const targets = [];
+
+    // $('.datatableFixColumn thead th').each(function(index) {
+    //   if ($(this).data('orderable') === false) {
+    //     targets.push(index);
+    //   }
+    // });
+
+    $('.datatableFixColumn').DataTable({
+      language: {
+          url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+      },   
+      order: [],
+      searching: false,
+      lengthChange: false,
+      
+      paging: false,
+      fixedColumns: {
+        leftColumns: 1,
+        // rightColumns: 2
+      },
+      autoWidth: false,
+      scrollY: 500,
+      scrollX: true,
+      scrollCollapse: true,
+      columnDefs: [
+        {
+          width: "400px", 
+          targets: "1,2,3,4,5,6,7,8,9,10,11,12" 
+        }
+      ]
+    });
+
+    let datatable = $('.datatableFixColumn').DataTable();
+
+    const observer = new ResizeObserver(() => {
+      setTimeout(() => {
+        datatable.destroy();
+
+        datatable = $('.datatableFixColumn').DataTable({
+          language: {
+          url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+        },   
+        order: [],
+        searching: false,
+        lengthChange: false,
+        
+        paging: false,
+        fixedColumns: {
+          leftColumns: 1,
+          // rightColumns: 2
+        },
+        autoWidth: false,
+        scrollY: 500,
+        scrollX: true,
+        scrollCollapse: true,
+        columnDefs: [
+          {
+            width: "400px", 
+            targets: "1,2,3,4,5,6,7,8,9,10,11,12" 
+          }
+        ]
+        });
+      }, 200); 
+    });
+
+    observer.observe(document.querySelector('.dataTables_wrapper'));
+
+
+
+
+  });
+
+
+}
+
   // datatableNopage
   if ($('.datatableNopage').length) {
 
@@ -179,6 +260,30 @@ $(document).ready(function () {
         }
       ]
     });
+
+    $('.datatableFixColumn').DataTable({
+      language: {
+          url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+      },   
+      order: [],
+      searching: false,
+      lengthChange: false,
+      paging: false,
+      scrollCollapse: true,
+      scrollX: true,
+      scrollY: 300,
+      fixedColumns: {
+          start: 1,
+          end: 1
+      },
+      // columnDefs: [
+      //   {
+      //     targets: targets,
+      //     orderable: false
+      //   }
+      // ]
+    });
+
   });
 
 
