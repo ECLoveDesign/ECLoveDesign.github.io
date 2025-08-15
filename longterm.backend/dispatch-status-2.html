@@ -57,28 +57,32 @@
             white-space: normal !important;
             word-break: break-word !important;
         }
-        @media (max-width: 768px) {
-  .fixedHeader-floating,
-  .fixedHeader-locked,
-  .DTFC_LeftWrapper,
-  .DTFC_RightWrapper {
-    display: none !important;
-  }
-
-  table.dataTable {
-    width: 100% !important;
-    table-layout: auto !important;
-  }
-
-  table.dataTable th,
-  table.dataTable td {
+       @media (max-width: 768px) {
+  .datatableFixColumn th,
+  .datatableFixColumn td {
     white-space: normal !important;
+    word-break: break-word !important;
+    table-layout: fixed !important;
+    padding: 8px;
+  }
+
+  .datatableFixColumn th:nth-child(1),
+  .datatableFixColumn td:nth-child(1) {
+    width: 150px !important;
+    max-width: 150px !important;
+  }
+
+  .datatableFixColumn th:not(:first-child),
+  .datatableFixColumn td:not(:first-child) {
+    width: 80px !important;
+    max-width: 80px !important;
   }
 
   .dataTables_wrapper {
     overflow-x: auto !important;
   }
 }
+
 
     </style>
 </head>
