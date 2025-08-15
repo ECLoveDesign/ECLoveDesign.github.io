@@ -67,21 +67,29 @@
     table-layout: fixed !important;
     padding: 8px;
   }
-
+  table.dataTable thead .sorting th:nth-child(1),
   .datatableFixColumn th:nth-child(1),
-  .datatableFixColumn td:nth-child(1),
-  .datatableFixColumn tfoot th:nth-child(1),
-  .datatableFixColumn tfoot td:nth-child(1) {
+  .datatableFixColumn td:nth-child(1) {
     width: 150px !important;
     max-width: 150px !important;
   }
+  
+  .datatableFixColumn tfoot th:nth-child(1),
+  .datatableFixColumn tfoot td:nth-child(1) {
+    width: 145px !important;
+    max-width: 145px !important;
+  }
 
   .datatableFixColumn th:not(:first-child),
-  .datatableFixColumn td:not(:first-child),
-  .datatableFixColumn tfoot th:not(:first-child),
-  .datatableFixColumn tfoot td:not(:first-child) {
+  .datatableFixColumn td:not(:first-child) {
     width: 80px !important;
     max-width: 80px !important;
+  }
+  .datatableFixColumn tfoot th:not(:first-child),
+  .datatableFixColumn tfoot td:not(:first-child) {
+    width: 110px !important;
+    max-width: 110px !important;
+    padding: 10px 1px;
   }
 
   .dataTables_wrapper {
