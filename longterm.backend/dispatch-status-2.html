@@ -59,7 +59,9 @@
         }
        @media (max-width: 768px) {
   .datatableFixColumn th,
-  .datatableFixColumn td {
+  .datatableFixColumn td,
+  .datatableFixColumn tfoot th,
+  .datatableFixColumn tfoot td {
     white-space: normal !important;
     word-break: break-word !important;
     table-layout: fixed !important;
@@ -67,13 +69,17 @@
   }
 
   .datatableFixColumn th:nth-child(1),
-  .datatableFixColumn td:nth-child(1) {
+  .datatableFixColumn td:nth-child(1),
+  .datatableFixColumn tfoot th:nth-child(1),
+  .datatableFixColumn tfoot td:nth-child(1) {
     width: 150px !important;
     max-width: 150px !important;
   }
 
   .datatableFixColumn th:not(:first-child),
-  .datatableFixColumn td:not(:first-child) {
+  .datatableFixColumn td:not(:first-child),
+  .datatableFixColumn tfoot th:not(:first-child),
+  .datatableFixColumn tfoot td:not(:first-child) {
     width: 80px !important;
     max-width: 80px !important;
   }
@@ -81,7 +87,15 @@
   .dataTables_wrapper {
     overflow-x: auto !important;
   }
+
+  .fixedHeader-floating,
+  .fixedHeader-locked,
+  .DTFC_LeftWrapper,
+  .DTFC_RightWrapper {
+    display: none !important;
+  }
 }
+
 
 
     </style>
