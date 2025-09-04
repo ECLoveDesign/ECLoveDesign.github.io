@@ -189,7 +189,7 @@ if ($('.datatableFixColumn').length) {
     };
 
     const initDataTable = () => {
-      // 👉 手機移除 data-width，避免 <thead> 撐開
+      
       if (isMobile) {
         $('.datatableFixColumn thead th').removeAttr('data-width');
       }
@@ -219,7 +219,7 @@ if ($('.datatableFixColumn').length) {
 
     const initWithPlugins = async () => {
       if (!isMobile) {
-        // 👉 僅在桌機動態載入 plugin
+       
         await loadScript('https://cdn.datatables.net/fixedcolumns/3.2.0/js/dataTables.fixedColumns.js');
         await loadScript('https://cdn.datatables.net/fixedheader/3.1.0/js/dataTables.fixedHeader.min.js');
       }
@@ -237,7 +237,7 @@ if ($('.datatableFixColumn').length) {
       }
     };
 
-    // 🚀 啟動流程
+   
     initWithPlugins();
   });
 }
@@ -279,7 +279,7 @@ if ($('.datatableFix3col').length) {
     };
 
     const initDataTable = () => {
-      // 👉 手機移除 data-width，避免 <thead> 撐開
+      
       if (isMobile) {
         $('.datatableFix3col thead th').removeAttr('data-width');
       }
@@ -301,8 +301,7 @@ if ($('.datatableFix3col').length) {
           footer: false
         },
         fixedColumns: isMobile ? false : {
-          leftColumns: 3,
-          rightColumns: 1
+          leftColumns: 3
         },
         columnDefs: isMobile ? [] : generateColumnDefs()
       });
@@ -310,7 +309,7 @@ if ($('.datatableFix3col').length) {
 
     const initWithPlugins = async () => {
       if (!isMobile) {
-        // 👉 僅在桌機動態載入 plugin
+       
         await loadScript('https://cdn.datatables.net/fixedcolumns/3.2.0/js/dataTables.fixedColumns.js');
         await loadScript('https://cdn.datatables.net/fixedheader/3.1.0/js/dataTables.fixedHeader.min.js');
       }
@@ -328,7 +327,7 @@ if ($('.datatableFix3col').length) {
       }
     };
 
-    // 🚀 啟動流程
+   
     initWithPlugins();
   });
 }
