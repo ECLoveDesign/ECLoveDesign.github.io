@@ -152,7 +152,7 @@ $(document).ready(function () {
 } );
 
 
- // datatableFixColumn
+  // datatableFixColumn
 if ($('.datatableFixColumn').length) {
   $(document).ready(function () {
     const isMobile = window.innerWidth < 768;
@@ -184,14 +184,12 @@ if ($('.datatableFixColumn').length) {
     const destroyTable = (datatable) => {
       if (datatable.fixedHeader) datatable.fixedHeader.disable?.();
       datatable.destroy();
-
-      // 移除殘留 DOM
       $('.fixedHeader-floating, .fixedHeader-locked').remove();
       $('.DTFC_LeftWrapper, .DTFC_RightWrapper').remove();
     };
 
     const initDataTable = () => {
-      // 移除 data-width 避免手機抓到
+      // 👉 手機移除 data-width，避免 <thead> 撐開
       if (isMobile) {
         $('.datatableFixColumn thead th').removeAttr('data-width');
       }
@@ -221,6 +219,7 @@ if ($('.datatableFixColumn').length) {
 
     const initWithPlugins = async () => {
       if (!isMobile) {
+        // 👉 僅在桌機動態載入 plugin
         await loadScript('https://cdn.datatables.net/fixedcolumns/3.2.0/js/dataTables.fixedColumns.js');
         await loadScript('https://cdn.datatables.net/fixedheader/3.1.0/js/dataTables.fixedHeader.min.js');
       }
@@ -238,12 +237,10 @@ if ($('.datatableFixColumn').length) {
       }
     };
 
-    // 🚀 開始初始化
+    // 🚀 啟動流程
     initWithPlugins();
   });
 }
-
-
 
   // datatableNopage
   if ($('.datatableNopage').length) {
