@@ -301,7 +301,8 @@ if ($('.datatableFix3col').length) {
           footer: false
         },
         fixedColumns: isMobile ? false : {
-          leftColumns: 3
+          leftColumns: 3,
+          rightColumns: 1
         },
         columnDefs: isMobile ? [] : generateColumnDefs()
       });
