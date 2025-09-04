@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>輔具管理申請│臺南市政府社會局─長期照顧管理中心</title>
+    <link rel="shortcut icon" href='images/favicon.ico' />
+    <link rel="image_src" href='images/favicon.ico' type="image/jpeg" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500&family=Oswald:wght@500&display=swap">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css'>
+    <!--fixcolumn-->
+    <link rel='stylesheet' href='https://cdn.datatables.net/fixedcolumns/3.2.0/css/fixedColumns.dataTables.min.css'>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css?6" />
+    <style>
+        .datatableFix3col th,
+        .datatableFix3col td {
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        div.dataTables_wrapper {
+            margin: 0 auto;
+        }
+
+        .dataTables_wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table.dataTable {
+            table-layout: fixed;
+        }
+
+        div.dataTables_scrollBody {
+            overflow-x: auto !important;
+        }
+
+        .dataTables_scroll {
+            position: relative;
+        }
+
+        table.dataTable {
+            table-layout: fixed;
+        }
+
+        div.dataTables_scrollBody {
+            overflow-x: auto !important;
+        }
+
+        table.dataTable th,
+        table.dataTable td {
+            white-space: normal !important;
+            word-break: break-word !important;
+        }
+
+        @media (max-width: 768px) {
+
+            .datatableFix3col th,
+            .datatableFix3col td,
+            .datatableFix3col tfoot th,
+            .datatableFix3col tfoot td {
+                white-space: normal !important;
+                word-break: break-word !important;
+                table-layout: fixed !important;
+                padding: 8px;
+            }
+
+            table.dataTable thead .sorting th:nth-child(1),
+            .datatableFix3col th:nth-child(1),
+            .datatableFix3col td:nth-child(1) {
+                width: 150px !important;
+                max-width: 150px !important;
+            }
+
+            .datatableFix3col tfoot th:nth-child(1),
+            .datatableFix3col tfoot td:nth-child(1) {
+                width: 145px !important;
+                max-width: 145px !important;
+            }
+
+            .datatableFix3col th:not(:first-child),
+            .datatableFix3col td:not(:first-child) {
+                width: 80px !important;
+                max-width: 80px !important;
+            }
+
+            .datatableFix3col tfoot th:not(:first-child),
+            .datatableFix3col tfoot td:not(:first-child) {
+                width: 110px !important;
+                max-width: 110px !important;
+                padding: 10px 1px;
+            }
+
+            .dataTables_wrapper {
+                overflow-x: auto !important;
+            }
+
+            .fixedHeader-floating,
+            .fixedHeader-locked,
+            .DTFC_LeftWrapper,
+            .DTFC_RightWrapper {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container main-container">
+
+        <div class="wrapper main-wrapper fixed-navbar">
+            <header>
+                <nav class="header-navbar navbar-expand-md navbar fixed-top navbar-hide-on-scroll navbar-border navbar-shadow headroom header"
+                    data-nav="brand-center">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-header">
+                            <ul class="nav navbar-nav flex-row">
+                                <li class="nav-item mr-auto1">
+                                    <button type="button" class="mobile-menu sidebar-toggle-box"
+                                        aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
+                                        data-target="#navBar">
+                                        <span></span>
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="navbar-brand" href="#">
+                                        <img src="images/logo-new.png">
+                                        <!-- <h1>聯護管理系統</h1> -->
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-globe"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">中文</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">英文</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa fa-user mr-1"></i>帳戶管理
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="login.html">
+                                            <i class="fa fa-sign-out mr-1" title="登出"></i>登出
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-mobile">
+                            <ul class="nav navbar-nav justify-content-end w-100">
+
+                                <li class="dropdown dropdown-language nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-bell"></i>
+                                        <!-- <span class="user-name">語言</span> -->
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">訊息1</a>
+                                        <a class="dropdown-item" href="#">訊息2</a>
+                                    </div>
+
+                                </li>
+
+                                <li class="dropdown dropdown-user-info nav-item">
+                                    <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <span class="avatar"><i class="fa fa-user-circle"></i></span>
+                                        <span class="user-name">admin</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-gears"></i>我的帳戶
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="login.html">
+                                            <i class="fa-solid fa-power-off"></i>登出
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <!--左邊選單-->
+            <aside>
+                <div class="sidebar" id="navBar">
+                    <ul id="navigation" class="sidebar-menu show">
+                        <li class="nav-item">
+                            <a href="#" title="帳號及基本資料管理" class="menu-item" data-toggle="collapse"
+                                data-target="#AccountManagement" aria-expanded="true">
+                                <i class="fas fa-users"></i> 帳號及基本資料管理
+                            </a>
+                            <ul id="AccountManagement" class="collapse show" data-parent="#navigation" style="">
+                                <li>
+                                    <a href="/backend/Company" title="公司資料">
+                                        <i class="fa fa-users"></i> 公司資料
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/Company/Units" title="特約服務資料">
+                                        <i class="fa fa-users"></i> 特約服務資料
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/User/" title="人員帳號管理">
+                                        <i class="fa fa-users"></i> 人員帳號管理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/Company/RewardPunishment" title="機構獎懲管理">
+                                        <i class="fa fa-users"></i> 機構獎懲管理
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" title="社區整合型服務中心(A)" class="menu-item" data-toggle="collapse"
+                                data-target="#LTC0" aria-expanded="false">
+                                <i class="fas fa-hand-holding-heart"></i> 社區整合型服務中心(A)
+                            </a>
+                            <ul id="LTC0" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="/backend/Case/Status" title="派案狀況">
+                                        <i class="fa-solid fa-pen-to-square"></i> 派案狀況
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/Case/Roster" title="輪派順序">
+                                        <i class="fa fa-pen-to-square"></i> 輪派順序
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/backend/Case/Summary" title="核銷經費統計">
+                                        <i class="fa fa-pen-to-square"></i> 核銷經費統計
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/backend/CaseManager" title="A個管人員統計">
+                                        <i class="fa fa-pen-to-square"></i> A個管人員統計
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/backend/CaseManager/Statistics" title="彙整圖表">
+                                        <i class="fa fa-pen-to-square"></i> 彙整圖表
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/MonthlyReport/0/1" title="每月核銷金額">
+                                        <i class="fa fa-users"></i> 每月核銷金額
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/MonthlyReport/UnitA" title="每月服務報表">
+                                        <i class="fa fa-users"></i> 每月服務報表
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" title="居家服務統計" class="menu-item" data-toggle="collapse" data-target="#LTC1"
+                                aria-expanded="false">
+                                <i class="fas fa-hand-holding-heart"></i> 居家服務統計
+                            </a>
+                            <ul id="LTC1" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="/backend/MonthlyReport/1" title="居服填報統計">
+                                        <i class="fa fa-users"></i> 居服填報統計
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/Report/11" title="個案人數統計分析">
+                                        <i class="fa-solid fa-pen-to-square"></i> 個案人數統計分析
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/Report/12" title="居服人數與證照分析">
+                                        <i class="fa fa-pen-to-square"></i> 居服人數與證照分析
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/backend/Report/13" title="排班資料統計分析">
+                                        <i class="fa fa-pen-to-square"></i> 排班資料統計分析
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/backend/Report/sync" title="已同步資料">
+                                        <i class="fa fa-pen-to-square"></i> 已同步資料
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/TelRecord/" title="電話查核紀錄">
+                                        <i class="fa fa-users"></i> 電話查核紀錄
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/OnsiteRecord/" title="實地查核紀錄">
+                                        <i class="fa fa-users"></i> 實地查核紀錄
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" title="日間照顧圖表" class="menu-item" data-toggle="collapse" data-target="#LTC2"
+                                aria-expanded="false">
+                                <i class="fas fa-hand-holding-heart"></i> 日間照顧圖表
+                            </a>
+                            <ul id="LTC2" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="/backend/MonthlyReport/2" title="日照填報統計">
+                                        <i class="fa fa-users"></i> 日照填報統計
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/DayCareTelRecord/" title="電話查核紀錄">
+                                        <i class="fa fa-users"></i> 電話查核紀錄
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/DayCareOnsiteRecord/" title="實地查核紀錄">
+                                        <i class="fa fa-users"></i> 實地查核紀錄
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item" id="小規模多機能">
+                            <a href="#" title="小規模多機能" class="menu-item" data-toggle="collapse" data-target="#LTC3"
+                                aria-expanded="false">
+                                <i class="fas fa-hand-holding-heart"></i> 小規模多機能
+                            </a>
+                            <ul id="LTC3" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="/backend/MonthlyReport/3/1" title="每月核銷金額">
+                                        <i class="fa fa-users"></i> 每月核銷金額
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/MonthlyReport/3/2" title="每月服務成果">
+                                        <i class="fa fa-users"></i> 每月服務成果
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/MonthlyReport/3/3" title="開辦費補助金額">
+                                        <i class="fa fa-users"></i> 開辦費補助金額
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/MonthlyReport/3/4" title="社區式交通車補助金額">
+                                        <i class="fa fa-users"></i> 社區式交通車補助金額
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item" id="家庭托顧">
+                            <a href="#" title="家庭托顧" class="menu-item" data-toggle="collapse" data-target="#LTC4"
+                                aria-expanded="false">
+                                <i class="fas fa-hand-holding-heart"></i> 家庭托顧
+                            </a>
+                            <ul id="LTC4" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="/backend/MonthlyReport/4/1" title="每月核銷金額">
+                                        <i class="fa fa-users"></i> 每月核銷金額
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/MonthlyReport/4/2" title="每月服務成果">
+                                        <i class="fa fa-users"></i> 每月服務成果
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/MonthlyReport/4/3" title="開辦費補助金額">
+                                        <i class="fa fa-users"></i> 開辦費補助金額
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item" id="團體家屋">
+                            <a href="#" title="團體家屋" class="menu-item" data-toggle="collapse" data-target="#LTC5"
+                                aria-expanded="false">
+                                <i class="fas fa-hand-holding-heart"></i> 團體家屋
+                            </a>
+                            <ul id="LTC5" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="/backend/MonthlyReport/5/1" title="每月核銷金額">
+                                        <i class="fa fa-users"></i> 每月核銷金額
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/MonthlyReport/5/2" title="每月服務成果">
+                                        <i class="fa fa-users"></i> 每月服務成果
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/MonthlyReport/5/3" title="開辦費補助金額">
+                                        <i class="fa fa-users"></i> 開辦費補助金額
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item" id="營養餐食填報">
+                            <a href="/backend/NutritionMeals">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                營養餐食填報
+                            </a>
+                        </li>
+
+                        <li class="nav-item active" id="輔具管理申請">
+                            <a href="/backend/AssistiveTool/">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                輔具管理申請
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" title="交通接送" class="menu-item" data-toggle="collapse" data-target="#LTC7"
+                                aria-expanded="false">
+                                <i class="fas fa-hand-holding-heart"></i> 交通接送
+                            </a>
+                            <ul id="LTC7" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="/backend/MonthlyReport/7" title="交通填報統計">
+                                        <i class="fa fa-users"></i> 交通填報統計
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/Transportation/UnitCar" title="各單位投入專車管理">
+                                        <i class="fa fa-users"></i> 各單位投入專車管理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/Transportation/CostDetails" title="服務費用明細表">
+                                        <i class="fa fa-users"></i> 服務費用明細表
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/Transportation/MonthlyTripStats" title="每月服務趟次統計">
+                                        <i class="fa fa-users"></i> 每月服務趟次統計
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/Transportation/MonthlyUserStats" title="每月服務人數統計">
+                                        <i class="fa fa-users"></i> 每月服務人數統計
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" title="報表匯出" class="menu-item" data-toggle="collapse" data-target="#Report"
+                                aria-expanded="false">
+                                <i class="fas fa-hand-holding-heart"></i> 報表匯出
+                            </a>
+                            <ul id="Report" class="collapse" data-parent="#navigation">
+                                <li>
+                                    <a href="/backend/MonthlyReport/Report" title="報表匯出">
+                                        <i class="fa fa-users"></i> 報表匯出
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/backend/MonthlyReport/FullData" title="全量資料匯出">
+                                        <i class="fa fa-users"></i> 全量資料匯出
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- MAIN CONT -->
+            <main role="main" class="main-content container-fluid">
+
+                <!-------------------- 主要內容 -------------------->
+                <div class="content-wrapper">
+                    <div class="page-header">
+                        <h2 class="content-header-title"> 輔具管理申請</h2>
+
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">長照服務</li>
+                                <li class="breadcrumb-item">居家服務</li>
+                                <li class="breadcrumb-item active">
+                                    <a href="#">臺南市柳營奇美居家服務機構</a>
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+
+                    <!--查詢-->
+
+                    <div class="function-wrap">
+                        <ul class="submenu">
+                            <li class="active">
+                                <a href="#">輔具管理申請</a>
+                            </li>
+                        </ul>
+
+
+                        <div class="form-wrap">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-12">
+
+                                    <div class="form-inline">
+
+                                        <div class="form-group">
+                                            <label class="mr-2" for="rendDate">租借月份</label>
+                                            <input type="text" class="form-control roc-monthpicker"
+                                                data-target="#rendDate">
+                                            <input type="hidden" class="form-control" id="rendDate" value=""
+                                                name="rendDate">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="mr-2" for="name">個案姓名</label>
+                                            <input type="text" class="form-control" id="name" value="" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="sr-only my-1 mr-2" for="units">請選擇特約單位</label>
+
+                                            <select class="form-control selectpicker" title="請選擇特約單位"
+                                                data-live-search="true" required>
+                                                <option value="none" selected="" disabled="">請選擇特約單位</option>
+                                                <option value="測試">測試</option>
+                                                <option value="輔具">輔具</option>
+                                                <option value="東光儀器有限公司">東光儀器有限公司</option>
+                                                <option value="宏佳醫療器材行">宏佳醫療器材行</option>
+                                                <option value="泰吉醫療器材行">泰吉醫療器材行</option>
+                                                <option value="倚億企業社">倚億企業社</option>
+                                                <option value="慶南儀器有限公司">慶南儀器有限公司</option>
+                                                <option value="德真醫療器材行">德真醫療器材行</option>
+                                                <option value="健玏醫療器材行">健玏醫療器材行</option>
+                                                <option value="洤鈱有限公司">洤鈱有限公司</option>
+                                                <option value="辰庚企業有限公司">辰庚企業有限公司</option>
+                                                <option value="安全醫材行">安全醫材行</option>
+                                                <option value="成安醫療器材用品行">成安醫療器材用品行</option>
+                                                <option selected value="德春醫療器材行">德春醫療器材行</option>
+                                                <option value="婕聖企業社">婕聖企業社</option>
+                                                <option value="正式的測試輔具">正式的測試輔具</option>
+                                            </select>
+                                        </div>
+
+
+                                        <button type="submit" class="btn btn-dark btn-search mr-auto">
+                                            <i class="fa-solid fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-lg-4 col-md-12">
+                                    <div class="actions">
+                                        <button type="submit" class="btn btn-outline-dark btn-export btn-add mr-2">
+                                            <i class="fas fa-file-export"></i>匯出 XLSX
+                                        </button>
+                                        <button type="submit" formaction="/backend/AssistiveTool/Export?t=1"
+                                            class="btn btn-outline-dark btn-export btn-add mr-2">
+                                            <i class="fas fa-file-export"></i>匯出 ODS
+                                        </button>
+                                        <button type="submit" formaction="/backend/AssistiveTool/Export?t=2"
+                                            class="btn btn-outline-dark btn-export btn-add mr-2">
+                                            <i class="fas fa-file-export"></i>匯出 PDF
+                                        </button>
+                                        <a href="/backend/AssistiveTool/Edit" class="btn btn-warning btn-add">
+                                            <i class="fa-solid fa-plus"></i>新增輔具
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!--內容區塊-->
+                        <div class="page-content-area">
+                            <div style="width: 100%; overflow-x: auto;">
+
+                                <table class="display table datatableFix3col display nowrap" style="width:2000px;">
+                                    <thead>
+                                        <tr>
+                                            <th data-width="60">編號</th>
+                                            <th data-width="80">租借日期</th>
+                                            <th data-width="120">特約單位名稱</th>
+                                            <th data-width="60">個案姓名</th>
+                                            <th data-width="100">身分證字號</th>
+                                            <th data-width="80">福利身分別</th>
+                                            <th data-width="60">CMS等級</th>
+                                            <th data-width="60">出生日期</th>
+                                            <th data-width="100">聯絡電話</th>
+                                            <th data-width="120">手機</th>
+                                            <th data-width="100">輔具項目名稱</th>
+                                            <th data-width="80">服務日期起</th>
+                                            <th data-width="80">服務日期迄</th>
+                                            <th data-width="80">租借天數</th>
+                                            <th data-width="100">統一發票號碼</th>
+                                            <th data-width="100">核定給付金額</th>
+                                            <th data-width="100">租借金額</th>
+                                            <th data-width="100">申請給付金額</th>
+                                            <th data-width="130">民眾部分負擔金額</th>
+                                            <th data-width="150">管理</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1140606</td>
+                                            <td>114-09-04</td>
+                                            <td>正式的測試輔具</td>
+                                            <td>林爺爺</td>
+                                            <td>H667293378</td>
+                                            <td>1</td>
+                                            <td>第2級</td>
+                                            <td>101-05-23</td>
+                                            <td>06-6592000*702</td>
+                                            <td>b606592000*702</td>
+                                            <td>氧氣製造機</td>
+                                            <td>114-09-01</td>
+                                            <td>114-09-19</td>
+                                            <td>19</td>
+                                            <td>GH376453</td>
+                                            <td>$2,000</td>
+                                            <td>$1,000</td>
+                                            <td>$1,000</td>
+                                            <td>$1,000</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="far fa-edit"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-delete ml-1" title="刪除">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>01</td>
+                                            <td>114-08-11</td>
+                                            <td>正式的測試輔具</td>
+                                            <td>王小明</td>
+                                            <td>A12345678</td>
+                                            <td>4</td>
+                                            <td>第4級</td>
+                                            <td>28-06-27</td>
+                                            <td>0912345678</td>
+                                            <td>0912345678</td>
+                                            <td>氧氣製造機</td>
+                                            <td>114-08-11</td>
+                                            <td>114-08-31</td>
+                                            <td>21</td>
+                                            <td>A12345678</td>
+                                            <td>$1,500</td>
+                                            <td>$0</td>
+                                            <td>$0</td>
+                                            <td>$1,500</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="far fa-edit"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-delete ml-1" title="刪除">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>01</td>
+                                            <td>114-08-11</td>
+                                            <td>正式的測試輔具</td>
+                                            <td>王小明</td>
+                                            <td>A12345678</td>
+                                            <td>4</td>
+                                            <td>第4級</td>
+                                            <td>28-06-27</td>
+                                            <td>0912345678</td>
+                                            <td>0912345678</td>
+                                            <td>抽痰機</td>
+                                            <td>114-08-11</td>
+                                            <td>114-08-31</td>
+                                            <td>21</td>
+                                            <td>A12345678</td>
+                                            <td>$250</td>
+                                            <td>$0</td>
+                                            <td>$0</td>
+                                            <td>$250</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="far fa-edit"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-delete ml-1" title="刪除">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1140606</td>
+                                            <td>114-08-07</td>
+                                            <td>正式的測試輔具</td>
+                                            <td>王奶奶</td>
+                                            <td>C882618816</td>
+                                            <td>3</td>
+                                            <td>第3級</td>
+                                            <td>114-08-07</td>
+                                            <td>06-6592345*702</td>
+                                            <td>0921062258</td>
+                                            <td>抽痰機</td>
+                                            <td>114-08-07</td>
+                                            <td>114-11-14</td>
+                                            <td>100</td>
+                                            <td>30</td>
+                                            <td>$0</td>
+                                            <td>$0</td>
+                                            <td>$0</td>
+                                            <td>$0</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="far fa-edit"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-delete ml-1" title="刪除">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>01</td>
+                                            <td>114-07-23</td>
+                                            <td>正式的測試輔具</td>
+                                            <td>王小明</td>
+                                            <td>A12345678</td>
+                                            <td>4</td>
+                                            <td>第5級</td>
+                                            <td>28-06-27</td>
+                                            <td>0912345678</td>
+                                            <td>0912345678</td>
+                                            <td>氧氣製造機</td>
+                                            <td>114-07-23</td>
+                                            <td>114-08-14</td>
+                                            <td>23</td>
+                                            <td>A12345678</td>
+                                            <td>$1,500</td>
+                                            <td>$2,000</td>
+                                            <td>$1,050</td>
+                                            <td>$450</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="far fa-edit"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-delete ml-1" title="刪除">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1140606</td>
+                                            <td>114-06-16</td>
+                                            <td>泰吉醫療器材行</td>
+                                            <td>林爺爺</td>
+                                            <td>H667293378</td>
+                                            <td>2</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>第一款</td>
+                                            <td>114-05-31</td>
+                                            <td>114-12-31</td>
+                                            <td>215</td>
+                                            <td>GH376453</td>
+                                            <td>$20,000</td>
+                                            <td>$14,000</td>
+                                            <td>$14,000</td>
+                                            <td>$6,000</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="far fa-edit"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-delete ml-1" title="刪除">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>888636235</td>
+                                            <td>114-03-14</td>
+                                            <td>洤鈱有限公司</td>
+                                            <td>王奶奶</td>
+                                            <td>C882618816</td>
+                                            <td>4</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>輔具二號</td>
+                                            <td>114-03-14</td>
+                                            <td>114-04-30</td>
+                                            <td>48</td>
+                                            <td>88832143</td>
+                                            <td>$19,000</td>
+                                            <td>$16,000</td>
+                                            <td>$4,000</td>
+                                            <td>$15,000</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="far fa-edit"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-delete ml-1" title="刪除">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>A</td>
+                                            <td>103-05-15</td>
+                                            <td>輔具</td>
+                                            <td>B</td>
+                                            <td>C</td>
+                                            <td>1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>噴霧器</td>
+                                            <td>103-05-06</td>
+                                            <td>103-05-09</td>
+                                            <td>4</td>
+                                            <td>1</td>
+                                            <td>$2</td>
+                                            <td>$3</td>
+                                            <td>$4</td>
+                                            <td>-$2</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="far fa-edit"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-delete ml-1" title="刪除">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-outline-dark btn-edit">
+                                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+            </main>
+
+            <!-- MAIN CONT end-->
+            <footer>
+                <div class="copyright">
+                    <ul>
+                        <li>Copyright © 臺南市政府社會局─長期照顧管理中心 2024</li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!--JS-->
+    <script src='js/jquery-3.5.1.min.js'></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+    <script src="js/popper.min.js"></script>
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <script src='assets/bootstrap-select/js/bootstrap-select.min.js'></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.js"></script>
+    <!-- <script src="assets/datatables/jquery.dataTables.min.js"></script> -->
+    <script src='https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/plug-ins/2.0.3/i18n/zh-HANT.json'></script>
+    <script src="js/script-2.js"></script>
+
+</body>
+
+</html>

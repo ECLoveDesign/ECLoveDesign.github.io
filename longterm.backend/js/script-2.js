@@ -242,6 +242,96 @@ if ($('.datatableFixColumn').length) {
   });
 }
 
+  // datatableFix3col
+if ($('.datatableFix3col').length) {
+  $(document).ready(function () {
+    const isMobile = window.innerWidth < 768;
+
+    const loadScript = (url) => {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = url;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    };
+
+    const generateColumnDefs = () => {
+      const defs = [];
+      $('.datatableFix3col thead th').each(function (index) {
+        const width = $(this).data('width');
+        if (width) {
+          defs.push({
+            width: `${width}px`,
+            targets: index
+          });
+        }
+      });
+      return defs;
+    };
+
+    const destroyTable = (datatable) => {
+      if (datatable.fixedHeader) datatable.fixedHeader.disable?.();
+      datatable.destroy();
+      $('.fixedHeader-floating, .fixedHeader-locked').remove();
+      $('.DTFC_LeftWrapper, .DTFC_RightWrapper').remove();
+    };
+
+    const initDataTable = () => {
+      // 👉 手機移除 data-width，避免 <thead> 撐開
+      if (isMobile) {
+        $('.datatableFix3col thead th').removeAttr('data-width');
+      }
+
+      return $('.datatableFix3col').DataTable({
+        language: {
+          url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
+        },
+        order: [],
+        searching: false,
+        lengthChange: false,
+        paging: false,
+        autoWidth: false,
+        scrollX: !isMobile,
+        scrollY: isMobile ? false : 500,
+        scrollCollapse: !isMobile,
+        fixedHeader: isMobile ? false : {
+          header: true,
+          footer: false
+        },
+        fixedColumns: isMobile ? false : {
+          leftColumns: 3
+        },
+        columnDefs: isMobile ? [] : generateColumnDefs()
+      });
+    };
+
+    const initWithPlugins = async () => {
+      if (!isMobile) {
+        // 👉 僅在桌機動態載入 plugin
+        await loadScript('https://cdn.datatables.net/fixedcolumns/3.2.0/js/dataTables.fixedColumns.js');
+        await loadScript('https://cdn.datatables.net/fixedheader/3.1.0/js/dataTables.fixedHeader.min.js');
+      }
+
+      let datatable = initDataTable();
+
+      if (!isMobile) {
+        const observer = new ResizeObserver(() => {
+          setTimeout(() => {
+            destroyTable(datatable);
+            datatable = initDataTable();
+          }, 200);
+        });
+        observer.observe(document.querySelector('.dataTables_wrapper'));
+      }
+    };
+
+    // 🚀 啟動流程
+    initWithPlugins();
+  });
+}
+
   // datatableNopage
   if ($('.datatableNopage').length) {
 
@@ -270,7 +360,7 @@ if ($('.datatableFixColumn').length) {
       ]
     });
 
-    $('.datatableFixColumn').DataTable({
+    $('.datatableFix3col').DataTable({
       language: {
           url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/zh-HANT.json',
       },   
