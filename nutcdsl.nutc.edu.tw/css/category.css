@@ -1,0 +1,344 @@
+@charset "UTF-8";
+/* ==========================================================================
+   領域課程菜單（category.html）
+   搜尋／篩選面板沿用 css/course.css
+   桌機：3 欄領域卡　手機：單欄橫式列表（依設計稿）
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 金色次要按鈕（填寫興趣意願）
+   -------------------------------------------------------------------------- */
+.btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(90deg, #cf9835 0%, #af7b22 100%);
+    border: 0;
+    border-radius: 10px;
+}
+
+.btn-gold:hover,
+.btn-gold:focus {
+    color: #fff;
+    background: linear-gradient(90deg, #c48f2d 0%, #a1701c 100%);
+    text-decoration: none;
+}
+
+.btn-gold img {
+    width: 16px;
+    height: 16px;
+}
+
+/* 頁面標頭右側改為上下兩段（工具列 + 按鈕） */
+.page-head__tools--stack {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 18px;
+}
+
+.page-head__tools--stack .page-head__toolrow {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+/* --------------------------------------------------------------------------
+   2. 區段頁籤卡（依領域別／依系所別）
+   -------------------------------------------------------------------------- */
+.section-tabs {
+    display: flex;
+    gap: 44px;
+    padding: 16px 28px 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+}
+
+.section-tabs .nav-link {
+    position: relative;
+    padding: 0 0 7px;
+    font-size: 18px;
+    line-height: 25px;
+    color: #7a8699;
+    background: none;
+    border: 0;
+    border-radius: 0;
+}
+
+.section-tabs .nav-link:hover,
+.section-tabs .nav-link:focus {
+    color: var(--c-title);
+    text-decoration: none;
+}
+
+.section-tabs .nav-link.active {
+    font-weight: 700;
+    color: var(--c-title);
+    background: none;
+}
+
+.section-tabs .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: #0140a8;
+    border-radius: 1.5px;
+}
+
+/* --------------------------------------------------------------------------
+   3. 領域卡
+   -------------------------------------------------------------------------- */
+/* 版面由 Bootstrap grid 負責：row.row--g20 > li.col-md-6.col-xl-4
+   區塊間距由 .content__inner 的 gap 負責 */
+.domain-grid {
+    margin-top: 0;
+}
+
+.domain-grid>li {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.domain-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    padding: 24px 24px 22px;
+    background: #fff;
+    border: 1px solid #eceef1;
+    border-radius: var(--r-card);
+    box-shadow: 0 2px 8px rgba(15, 26, 51, .05);
+    color: inherit;
+}
+
+.domain-card:hover,
+.domain-card:focus {
+    color: inherit;
+    text-decoration: none;
+    border-color: #d5deee;
+    box-shadow: 0 4px 14px rgba(15, 26, 51, .1);
+}
+
+.domain-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+}
+
+.domain-card__icon img {
+    width: 28px;
+    height: 28px;
+}
+
+/* 各領域圖示底色 */
+.ic--it {
+    background: #e7eefb;
+}
+
+.ic--language {
+    background: #e4f1fb;
+}
+
+.ic--business {
+    background: #fbf1de;
+}
+
+.ic--arts {
+    background: #fbe9f0;
+}
+
+.ic--science {
+    background: #e7f4ec;
+}
+
+.ic--general {
+    background: #e6f0f3;
+}
+
+.domain-card__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--c-heading);
+}
+
+.domain-card__desc {
+    margin: 0;
+    font-size: 14px;
+    color: var(--c-muted-2);
+}
+
+.domain-card__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+/* 掛在 .badge 上：BS 預設 font-size 75%、font-weight 700、圓角 .25rem，一併蓋掉 */
+.badge-count {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    border-radius: 8px;
+}
+
+.badge-count.count--blue {
+    color: #2f5fd0;
+    background: #edf1f9;
+}
+
+.badge-count.count--green {
+    color: #2fa36b;
+    background: #e4f3ea;
+}
+
+.badge-count.count--gold {
+    color: #b77410;
+    background: #fbf1de;
+}
+
+.domain-note {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.domain-note--hot {
+    color: #e0662b;
+}
+
+/* --------------------------------------------------------------------------
+   4. RWD
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+
+    /* 手機不顯示「填寫興趣意願」（設計稿手機版沒有） */
+    .page-head__tools--stack {
+        display: none;
+    }
+
+    .section-tabs {
+        gap: 26px;
+        padding: 12px 15px 0;
+    }
+
+    .section-tabs .nav-link {
+        padding-bottom: 6px;
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    /* 領域卡改為單欄橫式列表（依設計稿）—— 取消 row 的負邊距 */
+    .domain-grid {
+        display: block;
+        margin: 0;
+        background: #fff;
+        border: 1px solid var(--c-border);
+        border-radius: var(--r-card);
+        box-shadow: var(--shadow-card-sm);
+        overflow: hidden;
+    }
+
+    .domain-grid li+li .domain-card {
+        border-top: 1px solid var(--c-divider);
+    }
+
+    .domain-grid>li {
+        display: block;
+        max-width: none;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .domain-card {
+        display: grid;
+        grid-template-columns: 40px 1fr auto;
+        grid-template-rows: auto auto auto;
+        column-gap: 12px;
+        row-gap: 2px;
+        max-width: none;
+        padding: 13px 15px;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .domain-card:hover,
+    .domain-card:focus {
+        border: 0;
+        box-shadow: none;
+        background: #f7f9fc;
+    }
+
+    .domain-card__icon {
+        grid-row: 1 / 4;
+        width: 36px;
+        height: 36px;
+        align-self: center;
+        border-radius: 10px;
+    }
+
+    .domain-card__icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .domain-card__title {
+        grid-column: 2;
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    .domain-card__desc {
+        grid-column: 2;
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .domain-card__foot {
+        grid-column: 2;
+        justify-content: flex-start;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 手機版課程數不做膠囊底，只留彩色文字（依設計稿） */
+    .badge-count {
+        padding: 0;
+        font-size: 12px;
+        line-height: 17px;
+        background: none;
+    }
+
+    /* 備註（熱門↑／完課率最高）移到右側 */
+    .domain-note {
+        grid-column: 3;
+        grid-row: 1 / 4;
+        align-self: center;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+}

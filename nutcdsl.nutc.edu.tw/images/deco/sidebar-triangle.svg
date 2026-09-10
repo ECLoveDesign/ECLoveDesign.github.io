@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="179" height="178" viewBox="0 0 179 178" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="deco / sidebar-triangle" clip-path="url(#clip0_0_221)">
+<path id="Vector" d="M179 0V178H0L179 0Z" fill="url(#paint0_linear_0_221)" fill-opacity="0.8"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_221" x1="89.5" y1="0" x2="89.5" y2="178" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2D7EE6"/>
+<stop offset="1" stop-color="#2D7EE8"/>
+</linearGradient>
+<clipPath id="clip0_0_221">
+<rect width="179" height="178" fill="white"/>
+</clipPath>
+</defs>
+</svg>

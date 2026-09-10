@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域,數位自主學習,自主學習平台,微學程,完課申請" />
+    <meta name="description" content="國立臺中科技大學跨領域數位自主學習平台，提供跨領域課程探索、完課申請與個人學習歷程管理。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="首頁 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="國立臺中科技大學跨領域數位自主學習平台，提供跨領域課程探索、完課申請與個人學習歷程管理。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+
+    <title>首頁 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="index.html" aria-current="page">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="course-list.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程總覽
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="category.html">
+                                    <img src="images/icons/nav-category.svg" alt="" aria-hidden="true" />領域課程菜單
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="completion.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />完課申請
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="history.html">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />我的學習歷程
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item active" aria-current="page">首頁</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">首頁</h1>
+                            <p class="page-head__desc">探索跨領域課程，持續累積自主學習成果</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">B908107011</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row--g25">
+                        <div class="col-lg-7 home-main">
+
+                            <!-- ---------------------- 最新公告 ---------------------- -->
+                            <section class="card card-panel" aria-labelledby="h-notice">
+                                <div class="card-header card-panel__head">
+                                    <h2 class="card-panel__title" id="h-notice">最新公告</h2>
+                                    <a class="link-more" href="#">
+                                        查看全部<span class="a11y-hidden">公告</span>
+                                        <img src="images/icons/chevron.svg" alt="" aria-hidden="true" />
+                                    </a>
+                                </div>
+                                <div class="card-body card-panel__body">
+                                    <ul class="list-unstyled notice-list">
+                                        <li>
+                                            <a class="notice-list__link" href="#">
+                                                <span class="notice-list__text">113-2 學期完課申請截止日為 2026/06/30</span>
+                                                <time class="notice-list__date" datetime="2026-06-20">2026/06/20</time>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="notice-list__link" href="#">
+                                                <span class="notice-list__text">跨領域自主學習成果發表活動開放報名</span>
+                                                <time class="notice-list__date" datetime="2026-06-18">2026/06/18</time>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="notice-list__link" href="#">
+                                                <span class="notice-list__text">請於期限內完成課程證書上傳與認列申請</span>
+                                                <time class="notice-list__date" datetime="2026-06-15">2026/06/15</time>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="notice-list__link" href="#">
+                                                <span class="notice-list__text">系統將於 6/22 00:00-04:00 進行例行維護</span>
+                                                <time class="notice-list__date" datetime="2026-06-12">2026/06/12</time>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="notice-list__link" href="#">
+                                                <span class="notice-list__text">新增「AI 應用實務」等 8 門跨領域課程</span>
+                                                <time class="notice-list__date" datetime="2026-06-10">2026/06/10</time>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="notice-list__link" href="#">
+                                                <span class="notice-list__text">本學期學習時數未達標者請儘速補足</span>
+                                                <time class="notice-list__date" datetime="2026-06-05">2026/06/05</time>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <!-- ---------------------- 推薦課程 ---------------------- -->
+                            <section class="card card-panel course-panel" aria-labelledby="h-course">
+                                <h2 class="a11y-hidden" id="h-course">課程推薦</h2>
+                                <div class="card-header card-panel__head">
+                                    <div class="course-panel__headrow">
+                                        <ul class="nav tab-list" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link active" id="tab-rec" href="#panel-rec"
+                                                    data-toggle="tab" role="tab" aria-controls="panel-rec"
+                                                    aria-selected="true">推薦課程</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" id="tab-hot" href="#panel-hot" data-toggle="tab"
+                                                    role="tab" aria-controls="panel-hot"
+                                                    aria-selected="false">熱門課程</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" id="tab-new" href="#panel-new" data-toggle="tab"
+                                                    role="tab" aria-controls="panel-new"
+                                                    aria-selected="false">最新課程</a>
+                                            </li>
+                                        </ul>
+                                        <a class="link-more" href="course-list.html">
+                                            查看全部<span class="a11y-hidden">課程</span>
+                                            <img src="images/icons/chevron.svg" alt="" aria-hidden="true" />
+                                        </a>
+                                    </div>
+                                    <div class="course-panel__divider" aria-hidden="true"></div>
+                                </div>
+
+                                <div class="card-body card-panel__body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="panel-rec" role="tabpanel"
+                                            aria-labelledby="tab-rec">
+                                            <div class="row row--g20 course-grid" tabindex="0" role="group"
+                                                aria-label="推薦課程列表，可左右捲動">
+                                                <div class="col-md-4">
+                                                    <div class="card course-card">
+                                                        <div class="course-card__thumb thumb--it">
+                                                            <img src="images/illust/course-ml.svg" alt=""
+                                                                aria-hidden="true" />
+                                                        </div>
+                                                        <div class="card-body course-card__body">
+                                                            <h3 class="course-card__title">Machine Learning Foundations
+                                                            </h3>
+                                                            <p class="course-card__meta">
+                                                                <span class="badge badge-tag tag--it">資訊科技</span>
+                                                                <span class="course-card__source">Coursera</span>
+                                                            </p>
+                                                            <a class="btn btn-outline-brand course-card__btn"
+                                                                href="course-detail.html">查看課程<span
+                                                                    class="a11y-hidden">：Machine Learning
+                                                                    Foundations</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="card course-card">
+                                                        <div class="course-card__thumb thumb--lang">
+                                                            <img src="images/illust/course-writing.svg" alt=""
+                                                                aria-hidden="true" />
+                                                        </div>
+                                                        <div class="card-body course-card__body">
+                                                            <h3 class="course-card__title">學術英文寫作</h3>
+                                                            <p class="course-card__meta">
+                                                                <span class="badge badge-tag tag--lang">語言學習</span>
+                                                                <span class="course-card__source">Ewant</span>
+                                                            </p>
+                                                            <a class="btn btn-outline-brand course-card__btn"
+                                                                href="course-detail.html">查看課程<span
+                                                                    class="a11y-hidden">：學術英文寫作</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="card course-card">
+                                                        <div class="course-card__thumb thumb--biz">
+                                                            <img src="images/illust/course-business.svg" alt=""
+                                                                aria-hidden="true" />
+                                                        </div>
+                                                        <div class="card-body course-card__body">
+                                                            <h3 class="course-card__title">創業實務與案例分析</h3>
+                                                            <p class="course-card__meta">
+                                                                <span class="badge badge-tag tag--biz">商業管理</span>
+                                                                <span class="course-card__source">Ewant</span>
+                                                            </p>
+                                                            <a class="btn btn-outline-brand course-card__btn"
+                                                                href="course-detail.html">查看課程<span
+                                                                    class="a11y-hidden">：創業實務與案例分析</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 熱門課程（後端帶入不同資料，版型同上） -->
+                                        <div class="tab-pane fade" id="panel-hot" role="tabpanel"
+                                            aria-labelledby="tab-hot">
+                                            <div class="row row--g20 course-grid" tabindex="0" role="group"
+                                                aria-label="熱門課程列表，可左右捲動">
+                                                <div class="col-md-4">
+                                                    <div class="card course-card">
+                                                        <div class="course-card__thumb thumb--biz">
+                                                            <img src="images/illust/course-business.svg" alt=""
+                                                                aria-hidden="true" />
+                                                        </div>
+                                                        <div class="card-body course-card__body">
+                                                            <h3 class="course-card__title">企業倫理與法規</h3>
+                                                            <p class="course-card__meta">
+                                                                <span class="badge badge-tag tag--biz">商業管理</span>
+                                                                <span class="course-card__source">Ewant</span>
+                                                            </p>
+                                                            <a class="btn btn-outline-brand course-card__btn"
+                                                                href="course-detail.html">查看課程<span
+                                                                    class="a11y-hidden">：企業倫理與法規</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="card course-card">
+                                                        <div class="course-card__thumb thumb--it">
+                                                            <img src="images/illust/course-ml.svg" alt=""
+                                                                aria-hidden="true" />
+                                                        </div>
+                                                        <div class="card-body course-card__body">
+                                                            <h3 class="course-card__title">資料科學概論</h3>
+                                                            <p class="course-card__meta">
+                                                                <span class="badge badge-tag tag--it">資訊科技</span>
+                                                                <span class="course-card__source">Coursera</span>
+                                                            </p>
+                                                            <a class="btn btn-outline-brand course-card__btn"
+                                                                href="course-detail.html">查看課程<span
+                                                                    class="a11y-hidden">：資料科學概論</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="card course-card">
+                                                        <div class="course-card__thumb thumb--lang">
+                                                            <img src="images/illust/course-writing.svg" alt=""
+                                                                aria-hidden="true" />
+                                                        </div>
+                                                        <div class="card-body course-card__body">
+                                                            <h3 class="course-card__title">商用日語會話</h3>
+                                                            <p class="course-card__meta">
+                                                                <span class="badge badge-tag tag--lang">語言學習</span>
+                                                                <span class="course-card__source">Ewant</span>
+                                                            </p>
+                                                            <a class="btn btn-outline-brand course-card__btn"
+                                                                href="course-detail.html">查看課程<span
+                                                                    class="a11y-hidden">：商用日語會話</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 最新課程（後端帶入不同資料，版型同上） -->
+                                        <div class="tab-pane fade" id="panel-new" role="tabpanel"
+                                            aria-labelledby="tab-new">
+                                            <div class="row row--g20 course-grid" tabindex="0" role="group"
+                                                aria-label="最新課程列表，可左右捲動">
+                                                <div class="col-md-4">
+                                                    <div class="card course-card">
+                                                        <div class="course-card__thumb thumb--it">
+                                                            <img src="images/illust/course-ml.svg" alt=""
+                                                                aria-hidden="true" />
+                                                        </div>
+                                                        <div class="card-body course-card__body">
+                                                            <h3 class="course-card__title">AI 應用實務</h3>
+                                                            <p class="course-card__meta">
+                                                                <span class="badge badge-tag tag--it">資訊科技</span>
+                                                                <span class="course-card__source">Coursera</span>
+                                                            </p>
+                                                            <a class="btn btn-outline-brand course-card__btn"
+                                                                href="course-detail.html">查看課程<span
+                                                                    class="a11y-hidden">：AI 應用實務</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="card course-card">
+                                                        <div class="course-card__thumb thumb--lang">
+                                                            <img src="images/illust/course-writing.svg" alt=""
+                                                                aria-hidden="true" />
+                                                        </div>
+                                                        <div class="card-body course-card__body">
+                                                            <h3 class="course-card__title">英語簡報技巧</h3>
+                                                            <p class="course-card__meta">
+                                                                <span class="badge badge-tag tag--lang">語言學習</span>
+                                                                <span class="course-card__source">Ewant</span>
+                                                            </p>
+                                                            <a class="btn btn-outline-brand course-card__btn"
+                                                                href="course-detail.html">查看課程<span
+                                                                    class="a11y-hidden">：英語簡報技巧</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="card course-card">
+                                                        <div class="course-card__thumb thumb--biz">
+                                                            <img src="images/illust/course-business.svg" alt=""
+                                                                aria-hidden="true" />
+                                                        </div>
+                                                        <div class="card-body course-card__body">
+                                                            <h3 class="course-card__title">行銷數據分析</h3>
+                                                            <p class="course-card__meta">
+                                                                <span class="badge badge-tag tag--biz">商業管理</span>
+                                                                <span class="course-card__source">Ewant</span>
+                                                            </p>
+                                                            <a class="btn btn-outline-brand course-card__btn"
+                                                                href="course-detail.html">查看課程<span
+                                                                    class="a11y-hidden">：行銷數據分析</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- ---------------------- 個人待辦事項 ---------------------- -->
+                        <div class="col-lg-5 home-side">
+                            <section class="card card-panel" aria-labelledby="h-todo">
+                                <div class="card-header card-panel__head">
+                                    <h2 class="card-panel__title" id="h-todo">個人待辦事項</h2>
+                                    <a class="link-more" href="#">
+                                        查看全部<span class="a11y-hidden">待辦事項</span>
+                                        <img src="images/icons/chevron.svg" alt="" aria-hidden="true" />
+                                    </a>
+                                </div>
+                                <div class="card-body card-panel__body">
+                                    <ul class="list-unstyled todo-list">
+                                        <li>
+                                            <div class="todo-item">
+                                                <img class="todo-item__icon" src="images/icons/clock.svg" alt=""
+                                                    aria-hidden="true" />
+                                                <span class="todo-item__text">補交 Business Communication 申請資料</span>
+                                                <a class="btn btn-outline-brand todo-item__action" href="#">
+                                                    查看<span class="a11y-hidden">：補交 Business Communication 申請資料</span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

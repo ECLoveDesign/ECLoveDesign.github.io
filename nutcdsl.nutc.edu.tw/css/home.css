@@ -1,0 +1,390 @@
+@charset "UTF-8";
+/* ==========================================================================
+   首頁（我的數位自學）專屬樣式
+   依賴 css/style.css 的色票與框架
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 兩欄版面（Bootstrap grid：col-lg-7 / col-lg-5）
+   設計稿為 870 / 660，12 欄制最接近的是 7 / 5（58.3% / 41.7%）
+   -------------------------------------------------------------------------- */
+.home-main>.card-panel+.card-panel {
+    margin-top: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   3. 最新公告
+   -------------------------------------------------------------------------- */
+.notice-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.notice-list li+li {
+    border-top: 1px solid var(--c-divider);
+}
+
+.notice-list__link {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    color: var(--c-text);
+}
+
+.notice-list__link:hover,
+.notice-list__link:focus {
+    color: var(--c-primary);
+}
+
+.notice-list__text {
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.notice-list__date {
+    flex: 0 0 auto;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--c-muted);
+}
+
+/* 公告卡首列不要重複上緣留白 */
+.card-panel__body>.notice-list {
+    margin-top: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   4. 推薦課程（分頁籤 + 課程卡）
+   -------------------------------------------------------------------------- */
+.course-panel .card-panel__head {
+    display: block;
+    padding-bottom: 0;
+}
+
+/* 頁籤列與「查看全部」同一行（桌機、手機皆同） */
+.course-panel__headrow {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* 頁籤 */
+.tab-list {
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.tab-list .nav-link {
+    position: relative;
+    padding: 0 0 8px;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--c-muted);
+    background: none;
+    border: 0;
+    border-radius: 0;
+}
+
+.tab-list .nav-link:hover,
+.tab-list .nav-link:focus {
+    color: var(--c-primary);
+    text-decoration: none;
+}
+
+.tab-list .nav-link.active {
+    font-weight: 500;
+    color: var(--c-primary);
+    background: none;
+}
+
+/* active 底線 */
+.tab-list .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 64px;
+    height: 3px;
+    background: var(--c-primary);
+    border-radius: 1.5px;
+}
+
+/* 頁籤下方整條分隔線（貼齊卡片左右緣） */
+.course-panel__divider {
+    height: 1px;
+    margin: 14px 0 0;
+    background: var(--c-divider-2);
+}
+
+/* 課程卡列（row / col-md-4） */
+.course-grid {
+    padding: 14px 0 0;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+}
+
+.course-card__thumb {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+
+.course-card__thumb img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 三種課程縮圖底色（設計稿為線性漸層） */
+.thumb--it {
+    background: linear-gradient(142deg, #2a6bc4 7%, #1e4e96 79%);
+}
+
+.thumb--lang {
+    background: linear-gradient(142deg, #c6dbd3 7%, #dce9e4 79%);
+}
+
+.thumb--biz {
+    background: linear-gradient(142deg, #f7d49f 7%, #fce6c4 79%);
+}
+
+.course-card__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 16px 15px 15px;
+}
+
+.course-card__title {
+    margin: 0 0 auto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    color: var(--c-title);
+}
+
+.course-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 14px;
+}
+
+.course-card__source {
+    font-size: 13.5px;
+    line-height: 19px;
+    color: var(--c-muted-3);
+}
+
+.course-card__btn {
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   5. 個人待辦事項
+   -------------------------------------------------------------------------- */
+.todo-list {
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.todo-list li+li {
+    border-top: 1px solid var(--c-divider);
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+}
+
+.todo-item__icon {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+}
+
+.todo-item__text {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 15px;
+    line-height: 21px;
+    color: var(--c-text);
+}
+
+.todo-item__action {
+    flex: 0 0 auto;
+    padding: 6px 16px;
+    font-size: 13.5px;
+    line-height: 19px;
+    border-radius: 7px;
+}
+
+/* --------------------------------------------------------------------------
+   6. RWD —— <992px 單欄
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+
+    /* 單欄堆疊（col-lg-* 在 <992 自動變 100%） */
+    .home-main>.card-panel+.card-panel,
+    .home-side {
+        margin-top: 16px;
+    }
+
+    /* 公告卡：手機版標題下多一條分隔線 */
+    .card-panel__head {
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--c-divider-2);
+    }
+
+    .card-panel__body {
+        padding-top: 0;
+    }
+
+    .notice-list__link {
+        padding: 11px 0;
+    }
+
+    .notice-list__text {
+        font-size: 13.5px;
+        line-height: 19px;
+    }
+
+    .notice-list__date {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    /* 頁籤：間距縮小、底線貼齊文字寬 */
+    .course-panel .card-panel__head {
+        display: block;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .course-panel__headrow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .tab-list {
+        gap: 22px;
+    }
+
+    .tab-list .nav-link {
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    .tab-list .nav-link.active::after {
+        width: 60px;
+    }
+
+    .course-panel__divider {
+        margin-top: 12px;
+    }
+
+    /* 課程卡改為橫向捲動
+       捲動容器加 tabindex="0" + role/aria-label，確保鍵盤可捲動（無障礙 2.1.1） */
+    /* 手機：row 改為不換行的橫向捲動 */
+    .course-grid {
+        flex-wrap: nowrap;
+        padding: 14px 0 2px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+
+    .course-grid:focus-visible {
+        outline: 2px solid var(--c-primary);
+        outline-offset: 2px;
+    }
+
+    .course-grid>[class*="col"] {
+        flex: 0 0 230px;
+        max-width: 230px;
+        scroll-snap-align: start;
+    }
+
+    .course-card__thumb {
+        height: 120px;
+    }
+
+    .course-card__body {
+        padding: 14px 13px 13px;
+    }
+
+    .course-card__title {
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    .course-card__meta {
+        gap: 8px;
+        margin: 14px 0 12px;
+    }
+
+    .course-card__source {
+        font-size: 12.5px;
+        line-height: 18px;
+    }
+
+    .course-card__btn {
+        padding: 8px 12px;
+        font-size: 13.5px;
+        line-height: 19px;
+    }
+
+    /* 待辦：按鈕改為純文字連結 */
+    .todo-item {
+        gap: 8px;
+        padding: 11px 0;
+    }
+
+    .todo-item__icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .todo-item__text {
+        font-size: 13.5px;
+        line-height: 19px;
+    }
+
+    .todo-item__action {
+        padding: 0;
+        font-size: 13px;
+        line-height: 18px;
+        color: var(--c-link);
+        background: none;
+        border: 0;
+    }
+
+    .todo-item__action:hover,
+    .todo-item__action:focus {
+        color: var(--c-primary);
+        background: none;
+        text-decoration: underline;
+    }
+}
