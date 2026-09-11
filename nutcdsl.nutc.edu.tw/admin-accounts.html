@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域自學平台,後臺,帳號管理,角色權限" />
+    <meta name="description" content="後臺帳號管理：管理平台使用者帳號與角色權限，基本資料由校務系統介接。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="帳號管理 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="後臺帳號管理：管理平台使用者帳號與角色權限，基本資料由校務系統介接。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/course.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <title>帳號管理 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-courses.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-course-review.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />課程審核
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-reports.html">
+                                    <img src="images/icons/nav-report.svg" alt="" aria-hidden="true" />報表管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-announcements.html">
+                                    <img src="images/icons/nav-announce.svg" alt="" aria-hidden="true" />公告管理
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：通知管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-notify"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-notify">
+                                    <img src="images/icons/nav-notify.svg" alt="" aria-hidden="true" />通知管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-notify">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify.html">通知管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify-log.html">系統通知紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-settings.html">
+                                    <img src="images/icons/nav-settings.svg" alt="" aria-hidden="true" />系統參數設定
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：系統管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-system"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-system">
+                                    <img src="images/icons/nav-system.svg" alt="" aria-hidden="true" />系統管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-system">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-accounts.html" aria-current="page">帳號管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-roles.html">角色管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-audit-log.html">系統操作紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="admin-index.html">後臺</a></li>
+                                    <li class="breadcrumb-item">系統管理</li>
+                                    <li class="breadcrumb-item active" aria-current="page">帳號管理</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">帳號管理</h1>
+                            <p class="page-head__desc">管理平台使用者帳號與角色權限，基本資料由校務系統介接</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">系統管理員</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 搜尋 -->
+                    <section class="card card-panel search-panel" aria-labelledby="h-search">
+                        <h2 class="a11y-hidden" id="h-search">帳號搜尋</h2>
+                        <div class="card-body card-panel__body">
+                            <form class="form-inline search-panel__row" action="#" role="search">
+                                <div class="form-group search-field">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <img src="images/icons/search.svg" alt="" aria-hidden="true" />
+                                            </span>
+                                        </div>
+                                        <label class="a11y-hidden" for="aq">帳號關鍵字</label>
+                                        <input type="search" class="form-control" id="aq"
+                                            placeholder="輸入帳號、姓名或電子信箱關鍵字..." />
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-xl btn-xl--primary">搜尋</button>
+                            </form>
+                        </div>
+                    </section>
+
+                    <!-- 帳號列表 -->
+                    <section class="card card-panel detail-card data-panel" aria-labelledby="h-acc">
+                        <div class="detail-card__head">
+                            <h2 class="card-panel__title" id="h-acc">帳號列表</h2>
+                            <p class="panel-note">帳號基本資料由校務系統介接，編輯僅可調整角色</p>
+                            <div class="panel-actions">
+                                <button type="button" class="btn btn-m btn-m--primary" data-toggle="modal"
+                                    data-target="#modalAccount">新增帳號</button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table data-table">
+                                <caption class="a11y-hidden">帳號列表，共 236 個，目前顯示第 1 頁</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 13%;" aria-sort="ascending">
+                                            <a class="th-sort" href="#">帳號</a>
+                                        </th>
+                                        <th scope="col" style="width: 8.5%;"><a class="th-sort" href="#">姓名</a></th>
+                                        <th scope="col" style="width: 24%;">電子信箱</th>
+                                        <th scope="col" style="width: 13%;"><a class="th-sort" href="#">角色</a></th>
+                                        <th scope="col" style="width: 11%;"><a class="th-sort" href="#">狀態</a></th>
+                                        <th scope="col">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                                    <tr>
+                                                        <th scope="row" class="is-num">t112001</th>
+                                                        <td>陳威宇</td>
+                                                        <td class="is-muted">weiyu.chen@nutc.edu.tw</td>
+                                                        <td><span class="badge chip chip--magenta">系統管理員</span></td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">啟用</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAccount">編輯<span
+                                                                        class="a11y-hidden">：t112001 陳威宇</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">停用<span
+                                                                        class="a11y-hidden">：t112001 陳威宇</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="is-num">t112002</th>
+                                                        <td>黃志誠</td>
+                                                        <td class="is-muted">zhicheng.huang@nutc.edu.tw</td>
+                                                        <td><span class="badge chip chip--amber">課程審核者</span></td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">啟用</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAccount">編輯<span
+                                                                        class="a11y-hidden">：t112002 黃志誠</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">停用<span
+                                                                        class="a11y-hidden">：t112002 黃志誠</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="is-num">t112003</th>
+                                                        <td>王麗華</td>
+                                                        <td class="is-muted">lihua.wang@nutc.edu.tw</td>
+                                                        <td><span class="badge chip chip--blue-light">授課教師</span></td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">啟用</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAccount">編輯<span
+                                                                        class="a11y-hidden">：t112003 王麗華</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">停用<span
+                                                                        class="a11y-hidden">：t112003 王麗華</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="is-num">t112004</th>
+                                                        <td>林建民</td>
+                                                        <td class="is-muted">jianmin.lin@nutc.edu.tw</td>
+                                                        <td><span class="badge chip chip--blue-light">授課教師</span></td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">啟用</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAccount">編輯<span
+                                                                        class="a11y-hidden">：t112004 林建民</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">停用<span
+                                                                        class="a11y-hidden">：t112004 林建民</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="is-num">t112005</th>
+                                                        <td>張文德</td>
+                                                        <td class="is-muted">wende.zhang@nutc.edu.tw</td>
+                                                        <td><span class="badge chip chip--green">系所承辦人</span></td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--neutral">停用</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAccount">編輯<span
+                                                                        class="a11y-hidden">：t112005 張文德</span></button>
+                                                                <a class="btn btn-s btn-s--link" href="#">啟用<span
+                                                                        class="a11y-hidden">：t112005 張文德</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="is-num">t112006</th>
+                                                        <td>李國彰</td>
+                                                        <td class="is-muted">guozhang.li@nutc.edu.tw</td>
+                                                        <td><span class="badge chip chip--blue-light">授課教師</span></td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">啟用</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAccount">編輯<span
+                                                                        class="a11y-hidden">：t112006 李國彰</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">停用<span
+                                                                        class="a11y-hidden">：t112006 李國彰</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="is-num">a110001</th>
+                                                        <td>吳佩珊</td>
+                                                        <td class="is-muted">peishan.wu@nutc.edu.tw</td>
+                                                        <td><span class="badge chip chip--green">系所承辦人</span></td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">啟用</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAccount">編輯<span
+                                                                        class="a11y-hidden">：a110001 吳佩珊</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">停用<span
+                                                                        class="a11y-hidden">：a110001 吳佩珊</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="is-num">a110002</th>
+                                                        <td>蔡明修</td>
+                                                        <td class="is-muted">mingxiu.cai@nutc.edu.tw</td>
+                                                        <td><span class="badge chip chip--amber">課程審核者</span></td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--neutral">停用</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAccount">編輯<span
+                                                                        class="a11y-hidden">：a110002 蔡明修</span></button>
+                                                                <a class="btn btn-s btn-s--link" href="#">啟用<span
+                                                                        class="a11y-hidden">：a110002 蔡明修</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="is-num">a110003</th>
+                                                        <td>鄭雅涵</td>
+                                                        <td class="is-muted">yahan.zheng@nutc.edu.tw</td>
+                                                        <td><span class="badge chip chip--magenta">系統管理員</span></td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">啟用</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAccount">編輯<span
+                                                                        class="a11y-hidden">：a110003 鄭雅涵</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">停用<span
+                                                                        class="a11y-hidden">：a110003 鄭雅涵</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-foot">
+                            <p class="table-foot__count">共 236 個帳號，第 1 / 27 頁</p>
+                            <nav aria-label="帳號列表分頁">
+                                <ul class="pager">
+                                    <li><a class="pager__link pager__link--prev is-disabled" href="#" aria-label="上一頁"></a></li>
+                                    <li><a class="pager__link" href="#" aria-current="page">1</a></li>
+                                    <li><a class="pager__link" href="#">2</a></li>
+                                    <li><a class="pager__link" href="#">3</a></li>
+                                    <li><span class="pager__ellipsis" aria-hidden="true">…</span></li>
+                                    <li><a class="pager__link" href="#">27</a></li>
+                                    <li><a class="pager__link pager__link--next" href="#" aria-label="下一頁"></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </section>
+
+                    <!-- ===================== 彈窗：新增帳號 ===================== -->
+                    <div class="modal fade admin-modal" id="modalAccount" tabindex="-1" role="dialog"
+                        aria-labelledby="modalAccountTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div>
+                                        <h2 class="modal-title" id="modalAccountTitle">新增帳號</h2>
+                                        <p class="modal-subtitle">帳號管理 › 新增帳號</p>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="a11y-hidden">關閉</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form class="form-grid" action="#">
+                                        <div class="form-group">
+                                            <label class="form-label" for="acAcc">帳號<span class="is-required"
+                                                    aria-hidden="true">*</span></label>
+                                            <input type="text" class="form-control" id="acAcc" placeholder="請輸入帳號" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="acName">姓名<span class="is-required"
+                                                    aria-hidden="true">*</span></label>
+                                            <input type="text" class="form-control" id="acName" placeholder="請輸入姓名" required />
+                                        </div>
+                                        <div class="form-group form-grid__full">
+                                            <label class="form-label" for="acMail">電子信箱<span class="is-required"
+                                                    aria-hidden="true">*</span></label>
+                                            <input type="email" class="form-control" id="acMail" placeholder="請輸入電子信箱"
+                                                required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="acRole">角色<span class="is-required"
+                                                    aria-hidden="true">*</span></label>
+                                            <select class="form-control bs-select" id="acRole" title="請選擇角色" required>
+                                                <option value="" disabled selected>請選擇角色</option>
+                                                <option value="admin">系統管理員</option>
+                                                <option value="reviewer">課程審核者</option>
+                                                <option value="teacher">授課教師</option>
+                                                <option value="staff">系所承辦人</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <p class="form-label" id="acStateLabel">狀態</p>
+                                            <div class="radio-row" role="radiogroup" aria-labelledby="acStateLabel">
+                                                <span class="radio-row__item">
+                                                    <input type="radio" name="acState" id="acOn" value="1" checked />
+                                                    <label for="acOn">啟用</label>
+                                                </span>
+                                                <span class="radio-row__item">
+                                                    <input type="radio" name="acState" id="acOff" value="0" />
+                                                    <label for="acOff">停用</label>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
+                                        data-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-m btn-m--primary">確認新增</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域自學平台,後臺,管理首頁,公告,待辦事項" />
+    <meta name="description" content="後臺首頁：最新公告與個人待辦事項，快速前往需要處理的作業。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="後臺首頁 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="後臺首頁：最新公告與個人待辦事項，快速前往需要處理的作業。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <title>後臺首頁 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-index.html" aria-current="page">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-courses.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-course-review.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />課程審核
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-reports.html">
+                                    <img src="images/icons/nav-report.svg" alt="" aria-hidden="true" />報表管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-announcements.html">
+                                    <img src="images/icons/nav-announce.svg" alt="" aria-hidden="true" />公告管理
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：通知管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-notify"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-notify">
+                                    <img src="images/icons/nav-notify.svg" alt="" aria-hidden="true" />通知管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-notify">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify.html">通知管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify-log.html">系統通知紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-settings.html">
+                                    <img src="images/icons/nav-settings.svg" alt="" aria-hidden="true" />系統參數設定
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：系統管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-system"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-system">
+                                    <img src="images/icons/nav-system.svg" alt="" aria-hidden="true" />系統管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-system">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-accounts.html">帳號管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-roles.html">角色管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-audit-log.html">系統操作紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="admin-index.html">後臺</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">首頁</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">首頁</h1>
+                            <p class="page-head__desc">掌握最新公告與個人待辦事項，快速前往需要處理的作業</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">系統管理員</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="home-row">
+
+                        <!-- 最新公告 -->
+                        <section class="card card-panel detail-card home-row__main" aria-labelledby="h-notice">
+                            <div class="detail-card__head">
+                                <h2 class="card-panel__title" id="h-notice">最新公告</h2>
+                                <a class="link-go" href="admin-announcements.html">前往公告管理 ›</a>
+                            </div>
+
+                            <ul class="notice-list">
+                                <li>
+                                    <article class="notice-item">
+                                        <span class="badge badge-state badge-state--amber notice-item__pin">置頂</span>
+                                        <h3 class="notice-item__title">115 學年度第一學期選課開放公告</h3>
+                                        <p class="notice-item__date">2026/08/25</p>
+                                        <p class="notice-item__desc">選課系統將於 9 月 8 日上午 9 時開放，請同學於期限內完成初選作業。</p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="notice-item">
+                                        <span class="badge badge-state badge-state--amber notice-item__pin">置頂</span>
+                                        <h3 class="notice-item__title">AI 應用實務新增第二班次</h3>
+                                        <p class="notice-item__date">2026/08/24</p>
+                                        <p class="notice-item__desc">因報名人數踴躍加開一班，加簽登記至 9 月 5 日 17:00 止。</p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="notice-item">
+                                        <span class="badge badge-state badge-state--amber notice-item__pin">置頂</span>
+                                        <h3 class="notice-item__title">平台維護通知（8/30 22:00）</h3>
+                                        <p class="notice-item__date">2026/08/20</p>
+                                        <p class="notice-item__desc">維護期間無法登入平台與提交完課申請，請提前完成作業。</p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="notice-item">
+                                        <h3 class="notice-item__title">跨領域微學程成果發表會報名</h3>
+                                        <p class="notice-item__date">2026/08/22</p>
+                                        <p class="notice-item__desc">即日起至 9 月 15 日止受理線上報名，名額 120 位額滿為止。</p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="notice-item">
+                                        <h3 class="notice-item__title">完課申請文件格式調整</h3>
+                                        <p class="notice-item__date">2026/08/18</p>
+                                        <p class="notice-item__desc">舊版表單自 9 月 1 日起停止受理，請至說明文件下載新版。</p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="notice-item">
+                                        <h3 class="notice-item__title">業界講座：生成式 AI 應用</h3>
+                                        <p class="notice-item__date">2026/08/15</p>
+                                        <p class="notice-item__desc">9 月 12 日下午 2 時於中商大樓國際會議廳舉行，開放自由入座。</p>
+                                    </article>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- 個人待辦事項 -->
+                        <section class="card card-panel detail-card home-row__side" aria-labelledby="h-todo">
+                            <div class="detail-card__head">
+                                <h2 class="card-panel__title" id="h-todo">個人待辦事項</h2>
+                            </div>
+
+                            <ul class="todo-list">
+                                <li>
+                                    <div class="todo-item">
+                                        <p class="todo-item__text">審核「跨文化溝通實務」課程送審</p>
+                                        <a class="btn btn-s btn-s--link" href="admin-course-review.html">前往處理<span
+                                                class="a11y-hidden">：審核「跨文化溝通實務」課程送審</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="todo-item">
+                                        <p class="todo-item__text">回覆「創業實務與案例分析」退回說明</p>
+                                        <a class="btn btn-s btn-s--link" href="admin-course-review.html">前往處理<span
+                                                class="a11y-hidden">：回覆「創業實務與案例分析」退回說明</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="todo-item">
+                                        <p class="todo-item__text">確認 114-2 完課申請名單（32 筆）</p>
+                                        <a class="btn btn-s btn-s--link" href="admin-course-review.html">前往處理<span
+                                                class="a11y-hidden">：確認 114-2 完課申請名單</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="todo-item">
+                                        <p class="todo-item__text">發布 115-1 選課系統開放公告</p>
+                                        <a class="btn btn-s btn-s--link" href="admin-announcements.html">前往處理<span
+                                                class="a11y-hidden">：發布 115-1 選課系統開放公告</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="todo-item">
+                                        <p class="todo-item__text">匯出 8 月跨領域選課統計報表</p>
+                                        <a class="btn btn-s btn-s--link" href="admin-reports.html">前往處理<span
+                                                class="a11y-hidden">：匯出 8 月跨領域選課統計報表</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="todo-item">
+                                        <p class="todo-item__text">審核新進助教帳號權限申請（3 筆）</p>
+                                        <a class="btn btn-s btn-s--link" href="admin-accounts.html">前往處理<span
+                                                class="a11y-hidden">：審核新進助教帳號權限申請</span></a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="card-foot">
+                                <a class="link-go" href="#">查看全部待辦事項 ›</a>
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域課程,課程內頁,課程資訊,課程單元,同儕評價" />
+    <meta name="description" content="課程詳細資訊、系所認列學分、課程單元進度與同儕評價。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Python程式設計入門 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="課程詳細資訊、系所認列學分、課程單元進度與同儕評價。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/course-detail.css" />
+
+    <title>Python程式設計入門 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="course-list.html" aria-current="true">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程總覽
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="category.html">
+                                    <img src="images/icons/nav-category.svg" alt="" aria-hidden="true" />領域課程菜單
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="completion.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />完課申請
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="history.html">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />我的學習歷程
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head course-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                                    <li class="breadcrumb-item"><a href="course-list.html">課程總覽</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Python程式設計入門</li>
+                                </ol>
+                            </nav>
+
+                            <div class="course-head__title-row">
+                                <h1 class="page-head__title">Python程式設計入門</h1>
+                                <span class="badge page-tag page-tag--recognized">課程認列</span>
+                            </div>
+
+                            <p class="course-head__source">
+                                <span class="badge page-tag page-tag--source">Ewant 台灣開放式課程</span>
+                            </p>
+                        </div>
+
+                        <div class="page-head__aside">
+                            <div class="page-head__tools">
+                                <a class="btn btn-notice" href="#">
+                                    <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                    通知
+                                    <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                    <span class="a11y-hidden">（有未讀訊息）</span>
+                                </a>
+                                <div class="user-chip">
+                                    <span class="user-chip__avatar">
+                                        <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                    </span>
+                                    <span>
+                                        <span class="a11y-hidden">目前登入者：</span>
+                                        <p class="user-chip__name">路人甲</p>
+                                        <p class="user-chip__id">B908107011</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-soft course-head__back" href="course-list.html">
+                                <img src="images/icons/back.svg" alt="" width="16" height="14" aria-hidden="true" />
+                                回前頁
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 課程資訊 / 課程單元 -->
+                    <div class="detail-cols">
+
+                        <section class="card-panel detail-card detail-card--info" aria-labelledby="h-info">
+                            <div class="detail-card__head">
+                                <h2 class="card-panel__title" id="h-info">課程資訊</h2>
+                            </div>
+
+                            <div class="detail-card__body">
+                                <dl class="info-list">
+                                    <div class="info-list__row">
+                                        <dt class="info-list__label">授課教師</dt>
+                                        <dd class="info-list__value">陳威宇 教授</dd>
+                                    </div>
+                                    <div class="info-list__row">
+                                        <dt class="info-list__label">系所認列學分</dt>
+                                        <dd class="info-list__value">
+                                            <span class="credit">
+                                                <span class="credit__dept">資訊工程系</span>
+                                                <span class="badge credit__chip">3.0 學分</span>
+                                            </span>
+                                            <span class="credit">
+                                                <span class="credit__dept">資訊管理系</span>
+                                                <span class="badge credit__chip">2.5 學分</span>
+                                            </span>
+                                        </dd>
+                                    </div>
+                                    <div class="info-list__row">
+                                        <dt class="info-list__label">總時數</dt>
+                                        <dd class="info-list__value">18 小時</dd>
+                                    </div>
+                                    <div class="info-list__row">
+                                        <dt class="info-list__label">選修人數</dt>
+                                        <dd class="info-list__value">438 人</dd>
+                                    </div>
+                                    <div class="info-list__row">
+                                        <dt class="info-list__label">課程期間</dt>
+                                        <dd class="info-list__value">2025/09 – 2026/06</dd>
+                                    </div>
+                                    <div class="info-list__row">
+                                        <dt class="info-list__label">完課門檻</dt>
+                                        <dd class="info-list__value">觀看時數 ≧ 80%</dd>
+                                    </div>
+                                    <div class="info-list__row">
+                                        <dt class="info-list__label">申請名額</dt>
+                                        <dd class="info-list__value">150 人（剩餘 42 個名額）</dd>
+                                    </div>
+                                    <div class="info-list__row">
+                                        <dt class="info-list__label">申請資格</dt>
+                                        <dd class="info-list__value">本校全體學生</dd>
+                                    </div>
+                                </dl>
+
+                                <a class="btn btn-enroll" href="#">立即選課</a>
+                            </div>
+                        </section>
+
+                        <section class="card-panel detail-card detail-card--units" aria-labelledby="h-units">
+                            <div class="detail-card__head">
+                                <h2 class="card-panel__title" id="h-units">課程單元</h2>
+                            </div>
+
+                            <div class="detail-card__body">
+                                <ol class="unit-list">
+                                    <li class="unit-list__item">
+                                        <span class="unit-list__week">第 1 週</span>
+                                        <span class="unit-list__name">Python 環境建置與基本語法</span>
+                                        <span class="unit-done">
+                                            <img src="images/icons/check-white.svg" alt="" width="12" height="12"
+                                                aria-hidden="true" />
+                                            <span class="a11y-hidden">已完成</span>
+                                        </span>
+                                    </li>
+                                    <li class="unit-list__item">
+                                        <span class="unit-list__week">第 2 週</span>
+                                        <span class="unit-list__name">條件判斷與迴圈</span>
+                                        <span class="unit-done">
+                                            <img src="images/icons/check-white.svg" alt="" width="12" height="12"
+                                                aria-hidden="true" />
+                                            <span class="a11y-hidden">已完成</span>
+                                        </span>
+                                    </li>
+                                    <li class="unit-list__item">
+                                        <span class="unit-list__week">第 3 週</span>
+                                        <span class="unit-list__name">函式與模組</span>
+                                        <span class="unit-done">
+                                            <img src="images/icons/check-white.svg" alt="" width="12" height="12"
+                                                aria-hidden="true" />
+                                            <span class="a11y-hidden">已完成</span>
+                                        </span>
+                                    </li>
+                                    <li class="unit-list__item unit-list__item--active">
+                                        <span class="unit-list__week">第 4 週</span>
+                                        <span class="unit-list__name">串列、字典與資料結構</span>
+                                        <span class="badge unit-chip">進行中</span>
+                                    </li>
+                                    <li class="unit-list__item">
+                                        <span class="unit-list__week">第 5 週</span>
+                                        <span class="unit-list__name">檔案操作與例外處理</span>
+                                    </li>
+                                    <li class="unit-list__item">
+                                        <span class="unit-list__week">第 6 週</span>
+                                        <span class="unit-list__name">期末專題實作</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- 同儕評價 -->
+                    <section class="card-panel detail-card review-panel" aria-labelledby="h-review">
+                        <div class="detail-card__head">
+                            <h2 class="card-panel__title" id="h-review">同儕評價</h2>
+                            <p class="review-summary">
+                                <img src="images/icons/star.svg" alt="" width="18" height="18" aria-hidden="true" />
+                                <span class="review-summary__score">4.5 / 5.0</span>
+                                <span class="review-summary__count">（182 則評價）</span>
+                            </p>
+                        </div>
+
+                        <div class="review-cols">
+
+                            <div class="review-bars">
+                                <h3 class="a11y-hidden">評分分布</h3>
+                                <p class="rating-bar">
+                                    <span class="rating-bar__label">5 顆星</span>
+                                    <span class="rating-bar__track">
+                                        <span class="rating-bar__fill" style="width: 58%;"></span>
+                                    </span>
+                                    <span class="rating-bar__pct">58%</span>
+                                </p>
+                                <p class="rating-bar">
+                                    <span class="rating-bar__label">4 顆星</span>
+                                    <span class="rating-bar__track">
+                                        <span class="rating-bar__fill" style="width: 28%;"></span>
+                                    </span>
+                                    <span class="rating-bar__pct">28%</span>
+                                </p>
+                                <p class="rating-bar">
+                                    <span class="rating-bar__label">3 顆星</span>
+                                    <span class="rating-bar__track">
+                                        <span class="rating-bar__fill" style="width: 10%;"></span>
+                                    </span>
+                                    <span class="rating-bar__pct">10%</span>
+                                </p>
+                                <p class="rating-bar">
+                                    <span class="rating-bar__label">2 顆星</span>
+                                    <span class="rating-bar__track">
+                                        <span class="rating-bar__fill" style="width: 3%;"></span>
+                                    </span>
+                                    <span class="rating-bar__pct">3%</span>
+                                </p>
+                                <p class="rating-bar">
+                                    <span class="rating-bar__label">1 顆星</span>
+                                    <span class="rating-bar__track">
+                                        <span class="rating-bar__fill" style="width: 1%;"></span>
+                                    </span>
+                                    <span class="rating-bar__pct">1%</span>
+                                </p>
+                            </div>
+
+                            <div class="review-list">
+                                <h3 class="a11y-hidden">學生評價</h3>
+                                <ul class="review-list__items">
+                                    <li class="review">
+                                        <span class="review__avatar review__avatar--violet" aria-hidden="true">陳</span>
+                                        <div class="review__main">
+                                            <p class="review__meta">
+                                                <span class="review__name">陳雅婷</span>
+                                                <span class="review__date">
+                                                    <span class="a11y-hidden">評價日期：</span>2026/05/10
+                                                </span>
+                                                <span class="review__stars">
+                                                    <span class="a11y-hidden">評分 5 分，滿分 5 分</span>
+                                                    <img src="images/icons/star.svg" alt="" width="15" height="15"
+                                                        aria-hidden="true" />
+                                                    <img src="images/icons/star.svg" alt="" width="15" height="15"
+                                                        aria-hidden="true" />
+                                                    <img src="images/icons/star.svg" alt="" width="15" height="15"
+                                                        aria-hidden="true" />
+                                                    <img src="images/icons/star.svg" alt="" width="15" height="15"
+                                                        aria-hidden="true" />
+                                                    <img src="images/icons/star.svg" alt="" width="15" height="15"
+                                                        aria-hidden="true" />
+                                                </span>
+                                            </p>
+                                            <p class="review__text">課程內容深入淺出，非常適合初學者，老師解說清楚，作業設計很有趣！</p>
+                                        </div>
+                                    </li>
+                                    <li class="review">
+                                        <span class="review__avatar review__avatar--green" aria-hidden="true">王</span>
+                                        <div class="review__main">
+                                            <p class="review__meta">
+                                                <span class="review__name">王建明</span>
+                                                <span class="review__date">
+                                                    <span class="a11y-hidden">評價日期：</span>2026/04/22
+                                                </span>
+                                                <span class="review__stars">
+                                                    <span class="a11y-hidden">評分 4 分，滿分 5 分</span>
+                                                    <img src="images/icons/star.svg" alt="" width="15" height="15"
+                                                        aria-hidden="true" />
+                                                    <img src="images/icons/star.svg" alt="" width="15" height="15"
+                                                        aria-hidden="true" />
+                                                    <img src="images/icons/star.svg" alt="" width="15" height="15"
+                                                        aria-hidden="true" />
+                                                    <img src="images/icons/star.svg" alt="" width="15" height="15"
+                                                        aria-hidden="true" />
+                                                    <img src="images/icons/star-off.svg" alt="" width="15" height="15"
+                                                        aria-hidden="true" />
+                                                </span>
+                                            </p>
+                                            <p class="review__text">學到很多實用的程式技能，章節安排合理，但希望補充更多實際案例。</p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="review-list__action">
+                                    <a class="btn btn-soft" href="#">
+                                        <img src="images/icons/pencil-dark.svg" alt="" width="16" height="16"
+                                            aria-hidden="true" />
+                                        撰寫評價
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域自學平台,後臺,課程管理,課程審核,匯入課程" />
+    <meta name="description" content="後臺課程管理：維護全校跨領域課程資料、審核狀態與選課情形。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="課程管理 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="後臺課程管理：維護全校跨領域課程資料、審核狀態與選課情形。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/course.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <title>課程管理 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-courses.html" aria-current="page">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-course-review.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />課程審核
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-reports.html">
+                                    <img src="images/icons/nav-report.svg" alt="" aria-hidden="true" />報表管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-announcements.html">
+                                    <img src="images/icons/nav-announce.svg" alt="" aria-hidden="true" />公告管理
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：通知管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-notify"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-notify">
+                                    <img src="images/icons/nav-notify.svg" alt="" aria-hidden="true" />通知管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-notify">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify.html">通知管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify-log.html">系統通知紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-settings.html">
+                                    <img src="images/icons/nav-settings.svg" alt="" aria-hidden="true" />系統參數設定
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：系統管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-system"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-system">
+                                    <img src="images/icons/nav-system.svg" alt="" aria-hidden="true" />系統管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-system">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-accounts.html">帳號管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-roles.html">角色管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-audit-log.html">系統操作紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="admin-index.html">後臺</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">課程管理</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">課程管理</h1>
+                            <p class="page-head__desc">管理全校跨領域課程資料、審核狀態與選課情形</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">系統管理員</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 搜尋與篩選 -->
+                    <section class="card card-panel search-panel" aria-labelledby="h-search">
+                        <h2 class="a11y-hidden" id="h-search">課程搜尋與篩選</h2>
+                        <div class="card-body card-panel__body">
+                            <form class="form-inline search-panel__row" action="#" role="search">
+                                <div class="form-group search-field">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <img src="images/icons/search.svg" alt="" aria-hidden="true" />
+                                            </span>
+                                        </div>
+                                        <label class="a11y-hidden" for="cq">課程關鍵字</label>
+                                        <input type="search" class="form-control" id="cq"
+                                            placeholder="輸入課程名稱、授課老師或系所關鍵字..." />
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-xl btn-xl--primary">搜尋</button>
+                            </form>
+
+                            <div class="search-panel__divider" aria-hidden="true"></div>
+
+                            <div class="filter-row">
+                                <p class="filter-row__label">篩選條件</p>
+                                <div class="filter-row__items">
+                                                <div class="form-group filter-item">
+                                                    <label class="a11y-hidden" for="cf0">領域別</label>
+                                                    <select class="form-control bs-select filter-select" id="cf0" title="領域別">
+                                                        <option value="" disabled selected>領域別</option>
+                                                        <option value="1">資訊科技</option>
+                                                        <option value="2">語言學習</option>
+                                                        <option value="3">商業管理</option>
+                                                        <option value="4">通識教育</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group filter-item">
+                                                    <label class="a11y-hidden" for="cf1">系所別</label>
+                                                    <select class="form-control bs-select filter-select" id="cf1" title="系所別">
+                                                        <option value="" disabled selected>系所別</option>
+                                                        <option value="1">資訊工程系</option>
+                                                        <option value="2">資訊管理系</option>
+                                                        <option value="3">應用英語系</option>
+                                                        <option value="4">企業管理系</option>
+                                                        <option value="5">電機工程系</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group filter-item">
+                                                    <label class="a11y-hidden" for="cf2">語言</label>
+                                                    <select class="form-control bs-select filter-select" id="cf2" title="語言">
+                                                        <option value="" disabled selected>語言</option>
+                                                        <option value="1">中文</option>
+                                                        <option value="2">英文</option>
+                                                        <option value="3">中英雙語</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group filter-item">
+                                                    <label class="a11y-hidden" for="cf3">修課方式</label>
+                                                    <select class="form-control bs-select filter-select" id="cf3" title="修課方式">
+                                                        <option value="" disabled selected>修課方式</option>
+                                                        <option value="1">非同步線上</option>
+                                                        <option value="2">同步線上</option>
+                                                        <option value="3">實體課程</option>
+                                                    </select>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 課程列表 -->
+                    <section class="card card-panel detail-card data-panel" aria-labelledby="h-list">
+                        <div class="detail-card__head">
+                            <h2 class="card-panel__title" id="h-list">
+                                課程列表
+                                <span class="badge badge-state badge-state--blue">已選 3 筆</span>
+                            </h2>
+                            <div class="panel-actions">
+                                <button type="button" class="btn btn-m btn-m--primary" data-toggle="modal"
+                                    data-target="#modalNewCourse">新增課程</button>
+                                <button type="button" class="btn btn-m btn-m--neutral" data-toggle="modal"
+                                    data-target="#modalImportCourse">匯入課程</button>
+                                <a class="btn btn-m btn-m--neutral" href="#">匯出課程</a>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table data-table">
+                                <caption class="a11y-hidden">課程列表，共 128 筆，目前顯示第 1 頁</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="data-table__check">
+                                            <span class="check">
+                                                <input class="check__input" type="checkbox" id="pickAll" />
+                                                <label class="a11y-hidden" for="pickAll">全選本頁課程</label>
+                                                <span class="check__box" aria-hidden="true"></span>
+                                            </span>
+                                        </th>
+                                        <th scope="col" aria-sort="descending">
+                                            <a class="th-sort" href="#">課程名稱</a>
+                                        </th>
+                                        <th scope="col"><a class="th-sort" href="#">領域別</a></th>
+                                        <th scope="col"><a class="th-sort" href="#">系所別</a></th>
+                                        <th scope="col"><a class="th-sort" href="#">選課人數</a></th>
+                                        <th scope="col"><a class="th-sort" href="#">狀態</a></th>
+                                        <th scope="col">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="pick1"
+                                                                    checked />
+                                                                <label class="a11y-hidden" for="pick1">選取AI 應用實務</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row">AI 應用實務</th>
+                                                        <td><span class="badge chip chip--blue-light">資訊科技</span></td>
+                                                        <td class="is-muted">資訊工程系</td>
+                                                        <td class="is-muted is-num">0</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--outline">草稿</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <a class="btn btn-s btn-s--neutral" href="#">編輯<span class="a11y-hidden">：AI 應用實務</span></a>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span class="a11y-hidden">：AI 應用實務</span></a>
+                                                                <a class="btn btn-s btn-s--primary" href="#">課程送審<span class="a11y-hidden">：AI 應用實務</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">複製課程<span class="a11y-hidden">：AI 應用實務</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="pick2"
+                                                                    checked />
+                                                                <label class="a11y-hidden" for="pick2">選取跨文化溝通實務</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row">跨文化溝通實務</th>
+                                                        <td><span class="badge chip chip--magenta">通識教育</span></td>
+                                                        <td class="is-muted">應用英語系</td>
+                                                        <td class="is-muted is-num">0</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--amber">審核中</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <a class="btn btn-s btn-s--neutral" href="#">編輯<span class="a11y-hidden">：跨文化溝通實務</span></a>
+                                                                <a class="btn btn-s btn-s--primary" href="#">通過<span class="a11y-hidden">：跨文化溝通實務</span></a>
+                                                                <a class="btn btn-s btn-s--danger" href="#">退回<span class="a11y-hidden">：跨文化溝通實務</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">複製課程<span class="a11y-hidden">：跨文化溝通實務</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="pick3"
+                                                                    />
+                                                                <label class="a11y-hidden" for="pick3">選取資料科學概論</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row">資料科學概論</th>
+                                                        <td><span class="badge chip chip--blue-light">資訊科技</span></td>
+                                                        <td class="is-muted">資訊管理系</td>
+                                                        <td class="is-muted is-num">128</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--blue">課程未開始</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <a class="btn btn-s btn-s--neutral" href="#">編輯<span class="a11y-hidden">：資料科學概論</span></a>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span class="a11y-hidden">：資料科學概論</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">複製課程<span class="a11y-hidden">：資料科學概論</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="pick4"
+                                                                    checked />
+                                                                <label class="a11y-hidden" for="pick4">選取學術英文寫作</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row">學術英文寫作</th>
+                                                        <td><span class="badge chip chip--green">語言學習</span></td>
+                                                        <td class="is-muted">應用英語系</td>
+                                                        <td class="is-muted is-num">240</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">課程進行中</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <a class="btn btn-s btn-s--neutral" href="#">編輯<span class="a11y-hidden">：學術英文寫作</span></a>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span class="a11y-hidden">：學術英文寫作</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">複製課程<span class="a11y-hidden">：學術英文寫作</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="pick5"
+                                                                    />
+                                                                <label class="a11y-hidden" for="pick5">選取企業倫理與法規</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row">企業倫理與法規</th>
+                                                        <td><span class="badge chip chip--amber">商業管理</span></td>
+                                                        <td class="is-muted">企業管理系</td>
+                                                        <td class="is-muted is-num">96</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--neutral">課程已結束</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <a class="btn btn-s btn-s--neutral" href="#">編輯<span class="a11y-hidden">：企業倫理與法規</span></a>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span class="a11y-hidden">：企業倫理與法規</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">複製課程<span class="a11y-hidden">：企業倫理與法規</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="pick6"
+                                                                    />
+                                                                <label class="a11y-hidden" for="pick6">選取Python 程式設計入門</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row">Python 程式設計入門</th>
+                                                        <td><span class="badge chip chip--blue-light">資訊科技</span></td>
+                                                        <td class="is-muted">資訊工程系</td>
+                                                        <td class="is-muted is-num">438</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">課程進行中</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <a class="btn btn-s btn-s--neutral" href="#">編輯<span class="a11y-hidden">：Python 程式設計入門</span></a>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span class="a11y-hidden">：Python 程式設計入門</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">複製課程<span class="a11y-hidden">：Python 程式設計入門</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="pick7"
+                                                                    />
+                                                                <label class="a11y-hidden" for="pick7">選取創業實務與案例分析</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row">創業實務與案例分析</th>
+                                                        <td><span class="badge chip chip--amber">商業管理</span></td>
+                                                        <td class="is-muted">企業管理系</td>
+                                                        <td class="is-muted is-num">0</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--amber">審核中</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <a class="btn btn-s btn-s--neutral" href="#">編輯<span class="a11y-hidden">：創業實務與案例分析</span></a>
+                                                                <a class="btn btn-s btn-s--primary" href="#">通過<span class="a11y-hidden">：創業實務與案例分析</span></a>
+                                                                <a class="btn btn-s btn-s--danger" href="#">退回<span class="a11y-hidden">：創業實務與案例分析</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">複製課程<span class="a11y-hidden">：創業實務與案例分析</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="pick8"
+                                                                    />
+                                                                <label class="a11y-hidden" for="pick8">選取綠色能源與永續發展</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row">綠色能源與永續發展</th>
+                                                        <td><span class="badge chip chip--magenta">通識教育</span></td>
+                                                        <td class="is-muted">電機工程系</td>
+                                                        <td class="is-muted is-num">0</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--outline">草稿</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <a class="btn btn-s btn-s--neutral" href="#">編輯<span class="a11y-hidden">：綠色能源與永續發展</span></a>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span class="a11y-hidden">：綠色能源與永續發展</span></a>
+                                                                <a class="btn btn-s btn-s--primary" href="#">課程送審<span class="a11y-hidden">：綠色能源與永續發展</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">複製課程<span class="a11y-hidden">：綠色能源與永續發展</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-foot">
+                            <p class="table-foot__count">共 128 筆課程，第 1 / 16 頁</p>
+                            <nav aria-label="課程列表分頁">
+                                <ul class="pager">
+                                    <li><a class="pager__link pager__link--prev is-disabled" href="#"
+                                            aria-label="上一頁"></a></li>
+                                    <li><a class="pager__link" href="#" aria-current="page">1</a></li>
+                                    <li><a class="pager__link" href="#">2</a></li>
+                                    <li><a class="pager__link" href="#">3</a></li>
+                                    <li><span class="pager__ellipsis" aria-hidden="true">…</span></li>
+                                    <li><a class="pager__link" href="#">16</a></li>
+                                    <li><a class="pager__link pager__link--next" href="#" aria-label="下一頁"></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </section>
+
+                    <!-- ===================== 彈窗：新增課程 ===================== -->
+                    <div class="modal fade admin-modal" id="modalNewCourse" tabindex="-1" role="dialog"
+                        aria-labelledby="modalNewCourseTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-admin-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div>
+                                        <h2 class="modal-title" id="modalNewCourseTitle">新增課程</h2>
+                                        <p class="modal-subtitle">課程管理 › 新增課程</p>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="a11y-hidden">關閉</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="#">
+                                        <div class="form-grid">
+                                            <div class="form-group">
+                                                <label class="form-label" for="ncName">課程名稱<span
+                                                        class="is-required" aria-hidden="true">*</span></label>
+                                                <input type="text" class="form-control" id="ncName" value="AI 應用實務" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" for="ncYear">學年度<span
+                                                        class="is-required" aria-hidden="true">*</span></label>
+                                                <select class="form-control bs-select" id="ncYear" title="114" required>
+                                                    <option value="114" selected>114</option>
+                                                    <option value="113">113</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" for="ncStart">開始日期<span
+                                                        class="is-required" aria-hidden="true">*</span></label>
+                                                <input type="datetime-local" class="form-control" id="ncStart"
+                                                    value="2026-09-14T09:00" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" for="ncEnd">結束日期<span
+                                                        class="is-required" aria-hidden="true">*</span></label>
+                                                <input type="datetime-local" class="form-control" id="ncEnd"
+                                                    value="2027-01-16T17:00" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" for="ncDomain">領域別（單選）<span
+                                                        class="is-required" aria-hidden="true">*</span></label>
+                                                <select class="form-control bs-select" id="ncDomain" title="資訊科技" required>
+                                                    <option value="it" selected>資訊科技</option>
+                                                    <option value="lang">語言學習</option>
+                                                    <option value="biz">商業管理</option>
+                                                    <option value="general">通識教育</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" id="ncDeptLabel">系所別（可多選）<span
+                                                        class="is-required" aria-hidden="true">*</span></label>
+                                                <div class="tag-field" role="group" aria-labelledby="ncDeptLabel">
+                                                    <span class="tag-field__tag">資訊工程系
+                                                        <button type="button" class="tag-field__remove">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            <span class="a11y-hidden">移除資訊工程系</span>
+                                                        </button>
+                                                    </span>
+                                                    <span class="tag-field__tag">資訊管理系
+                                                        <button type="button" class="tag-field__remove">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            <span class="a11y-hidden">移除資訊管理系</span>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" for="ncSource">課程來源<span
+                                                        class="is-required" aria-hidden="true">*</span></label>
+                                                <select class="form-control bs-select" id="ncSource" title="Ewant" required>
+                                                    <option value="ewant" selected>Ewant</option>
+                                                    <option value="coursera">Coursera</option>
+                                                    <option value="self">校內自建</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" for="ncQuota">修課人數上限</label>
+                                                <input type="number" class="form-control" id="ncQuota" min="0"
+                                                    placeholder="留空表示不限修課人數" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" for="ncSystem">學制<span
+                                                        class="is-required" aria-hidden="true">*</span></label>
+                                                <select class="form-control bs-select" id="ncSystem" title="四技" required>
+                                                    <option value="4y" selected>四技</option>
+                                                    <option value="2y">二技</option>
+                                                    <option value="5j">五專</option>
+                                                </select>
+                                                <p class="form-hint">選擇學制後，下方「學分認列系所」僅會顯示該學制的系所；已填寫學分數的系所會鎖定為唯讀。</p>
+                                            </div>
+                                            <div class="form-group form-grid__full">
+                                                <label class="form-label" id="ncCreditDeptLabel">學分認列系所（可多選）<span
+                                                        class="is-required" aria-hidden="true">*</span></label>
+                                                <div class="tag-field" role="group" aria-labelledby="ncCreditDeptLabel">
+                                                    <span class="tag-field__tag">資訊工程系</span>
+                                                    <span class="tag-field__tag">資訊管理系</span>
+                                                    <span class="tag-field__tag">電機工程系
+                                                        <button type="button" class="tag-field__remove">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            <span class="a11y-hidden">移除電機工程系</span>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group form-grid__full">
+                                                <label class="form-label" id="ncCreditLabel">各系所學分數<span
+                                                        class="is-required" aria-hidden="true">*</span></label>
+                                                <p class="form-hint">於「學分認列系所」選定的系所，該系老師即取得填寫本系學分數的權限；同一門課各系可給予不同學分數。學分數可填至小數點第一位。</p>
+                                                <div class="table-responsive">
+                                                    <table class="table mini-table" aria-labelledby="ncCreditLabel">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">認列系所</th>
+                                                                <th scope="col">學分數</th>
+                                                                <th scope="col">填寫權限</th>
+                                                                <th scope="col">填寫狀態</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">資訊工程系</th>
+                                                                <td>
+                                                                    <span class="mini-table__credit">
+                                                                        <label class="a11y-hidden" for="ncCredit1">資訊工程系學分數</label>
+                                                                        <input type="text" class="form-control" id="ncCredit1"
+                                                                            value="3.0" />
+                                                                        <span class="mini-table__unit">學分</span>
+                                                                    </span>
+                                                                </td>
+                                                                <td><span class="badge chip chip--blue-light">建課者本人</span></td>
+                                                                <td class="is-muted">陳威宇 · 已填寫</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">資訊管理系</th>
+                                                                <td>
+                                                                    <span class="mini-table__credit">
+                                                                        <label class="a11y-hidden" for="ncCredit2">資訊管理系學分數</label>
+                                                                        <input type="text" class="form-control" id="ncCredit2"
+                                                                            value="2.5" />
+                                                                        <span class="mini-table__unit">學分</span>
+                                                                    </span>
+                                                                </td>
+                                                                <td><span class="badge chip chip--green">已授權</span></td>
+                                                                <td class="is-muted">林建民 · 已填寫</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">電機工程系</th>
+                                                                <td>
+                                                                    <span class="mini-table__credit">
+                                                                        <label class="a11y-hidden" for="ncCredit3">電機工程系學分數</label>
+                                                                        <input type="text" class="form-control" id="ncCredit3"
+                                                                            placeholder="—" disabled />
+                                                                        <span class="mini-table__unit">學分</span>
+                                                                    </span>
+                                                                </td>
+                                                                <td><span class="badge chip chip--amber">待填寫</span></td>
+                                                                <td class="is-muted">已通知該系老師填寫</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="form-label" for="ncHours">課程總時數<span
+                                                        class="is-required" aria-hidden="true">*</span></label>
+                                                <input type="number" class="form-control" id="ncHours" value="36" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" for="ncTeacher">授課老師</label>
+                                                <input type="text" class="form-control" id="ncTeacher" value="陳威宇" />
+                                            </div>
+
+                                            <div class="form-group form-grid__full">
+                                                <span class="field-head">
+                                                    <label class="form-label" for="ncIntro">課程簡介</label>
+                                                    <span class="field-count">96 / 500</span>
+                                                </span>
+                                                <textarea class="form-control" id="ncIntro" rows="3"
+                                                    maxlength="500">本課程介紹人工智慧在產業中的實務應用，涵蓋機器學習基礎、資料前處理、模型評估與部署流程，並透過跨領域案例演練，培養學生將 AI 技術導入實際問題的能力。</textarea>
+                                            </div>
+
+                                            <div class="form-group form-grid__full">
+                                                <span class="field-head">
+                                                    <label class="form-label" for="ncOutline">課程大綱</label>
+                                                    <span class="field-count">112 / 2000</span>
+                                                </span>
+                                                <textarea class="form-control" id="ncOutline" rows="5" maxlength="2000">第 1–3 週　AI 發展脈絡與應用地圖
+第 4–7 週　資料前處理與特徵工程
+第 8–11 週　監督式學習與模型評估
+第 12–15 週　跨領域專題實作與成果發表</textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
+                                        data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-m btn-m--neutral">儲存草稿</button>
+                                    <button type="button" class="btn btn-m btn-m--danger">退回</button>
+                                    <button type="button" class="btn btn-m btn-m--neutral">通過</button>
+                                    <button type="submit" class="btn btn-m btn-m--primary">課程送審</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===================== 彈窗：匯入課程 ===================== -->
+                    <div class="modal fade admin-modal" id="modalImportCourse" tabindex="-1" role="dialog"
+                        aria-labelledby="modalImportTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-admin-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div>
+                                        <h2 class="modal-title" id="modalImportTitle">匯入課程</h2>
+                                        <p class="modal-subtitle">課程管理 › 匯入課程</p>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="a11y-hidden">關閉</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="template-row">
+                                        <span class="template-row__icon">
+                                            <img src="images/icons/stat-doc.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                        </span>
+                                        <span class="template-row__text">
+                                            <p class="template-row__title">下載匯入範本</p>
+                                            <p class="template-row__desc">請先下載 CSV 範本，依欄位說明離線整理課程資料後再上傳；請勿變更標題列文字與欄位順序。</p>
+                                        </span>
+                                        <a class="btn btn-m btn-m--neutral" href="#">下載範本</a>
+                                    </div>
+
+                                    <form class="form-grid" action="#">
+                                        <div class="form-group form-grid__full">
+                                            <label class="form-label" for="impFile">上傳檔案<span
+                                                    class="is-required" aria-hidden="true">*</span></label>
+                                            <div class="dropzone">
+                                                <img src="images/icons/stat-doc.svg" alt="" width="22" height="22"
+                                                    aria-hidden="true" />
+                                                <p class="dropzone__title">將 CSV 檔拖曳至此上傳</p>
+                                                <input class="a11y-hidden" type="file" id="impFile" accept=".csv" />
+                                                <label class="btn btn-m btn-m--neutral" for="impFile">選擇檔案</label>
+                                                <p class="dropzone__hint">僅支援 .csv（UTF-8 編碼） · 檔案大小上限 5 MB · 單次最多 500 筆</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group form-grid__full">
+                                            <p class="form-label">已選擇的檔案</p>
+                                            <div class="file-row">
+                                                <span class="template-row__icon">
+                                                    <img src="images/icons/stat-doc.svg" alt="" width="18" height="18"
+                                                        aria-hidden="true" />
+                                                </span>
+                                                <span class="template-row__text">
+                                                    <p class="file-row__name">113-2_跨領域課程匯入清單.csv</p>
+                                                    <p class="file-row__meta">248 KB · 共 42 筆課程資料</p>
+                                                </span>
+                                                <span class="badge badge-state badge-state--green">格式檢核通過</span>
+                                                <button type="button" class="btn btn-s btn-s--neutral">移除</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-label" for="impDup">重複課程處理</label>
+                                            <select class="form-control bs-select" id="impDup" title="略過（保留現有課程）">
+                                                <option value="skip" selected>略過（保留現有課程）</option>
+                                                <option value="overwrite">覆蓋現有課程</option>
+                                                <option value="new">一律新增為新課程</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="impEnc">檔案編碼</label>
+                                            <select class="form-control bs-select" id="impEnc" title="UTF-8">
+                                                <option value="utf8" selected>UTF-8</option>
+                                                <option value="big5">Big5</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group form-grid__full">
+                                            <p class="form-label">匯入須知</p>
+                                            <ul class="note-box">
+                                                <li>必填欄位：課程名稱、開始日期、結束日期、領域別、系所別、學分認列系所、學分數、課程總時數、授課老師。</li>
+                                                <li>同一門課由多個系所認列不同學分數時，「學分認列系所」與「學分數」請以半形分號對應填寫，例如 資訊工程系;資訊管理系 對應 3;2。</li>
+                                                <li>匯入完成後課程狀態一律為「草稿」，需再逐筆或批次執行課程送審。</li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
+                                        data-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-m btn-m--primary">開始匯入</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

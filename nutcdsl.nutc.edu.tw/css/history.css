@@ -1,0 +1,607 @@
+@charset "UTF-8";
+/* ==========================================================================
+   我的學習歷程（儀表板）history.html 專屬樣式
+   共用框架（TopNav / Sidebar / 卡片 / 頁面標頭 / Chip）見 style.css
+   設計稿：學習歷程（儀表板）1920×1300 / iPhone 17 402×2386
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 說明列 + 學年度
+   -------------------------------------------------------------------------- */
+.notice-row {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.info-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 13px 18px;
+    font-size: 15px;
+    line-height: 21px;
+    color: #2c4a73;
+    background: #eff4fe;
+    border: 1px solid #dae6fc;
+    border-radius: 8px;
+}
+
+.info-banner img {
+    flex: 0 0 auto;
+}
+
+.notice-row__year {
+    flex: 0 0 176px;
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. 學習儀表板數據磚
+   -------------------------------------------------------------------------- */
+.dashboard__head {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.dashboard__body {
+    padding: 12px 23px 23px;
+}
+
+.tile-row {
+    margin-bottom: -16px;
+}
+
+.tile-row>li {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.tile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1 1 auto;
+    min-height: 84px;
+    padding: 15px;
+    background: #f7f9fc;
+    border-radius: 10px;
+}
+
+.tile__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    background: var(--tile-bg);
+    border-radius: 10px;
+}
+
+.tile__text {
+    min-width: 0;
+}
+
+.tile__label {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--c-muted);
+}
+
+.tile__value {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+    color: var(--c-title);
+}
+
+.tile__unit {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: var(--c-muted);
+}
+
+.tile--blue {
+    --tile-bg: #e8f1fd;
+}
+
+.tile--green {
+    --tile-bg: #e9f6ee;
+}
+
+.tile--red {
+    --tile-bg: #fdecea;
+}
+
+.tile--amber {
+    --tile-bg: #fdf4e1;
+}
+
+.tile--violet {
+    --tile-bg: #edeffc;
+}
+
+/* --------------------------------------------------------------------------
+   3. 環圈圖卡（學習領域 / 完成狀態）
+   -------------------------------------------------------------------------- */
+.chart-cols {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.chart-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.chart-card__body {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex: 1 1 auto;
+    padding: 18px 27px 22px;
+}
+
+.chart-card__canvas {
+    flex: 0 0 auto;
+    width: 140px;
+    height: 140px;
+}
+
+.chart-legend {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+}
+
+.chart-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14.5px;
+    line-height: 20px;
+    color: #33445e;
+}
+
+.chart-row+.chart-row {
+    margin-top: 14px;
+}
+
+.chart-legend--status .chart-row+.chart-row {
+    margin-top: 24px;
+}
+
+.chart-row__dot {
+    flex: 0 0 auto;
+    width: 9px;
+    height: 9px;
+    background: var(--series);
+    border-radius: 50%;
+}
+
+.chart-row__label {
+    flex: 0 0 80px;
+}
+
+.chart-row__track {
+    flex: 1 1 auto;
+    height: 8px;
+    background: var(--c-divider);
+    border-radius: 4px;
+}
+
+.chart-row__fill {
+    display: block;
+    height: 100%;
+    background: var(--series);
+    border-radius: 4px;
+}
+
+.chart-row__value {
+    flex: 0 0 auto;
+    min-width: 24px;
+    text-align: right;
+}
+
+/* 資料數列色（與環圈圖同色，見 js/history.js） */
+.chart-row__dot--blue,
+.chart-row__fill--blue {
+    --series: #2b6cd4;
+}
+
+.chart-row__dot--green,
+.chart-row__fill--green {
+    --series: #3d9e5a;
+}
+
+.chart-row__dot--magenta,
+.chart-row__fill--magenta {
+    --series: #d14fa8;
+}
+
+.chart-row__dot--amber,
+.chart-row__fill--amber {
+    --series: #e8862a;
+}
+
+.chart-row__dot--orange,
+.chart-row__fill--orange {
+    --series: #e8722a;
+}
+
+/* --------------------------------------------------------------------------
+   4. 課程紀錄表格
+   -------------------------------------------------------------------------- */
+.record-panel {
+    overflow: hidden;
+}
+
+/* 標題與狀態圖例同一列（設計稿圖例靠右對齊） */
+.record-panel__head {
+    gap: 24px;
+}
+
+.record-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--c-muted);
+}
+
+.record-legend__item {
+    display: flex;
+    align-items: center;
+}
+
+/* 狀態圓點（清單與表格共用） */
+.state-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.state-dot::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    background: var(--dot);
+    border-radius: 50%;
+}
+
+.state-dot--enrolled {
+    --dot: #3b82f6;
+}
+
+.state-dot--qualify {
+    --dot: #e9c23a;
+}
+
+.state-dot--learning {
+    --dot: #1d4ed8;
+}
+
+.state-dot--applying {
+    --dot: #e8862a;
+}
+
+.state-dot--passed {
+    --dot: #3d9e5a;
+}
+
+.state-dot--amend {
+    --dot: #6b4a1e;
+}
+
+.state-dot--failed {
+    --dot: #e0483f;
+}
+
+.record-table {
+    margin: 0;
+    font-size: 15px;
+    color: #445c7e;
+}
+
+.record-table thead th {
+    padding: 13px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #6e7c90;
+    border: 0;
+}
+
+.record-table tbody th,
+.record-table tbody td {
+    padding: 12px;
+    font-weight: 400;
+    line-height: 21px;
+    vertical-align: middle;
+    border: 0;
+}
+
+.record-table tbody th[data-col="name"] {
+    color: var(--c-text);
+}
+
+.record-table td[data-col="state"] {
+    color: #33445e;
+}
+
+.record-table th:first-child,
+.record-table td:first-child {
+    padding-left: 27px;
+}
+
+.record-table th:last-child,
+.record-table td:last-child {
+    padding-right: 27px;
+}
+
+/* 列分隔線：左右內縮 27px，最後一列不畫 */
+.record-table tbody tr {
+    position: relative;
+}
+
+.record-table tbody tr::after {
+    content: "";
+    position: absolute;
+    right: 27px;
+    bottom: 0;
+    left: 27px;
+    height: 1px;
+    background: #f2f4f8;
+}
+
+.record-table tbody tr:last-child::after {
+    display: none;
+}
+
+.record-table__col-name {
+    width: 20.2%;
+}
+
+.record-table__col-domain {
+    width: 9.8%;
+}
+
+.record-table__col-start {
+    width: 10.9%;
+}
+
+.record-table__col-end {
+    width: 11.6%;
+}
+
+.record-table__col-hours {
+    width: 10.2%;
+}
+
+.record-table__col-credit {
+    width: 11.1%;
+}
+
+.record-table__col-state {
+    width: 14.3%;
+}
+
+.record-table__col-listed {
+    width: 11.9%;
+}
+
+/* 手機才顯示的欄位前後綴（桌機由表頭說明欄位意義） */
+.cell-prefix,
+.cell-suffix {
+    display: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. RWD —— <992px
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+
+    /* 學年度移到說明之前並滿版（依設計稿） */
+    .notice-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .notice-row__year {
+        order: -1;
+        flex: 0 0 auto;
+    }
+
+    .info-banner {
+        align-items: flex-start;
+        padding: 12px 14px;
+        font-size: 13.5px;
+        line-height: 20px;
+    }
+
+    .info-banner img {
+        margin-top: 2px;
+    }
+
+    .dashboard__head {
+        padding: 15px 16px 0;
+    }
+
+    .dashboard__body {
+        padding: 10px 14px 14px;
+    }
+
+    .tile {
+        gap: 10px;
+        min-height: 68px;
+        padding: 11px;
+    }
+
+    .tile__icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .tile__icon img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .tile__label {
+        font-size: 12.5px;
+        line-height: 17px;
+    }
+
+    .tile__value {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    /* 兩張圖表卡改為上下排列；手機不畫長條，只留圖例與數值 */
+    .chart-cols {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .chart-card__body {
+        gap: 18px;
+        padding: 14px 16px 18px;
+    }
+
+    .chart-card__canvas {
+        width: 110px;
+        height: 110px;
+    }
+
+    .chart-row__track {
+        display: none;
+    }
+
+    .chart-row__label {
+        flex: 1 1 auto;
+    }
+
+    .chart-row+.chart-row,
+    .chart-legend--status .chart-row+.chart-row {
+        margin-top: 12px;
+    }
+
+    /* 表格改為卡片式列表 */
+    .record-panel__head {
+        padding: 15px 16px 11px;
+    }
+
+    .record-legend {
+        display: none;
+    }
+
+    .table-responsive {
+        overflow-x: visible;
+    }
+
+    .record-table thead {
+        display: none;
+    }
+
+    .record-table,
+    .record-table tbody {
+        display: block;
+    }
+
+    /* 一列一張小卡：課名＋認列 / 領域＋時數＋學分 / 起訖日 / 申請狀態
+       四行的位置固定，用 grid 明確指定，避免 flex 換行時機不可控 */
+    .record-table tbody tr {
+        display: grid;
+        grid-template-columns: max-content max-content 1fr;
+        gap: 8px 6px;
+        padding: 16px;
+    }
+
+    .record-table tbody tr::after {
+        right: 16px;
+        left: 16px;
+    }
+
+    .record-table tbody th,
+    .record-table tbody td {
+        padding: 0;
+        font-size: 13.5px;
+    }
+
+    .record-table th:first-child,
+    .record-table td:first-child,
+    .record-table th:last-child,
+    .record-table td:last-child {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .record-table th[data-col="name"] {
+        grid-area: 1 / 1 / 2 / 3;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .record-table td[data-col="listed"] {
+        grid-area: 1 / 3 / 2 / 4;
+        justify-self: end;
+    }
+
+    .record-table td[data-col="domain"] {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .record-table td[data-col="hours"] {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .record-table td[data-col="credit"] {
+        grid-area: 2 / 3 / 3 / 4;
+    }
+
+    /* 時數與學分之間的分隔點 */
+    .record-table td[data-col="hours"]::after {
+        content: "·";
+        margin-left: 6px;
+        color: var(--c-breadcrumb);
+    }
+
+    .record-table td[data-col="start"] {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    .record-table td[data-col="end"] {
+        grid-area: 3 / 2 / 4 / 4;
+    }
+
+    .record-table td[data-col="start"]::after {
+        content: "→";
+        margin-left: 6px;
+        color: var(--c-breadcrumb);
+    }
+
+    .record-table td[data-col="state"] {
+        grid-area: 4 / 1 / 5 / 4;
+    }
+
+    .cell-prefix,
+    .cell-suffix {
+        display: inline;
+    }
+}

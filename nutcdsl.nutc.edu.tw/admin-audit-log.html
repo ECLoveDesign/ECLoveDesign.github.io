@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域自學平台,後臺,系統操作紀錄,稽核" />
+    <meta name="description" content="後臺系統操作紀錄：查詢平台使用者的操作軌跡，並可勾選匯出稽核紀錄。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="系統操作紀錄 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="後臺系統操作紀錄：查詢平台使用者的操作軌跡，並可勾選匯出稽核紀錄。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/course.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <title>系統操作紀錄 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-courses.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-course-review.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />課程審核
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-reports.html">
+                                    <img src="images/icons/nav-report.svg" alt="" aria-hidden="true" />報表管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-announcements.html">
+                                    <img src="images/icons/nav-announce.svg" alt="" aria-hidden="true" />公告管理
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：通知管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-notify"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-notify">
+                                    <img src="images/icons/nav-notify.svg" alt="" aria-hidden="true" />通知管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-notify">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify.html">通知管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify-log.html">系統通知紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-settings.html">
+                                    <img src="images/icons/nav-settings.svg" alt="" aria-hidden="true" />系統參數設定
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：系統管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-system"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-system">
+                                    <img src="images/icons/nav-system.svg" alt="" aria-hidden="true" />系統管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-system">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-accounts.html">帳號管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-roles.html">角色管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-audit-log.html" aria-current="page">系統操作紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="admin-index.html">後臺</a></li>
+                                    <li class="breadcrumb-item">系統管理</li>
+                                    <li class="breadcrumb-item active" aria-current="page">系統操作紀錄</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">系統操作紀錄</h1>
+                            <p class="page-head__desc">查詢平台使用者的操作軌跡，並可勾選匯出稽核紀錄</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">系統管理員</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 搜尋 -->
+                    <section class="card card-panel search-panel" aria-labelledby="h-search">
+                        <h2 class="a11y-hidden" id="h-search">操作紀錄搜尋</h2>
+                        <div class="card-body card-panel__body">
+                            <form class="form-inline search-panel__row" action="#" role="search">
+                                <div class="form-group search-field">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <img src="images/icons/search.svg" alt="" aria-hidden="true" />
+                                            </span>
+                                        </div>
+                                        <label class="a11y-hidden" for="gq">操作紀錄關鍵字</label>
+                                        <input type="search" class="form-control" id="gq"
+                                            placeholder="輸入帳號、姓名、操作模組或 IP 關鍵字..." />
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-xl btn-xl--primary">搜尋</button>
+                            </form>
+                        </div>
+                    </section>
+
+                    <!-- 操作紀錄 -->
+                    <section class="card card-panel detail-card data-panel" aria-labelledby="h-log">
+                        <div class="detail-card__head">
+                            <h2 class="card-panel__title" id="h-log">
+                                操作紀錄
+                                <span class="badge badge-state badge-state--blue">已選 3 筆</span>
+                            </h2>
+                            <div class="panel-actions">
+                                <a class="btn btn-m btn-m--primary" href="#">匯出 CSV</a>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table data-table">
+                                <caption class="a11y-hidden">系統操作紀錄，共 2,486 筆，目前顯示第 1 頁</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="data-table__check">
+                                            <span class="check">
+                                                <input class="check__input" type="checkbox" id="lgAll" data-indeterminate="true" />
+                                                <label class="a11y-hidden" for="lgAll">全選本頁紀錄</label>
+                                                <span class="check__box" aria-hidden="true"></span>
+                                            </span>
+                                        </th>
+                                        <th scope="col" style="width: 11%;"><a class="th-sort" href="#">帳號</a></th>
+                                        <th scope="col" style="width: 8.5%;">姓名</th>
+                                        <th scope="col" style="width: 12%;"><a class="th-sort" href="#">操作模組</a></th>
+                                        <th scope="col" style="width: 12%;"><a class="th-sort" href="#">操作類型</a></th>
+                                        <th scope="col" style="width: 15%;">使用者IP</th>
+                                        <th scope="col" aria-sort="descending">
+                                            <a class="th-sort" href="#">操作時間</a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="lg1"
+                                                                    checked />
+                                                                <label class="a11y-hidden" for="lg1">選取 2026/08/26 09:41:22 的 t112001 操作紀錄</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-num">t112001</th>
+                                                        <td>陳威宇</td>
+                                                        <td class="is-muted">課程管理</td>
+                                                        <td><span class="badge chip chip--green">建檔</span></td>
+                                                        <td class="is-muted is-num">163.17.42.108</td>
+                                                        <td class="is-muted is-num">2026/08/26 09:41:22</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="lg2"
+                                                                    checked />
+                                                                <label class="a11y-hidden" for="lg2">選取 2026/08/26 09:38:05 的 a110014 操作紀錄</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-num">a110014</th>
+                                                        <td>許淑芬</td>
+                                                        <td class="is-muted">系統管理</td>
+                                                        <td><span class="badge chip chip--blue-light">登入</span></td>
+                                                        <td class="is-muted is-num">163.17.42.51</td>
+                                                        <td class="is-muted is-num">2026/08/26 09:38:05</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="lg3"
+                                                                    checked />
+                                                                <label class="a11y-hidden" for="lg3">選取 2026/08/26 09:22:47 的 t112003 操作紀錄</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-num">t112003</th>
+                                                        <td>王麗華</td>
+                                                        <td class="is-muted">報表管理</td>
+                                                        <td><span class="badge chip chip--amber">匯出</span></td>
+                                                        <td class="is-muted is-num">163.17.88.12</td>
+                                                        <td class="is-muted is-num">2026/08/26 09:22:47</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="lg4"
+                                                                    />
+                                                                <label class="a11y-hidden" for="lg4">選取 2026/08/26 08:59:31 的 a110002 操作紀錄</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-num">a110002</th>
+                                                        <td>蔡明修</td>
+                                                        <td class="is-muted">課程審核</td>
+                                                        <td><span class="badge chip chip--green">建檔</span></td>
+                                                        <td class="is-muted is-num">163.17.42.77</td>
+                                                        <td class="is-muted is-num">2026/08/26 08:59:31</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="lg5"
+                                                                    />
+                                                                <label class="a11y-hidden" for="lg5">選取 2026/08/25 17:44:16 的 t112005 操作紀錄</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-num">t112005</th>
+                                                        <td>張文德</td>
+                                                        <td class="is-muted">帳號管理</td>
+                                                        <td><span class="badge chip chip--red">刪除</span></td>
+                                                        <td class="is-muted is-num">163.17.90.203</td>
+                                                        <td class="is-muted is-num">2026/08/25 17:44:16</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="lg6"
+                                                                    />
+                                                                <label class="a11y-hidden" for="lg6">選取 2026/08/25 16:20:58 的 a110001 操作紀錄</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-num">a110001</th>
+                                                        <td>吳佩珊</td>
+                                                        <td class="is-muted">公告管理</td>
+                                                        <td><span class="badge chip chip--green">建檔</span></td>
+                                                        <td class="is-muted is-num">163.17.42.19</td>
+                                                        <td class="is-muted is-num">2026/08/25 16:20:58</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="lg7"
+                                                                    />
+                                                                <label class="a11y-hidden" for="lg7">選取 2026/08/25 15:07:33 的 t112002 操作紀錄</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-num">t112002</th>
+                                                        <td>黃志誠</td>
+                                                        <td class="is-muted">系統管理</td>
+                                                        <td><span class="badge chip chip--neutral">登出</span></td>
+                                                        <td class="is-muted is-num">163.17.55.140</td>
+                                                        <td class="is-muted is-num">2026/08/25 15:07:33</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="lg8"
+                                                                    />
+                                                                <label class="a11y-hidden" for="lg8">選取 2026/08/25 11:52:09 的 a110003 操作紀錄</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-num">a110003</th>
+                                                        <td>鄭雅涵</td>
+                                                        <td class="is-muted">角色管理</td>
+                                                        <td><span class="badge chip chip--green">建檔</span></td>
+                                                        <td class="is-muted is-num">163.17.42.66</td>
+                                                        <td class="is-muted is-num">2026/08/25 11:52:09</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="lg9"
+                                                                    />
+                                                                <label class="a11y-hidden" for="lg9">選取 2026/08/25 10:14:40 的 t112006 操作紀錄</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-num">t112006</th>
+                                                        <td>李國彰</td>
+                                                        <td class="is-muted">報表管理</td>
+                                                        <td><span class="badge chip chip--amber">匯出</span></td>
+                                                        <td class="is-muted is-num">140.128.31.24</td>
+                                                        <td class="is-muted is-num">2026/08/25 10:14:40</td>
+                                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-foot">
+                            <p class="table-foot__count">共 2,486 筆紀錄，第 1 / 249 頁</p>
+                            <nav aria-label="操作紀錄分頁">
+                                <ul class="pager">
+                                    <li><a class="pager__link pager__link--prev is-disabled" href="#" aria-label="上一頁"></a></li>
+                                    <li><a class="pager__link" href="#" aria-current="page">1</a></li>
+                                    <li><a class="pager__link" href="#">2</a></li>
+                                    <li><a class="pager__link" href="#">3</a></li>
+                                    <li><span class="pager__ellipsis" aria-hidden="true">…</span></li>
+                                    <li><a class="pager__link" href="#">249</a></li>
+                                    <li><a class="pager__link pager__link--next" href="#" aria-label="下一頁"></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

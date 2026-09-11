@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域課程,完課申請,結業證書,審核進度" />
+    <meta name="description" content="檢視完課申請狀態、上傳結業證書與補件，掌握每一門跨領域課程的審核進度。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="完課申請 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="檢視完課申請狀態、上傳結業證書與補件，掌握每一門跨領域課程的審核進度。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/completion.css" />
+
+    <title>完課申請 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="course-list.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程總覽
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="category.html">
+                                    <img src="images/icons/nav-category.svg" alt="" aria-hidden="true" />領域課程菜單
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="completion.html" aria-current="page">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />完課申請
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="history.html">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />我的學習歷程
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">完課申請</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">完課申請</h1>
+                            <p class="page-head__desc">申請加入跨領域課程</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">B908107011</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 申請狀態統計 -->
+                    <section aria-labelledby="h-stat">
+                        <h2 class="a11y-hidden" id="h-stat">申請狀態統計</h2>
+                        <ul class="row row--g20 list-unstyled stat-row">
+                            <li class="col-6 col-lg">
+                                <div class="card card-panel stat-card stat-card--todo">
+                                    <span class="stat-card__icon">
+                                        <img src="images/icons/stat-doc.svg" alt="" width="22" height="22"
+                                            aria-hidden="true" />
+                                    </span>
+                                    <div class="stat-card__text">
+                                        <p class="stat-card__label">未申請</p>
+                                        <p class="stat-card__value">2<span class="stat-card__unit">件</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-lg">
+                                <div class="card card-panel stat-card stat-card--review">
+                                    <span class="stat-card__icon">
+                                        <img src="images/icons/stat-clock.svg" alt="" width="22" height="22"
+                                            aria-hidden="true" />
+                                    </span>
+                                    <div class="stat-card__text">
+                                        <p class="stat-card__label">審核中</p>
+                                        <p class="stat-card__value">3<span class="stat-card__unit">件</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-lg">
+                                <div class="card card-panel stat-card stat-card--pass">
+                                    <span class="stat-card__icon">
+                                        <img src="images/icons/stat-check.svg" alt="" width="22" height="22"
+                                            aria-hidden="true" />
+                                    </span>
+                                    <div class="stat-card__text">
+                                        <p class="stat-card__label">已通過</p>
+                                        <p class="stat-card__value">5<span class="stat-card__unit">件</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-lg">
+                                <div class="card card-panel stat-card stat-card--fix">
+                                    <span class="stat-card__icon">
+                                        <img src="images/icons/stat-clock-red.svg" alt="" width="22" height="22"
+                                            aria-hidden="true" />
+                                    </span>
+                                    <div class="stat-card__text">
+                                        <p class="stat-card__label">待補件</p>
+                                        <p class="stat-card__value">2<span class="stat-card__unit">件</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-lg">
+                                <div class="card card-panel stat-card stat-card--reject">
+                                    <span class="stat-card__icon">
+                                        <img src="images/icons/stat-cross.svg" alt="" width="22" height="22"
+                                            aria-hidden="true" />
+                                    </span>
+                                    <div class="stat-card__text">
+                                        <p class="stat-card__label">不通過</p>
+                                        <p class="stat-card__value">1<span class="stat-card__unit">件</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- 申請紀錄 -->
+                    <section class="card card-panel apply-panel" aria-labelledby="h-apply">
+                        <div class="apply-panel__head">
+                            <h2 class="a11y-hidden apply-panel__title" id="h-apply">申請紀錄</h2>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table apply-table">
+                                <caption class="a11y-hidden">完課申請紀錄，共 13 筆</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="apply-table__col-status">申請狀態</th>
+                                        <th scope="col" class="apply-table__col-name">課程名稱</th>
+                                        <th scope="col" class="apply-table__col-source">課程來源</th>
+                                        <th scope="col" class="apply-table__col-date">申請日期</th>
+                                        <th scope="col" class="apply-table__col-action">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--amber">審核中</span></td>
+                                        <th scope="row" data-col="course">Machine Learning Foundations</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/06/15</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--neutral" href="#">詳情<span
+                                                    class="a11y-hidden">：Machine Learning Foundations</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--red">待補件</span></td>
+                                        <th scope="row" data-col="course">Business Communication</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/06/10</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--warn" href="#">補件<span
+                                                    class="a11y-hidden">：Business Communication</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--blue">未申請</span></td>
+                                        <th scope="row" data-col="course">Python程式設計入門</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/05/20</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--primary" href="#">上傳證書<span
+                                                    class="a11y-hidden">：Python程式設計入門</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--green">已通過</span></td>
+                                        <th scope="row" data-col="course">學術英文寫作</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/04/15</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--pass" href="#">查看證書<span
+                                                    class="a11y-hidden">：學術英文寫作</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--neutral">不通過</span></td>
+                                        <th scope="row" data-col="course">跨文化溝通</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/03/01</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--reject" href="#">查看原因<span
+                                                    class="a11y-hidden">：跨文化溝通</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--blue">未申請</span></td>
+                                        <th scope="row" data-col="course">AI工具應用</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/02/25</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--primary" href="#">上傳證書<span
+                                                    class="a11y-hidden">：AI工具應用</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--amber">審核中</span></td>
+                                        <th scope="row" data-col="course">資料科學概論</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/02/18</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--neutral" href="#">詳情<span
+                                                    class="a11y-hidden">：資料科學概論</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--amber">審核中</span></td>
+                                        <th scope="row" data-col="course">數位行銷實務</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/02/12</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--neutral" href="#">詳情<span
+                                                    class="a11y-hidden">：數位行銷實務</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--green">已通過</span></td>
+                                        <th scope="row" data-col="course">企業倫理與法規</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/01/28</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--pass" href="#">查看證書<span
+                                                    class="a11y-hidden">：企業倫理與法規</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--green">已通過</span></td>
+                                        <th scope="row" data-col="course">創業實務與案例分析</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/01/20</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--pass" href="#">查看證書<span
+                                                    class="a11y-hidden">：創業實務與案例分析</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--green">已通過</span></td>
+                                        <th scope="row" data-col="course">職場英文溝通</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/01/15</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--pass" href="#">查看證書<span
+                                                    class="a11y-hidden">：職場英文溝通</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--green">已通過</span></td>
+                                        <th scope="row" data-col="course">跨域專題實作</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2026/01/08</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--pass" href="#">查看證書<span
+                                                    class="a11y-hidden">：跨域專題實作</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-col="status"><span class="badge badge-state badge-state--dot badge-state--red">待補件</span></td>
+                                        <th scope="row" data-col="course">UX設計基礎</th>
+                                        <td data-col="source"><span class="badge source-chip">Coursera</span></td>
+                                        <td data-col="date">2025/12/22</td>
+                                        <td data-col="action">
+                                            <a class="btn btn-s btn-s--warn" href="#">補件<span
+                                                    class="a11y-hidden">：UX設計基礎</span></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

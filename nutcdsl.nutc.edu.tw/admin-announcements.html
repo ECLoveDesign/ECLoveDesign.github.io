@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域自學平台,後臺,公告管理,置頂公告" />
+    <meta name="description" content="後臺公告管理：維護平台公告內容、上下架時間與置頂設定。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="公告管理 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="後臺公告管理：維護平台公告內容、上下架時間與置頂設定。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <title>公告管理 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-courses.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-course-review.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />課程審核
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-reports.html">
+                                    <img src="images/icons/nav-report.svg" alt="" aria-hidden="true" />報表管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-announcements.html" aria-current="page">
+                                    <img src="images/icons/nav-announce.svg" alt="" aria-hidden="true" />公告管理
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：通知管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-notify"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-notify">
+                                    <img src="images/icons/nav-notify.svg" alt="" aria-hidden="true" />通知管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-notify">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify.html">通知管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify-log.html">系統通知紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-settings.html">
+                                    <img src="images/icons/nav-settings.svg" alt="" aria-hidden="true" />系統參數設定
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：系統管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-system"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-system">
+                                    <img src="images/icons/nav-system.svg" alt="" aria-hidden="true" />系統管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-system">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-accounts.html">帳號管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-roles.html">角色管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-audit-log.html">系統操作紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="admin-index.html">後臺</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">公告管理</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">公告管理</h1>
+                            <p class="page-head__desc">維護平台公告內容、上下架時間與置頂設定</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">系統管理員</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 公告列表 -->
+                    <section class="card card-panel detail-card data-panel" aria-labelledby="h-list">
+                        <div class="detail-card__head">
+                            <h2 class="card-panel__title" id="h-list">公告列表</h2>
+                            <div class="panel-actions">
+                                <button type="button" class="btn btn-m btn-m--primary" data-toggle="modal"
+                                    data-target="#modalAnnounce">新增公告</button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table data-table">
+                                <caption class="a11y-hidden">公告列表，共 128 則，目前顯示第 1 頁</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 19%;" aria-sort="descending">
+                                            <a class="th-sort" href="#">公告標題</a>
+                                        </th>
+                                        <th scope="col" style="width: 26%;">公告內容</th>
+                                        <th scope="col" style="width: 13%;" aria-sort="descending">
+                                            <a class="th-sort" href="#">上架時間</a>
+                                        </th>
+                                        <th scope="col" style="width: 13%;"><a class="th-sort" href="#">下架時間</a></th>
+                                        <th scope="col" style="width: 9%;">是否置頂</th>
+                                        <th scope="col">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">115 學年度第一學期選課開放公告</th>
+                                                        <td class="is-muted">選課系統將於 9 月 8 日上午 9 時開放…</td>
+                                                        <td class="is-muted is-num">2026/08/25 09:00</td>
+                                                        <td class="is-muted is-num">2026/09/30 23:59</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">是</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAnnounce">編輯<span
+                                                                        class="a11y-hidden">：115 學年度第一學期選課開放公告</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：115 學年度第一學期選課開放公告</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">AI 應用實務新增第二班次</th>
+                                                        <td class="is-muted">因報名踴躍加開一班，開放加簽登記…</td>
+                                                        <td class="is-muted is-num">2026/08/24 10:00</td>
+                                                        <td class="is-muted is-num">2026/09/05 17:00</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">是</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAnnounce">編輯<span
+                                                                        class="a11y-hidden">：AI 應用實務新增第二班次</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：AI 應用實務新增第二班次</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">跨領域微學程成果發表會報名</th>
+                                                        <td class="is-muted">即日起至 9 月 15 日止受理線上報名…</td>
+                                                        <td class="is-muted is-num">2026/08/22 08:00</td>
+                                                        <td class="is-muted is-num">2026/09/15 23:59</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--neutral">否</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAnnounce">編輯<span
+                                                                        class="a11y-hidden">：跨領域微學程成果發表會報名</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：跨領域微學程成果發表會報名</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">平台維護通知（8/30 22:00）</th>
+                                                        <td class="is-muted">維護期間無法登入平台與提交申請…</td>
+                                                        <td class="is-muted is-num">2026/08/20 12:00</td>
+                                                        <td class="is-muted is-num">2026/08/31 06:00</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">是</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAnnounce">編輯<span
+                                                                        class="a11y-hidden">：平台維護通知（8/30 22:00）</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：平台維護通知（8/30 22:00）</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">完課申請文件格式調整</th>
+                                                        <td class="is-muted">舊版表單自 9 月 1 日起停止受理…</td>
+                                                        <td class="is-muted is-num">2026/08/18 09:00</td>
+                                                        <td class="is-muted is-num">2026/10/31 23:59</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--neutral">否</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAnnounce">編輯<span
+                                                                        class="a11y-hidden">：完課申請文件格式調整</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：完課申請文件格式調整</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">業界講座：生成式 AI 應用</th>
+                                                        <td class="is-muted">9 月 12 日下午 2 時於國際會議廳舉行…</td>
+                                                        <td class="is-muted is-num">2026/08/15 14:00</td>
+                                                        <td class="is-muted is-num">2026/09/12 18:00</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--neutral">否</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAnnounce">編輯<span
+                                                                        class="a11y-hidden">：業界講座：生成式 AI 應用</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：業界講座：生成式 AI 應用</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">114-2 學期完課名單公告</th>
+                                                        <td class="is-muted">完課名單已公布，請至學習歷程查詢…</td>
+                                                        <td class="is-muted is-num">2026/08/12 09:00</td>
+                                                        <td class="is-muted is-num">2026/09/12 23:59</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--neutral">否</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAnnounce">編輯<span
+                                                                        class="a11y-hidden">：114-2 學期完課名單公告</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：114-2 學期完課名單公告</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">暑期線上課程結業通知</th>
+                                                        <td class="is-muted">暑期課程已結束，證書將於月底寄發…</td>
+                                                        <td class="is-muted is-num">2026/08/08 17:00</td>
+                                                        <td class="is-muted is-num">2026/09/08 23:59</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--neutral">否</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAnnounce">編輯<span
+                                                                        class="a11y-hidden">：暑期線上課程結業通知</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：暑期線上課程結業通知</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">系統帳號權限調整說明</th>
+                                                        <td class="is-muted">系所承辦人權限將自 9 月起調整…</td>
+                                                        <td class="is-muted is-num">2026/08/05 10:00</td>
+                                                        <td class="is-muted is-num">2026/09/30 23:59</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--neutral">否</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAnnounce">編輯<span
+                                                                        class="a11y-hidden">：系統帳號權限調整說明</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：系統帳號權限調整說明</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">跨領域學程線上說明會</th>
+                                                        <td class="is-muted">8 月 1 日下午 3 時舉行，請由平台進入…</td>
+                                                        <td class="is-muted is-num">2026/07/28 09:00</td>
+                                                        <td class="is-muted is-num">2026/08/01 18:00</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--neutral">否</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAnnounce">編輯<span
+                                                                        class="a11y-hidden">：跨領域學程線上說明會</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：跨領域學程線上說明會</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">113-2 學期教學意見調查</th>
+                                                        <td class="is-muted">請於 8 月 15 日前完成問卷填答…</td>
+                                                        <td class="is-muted is-num">2026/07/25 09:00</td>
+                                                        <td class="is-muted is-num">2026/08/15 23:59</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--neutral">否</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalAnnounce">編輯<span
+                                                                        class="a11y-hidden">：113-2 學期教學意見調查</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：113-2 學期教學意見調查</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-foot">
+                            <p class="table-foot__count">共 128 則公告，第 1 / 12 頁</p>
+                            <nav aria-label="公告列表分頁">
+                                <ul class="pager">
+                                    <li><a class="pager__link pager__link--prev is-disabled" href="#" aria-label="上一頁"></a></li>
+                                    <li><a class="pager__link" href="#" aria-current="page">1</a></li>
+                                    <li><a class="pager__link" href="#">2</a></li>
+                                    <li><a class="pager__link" href="#">3</a></li>
+                                    <li><span class="pager__ellipsis" aria-hidden="true">…</span></li>
+                                    <li><a class="pager__link" href="#">12</a></li>
+                                    <li><a class="pager__link pager__link--next" href="#" aria-label="下一頁"></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </section>
+
+                    <!-- ===================== 彈窗：新增／編輯公告 ===================== -->
+                    <div class="modal fade admin-modal" id="modalAnnounce" tabindex="-1" role="dialog"
+                        aria-labelledby="modalAnnounceTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div>
+                                        <h2 class="modal-title" id="modalAnnounceTitle">新增/編輯公告</h2>
+                                        <p class="modal-subtitle">公告管理 › 新增/編輯公告</p>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="a11y-hidden">關閉</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form class="form-grid" action="#">
+                                        <div class="form-group form-grid__full">
+                                            <label class="form-label" for="anTitle">公告標題<span class="is-required"
+                                                    aria-hidden="true">*</span></label>
+                                            <input type="text" class="form-control" id="anTitle" placeholder="請輸入公告標題"
+                                                required />
+                                        </div>
+                                        <div class="form-group form-grid__full">
+                                            <label class="form-label" for="anBody">公告內容<span class="is-required"
+                                                    aria-hidden="true">*</span></label>
+                                            <textarea class="form-control" id="anBody" rows="6" placeholder="請輸入公告內容"
+                                                required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="anUp">上架時間<span class="is-required"
+                                                    aria-hidden="true">*</span></label>
+                                            <input type="datetime-local" class="form-control" id="anUp" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="anDown">下架時間</label>
+                                            <input type="datetime-local" class="form-control" id="anDown" />
+                                        </div>
+                                        <div class="form-group form-grid__full">
+                                            <p class="form-label" id="anTopLabel">是否置頂</p>
+                                            <div class="radio-row" role="radiogroup" aria-labelledby="anTopLabel">
+                                                <span class="radio-row__item">
+                                                    <input type="radio" name="anTop" id="anTopYes" value="1" />
+                                                    <label for="anTopYes">是</label>
+                                                </span>
+                                                <span class="radio-row__item">
+                                                    <input type="radio" name="anTop" id="anTopNo" value="0" checked />
+                                                    <label for="anTopNo">否</label>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
+                                        data-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-m btn-m--primary">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

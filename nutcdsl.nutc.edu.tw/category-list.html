@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域課程,領域課程菜單,課程分類,系所課程" />
+    <meta name="description" content="依領域別或系所別瀏覽國立臺中科技大學跨領域課程，並可用關鍵字與條件篩選。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="領域課程菜單 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="依領域別或系所別瀏覽國立臺中科技大學跨領域課程，並可用關鍵字與條件篩選。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/course.css" />
+
+    <title>領域課程菜單 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="course-list.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程總覽
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="category.html" aria-current="true">
+                                    <img src="images/icons/nav-category.svg" alt="" aria-hidden="true" />領域課程菜單
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="completion.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />完課申請
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="history.html">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />我的學習歷程
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">領域課程菜單</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">領域課程菜單</h1>
+                            <p class="page-head__desc">依領域、學院或核心能力瀏覽課程</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">B908107011</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 搜尋與篩選 -->
+                    <section class="card card-panel search-panel" aria-labelledby="h-search">
+                        <h2 class="a11y-hidden" id="h-search">課程搜尋與篩選</h2>
+                        <div class="card-body card-panel__body">
+                            <form class="form-inline search-panel__row" action="#" role="search">
+                                <div class="form-group search-field">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <img src="images/icons/search.svg" alt="" aria-hidden="true" />
+                                            </span>
+                                        </div>
+                                        <label class="a11y-hidden" for="q">課程關鍵字</label>
+                                        <input type="search" class="form-control" id="q"
+                                            placeholder="輸入課程名稱、教師或關鍵字..." />
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-search">搜尋</button>
+                            </form>
+
+                            <div class="search-panel__divider" aria-hidden="true"></div>
+
+                            <div class="filter-row">
+                                <p class="filter-row__label">篩選條件</p>
+                                <div class="filter-row__items">
+                                <!-- 選項為範例資料，正式清單由後端帶入 -->
+                                <div class="form-group filter-item">
+                                    <label class="a11y-hidden" for="c-domain">領域</label>
+                                    <select class="form-control bs-select filter-select" id="c-domain"
+                                        title="領域">
+                                        <option value="" disabled selected>領域</option>
+                                        <option value="all">全部領域</option>
+                                        <option value="it">資訊科技</option>
+                                        <option value="language">語言學習</option>
+                                        <option value="business">商業管理</option>
+                                        <option value="arts">藝術人文</option>
+                                        <option value="science">自然科學</option>
+                                        <option value="general">通識教育</option>
+                                    </select>
+                                </div>
+                                <div class="form-group filter-item">
+                                    <label class="a11y-hidden" for="c-dept">系所</label>
+                                    <select class="form-control bs-select filter-select" id="c-dept"
+                                        title="系所" data-live-search="true">
+                                        <option value="" disabled selected>系所</option>
+                                        <option value="all">全部系所</option>
+                                        <option value="mis">資訊管理系</option>
+                                        <option value="afe">應用英語系</option>
+                                        <option value="ba">企業管理系</option>
+                                        <option value="acc">會計資訊系</option>
+                                        <option value="ifm">保險金融管理系</option>
+                                        <option value="ft">財政稅務系</option>
+                                        <option value="cd">商業設計系</option>
+                                        <option value="md">多媒體設計系</option>
+                                        <option value="dm">流通管理系</option>
+                                        <option value="ibm">國際貿易與經營系</option>
+                                    </select>
+                                </div>
+                                <div class="form-group filter-item">
+                                    <label class="a11y-hidden" for="c-lang">語言</label>
+                                    <select class="form-control bs-select filter-select" id="c-lang"
+                                        title="語言">
+                                        <option value="" disabled selected>語言</option>
+                                        <option value="all">全部語言</option>
+                                        <option value="zh">中文授課</option>
+                                        <option value="en">英文授課</option>
+                                        <option value="ja">日文授課</option>
+                                        <option value="bi">中英雙語</option>
+                                    </select>
+                                </div>
+                                <div class="form-group filter-item">
+                                    <label class="a11y-hidden" for="c-mode">修課方式</label>
+                                    <select class="form-control bs-select filter-select" id="c-mode"
+                                        title="修課方式">
+                                        <option value="" disabled selected>修課方式</option>
+                                        <option value="all">全部方式</option>
+                                        <option value="async">線上非同步</option>
+                                        <option value="sync">線上同步</option>
+                                        <option value="onsite">實體課程</option>
+                                        <option value="blended">混成教學</option>
+                                    </select>
+                                </div>
+                                <div class="form-group filter-item">
+                                    <label class="a11y-hidden" for="c-fav">我的最愛</label>
+                                    <select class="form-control bs-select filter-select" id="c-fav"
+                                        title="我的最愛">
+                                        <option value="" disabled selected>我的最愛</option>
+                                        <option value="all">全部課程</option>
+                                        <option value="fav">僅顯示收藏</option>
+                                        <option value="nofav">未收藏</option>
+                                    </select>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="filter-row">
+                                <p class="filter-row__label" id="lbl-sort">課程排序</p>
+                                <div class="filter-row__items" role="group" aria-labelledby="lbl-sort">
+                                <a class="btn btn-sm sort-chip" href="#" aria-current="true">熱門度</a>
+                                <a class="btn btn-sm sort-chip" href="#">最新</a>
+                                <a class="btn btn-sm sort-chip" href="#">推薦</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 分類頁籤 -->
+                    <ul class="nav section-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="tab-domain" href="#panel-domain" data-toggle="tab"
+                                role="tab" aria-controls="panel-domain" aria-selected="true">依領域別</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="tab-dept" href="#panel-dept" data-toggle="tab" role="tab"
+                                aria-controls="panel-dept" aria-selected="false">依系所別</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="panel-domain" role="tabpanel"
+                            aria-labelledby="tab-domain">
+                            <h2 class="a11y-hidden">依領域別的課程</h2>
+                        <ul class="row row--g24 list-unstyled course-list">
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--python">
+                                        <img class="course-media__art" src="images/course/art-python.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">PROGRAMMING</p>
+                                        <span class="badge badge-tag course-media__chip">課程認列</span>
+                                        <button type="button" class="btn btn-fav" aria-pressed="true">
+                                            <img src="images/icons/heart-solid.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">取消收藏：Python 程式設計入門</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">Python 程式設計入門</a>
+                                        </h3>
+                                        <p class="course-body__teacher">陳威宇 · 資訊科技</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">438 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.5 / 5.0</span>
+                                                <span class="course-rating__count">（182 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：Python 程式設計入門</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--writing">
+                                        <img class="course-media__art" src="images/course/art-writing.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">LANGUAGE</p>
+                                        <button type="button" class="btn btn-fav" aria-pressed="false">
+                                            <img src="images/icons/heart-line.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">加入收藏：學術英文寫作</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">學術英文寫作</a>
+                                        </h3>
+                                        <p class="course-body__teacher">王麗華 · 語言學習</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">240 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.7 / 5.0</span>
+                                                <span class="course-rating__count">（124 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：學術英文寫作</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--datascience">
+                                        <img class="course-media__art" src="images/course/art-datascience.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">ANALYTICS</p>
+                                        <span class="badge badge-tag course-media__chip">課程認列</span>
+                                        <button type="button" class="btn btn-fav" aria-pressed="false">
+                                            <img src="images/icons/heart-line.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">加入收藏：資料科學概論</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">資料科學概論</a>
+                                        </h3>
+                                        <p class="course-body__teacher">林建民 · 資訊科技</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">300 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.3 / 5.0</span>
+                                                <span class="course-rating__count">（96 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：資料科學概論</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--ethics">
+                                        <img class="course-media__art" src="images/course/art-ethics.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">ETHICS · COMPLIANCE · GOVERNANCE</p>
+                                        <button type="button" class="btn btn-fav" aria-pressed="true">
+                                            <img src="images/icons/heart-solid.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">取消收藏：企業倫理與法規</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">企業倫理與法規</a>
+                                        </h3>
+                                        <p class="course-body__teacher">張文德 · 商業管理</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">300 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.2 / 5.0</span>
+                                                <span class="course-rating__count">（88 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：企業倫理與法規</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--culture">
+                                        <img class="course-media__art" src="images/course/art-culture.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">INTERCULTURAL · COMMUNICATION</p>
+                                        <button type="button" class="btn btn-fav" aria-pressed="false">
+                                            <img src="images/icons/heart-line.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">加入收藏：跨文化溝通</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">跨文化溝通</a>
+                                        </h3>
+                                        <p class="course-body__teacher">黃志誠 · 通識教育</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">300 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.6 / 5.0</span>
+                                                <span class="course-rating__count">（143 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：跨文化溝通</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--startup">
+                                        <img class="course-media__art" src="images/course/art-startup.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">BUSINESS · STARTUP</p>
+                                        <button type="button" class="btn btn-fav" aria-pressed="false">
+                                            <img src="images/icons/heart-line.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">加入收藏：創業實務與案例分析</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">創業實務與案例分析</a>
+                                        </h3>
+                                        <p class="course-body__teacher">黃志誠 · 商業管理</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">200 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.1 / 5.0</span>
+                                                <span class="course-rating__count">（57 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：創業實務與案例分析</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        </div>
+
+                        <!-- TODO 依系所別的課程清單待後端帶入，先沿用同一組範例課程 -->
+                        <div class="tab-pane fade" id="panel-dept" role="tabpanel" aria-labelledby="tab-dept">
+                            <h2 class="a11y-hidden">依系所別的課程</h2>
+                        <ul class="row row--g24 list-unstyled course-list">
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--python">
+                                        <img class="course-media__art" src="images/course/art-python.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">PROGRAMMING</p>
+                                        <span class="badge badge-tag course-media__chip">課程認列</span>
+                                        <button type="button" class="btn btn-fav" aria-pressed="true">
+                                            <img src="images/icons/heart-solid.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">取消收藏：Python 程式設計入門</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">Python 程式設計入門</a>
+                                        </h3>
+                                        <p class="course-body__teacher">陳威宇 · 資訊科技</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">438 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.5 / 5.0</span>
+                                                <span class="course-rating__count">（182 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：Python 程式設計入門</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--writing">
+                                        <img class="course-media__art" src="images/course/art-writing.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">LANGUAGE</p>
+                                        <button type="button" class="btn btn-fav" aria-pressed="false">
+                                            <img src="images/icons/heart-line.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">加入收藏：學術英文寫作</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">學術英文寫作</a>
+                                        </h3>
+                                        <p class="course-body__teacher">王麗華 · 語言學習</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">240 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.7 / 5.0</span>
+                                                <span class="course-rating__count">（124 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：學術英文寫作</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--datascience">
+                                        <img class="course-media__art" src="images/course/art-datascience.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">ANALYTICS</p>
+                                        <span class="badge badge-tag course-media__chip">課程認列</span>
+                                        <button type="button" class="btn btn-fav" aria-pressed="false">
+                                            <img src="images/icons/heart-line.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">加入收藏：資料科學概論</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">資料科學概論</a>
+                                        </h3>
+                                        <p class="course-body__teacher">林建民 · 資訊科技</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">300 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.3 / 5.0</span>
+                                                <span class="course-rating__count">（96 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：資料科學概論</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--ethics">
+                                        <img class="course-media__art" src="images/course/art-ethics.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">ETHICS · COMPLIANCE · GOVERNANCE</p>
+                                        <button type="button" class="btn btn-fav" aria-pressed="true">
+                                            <img src="images/icons/heart-solid.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">取消收藏：企業倫理與法規</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">企業倫理與法規</a>
+                                        </h3>
+                                        <p class="course-body__teacher">張文德 · 商業管理</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">300 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.2 / 5.0</span>
+                                                <span class="course-rating__count">（88 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：企業倫理與法規</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--culture">
+                                        <img class="course-media__art" src="images/course/art-culture.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">INTERCULTURAL · COMMUNICATION</p>
+                                        <button type="button" class="btn btn-fav" aria-pressed="false">
+                                            <img src="images/icons/heart-line.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">加入收藏：跨文化溝通</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">跨文化溝通</a>
+                                        </h3>
+                                        <p class="course-body__teacher">黃志誠 · 通識教育</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">300 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.6 / 5.0</span>
+                                                <span class="course-rating__count">（143 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：跨文化溝通</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-6 col-xl-4">
+                                <div class="card course-list__item">
+                                    <div class="course-media art--startup">
+                                        <img class="course-media__art" src="images/course/art-startup.png" alt=""
+                                            aria-hidden="true" />
+                                        <p class="course-media__kicker">BUSINESS · STARTUP</p>
+                                        <button type="button" class="btn btn-fav" aria-pressed="false">
+                                            <img src="images/icons/heart-line.svg" alt="" aria-hidden="true" />
+                                            <span class="a11y-hidden">加入收藏：創業實務與案例分析</span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body course-body">
+                                        <h3 class="course-body__title">
+                                            <a href="course-detail.html">創業實務與案例分析</a>
+                                        </h3>
+                                        <p class="course-body__teacher">黃志誠 · 商業管理</p>
+                                        <p class="course-body__stat">
+                                            <span class="course-body__enrolled">200 人選修</span>
+                                            <span class="course-rating">
+                                                <img src="images/icons/star.svg" alt="" aria-hidden="true" />
+                                                <span class="course-rating__score">4.1 / 5.0</span>
+                                                <span class="course-rating__count">（57 則評價）</span>
+                                            </span>
+                                        </p>
+                                        <a class="btn btn-cta" href="course-detail.html">
+                                            立即選課<span class="a11y-hidden">：創業實務與案例分析</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

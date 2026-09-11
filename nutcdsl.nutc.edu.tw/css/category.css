@@ -47,56 +47,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. 區段頁籤卡（依領域別／依系所別）
-   -------------------------------------------------------------------------- */
-.section-tabs {
-    display: flex;
-    gap: 44px;
-    padding: 16px 28px 0;
-    margin: 0;
-    list-style: none;
-    border: 1px solid var(--c-border);
-    border-radius: var(--r-card);
-    background: #fff;
-    box-shadow: var(--shadow-card);
-}
-
-.section-tabs .nav-link {
-    position: relative;
-    padding: 0 0 7px;
-    font-size: 18px;
-    line-height: 25px;
-    color: #7a8699;
-    background: none;
-    border: 0;
-    border-radius: 0;
-}
-
-.section-tabs .nav-link:hover,
-.section-tabs .nav-link:focus {
-    color: var(--c-title);
-    text-decoration: none;
-}
-
-.section-tabs .nav-link.active {
-    font-weight: 700;
-    color: var(--c-title);
-    background: none;
-}
-
-.section-tabs .nav-link.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 3px;
-    background: #0140a8;
-    border-radius: 1.5px;
-}
-
-/* --------------------------------------------------------------------------
-   3. 領域卡
+   2. 領域卡
    -------------------------------------------------------------------------- */
 /* 版面由 Bootstrap grid 負責：row.row--g20 > li.col-md-6.col-xl-4
    區塊間距由 .content__inner 的 gap 負責 */
@@ -231,24 +182,13 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. RWD
+   3. RWD
    -------------------------------------------------------------------------- */
 @media (max-width: 991.98px) {
 
     /* 手機不顯示「填寫興趣意願」（設計稿手機版沒有） */
     .page-head__tools--stack {
         display: none;
-    }
-
-    .section-tabs {
-        gap: 26px;
-        padding: 12px 15px 0;
-    }
-
-    .section-tabs .nav-link {
-        padding-bottom: 6px;
-        font-size: 15px;
-        line-height: 21px;
     }
 
     /* 領域卡改為單欄橫式列表（依設計稿）—— 取消 row 的負邊距 */

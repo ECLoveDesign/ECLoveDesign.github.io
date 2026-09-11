@@ -183,8 +183,10 @@
     color: #2f4260;
 }
 
-/* 下拉選單面板 */
-.bootstrap-select.filter-select .dropdown-menu {
+/* 下拉選單面板：只下在外層面板上。
+   bootstrap-select 內層的 ul 也帶 .dropdown-menu（.dropdown-menu.inner），
+   用子選擇器避免內外層都畫框線、疊出兩層邊框 */
+.bootstrap-select.filter-select>.dropdown-menu {
     padding: 6px;
     font-size: 14px;
     border: 1px solid #d9e0ea;

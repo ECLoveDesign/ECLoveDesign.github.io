@@ -1,0 +1,1338 @@
+@charset "UTF-8";
+/* ==========================================================================
+   後臺共用樣式
+   共用框架（TopNav / Sidebar 骨架 / 卡片 / 頁面標頭 / Badge / Button / Chip）見 style.css
+   本檔放後臺才有的東西：側邊選單群組、工具列、資料表格、分頁、彈窗表單
+   設計稿：後臺各頁 1920 寬（設計稿未提供後臺手機版，手機沿用共用抽屜版型，
+           表格則以橫向捲動呈現）
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 側邊選單：可展開群組
+   -------------------------------------------------------------------------- */
+.menu-item--group {
+    position: relative;
+}
+
+.menu-item__caret {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    transition: transform .2s ease;
+}
+
+/* Bootstrap collapse 收合時，觸發元素會被加上 .collapsed */
+.menu-item--group.collapsed .menu-item__caret {
+    transform: rotate(-90deg);
+}
+
+.sidebar__submenu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-sub {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    padding: 10px 18px 10px 52px;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, .7);
+}
+
+.menu-sub:hover,
+.menu-sub:focus {
+    color: #fff;
+    background: rgba(255, 255, 255, .08);
+    text-decoration: none;
+}
+
+.menu-sub[aria-current="page"] {
+    position: relative;
+    font-weight: 500;
+    color: #fff;
+    background: rgba(255, 255, 255, .14);
+}
+
+.menu-sub[aria-current="page"]::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 4px;
+    height: 20px;
+    background: var(--c-accent);
+    border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   2. 後臺卡片內的導向連結（前往公告管理 › / 查看全部待辦事項 ›）
+   -------------------------------------------------------------------------- */
+.link-go {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--c-primary);
+    white-space: nowrap;
+}
+
+.link-go:hover,
+.link-go:focus {
+    color: var(--c-link);
+    text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   2b. 卡片內頁籤（審核中／已通過／待補件／不通過）
+   -------------------------------------------------------------------------- */
+.tabs-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 40px;
+    margin: 0;
+    padding: 0 27px;
+    list-style: none;
+    border-bottom: 1px solid var(--c-divider-2);
+}
+
+.tabs-inline .nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 0 13px;
+    font-size: 16px;
+    color: var(--c-muted);
+    background: none;
+    border: 0;
+    border-radius: 0;
+}
+
+.tabs-inline .nav-link:hover,
+.tabs-inline .nav-link:focus {
+    color: var(--c-title);
+    text-decoration: none;
+}
+
+.tabs-inline .nav-link.active {
+    font-weight: 500;
+    color: var(--c-primary);
+    background: none;
+}
+
+.tabs-inline .nav-link.active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--c-primary);
+    border-radius: 1.5px;
+}
+
+/* 頁面層頁籤（樣板設定／發送紀錄）：直接放在內容區，不在卡片內 */
+.tabs-page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 36px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tabs-page .nav-link {
+    position: relative;
+    padding: 0 0 10px;
+    font-size: 15px;
+    color: var(--c-muted);
+    background: none;
+    border: 0;
+    border-radius: 0;
+}
+
+.tabs-page .nav-link:hover,
+.tabs-page .nav-link:focus {
+    color: var(--c-title);
+    text-decoration: none;
+}
+
+.tabs-page .nav-link.active {
+    font-weight: 500;
+    color: var(--c-primary);
+}
+
+.tabs-page .nav-link.active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--c-primary);
+    border-radius: 1.5px;
+}
+
+/* 卡片／彈窗內的次級標題區（比 .detail-card__head 小一號，無分隔線） */
+.panel-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 21px 23px 0;
+}
+
+.panel-head__title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--c-title);
+}
+
+.panel-head__note {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--c-breadcrumb);
+}
+
+.panel-head__unit {
+    flex: 0 0 auto;
+    font-size: 12px;
+    color: #b3bcc9;
+}
+
+.panel-body {
+    padding: 16px 23px 23px;
+}
+
+/* 卡片標題旁的說明文字。
+   .detail-card__head 是 space-between，說明文字若不吸住左側，
+   會被推到最右（只有標題＋說明）或卡在正中（標題＋說明＋按鈕），
+   用 margin-right:auto 讓剩餘空間都落在說明之後，操作按鈕仍靠右 */
+.panel-note {
+    margin: 0 auto 0 0;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--c-breadcrumb);
+}
+
+/* 彈窗內的唯讀資訊區（系統寫死的欄位） */
+.readonly-box {
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr;
+    gap: 14px 16px;
+    align-items: center;
+    margin-bottom: 22px;
+    padding: 18px 20px;
+    background: #f7f9fc;
+    border: 1px solid var(--c-border);
+    border-radius: 8px;
+}
+
+.readonly-box__label {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--c-muted);
+}
+
+.readonly-box__value {
+    margin: 0;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--c-text);
+}
+
+/* 批次操作列 */
+.batch-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 27px;
+}
+
+.batch-row__label {
+    margin: 0;
+    font-size: 14px;
+    color: var(--c-muted);
+}
+
+.batch-row__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. 工具列：搜尋、篩選與主要動作（多數後臺頁共用）
+   -------------------------------------------------------------------------- */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 27px;
+}
+
+.toolbar__search {
+    flex: 1 1 320px;
+    min-width: 0;
+    margin: 0;
+}
+
+.toolbar__spacer {
+    flex: 1 1 auto;
+}
+
+.toolbar .form-control {
+    height: 40px;
+    font-size: 14.5px;
+    color: var(--c-text);
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+}
+
+.toolbar .form-control::placeholder {
+    color: #9aa6b6;
+}
+
+.toolbar .form-control:focus {
+    border-color: var(--c-primary);
+    box-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. 資料表格（課程管理／審核／報表／帳號…共用）
+   -------------------------------------------------------------------------- */
+.data-panel {
+    overflow: hidden;
+}
+
+.data-table {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--c-text);
+}
+
+.data-table thead th {
+    padding: 17px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--c-muted);
+    white-space: nowrap;
+    background: #f6f8fb;
+    border: 0;
+    border-bottom: 1px solid var(--c-border);
+}
+
+.data-table tbody th,
+.data-table tbody td {
+    padding: 12px;
+    font-weight: 400;
+    line-height: 21px;
+    vertical-align: middle;
+    border: 0;
+}
+
+.data-table tbody th {
+    color: var(--c-text);
+}
+
+.data-table th:first-child,
+.data-table td:first-child {
+    padding-left: 27px;
+}
+
+.data-table th:last-child,
+.data-table td:last-child {
+    padding-right: 27px;
+}
+
+.data-table tbody tr {
+    position: relative;
+}
+
+.data-table tbody tr::after {
+    content: "";
+    position: absolute;
+    right: 27px;
+    bottom: 0;
+    left: 27px;
+    height: 1px;
+    background: var(--c-divider);
+}
+
+.data-table tbody tr:last-child::after {
+    display: none;
+}
+
+/* 勾選框（設計稿 18×18、圓角 4） */
+.check {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+.check__input {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.check__box {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+/* 用 ~ 而非 +：input 與 box 之間還隔著一個螢幕閱讀器用的 label */
+.check__input:checked~.check__box {
+    background: url(../images/icons/checkbox-checked.svg) no-repeat center / 18px 18px;
+    border-color: transparent;
+}
+
+.check__input:focus-visible~.check__box {
+    outline: 2px solid var(--c-accent);
+    outline-offset: 2px;
+}
+
+.data-table__check {
+    width: 56px;
+}
+
+/* 可排序表頭：文字後面帶一個小三角 */
+.th-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: inherit;
+}
+
+.th-sort:hover,
+.th-sort:focus {
+    color: var(--c-primary);
+    text-decoration: none;
+}
+
+.th-sort::after {
+    content: "";
+    width: 7px;
+    height: 4.5px;
+    background: url(../images/icons/sort-none.svg) no-repeat center / contain;
+}
+
+/* aria-sort 只在 columnheader（th）上才合法，
+   所以狀態掛在 th、樣式從 th 往內選到連結 */
+th[aria-sort="ascending"] .th-sort,
+th[aria-sort="descending"] .th-sort {
+    color: var(--c-text);
+}
+
+th[aria-sort="ascending"] .th-sort::after,
+th[aria-sort="descending"] .th-sort::after {
+    background-image: url(../images/icons/sort-asc.svg);
+}
+
+th[aria-sort="ascending"] .th-sort::after {
+    transform: rotate(180deg);
+}
+
+/* 卡片標題列右側的動作鈕群 */
+.panel-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* 操作欄：數個小按鈕並排 */
+.row-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.data-table td.is-num {
+    font-variant-numeric: tabular-nums;
+}
+
+.data-table td.is-muted {
+    color: var(--c-muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. 分頁
+   -------------------------------------------------------------------------- */
+.table-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 27px;
+    border-top: 1px solid var(--c-divider-2);
+}
+
+.table-foot__count {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--c-muted);
+}
+
+.pager {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pager__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--c-muted);
+    background: #fff;
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+}
+
+/* 上一頁／下一頁：用麵包屑的箭頭圖示，往前的那顆旋轉 180 度 */
+.pager__link--prev,
+.pager__link--next {
+    padding: 0;
+}
+
+.pager__link--prev::before,
+.pager__link--next::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: url(../images/icons/breadcrumb-sep.svg) no-repeat center / contain;
+}
+
+.pager__link--prev::before {
+    transform: rotate(180deg);
+}
+
+.pager__ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    font-size: 13.5px;
+    color: var(--c-muted);
+}
+
+.pager__link:hover,
+.pager__link:focus {
+    color: var(--c-primary);
+    border-color: var(--c-border-btn);
+    text-decoration: none;
+}
+
+.pager__link[aria-current="page"] {
+    font-weight: 500;
+    color: #fff;
+    background: var(--c-primary);
+    border-color: var(--c-primary);
+}
+
+.pager__link.is-disabled {
+    color: #b5bdc9;
+    pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. 首頁：最新公告 / 個人待辦事項
+   -------------------------------------------------------------------------- */
+.home-row {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+}
+
+.home-row__main {
+    flex: 940 1 0;
+    min-width: 0;
+}
+
+.home-row__side {
+    flex: 591 1 0;
+    min-width: 0;
+}
+
+.notice-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.notice-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 6px 12px;
+    padding: 22px 28px 23px;
+    border-bottom: 1px solid var(--c-divider);
+}
+
+.notice-list>li:last-child .notice-item {
+    border-bottom: 0;
+}
+
+.notice-item__pin {
+    grid-area: 1 / 1 / 2 / 2;
+    align-self: center;
+}
+
+/* 沒有「置頂」徽章時，標題直接從最左欄開始 */
+.notice-item__title {
+    grid-area: 1 / 1 / 2 / 3;
+    align-self: center;
+    margin: 0;
+    font-size: 15.5px;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--c-text);
+}
+
+.notice-item__pin~.notice-item__title {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.notice-item__date {
+    grid-area: 1 / 3 / 2 / 4;
+    align-self: center;
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 20px;
+    color: var(--c-breadcrumb);
+    white-space: nowrap;
+}
+
+.notice-item__desc {
+    grid-area: 2 / 1 / 3 / 4;
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 20px;
+    color: var(--c-muted-2);
+}
+
+.todo-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 28px;
+    border-bottom: 1px solid var(--c-divider);
+}
+
+.todo-list>li:last-child .todo-item {
+    border-bottom: 0;
+}
+
+.todo-item__text {
+    flex: 1 1 auto;
+    margin: 0;
+    font-size: 14.5px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--c-text);
+}
+
+.todo-item .btn-s {
+    flex: 0 0 auto;
+    min-width: 78px;
+}
+
+.card-foot {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding: 18px 28px;
+    border-top: 1px solid var(--c-divider-2);
+}
+
+/* --------------------------------------------------------------------------
+   7. 彈窗（新增課程／匯入課程／新增帳號…）
+   -------------------------------------------------------------------------- */
+.admin-modal .modal-content {
+    border: 0;
+    border-radius: var(--r-card);
+    box-shadow: 0 18px 48px rgba(20, 41, 82, .18);
+}
+
+.admin-modal .modal-header {
+    align-items: center;
+    padding: 20px 27px;
+    border-bottom: 1px solid var(--c-divider-2);
+}
+
+.admin-modal .modal-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    color: var(--c-title);
+}
+
+.admin-modal .close {
+    padding: 0;
+    margin: 0;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--c-muted);
+    opacity: 1;
+}
+
+.admin-modal .modal-body {
+    padding: 24px 27px;
+}
+
+.admin-modal .modal-footer {
+    gap: 12px;
+    padding: 18px 27px;
+    border-top: 1px solid var(--c-divider-2);
+}
+
+.admin-modal .modal-footer>* {
+    margin: 0;
+}
+
+/* 設計稿彈窗寬 1040，頁尾按鈕高 44（元件 Size=L） */
+.modal-admin-lg {
+    max-width: 1040px;
+}
+
+.admin-modal .modal-subtitle {
+    margin: 2px 0 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--c-breadcrumb);
+}
+
+.admin-modal .modal-footer .btn-m {
+    height: 44px;
+}
+
+.admin-modal .modal-footer__left {
+    margin-right: auto;
+}
+
+/* 表單 */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 24px;
+}
+
+.form-grid__full {
+    grid-column: 1 / -1;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--c-text);
+}
+
+.form-label .is-required {
+    margin-left: 4px;
+    color: #d8453c;
+}
+
+.admin-modal .form-control,
+.form-grid .form-control {
+    height: 44px;
+    font-size: 14.5px;
+    color: var(--c-text);
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+}
+
+.admin-modal textarea.form-control,
+.form-grid textarea.form-control {
+    height: auto;
+    padding: 10px 12px;
+}
+
+.admin-modal .form-control:focus,
+.form-grid .form-control:focus {
+    border-color: var(--c-primary);
+    box-shadow: none;
+}
+
+.form-hint {
+    margin: 6px 0 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--c-muted-2);
+}
+
+/* 表單內的 bootstrap-select：外觀對齊 .form-control（高 44、圓角 8） */
+.form-grid .bootstrap-select,
+.toolbar .bootstrap-select {
+    width: 100% !important;
+    padding: 0;
+    border: 0;
+}
+
+.form-grid .bootstrap-select>.dropdown-toggle,
+.toolbar .bootstrap-select>.dropdown-toggle {
+    height: 44px;
+    padding: 0 34px 0 12px;
+    font-size: 14.5px;
+    line-height: 42px;
+    color: var(--c-text);
+    background: #fff url(../images/icons/chevron-down.svg) no-repeat right 14px center / 12px 8px;
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.toolbar .bootstrap-select>.dropdown-toggle {
+    height: 40px;
+    line-height: 38px;
+}
+
+.form-grid .bootstrap-select>.dropdown-toggle:hover,
+.form-grid .bootstrap-select>.dropdown-toggle:focus,
+.form-grid .bootstrap-select.show>.dropdown-toggle,
+.toolbar .bootstrap-select>.dropdown-toggle:hover,
+.toolbar .bootstrap-select>.dropdown-toggle:focus,
+.toolbar .bootstrap-select.show>.dropdown-toggle {
+    border-color: var(--c-primary);
+    box-shadow: none;
+    outline: none;
+}
+
+.form-grid .bootstrap-select>.dropdown-toggle::after,
+.form-grid .bootstrap-select>.dropdown-toggle .bs-caret,
+.toolbar .bootstrap-select>.dropdown-toggle::after,
+.toolbar .bootstrap-select>.dropdown-toggle .bs-caret {
+    display: none;
+}
+
+.form-grid .bootstrap-select>.dropdown-menu,
+.toolbar .bootstrap-select>.dropdown-menu {
+    padding: 6px;
+    font-size: 14.5px;
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(20, 41, 82, .12);
+}
+
+.form-grid .bootstrap-select .dropdown-item,
+.toolbar .bootstrap-select .dropdown-item {
+    padding: 8px 12px;
+    color: var(--c-text);
+    border-radius: 6px;
+}
+
+.form-grid .bootstrap-select .dropdown-item:hover,
+.form-grid .bootstrap-select .dropdown-item:focus,
+.toolbar .bootstrap-select .dropdown-item:hover,
+.toolbar .bootstrap-select .dropdown-item:focus {
+    color: var(--c-primary);
+    background: #eef3fd;
+}
+
+.form-grid .bootstrap-select .dropdown-item.selected,
+.toolbar .bootstrap-select .dropdown-item.selected {
+    color: #fff;
+    background: var(--c-primary);
+}
+
+/* 彈窗裡的下拉面板要蓋在彈窗之上 */
+.admin-modal .bootstrap-select>.dropdown-menu {
+    z-index: 1060;
+}
+
+/* 多選標籤欄位（系所別／學分認列系所） */
+.tag-field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 7px 34px 7px 10px;
+    background: #fff url(../images/icons/chevron-down.svg) no-repeat right 14px center / 12px 8px;
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+}
+
+.tag-field__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px 4px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #1d66c9;
+    background: #e6f2fe;
+    border-radius: 4px;
+}
+
+.tag-field__remove {
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+    color: inherit;
+    background: none;
+    border: 0;
+    opacity: .7;
+}
+
+.tag-field__remove:hover,
+.tag-field__remove:focus {
+    opacity: 1;
+}
+
+/* 標籤欄位內的輸入游標位置 */
+.tag-field__input {
+    flex: 1 1 80px;
+    min-width: 80px;
+    padding: 0;
+    font-size: 14.5px;
+    color: var(--c-text);
+    background: none;
+    border: 0;
+}
+
+.tag-field__input:focus {
+    outline: none;
+}
+
+.tag-field.is-open {
+    border-color: var(--c-primary);
+    border-radius: 8px 8px 0 0;
+}
+
+/* 標籤欄位的建議清單（含「新增為新選項」） */
+.suggest {
+    margin: -1px 0 0;
+    padding: 0;
+    list-style: none;
+    background: #fff;
+    border: 1px solid var(--c-primary);
+    border-top: 0;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 6px 18px rgba(20, 41, 82, .12);
+}
+
+.suggest__item {
+    display: block;
+    padding: 12px 16px;
+    font-size: 14.5px;
+    color: var(--c-text);
+}
+
+.suggest__item:hover,
+.suggest__item:focus {
+    background: #f6f9ff;
+    text-decoration: none;
+}
+
+.suggest__new {
+    display: block;
+    padding: 12px 16px;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--c-primary);
+    background: #f4f8ff;
+    border-top: 1px solid var(--c-divider);
+    border-radius: 0 0 8px 8px;
+}
+
+/* 權限勾選樹（新增／編輯角色） */
+.perm-tree {
+    margin: 0;
+    padding: 14px 18px;
+    list-style: none;
+    background: #fff;
+    border: 1px solid var(--c-border);
+    border-radius: 8px;
+}
+
+.perm-tree__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
+    font-size: 14px;
+    color: var(--c-text);
+}
+
+.perm-tree__item label {
+    margin: 0;
+}
+
+.perm-tree__note {
+    font-size: 12.5px;
+    color: var(--c-breadcrumb);
+}
+
+.perm-tree__sub {
+    margin: 0;
+    padding: 0 0 0 30px;
+    list-style: none;
+}
+
+/* 半選（父項目只勾了部分子項） */
+.check__input:indeterminate~.check__box {
+    background: var(--c-primary);
+    border-color: transparent;
+}
+
+.check__input:indeterminate~.check__box::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    width: 8px;
+    height: 2px;
+    background: #fff;
+    border-radius: 1px;
+}
+
+.check {
+    position: relative;
+}
+
+.check__input:disabled~.check__box {
+    opacity: .55;
+}
+
+/* 設定頁：欄位群組與分隔線 */
+.setting-body {
+    padding: 20px 27px 24px;
+}
+
+.setting-field+.setting-field {
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px solid var(--c-divider);
+}
+
+.setting-field__row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.setting-field__row .form-control {
+    width: 194px;
+}
+
+.setting-field__unit {
+    font-size: 14.5px;
+    color: var(--c-muted);
+}
+
+.page-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* 文字數計數（課程簡介／課程大綱） */
+.field-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.field-count {
+    font-size: 12.5px;
+    line-height: 18px;
+    color: var(--c-breadcrumb);
+}
+
+/* 彈窗內的小型資料表（各系所學分數） */
+.mini-table {
+    margin: 0;
+    font-size: 14px;
+    color: var(--c-text);
+    border: 1px solid var(--c-border);
+    border-radius: 8px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.mini-table th,
+.mini-table td {
+    padding: 10px 14px;
+    font-weight: 400;
+    vertical-align: middle;
+    border: 0;
+    border-bottom: 1px solid var(--c-divider);
+}
+
+.mini-table thead th {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--c-muted);
+    background: #f6f8fb;
+}
+
+.mini-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.mini-table .form-control {
+    width: 96px;
+    height: 34px;
+    text-align: center;
+}
+
+.mini-table__credit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mini-table__unit {
+    font-size: 13.5px;
+    color: var(--c-muted);
+}
+
+/* 匯入須知 */
+.note-box {
+    margin: 0;
+    padding: 16px 20px 16px 36px;
+    font-size: 13.5px;
+    line-height: 22px;
+    color: var(--c-muted-2);
+    background: #f7f9fc;
+    border: 1px solid var(--c-border);
+    border-radius: 8px;
+}
+
+.note-box li+li {
+    margin-top: 4px;
+}
+
+/* 下載範本列 */
+.template-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: #f4f8ff;
+    border: 1px solid #dae6fc;
+    border-radius: 8px;
+}
+
+.template-row__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    background: #fff;
+    border: 1px solid #dae6fc;
+    border-radius: 8px;
+}
+
+.template-row__text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.template-row__title {
+    margin: 0 0 2px;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--c-text);
+}
+
+.template-row__desc {
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--c-muted-2);
+}
+
+/* 已選擇的檔案 */
+.file-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1px solid var(--c-border);
+    border-radius: 8px;
+}
+
+.file-row__name {
+    margin: 0;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--c-text);
+}
+
+.file-row__meta {
+    margin: 0;
+    font-size: 13px;
+    color: var(--c-muted-2);
+}
+
+/* 單選按鈕列（是／否…） */
+.radio-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    min-height: 44px;
+}
+
+.radio-row__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14.5px;
+    color: var(--c-text);
+}
+
+.radio-row__item input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--c-primary);
+}
+
+.radio-row__item label {
+    margin: 0;
+}
+
+/* 檔案上傳區（匯入課程） */
+.dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 34px 20px;
+    text-align: center;
+    background: #f7f9fc;
+    border: 1px dashed #c2cede;
+    border-radius: 10px;
+}
+
+.dropzone__title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--c-text);
+}
+
+.dropzone__hint {
+    margin: 0;
+    font-size: 13px;
+    color: var(--c-muted-2);
+}
+
+/* --------------------------------------------------------------------------
+   8. RWD
+   設計稿未提供後臺手機版：框架沿用共用抽屜版型，
+   資料表格在窄螢幕以 .table-responsive 橫向捲動，不改結構
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199.98px) {
+    .home-row {
+        flex-wrap: wrap;
+    }
+
+    .home-row__main,
+    .home-row__side {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 991.98px) {
+
+    .toolbar {
+        padding: 14px 16px;
+    }
+
+    .table-foot {
+        padding: 14px 16px;
+    }
+
+    /* 欄位多，窄螢幕改為整張表橫向捲動（.table-responsive），
+       不壓縮欄寬以免文字被擠成兩三行 */
+    .data-table {
+        min-width: 900px;
+    }
+
+    .data-table th:first-child,
+    .data-table td:first-child {
+        padding-left: 16px;
+    }
+
+    .data-table th:last-child,
+    .data-table td:last-child {
+        padding-right: 16px;
+    }
+
+    .data-table tbody tr::after {
+        right: 16px;
+        left: 16px;
+    }
+
+    .panel-head {
+        padding: 15px 16px 0;
+    }
+
+    .panel-body {
+        padding: 12px 16px 18px;
+    }
+
+    .notice-item,
+    .todo-item {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .card-foot {
+        padding: 14px 16px;
+    }
+
+    .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

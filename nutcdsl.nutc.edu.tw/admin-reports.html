@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域自學平台,後臺,報表管理,完課率,課程統計" />
+    <meta name="description" content="後臺報表管理：完課證書、完課率、熱門課程與各領域統計，可切換學年度並匯出 CSV。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="報表管理 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="後臺報表管理：完課證書、完課率、熱門課程與各領域統計，可切換學年度並匯出 CSV。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/admin-reports.css" />
+
+    <title>報表管理 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-courses.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-course-review.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />課程審核
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-reports.html" aria-current="page">
+                                    <img src="images/icons/nav-report.svg" alt="" aria-hidden="true" />報表管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-announcements.html">
+                                    <img src="images/icons/nav-announce.svg" alt="" aria-hidden="true" />公告管理
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：通知管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-notify"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-notify">
+                                    <img src="images/icons/nav-notify.svg" alt="" aria-hidden="true" />通知管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-notify">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify.html">通知管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify-log.html">系統通知紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-settings.html">
+                                    <img src="images/icons/nav-settings.svg" alt="" aria-hidden="true" />系統參數設定
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：系統管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-system"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-system">
+                                    <img src="images/icons/nav-system.svg" alt="" aria-hidden="true" />系統管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-system">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-accounts.html">帳號管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-roles.html">角色管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-audit-log.html">系統操作紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="admin-index.html">後臺</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">報表管理</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">報表管理</h1>
+                            <p class="page-head__desc">各項課程數據統計，可切換學年度檢視並匯出 CSV</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">系統管理員</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 統計學年度與匯出 -->
+                    <section class="card card-panel" aria-labelledby="h-bar">
+                        <h2 class="a11y-hidden" id="h-bar">統計條件與匯出</h2>
+                        <div class="report-bar">
+                            <p class="report-bar__label">統計學年度</p>
+                            <div class="form-group report-bar__year">
+                                <label class="a11y-hidden" for="ryear">統計學年度</label>
+                                <select class="form-control bs-select year-select" id="ryear" title="113 學年度">
+                                    <option value="113" selected>113 學年度</option>
+                                    <option value="112">112 學年度</option>
+                                    <option value="111">111 學年度</option>
+                                </select>
+                            </div>
+                            <p class="report-bar__stamp">資料統計至 2026/08/20 06:00</p>
+                            <span class="report-bar__actions">
+                                <button type="button" class="btn btn-m btn-m--neutral" data-toggle="modal"
+                                    data-target="#modalExportHistory">匯出學生學習歷程</button>
+                                <a class="btn btn-m btn-m--neutral" href="#">匯出 CSV</a>
+                            </span>
+                        </div>
+                    </section>
+
+                    <!-- ===================== 所有課程 ===================== -->
+                    <section aria-labelledby="h-all">
+                        <p class="section-head">
+                            <span class="section-head__title" id="h-all">所有課程</span>
+                            <span class="section-head__note">全校跨領域課程合計</span>
+                        </p>
+
+                        <ul class="row row--g20 list-unstyled kpi-row">
+                                    <li class="col-6 col-xl-3">
+                                        <div class="card card-panel kpi">
+                                            <p class="kpi__label">完課證書核發人數</p>
+                                            <p class="kpi__value">1,284</p>
+                                            <p><span class="delta delta--up">較上學年 +12.4%</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="col-6 col-xl-3">
+                                        <div class="card card-panel kpi">
+                                            <p class="kpi__label">完課率</p>
+                                            <p class="kpi__value">68.5%</p>
+                                            <p><span class="delta delta--up">較上學年 +3.2pp</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="col-6 col-xl-3">
+                                        <div class="card card-panel kpi">
+                                            <p class="kpi__label">開課總數</p>
+                                            <p class="kpi__value">128</p>
+                                            <p><span class="delta delta--up">較上學年 +9 門</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="col-6 col-xl-3">
+                                        <div class="card card-panel kpi">
+                                            <p class="kpi__label">選課人次</p>
+                                            <p class="kpi__value">4,672</p>
+                                            <p><span class="delta delta--down">較上學年 −2.1%</span></p>
+                                        </div>
+                                    </li>
+                        </ul>
+
+                        <div class="chart-row">
+                            <div class="card card-panel">
+                                <div class="panel-head">
+                                    <div>
+                                        <h3 class="panel-head__title">完課證書人數統計</h3>
+                                        <p class="panel-head__note">113 學年度 · 依核發月份</p>
+                                    </div>
+                                    <span class="panel-head__unit">單位：人</span>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="bar-canvas">
+                                        <canvas id="chartCert" role="img"
+                                            aria-label="113 學年度完課證書核發人數長條圖：9 月 110 人、10 月 142 人、11 月 166 人、12 月 198 人、1 月 92 人、2 月 155 人、3 月 218 人、4 月 203 人，月平均 160.5 人"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-panel">
+                                <div class="panel-head">
+                                    <div>
+                                        <h3 class="panel-head__title">完課率統計</h3>
+                                        <p class="panel-head__note">113 學年度 · 完課人數 ÷ 修課人次</p>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <p class="rate-value">
+                                        <span class="rate-value__num">68.5%</span>
+                                        <span class="delta delta--up">較上學年 +3.2pp</span>
+                                    </p>
+
+                                    <div class="rate-split" aria-hidden="true">
+                                        <span class="rate-split__done" style="width: 68.5%;"></span>
+                                        <span class="rate-split__rest" style="width: 31.5%;"></span>
+                                    </div>
+                                    <p class="rate-legend">
+                                        <span>完課 3,200 人（68.5%）</span>
+                                        <span class="rate-legend__rest">未完課 1,472 人（31.5%）</span>
+                                    </p>
+
+                                    <div class="rate-trend">
+                                            <div class="rate-trend__item">
+                                                <p class="rate-trend__year">111 學年度</p>
+                                                <p class="rate-trend__num">61.8%</p>
+                                                <span class="rate-trend__track">
+                                                    <span class="rate-trend__fill" style="width: 61.8%;"></span>
+                                                </span>
+                                            </div>
+                                            <div class="rate-trend__item">
+                                                <p class="rate-trend__year">112 學年度</p>
+                                                <p class="rate-trend__num">65.3%</p>
+                                                <span class="rate-trend__track">
+                                                    <span class="rate-trend__fill" style="width: 65.3%;"></span>
+                                                </span>
+                                            </div>
+                                            <div class="rate-trend__item rate-trend__item--now">
+                                                <p class="rate-trend__year">113 學年度</p>
+                                                <p class="rate-trend__num">68.5%</p>
+                                                <span class="rate-trend__track">
+                                                    <span class="rate-trend__fill" style="width: 68.5%;"></span>
+                                                </span>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card card-panel">
+                            <div class="panel-head">
+                                <div>
+                                    <h3 class="panel-head__title">熱門課程排行</h3>
+                                    <p class="panel-head__note">所有課程 · 依 113 學年度選課人次排序 · Top 10</p>
+                                </div>
+                                <span class="panel-head__unit">單位：人</span>
+                            </div>
+                            <div class="panel-body">
+                                <div class="rank-cols">
+                                    <ol class="rank-list">
+                                            <li class="rank-item rank-item--top">
+                                                <span class="rank-item__no">1</span>
+                                                <span class="rank-item__name">Python 程式設計入門</span>
+                                                <span class="rank-item__track">
+                                                    <span class="rank-item__fill" style="width: 100.0%;"></span>
+                                                </span>
+                                                <span class="rank-item__value">438</span>
+                                            </li>
+                                            <li class="rank-item rank-item--top">
+                                                <span class="rank-item__no">2</span>
+                                                <span class="rank-item__name">資料科學概論</span>
+                                                <span class="rank-item__track">
+                                                    <span class="rank-item__fill" style="width: 88.1%;"></span>
+                                                </span>
+                                                <span class="rank-item__value">386</span>
+                                            </li>
+                                            <li class="rank-item rank-item--top">
+                                                <span class="rank-item__no">3</span>
+                                                <span class="rank-item__name">企業倫理與法規</span>
+                                                <span class="rank-item__track">
+                                                    <span class="rank-item__fill" style="width: 80.4%;"></span>
+                                                </span>
+                                                <span class="rank-item__value">352</span>
+                                            </li>
+                                            <li class="rank-item">
+                                                <span class="rank-item__no">4</span>
+                                                <span class="rank-item__name">跨文化溝通</span>
+                                                <span class="rank-item__track">
+                                                    <span class="rank-item__fill" style="width: 72.6%;"></span>
+                                                </span>
+                                                <span class="rank-item__value">318</span>
+                                            </li>
+                                            <li class="rank-item">
+                                                <span class="rank-item__no">5</span>
+                                                <span class="rank-item__name">AI 應用實務</span>
+                                                <span class="rank-item__track">
+                                                    <span class="rank-item__fill" style="width: 67.6%;"></span>
+                                                </span>
+                                                <span class="rank-item__value">296</span>
+                                            </li>
+                                    </ol>
+                                    <ol class="rank-list" start="6">
+                                            <li class="rank-item">
+                                                <span class="rank-item__no">6</span>
+                                                <span class="rank-item__name">學術英文寫作</span>
+                                                <span class="rank-item__track">
+                                                    <span class="rank-item__fill" style="width: 54.8%;"></span>
+                                                </span>
+                                                <span class="rank-item__value">240</span>
+                                            </li>
+                                            <li class="rank-item">
+                                                <span class="rank-item__no">7</span>
+                                                <span class="rank-item__name">創業實務與案例分析</span>
+                                                <span class="rank-item__track">
+                                                    <span class="rank-item__fill" style="width: 48.4%;"></span>
+                                                </span>
+                                                <span class="rank-item__value">212</span>
+                                            </li>
+                                            <li class="rank-item">
+                                                <span class="rank-item__no">8</span>
+                                                <span class="rank-item__name">設計思考與創新實作</span>
+                                                <span class="rank-item__track">
+                                                    <span class="rank-item__fill" style="width: 42.9%;"></span>
+                                                </span>
+                                                <span class="rank-item__value">188</span>
+                                            </li>
+                                            <li class="rank-item">
+                                                <span class="rank-item__no">9</span>
+                                                <span class="rank-item__name">綠色能源與永續發展</span>
+                                                <span class="rank-item__track">
+                                                    <span class="rank-item__fill" style="width: 37.4%;"></span>
+                                                </span>
+                                                <span class="rank-item__value">164</span>
+                                            </li>
+                                            <li class="rank-item">
+                                                <span class="rank-item__no">10</span>
+                                                <span class="rank-item__name">醫療資訊管理概論</span>
+                                                <span class="rank-item__track">
+                                                    <span class="rank-item__fill" style="width: 32.4%;"></span>
+                                                </span>
+                                                <span class="rank-item__value">142</span>
+                                            </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ===================== 各領域 ===================== -->
+                    <section aria-labelledby="h-domain">
+                        <p class="section-head">
+                            <span class="section-head__title" id="h-domain">各領域</span>
+                            <span class="section-head__note">依領域別分項統計</span>
+                        </p>
+
+                        <div class="card card-panel data-panel">
+                            <div class="panel-head">
+                                <div>
+                                    <h3 class="panel-head__title">各領域統計</h3>
+                                    <p class="panel-head__note">113 學年度</p>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table data-table domain-table">
+                                    <caption class="a11y-hidden">113 學年度各領域開課數、選課人次、完課證書人數與完課率（全校平均 68.5%）</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="width: 17.7%;">領域別</th>
+                                            <th scope="col" style="width: 7.7%;">開課數</th>
+                                            <th scope="col" style="width: 9.6%;">選課人次</th>
+                                            <th scope="col" style="width: 12.2%;">完課證書人數</th>
+                                            <th scope="col">完課率</th>
+                                            <th scope="col" style="width: 9%;">
+                                                <span class="a11y-hidden">完課率數值</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                                <tr>
+                                                    <th scope="row"><span class="badge chip chip--blue-light">資訊科技</span></th>
+                                                    <td class="is-num">46</td>
+                                                    <td class="is-num">1,842</td>
+                                                    <td class="is-num">548</td>
+                                                    <td>
+                                                        <span class="rate-bar">
+                                                            <span class="rate-bar__fill" style="width: 74.3%;"></span>
+                                                            <span class="rate-bar__avg" style="left: 68.5%;">
+                                            <span class="rate-bar__avg-label">全校平均 68.5%</span>
+                                        </span>
+                                                        </span>
+                                                    </td>
+                                                    <td class="is-rate">74.3%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row"><span class="badge chip chip--amber">商業管理</span></th>
+                                                    <td class="is-num">34</td>
+                                                    <td class="is-num">1,206</td>
+                                                    <td class="is-num">361</td>
+                                                    <td>
+                                                        <span class="rate-bar">
+                                                            <span class="rate-bar__fill" style="width: 68.1%;"></span>
+                                                            <span class="rate-bar__avg" style="left: 68.5%;"></span>
+                                                        </span>
+                                                    </td>
+                                                    <td class="is-rate">68.1%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row"><span class="badge chip chip--green">語言學習</span></th>
+                                                    <td class="is-num">28</td>
+                                                    <td class="is-num">986</td>
+                                                    <td class="is-num">268</td>
+                                                    <td>
+                                                        <span class="rate-bar">
+                                                            <span class="rate-bar__fill" style="width: 64.8%;"></span>
+                                                            <span class="rate-bar__avg" style="left: 68.5%;"></span>
+                                                        </span>
+                                                    </td>
+                                                    <td class="is-rate">64.8%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row"><span class="badge chip chip--magenta">通識教育</span></th>
+                                                    <td class="is-num">20</td>
+                                                    <td class="is-num">638</td>
+                                                    <td class="is-num">107</td>
+                                                    <td>
+                                                        <span class="rate-bar">
+                                                            <span class="rate-bar__fill" style="width: 58.3%;"></span>
+                                                            <span class="rate-bar__avg" style="left: 68.5%;"></span>
+                                                        </span>
+                                                    </td>
+                                                    <td class="is-rate">58.3%</td>
+                                                </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card card-panel">
+                            <div class="panel-head">
+                                <div>
+                                    <h3 class="panel-head__title">各領域熱門課程排行</h3>
+                                    <p class="panel-head__note">各領域 Top 5 · 依 113 學年度選課人次 · 單位：人</p>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="mini-rank-cols">
+                                        <div class="mini-rank">
+                                            <h3 class="mini-rank__head">資訊科技</h3>
+                                            <ol class="mini-rank__list">
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">1</span>
+                                                    <span class="mini-rank__name">Python 程式設計入門</span>
+                                                    <span class="mini-rank__value">438</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">2</span>
+                                                    <span class="mini-rank__name">資料科學概論</span>
+                                                    <span class="mini-rank__value">386</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">3</span>
+                                                    <span class="mini-rank__name">AI 應用實務</span>
+                                                    <span class="mini-rank__value">296</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">4</span>
+                                                    <span class="mini-rank__name">醫療資訊管理概論</span>
+                                                    <span class="mini-rank__value">142</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">5</span>
+                                                    <span class="mini-rank__name">網路安全實務</span>
+                                                    <span class="mini-rank__value">128</span>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                        <div class="mini-rank">
+                                            <h3 class="mini-rank__head">商業管理</h3>
+                                            <ol class="mini-rank__list">
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">1</span>
+                                                    <span class="mini-rank__name">企業倫理與法規</span>
+                                                    <span class="mini-rank__value">352</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">2</span>
+                                                    <span class="mini-rank__name">創業實務與案例分析</span>
+                                                    <span class="mini-rank__value">212</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">3</span>
+                                                    <span class="mini-rank__name">行銷數據分析</span>
+                                                    <span class="mini-rank__value">176</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">4</span>
+                                                    <span class="mini-rank__name">財務報表解讀</span>
+                                                    <span class="mini-rank__value">148</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">5</span>
+                                                    <span class="mini-rank__name">供應鏈管理</span>
+                                                    <span class="mini-rank__value">121</span>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                        <div class="mini-rank">
+                                            <h3 class="mini-rank__head">語言學習</h3>
+                                            <ol class="mini-rank__list">
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">1</span>
+                                                    <span class="mini-rank__name">學術英文寫作</span>
+                                                    <span class="mini-rank__value">240</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">2</span>
+                                                    <span class="mini-rank__name">商用日語會話</span>
+                                                    <span class="mini-rank__value">186</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">3</span>
+                                                    <span class="mini-rank__name">英語簡報技巧</span>
+                                                    <span class="mini-rank__value">164</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">4</span>
+                                                    <span class="mini-rank__name">韓語入門</span>
+                                                    <span class="mini-rank__value">132</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">5</span>
+                                                    <span class="mini-rank__name">法語文化導論</span>
+                                                    <span class="mini-rank__value">98</span>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                        <div class="mini-rank">
+                                            <h3 class="mini-rank__head">通識教育</h3>
+                                            <ol class="mini-rank__list">
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">1</span>
+                                                    <span class="mini-rank__name">跨文化溝通</span>
+                                                    <span class="mini-rank__value">318</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">2</span>
+                                                    <span class="mini-rank__name">設計思考與創新實作</span>
+                                                    <span class="mini-rank__value">188</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">3</span>
+                                                    <span class="mini-rank__name">綠色能源與永續發展</span>
+                                                    <span class="mini-rank__value">164</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">4</span>
+                                                    <span class="mini-rank__name">科技與社會</span>
+                                                    <span class="mini-rank__value">96</span>
+                                                </li>
+                                                <li class="mini-rank__item">
+                                                    <span class="mini-rank__no">5</span>
+                                                    <span class="mini-rank__name">藝術鑑賞</span>
+                                                    <span class="mini-rank__value">74</span>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ===================== 彈窗：匯出學生學習歷程 ===================== -->
+                    <div class="modal fade admin-modal" id="modalExportHistory" tabindex="-1" role="dialog"
+                        aria-labelledby="modalExportTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div>
+                                        <h2 class="modal-title" id="modalExportTitle">匯出學生學習歷程</h2>
+                                        <p class="modal-subtitle">報表管理 › 匯出學生學習歷程</p>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="a11y-hidden">關閉</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p class="form-hint">選擇學年度後，一鍵將該學年度全體學生的學習歷程匯出成 CSV 檔。</p>
+                                    <div class="form-grid">
+                                        <div class="form-group form-grid__full">
+                                            <label class="form-label" for="expYear">學年度<span class="is-required"
+                                                    aria-hidden="true">*</span></label>
+                                            <select class="form-control bs-select" id="expYear" title="113 學年度" required>
+                                                <option value="113" selected>113 學年度</option>
+                                                <option value="112">112 學年度</option>
+                                                <option value="111">111 學年度</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
+                                        data-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-m btn-m--primary">匯出 CSV</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="assets/chartjs/chart.umd.min.js"></script>
+    <script src="js/admin-reports.js"></script>
+</body>
+
+</html>

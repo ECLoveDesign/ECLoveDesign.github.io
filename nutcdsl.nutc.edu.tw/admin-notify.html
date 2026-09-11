@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域自學平台,後臺,通知管理,通知樣板" />
+    <meta name="description" content="後臺通知管理：維護系統自動發送的通知信樣板標題與內容。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="通知管理 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="後臺通知管理：維護系統自動發送的通知信樣板標題與內容。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <title>通知管理 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-courses.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-course-review.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />課程審核
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-reports.html">
+                                    <img src="images/icons/nav-report.svg" alt="" aria-hidden="true" />報表管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-announcements.html">
+                                    <img src="images/icons/nav-announce.svg" alt="" aria-hidden="true" />公告管理
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：通知管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-notify"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-notify">
+                                    <img src="images/icons/nav-notify.svg" alt="" aria-hidden="true" />通知管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-notify">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify.html" aria-current="page">通知管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify-log.html">系統通知紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-settings.html">
+                                    <img src="images/icons/nav-settings.svg" alt="" aria-hidden="true" />系統參數設定
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：系統管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-system"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-system">
+                                    <img src="images/icons/nav-system.svg" alt="" aria-hidden="true" />系統管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-system">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-accounts.html">帳號管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-roles.html">角色管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-audit-log.html">系統操作紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="admin-index.html">後臺</a></li>
+                                    <li class="breadcrumb-item"><a href="admin-notify.html">通知管理</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">通知管理</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">通知管理</h1>
+                            <p class="page-head__desc">維護系統自動發送的通知信樣板，發送節點與對象由系統設定</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">系統管理員</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 分頁：樣板設定／發送紀錄 -->
+                    <ul class="nav tabs-page" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" href="admin-notify.html" role="tab" aria-selected="true">樣板設定</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" href="admin-notify-log.html" role="tab" aria-selected="false">發送紀錄</a>
+                        </li>
+                    </ul>
+
+                    <!-- 通知樣板 -->
+                    <section class="card card-panel detail-card data-panel" aria-labelledby="h-tpl">
+                        <div class="detail-card__head">
+                            <h2 class="card-panel__title" id="h-tpl">通知樣板</h2>
+                            <p class="panel-note">通知類別、發送節點與發送對象皆為系統寫死，僅可編輯通知信的標題與內容</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table data-table">
+                                <caption class="a11y-hidden">通知樣板清單，共 8 個</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 13.5%;" aria-sort="descending">
+                                            <a class="th-sort" href="#">樣板名稱</a>
+                                        </th>
+                                        <th scope="col" style="width: 17.5%;">標題</th>
+                                        <th scope="col" style="width: 20%;">內容</th>
+                                        <th scope="col" style="width: 11.5%;">發送節點</th>
+                                        <th scope="col" style="width: 8.5%;">發送對象</th>
+                                        <th scope="col">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">完課申請送出通知</th>
+                                                        <td>有新的完課申請待審核</td>
+                                                        <td class="is-muted">{學生姓名} 於 {申請日期} 送出完課申請，請前往審核…</td>
+                                                        <td><span class="badge chip chip--neutral">送出完課申請</span></td>
+                                                        <td><span class="badge chip chip--green">老師</span></td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalTemplate">編輯<span
+                                                                        class="a11y-hidden">：完課申請送出通知</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：完課申請送出通知</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">停用<span
+                                                                        class="a11y-hidden">：完課申請送出通知</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">完課申請通過通知</th>
+                                                        <td>您的完課申請已通過</td>
+                                                        <td class="is-muted">恭喜！您的完課申請已審核通過…</td>
+                                                        <td><span class="badge chip chip--neutral">完課申請通過</span></td>
+                                                        <td><span class="badge chip chip--blue-light">學生</span></td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalTemplate">編輯<span
+                                                                        class="a11y-hidden">：完課申請通過通知</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：完課申請通過通知</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">停用<span
+                                                                        class="a11y-hidden">：完課申請通過通知</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">完課申請補件通知</th>
+                                                        <td>您的完課申請需補件</td>
+                                                        <td class="is-muted">申請文件尚有缺漏，請於期限內補齊…</td>
+                                                        <td><span class="badge chip chip--neutral">完課申請待補件</span></td>
+                                                        <td><span class="badge chip chip--blue-light">學生</span></td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalTemplate">編輯<span
+                                                                        class="a11y-hidden">：完課申請補件通知</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：完課申請補件通知</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">停用<span
+                                                                        class="a11y-hidden">：完課申請補件通知</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">完課申請不通過通知</th>
+                                                        <td>您的完課申請未通過</td>
+                                                        <td class="is-muted">很抱歉，您的完課申請未通過審核…</td>
+                                                        <td><span class="badge chip chip--neutral">完課申請不通過</span></td>
+                                                        <td><span class="badge chip chip--blue-light">學生</span></td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalTemplate">編輯<span
+                                                                        class="a11y-hidden">：完課申請不通過通知</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：完課申請不通過通知</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">停用<span
+                                                                        class="a11y-hidden">：完課申請不通過通知</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">補件完成通知</th>
+                                                        <td>學生已完成補件</td>
+                                                        <td class="is-muted">{學生姓名} 已完成補件，請重新審核…</td>
+                                                        <td><span class="badge chip chip--neutral">完課申請已補件</span></td>
+                                                        <td><span class="badge chip chip--green">老師</span></td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalTemplate">編輯<span
+                                                                        class="a11y-hidden">：補件完成通知</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：補件完成通知</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">停用<span
+                                                                        class="a11y-hidden">：補件完成通知</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">建課申請送出通知</th>
+                                                        <td>有新的建課申請待審核</td>
+                                                        <td class="is-muted">{老師姓名} 於 {申請日期} 送出建課申請，請前往審核…</td>
+                                                        <td><span class="badge chip chip--neutral">送出建課申請</span></td>
+                                                        <td><span class="badge chip chip--magenta">管理員</span></td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalTemplate">編輯<span
+                                                                        class="a11y-hidden">：建課申請送出通知</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：建課申請送出通知</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">停用<span
+                                                                        class="a11y-hidden">：建課申請送出通知</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">建課審核通過通知</th>
+                                                        <td>您的建課申請已通過</td>
+                                                        <td class="is-muted">您申請開設的課程已審核通過…</td>
+                                                        <td><span class="badge chip chip--neutral">建課審核通過</span></td>
+                                                        <td><span class="badge chip chip--green">老師</span></td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalTemplate">編輯<span
+                                                                        class="a11y-hidden">：建課審核通過通知</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：建課審核通過通知</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">啟用<span
+                                                                        class="a11y-hidden">：建課審核通過通知</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">建課審核不通過通知</th>
+                                                        <td>您的建課申請未通過</td>
+                                                        <td class="is-muted">很抱歉，您申請開設的課程未通過審核…</td>
+                                                        <td><span class="badge chip chip--neutral">建課審核不通過</span></td>
+                                                        <td><span class="badge chip chip--green">老師</span></td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalTemplate">編輯<span
+                                                                        class="a11y-hidden">：建課審核不通過通知</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：建課審核不通過通知</span></a>
+                                                                <a class="btn btn-s btn-s--neutral" href="#">啟用<span
+                                                                        class="a11y-hidden">：建課審核不通過通知</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-foot">
+                            <p class="table-foot__count">共 8 個通知樣板</p>
+                        </div>
+                    </section>
+
+                    <!-- ===================== 彈窗：編輯通知樣板 ===================== -->
+                    <div class="modal fade admin-modal" id="modalTemplate" tabindex="-1" role="dialog"
+                        aria-labelledby="modalTemplateTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div>
+                                        <h2 class="modal-title" id="modalTemplateTitle">編輯通知樣板</h2>
+                                        <p class="modal-subtitle">通知管理 › 編輯通知樣板</p>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="a11y-hidden">關閉</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p class="form-hint">通知類別、發送節點與發送對象皆由系統設定，無法新增或修改；此處可編輯通知信的標題與內容。</p>
+
+                                    <dl class="readonly-box">
+                                        <dt class="readonly-box__label">樣板名稱</dt>
+                                        <dd class="readonly-box__value">完課申請補件通知</dd>
+                                        <dt class="readonly-box__label">發送節點</dt>
+                                        <dd><span class="badge chip chip--neutral">完課申請待補件</span></dd>
+                                        <dt class="readonly-box__label">發送對象</dt>
+                                        <dd><span class="badge chip chip--blue-light">學生</span></dd>
+                                    </dl>
+
+                                    <form class="form-grid" action="#">
+                                        <div class="form-group form-grid__full">
+                                            <label class="form-label" for="tplTitle">標題<span class="is-required"
+                                                    aria-hidden="true">*</span></label>
+                                            <input type="text" class="form-control" id="tplTitle" value="您的完課申請需補件"
+                                                required />
+                                        </div>
+                                        <div class="form-group form-grid__full">
+                                            <label class="form-label" for="tplBody">內容<span class="is-required"
+                                                    aria-hidden="true">*</span></label>
+                                            <textarea class="form-control" id="tplBody" rows="8" required>同學您好：
+
+您提出的完課申請尚有文件缺漏，請於期限內登入平台完成補件，逾期將視同放棄。
+
+如有疑問，請洽開課系所辦公室。
+
+跨領域數位自主學習平台　敬上</textarea>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
+                                        data-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-m btn-m--primary">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

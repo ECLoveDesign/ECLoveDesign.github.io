@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域自學平台,後臺,系統參數,登入逾時,課程欄位" />
+    <meta name="description" content="後臺系統參數設定：登入安全參數與新增課程表單的可選欄位。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="系統參數設定 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="後臺系統參數設定：登入安全參數與新增課程表單的可選欄位。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <title>系統參數設定 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-courses.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-course-review.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />課程審核
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-reports.html">
+                                    <img src="images/icons/nav-report.svg" alt="" aria-hidden="true" />報表管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-announcements.html">
+                                    <img src="images/icons/nav-announce.svg" alt="" aria-hidden="true" />公告管理
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：通知管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-notify"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-notify">
+                                    <img src="images/icons/nav-notify.svg" alt="" aria-hidden="true" />通知管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-notify">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify.html">通知管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify-log.html">系統通知紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-settings.html" aria-current="page">
+                                    <img src="images/icons/nav-settings.svg" alt="" aria-hidden="true" />系統參數設定
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：系統管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-system"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-system">
+                                    <img src="images/icons/nav-system.svg" alt="" aria-hidden="true" />系統管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-system">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-accounts.html">帳號管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-roles.html">角色管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-audit-log.html">系統操作紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="admin-index.html">後臺</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">系統參數設定</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">系統參數設定</h1>
+                            <p class="page-head__desc">設定平台各項系統參數，調整後套用於全站</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">系統管理員</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="#">
+
+                        <!-- 安全設定 -->
+                        <section class="card card-panel detail-card" aria-labelledby="h-security">
+                            <div class="detail-card__head">
+                                <h2 class="card-panel__title" id="h-security">安全設定</h2>
+                                <p class="panel-note">與帳號登入安全相關的參數，儲存後即時套用於全站</p>
+                            </div>
+
+                            <div class="setting-body">
+                                <div class="setting-field">
+                                    <label class="form-label" for="stTimeout">登入逾時時間</label>
+                                    <div class="setting-field__row">
+                                        <input type="number" class="form-control" id="stTimeout" value="30"
+                                            min="1" />
+                                        <span class="setting-field__unit">分鐘</span>
+                                    </div>
+                                    <p class="form-hint">使用者閒置超過此時間未操作，系統將自動登出並要求重新登入。</p>
+                                </div>
+
+                                <div class="setting-field">
+                                    <label class="form-label" for="stLock">登入失敗鎖定次數</label>
+                                    <div class="setting-field__row">
+                                        <input type="number" class="form-control" id="stLock" value="5" min="1" />
+                                        <span class="setting-field__unit">次</span>
+                                    </div>
+                                    <p class="form-hint">同一帳號連續登入失敗達此次數，將暫時鎖定 30 分鐘後才可再次嘗試。</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 新增/編輯課程欄位 -->
+                        <section class="card card-panel detail-card" aria-labelledby="h-fields">
+                            <div class="detail-card__head">
+                                <h2 class="card-panel__title" id="h-fields">新增/編輯課程欄位</h2>
+                                <p class="panel-note">設定「新增／編輯課程」表單中各下拉選單的可選項目，異動後即時套用於新建課程</p>
+                            </div>
+
+                            <div class="setting-body">
+                                <div class="setting-field">
+                                    <p class="form-label" id="stDomainLabel">領域別</p>
+                                    <div class="tag-field" role="group" aria-labelledby="stDomainLabel">
+                                        <span class="tag-field__tag">資訊科技
+                                            <button type="button" class="tag-field__remove">
+                                                <span aria-hidden="true">&times;</span>
+                                                <span class="a11y-hidden">移除資訊科技</span>
+                                            </button>
+                                        </span>
+                                        <span class="tag-field__tag">通識教育
+                                            <button type="button" class="tag-field__remove">
+                                                <span aria-hidden="true">&times;</span>
+                                                <span class="a11y-hidden">移除通識教育</span>
+                                            </button>
+                                        </span>
+                                        <span class="tag-field__tag">語言學習
+                                            <button type="button" class="tag-field__remove">
+                                                <span aria-hidden="true">&times;</span>
+                                                <span class="a11y-hidden">移除語言學習</span>
+                                            </button>
+                                        </span>
+                                        <span class="tag-field__tag">商業管理
+                                            <button type="button" class="tag-field__remove">
+                                                <span aria-hidden="true">&times;</span>
+                                                <span class="a11y-hidden">移除商業管理</span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="setting-field">
+                                    <label class="form-label" for="stSource">課程來源</label>
+                                    <!-- 展開輸入中的狀態：已輸入「合作」，下方列出相符項目與新增選項 -->
+                                    <div class="tag-field is-open">
+                                        <span class="tag-field__tag">本校開設
+                                            <button type="button" class="tag-field__remove">
+                                                <span aria-hidden="true">&times;</span>
+                                                <span class="a11y-hidden">移除本校開設</span>
+                                            </button>
+                                        </span>
+                                        <span class="tag-field__tag">校際合作
+                                            <button type="button" class="tag-field__remove">
+                                                <span aria-hidden="true">&times;</span>
+                                                <span class="a11y-hidden">移除校際合作</span>
+                                            </button>
+                                        </span>
+                                        <span class="tag-field__tag">磨課師 MOOCs
+                                            <button type="button" class="tag-field__remove">
+                                                <span aria-hidden="true">&times;</span>
+                                                <span class="a11y-hidden">移除磨課師 MOOCs</span>
+                                            </button>
+                                        </span>
+                                        <input type="text" class="tag-field__input" id="stSource" value="合作"
+                                            aria-describedby="stSourceHint" />
+                                    </div>
+                                    <ul class="suggest" id="stSourceHint">
+                                        <li><a class="suggest__item" href="#">業界合作</a></li>
+                                        <li><a class="suggest__new" href="#">＋ 新增「合作」為新選項</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="page-actions">
+                            <button type="submit" class="btn btn-m btn-m--primary">儲存</button>
+                        </div>
+                    </form>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

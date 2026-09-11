@@ -1,0 +1,545 @@
+@charset "UTF-8";
+/* ==========================================================================
+   課程內頁 course-detail.html 專屬樣式
+   共用框架（TopNav / Sidebar / 卡片 / 頁面標頭）見 style.css
+   設計稿：課程內頁 1920×1160 / iPhone 17 402×1806
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 頁面標頭（課名 + 標籤 + 回前頁）
+   -------------------------------------------------------------------------- */
+.course-head__title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.course-head__title-row .page-head__title {
+    margin-bottom: 0;
+}
+
+.course-head__source {
+    margin: 8px 0 0;
+}
+
+/* 課名旁的大標籤（比卡片上的 .badge-tag 大一號） */
+.page-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    font-size: 14.5px;
+    font-weight: 500;
+    line-height: 20px;
+    border-radius: 6px;
+}
+
+.page-tag--recognized {
+    color: var(--tag-it-fg);
+    background: #e6f2fe;
+}
+
+.page-tag--source {
+    color: var(--tag-biz-fg);
+    background: #fdf1dc;
+}
+
+/* 右側直列：上為通知／使用者，下為回前頁 */
+.page-head__aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 0 0 auto;
+    gap: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   2. 課程資訊／課程單元兩欄
+   卡片標題列與內容區（.detail-card*）已移至 style.css 共用
+   -------------------------------------------------------------------------- */
+/* 課程單元卡的左內距較窄，讓時間軸圓點貼齊設計稿的 29.5px */
+.detail-card--units .detail-card__body {
+    padding: 13px 27px 25px;
+}
+
+/* 上下兩張卡等高並排：727 : 804（設計稿實際寬度比） */
+.detail-cols {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+}
+
+.detail-cols>.detail-card--info {
+    flex: 727 1 0;
+    min-width: 0;
+}
+
+.detail-cols>.detail-card--units {
+    flex: 804 1 0;
+    min-width: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. 課程資訊：定義清單 + 立即選課
+   -------------------------------------------------------------------------- */
+.info-list {
+    margin: 0;
+}
+
+.info-list__row {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--c-divider);
+}
+
+.info-list__row+.info-list__row {
+    padding-top: 12px;
+}
+
+.info-list__row:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.info-list__label {
+    flex: 0 0 136px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    color: var(--c-muted);
+}
+
+.info-list__value {
+    margin: 0;
+    font-size: 15px;
+    line-height: 21px;
+    color: var(--c-text);
+}
+
+/* 系所認列學分：系所名 + 學分數膠囊 */
+.credit {
+    display: flex;
+    align-items: center;
+}
+
+.credit+.credit {
+    margin-top: 11px;
+}
+
+.credit__dept {
+    flex: 0 0 120px;
+    color: var(--c-muted);
+}
+
+.credit__chip {
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    color: var(--tag-it-fg);
+    background: #e6f2fe;
+    border-radius: 4px;
+}
+
+/* 立即選課：金色漸層主行動鈕，永遠貼齊卡片底部 */
+.btn-enroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 46px;
+    margin-top: auto;
+    padding: 11px 34px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #fff;
+    background: linear-gradient(180deg, #e0ac38 0%, #c68c18 100%);
+    border-radius: 8px;
+}
+
+.btn-enroll:hover,
+.btn-enroll:focus {
+    color: #fff;
+    background: linear-gradient(180deg, #d4a032 0%, #b57f14 100%);
+    text-decoration: none;
+}
+
+/* 立即選課與上方清單的距離（設計稿 28px） */
+.info-list+.btn-enroll {
+    margin-top: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   4. 課程單元：時間軸
+   -------------------------------------------------------------------------- */
+.unit-list {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 36px;
+    list-style: none;
+}
+
+/* 軸線：起訖對齊第一顆與最後一顆圓點的中心 */
+.unit-list::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 7px;
+    width: 2px;
+    background: #e1e6ee;
+}
+
+.unit-list__item {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 0;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.unit-list__item+.unit-list__item {
+    margin-top: 35px;
+}
+
+.unit-list__item::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -33.5px;
+    width: 11px;
+    height: 11px;
+    background: url(../images/icons/dot-week.svg) no-repeat center / contain;
+}
+
+.unit-list__item--active::before {
+    background-image: url(../images/icons/dot-week-active.svg);
+}
+
+.unit-list__week {
+    flex: 0 0 84px;
+    color: var(--c-muted);
+}
+
+.unit-list__name {
+    color: var(--c-text);
+}
+
+/* 已完成：綠底白勾 */
+.unit-done {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    background: #34a853;
+    border-radius: 5px;
+}
+
+/* 進行中 */
+.unit-chip {
+    margin-left: 10px;
+    padding: 3px 9px;
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 18px;
+    color: var(--c-primary);
+    background: #e8f0fe;
+    border-radius: 5px;
+}
+
+/* --------------------------------------------------------------------------
+   5. 同儕評價
+   -------------------------------------------------------------------------- */
+.review-summary {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+}
+
+.review-summary__score {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--c-text);
+}
+
+.review-summary__count {
+    font-size: 15px;
+    line-height: 21px;
+    color: var(--c-muted-3);
+}
+
+.review-cols {
+    display: flex;
+    align-items: stretch;
+    padding: 22px 0 24px;
+}
+
+.review-bars {
+    flex: 865 1 0;
+    min-width: 0;
+    padding: 0 35px 0 39px;
+}
+
+.review-list {
+    display: flex;
+    flex-direction: column;
+    flex: 690 1 0;
+    min-width: 0;
+    padding: 0 39px 0 40px;
+    border-left: 1px solid var(--c-divider-2);
+}
+
+/* 評分分布長條 */
+.rating-bar {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--c-muted);
+}
+
+.rating-bar+.rating-bar {
+    margin-top: 18px;
+}
+
+.rating-bar__label {
+    flex: 0 0 76px;
+}
+
+.rating-bar__track {
+    flex: 1 1 auto;
+    max-width: 650px;
+    height: 8px;
+    background: #e6eaf0;
+    border-radius: 4px;
+}
+
+.rating-bar__fill {
+    display: block;
+    height: 100%;
+    background: #d9a32b;
+    border-radius: 4px;
+}
+
+.rating-bar__pct {
+    flex: 0 0 auto;
+    min-width: 34px;
+    margin-left: 31px;
+    text-align: right;
+}
+
+/* 評價列表 */
+.review-list__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.review {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.review+.review {
+    margin-top: 26px;
+}
+
+.review__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.review__avatar--violet {
+    background: #7c4dbe;
+}
+
+.review__avatar--green {
+    background: #2e9257;
+}
+
+.review__main {
+    min-width: 0;
+}
+
+.review__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 18px;
+    margin: 0 0 5px;
+}
+
+.review__name {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+    color: var(--c-text);
+}
+
+.review__date {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--c-muted-3);
+}
+
+.review__stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.review__text {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 20px;
+    color: #33445e;
+}
+
+.review-list__action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   6. RWD —— <992px：兩欄改單欄、回前頁滿版
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+
+    .page-head.course-head {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .course-head__title-row {
+        gap: 8px;
+    }
+
+    .course-head__source {
+        margin-top: 6px;
+    }
+
+    .page-tag {
+        padding: 4px 10px;
+        font-size: 12.5px;
+        line-height: 18px;
+    }
+
+    /* 桌機的通知／使用者在此隱藏（style.css），只剩回前頁，讓它撐滿一列 */
+    .page-head__aside {
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .course-head__back {
+        width: 100%;
+    }
+
+    .detail-cols {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .card-panel__title {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    /* 課程資訊：標籤欄縮窄 */
+    .info-list__label {
+        flex: 0 0 104px;
+        font-size: 14px;
+    }
+
+    .info-list__value {
+        font-size: 14px;
+    }
+
+    .credit__dept {
+        flex: 0 0 96px;
+    }
+
+    /* 課程單元：週次與單元名改上下排列 */
+    .unit-list__item {
+        gap: 4px 0;
+    }
+
+    .unit-list__week {
+        flex: 0 0 100%;
+    }
+
+    .unit-list__name {
+        flex: 0 1 auto;
+    }
+
+    .unit-list__week,
+    .unit-list__name {
+        font-size: 14px;
+    }
+
+    /* 同儕評價：分布與評價改上下排列 */
+    .review-summary {
+        flex-wrap: wrap;
+    }
+
+    .review-summary__score {
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    .review-summary__count {
+        font-size: 13px;
+    }
+
+    .review-cols {
+        flex-direction: column;
+        padding: 16px 0 18px;
+    }
+
+    .review-bars {
+        padding: 0 18px;
+    }
+
+    .review-list {
+        margin-top: 18px;
+        padding: 18px 18px 0;
+        border-top: 1px solid var(--c-divider-2);
+        border-left: 0;
+    }
+
+    .rating-bar__label {
+        flex: 0 0 60px;
+        font-size: 13px;
+    }
+
+    .rating-bar__pct {
+        margin-left: 14px;
+        font-size: 13px;
+    }
+
+    .review-list__action .btn-soft {
+        width: 100%;
+    }
+}

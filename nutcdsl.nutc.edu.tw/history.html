@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域課程,學習歷程,學習儀表板,完課紀錄,學分認列" />
+    <meta name="description" content="完整的個人數位學習紀錄：學習儀表板、領域分布、進行中與已完課課程。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="我的學習歷程 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="完整的個人數位學習紀錄：學習儀表板、領域分布、進行中與已完課課程。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/history.css" />
+
+    <title>我的學習歷程 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="course-list.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程總覽
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="category.html">
+                                    <img src="images/icons/nav-category.svg" alt="" aria-hidden="true" />領域課程菜單
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="completion.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />完課申請
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="history.html" aria-current="page">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />我的學習歷程
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">我的學習歷程</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">我的學習歷程</h1>
+                            <p class="page-head__desc">完整的個人數位學習紀錄</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">B908107011</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 說明與學年度切換 -->
+                    <div class="notice-row">
+                        <p class="info-banner">
+                            <img src="images/icons/info.svg" alt="" width="17" height="17" aria-hidden="true" />
+                            本頁記錄您在本系統的所有學習活動，可作為自主學習佐證資料。
+                        </p>
+                        <div class="form-group notice-row__year">
+                            <label class="a11y-hidden" for="year">學年度</label>
+                            <select class="form-control bs-select year-select" id="year" title="113學年度">
+                                <option value="113" selected>113學年度</option>
+                                <option value="112">112學年度</option>
+                                <option value="111">111學年度</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 學習儀表板 -->
+                    <section class="card card-panel dashboard" aria-labelledby="h-dash">
+                        <div class="detail-card__head dashboard__head">
+                            <h2 class="card-panel__title" id="h-dash">學習儀表板</h2>
+                        </div>
+                        <div class="dashboard__body">
+                            <ul class="row row--g16 list-unstyled tile-row">
+                                            <li class="col-6 col-lg">
+                                                <div class="tile tile--blue">
+                                                    <span class="tile__icon">
+                                                        <img src="images/icons/tile-doc.svg" alt="" width="18" height="18"
+                                                            aria-hidden="true" />
+                                                    </span>
+                                                    <div class="tile__text">
+                                                        <p class="tile__label">選課數量</p>
+                                                        <p class="tile__value">5</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="col-6 col-lg">
+                                                <div class="tile tile--green">
+                                                    <span class="tile__icon">
+                                                        <img src="images/icons/tile-cap.svg" alt="" width="18" height="18"
+                                                            aria-hidden="true" />
+                                                    </span>
+                                                    <div class="tile__text">
+                                                        <p class="tile__label">完課數量</p>
+                                                        <p class="tile__value">3</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="col-6 col-lg">
+                                                <div class="tile tile--red">
+                                                    <span class="tile__icon">
+                                                        <img src="images/icons/tile-hour.svg" alt="" width="18" height="18"
+                                                            aria-hidden="true" />
+                                                    </span>
+                                                    <div class="tile__text">
+                                                        <p class="tile__label">待完成數量</p>
+                                                        <p class="tile__value">2</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="col-6 col-lg">
+                                                <div class="tile tile--amber">
+                                                    <span class="tile__icon">
+                                                        <img src="images/icons/tile-clock.svg" alt="" width="18" height="18"
+                                                            aria-hidden="true" />
+                                                    </span>
+                                                    <div class="tile__text">
+                                                        <p class="tile__label">完課學習時數加總</p>
+                                                        <p class="tile__value">44<span class="tile__unit">小時</span></p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="col-6 col-lg">
+                                                <div class="tile tile--violet">
+                                                    <span class="tile__icon">
+                                                        <img src="images/icons/tile-star.svg" alt="" width="18" height="18"
+                                                            aria-hidden="true" />
+                                                    </span>
+                                                    <div class="tile__text">
+                                                        <p class="tile__label">完課學分加總</p>
+                                                        <p class="tile__value">7.5<span class="tile__unit">學分</span></p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 學習領域 / 完成狀態 -->
+                    <div class="chart-cols">
+
+                        <section class="card card-panel chart-card" aria-labelledby="h-domain">
+                            <div class="detail-card__head">
+                                <h2 class="card-panel__title" id="h-domain">學習領域</h2>
+                            </div>
+                            <div class="chart-card__body">
+                                <div class="chart-card__canvas">
+                                    <canvas id="chartDomain" width="140" height="140" role="img"
+                                        aria-label="學習領域分布環圈圖：資訊科技 2 門、語言學習 1 門、通識教育 1 門、商業管理 1 門"></canvas>
+                                </div>
+                                <ul class="list-unstyled chart-legend">
+                                                <li class="chart-row">
+                                                    <span class="chart-row__dot chart-row__dot--blue" aria-hidden="true"></span>
+                                                    <span class="chart-row__label">資訊科技</span>
+                                                    <span class="chart-row__track">
+                                                        <span class="chart-row__fill chart-row__fill--blue"
+                                                            style="width: 100.0%;"></span>
+                                                    </span>
+                                                    <span class="chart-row__value">2</span>
+                                                </li>
+                                                <li class="chart-row">
+                                                    <span class="chart-row__dot chart-row__dot--green" aria-hidden="true"></span>
+                                                    <span class="chart-row__label">語言學習</span>
+                                                    <span class="chart-row__track">
+                                                        <span class="chart-row__fill chart-row__fill--green"
+                                                            style="width: 50.0%;"></span>
+                                                    </span>
+                                                    <span class="chart-row__value">1</span>
+                                                </li>
+                                                <li class="chart-row">
+                                                    <span class="chart-row__dot chart-row__dot--magenta" aria-hidden="true"></span>
+                                                    <span class="chart-row__label">通識教育</span>
+                                                    <span class="chart-row__track">
+                                                        <span class="chart-row__fill chart-row__fill--magenta"
+                                                            style="width: 50.0%;"></span>
+                                                    </span>
+                                                    <span class="chart-row__value">1</span>
+                                                </li>
+                                                <li class="chart-row">
+                                                    <span class="chart-row__dot chart-row__dot--amber" aria-hidden="true"></span>
+                                                    <span class="chart-row__label">商業管理</span>
+                                                    <span class="chart-row__track">
+                                                        <span class="chart-row__fill chart-row__fill--amber"
+                                                            style="width: 50.0%;"></span>
+                                                    </span>
+                                                    <span class="chart-row__value">1</span>
+                                                </li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section class="card card-panel chart-card" aria-labelledby="h-status">
+                            <div class="detail-card__head">
+                                <h2 class="card-panel__title" id="h-status">完成狀態</h2>
+                            </div>
+                            <div class="chart-card__body">
+                                <div class="chart-card__canvas">
+                                    <canvas id="chartStatus" width="140" height="140" role="img"
+                                        aria-label="完成狀態環圈圖：已完成 3 門、進行中 2 門"></canvas>
+                                </div>
+                                <ul class="list-unstyled chart-legend chart-legend--status">
+                                                <li class="chart-row">
+                                                    <span class="chart-row__dot chart-row__dot--green" aria-hidden="true"></span>
+                                                    <span class="chart-row__label">已完成</span>
+                                                    <span class="chart-row__track">
+                                                        <span class="chart-row__fill chart-row__fill--green"
+                                                            style="width: 100.0%;"></span>
+                                                    </span>
+                                                    <span class="chart-row__value">3</span>
+                                                </li>
+                                                <li class="chart-row">
+                                                    <span class="chart-row__dot chart-row__dot--orange" aria-hidden="true"></span>
+                                                    <span class="chart-row__label">進行中</span>
+                                                    <span class="chart-row__track">
+                                                        <span class="chart-row__fill chart-row__fill--orange"
+                                                            style="width: 66.7%;"></span>
+                                                    </span>
+                                                    <span class="chart-row__value">2</span>
+                                                </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+
+                        <section class="card card-panel record-panel" aria-labelledby="h-ongoing">
+                                        <div class="detail-card__head record-panel__head">
+                                            <h2 class="card-panel__title" id="h-ongoing">進行中課程列表</h2>
+                                            <ul class="list-unstyled record-legend">
+                                                <li class="record-legend__item"><span class="state-dot state-dot--enrolled">已選課</span></li>
+                                                <li class="record-legend__item"><span class="state-dot state-dot--qualify">上課資格審核中</span></li>
+                                                <li class="record-legend__item"><span class="state-dot state-dot--learning">上課中</span></li>
+                                                <li class="record-legend__item"><span class="state-dot state-dot--applying">完課申請審核中</span></li>
+                                                <li class="record-legend__item"><span class="state-dot state-dot--passed">已通過</span></li>
+                                                <li class="record-legend__item"><span class="state-dot state-dot--amend">待補件</span></li>
+                                                <li class="record-legend__item"><span class="state-dot state-dot--failed">未通過</span></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table class="table record-table">
+                                                <caption class="a11y-hidden">進行中課程列表，共 5 筆</caption>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" class="record-table__col-name">課程名稱</th>
+                                                        <th scope="col" class="record-table__col-domain">領域</th>
+                                                        <th scope="col" class="record-table__col-start">開始日期</th>
+                                                        <th scope="col" class="record-table__col-end">完課日期</th>
+                                                        <th scope="col" class="record-table__col-hours">學習時數</th>
+                                                        <th scope="col" class="record-table__col-credit">系所認列學分</th>
+                                                        <th scope="col" class="record-table__col-state">申請狀態</th>
+                                                        <th scope="col" class="record-table__col-listed">學院學分認列</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row" data-col="name">Python程式設計入門</th>
+                                                        <td data-col="domain"><span class="badge chip chip--blue-light">資訊科技</span></td>
+                                                        <td data-col="start">2025/09/01</td>
+                                                        <td data-col="end">2026/05/20</td>
+                                                        <td data-col="hours">18h</td>
+                                                        <td data-col="credit"><span class="cell-prefix">認列 </span>3.0<span class="cell-suffix"> 學分</span></td>
+                                                        <td data-col="state">
+                                                            <span class="state-dot state-dot--passed">已通過</span>
+                                                        </td>
+                                                        <td data-col="listed"><span class="badge chip chip--success">已認列</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" data-col="name">學術英文寫作</th>
+                                                        <td data-col="domain"><span class="badge chip chip--green">語言學習</span></td>
+                                                        <td data-col="start">2025/09/15</td>
+                                                        <td data-col="end">2026/04/15</td>
+                                                        <td data-col="hours">14h</td>
+                                                        <td data-col="credit"><span class="cell-prefix">認列 </span>2.0<span class="cell-suffix"> 學分</span></td>
+                                                        <td data-col="state">
+                                                            <span class="state-dot state-dot--passed">已通過</span>
+                                                        </td>
+                                                        <td data-col="listed"><span class="badge chip chip--success">已認列</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" data-col="name">跨文化溝通</th>
+                                                        <td data-col="domain"><span class="badge chip chip--magenta">通識教育</span></td>
+                                                        <td data-col="start">2025/10/01</td>
+                                                        <td data-col="end">2026/06/01</td>
+                                                        <td data-col="hours">12h</td>
+                                                        <td data-col="credit"><span class="cell-prefix">認列 </span>2.0<span class="cell-suffix"> 學分</span></td>
+                                                        <td data-col="state">
+                                                            <span class="state-dot state-dot--applying">完課申請審核中</span>
+                                                        </td>
+                                                        <td data-col="listed"><span class="badge chip chip--danger">未認列</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" data-col="name">資料科學概論</th>
+                                                        <td data-col="domain"><span class="badge chip chip--blue-light">資訊科技</span></td>
+                                                        <td data-col="start">2026/02/01</td>
+                                                        <td data-col="end">—</td>
+                                                        <td data-col="hours">8h</td>
+                                                        <td data-col="credit"><span class="cell-prefix">認列 </span>2.5<span class="cell-suffix"> 學分</span></td>
+                                                        <td data-col="state">
+                                                            <span class="state-dot state-dot--learning">上課中</span>
+                                                        </td>
+                                                        <td data-col="listed"><span class="badge chip chip--danger">未認列</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" data-col="name">企業倫理與法規</th>
+                                                        <td data-col="domain"><span class="badge chip chip--amber">商業管理</span></td>
+                                                        <td data-col="start">2026/03/01</td>
+                                                        <td data-col="end">—</td>
+                                                        <td data-col="hours">4h</td>
+                                                        <td data-col="credit"><span class="cell-prefix">認列 </span>1.5<span class="cell-suffix"> 學分</span></td>
+                                                        <td data-col="state">
+                                                            <span class="state-dot state-dot--amend">待補件</span>
+                                                        </td>
+                                                        <td data-col="listed"><span class="badge chip chip--danger">未認列</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </section>
+
+                        <section class="card card-panel record-panel" aria-labelledby="h-done">
+                                        <div class="detail-card__head record-panel__head">
+                                            <h2 class="card-panel__title" id="h-done">完課課程列表</h2>
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table class="table record-table">
+                                                <caption class="a11y-hidden">完課課程列表，共 3 筆</caption>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" class="record-table__col-name">課程名稱</th>
+                                                        <th scope="col" class="record-table__col-domain">領域</th>
+                                                        <th scope="col" class="record-table__col-start">開始日期</th>
+                                                        <th scope="col" class="record-table__col-end">完課日期</th>
+                                                        <th scope="col" class="record-table__col-hours">學習時數</th>
+                                                        <th scope="col" class="record-table__col-credit">系所認列學分</th>
+                                                        <th scope="col" class="record-table__col-state">申請狀態</th>
+                                                        <th scope="col" class="record-table__col-listed">學院學分認列</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row" data-col="name">Python程式設計入門</th>
+                                                        <td data-col="domain"><span class="badge chip chip--blue-light">資訊科技</span></td>
+                                                        <td data-col="start">2025/09/01</td>
+                                                        <td data-col="end">2026/05/20</td>
+                                                        <td data-col="hours">18h</td>
+                                                        <td data-col="credit"><span class="cell-prefix">認列 </span>3.0<span class="cell-suffix"> 學分</span></td>
+                                                        <td data-col="state">
+                                                            <span class="state-dot state-dot--passed">已通過</span>
+                                                        </td>
+                                                        <td data-col="listed"><span class="badge chip chip--success">已認列</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" data-col="name">學術英文寫作</th>
+                                                        <td data-col="domain"><span class="badge chip chip--green">語言學習</span></td>
+                                                        <td data-col="start">2025/09/15</td>
+                                                        <td data-col="end">2026/04/15</td>
+                                                        <td data-col="hours">14h</td>
+                                                        <td data-col="credit"><span class="cell-prefix">認列 </span>2.0<span class="cell-suffix"> 學分</span></td>
+                                                        <td data-col="state">
+                                                            <span class="state-dot state-dot--passed">已通過</span>
+                                                        </td>
+                                                        <td data-col="listed"><span class="badge chip chip--success">已認列</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" data-col="name">跨域專題實作</th>
+                                                        <td data-col="domain"><span class="badge chip chip--blue-light">資訊科技</span></td>
+                                                        <td data-col="start">2025/09/10</td>
+                                                        <td data-col="end">2026/03/28</td>
+                                                        <td data-col="hours">12h</td>
+                                                        <td data-col="credit"><span class="cell-prefix">認列 </span>2.5<span class="cell-suffix"> 學分</span></td>
+                                                        <td data-col="state">
+                                                            <span class="state-dot state-dot--passed">已通過</span>
+                                                        </td>
+                                                        <td data-col="listed"><span class="badge chip chip--danger">未認列</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </section>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="assets/chartjs/chart.umd.min.js"></script>
+    <script src="js/history.js"></script>
+</body>
+
+</html>

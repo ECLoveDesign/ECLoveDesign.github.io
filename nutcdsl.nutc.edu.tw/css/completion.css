@@ -1,0 +1,370 @@
+@charset "UTF-8";
+/* ==========================================================================
+   完課申請 completion.html 專屬樣式
+   共用框架（TopNav / Sidebar / 卡片 / 頁面標頭）見 style.css
+   設計稿：完課申請 1920×1080 / iPhone 17 402×2363
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 申請狀態統計卡
+   五張等寬卡，卡片頂端一條 3px 狀態色條
+   -------------------------------------------------------------------------- */
+.stat-row {
+    margin-bottom: 0;
+}
+
+.stat-row>li {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.stat-row {
+    margin-bottom: -20px;
+}
+
+.stat-card {
+    position: relative;
+    /* Bootstrap 的 .card 預設 flex-direction: column，這裡必須明確橫排 */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1 auto;
+    gap: 18px;
+    min-height: 132px;
+    padding: 20px 25px;
+    overflow: hidden;
+}
+
+.stat-card__text {
+    min-width: 0;
+}
+
+/* 頂端狀態色條 */
+.stat-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3px;
+    background: var(--stat-color);
+}
+
+.stat-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    background: var(--stat-bg);
+    border: 1.6px solid var(--stat-color);
+    border-radius: 50%;
+}
+
+.stat-card__label {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+    color: var(--c-muted);
+}
+
+.stat-card__value {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 42px;
+    color: var(--c-title);
+}
+
+.stat-card__unit {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--c-muted);
+}
+
+.stat-card--todo {
+    --stat-color: #2b5fc0;
+    --stat-bg: #edf3fd;
+}
+
+.stat-card--review {
+    --stat-color: #e9922b;
+    --stat-bg: #fdf3e6;
+}
+
+.stat-card--pass {
+    --stat-color: #2e9257;
+    --stat-bg: #e9f6ee;
+}
+
+.stat-card--fix {
+    --stat-color: #e0483f;
+    --stat-bg: #fdecea;
+}
+
+.stat-card--reject {
+    --stat-color: #98a2b3;
+    --stat-bg: #f1f3f6;
+}
+
+/* --------------------------------------------------------------------------
+   2. 申請紀錄表格
+   -------------------------------------------------------------------------- */
+.apply-panel {
+    overflow: hidden;
+}
+
+/* 卡片標題僅手機顯示（桌機的表頭已經說明各欄位） */
+.apply-panel__head {
+    display: none;
+}
+
+.apply-table {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--c-text);
+}
+
+.apply-table thead th {
+    padding: 18px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--c-muted);
+    background: #f6f8fb;
+    border: 0;
+    border-bottom: 1px solid var(--c-border);
+}
+
+.apply-table tbody th,
+.apply-table tbody td {
+    padding: 12px;
+    font-weight: 400;
+    vertical-align: middle;
+    border: 0;
+}
+
+.apply-table th:first-child,
+.apply-table td:first-child {
+    padding-left: 27px;
+}
+
+.apply-table th:last-child,
+.apply-table td:last-child {
+    padding-right: 27px;
+}
+
+/* 列分隔線：左右各內縮 27px，最後一列不畫 */
+.apply-table tbody tr {
+    position: relative;
+}
+
+.apply-table tbody tr::after {
+    content: "";
+    position: absolute;
+    right: 27px;
+    bottom: 0;
+    left: 27px;
+    height: 1px;
+    background: var(--c-divider);
+}
+
+.apply-table tbody tr:last-child::after {
+    display: none;
+}
+
+.apply-table__col-status {
+    width: 17.2%;
+}
+
+.apply-table__col-name {
+    width: 27.7%;
+}
+
+.apply-table__col-source {
+    width: 19.1%;
+}
+
+.apply-table__col-date {
+    width: 19.8%;
+}
+
+.apply-table__col-action {
+    width: 16.2%;
+}
+
+.apply-table td[data-col="date"] {
+    font-size: 14px;
+    color: var(--c-muted);
+}
+
+/* 申請狀態徽章：共用 .badge-state（style.css），本頁固定最小寬度讓欄位對齊 */
+.apply-table .badge-state {
+    min-width: 76px;
+}
+
+/* 課程來源 */
+.source-chip {
+    padding: 3px 9px;
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #2b5fc0;
+    background: #edf3fd;
+    border-radius: 6px;
+}
+
+/* 列內操作鈕：共用 .btn-s（style.css），本頁另有三個狀態色 */
+.btn-s--warn {
+    color: #fff;
+    background: #f08a1f;
+}
+
+.btn-s--pass {
+    color: #1f6e40;
+    background: #f1faf4;
+    border-color: #b7e0c7;
+}
+
+.btn-s--reject {
+    color: #b23127;
+    background: #fef5f4;
+    border-color: #f0c4bf;
+}
+
+/* --------------------------------------------------------------------------
+   3. RWD —— <992px：統計卡兩欄、表格改為卡片式列表
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+
+    .stat-card {
+        gap: 12px;
+        min-height: 96px;
+        padding: 14px 16px;
+    }
+
+    .stat-card__icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .stat-card__icon img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .stat-card__label {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .stat-card__value {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .stat-card__unit {
+        font-size: 12.5px;
+    }
+
+    /* 卡片標題改為顯示（解除 .a11y-hidden 的隱藏） */
+    .apply-panel__head {
+        display: block;
+        padding: 16px 16px 0;
+    }
+
+    .apply-panel__title {
+        position: static !important;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22px;
+        color: var(--c-title);
+    }
+
+    /* 表格轉為一列一張小卡：課名在上，狀態／來源／日期同列，操作鈕滿版 */
+    .table-responsive {
+        overflow-x: visible;
+    }
+
+    .apply-table thead {
+        display: none;
+    }
+
+    .apply-table,
+    .apply-table tbody {
+        display: block;
+    }
+
+    .apply-table tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        padding: 16px;
+    }
+
+    .apply-table tbody tr::after {
+        right: 16px;
+        left: 16px;
+    }
+
+    .apply-table tbody th,
+    .apply-table tbody td {
+        display: block;
+        padding: 0;
+    }
+
+    .apply-table th:first-child,
+    .apply-table td:first-child,
+    .apply-table th:last-child,
+    .apply-table td:last-child {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .apply-table th[data-col="course"] {
+        order: 1;
+        flex: 0 0 100%;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--c-title);
+    }
+
+    .apply-table td[data-col="status"] {
+        order: 2;
+    }
+
+    .apply-table td[data-col="source"] {
+        order: 3;
+    }
+
+    .apply-table td[data-col="date"] {
+        order: 4;
+        margin-left: auto;
+        font-size: 13px;
+    }
+
+    .apply-table td[data-col="action"] {
+        order: 5;
+        flex: 0 0 100%;
+        margin-top: 4px;
+    }
+
+    .btn-s {
+        width: 100%;
+        height: auto;
+        padding: 9px 14px;
+        font-size: 14px;
+    }
+}

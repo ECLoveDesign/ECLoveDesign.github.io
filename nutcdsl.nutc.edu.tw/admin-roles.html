@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="國立臺中科技大學,跨領域自學平台,後臺,角色管理,權限設定" />
+    <meta name="description" content="後臺角色管理：設定平台角色與其可使用的功能權限範圍。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="角色管理 — 跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <meta property="og:description" content="後臺角色管理：設定平台角色與其可使用的功能權限範圍。" />
+    <meta property="og:site_name" content="跨領域數位自主學習平台 · 國立臺中科技大學" />
+    <!-- TODO 正式網址確定後，og:image 需改為絕對路徑（FB／LINE 爬蟲不吃相對路徑） -->
+    <meta property="og:image" content="images/share/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <title>角色管理 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
+</head>
+
+<body>
+    <a class="skip-link a11y-hidden" href="#main">跳到主要內容</a>
+    <a class="accesskey" id="U" href="#U" accesskey="U" title="上方導覽連結區">:::</a>
+
+    <div class="layout">
+
+        <!-- ============================== TopNav ============================== -->
+        <header class="topnav">
+            <button type="button" class="btn topnav__toggle" id="drawerToggle" aria-controls="sidebar"
+                aria-expanded="false">
+                <img src="images/icons/menu.svg" alt="" width="20" height="14" aria-hidden="true" />
+                <span class="a11y-hidden">開啟選單</span>
+            </button>
+
+            <a class="topnav__brand" href="index.html">
+                <span class="topnav__logo">
+                    <img src="images/icons/logo-cap-16.svg" alt="" width="16" height="16" aria-hidden="true" />
+                </span>
+                <span class="topnav__title">國立臺中科技大學 · 跨領域數位自主學習平台</span>
+            </a>
+
+            <div class="topnav__links">
+                <a class="btn btn-lang" href="#" lang="en" hreflang="en">
+                    <img src="images/icons/globe.svg" alt="" width="14" height="14" aria-hidden="true" />
+                    EN<span class="a11y-hidden">（切換至英文版）</span>
+                </a>
+                <a class="topnav__link" href="#">公告</a>
+                <a class="topnav__link" href="#">說明文件</a>
+                <a class="topnav__link" href="#">登出</a>
+
+                <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
+                <button type="button" class="btn topnav__bell">
+                    <img src="images/icons/bell-white.svg" alt="" width="20" height="20" aria-hidden="true" />
+                    <img class="badge-dot" src="images/icons/badge-dot.svg" alt="" width="7" height="7"
+                        aria-hidden="true" />
+                    <span class="a11y-hidden">通知（有未讀訊息）</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="layout__body">
+
+            <!-- ============================== 側邊選單 ==============================
+                 ≥992px：常駐側邊欄　　<992px：左側抽屜（同一段 markup）
+                 ==================================================================== -->
+            <a class="accesskey" id="L" href="#L" accesskey="L" title="左側選單連結區">:::</a>
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar__deco" aria-hidden="true">
+                    <img class="deco-dots-side" src="images/deco/dots-sidebar.png" alt="" />
+                    <img class="deco-menu-tri" src="images/deco/menu-triangle.svg" alt="" />
+                    <img class="deco-side-tri" src="images/deco/sidebar-triangle.svg" alt="" />
+                </div>
+
+                <button type="button" class="btn sidebar__close" id="drawerClose">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="a11y-hidden">關閉選單</span>
+                </button>
+
+                <div class="sidebar__scroll">
+                    <div class="sidebar__header">
+                        <div class="sidebar__logo">
+                            <img src="images/icons/logo-cap-32.svg" alt="" width="32" height="32" aria-hidden="true" />
+                        </div>
+                        <p class="sidebar__name">跨領域數位<br />自主學習平台</p>
+                        <p class="sidebar__name-en" lang="en">Digital Self-Learning<br />Management System</p>
+                        <p class="sidebar__term">113學年度　第二學期</p>
+                    </div>
+
+                    <nav aria-label="主選單">
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-index.html">
+                                    <img src="images/icons/nav-home.svg" alt="" aria-hidden="true" />首頁
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-courses.html">
+                                    <img src="images/icons/nav-course.svg" alt="" aria-hidden="true" />課程管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-course-review.html">
+                                    <img src="images/icons/nav-completion.svg" alt="" aria-hidden="true" />課程審核
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-reports.html">
+                                    <img src="images/icons/nav-report.svg" alt="" aria-hidden="true" />報表管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-announcements.html">
+                                    <img src="images/icons/nav-announce.svg" alt="" aria-hidden="true" />公告管理
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：通知管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-notify"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-notify">
+                                    <img src="images/icons/nav-notify.svg" alt="" aria-hidden="true" />通知管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-notify">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify.html">通知管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-notify-log.html">系統通知紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link menu-item" href="admin-settings.html">
+                                    <img src="images/icons/nav-settings.svg" alt="" aria-hidden="true" />系統參數設定
+                                </a>
+                            </li>
+
+                            <!-- 可展開群組：系統管理 -->
+                            <li class="nav-item menu-group">
+                                <a class="nav-link menu-item menu-item--group" href="#grp-system"
+                                    data-toggle="collapse" role="button" aria-expanded="true"
+                                    aria-controls="grp-system">
+                                    <img src="images/icons/nav-system.svg" alt="" aria-hidden="true" />系統管理
+                                    <img class="menu-item__caret" src="images/icons/caret.svg" alt="" width="12"
+                                        height="8" aria-hidden="true" />
+                                </a>
+                                <ul class="nav flex-column sidebar__submenu collapse show" id="grp-system">
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-accounts.html">帳號管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-roles.html" aria-current="page">角色管理</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link menu-sub" href="admin-audit-log.html">系統操作紀錄</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- 以下僅手機抽屜顯示（桌機在 TopNav） -->
+                        <div class="sidebar__divider" aria-hidden="true"></div>
+                        <ul class="nav flex-column sidebar__menu">
+                            <li class="nav-item">
+                                <a class="nav-link menu-item sidebar__logout" href="#">
+                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- ============================== 主要內容 ============================== -->
+            <a class="accesskey" id="C" href="#C" accesskey="C" title="中央內容區塊">:::</a>
+            <main class="content" id="main">
+
+                <div class="page-deco" aria-hidden="true">
+                    <img class="deco-bg-right" src="images/deco/bg-right.png" alt="" />
+                    <img class="deco-arc" src="images/deco/arc-faint.png" alt="" />
+                    <img class="deco-dots" src="images/deco/dots-content.png" alt="" />
+                </div>
+
+                <div class="content__inner">
+
+                    <!-- 頁面標頭 -->
+                    <div class="page-head">
+                        <div>
+                            <nav aria-label="麵包屑">
+                                <ol class="breadcrumb page-head__breadcrumb">
+                                    <li class="breadcrumb-item"><a href="admin-index.html">後臺</a></li>
+                                    <li class="breadcrumb-item">系統管理</li>
+                                    <li class="breadcrumb-item active" aria-current="page">角色管理</li>
+                                </ol>
+                            </nav>
+                            <h1 class="page-head__title">角色管理</h1>
+                            <p class="page-head__desc">設定平台角色與其可使用的功能權限範圍</p>
+                        </div>
+
+                        <div class="page-head__tools">
+                            <a class="btn btn-notice" href="#">
+                                <img class="btn-notice__icon" src="images/icons/bell.svg" alt="" aria-hidden="true" />
+                                通知
+                                <img class="btn-notice__dot" src="images/icons/dot-red.svg" alt="" aria-hidden="true" />
+                                <span class="a11y-hidden">（有未讀訊息）</span>
+                            </a>
+                            <div class="user-chip">
+                                <span class="user-chip__avatar">
+                                    <img src="images/icons/user.svg" alt="" width="20" height="20" aria-hidden="true" />
+                                </span>
+                                <span>
+                                    <span class="a11y-hidden">目前登入者：</span>
+                                    <p class="user-chip__name">路人甲</p>
+                                    <p class="user-chip__id">系統管理員</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 角色列表 -->
+                    <section class="card card-panel detail-card data-panel" aria-labelledby="h-role">
+                        <div class="detail-card__head">
+                            <h2 class="card-panel__title" id="h-role">角色列表</h2>
+                            <div class="panel-actions">
+                                <button type="button" class="btn btn-m btn-m--primary" data-toggle="modal"
+                                    data-target="#modalRole">新增角色</button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table data-table">
+                                <caption class="a11y-hidden">角色列表，共 6 個</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 11%;" aria-sort="descending">
+                                            <a class="th-sort" href="#">角色名稱</a>
+                                        </th>
+                                        <th scope="col" style="width: 28%;">權限</th>
+                                        <th scope="col" style="width: 33%;">備註</th>
+                                        <th scope="col">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">系統管理員</th>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <span class="badge chip chip--blue">全部權限</span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="is-muted">具備所有功能與資料權限</td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalRole">編輯<span
+                                                                        class="a11y-hidden">：系統管理員</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：系統管理員</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">課程審核者</th>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <span class="badge chip chip--blue">課程審核</span>
+                                                                <span class="badge chip chip--blue">報表管理</span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="is-muted">負責課程送審之審核與退回</td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalRole">編輯<span
+                                                                        class="a11y-hidden">：課程審核者</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：課程審核者</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">授課教師</th>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <span class="badge chip chip--blue">課程管理</span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="is-muted">僅能維護自己開設的課程</td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalRole">編輯<span
+                                                                        class="a11y-hidden">：授課教師</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：授課教師</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">系所承辦人</th>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <span class="badge chip chip--blue">課程管理</span>
+                                                                <span class="badge chip chip--blue">報表管理</span>
+                                                                <span class="badge chip chip--blue">公告管理</span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="is-muted">協助系所彙整課程與名單</td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalRole">編輯<span
+                                                                        class="a11y-hidden">：系所承辦人</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：系所承辦人</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">公告管理員</th>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <span class="badge chip chip--blue">公告管理</span>
+                                                                <span class="badge chip chip--blue">通知管理</span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="is-muted">維護平台公告與通知發送</td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalRole">編輯<span
+                                                                        class="a11y-hidden">：公告管理員</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：公告管理員</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">唯讀稽核</th>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <span class="badge chip chip--blue">報表管理</span>
+                                                            </span>
+                                                        </td>
+                                                        <td class="is-muted">僅可檢視與匯出報表</td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                                <button type="button" class="btn btn-s btn-s--neutral"
+                                                                    data-toggle="modal" data-target="#modalRole">編輯<span
+                                                                        class="a11y-hidden">：唯讀稽核</span></button>
+                                                                <a class="btn btn-s btn-s--danger" href="#">刪除<span
+                                                                        class="a11y-hidden">：唯讀稽核</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-foot">
+                            <p class="table-foot__count">共 6 個角色</p>
+                        </div>
+                    </section>
+
+                    <!-- ===================== 彈窗：新增／編輯角色 ===================== -->
+                    <div class="modal fade admin-modal" id="modalRole" tabindex="-1" role="dialog"
+                        aria-labelledby="modalRoleTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div>
+                                        <h2 class="modal-title" id="modalRoleTitle">新增/編輯角色</h2>
+                                        <p class="modal-subtitle">角色管理 › 新增/編輯角色</p>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="a11y-hidden">關閉</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="#">
+                                        <h3 class="panel-head__title">基本設定</h3>
+                                        <div class="form-grid" style="margin: 14px 0 26px;">
+                                            <div class="form-group form-grid__full">
+                                                <label class="form-label" for="roName">角色名稱<span class="is-required"
+                                                        aria-hidden="true">*</span></label>
+                                                <input type="text" class="form-control" id="roName" value="跨領域學程助理"
+                                                    required />
+                                            </div>
+                                            <div class="form-group form-grid__full">
+                                                <label class="form-label" for="roNote">備註</label>
+                                                <textarea class="form-control" id="roNote"
+                                                    rows="4">協助跨領域學程行政作業，可檢視課程資料與報表，並協助發送平台通知。不具帳號與角色管理權限。</textarea>
+                                            </div>
+                                        </div>
+
+                                        <h3 class="panel-head__title">權限設定</h3>
+                                        <p class="form-hint" style="margin-bottom: 14px;">
+                                            勾選此角色可使用的後臺選單；父項目取消勾選時，其下子項目一併停用。「首頁」為所有角色的必要權限，無法取消。
+                                        </p>
+                                        <ul class="perm-tree">
+                                                    <li>
+                                                        <span class="perm-tree__item">
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="perm1" checked disabled />
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                            <label for="perm1">首頁</label>
+                                                        <span class="perm-tree__note">必要權限</span>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="perm-tree__item">
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="perm2" checked />
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                            <label for="perm2">課程管理</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="perm-tree__item">
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="perm3" />
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                            <label for="perm3">課程審核</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="perm-tree__item">
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="perm4" checked />
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                            <label for="perm4">報表管理</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="perm-tree__item">
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="perm5" />
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                            <label for="perm5">公告管理</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="perm-tree__item">
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="perm6" data-indeterminate="true" />
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                            <label for="perm6">通知管理</label>
+                                                        </span>
+                                                        <ul class="perm-tree__sub">
+                                                            <li class="perm-tree__item">
+                                                                <span class="check">
+                                                                    <input class="check__input" type="checkbox" id="perm7" checked />
+                                                                    <span class="check__box" aria-hidden="true"></span>
+                                                                </span>
+                                                                <label for="perm7">通知管理</label>
+                                                            </li>
+                                                            <li class="perm-tree__item">
+                                                                <span class="check">
+                                                                    <input class="check__input" type="checkbox" id="perm8" />
+                                                                    <span class="check__box" aria-hidden="true"></span>
+                                                                </span>
+                                                                <label for="perm8">系統通知紀錄</label>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <span class="perm-tree__item">
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="perm9" />
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                            <label for="perm9">系統參數設定</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="perm-tree__item">
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="perm10" />
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                            <label for="perm10">系統管理</label>
+                                                        </span>
+                                                        <ul class="perm-tree__sub">
+                                                            <li class="perm-tree__item">
+                                                                <span class="check">
+                                                                    <input class="check__input" type="checkbox" id="perm11" />
+                                                                    <span class="check__box" aria-hidden="true"></span>
+                                                                </span>
+                                                                <label for="perm11">帳號管理</label>
+                                                            </li>
+                                                            <li class="perm-tree__item">
+                                                                <span class="check">
+                                                                    <input class="check__input" type="checkbox" id="perm12" />
+                                                                    <span class="check__box" aria-hidden="true"></span>
+                                                                </span>
+                                                                <label for="perm12">角色管理</label>
+                                                            </li>
+                                                            <li class="perm-tree__item">
+                                                                <span class="check">
+                                                                    <input class="check__input" type="checkbox" id="perm13" />
+                                                                    <span class="check__box" aria-hidden="true"></span>
+                                                                </span>
+                                                                <label for="perm13">系統操作紀錄</label>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                        </ul>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
+                                        data-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-m btn-m--primary">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/popper-1.16.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
