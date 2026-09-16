@@ -25,8 +25,10 @@
 
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/course.css" />
+    <link rel="stylesheet" href="css/datatable.css" />
     <link rel="stylesheet" href="css/admin.css" />
 
     <title>系統通知紀錄 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
@@ -60,7 +62,7 @@
                 </a>
                 <a class="topnav__link" href="#">公告</a>
                 <a class="topnav__link" href="#">說明文件</a>
-                <a class="topnav__link" href="#">登出</a>
+                <a class="topnav__link" href="admin-login.html">登出</a>
 
                 <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
                 <button type="button" class="btn topnav__bell">
@@ -181,8 +183,8 @@
                         <div class="sidebar__divider" aria-hidden="true"></div>
                         <ul class="nav flex-column sidebar__menu">
                             <li class="nav-item">
-                                <a class="nav-link menu-item sidebar__logout" href="#">
-                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                <a class="nav-link menu-item sidebar__logout" href="admin-login.html">
+                                    <i class="fa-solid fa-right-from-bracket menu-item__fa" aria-hidden="true"></i>登出
                                 </a>
                             </li>
                         </ul>
@@ -275,7 +277,10 @@
                         </div>
 
                         <div class="table-responsive">
-                            <table class="table data-table">
+                            <table class="table data-table"
+                                data-unit="筆發送紀錄"
+                                data-page-length="8"
+                                data-search="#lq">
                                 <caption class="a11y-hidden">通知信發送紀錄，共 1,286 筆，目前顯示第 1 頁</caption>
                                 <thead>
                                     <tr>
@@ -385,6 +390,10 @@
     <script src="js/popper-1.16.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="assets/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="assets/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="js/admin-table.js"></script>
+    <script src="js/admin-dialog.js"></script>
 </body>
 
 </html>

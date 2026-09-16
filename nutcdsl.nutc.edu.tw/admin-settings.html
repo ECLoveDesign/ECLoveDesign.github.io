@@ -25,6 +25,7 @@
 
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/admin.css" />
 
@@ -59,7 +60,7 @@
                 </a>
                 <a class="topnav__link" href="#">公告</a>
                 <a class="topnav__link" href="#">說明文件</a>
-                <a class="topnav__link" href="#">登出</a>
+                <a class="topnav__link" href="admin-login.html">登出</a>
 
                 <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
                 <button type="button" class="btn topnav__bell">
@@ -180,8 +181,8 @@
                         <div class="sidebar__divider" aria-hidden="true"></div>
                         <ul class="nav flex-column sidebar__menu">
                             <li class="nav-item">
-                                <a class="nav-link menu-item sidebar__logout" href="#">
-                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                <a class="nav-link menu-item sidebar__logout" href="admin-login.html">
+                                    <i class="fa-solid fa-right-from-bracket menu-item__fa" aria-hidden="true"></i>登出
                                 </a>
                             </li>
                         </ul>
@@ -275,7 +276,9 @@
                             <div class="setting-body">
                                 <div class="setting-field">
                                     <p class="form-label" id="stDomainLabel">領域別</p>
-                                    <div class="tag-field" role="group" aria-labelledby="stDomainLabel">
+                                    <div class="tag-field" role="group" aria-labelledby="stDomainLabel"
+                                        data-name="stDomain" data-placeholder="輸入領域名稱以新增…"
+                                        data-options='["資訊科技","語言學習","通識教育","商業管理","藝術人文","自然科學"]'>
                                         <span class="tag-field__tag">資訊科技
                                             <button type="button" class="tag-field__remove">
                                                 <span aria-hidden="true">&times;</span>
@@ -306,7 +309,8 @@
                                 <div class="setting-field">
                                     <label class="form-label" for="stSource">課程來源</label>
                                     <!-- 展開輸入中的狀態：已輸入「合作」，下方列出相符項目與新增選項 -->
-                                    <div class="tag-field is-open">
+                                    <div class="tag-field" data-name="stSourceList" data-placeholder="輸入課程來源以新增…"
+                                        data-options='["本校開設","校際合作","磨課師 MOOCs","業界合作","Ewant 台灣開放式課程","Coursera"]'>
                                         <span class="tag-field__tag">本校開設
                                             <button type="button" class="tag-field__remove">
                                                 <span aria-hidden="true">&times;</span>
@@ -325,13 +329,10 @@
                                                 <span class="a11y-hidden">移除磨課師 MOOCs</span>
                                             </button>
                                         </span>
-                                        <input type="text" class="tag-field__input" id="stSource" value="合作"
+                                        <input type="text" class="tag-field__input" id="stSource"
                                             aria-describedby="stSourceHint" />
                                     </div>
-                                    <ul class="suggest" id="stSourceHint">
-                                        <li><a class="suggest__item" href="#">業界合作</a></li>
-                                        <li><a class="suggest__new" href="#">＋ 新增「合作」為新選項</a></li>
-                                    </ul>
+                                    <ul class="suggest" id="stSourceHint"></ul>
                                 </div>
                             </div>
                         </section>
@@ -352,6 +353,8 @@
     <script src="js/popper-1.16.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/admin-dialog.js"></script>
+    <script src="js/tag-field.js"></script>
 </body>
 
 </html>

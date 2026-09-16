@@ -129,6 +129,7 @@
 }
 
 .course-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -136,6 +137,22 @@
     background: #fff;
     border: 1px solid var(--c-border);
     border-radius: var(--r-card);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+/* 整張卡片可點：這張卡的標題不是連結，改把「查看課程」撐滿整張卡 */
+.course-card__btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.course-card:hover,
+.course-card:focus-within {
+    transform: translateY(-3px);
+    border-color: #d5deee;
+    box-shadow: 0 10px 22px rgba(20, 41, 82, .14);
 }
 
 .course-card__thumb {
@@ -387,4 +404,152 @@
         background: none;
         text-decoration: underline;
     }
+}
+
+/* --------------------------------------------------------------------------
+   燈箱：全部公告
+   首頁的「查看全部」不另外開頁，直接在燈箱裡列出完整清單。
+   後臺公告卡的排版（置頂徽章／標題／日期／摘要）在這裡重寫一份 ——
+   首頁沒有載 admin.css，為了一個燈箱把整份後臺樣式拉進來並不划算。
+   -------------------------------------------------------------------------- */
+.admin-modal .modal-content {
+    border: 0;
+    border-radius: var(--r-card);
+    box-shadow: 0 18px 48px rgba(20, 41, 82, .18);
+}
+
+.admin-modal .modal-header {
+    align-items: center;
+    padding: 20px 27px;
+    border-bottom: 1px solid var(--c-divider-2);
+}
+
+.admin-modal .modal-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    color: var(--c-title);
+}
+
+.admin-modal .modal-subtitle {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: var(--c-breadcrumb);
+}
+
+.admin-modal .close {
+    padding: 0;
+    margin: 0;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--c-muted);
+    opacity: 1;
+}
+
+.admin-modal .modal-body {
+    padding: 8px 0;
+}
+
+.notice-list--all {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.notice-list--all li+li,
+.notice-list--rich li+li {
+    border-top: 0;
+}
+
+.notice-list--all .notice-item,
+.notice-list--rich .notice-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 6px 12px;
+    padding: 18px 27px 19px;
+    border-bottom: 1px solid var(--c-divider);
+}
+
+.notice-list--all>li:last-child .notice-item,
+.notice-list--rich>li:last-child .notice-item {
+    border-bottom: 0;
+}
+
+.notice-item__pin {
+    grid-area: 1 / 1 / 2 / 2;
+    align-self: center;
+}
+
+/* 沒有「置頂」徽章時，標題直接從最左欄開始 */
+.notice-item__title {
+    grid-area: 1 / 1 / 2 / 3;
+    align-self: center;
+    margin: 0;
+    font-size: 15.5px;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--c-text);
+}
+
+.notice-item__pin~.notice-item__title {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.notice-item__date {
+    grid-area: 1 / 3 / 2 / 4;
+    align-self: center;
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 20px;
+    color: var(--c-breadcrumb);
+    white-space: nowrap;
+}
+
+.notice-item__desc {
+    grid-area: 2 / 1 / 3 / 4;
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 20px;
+    color: var(--c-muted-2);
+}
+
+@media (max-width: 575.98px) {
+
+    .admin-modal .modal-header,
+    .notice-list--all .notice-item,
+.notice-list--rich .notice-item {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    /* 窄螢幕日期改放到摘要上面，標題才有完整一行 */
+    .notice-list--all .notice-item,
+.notice-list--rich .notice-item {
+        grid-template-columns: auto 1fr;
+    }
+
+    .notice-item__title {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .notice-item__pin~.notice-item__title {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .notice-item__date {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+
+    .notice-item__desc {
+        grid-area: 3 / 1 / 4 / 3;
+    }
+}
+
+/* 首頁的公告卡沿用同一組排版（標題／日期／引文），只是左右內距跟著卡片走。
+   單則不做連結：這一區只是摘要，要看完整清單走右上角的「查看全部」。 */
+.notice-list--rich .notice-item {
+    padding-right: 0;
+    padding-left: 0;
 }

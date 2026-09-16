@@ -164,4 +164,39 @@
         }
     });
 
+    /* ----------------------------------------------------------------------
+       回到頁首
+       捲過一個視窗高度才出現，免得一進站就擋在角落。
+       用 scrollTo({behavior:'smooth'})，讀不懂的瀏覽器會直接跳回頂端（也可以接受）；
+       使用者若設定了減少動態，就一律直接跳。
+       ---------------------------------------------------------------------- */
+    (function () {
+        var $btn = $(
+            '<button type="button" class="to-top" hidden>' +
+            '  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>' +
+            '  <span class="a11y-hidden">回到頁首</span>' +
+            '</button>'
+        ).appendTo('body');
+
+        var reduce = window.matchMedia &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function sync() {
+            var show = (window.pageYOffset || document.documentElement.scrollTop) > 320;
+            // 用 hidden 屬性而非 .toggle()：[hidden]{display:none} 會蓋掉 display:''
+            $btn.prop('hidden', !show);
+            $btn.toggleClass('is-on', show);
+        }
+
+        $btn.on('click', function () {
+            if (!reduce) {
+                try { window.scrollTo({ top: 0, behavior: 'smooth' }); return; } catch (e) { /* 舊瀏覽器往下走 */ }
+            }
+            window.scrollTo(0, 0);
+        });
+
+        $(window).on('scroll resize', sync);
+        sync();
+    }());
+
 })(jQuery);

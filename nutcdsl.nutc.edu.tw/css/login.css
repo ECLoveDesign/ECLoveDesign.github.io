@@ -351,3 +351,18 @@
         display: none;
     }
 }
+
+/* 後臺登入頁的副標，用來與前臺登入區分。
+   .login__title 本身帶 79px 下距，有副標時改由副標接手，
+   讓登入鈕停在跟前臺同一個位置。 */
+.login__title--with-sub {
+    margin-bottom: 16px;
+}
+
+.login__subtitle {
+    margin: 0 0 39px;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    color: rgba(255, 255, 255, .72);
+}

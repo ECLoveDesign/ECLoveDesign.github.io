@@ -368,3 +368,16 @@
         font-size: 14px;
     }
 }
+
+/* 狀態卡圖示改用 FontAwesome：顏色跟著卡片的 --stat-color 走 */
+.stat-card__fa {
+    font-size: 22px;
+    line-height: 1;
+    color: var(--stat-color);
+}
+
+@media (max-width: 991.98px) {
+    .stat-card__fa {
+        font-size: 17px;
+    }
+}

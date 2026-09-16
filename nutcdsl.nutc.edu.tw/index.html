@@ -25,6 +25,7 @@
 
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/home.css" />
 
@@ -59,7 +60,7 @@
                 </a>
                 <a class="topnav__link" href="#">公告</a>
                 <a class="topnav__link" href="#">說明文件</a>
-                <a class="topnav__link" href="#">登出</a>
+                <a class="topnav__link" href="login.html">登出</a>
 
                 <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
                 <button type="button" class="btn topnav__bell">
@@ -133,8 +134,8 @@
                         <div class="sidebar__divider" aria-hidden="true"></div>
                         <ul class="nav flex-column sidebar__menu">
                             <li class="nav-item">
-                                <a class="nav-link menu-item sidebar__logout" href="#">
-                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                <a class="nav-link menu-item sidebar__logout" href="login.html">
+                                    <i class="fa-solid fa-right-from-bracket menu-item__fa" aria-hidden="true"></i>登出
                                 </a>
                             </li>
                         </ul>
@@ -194,48 +195,69 @@
                             <section class="card card-panel" aria-labelledby="h-notice">
                                 <div class="card-header card-panel__head">
                                     <h2 class="card-panel__title" id="h-notice">最新公告</h2>
-                                    <a class="link-more" href="#">
+                                    <a class="link-more" href="#" data-toggle="modal" data-target="#modalNoticeAll">
                                         查看全部<span class="a11y-hidden">公告</span>
                                         <img src="images/icons/chevron.svg" alt="" aria-hidden="true" />
                                     </a>
                                 </div>
                                 <div class="card-body card-panel__body">
-                                    <ul class="list-unstyled notice-list">
+                                    <ul class="notice-list notice-list--rich">
                                         <li>
-                                            <a class="notice-list__link" href="#">
-                                                <span class="notice-list__text">113-2 學期完課申請截止日為 2026/06/30</span>
-                                                <time class="notice-list__date" datetime="2026-06-20">2026/06/20</time>
-                                            </a>
+                                            <article class="notice-item">
+                                                <span class="badge badge-state badge-state--amber notice-item__pin">置頂</span>
+                                                <h3 class="notice-item__title">
+                                                    115 學年度第一學期選課開放公告
+                                                </h3>
+                                                <p class="notice-item__date">2026/08/25</p>
+                                                <p class="notice-item__desc">選課系統將於 9 月 8 日上午 9 時開放，請同學於期限內完成選課並確認課表。</p>
+                                            </article>
                                         </li>
                                         <li>
-                                            <a class="notice-list__link" href="#">
-                                                <span class="notice-list__text">跨領域自主學習成果發表活動開放報名</span>
-                                                <time class="notice-list__date" datetime="2026-06-18">2026/06/18</time>
-                                            </a>
+                                            <article class="notice-item">
+                                                <span class="badge badge-state badge-state--amber notice-item__pin">置頂</span>
+                                                <h3 class="notice-item__title">
+                                                    AI 應用實務新增第二班次
+                                                </h3>
+                                                <p class="notice-item__date">2026/08/24</p>
+                                                <p class="notice-item__desc">因報名踴躍加開一班，即日起開放加簽登記，額滿為止。</p>
+                                            </article>
                                         </li>
                                         <li>
-                                            <a class="notice-list__link" href="#">
-                                                <span class="notice-list__text">請於期限內完成課程證書上傳與認列申請</span>
-                                                <time class="notice-list__date" datetime="2026-06-15">2026/06/15</time>
-                                            </a>
+                                            <article class="notice-item">
+                                                <h3 class="notice-item__title">
+                                                    跨領域微學程成果發表會報名
+                                                </h3>
+                                                <p class="notice-item__date">2026/08/22</p>
+                                                <p class="notice-item__desc">即日起至 9 月 15 日止受理線上報名，逾期恕不受理，請備妥相關證明文件。</p>
+                                            </article>
                                         </li>
                                         <li>
-                                            <a class="notice-list__link" href="#">
-                                                <span class="notice-list__text">系統將於 6/22 00:00-04:00 進行例行維護</span>
-                                                <time class="notice-list__date" datetime="2026-06-12">2026/06/12</time>
-                                            </a>
+                                            <article class="notice-item">
+                                                <span class="badge badge-state badge-state--amber notice-item__pin">置頂</span>
+                                                <h3 class="notice-item__title">
+                                                    平台維護通知（8/30 22:00）
+                                                </h3>
+                                                <p class="notice-item__date">2026/08/20</p>
+                                                <p class="notice-item__desc">維護期間無法登入平台與提交申請，造成不便敬請見諒。</p>
+                                            </article>
                                         </li>
                                         <li>
-                                            <a class="notice-list__link" href="#">
-                                                <span class="notice-list__text">新增「AI 應用實務」等 8 門跨領域課程</span>
-                                                <time class="notice-list__date" datetime="2026-06-10">2026/06/10</time>
-                                            </a>
+                                            <article class="notice-item">
+                                                <h3 class="notice-item__title">
+                                                    完課申請文件格式調整
+                                                </h3>
+                                                <p class="notice-item__date">2026/08/18</p>
+                                                <p class="notice-item__desc">舊版紙本表單自 9 月 1 日起停止受理，請一律改用平台線上申請。</p>
+                                            </article>
                                         </li>
                                         <li>
-                                            <a class="notice-list__link" href="#">
-                                                <span class="notice-list__text">本學期學習時數未達標者請儘速補足</span>
-                                                <time class="notice-list__date" datetime="2026-06-05">2026/06/05</time>
-                                            </a>
+                                            <article class="notice-item">
+                                                <h3 class="notice-item__title">
+                                                    業界講座：生成式 AI 應用
+                                                </h3>
+                                                <p class="notice-item__date">2026/08/15</p>
+                                                <p class="notice-item__desc">9 月 12 日下午 2 時於國際會議廳舉行，敬請師生踴躍參加。</p>
+                                            </article>
                                         </li>
                                     </ul>
                                 </div>
@@ -497,6 +519,111 @@
     </div>
 
     <div class="backdrop" id="backdrop"></div>
+
+
+    <!-- ===================== 燈箱：全部公告 ===================== -->
+    <div class="modal fade admin-modal" id="modalNoticeAll" tabindex="-1" role="dialog"
+        aria-labelledby="modalNoticeAllTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h2 class="modal-title" id="modalNoticeAllTitle">最新公告</h2>
+                        <p class="modal-subtitle">共 11 則公告</p>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="a11y-hidden">關閉</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <ul class="notice-list notice-list--all">
+                    <li>
+                        <article class="notice-item">
+                            <span class="badge badge-state badge-state--amber notice-item__pin">置頂</span>
+                            <h3 class="notice-item__title">115 學年度第一學期選課開放公告</h3>
+                            <p class="notice-item__date">2026/08/25</p>
+                            <p class="notice-item__desc">選課系統將於 9 月 8 日上午 9 時開放，請同學於期限內完成選課並確認課表。</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="notice-item">
+                            <span class="badge badge-state badge-state--amber notice-item__pin">置頂</span>
+                            <h3 class="notice-item__title">AI 應用實務新增第二班次</h3>
+                            <p class="notice-item__date">2026/08/24</p>
+                            <p class="notice-item__desc">因報名踴躍加開一班，即日起開放加簽登記，額滿為止。</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="notice-item">
+                            <h3 class="notice-item__title">跨領域微學程成果發表會報名</h3>
+                            <p class="notice-item__date">2026/08/22</p>
+                            <p class="notice-item__desc">即日起至 9 月 15 日止受理線上報名，逾期恕不受理，請備妥相關證明文件。</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="notice-item">
+                            <span class="badge badge-state badge-state--amber notice-item__pin">置頂</span>
+                            <h3 class="notice-item__title">平台維護通知（8/30 22:00）</h3>
+                            <p class="notice-item__date">2026/08/20</p>
+                            <p class="notice-item__desc">維護期間無法登入平台與提交申請，造成不便敬請見諒。</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="notice-item">
+                            <h3 class="notice-item__title">完課申請文件格式調整</h3>
+                            <p class="notice-item__date">2026/08/18</p>
+                            <p class="notice-item__desc">舊版紙本表單自 9 月 1 日起停止受理，請一律改用平台線上申請。</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="notice-item">
+                            <h3 class="notice-item__title">業界講座：生成式 AI 應用</h3>
+                            <p class="notice-item__date">2026/08/15</p>
+                            <p class="notice-item__desc">9 月 12 日下午 2 時於國際會議廳舉行，敬請師生踴躍參加。</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="notice-item">
+                            <h3 class="notice-item__title">114-2 學期完課名單公告</h3>
+                            <p class="notice-item__date">2026/08/12</p>
+                            <p class="notice-item__desc">完課名單已公布，請至學習歷程查詢個人完課與學分認列情形。</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="notice-item">
+                            <h3 class="notice-item__title">暑期線上課程結業通知</h3>
+                            <p class="notice-item__date">2026/08/08</p>
+                            <p class="notice-item__desc">暑期課程已結束，證書將於月底前寄發至報名時填寫的通訊地址。</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="notice-item">
+                            <h3 class="notice-item__title">系統帳號權限調整說明</h3>
+                            <p class="notice-item__date">2026/08/05</p>
+                            <p class="notice-item__desc">系所承辦人權限將自 9 月起調整，請確認所屬帳號可用的功能範圍。</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="notice-item">
+                            <h3 class="notice-item__title">跨領域學程線上說明會</h3>
+                            <p class="notice-item__date">2026/07/28</p>
+                            <p class="notice-item__desc">8 月 1 日下午 3 時舉行，請由平台首頁進入線上會議室參加。</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="notice-item">
+                            <h3 class="notice-item__title">113-2 學期教學意見調查</h3>
+                            <p class="notice-item__date">2026/07/25</p>
+                            <p class="notice-item__desc">請於 8 月 15 日前完成問卷填答，作為下學年課程規劃的參考。</p>
+                        </article>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/popper-1.16.1.min.js"></script>

@@ -171,7 +171,10 @@ img {
 .layout {
     position: relative;
     min-height: 100vh;
+    /* clip 跟 hidden 一樣會裁切，但不會建立捲動容器，
+       表頭的 position:sticky 才黏得到視窗。舊瀏覽器讀不懂 clip 會退回 hidden。 */
     overflow-x: hidden;
+    overflow-x: clip;
 }
 
 .layout__body {
@@ -343,6 +346,15 @@ img {
 
 .topnav__bell {
     position: relative;
+    /* 不加 flex:0 0 auto 的話，頂部列空間不夠時 flex 會把整顆鈕連同裡面的
+       圖檔一起壓窄（量到 20x20 的鈴鐺被擠成 12x20），看起來就是變形。 */
+    flex: 0 0 auto;
+}
+
+.topnav__bell img {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
 }
 
 .topnav__bell .badge-dot {
@@ -900,6 +912,101 @@ img {
     text-decoration: none;
 }
 
+/* --------------------------------------------------------------------------
+   按鈕的 hover / active：一律「填滿底色 + 白字」
+   原本只有 primary 有明顯回饋，outline 類（需補件、不通過、取消…）只換文字色，
+   摸上去幾乎看不出來。這裡統一：hover 填滿該色調本身的顏色，active 再壓深一階。
+   底色用各色調原本的文字色，白字對比才夠（#9a6416 4.9:1、#b23127 6.2:1）。
+   -------------------------------------------------------------------------- */
+.btn-s,
+.btn-m,
+.btn-xl {
+    /* 標籤不要在字中間斷行（窄螢幕的「需補件」會被拆成「需補 / 件」），
+       寧可讓整顆按鈕換到下一行 */
+    white-space: nowrap;
+    transition: color .15s ease, background-color .15s ease, border-color .15s ease;
+}
+
+/* filter:brightness 會讓白底的 outline 按鈕看起來像變灰，換成明確的底色 */
+.btn-s:hover,
+.btn-s:focus {
+    filter: none;
+}
+
+/* --- Danger（不通過／刪除） --- */
+.btn-s--danger:hover,
+.btn-s--danger:focus,
+.btn-m--danger:hover,
+.btn-m--danger:focus {
+    color: #fff;
+    background: #b23127;
+    border-color: #b23127;
+}
+
+.btn-s--danger:active,
+.btn-m--danger:active {
+    background: #922719;
+    border-color: #922719;
+}
+
+/* --- Amber（需補件／停用） --- */
+.btn-s--amber:hover,
+.btn-s--amber:focus,
+.btn-m--amber:hover,
+.btn-m--amber:focus {
+    color: #fff;
+    background: #9a6416;
+    border-color: #9a6416;
+}
+
+.btn-s--amber:active,
+.btn-m--amber:active {
+    background: #7d5011;
+    border-color: #7d5011;
+}
+
+/* --- Neutral / Link（取消、查看、複製課程…） --- */
+.btn-s--neutral:hover,
+.btn-s--neutral:focus,
+.btn-s--link:hover,
+.btn-s--link:focus {
+    color: #fff;
+    background: var(--c-link);
+    border-color: var(--c-link);
+}
+
+.btn-s--neutral:active,
+.btn-s--link:active,
+.btn-m--neutral:active {
+    background: #234d99;
+    border-color: #234d99;
+}
+
+.btn-m--neutral:hover,
+.btn-m--neutral:focus {
+    color: #fff;
+    background: var(--c-link);
+    border-color: var(--c-link);
+}
+
+/* --- Primary：本來就是實心，hover 壓深、active 再深一階 --- */
+.btn-s--primary:hover,
+.btn-s--primary:focus,
+.btn-m--primary:hover,
+.btn-m--primary:focus,
+.btn-xl--primary:hover,
+.btn-xl--primary:focus {
+    color: #fff;
+    background: #1a45ab;
+    filter: none;
+}
+
+.btn-s--primary:active,
+.btn-m--primary:active,
+.btn-xl--primary:active {
+    background: #163a90;
+}
+
 /* Chip：領域／角色／狀態標籤（設計稿元件 548:141）
    高 26、圓角 4、依文字自動撐寬，色調由修飾類決定 */
 .chip {
@@ -1112,7 +1219,19 @@ img {
     }
 
     .topnav__links {
+        flex: 0 0 auto;
         gap: 6px;
+    }
+
+    /* 手機列的語言鈕只留「EN」：地球圖示在這個尺寸下看不清楚，
+       拿掉之後整顆鈕也窄一截，鈴鐺才不會被擠到變形。 */
+    .btn-lang img {
+        display: none;
+    }
+
+    .btn-lang {
+        gap: 0;
+        padding: 5px 8px;
     }
 
     /* 手機列不放公告／說明文件／登出（改到抽屜裡） */
@@ -1382,6 +1501,19 @@ body.drawer-open {
     /* 內頁卡片 */
     .detail-card__head {
         padding: 15px 18px 11px;
+        /* 標題跟旁邊的說明／連結擠成兩欄時，兩邊都被壓到剩幾個字寬，
+           窄螢幕讓標題先吃滿一行，說明再換到下一行。 */
+        flex-wrap: wrap;
+        gap: 4px 12px;
+    }
+
+    .detail-card__head>.card-panel__title {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+
+    .detail-card__head>.panel-note {
+        flex: 1 1 100%;
     }
 
     .detail-card__body {
@@ -1527,4 +1659,183 @@ body.drawer-open {
 .btn:focus-visible {
     outline: 2px solid var(--c-accent);
     outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   長條的進場動畫與數值提示
+   動畫由 js/bars.js 掛上 .is-bar-anim 後才開始（報表管理、課程內頁評價都用）：
+   類別與寬度是同一次樣式計算變更的，瀏覽器以變更後的 transition 判斷，
+   所以第一次長出來就會有過渡，而不是瞬間跳到位。
+   -------------------------------------------------------------------------- */
+.rank-item__fill.is-bar-anim,
+.rating-bar__fill.is-bar-anim,
+.rate-bar__fill.is-bar-anim,
+.rate-trend__fill.is-bar-anim,
+.rate-split__done.is-bar-anim,
+.rate-split__rest.is-bar-anim {
+    transition: width .85s cubic-bezier(.22, .85, .3, 1);
+}
+
+/* 整條底槽都是觸發區，游標也要看得出可以停 */
+.rank-item__track,
+.rate-bar,
+.rate-trend__track,
+.rating-bar__track,
+.rate-split__done,
+.rate-split__rest {
+    cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rank-item__fill.is-bar-anim,
+.rating-bar__fill.is-bar-anim,
+    .rate-bar__fill.is-bar-anim,
+    .rate-trend__fill.is-bar-anim,
+    .rate-split__done.is-bar-anim,
+    .rate-split__rest.is-bar-anim {
+        transition: none;
+    }
+}
+
+/* 數值提示：沿用站上深藍底的提示樣式（與 Chart.js 的 tooltip 同一個顏色） */
+.tooltip-report .tooltip-inner {
+    max-width: 260px;
+    padding: 7px 11px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #fff;
+    background: #16233f;
+    border-radius: 6px;
+}
+
+.tooltip-report.bs-tooltip-top .arrow::before {
+    border-top-color: #16233f;
+}
+
+.tooltip-report.bs-tooltip-bottom .arrow::before {
+    border-bottom-color: #16233f;
+}
+
+.tooltip-report.bs-tooltip-left .arrow::before {
+    border-left-color: #16233f;
+}
+
+.tooltip-report.bs-tooltip-right .arrow::before {
+    border-right-color: #16233f;
+}
+
+/* --------------------------------------------------------------------------
+   FontAwesome 圖示
+   站上大部分圖示是設計稿匯出的 SVG，只有幾處改用 FontAwesome：
+   顏色與大小要靠 CSS 給（SVG 是把顏色畫在檔案裡，字體圖示則吃 color）。
+   -------------------------------------------------------------------------- */
+
+/* 抽屜選單的登出 */
+.menu-item__fa {
+    flex: 0 0 auto;
+    width: 18px;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* 跟文字排在同一行的小圖示 */
+.fa-inline {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.fa-inline--star {
+    color: #f0a500;
+}
+
+/* --------------------------------------------------------------------------
+   回到頁首（js/script.js 自動加在每一頁）
+   -------------------------------------------------------------------------- */
+.to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    font-size: 15px;
+    color: #fff;
+    background: var(--c-navy);
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(16, 35, 67, .28);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .2s ease, transform .2s ease, background-color .15s ease;
+}
+
+.to-top.is-on {
+    opacity: 1;
+    transform: none;
+}
+
+.to-top:hover,
+.to-top:focus {
+    color: #fff;
+    background: #1a45ab;
+}
+
+/* 抽屜打開時不要壓在遮罩上面 */
+.drawer-open .to-top {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .to-top {
+        transition: none;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   手機版：頂部列釘住
+   選單、通知都在這一列，捲到頁面深處還要滑回最上面才點得到。
+   .layout 是 overflow:clip 而不是 hidden，不會建立捲動容器，sticky 才黏得住。
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .topnav {
+        position: sticky;
+        top: 0;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   進場淡入（容器標 data-reveal，子元素由 js/bars.js 依序加上 .is-in）
+   捲到看得見才跑，不是一載入就跑完。
+   -------------------------------------------------------------------------- */
+.is-reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .5s ease, transform .5s cubic-bezier(.22, .85, .3, 1);
+}
+
+.is-reveal.is-in {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .is-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }

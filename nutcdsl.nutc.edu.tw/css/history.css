@@ -374,8 +374,11 @@
     display: none;
 }
 
+/* 加上排序箭頭後，「系所認列學分」「學院學分認列」這兩個六字標題
+   在設計稿的欄寬下差約 12px 就會折行，箭頭掉到第二行。
+   課程名稱欄本來有餘裕（最長的課名約 135px），從那裡各勻 1.3% 過去。 */
 .record-table__col-name {
-    width: 20.2%;
+    width: 17.6%;
 }
 
 .record-table__col-domain {
@@ -395,7 +398,7 @@
 }
 
 .record-table__col-credit {
-    width: 11.1%;
+    width: 12.4%;
 }
 
 .record-table__col-state {
@@ -403,7 +406,7 @@
 }
 
 .record-table__col-listed {
-    width: 11.9%;
+    width: 13.2%;
 }
 
 /* 手機才顯示的欄位前後綴（桌機由表頭說明欄位意義） */
@@ -604,4 +607,52 @@
     .cell-suffix {
         display: inline;
     }
+}
+
+/* 統計磚圖示改用 FontAwesome。原本 SVG 各自帶顏色，字體圖示要自己給，
+   所以每個色系補一個 --tile-color，跟底色同一個色相但深一階。 */
+.tile--blue {
+    --tile-color: #2b5fc0;
+}
+
+.tile--green {
+    --tile-color: #2e9257;
+}
+
+.tile--red {
+    --tile-color: #e0483f;
+}
+
+.tile--amber {
+    --tile-color: #e9922b;
+}
+
+.tile--violet {
+    --tile-color: #5b5fd6;
+}
+
+.tile__fa {
+    font-size: 18px;
+    line-height: 1;
+    color: var(--tile-color, var(--c-primary));
+}
+
+@media (max-width: 991.98px) {
+    .tile__fa {
+        font-size: 15px;
+    }
+}
+
+/* 排序箭頭：這裡的欄寬照設計稿寫死（系所認列學分 11.1%、學院學分認列 11.9%），
+   用 inline-flex 會讓「文字＋間距＋箭頭」被當成一整塊去算寬度，六個字的標題
+   就會被擠成兩行、箭頭卡在兩行中間。改成跟著文字流排，換行時箭頭自然留在
+   最後一個字後面。 */
+.record-table .th-sort {
+    display: inline;
+}
+
+.record-table .th-sort::after {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
 }

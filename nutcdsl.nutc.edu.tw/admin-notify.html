@@ -25,7 +25,9 @@
 
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/datatable.css" />
     <link rel="stylesheet" href="css/admin.css" />
 
     <title>通知管理 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
@@ -59,7 +61,7 @@
                 </a>
                 <a class="topnav__link" href="#">公告</a>
                 <a class="topnav__link" href="#">說明文件</a>
-                <a class="topnav__link" href="#">登出</a>
+                <a class="topnav__link" href="admin-login.html">登出</a>
 
                 <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
                 <button type="button" class="btn topnav__bell">
@@ -180,8 +182,8 @@
                         <div class="sidebar__divider" aria-hidden="true"></div>
                         <ul class="nav flex-column sidebar__menu">
                             <li class="nav-item">
-                                <a class="nav-link menu-item sidebar__logout" href="#">
-                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                <a class="nav-link menu-item sidebar__logout" href="admin-login.html">
+                                    <i class="fa-solid fa-right-from-bracket menu-item__fa" aria-hidden="true"></i>登出
                                 </a>
                             </li>
                         </ul>
@@ -253,15 +255,17 @@
                         </div>
 
                         <div class="table-responsive">
-                            <table class="table data-table">
+                            <table class="table data-table"
+                                data-unit="個通知樣板"
+                                data-page-length="0">
                                 <caption class="a11y-hidden">通知樣板清單，共 8 個</caption>
                                 <thead>
                                     <tr>
                                         <th scope="col" style="width: 13.5%;" aria-sort="descending">
                                             <a class="th-sort" href="#">樣板名稱</a>
                                         </th>
-                                        <th scope="col" style="width: 17.5%;">標題</th>
-                                        <th scope="col" style="width: 20%;">內容</th>
+                                        <th scope="col" class="is-clip" style="width: 21%;">標題</th>
+                                        <th scope="col" class="is-clip" style="width: 20%;">內容</th>
                                         <th scope="col" style="width: 11.5%;">發送節點</th>
                                         <th scope="col" style="width: 8.5%;">發送對象</th>
                                         <th scope="col">操作</th>
@@ -271,7 +275,7 @@
                                                     <tr>
                                                         <th scope="row">完課申請送出通知</th>
                                                         <td>有新的完課申請待審核</td>
-                                                        <td class="is-muted">{學生姓名} 於 {申請日期} 送出完課申請，請前往審核…</td>
+                                                        <td class="is-muted">{學生姓名} 於 {申請日期} 送出完課申請，請前往後臺完成審核。</td>
                                                         <td><span class="badge chip chip--neutral">送出完課申請</span></td>
                                                         <td><span class="badge chip chip--green">老師</span></td>
                                                         <td>
@@ -289,7 +293,7 @@
                                                     <tr>
                                                         <th scope="row">完課申請通過通知</th>
                                                         <td>您的完課申請已通過</td>
-                                                        <td class="is-muted">恭喜！您的完課申請已審核通過…</td>
+                                                        <td class="is-muted">恭喜！您的完課申請已審核通過，學分認列結果請至學習歷程查詢。</td>
                                                         <td><span class="badge chip chip--neutral">完課申請通過</span></td>
                                                         <td><span class="badge chip chip--blue-light">學生</span></td>
                                                         <td>
@@ -307,7 +311,7 @@
                                                     <tr>
                                                         <th scope="row">完課申請補件通知</th>
                                                         <td>您的完課申請需補件</td>
-                                                        <td class="is-muted">申請文件尚有缺漏，請於期限內補齊…</td>
+                                                        <td class="is-muted">申請文件尚有缺漏，請於 {補件期限} 前完成補件，逾期將自動退件。</td>
                                                         <td><span class="badge chip chip--neutral">完課申請待補件</span></td>
                                                         <td><span class="badge chip chip--blue-light">學生</span></td>
                                                         <td>
@@ -325,7 +329,7 @@
                                                     <tr>
                                                         <th scope="row">完課申請不通過通知</th>
                                                         <td>您的完課申請未通過</td>
-                                                        <td class="is-muted">很抱歉，您的完課申請未通過審核…</td>
+                                                        <td class="is-muted">很抱歉，您的完課申請未通過審核，原因：{退件原因}。</td>
                                                         <td><span class="badge chip chip--neutral">完課申請不通過</span></td>
                                                         <td><span class="badge chip chip--blue-light">學生</span></td>
                                                         <td>
@@ -343,7 +347,7 @@
                                                     <tr>
                                                         <th scope="row">補件完成通知</th>
                                                         <td>學生已完成補件</td>
-                                                        <td class="is-muted">{學生姓名} 已完成補件，請重新審核…</td>
+                                                        <td class="is-muted">{學生姓名} 已完成補件，請重新審核該筆完課申請。</td>
                                                         <td><span class="badge chip chip--neutral">完課申請已補件</span></td>
                                                         <td><span class="badge chip chip--green">老師</span></td>
                                                         <td>
@@ -361,7 +365,7 @@
                                                     <tr>
                                                         <th scope="row">建課申請送出通知</th>
                                                         <td>有新的建課申請待審核</td>
-                                                        <td class="is-muted">{老師姓名} 於 {申請日期} 送出建課申請，請前往審核…</td>
+                                                        <td class="is-muted">{老師姓名} 於 {申請日期} 送出建課申請，請前往後臺完成審核。</td>
                                                         <td><span class="badge chip chip--neutral">送出建課申請</span></td>
                                                         <td><span class="badge chip chip--magenta">管理員</span></td>
                                                         <td>
@@ -379,7 +383,7 @@
                                                     <tr>
                                                         <th scope="row">建課審核通過通知</th>
                                                         <td>您的建課申請已通過</td>
-                                                        <td class="is-muted">您申請開設的課程已審核通過…</td>
+                                                        <td class="is-muted">您申請開設的課程已審核通過，即日起開放學生選課。</td>
                                                         <td><span class="badge chip chip--neutral">建課審核通過</span></td>
                                                         <td><span class="badge chip chip--green">老師</span></td>
                                                         <td>
@@ -397,7 +401,7 @@
                                                     <tr>
                                                         <th scope="row">建課審核不通過通知</th>
                                                         <td>您的建課申請未通過</td>
-                                                        <td class="is-muted">很抱歉，您申請開設的課程未通過審核…</td>
+                                                        <td class="is-muted">很抱歉，您申請開設的課程未通過審核，原因：{退件原因}。</td>
                                                         <td><span class="badge chip chip--neutral">建課審核不通過</span></td>
                                                         <td><span class="badge chip chip--green">老師</span></td>
                                                         <td>
@@ -421,64 +425,6 @@
                         </div>
                     </section>
 
-                    <!-- ===================== 彈窗：編輯通知樣板 ===================== -->
-                    <div class="modal fade admin-modal" id="modalTemplate" tabindex="-1" role="dialog"
-                        aria-labelledby="modalTemplateTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div>
-                                        <h2 class="modal-title" id="modalTemplateTitle">編輯通知樣板</h2>
-                                        <p class="modal-subtitle">通知管理 › 編輯通知樣板</p>
-                                    </div>
-                                    <button type="button" class="close" data-dismiss="modal">
-                                        <span aria-hidden="true">&times;</span>
-                                        <span class="a11y-hidden">關閉</span>
-                                    </button>
-                                </div>
-
-                                <div class="modal-body">
-                                    <p class="form-hint">通知類別、發送節點與發送對象皆由系統設定，無法新增或修改；此處可編輯通知信的標題與內容。</p>
-
-                                    <dl class="readonly-box">
-                                        <dt class="readonly-box__label">樣板名稱</dt>
-                                        <dd class="readonly-box__value">完課申請補件通知</dd>
-                                        <dt class="readonly-box__label">發送節點</dt>
-                                        <dd><span class="badge chip chip--neutral">完課申請待補件</span></dd>
-                                        <dt class="readonly-box__label">發送對象</dt>
-                                        <dd><span class="badge chip chip--blue-light">學生</span></dd>
-                                    </dl>
-
-                                    <form class="form-grid" action="#">
-                                        <div class="form-group form-grid__full">
-                                            <label class="form-label" for="tplTitle">標題<span class="is-required"
-                                                    aria-hidden="true">*</span></label>
-                                            <input type="text" class="form-control" id="tplTitle" value="您的完課申請需補件"
-                                                required />
-                                        </div>
-                                        <div class="form-group form-grid__full">
-                                            <label class="form-label" for="tplBody">內容<span class="is-required"
-                                                    aria-hidden="true">*</span></label>
-                                            <textarea class="form-control" id="tplBody" rows="8" required>同學您好：
-
-您提出的完課申請尚有文件缺漏，請於期限內登入平台完成補件，逾期將視同放棄。
-
-如有疑問，請洽開課系所辦公室。
-
-跨領域數位自主學習平台　敬上</textarea>
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
-                                        data-dismiss="modal">取消</button>
-                                    <button type="submit" class="btn btn-m btn-m--primary">保存</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </main>
         </div>
@@ -486,10 +432,73 @@
 
     <div class="backdrop" id="backdrop"></div>
 
+    <!-- ===================== 彈窗：編輯通知樣板 ===================== -->
+                        <div class="modal fade admin-modal" id="modalTemplate" tabindex="-1" role="dialog"
+                            aria-labelledby="modalTemplateTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div>
+                                            <h2 class="modal-title" id="modalTemplateTitle">編輯通知樣板</h2>
+                                            <p class="modal-subtitle">通知管理 › 編輯通知樣板</p>
+                                        </div>
+                                        <button type="button" class="close" data-dismiss="modal">
+                                            <span aria-hidden="true">&times;</span>
+                                            <span class="a11y-hidden">關閉</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <p class="form-hint">通知類別、發送節點與發送對象皆由系統設定，無法新增或修改；此處可編輯通知信的標題與內容。</p>
+
+                                        <dl class="readonly-box">
+                                            <dt class="readonly-box__label">樣板名稱</dt>
+                                            <dd class="readonly-box__value">完課申請補件通知</dd>
+                                            <dt class="readonly-box__label">發送節點</dt>
+                                            <dd><span class="badge chip chip--neutral">完課申請待補件</span></dd>
+                                            <dt class="readonly-box__label">發送對象</dt>
+                                            <dd><span class="badge chip chip--blue-light">學生</span></dd>
+                                        </dl>
+
+                                        <form class="form-grid" action="#">
+                                            <div class="form-group form-grid__full">
+                                                <label class="form-label" for="tplTitle">標題<span class="is-required"
+                                                        aria-hidden="true">*</span></label>
+                                                <input type="text" class="form-control" id="tplTitle" value="您的完課申請需補件"
+                                                    required />
+                                            </div>
+                                            <div class="form-group form-grid__full">
+                                                <label class="form-label" for="tplBody">內容<span class="is-required"
+                                                        aria-hidden="true">*</span></label>
+                                                <textarea class="form-control" id="tplBody" rows="8" required>同學您好：
+
+    您提出的完課申請尚有文件缺漏，請於期限內登入平台完成補件，逾期將視同放棄。
+
+    如有疑問，請洽開課系所辦公室。
+
+    跨領域數位自主學習平台　敬上</textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
+                                            data-dismiss="modal">取消</button>
+                                        <button type="submit" class="btn btn-m btn-m--primary">保存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/popper-1.16.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="assets/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="assets/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="js/admin-table.js"></script>
+    <script src="js/admin-dialog.js"></script>
 </body>
 
 </html>

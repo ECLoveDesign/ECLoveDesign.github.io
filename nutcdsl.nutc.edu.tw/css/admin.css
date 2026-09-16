@@ -16,8 +16,13 @@
 
 .menu-item__caret {
     position: absolute;
-    top: 18px;
-    right: 18px;
+    top: 15px;
+    right: 17px;
+    /* 必須覆蓋 .menu-item img 的 20x20（被撐成正方形筆畫會變很粗）。
+       形狀與筆粗直接對齊分頁器的上/下一頁箭頭（breadcrumb-sep.svg）：
+       14x14 的 viewBox、描邊 1.45833、圓角端點，只是改成朝下、換成白色。 */
+    width: 14px;
+    height: 14px;
     transition: transform .2s ease;
 }
 
@@ -27,6 +32,10 @@
 }
 
 .sidebar__submenu {
+    /* 不能留 Bootstrap .nav 的 display:flex —— 它帶 flex-wrap:wrap，
+       collapse 動畫把高度壓低的瞬間，第二個項目會被擠到「第二欄」去
+       （實測 left 從 0 跳到 129），看起來就是收合到一半整個跑版。 */
+    display: block;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -92,12 +101,31 @@
    -------------------------------------------------------------------------- */
 .tabs-inline {
     display: flex;
-    flex-wrap: wrap;
+    /* 窄螢幕不換行、改成橫向滑動，頁籤才不會掉成第二排 */
+    flex-wrap: nowrap;
     gap: 0 40px;
     margin: 0;
     padding: 0 27px;
+    overflow-x: auto;
     list-style: none;
     border-bottom: 1px solid var(--c-divider-2);
+    /* 一格一格停在頁籤上，滑起來比較好定位。
+       scroll-padding 一定要跟著 padding 一起給：吸附點對齊的是捲動區的
+       內距邊界，不補的話瀏覽器會自己捲掉 padding-left，第一個頁籤又貼回左邊。 */
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 27px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+/* 捲動軸藏起來，靠內容溢出暗示可以滑 */
+.tabs-inline::-webkit-scrollbar {
+    display: none;
+}
+
+.tabs-inline>.nav-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
 }
 
 .tabs-inline .nav-link {
@@ -106,6 +134,7 @@
     align-items: center;
     gap: 10px;
     padding: 16px 0 13px;
+    white-space: nowrap;
     font-size: 16px;
     color: var(--c-muted);
     background: none;
@@ -312,7 +341,9 @@
    4. 資料表格（課程管理／審核／報表／帳號…共用）
    -------------------------------------------------------------------------- */
 .data-panel {
+    /* 同上：用 clip 保留圓角裁切，又不擋住表頭 sticky */
     overflow: hidden;
+    overflow: clip;
 }
 
 .data-table {
@@ -322,6 +353,10 @@
 }
 
 .data-table thead th {
+    /* 捲動長列表時表頭跟著黏在上緣（TopNav 不是 sticky，所以貼 0） */
+    position: sticky;
+    top: 0;
+    z-index: 3;
     padding: 17px 12px;
     font-size: 14px;
     font-weight: 500;
@@ -368,6 +403,21 @@
     left: 27px;
     height: 1px;
     background: var(--c-divider);
+}
+
+/* 設計稿 393:473：列分隔線內縮 28，而第一欄的文字也從 28 開始
+   —— 兩者是對齊的。原本儲存格只有 12px 內距，文字會比分隔線更靠左，
+   看起來就像文字貼著邊、線卻浮在裡面。頭尾兩欄補到 27 對齊。 */
+.data-table thead th:first-child,
+.data-table tbody td:first-child,
+.data-table tbody th:first-child {
+    padding-left: 27px;
+}
+
+.data-table thead th:last-child,
+.data-table tbody td:last-child,
+.data-table tbody th:last-child {
+    padding-right: 27px;
 }
 
 .data-table tbody tr:last-child::after {
@@ -417,55 +467,11 @@
     width: 56px;
 }
 
-/* 可排序表頭：文字後面帶一個小三角 */
-.th-sort {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: inherit;
-}
-
-.th-sort:hover,
-.th-sort:focus {
-    color: var(--c-primary);
-    text-decoration: none;
-}
-
-.th-sort::after {
-    content: "";
-    width: 7px;
-    height: 4.5px;
-    background: url(../images/icons/sort-none.svg) no-repeat center / contain;
-}
-
-/* aria-sort 只在 columnheader（th）上才合法，
-   所以狀態掛在 th、樣式從 th 往內選到連結 */
-th[aria-sort="ascending"] .th-sort,
-th[aria-sort="descending"] .th-sort {
-    color: var(--c-text);
-}
-
-th[aria-sort="ascending"] .th-sort::after,
-th[aria-sort="descending"] .th-sort::after {
-    background-image: url(../images/icons/sort-asc.svg);
-}
-
-th[aria-sort="ascending"] .th-sort::after {
-    transform: rotate(180deg);
-}
-
 /* 卡片標題列右側的動作鈕群 */
 .panel-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-}
-
-/* 操作欄：數個小按鈕並排 */
-.row-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
 }
 
 .data-table td.is-num {
@@ -474,96 +480,6 @@ th[aria-sort="ascending"] .th-sort::after {
 
 .data-table td.is-muted {
     color: var(--c-muted);
-}
-
-/* --------------------------------------------------------------------------
-   5. 分頁
-   -------------------------------------------------------------------------- */
-.table-foot {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 16px 27px;
-    border-top: 1px solid var(--c-divider-2);
-}
-
-.table-foot__count {
-    margin: 0;
-    font-size: 13.5px;
-    color: var(--c-muted);
-}
-
-.pager {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.pager__link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 32px;
-    height: 32px;
-    padding: 0 8px;
-    font-size: 13.5px;
-    font-weight: 500;
-    color: var(--c-muted);
-    background: #fff;
-    border: 1px solid #d9e0ea;
-    border-radius: 8px;
-}
-
-/* 上一頁／下一頁：用麵包屑的箭頭圖示，往前的那顆旋轉 180 度 */
-.pager__link--prev,
-.pager__link--next {
-    padding: 0;
-}
-
-.pager__link--prev::before,
-.pager__link--next::before {
-    content: "";
-    width: 14px;
-    height: 14px;
-    background: url(../images/icons/breadcrumb-sep.svg) no-repeat center / contain;
-}
-
-.pager__link--prev::before {
-    transform: rotate(180deg);
-}
-
-.pager__ellipsis {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 32px;
-    height: 32px;
-    font-size: 13.5px;
-    color: var(--c-muted);
-}
-
-.pager__link:hover,
-.pager__link:focus {
-    color: var(--c-primary);
-    border-color: var(--c-border-btn);
-    text-decoration: none;
-}
-
-.pager__link[aria-current="page"] {
-    font-weight: 500;
-    color: #fff;
-    background: var(--c-primary);
-    border-color: var(--c-primary);
-}
-
-.pager__link.is-disabled {
-    color: #b5bdc9;
-    pointer-events: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -961,8 +877,16 @@ th[aria-sort="ascending"] .th-sort::after {
 }
 
 .suggest__item:hover,
-.suggest__item:focus {
+.suggest__item:focus,
+.suggest__item.is-active {
     background: #f6f9ff;
+    text-decoration: none;
+}
+
+.suggest__new:hover,
+.suggest__new:focus,
+.suggest__new.is-active {
+    background: #e8f0ff;
     text-decoration: none;
 }
 
@@ -977,38 +901,251 @@ th[aria-sort="ascending"] .th-sort::after {
     border-radius: 0 0 8px 8px;
 }
 
-/* 權限勾選樹（新增／編輯角色） */
-.perm-tree {
+/* 手機版把操作鈕排成可換行，才不會把那一列撐爆 */
+@media (max-width: 767.98px) {
+/* 窄螢幕時儲存格不要硬撐，讓操作鈕自己換行 */
+    .data-table td,
+    .data-table th {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+
+/* --------------------------------------------------------------------------
+   提示彈窗（儲存成功 / 刪除・停用確認）
+   沿用 .admin-modal 的外框與頁尾，只換掉內容排版，
+   不另外引入 SweetAlert 之類的套件，避免站上出現第二套對話框語彙。
+   -------------------------------------------------------------------------- */
+.admin-modal--alert .modal-dialog {
+    max-width: 440px;
+}
+
+.admin-modal--alert .modal-content {
+    padding: 8px 0 0;
+}
+
+.admin-modal--alert .modal-body {
+    padding: 20px 27px 4px;
+    text-align: center;
+}
+
+.alert-dialog__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+}
+
+.alert-dialog__icon svg {
+    display: block;
+}
+
+.admin-modal--success .alert-dialog__icon {
+    color: #1f7a4c;
+    background: #e4f3ea;
+}
+
+.admin-modal--danger .alert-dialog__icon {
+    color: #b23127;
+    background: #fdeceb;
+}
+
+.admin-modal--warn .alert-dialog__icon {
+    color: #b4791a;
+    background: #fdf3dc;
+}
+
+.alert-dialog__title {
+    margin: 0 0 6px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    color: var(--c-title);
+}
+
+.alert-dialog__text {
     margin: 0;
-    padding: 14px 18px;
+    font-size: 14.5px;
+    line-height: 22px;
+    color: var(--c-muted);
+}
+
+.alert-dialog__text strong {
+    font-weight: 600;
+    color: var(--c-text);
+}
+
+.admin-modal--alert .modal-footer {
+    justify-content: center;
+    padding: 18px 27px 20px;
+    border-top: 0;
+}
+
+.admin-modal--alert .modal-footer .btn-m {
+    min-width: 104px;
+}
+
+/* 危險動作的主要按鈕：實心紅，與列表上的外框紅按鈕區分開 */
+.btn-m--danger-solid {
+    color: #fff;
+    background: #c0392b;
+    border-color: #c0392b;
+}
+
+.btn-m--danger-solid:hover,
+.btn-m--danger-solid:focus {
+    color: #fff;
+    filter: brightness(.94);
+}
+
+/* 權限勾選樹（新增／編輯角色） */
+/* 權限樹
+   設計稿 414:2「tree / 權限設定」的座標（皆相對於樹的外框）：
+     每列間距 30、勾選框 18x18
+     根層勾選框 x=32、文字 x=56
+     子層勾選框 x=60（往右 28）、文字 x=84
+     展開鈕 11x11，中心 x=15；tree spine 也在 x=15
+   所以左側留 32px 當裝訂邊，展開鈕與連接線都用負 left 擺進去。 */
+.perm-tree {
+    position: relative;
+    margin: 0;
+    padding: 12px 18px 12px 31px;
     list-style: none;
     background: #fff;
     border: 1px solid var(--c-border);
     border-radius: 8px;
 }
 
-.perm-tree__item {
+.perm-node {
+    position: relative;
+    list-style: none;
+}
+
+/* 一列：勾選框 + 文字（+ 必要權限註記） */
+.perm-node__row {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 5px 0;
+    gap: 6px;
+    height: 30px;
     font-size: 14px;
+    line-height: 20px;
     color: var(--c-text);
 }
 
-.perm-tree__item label {
-    margin: 0;
+.perm-node__row label {
+    margin: 0 0 0 6px;
+    cursor: pointer;
 }
 
+.perm-node__row .check__input:disabled~.check__box,
+.perm-node__row .check__input:disabled+label {
+    cursor: default;
+}
+
+/* 設計稿 414:9：必要權限 在 x=116，文字結束於 85，所以是 31px 的固定間距 */
 .perm-tree__note {
+    margin-left: 31px;
     font-size: 12.5px;
     color: var(--c-breadcrumb);
 }
 
+/* 展開／收合鈕：設計稿 414:20 是 11x11 小方框，中間一條 5x1 的槓（收合時成 +） */
+.perm-node__toggle {
+    position: absolute;
+    top: 9px;
+    left: -22.5px;
+    z-index: 2;
+    width: 11px;
+    height: 11px;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.perm-node__toggle::before,
+.perm-node__toggle::after {
+    content: "";
+    position: absolute;
+    background: var(--c-muted);
+    border-radius: 1px;
+}
+
+.perm-node__toggle::before {
+    top: 4px;
+    left: 2px;
+    width: 5px;
+    height: 1px;
+}
+
+/* 收合時補上直槓，變成 + */
+.perm-node:not(.is-open)>.perm-node__toggle::after {
+    top: 2px;
+    left: 4px;
+    width: 1px;
+    height: 5px;
+}
+
+.perm-node__toggle:focus-visible {
+    outline: 2px solid var(--c-accent);
+    outline-offset: 2px;
+}
+
+/* 子層：勾選框再往右 28（32 → 60） */
 .perm-tree__sub {
     margin: 0;
-    padding: 0 0 0 30px;
+    padding: 0 0 0 28px;
     list-style: none;
+}
+
+.perm-node:not(.is-open)>.perm-tree__sub {
+    display: none;
+}
+
+/* ---- 連接線 ----------------------------------------------------------
+   量自設計稿 414:2 的實際像素：
+     主幹      x=14，1px，虛線 2 實 1 空，色 #e3e8ef
+     根層橫線  x 14→29（勾選框在 32，留 3px）
+     子層橫線  x 14→55（子層勾選框在 60，留 5px）
+   主幹上下都停在「列中心」：列高 30，外距 12，所以是 12+15=27。 */
+.perm-tree::before {
+    content: "";
+    position: absolute;
+    top: 27px;
+    bottom: 27px;
+    left: 13px;
+    width: 1px;
+    background-image: repeating-linear-gradient(to bottom,
+            #e3e8ef 0 2px, transparent 2px 3px);
+}
+
+.perm-node__row::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    background-image: repeating-linear-gradient(to right,
+            #e3e8ef 0 2px, transparent 2px 3px);
+}
+
+.perm-tree>.perm-node>.perm-node__row::before {
+    left: -18px;
+    width: 16px;
+}
+
+/* 子層的橫線在設計稿上點得比較疏（實 1 空 2），跟主幹的實 2 空 1 不同 */
+.perm-tree__sub>.perm-node>.perm-node__row::before {
+    left: -46px;
+    width: 42px;
+    background-image: repeating-linear-gradient(to right,
+            #e3e8ef 0 1px, transparent 1px 3px);
 }
 
 /* 半選（父項目只勾了部分子項） */
@@ -1034,6 +1171,18 @@ th[aria-sort="ascending"] .th-sort::after {
 
 .check__input:disabled~.check__box {
     opacity: .55;
+}
+
+/* 鎖定又已勾選（權限樹的「首頁」）：設計稿是實心灰底 #cbd5e1 + 白勾，
+   不是把藍色打淡 —— 量測 414:6 的填色就是 (203,213,225)。 */
+.check__input:disabled:checked~.check__box {
+    background: #cbd5e1 url(../images/icons/check-white.svg) no-repeat center / 12px 12px;
+    border-color: transparent;
+    opacity: 1;
+}
+
+.check__input:disabled~label {
+    color: var(--c-muted);
 }
 
 /* 設定頁：欄位群組與分隔線 */
@@ -1065,6 +1214,15 @@ th[aria-sort="ascending"] .th-sort::after {
 .page-actions {
     display: flex;
     justify-content: flex-end;
+}
+
+/* 系統參數設定的兩張卡片與儲存鈕都包在同一個 <form> 裡，
+   而 form 是 display:block，所以 .content__inner 的 gap 管不到它們（實測 gap=0）。
+   設計稿 427:122 / 429:2 兩張卡的間距是 22，與其他頁面的區塊節奏一致。 */
+.content__inner>form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
 }
 
 /* 文字數計數（課程簡介／課程大綱） */
@@ -1212,6 +1370,23 @@ th[aria-sort="ascending"] .th-sort::after {
     color: var(--c-muted-2);
 }
 
+/* 檢核沒過的那一列（副檔名或大小不符） */
+.file-row--error {
+    background: #fef6f5;
+    border-color: #f0c2bd;
+}
+
+/* 移除檔案後的空狀態 */
+.file-panel__empty {
+    margin: 0;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: var(--c-muted-2);
+    background: #f7f9fc;
+    border: 1px dashed #c2cede;
+    border-radius: 8px;
+}
+
 /* 單選按鈕列（是／否…） */
 .radio-row {
     display: flex;
@@ -1254,6 +1429,11 @@ th[aria-sort="ascending"] .th-sort::after {
     border-radius: 10px;
 }
 
+.dropzone.is-dragover {
+    background: #eef3fb;
+    border-color: var(--c-primary);
+}
+
 .dropzone__title {
     margin: 0;
     font-size: 15px;
@@ -1273,7 +1453,7 @@ th[aria-sort="ascending"] .th-sort::after {
    資料表格在窄螢幕以 .table-responsive 橫向捲動，不改結構
    -------------------------------------------------------------------------- */
 @media (max-width: 1199.98px) {
-    .home-row {
+.home-row {
         flex-wrap: wrap;
     }
 
@@ -1283,20 +1463,25 @@ th[aria-sort="ascending"] .th-sort::after {
     }
 }
 
+
 @media (max-width: 991.98px) {
-
-    .toolbar {
+.toolbar {
         padding: 14px 16px;
     }
 
-    .table-foot {
-        padding: 14px 16px;
+    .tabs-inline {
+        gap: 0 24px;
+        /* 窄螢幕的頁籤是卡片最上緣的元素，貼太近會像沒有留白，
+           比表格的 16 再多留一點 */
+        padding: 0 20px;
+        scroll-padding-left: 20px;
     }
 
-    /* 欄位多，窄螢幕改為整張表橫向捲動（.table-responsive），
-       不壓縮欄寬以免文字被擠成兩三行 */
+    /* 原本窄螢幕是整張表橫向捲動（.data-table{min-width:900px}），
+       現在改由 DataTables Responsive 收起中間欄位 + 點 + 展開，
+       所以不能再撐最小寬度，否則表格永遠壓不回容器、操作鈕會被推出畫面。 */
     .data-table {
-        min-width: 900px;
+        min-width: 0;
     }
 
     .data-table th:first-child,
@@ -1318,6 +1503,31 @@ th[aria-sort="ascending"] .th-sort::after {
         padding: 15px 16px 0;
     }
 
+    /* 窄螢幕讓標題吃滿一整行。
+       .panel-head 是 space-between，標題、說明與「單位：人」擠成兩欄時，
+       兩邊都被壓到剩幾個字寬，說明文字折成三四行反而更難讀。 */
+    /* 表頭黏住的位置要讓開手機版釘住的頂部列，否則兩層會疊在一起 */
+    .data-table thead th {
+        top: var(--h-topnav);
+    }
+
+    .panel-head,
+    .section-head {
+        flex-wrap: wrap;
+        gap: 4px 12px;
+    }
+
+    .panel-head>div,
+    .panel-head__title,
+    .section-head__title {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+
+    .panel-head__unit {
+        margin-top: 2px;
+    }
+
     .panel-body {
         padding: 12px 16px 18px;
     }
@@ -1335,4 +1545,11 @@ th[aria-sort="ascending"] .th-sort::after {
     .form-grid {
         grid-template-columns: minmax(0, 1fr);
     }
+}
+
+/* 不該被折斷的欄位值（申請編號、日期時間這類識別碼）。
+   表格寬度不夠時，瀏覽器會優先滿足 nowrap 欄位的最小內容寬度，
+   比寫死百分比更可靠 —— 百分比只是建議值，會被別欄的內容壓過去。 */
+.data-table .is-nowrap {
+    white-space: nowrap;
 }

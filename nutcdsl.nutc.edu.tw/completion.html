@@ -25,7 +25,9 @@
 
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/datatable.css" />
     <link rel="stylesheet" href="css/completion.css" />
 
     <title>完課申請 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
@@ -59,7 +61,7 @@
                 </a>
                 <a class="topnav__link" href="#">公告</a>
                 <a class="topnav__link" href="#">說明文件</a>
-                <a class="topnav__link" href="#">登出</a>
+                <a class="topnav__link" href="login.html">登出</a>
 
                 <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
                 <button type="button" class="btn topnav__bell">
@@ -133,8 +135,8 @@
                         <div class="sidebar__divider" aria-hidden="true"></div>
                         <ul class="nav flex-column sidebar__menu">
                             <li class="nav-item">
-                                <a class="nav-link menu-item sidebar__logout" href="#">
-                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                <a class="nav-link menu-item sidebar__logout" href="login.html">
+                                    <i class="fa-solid fa-right-from-bracket menu-item__fa" aria-hidden="true"></i>登出
                                 </a>
                             </li>
                         </ul>
@@ -194,8 +196,7 @@
                             <li class="col-6 col-lg">
                                 <div class="card card-panel stat-card stat-card--todo">
                                     <span class="stat-card__icon">
-                                        <img src="images/icons/stat-doc.svg" alt="" width="22" height="22"
-                                            aria-hidden="true" />
+                                        <i class="fa-regular fa-file-lines stat-card__fa" aria-hidden="true"></i>
                                     </span>
                                     <div class="stat-card__text">
                                         <p class="stat-card__label">未申請</p>
@@ -206,8 +207,7 @@
                             <li class="col-6 col-lg">
                                 <div class="card card-panel stat-card stat-card--review">
                                     <span class="stat-card__icon">
-                                        <img src="images/icons/stat-clock.svg" alt="" width="22" height="22"
-                                            aria-hidden="true" />
+                                        <i class="fa-regular fa-clock stat-card__fa" aria-hidden="true"></i>
                                     </span>
                                     <div class="stat-card__text">
                                         <p class="stat-card__label">審核中</p>
@@ -218,8 +218,7 @@
                             <li class="col-6 col-lg">
                                 <div class="card card-panel stat-card stat-card--pass">
                                     <span class="stat-card__icon">
-                                        <img src="images/icons/stat-check.svg" alt="" width="22" height="22"
-                                            aria-hidden="true" />
+                                        <i class="fa-solid fa-circle-check stat-card__fa" aria-hidden="true"></i>
                                     </span>
                                     <div class="stat-card__text">
                                         <p class="stat-card__label">已通過</p>
@@ -230,8 +229,7 @@
                             <li class="col-6 col-lg">
                                 <div class="card card-panel stat-card stat-card--fix">
                                     <span class="stat-card__icon">
-                                        <img src="images/icons/stat-clock-red.svg" alt="" width="22" height="22"
-                                            aria-hidden="true" />
+                                        <i class="fa-solid fa-circle-exclamation stat-card__fa" aria-hidden="true"></i>
                                     </span>
                                     <div class="stat-card__text">
                                         <p class="stat-card__label">待補件</p>
@@ -242,8 +240,7 @@
                             <li class="col-6 col-lg">
                                 <div class="card card-panel stat-card stat-card--reject">
                                     <span class="stat-card__icon">
-                                        <img src="images/icons/stat-cross.svg" alt="" width="22" height="22"
-                                            aria-hidden="true" />
+                                        <i class="fa-solid fa-circle-xmark stat-card__fa" aria-hidden="true"></i>
                                     </span>
                                     <div class="stat-card__text">
                                         <p class="stat-card__label">不通過</p>
@@ -261,14 +258,15 @@
                         </div>
 
                         <div class="table-responsive">
-                            <table class="table apply-table">
+                            <table class="table apply-table js-datatable" data-unit="筆" data-page-length="10"
+                                data-responsive="false">
                                 <caption class="a11y-hidden">完課申請紀錄，共 13 筆</caption>
                                 <thead>
                                     <tr>
-                                        <th scope="col" class="apply-table__col-status">申請狀態</th>
-                                        <th scope="col" class="apply-table__col-name">課程名稱</th>
-                                        <th scope="col" class="apply-table__col-source">課程來源</th>
-                                        <th scope="col" class="apply-table__col-date">申請日期</th>
+                                        <th scope="col" class="apply-table__col-status"><span class="th-sort">申請狀態</span></th>
+                                        <th scope="col" class="apply-table__col-name"><span class="th-sort">課程名稱</span></th>
+                                        <th scope="col" class="apply-table__col-source"><span class="th-sort">課程來源</span></th>
+                                        <th scope="col" class="apply-table__col-date"><span class="th-sort">申請日期</span></th>
                                         <th scope="col" class="apply-table__col-action">操作</th>
                                     </tr>
                                 </thead>
@@ -406,6 +404,11 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        <div class="table-foot">
+                            <p class="table-foot__count"></p>
+                            <nav aria-label="申請紀錄分頁"></nav>
+                        </div>
                     </section>
 
                 </div>
@@ -419,6 +422,9 @@
     <script src="js/popper-1.16.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="assets/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="assets/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="js/admin-table.js"></script>
 </body>
 
 </html>

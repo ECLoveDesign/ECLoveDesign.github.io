@@ -25,7 +25,9 @@
 
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/datatable.css" />
     <link rel="stylesheet" href="css/admin.css" />
 
     <title>角色管理 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
@@ -59,7 +61,7 @@
                 </a>
                 <a class="topnav__link" href="#">公告</a>
                 <a class="topnav__link" href="#">說明文件</a>
-                <a class="topnav__link" href="#">登出</a>
+                <a class="topnav__link" href="admin-login.html">登出</a>
 
                 <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
                 <button type="button" class="btn topnav__bell">
@@ -180,8 +182,8 @@
                         <div class="sidebar__divider" aria-hidden="true"></div>
                         <ul class="nav flex-column sidebar__menu">
                             <li class="nav-item">
-                                <a class="nav-link menu-item sidebar__logout" href="#">
-                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                <a class="nav-link menu-item sidebar__logout" href="admin-login.html">
+                                    <i class="fa-solid fa-right-from-bracket menu-item__fa" aria-hidden="true"></i>登出
                                 </a>
                             </li>
                         </ul>
@@ -246,7 +248,9 @@
                         </div>
 
                         <div class="table-responsive">
-                            <table class="table data-table">
+                            <table class="table data-table"
+                                data-unit="個角色"
+                                data-page-length="0">
                                 <caption class="a11y-hidden">角色列表，共 6 個</caption>
                                 <thead>
                                     <tr>
@@ -380,169 +384,6 @@
                         </div>
                     </section>
 
-                    <!-- ===================== 彈窗：新增／編輯角色 ===================== -->
-                    <div class="modal fade admin-modal" id="modalRole" tabindex="-1" role="dialog"
-                        aria-labelledby="modalRoleTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div>
-                                        <h2 class="modal-title" id="modalRoleTitle">新增/編輯角色</h2>
-                                        <p class="modal-subtitle">角色管理 › 新增/編輯角色</p>
-                                    </div>
-                                    <button type="button" class="close" data-dismiss="modal">
-                                        <span aria-hidden="true">&times;</span>
-                                        <span class="a11y-hidden">關閉</span>
-                                    </button>
-                                </div>
-
-                                <div class="modal-body">
-                                    <form action="#">
-                                        <h3 class="panel-head__title">基本設定</h3>
-                                        <div class="form-grid" style="margin: 14px 0 26px;">
-                                            <div class="form-group form-grid__full">
-                                                <label class="form-label" for="roName">角色名稱<span class="is-required"
-                                                        aria-hidden="true">*</span></label>
-                                                <input type="text" class="form-control" id="roName" value="跨領域學程助理"
-                                                    required />
-                                            </div>
-                                            <div class="form-group form-grid__full">
-                                                <label class="form-label" for="roNote">備註</label>
-                                                <textarea class="form-control" id="roNote"
-                                                    rows="4">協助跨領域學程行政作業，可檢視課程資料與報表，並協助發送平台通知。不具帳號與角色管理權限。</textarea>
-                                            </div>
-                                        </div>
-
-                                        <h3 class="panel-head__title">權限設定</h3>
-                                        <p class="form-hint" style="margin-bottom: 14px;">
-                                            勾選此角色可使用的後臺選單；父項目取消勾選時，其下子項目一併停用。「首頁」為所有角色的必要權限，無法取消。
-                                        </p>
-                                        <ul class="perm-tree">
-                                                    <li>
-                                                        <span class="perm-tree__item">
-                                                            <span class="check">
-                                                                <input class="check__input" type="checkbox" id="perm1" checked disabled />
-                                                                <span class="check__box" aria-hidden="true"></span>
-                                                            </span>
-                                                            <label for="perm1">首頁</label>
-                                                        <span class="perm-tree__note">必要權限</span>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="perm-tree__item">
-                                                            <span class="check">
-                                                                <input class="check__input" type="checkbox" id="perm2" checked />
-                                                                <span class="check__box" aria-hidden="true"></span>
-                                                            </span>
-                                                            <label for="perm2">課程管理</label>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="perm-tree__item">
-                                                            <span class="check">
-                                                                <input class="check__input" type="checkbox" id="perm3" />
-                                                                <span class="check__box" aria-hidden="true"></span>
-                                                            </span>
-                                                            <label for="perm3">課程審核</label>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="perm-tree__item">
-                                                            <span class="check">
-                                                                <input class="check__input" type="checkbox" id="perm4" checked />
-                                                                <span class="check__box" aria-hidden="true"></span>
-                                                            </span>
-                                                            <label for="perm4">報表管理</label>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="perm-tree__item">
-                                                            <span class="check">
-                                                                <input class="check__input" type="checkbox" id="perm5" />
-                                                                <span class="check__box" aria-hidden="true"></span>
-                                                            </span>
-                                                            <label for="perm5">公告管理</label>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="perm-tree__item">
-                                                            <span class="check">
-                                                                <input class="check__input" type="checkbox" id="perm6" data-indeterminate="true" />
-                                                                <span class="check__box" aria-hidden="true"></span>
-                                                            </span>
-                                                            <label for="perm6">通知管理</label>
-                                                        </span>
-                                                        <ul class="perm-tree__sub">
-                                                            <li class="perm-tree__item">
-                                                                <span class="check">
-                                                                    <input class="check__input" type="checkbox" id="perm7" checked />
-                                                                    <span class="check__box" aria-hidden="true"></span>
-                                                                </span>
-                                                                <label for="perm7">通知管理</label>
-                                                            </li>
-                                                            <li class="perm-tree__item">
-                                                                <span class="check">
-                                                                    <input class="check__input" type="checkbox" id="perm8" />
-                                                                    <span class="check__box" aria-hidden="true"></span>
-                                                                </span>
-                                                                <label for="perm8">系統通知紀錄</label>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <span class="perm-tree__item">
-                                                            <span class="check">
-                                                                <input class="check__input" type="checkbox" id="perm9" />
-                                                                <span class="check__box" aria-hidden="true"></span>
-                                                            </span>
-                                                            <label for="perm9">系統參數設定</label>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="perm-tree__item">
-                                                            <span class="check">
-                                                                <input class="check__input" type="checkbox" id="perm10" />
-                                                                <span class="check__box" aria-hidden="true"></span>
-                                                            </span>
-                                                            <label for="perm10">系統管理</label>
-                                                        </span>
-                                                        <ul class="perm-tree__sub">
-                                                            <li class="perm-tree__item">
-                                                                <span class="check">
-                                                                    <input class="check__input" type="checkbox" id="perm11" />
-                                                                    <span class="check__box" aria-hidden="true"></span>
-                                                                </span>
-                                                                <label for="perm11">帳號管理</label>
-                                                            </li>
-                                                            <li class="perm-tree__item">
-                                                                <span class="check">
-                                                                    <input class="check__input" type="checkbox" id="perm12" />
-                                                                    <span class="check__box" aria-hidden="true"></span>
-                                                                </span>
-                                                                <label for="perm12">角色管理</label>
-                                                            </li>
-                                                            <li class="perm-tree__item">
-                                                                <span class="check">
-                                                                    <input class="check__input" type="checkbox" id="perm13" />
-                                                                    <span class="check__box" aria-hidden="true"></span>
-                                                                </span>
-                                                                <label for="perm13">系統操作紀錄</label>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                        </ul>
-                                    </form>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
-                                        data-dismiss="modal">取消</button>
-                                    <button type="submit" class="btn btn-m btn-m--primary">保存</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </main>
         </div>
@@ -550,10 +391,193 @@
 
     <div class="backdrop" id="backdrop"></div>
 
+    <!-- ===================== 彈窗：新增／編輯角色 ===================== -->
+    <div class="modal fade admin-modal" id="modalRole" tabindex="-1" role="dialog"
+        aria-labelledby="modalRoleTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h2 class="modal-title" id="modalRoleTitle">新增/編輯角色</h2>
+                        <p class="modal-subtitle">角色管理 › 新增/編輯角色</p>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="a11y-hidden">關閉</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="#">
+                        <h3 class="panel-head__title">基本設定</h3>
+                        <div class="form-grid" style="margin: 14px 0 26px;">
+                            <div class="form-group form-grid__full">
+                                <label class="form-label" for="roName">角色名稱<span class="is-required"
+                                        aria-hidden="true">*</span></label>
+                                <input type="text" class="form-control" id="roName" value="跨領域學程助理"
+                                    required />
+                            </div>
+                            <div class="form-group form-grid__full">
+                                <label class="form-label" for="roNote">備註</label>
+                                <textarea class="form-control" id="roNote"
+                                    rows="4">協助跨領域學程行政作業，可檢視課程資料與報表，並協助發送平台通知。不具帳號與角色管理權限。</textarea>
+                            </div>
+                        </div>
+
+                        <h3 class="panel-head__title">權限設定</h3>
+                        <p class="form-hint" style="margin-bottom: 14px;">
+                            勾選此角色可使用的後臺選單；父項目取消勾選時，其下子項目一併停用。「首頁」為所有角色的必要權限，無法取消。
+                        </p>
+                        <ul class="perm-tree" id="permTree">
+                            <li class="perm-node">
+                                <span class="perm-node__row">
+                                    <span class="check">
+                                        <input class="check__input" type="checkbox" id="perm1" checked disabled />
+                                        <span class="check__box" aria-hidden="true"></span>
+                                    </span>
+                                    <label for="perm1">首頁</label>
+                                    <span class="perm-tree__note">必要權限</span>
+                                </span>
+                            </li>
+                            <li class="perm-node">
+                                <span class="perm-node__row">
+                                    <span class="check">
+                                        <input class="check__input" type="checkbox" id="perm2" checked />
+                                        <span class="check__box" aria-hidden="true"></span>
+                                    </span>
+                                    <label for="perm2">課程管理</label>
+                                </span>
+                            </li>
+                            <li class="perm-node">
+                                <span class="perm-node__row">
+                                    <span class="check">
+                                        <input class="check__input" type="checkbox" id="perm3" />
+                                        <span class="check__box" aria-hidden="true"></span>
+                                    </span>
+                                    <label for="perm3">課程審核</label>
+                                </span>
+                            </li>
+                            <li class="perm-node">
+                                <span class="perm-node__row">
+                                    <span class="check">
+                                        <input class="check__input" type="checkbox" id="perm4" checked />
+                                        <span class="check__box" aria-hidden="true"></span>
+                                    </span>
+                                    <label for="perm4">報表管理</label>
+                                </span>
+                            </li>
+                            <li class="perm-node">
+                                <span class="perm-node__row">
+                                    <span class="check">
+                                        <input class="check__input" type="checkbox" id="perm5" />
+                                        <span class="check__box" aria-hidden="true"></span>
+                                    </span>
+                                    <label for="perm5">公告管理</label>
+                                </span>
+                            </li>
+                            <li class="perm-node perm-node--parent is-open">
+                                <button type="button" class="perm-node__toggle" aria-expanded="true"
+                                    aria-controls="perm6-sub"><span class="a11y-hidden">收合通知管理</span></button>
+                                <span class="perm-node__row">
+                                    <span class="check">
+                                        <input class="check__input" type="checkbox" id="perm6" />
+                                        <span class="check__box" aria-hidden="true"></span>
+                                    </span>
+                                    <label for="perm6">通知管理</label>
+                                </span>
+                                <ul class="perm-tree__sub" id="perm6-sub">
+                                    <li class="perm-node">
+                                        <span class="perm-node__row">
+                                            <span class="check">
+                                                <input class="check__input" type="checkbox" id="perm7" checked />
+                                                <span class="check__box" aria-hidden="true"></span>
+                                            </span>
+                                            <label for="perm7">通知管理</label>
+                                        </span>
+                                    </li>
+                                    <li class="perm-node">
+                                        <span class="perm-node__row">
+                                            <span class="check">
+                                                <input class="check__input" type="checkbox" id="perm8" />
+                                                <span class="check__box" aria-hidden="true"></span>
+                                            </span>
+                                            <label for="perm8">系統通知紀錄</label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="perm-node">
+                                <span class="perm-node__row">
+                                    <span class="check">
+                                        <input class="check__input" type="checkbox" id="perm9" />
+                                        <span class="check__box" aria-hidden="true"></span>
+                                    </span>
+                                    <label for="perm9">系統參數設定</label>
+                                </span>
+                            </li>
+                            <li class="perm-node perm-node--parent is-open">
+                                <button type="button" class="perm-node__toggle" aria-expanded="true"
+                                    aria-controls="perm10-sub"><span class="a11y-hidden">收合系統管理</span></button>
+                                <span class="perm-node__row">
+                                    <span class="check">
+                                        <input class="check__input" type="checkbox" id="perm10" />
+                                        <span class="check__box" aria-hidden="true"></span>
+                                    </span>
+                                    <label for="perm10">系統管理</label>
+                                </span>
+                                <ul class="perm-tree__sub" id="perm10-sub">
+                                    <li class="perm-node">
+                                        <span class="perm-node__row">
+                                            <span class="check">
+                                                <input class="check__input" type="checkbox" id="perm11" />
+                                                <span class="check__box" aria-hidden="true"></span>
+                                            </span>
+                                            <label for="perm11">帳號管理</label>
+                                        </span>
+                                    </li>
+                                    <li class="perm-node">
+                                        <span class="perm-node__row">
+                                            <span class="check">
+                                                <input class="check__input" type="checkbox" id="perm12" />
+                                                <span class="check__box" aria-hidden="true"></span>
+                                            </span>
+                                            <label for="perm12">角色管理</label>
+                                        </span>
+                                    </li>
+                                    <li class="perm-node">
+                                        <span class="perm-node__row">
+                                            <span class="check">
+                                                <input class="check__input" type="checkbox" id="perm13" />
+                                                <span class="check__box" aria-hidden="true"></span>
+                                            </span>
+                                            <label for="perm13">系統操作紀錄</label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
+                        data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-m btn-m--primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/popper-1.16.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="assets/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="assets/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="js/admin-table.js"></script>
+    <script src="js/perm-tree.js"></script>
+    <script src="js/admin-dialog.js"></script>
 </body>
 
 </html>

@@ -44,6 +44,15 @@
 /* --------------------------------------------------------------------------
    2. 區段標題（所有課程 / 各領域）
    -------------------------------------------------------------------------- */
+/* 設計稿 Section 內各區塊固定 20px 間距（KPI 列→圖表卡→排行卡）。
+   先前靠各區塊自己的 margin，.kpi-row 的負 margin 又把它抵銷掉，
+   導致 KPI 卡與圖表卡完全貼在一起（實測 gap = 0）。 */
+.report-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .section-head {
     display: flex;
     align-items: baseline;
@@ -79,17 +88,28 @@
 .kpi {
     flex: 1 1 auto;
     min-height: 132px;
+    /* 設計稿 314:5：tile 132 高、padding 20/24、label→value 6、value→delta 4；
+       卡片本身有 1px 框線，故 padding 取 19/23 才會對齊外框 */
     padding: 19px 23px;
 }
 
+/* 卡內最後一段（漲跌標籤）不要再帶 Bootstrap 的 p margin-bottom，
+   否則卡片會比設計稿的 132 高出一截 */
+.kpi>p:last-child {
+    margin-bottom: 0;
+    /* delta 是 inline-flex，父段落的行高會再撐出額外 leading */
+    line-height: 20px;
+}
+
 .kpi__label {
-    margin: 0 0 4px;
+    margin: 0 0 6px;
     font-size: 14px;
+    line-height: 20px;
     color: var(--c-muted);
 }
 
 .kpi__value {
-    margin: 0 0 10px;
+    margin: 0 0 4px;
     font-size: 30px;
     font-weight: 700;
     line-height: 42px;
@@ -355,16 +375,27 @@
     border-left: 1px dashed #9aa6b6;
 }
 
+/* 「全校平均」的標示。
+   原本掛在第一列長條的正上方（bottom:100%），表頭改成釘住之後
+   （position:sticky; z-index:3）就被壓在表頭底下看不到了。
+   改掛在最後一列的虛線下方 —— 一樣貼著那條線，但下方沒有東西會蓋到它。 */
 .rate-bar__avg-label {
     position: absolute;
-    bottom: 100%;
+    top: 100%;
     left: 50%;
-    margin-bottom: 4px;
-    font-size: 11.5px;
-    color: var(--c-breadcrumb);
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--c-muted);
     white-space: nowrap;
     transform: translateX(-50%);
 }
+
+/* 標示是浮在最後一列下方的，要先把位置空出來 */
+.domain-table tbody tr:last-child td,
+.domain-table tbody tr:last-child th {
+    padding-bottom: 32px;
+}
+
 
 /* --------------------------------------------------------------------------
    7. 各領域熱門課程排行
@@ -376,15 +407,23 @@
 }
 
 .mini-rank {
+    /* 每個領域自成一塊：原本只有一行標題加清單，四個領域併排時
+       看起來像一整片連續的文字，分不出哪幾筆屬於哪個領域。 */
     flex: 1 1 220px;
     min-width: 0;
+    padding: 16px 18px 18px;
+    background: #fbfcfe;
+    border: 1px solid var(--c-divider-2);
+    border-radius: 10px;
 }
 
 .mini-rank__head {
-    margin: 0 0 12px;
+    margin: 0 0 14px;
+    padding-bottom: 12px;
     font-size: 14.5px;
     font-weight: 500;
     color: var(--c-title);
+    border-bottom: 1px solid var(--c-divider-2);
 }
 
 .mini-rank__list {
@@ -405,11 +444,31 @@
     margin-top: 12px;
 }
 
+/* 名次做成小方塊，前三名加重，一眼看得出排序 */
 .mini-rank__no {
-    flex: 0 0 14px;
+    display: flex;
+    flex: 0 0 20px;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
     font-size: 12px;
-    color: var(--c-breadcrumb);
-    text-align: right;
+    color: var(--c-muted);
+    background: #eef2f8;
+    border-radius: 5px;
+}
+
+.mini-rank__item:nth-child(-n+3) .mini-rank__no {
+    font-weight: 500;
+    color: #fff;
+    background: var(--c-primary);
+}
+
+.mini-rank__item:nth-child(2) .mini-rank__no {
+    background: #6b8fd6;
+}
+
+.mini-rank__item:nth-child(3) .mini-rank__no {
+    background: #9db4e2;
 }
 
 .mini-rank__name {
@@ -421,7 +480,19 @@
 
 .mini-rank__value {
     flex: 0 0 auto;
+    font-variant-numeric: tabular-nums;
     color: var(--c-muted);
+}
+
+/* 窄螢幕時四個領域改成上下堆疊，面板邊界就是分類的界線 */
+@media (max-width: 767.98px) {
+    .mini-rank-cols {
+        gap: 14px;
+    }
+
+    .mini-rank {
+        flex: 1 1 100%;
+    }
 }
 
 /* --------------------------------------------------------------------------

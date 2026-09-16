@@ -25,7 +25,9 @@
 
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/datatable.css" />
     <link rel="stylesheet" href="css/admin.css" />
 
     <title>公告管理 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
@@ -59,7 +61,7 @@
                 </a>
                 <a class="topnav__link" href="#">公告</a>
                 <a class="topnav__link" href="#">說明文件</a>
-                <a class="topnav__link" href="#">登出</a>
+                <a class="topnav__link" href="admin-login.html">登出</a>
 
                 <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
                 <button type="button" class="btn topnav__bell">
@@ -180,8 +182,8 @@
                         <div class="sidebar__divider" aria-hidden="true"></div>
                         <ul class="nav flex-column sidebar__menu">
                             <li class="nav-item">
-                                <a class="nav-link menu-item sidebar__logout" href="#">
-                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                <a class="nav-link menu-item sidebar__logout" href="admin-login.html">
+                                    <i class="fa-solid fa-right-from-bracket menu-item__fa" aria-hidden="true"></i>登出
                                 </a>
                             </li>
                         </ul>
@@ -245,14 +247,16 @@
                         </div>
 
                         <div class="table-responsive">
-                            <table class="table data-table">
+                            <table class="table data-table"
+                                data-unit="則公告"
+                                data-page-length="11">
                                 <caption class="a11y-hidden">公告列表，共 128 則，目前顯示第 1 頁</caption>
                                 <thead>
                                     <tr>
-                                        <th scope="col" style="width: 19%;" aria-sort="descending">
+                                        <th scope="col" class="is-clip" style="width: 27%;" aria-sort="descending">
                                             <a class="th-sort" href="#">公告標題</a>
                                         </th>
-                                        <th scope="col" style="width: 26%;">公告內容</th>
+                                        <th scope="col" class="is-clip">公告內容</th>
                                         <th scope="col" style="width: 13%;" aria-sort="descending">
                                             <a class="th-sort" href="#">上架時間</a>
                                         </th>
@@ -264,7 +268,7 @@
                                 <tbody>
                                                     <tr>
                                                         <th scope="row">115 學年度第一學期選課開放公告</th>
-                                                        <td class="is-muted">選課系統將於 9 月 8 日上午 9 時開放…</td>
+                                                        <td class="is-muted">選課系統將於 9 月 8 日上午 9 時開放，請同學於期限內完成選課並確認課表。</td>
                                                         <td class="is-muted is-num">2026/08/25 09:00</td>
                                                         <td class="is-muted is-num">2026/09/30 23:59</td>
                                                         <td>
@@ -282,7 +286,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">AI 應用實務新增第二班次</th>
-                                                        <td class="is-muted">因報名踴躍加開一班，開放加簽登記…</td>
+                                                        <td class="is-muted">因報名踴躍加開一班，即日起開放加簽登記，額滿為止。</td>
                                                         <td class="is-muted is-num">2026/08/24 10:00</td>
                                                         <td class="is-muted is-num">2026/09/05 17:00</td>
                                                         <td>
@@ -300,7 +304,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">跨領域微學程成果發表會報名</th>
-                                                        <td class="is-muted">即日起至 9 月 15 日止受理線上報名…</td>
+                                                        <td class="is-muted">即日起至 9 月 15 日止受理線上報名，逾期恕不受理，請備妥相關證明文件。</td>
                                                         <td class="is-muted is-num">2026/08/22 08:00</td>
                                                         <td class="is-muted is-num">2026/09/15 23:59</td>
                                                         <td>
@@ -318,7 +322,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">平台維護通知（8/30 22:00）</th>
-                                                        <td class="is-muted">維護期間無法登入平台與提交申請…</td>
+                                                        <td class="is-muted">維護期間無法登入平台與提交申請，造成不便敬請見諒。</td>
                                                         <td class="is-muted is-num">2026/08/20 12:00</td>
                                                         <td class="is-muted is-num">2026/08/31 06:00</td>
                                                         <td>
@@ -336,7 +340,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">完課申請文件格式調整</th>
-                                                        <td class="is-muted">舊版表單自 9 月 1 日起停止受理…</td>
+                                                        <td class="is-muted">舊版紙本表單自 9 月 1 日起停止受理，請一律改用平台線上申請。</td>
                                                         <td class="is-muted is-num">2026/08/18 09:00</td>
                                                         <td class="is-muted is-num">2026/10/31 23:59</td>
                                                         <td>
@@ -354,7 +358,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">業界講座：生成式 AI 應用</th>
-                                                        <td class="is-muted">9 月 12 日下午 2 時於國際會議廳舉行…</td>
+                                                        <td class="is-muted">9 月 12 日下午 2 時於國際會議廳舉行，敬請師生踴躍參加。</td>
                                                         <td class="is-muted is-num">2026/08/15 14:00</td>
                                                         <td class="is-muted is-num">2026/09/12 18:00</td>
                                                         <td>
@@ -372,7 +376,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">114-2 學期完課名單公告</th>
-                                                        <td class="is-muted">完課名單已公布，請至學習歷程查詢…</td>
+                                                        <td class="is-muted">完課名單已公布，請至學習歷程查詢個人完課與學分認列情形。</td>
                                                         <td class="is-muted is-num">2026/08/12 09:00</td>
                                                         <td class="is-muted is-num">2026/09/12 23:59</td>
                                                         <td>
@@ -390,7 +394,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">暑期線上課程結業通知</th>
-                                                        <td class="is-muted">暑期課程已結束，證書將於月底寄發…</td>
+                                                        <td class="is-muted">暑期課程已結束，證書將於月底前寄發至報名時填寫的通訊地址。</td>
                                                         <td class="is-muted is-num">2026/08/08 17:00</td>
                                                         <td class="is-muted is-num">2026/09/08 23:59</td>
                                                         <td>
@@ -408,7 +412,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">系統帳號權限調整說明</th>
-                                                        <td class="is-muted">系所承辦人權限將自 9 月起調整…</td>
+                                                        <td class="is-muted">系所承辦人權限將自 9 月起調整，請確認所屬帳號可用的功能範圍。</td>
                                                         <td class="is-muted is-num">2026/08/05 10:00</td>
                                                         <td class="is-muted is-num">2026/09/30 23:59</td>
                                                         <td>
@@ -426,7 +430,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">跨領域學程線上說明會</th>
-                                                        <td class="is-muted">8 月 1 日下午 3 時舉行，請由平台進入…</td>
+                                                        <td class="is-muted">8 月 1 日下午 3 時舉行，請由平台首頁進入線上會議室參加。</td>
                                                         <td class="is-muted is-num">2026/07/28 09:00</td>
                                                         <td class="is-muted is-num">2026/08/01 18:00</td>
                                                         <td>
@@ -444,7 +448,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">113-2 學期教學意見調查</th>
-                                                        <td class="is-muted">請於 8 月 15 日前完成問卷填答…</td>
+                                                        <td class="is-muted">請於 8 月 15 日前完成問卷填答，作為下學年課程規劃的參考。</td>
                                                         <td class="is-muted is-num">2026/07/25 09:00</td>
                                                         <td class="is-muted is-num">2026/08/15 23:59</td>
                                                         <td>
@@ -480,70 +484,6 @@
                         </div>
                     </section>
 
-                    <!-- ===================== 彈窗：新增／編輯公告 ===================== -->
-                    <div class="modal fade admin-modal" id="modalAnnounce" tabindex="-1" role="dialog"
-                        aria-labelledby="modalAnnounceTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div>
-                                        <h2 class="modal-title" id="modalAnnounceTitle">新增/編輯公告</h2>
-                                        <p class="modal-subtitle">公告管理 › 新增/編輯公告</p>
-                                    </div>
-                                    <button type="button" class="close" data-dismiss="modal">
-                                        <span aria-hidden="true">&times;</span>
-                                        <span class="a11y-hidden">關閉</span>
-                                    </button>
-                                </div>
-
-                                <div class="modal-body">
-                                    <form class="form-grid" action="#">
-                                        <div class="form-group form-grid__full">
-                                            <label class="form-label" for="anTitle">公告標題<span class="is-required"
-                                                    aria-hidden="true">*</span></label>
-                                            <input type="text" class="form-control" id="anTitle" placeholder="請輸入公告標題"
-                                                required />
-                                        </div>
-                                        <div class="form-group form-grid__full">
-                                            <label class="form-label" for="anBody">公告內容<span class="is-required"
-                                                    aria-hidden="true">*</span></label>
-                                            <textarea class="form-control" id="anBody" rows="6" placeholder="請輸入公告內容"
-                                                required></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="anUp">上架時間<span class="is-required"
-                                                    aria-hidden="true">*</span></label>
-                                            <input type="datetime-local" class="form-control" id="anUp" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="anDown">下架時間</label>
-                                            <input type="datetime-local" class="form-control" id="anDown" />
-                                        </div>
-                                        <div class="form-group form-grid__full">
-                                            <p class="form-label" id="anTopLabel">是否置頂</p>
-                                            <div class="radio-row" role="radiogroup" aria-labelledby="anTopLabel">
-                                                <span class="radio-row__item">
-                                                    <input type="radio" name="anTop" id="anTopYes" value="1" />
-                                                    <label for="anTopYes">是</label>
-                                                </span>
-                                                <span class="radio-row__item">
-                                                    <input type="radio" name="anTop" id="anTopNo" value="0" checked />
-                                                    <label for="anTopNo">否</label>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
-                                        data-dismiss="modal">取消</button>
-                                    <button type="submit" class="btn btn-m btn-m--primary">保存</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </main>
         </div>
@@ -551,10 +491,79 @@
 
     <div class="backdrop" id="backdrop"></div>
 
+    <!-- ===================== 彈窗：新增／編輯公告 ===================== -->
+    <div class="modal fade admin-modal" id="modalAnnounce" tabindex="-1" role="dialog"
+        aria-labelledby="modalAnnounceTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h2 class="modal-title" id="modalAnnounceTitle">新增/編輯公告</h2>
+                        <p class="modal-subtitle">公告管理 › 新增/編輯公告</p>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="a11y-hidden">關閉</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form class="form-grid" action="#">
+                        <div class="form-group form-grid__full">
+                            <label class="form-label" for="anTitle">公告標題<span class="is-required"
+                                    aria-hidden="true">*</span></label>
+                            <input type="text" class="form-control" id="anTitle" placeholder="請輸入公告標題"
+                                required />
+                        </div>
+                        <div class="form-group form-grid__full">
+                            <label class="form-label" for="anBody">公告內容<span class="is-required"
+                                    aria-hidden="true">*</span></label>
+                            <textarea class="form-control" id="anBody" rows="6" placeholder="請輸入公告內容"
+                                required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="anUp">上架時間<span class="is-required"
+                                    aria-hidden="true">*</span></label>
+                            <input type="datetime-local" class="form-control" id="anUp" required />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="anDown">下架時間</label>
+                            <input type="datetime-local" class="form-control" id="anDown" />
+                        </div>
+                        <div class="form-group form-grid__full">
+                            <p class="form-label" id="anTopLabel">是否置頂</p>
+                            <div class="radio-row" role="radiogroup" aria-labelledby="anTopLabel">
+                                <span class="radio-row__item">
+                                    <input type="radio" name="anTop" id="anTopYes" value="1" />
+                                    <label for="anTopYes">是</label>
+                                </span>
+                                <span class="radio-row__item">
+                                    <input type="radio" name="anTop" id="anTopNo" value="0" checked />
+                                    <label for="anTopNo">否</label>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
+                        data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-m btn-m--primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/popper-1.16.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="assets/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="assets/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="js/admin-table.js"></script>
+    <script src="js/admin-dialog.js"></script>
 </body>
 
 </html>

@@ -26,8 +26,10 @@
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/course.css" />
+    <link rel="stylesheet" href="css/datatable.css" />
     <link rel="stylesheet" href="css/admin.css" />
 
     <title>帳號管理 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
@@ -61,7 +63,7 @@
                 </a>
                 <a class="topnav__link" href="#">公告</a>
                 <a class="topnav__link" href="#">說明文件</a>
-                <a class="topnav__link" href="#">登出</a>
+                <a class="topnav__link" href="admin-login.html">登出</a>
 
                 <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
                 <button type="button" class="btn topnav__bell">
@@ -182,8 +184,8 @@
                         <div class="sidebar__divider" aria-hidden="true"></div>
                         <ul class="nav flex-column sidebar__menu">
                             <li class="nav-item">
-                                <a class="nav-link menu-item sidebar__logout" href="#">
-                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                <a class="nav-link menu-item sidebar__logout" href="admin-login.html">
+                                    <i class="fa-solid fa-right-from-bracket menu-item__fa" aria-hidden="true"></i>登出
                                 </a>
                             </li>
                         </ul>
@@ -271,7 +273,10 @@
                         </div>
 
                         <div class="table-responsive">
-                            <table class="table data-table">
+                            <table class="table data-table"
+                                data-unit="個帳號"
+                                data-page-length="9"
+                                data-search="#aq">
                                 <caption class="a11y-hidden">帳號列表，共 236 個，目前顯示第 1 頁</caption>
                                 <thead>
                                     <tr>
@@ -468,76 +473,6 @@
                         </div>
                     </section>
 
-                    <!-- ===================== 彈窗：新增帳號 ===================== -->
-                    <div class="modal fade admin-modal" id="modalAccount" tabindex="-1" role="dialog"
-                        aria-labelledby="modalAccountTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div>
-                                        <h2 class="modal-title" id="modalAccountTitle">新增帳號</h2>
-                                        <p class="modal-subtitle">帳號管理 › 新增帳號</p>
-                                    </div>
-                                    <button type="button" class="close" data-dismiss="modal">
-                                        <span aria-hidden="true">&times;</span>
-                                        <span class="a11y-hidden">關閉</span>
-                                    </button>
-                                </div>
-
-                                <div class="modal-body">
-                                    <form class="form-grid" action="#">
-                                        <div class="form-group">
-                                            <label class="form-label" for="acAcc">帳號<span class="is-required"
-                                                    aria-hidden="true">*</span></label>
-                                            <input type="text" class="form-control" id="acAcc" placeholder="請輸入帳號" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="acName">姓名<span class="is-required"
-                                                    aria-hidden="true">*</span></label>
-                                            <input type="text" class="form-control" id="acName" placeholder="請輸入姓名" required />
-                                        </div>
-                                        <div class="form-group form-grid__full">
-                                            <label class="form-label" for="acMail">電子信箱<span class="is-required"
-                                                    aria-hidden="true">*</span></label>
-                                            <input type="email" class="form-control" id="acMail" placeholder="請輸入電子信箱"
-                                                required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="acRole">角色<span class="is-required"
-                                                    aria-hidden="true">*</span></label>
-                                            <select class="form-control bs-select" id="acRole" title="請選擇角色" required>
-                                                <option value="" disabled selected>請選擇角色</option>
-                                                <option value="admin">系統管理員</option>
-                                                <option value="reviewer">課程審核者</option>
-                                                <option value="teacher">授課教師</option>
-                                                <option value="staff">系所承辦人</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <p class="form-label" id="acStateLabel">狀態</p>
-                                            <div class="radio-row" role="radiogroup" aria-labelledby="acStateLabel">
-                                                <span class="radio-row__item">
-                                                    <input type="radio" name="acState" id="acOn" value="1" checked />
-                                                    <label for="acOn">啟用</label>
-                                                </span>
-                                                <span class="radio-row__item">
-                                                    <input type="radio" name="acState" id="acOff" value="0" />
-                                                    <label for="acOff">停用</label>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
-                                        data-dismiss="modal">取消</button>
-                                    <button type="submit" class="btn btn-m btn-m--primary">確認新增</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </main>
         </div>
@@ -545,12 +480,87 @@
 
     <div class="backdrop" id="backdrop"></div>
 
+    <!-- ===================== 彈窗：新增帳號 ===================== -->
+    <div class="modal fade admin-modal" id="modalAccount" tabindex="-1" role="dialog"
+        aria-labelledby="modalAccountTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h2 class="modal-title" id="modalAccountTitle">新增帳號</h2>
+                        <p class="modal-subtitle">帳號管理 › 新增帳號</p>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="a11y-hidden">關閉</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form class="form-grid" action="#">
+                        <div class="form-group">
+                            <label class="form-label" for="acAcc">帳號<span class="is-required"
+                                    aria-hidden="true">*</span></label>
+                            <input type="text" class="form-control" id="acAcc" placeholder="請輸入帳號" required />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="acName">姓名<span class="is-required"
+                                    aria-hidden="true">*</span></label>
+                            <input type="text" class="form-control" id="acName" placeholder="請輸入姓名" required />
+                        </div>
+                        <div class="form-group form-grid__full">
+                            <label class="form-label" for="acMail">電子信箱<span class="is-required"
+                                    aria-hidden="true">*</span></label>
+                            <input type="email" class="form-control" id="acMail" placeholder="請輸入電子信箱"
+                                required />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="acRole">角色<span class="is-required"
+                                    aria-hidden="true">*</span></label>
+                            <select class="form-control bs-select" id="acRole" title="請選擇角色" required>
+                                <option value="" disabled selected>請選擇角色</option>
+                                <option value="admin">系統管理員</option>
+                                <option value="reviewer">課程審核者</option>
+                                <option value="teacher">授課教師</option>
+                                <option value="staff">系所承辦人</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <p class="form-label" id="acStateLabel">狀態</p>
+                            <div class="radio-row" role="radiogroup" aria-labelledby="acStateLabel">
+                                <span class="radio-row__item">
+                                    <input type="radio" name="acState" id="acOn" value="1" checked />
+                                    <label for="acOn">啟用</label>
+                                </span>
+                                <span class="radio-row__item">
+                                    <input type="radio" name="acState" id="acOff" value="0" />
+                                    <label for="acOff">停用</label>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-m btn-m--neutral modal-footer__left"
+                        data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-m btn-m--primary">確認新增</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/popper-1.16.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="assets/bootstrap-select/js/i18n/defaults-zh_TW.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="assets/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="assets/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="js/admin-table.js"></script>
+    <script src="js/admin-dialog.js"></script>
 </body>
 
 </html>

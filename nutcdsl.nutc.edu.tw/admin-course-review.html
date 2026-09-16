@@ -25,8 +25,10 @@
 
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/course.css" />
+    <link rel="stylesheet" href="css/datatable.css" />
     <link rel="stylesheet" href="css/admin.css" />
 
     <title>課程審核 — 跨領域數位自主學習平台 · 國立臺中科技大學</title>
@@ -60,7 +62,7 @@
                 </a>
                 <a class="topnav__link" href="#">公告</a>
                 <a class="topnav__link" href="#">說明文件</a>
-                <a class="topnav__link" href="#">登出</a>
+                <a class="topnav__link" href="admin-login.html">登出</a>
 
                 <!-- 手機版通知鈕（桌機版在頁面標頭右側） -->
                 <button type="button" class="btn topnav__bell">
@@ -181,8 +183,8 @@
                         <div class="sidebar__divider" aria-hidden="true"></div>
                         <ul class="nav flex-column sidebar__menu">
                             <li class="nav-item">
-                                <a class="nav-link menu-item sidebar__logout" href="#">
-                                    <img src="images/icons/nav-history.svg" alt="" aria-hidden="true" />登出
+                                <a class="nav-link menu-item sidebar__logout" href="admin-login.html">
+                                    <i class="fa-solid fa-right-from-bracket menu-item__fa" aria-hidden="true"></i>登出
                                 </a>
                             </li>
                         </ul>
@@ -290,7 +292,7 @@
 
                         <div class="batch-row">
                             <p class="batch-row__label">批次操作</p>
-                            <span class="badge badge-state badge-state--blue">已選 3 筆</span>
+                            <span class="badge badge-state badge-state--blue js-sel-count" hidden>已選 0 筆</span>
                             <span class="batch-row__actions">
                                 <button type="button" class="btn btn-m btn-m--primary">通過</button>
                                 <button type="button" class="btn btn-m btn-m--amber">需補件</button>
@@ -299,7 +301,12 @@
                         </div>
 
                         <div class="table-responsive">
-                            <table class="table data-table">
+                            <table class="table data-table"
+                                data-unit="筆申請"
+                                data-page-length="8"
+                                data-search="#rq"
+                                data-status-col="7"
+                                data-select-count=".js-sel-count">
                                 <caption class="a11y-hidden">審核中的課程送審申請，共 8 筆</caption>
                                 <thead>
                                     <tr>
@@ -332,7 +339,7 @@
                                                                 <span class="check__box" aria-hidden="true"></span>
                                                             </span>
                                                         </td>
-                                                        <th scope="row" class="is-muted">AP-1130218-001</th>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130218-001</th>
                                                         <td>陳威宇</td>
                                                         <td class="is-muted is-num">B10812034</td>
                                                         <td>AI 應用實務</td>
@@ -359,7 +366,7 @@
                                                                 <span class="check__box" aria-hidden="true"></span>
                                                             </span>
                                                         </td>
-                                                        <th scope="row" class="is-muted">AP-1130218-002</th>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130218-002</th>
                                                         <td>黃志誠</td>
                                                         <td class="is-muted is-num">B10823117</td>
                                                         <td>跨文化溝通實務</td>
@@ -386,7 +393,7 @@
                                                                 <span class="check__box" aria-hidden="true"></span>
                                                             </span>
                                                         </td>
-                                                        <th scope="row" class="is-muted">AP-1130217-004</th>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130217-004</th>
                                                         <td>林建民</td>
                                                         <td class="is-muted is-num">B10834209</td>
                                                         <td>資料科學進階應用</td>
@@ -413,7 +420,7 @@
                                                                 <span class="check__box" aria-hidden="true"></span>
                                                             </span>
                                                         </td>
-                                                        <th scope="row" class="is-muted">AP-1130216-002</th>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130216-002</th>
                                                         <td>王麗華</td>
                                                         <td class="is-muted is-num">B10845301</td>
                                                         <td>學術英文寫作（進階）</td>
@@ -440,7 +447,7 @@
                                                                 <span class="check__box" aria-hidden="true"></span>
                                                             </span>
                                                         </td>
-                                                        <th scope="row" class="is-muted">AP-1130215-007</th>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130215-007</th>
                                                         <td>張文德</td>
                                                         <td class="is-muted is-num">B10856428</td>
                                                         <td>企業倫理與法規</td>
@@ -467,7 +474,7 @@
                                                                 <span class="check__box" aria-hidden="true"></span>
                                                             </span>
                                                         </td>
-                                                        <th scope="row" class="is-muted">AP-1130214-003</th>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130214-003</th>
                                                         <td>李國彰</td>
                                                         <td class="is-muted is-num">B10867513</td>
                                                         <td>綠色能源與永續發展</td>
@@ -494,7 +501,7 @@
                                                                 <span class="check__box" aria-hidden="true"></span>
                                                             </span>
                                                         </td>
-                                                        <th scope="row" class="is-muted">AP-1130213-001</th>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130213-001</th>
                                                         <td>周雅琳</td>
                                                         <td class="is-muted is-num">B10878640</td>
                                                         <td>設計思考與創新實作</td>
@@ -521,7 +528,7 @@
                                                                 <span class="check__box" aria-hidden="true"></span>
                                                             </span>
                                                         </td>
-                                                        <th scope="row" class="is-muted">AP-1130212-005</th>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130212-005</th>
                                                         <td>蔡明憲</td>
                                                         <td class="is-muted is-num">B10889722</td>
                                                         <td>醫療資訊管理概論</td>
@@ -539,7 +546,173 @@
                                                             </span>
                                                         </td>
                                                     </tr>
-                                </tbody>
+                                
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="rv9" />
+                                                                <label class="a11y-hidden" for="rv9">選取申請 AP-1130210-004</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130210-004</th>
+                                                        <td>許淑芬</td>
+                                                        <td class="is-muted is-num">B10814027</td>
+                                                        <td>Python 程式設計入門</td>
+                                                        <td class="is-muted is-num">3 / 3 / 3</td>
+                                                        <td class="is-muted is-num">2026/02/10</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">已通過</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                            <a class="btn btn-s btn-s--neutral" href="#">查看<span class="a11y-hidden">：AP-1130210-004</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="rv10" />
+                                                                <label class="a11y-hidden" for="rv10">選取申請 AP-1130208-002</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130208-002</th>
+                                                        <td>林建民</td>
+                                                        <td class="is-muted is-num">B10903115</td>
+                                                        <td>學術英文寫作</td>
+                                                        <td class="is-muted is-num">2 / 2 / 2</td>
+                                                        <td class="is-muted is-num">2026/02/08</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">已通過</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                            <a class="btn btn-s btn-s--neutral" href="#">查看<span class="a11y-hidden">：AP-1130208-002</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="rv11" />
+                                                                <label class="a11y-hidden" for="rv11">選取申請 AP-1130206-001</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130206-001</th>
+                                                        <td>黃志誠</td>
+                                                        <td class="is-muted is-num">B11011008</td>
+                                                        <td>跨文化溝通</td>
+                                                        <td class="is-muted is-num">2 / 2 / —</td>
+                                                        <td class="is-muted is-num">2026/02/06</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--green">已通過</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                            <a class="btn btn-s btn-s--neutral" href="#">查看<span class="a11y-hidden">：AP-1130206-001</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="rv12" />
+                                                                <label class="a11y-hidden" for="rv12">選取申請 AP-1130205-003</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130205-003</th>
+                                                        <td>張文彥</td>
+                                                        <td class="is-muted is-num">B10812077</td>
+                                                        <td>資料科學概論</td>
+                                                        <td class="is-muted is-num">2.5 / — / —</td>
+                                                        <td class="is-muted is-num">2026/02/05</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--amber">待補件</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                            <a class="btn btn-s btn-s--neutral" href="#">查看<span class="a11y-hidden">：AP-1130205-003</span></a>
+                                                            <a class="btn btn-s btn-s--primary" href="#">通過<span class="a11y-hidden">：AP-1130205-003</span></a>
+                                                            <a class="btn btn-s btn-s--danger" href="#">不通過<span class="a11y-hidden">：AP-1130205-003</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="rv13" />
+                                                                <label class="a11y-hidden" for="rv13">選取申請 AP-1130204-001</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130204-001</th>
+                                                        <td>鄭雅婷</td>
+                                                        <td class="is-muted is-num">B10905042</td>
+                                                        <td>設計思考與創新實作</td>
+                                                        <td class="is-muted is-num">2 / — / —</td>
+                                                        <td class="is-muted is-num">2026/02/04</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--amber">待補件</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                            <a class="btn btn-s btn-s--neutral" href="#">查看<span class="a11y-hidden">：AP-1130204-001</span></a>
+                                                            <a class="btn btn-s btn-s--primary" href="#">通過<span class="a11y-hidden">：AP-1130204-001</span></a>
+                                                            <a class="btn btn-s btn-s--danger" href="#">不通過<span class="a11y-hidden">：AP-1130204-001</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="rv14" />
+                                                                <label class="a11y-hidden" for="rv14">選取申請 AP-1130201-006</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130201-006</th>
+                                                        <td>吳佩珊</td>
+                                                        <td class="is-muted is-num">B11002019</td>
+                                                        <td>醫療資訊管理概論</td>
+                                                        <td class="is-muted is-num">3 / — / —</td>
+                                                        <td class="is-muted is-num">2026/02/01</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--red">不通過</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                            <a class="btn btn-s btn-s--neutral" href="#">查看<span class="a11y-hidden">：AP-1130201-006</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="check">
+                                                                <input class="check__input" type="checkbox" id="rv15" />
+                                                                <label class="a11y-hidden" for="rv15">選取申請 AP-1130129-002</label>
+                                                                <span class="check__box" aria-hidden="true"></span>
+                                                            </span>
+                                                        </td>
+                                                        <th scope="row" class="is-muted is-nowrap">AP-1130129-002</th>
+                                                        <td>李孟軒</td>
+                                                        <td class="is-muted is-num">B10908133</td>
+                                                        <td>綠色能源與永續發展</td>
+                                                        <td class="is-muted is-num">2 / — / —</td>
+                                                        <td class="is-muted is-num">2026/01/29</td>
+                                                        <td>
+                                                            <span class="badge badge-state badge-state--dot badge-state--red">不通過</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="row-actions">
+                                                            <a class="btn btn-s btn-s--neutral" href="#">查看<span class="a11y-hidden">：AP-1130129-002</span></a>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
                             </table>
                         </div>
 
@@ -566,6 +739,10 @@
     <script src="js/popper-1.16.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="assets/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="assets/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="js/admin-table.js"></script>
+    <script src="js/admin-dialog.js"></script>
 </body>
 
 </html>

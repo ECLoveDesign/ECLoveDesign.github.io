@@ -1,0 +1,387 @@
+/* --------------------------------------------------------------------------
+   DataTables 接管後的表格附加元件
+   （分頁列、手機版展開鈕與展開內容、欄位截斷、儲存格提示）
+
+   跟「表格長什麼樣子」無關 —— 外觀還是各自的 .data-table（後臺）或
+   .record-table（前臺學習歷程）在管。這裡只放 js/admin-table.js 產生出來的
+   那些結構，所以兩邊都載得起，不會互相污染。
+
+   選擇器一律用 .dt-table：那是 js/admin-table.js 接手時自己補上的記號，
+   後臺與前臺的表格都會有。
+   -------------------------------------------------------------------------- */
+
+
+
+/* 桌機時 .dt-ctrl（手機展開鈕那欄）是 display:none，所以真正的第一欄是它的下一格，
+   :first-child 選不到。這裡補上，手機展開鈕現身時就不套用。 */
+.data-table:not(.collapsed) thead th.dt-ctrl+th,
+.data-table:not(.collapsed) tbody td.dt-ctrl+td,
+.data-table:not(.collapsed) tbody td.dt-ctrl+th {
+    padding-left: 27px;
+}
+
+/* 操作欄：數個小按鈕並排 */
+.row-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   5. 分頁
+   -------------------------------------------------------------------------- */
+.table-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 27px;
+    border-top: 1px solid var(--c-divider-2);
+}
+
+.table-foot__count {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--c-muted);
+}
+
+.pager {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pager__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--c-muted);
+    background: #fff;
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+}
+
+/* 上一頁／下一頁：用麵包屑的箭頭圖示，往前的那顆旋轉 180 度 */
+.pager__link--prev,
+.pager__link--next {
+    padding: 0;
+}
+
+.pager__link--prev::before,
+.pager__link--next::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: url(../images/icons/breadcrumb-sep.svg) no-repeat center / contain;
+}
+
+.pager__link--prev::before {
+    transform: rotate(180deg);
+}
+
+.pager__ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    font-size: 13.5px;
+    color: var(--c-muted);
+}
+
+.pager__link:hover,
+.pager__link:focus {
+    color: var(--c-primary);
+    border-color: var(--c-border-btn);
+    text-decoration: none;
+}
+
+.pager__link[aria-current="page"] {
+    font-weight: 500;
+    color: #fff;
+    background: var(--c-primary);
+    border-color: var(--c-primary);
+}
+
+.pager__link.is-disabled {
+    color: #b5bdc9;
+    pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   手機版表格（DataTables Responsive）
+   收不下的欄位會被收起來，最左邊多一顆 + 展開該列的完整資料。
+   優先序在 js/admin-table.js：展開鈕 > 操作欄 > 勾選欄 > 第一個資料欄，
+   所以被收起來的一定是中間那些欄位，右邊的操作鈕不會消失。
+   -------------------------------------------------------------------------- */
+.dt-ctrl {
+    width: 34px;
+    padding-right: 0 !important;
+    padding-left: 12px !important;
+}
+
+/* 沒有欄位被收起來時（桌機），這一欄不佔位 */
+table.dt-table:not(.collapsed) .dt-ctrl {
+    display: none;
+}
+
+table.dt-table.collapsed>tbody>tr>td.dt-ctrl {
+    position: relative;
+    cursor: pointer;
+}
+
+/* 外框與 + 都用絕對定位對齊同一個中心（左 12、寬 20 → 中心 22），
+   否則 ::before 是靜態流、::after 是絕對定位，兩者會差 5px。 */
+table.dt-table.collapsed>tbody>tr>td.dt-ctrl::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    background: #fff;
+    border: 1px solid var(--c-border-btn);
+    border-radius: 6px;
+}
+
+/* + 的兩條槓 */
+table.dt-table.collapsed>tbody>tr>td.dt-ctrl::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 17px;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    background:
+        linear-gradient(var(--c-primary), var(--c-primary)) no-repeat center / 10px 1.6px,
+        linear-gradient(var(--c-primary), var(--c-primary)) no-repeat center / 1.6px 10px;
+}
+
+/* 展開後只留一條橫槓，變成 − */
+table.dt-table.collapsed>tbody>tr.parent>td.dt-ctrl::after {
+    background:
+        linear-gradient(var(--c-primary), var(--c-primary)) no-repeat center / 10px 1.6px;
+}
+
+table.dt-table.collapsed>tbody>tr.parent>td.dt-ctrl::before {
+    background: #eef3ff;
+    border-color: var(--c-primary);
+}
+
+/* Responsive 接手之後就不該再橫向捲動：.table-responsive 的 overflow-x:auto
+   會讓表格維持原本的寬度，Responsive 算出來的「放不下」就永遠反映不到畫面上，
+   操作鈕也會被推到看不見的地方。關掉它，表格才會壓回容器寬度、按鈕才換行。
+   只套用在 Responsive 接手的表格（class 由 js/admin-table.js 加）——
+   報表的「各領域統計」沒有接 Responsive，關掉捲動會直接裁掉最後一欄。 */
+.table-responsive.is-responsive-dt {
+    overflow-x: visible;
+}
+
+/* 展開列的欄位名稱是從 thead 複製過來的，會一併帶到排序小箭頭 */
+.dtr-title .th-sort::after {
+    display: none;
+}
+
+/* 展開出來的那一列 */
+table.dt-table>tbody>tr.child>td {
+    padding: 0 12px 14px 46px;
+    background: #f9fbff;
+}
+
+table.dt-table>tbody>tr.parent>td,
+table.dt-table>tbody>tr.parent>th {
+    border-bottom: 0;
+}
+
+ul.dtr-details {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.dtr-details>li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    padding: 7px 0;
+    font-size: 13.5px;
+    line-height: 20px;
+    border-bottom: 1px solid var(--c-divider);
+}
+
+ul.dtr-details>li:last-child {
+    border-bottom: 0;
+}
+
+.dtr-title {
+    flex: 0 0 96px;
+    font-weight: 500;
+    color: var(--c-muted);
+}
+
+.dtr-data {
+    flex: 1 1 auto;
+    min-width: 0;
+    color: var(--c-text);
+}
+
+/* 手機版把操作鈕排成可換行，才不會把那一列撐爆 */
+@media (max-width: 767.98px) {
+
+    .row-actions {
+        gap: 6px;
+    }
+
+    .dtr-title {
+        flex-basis: 84px;
+    }
+}
+
+
+@media (max-width: 991.98px) {
+
+
+    .table-foot {
+        padding: 14px 16px;
+    }
+
+    /* 頁尾：筆數與頁碼各佔一行並置中，不再一左一右擠在同一列 */
+    .table-foot {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .table-foot>nav {
+        display: flex;
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+}
+
+
+/* --------------------------------------------------------------------------
+   欄寬有限的文字欄：截斷成「…」，完整內容交給 hover 的 tooltip
+   （哪幾欄要截斷寫在 thead 的 .is-clip，資料格由 js/admin-table.js 同步）
+
+   max-width: 0 是表格才有的寫法：td 的 max-width 在 table-layout: auto 下
+   會被當成「不超過欄寬」，overflow 才真的生效；不寫的話 td 會撐開自己，
+   text-overflow 永遠沒有機會出現。
+   -------------------------------------------------------------------------- */
+.dt-table tbody td.is-clip,
+.dt-table tbody th.is-clip {
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 手機版展開列要看的就是完整值，這裡不截斷 */
+.dt-table .dtr-details .dtr-data,
+.dt-table .dtr-details .dtr-title {
+    max-width: none;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+}
+
+.tooltip-cell .tooltip-inner {
+    max-width: 320px;
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 19px;
+    text-align: left;
+    color: #fff;
+    background: #16233f;
+    border-radius: 6px;
+}
+
+.tooltip-cell.bs-tooltip-top .arrow::before {
+    border-top-color: #16233f;
+}
+
+.tooltip-cell.bs-tooltip-bottom .arrow::before {
+    border-bottom-color: #16233f;
+}
+
+/* --------------------------------------------------------------------------
+   可排序的表頭
+   放在這裡而不是 admin.css：排序是 DataTables 接管之後才有的行為，
+   前臺的學習歷程列表也要用到同一組箭頭與 hover。
+   -------------------------------------------------------------------------- */
+/* 可排序表頭：文字後面帶一個小三角 */
+/* DataTables 會把可排序的 th 加上 .sorting，游標要跟著變 */
+th.sorting,
+th.sorting_asc,
+th.sorting_desc {
+    cursor: pointer;
+}
+
+th.sorting:focus,
+th.sorting_asc:focus,
+th.sorting_desc:focus {
+    outline: 2px solid var(--c-primary);
+    outline-offset: -2px;
+}
+
+/* 排序標題原本是 <a>，接上 DataTables 後改成 <span>，
+   游標與 hover 由外層 th 負責 */
+.th-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: inherit;
+}
+
+.th-sort:hover,
+.th-sort:focus {
+    color: var(--c-primary);
+    text-decoration: none;
+}
+
+.th-sort::after {
+    content: "";
+    width: 7px;
+    height: 4.5px;
+    background: url(../images/icons/sort-none.svg) no-repeat center / contain;
+}
+
+/* aria-sort 只在 columnheader（th）上才合法，
+   所以狀態掛在 th、樣式從 th 往內選到連結 */
+th[aria-sort="ascending"] .th-sort,
+th[aria-sort="descending"] .th-sort {
+    color: var(--c-text);
+}
+
+th[aria-sort="ascending"] .th-sort::after,
+th[aria-sort="descending"] .th-sort::after {
+    background-image: url(../images/icons/sort-asc.svg);
+}
+
+th[aria-sort="ascending"] .th-sort::after {
+    transform: rotate(180deg);
+}
+
+/* --------------------------------------------------------------------------
+   操作欄的寬度（--act-w 由 js/admin-table.js 照該表實際的按鈕量出來）
+   th 與 td 都要，而且要連 min-width 一起給：table-layout: auto 底下
+   只寫 width 是建議值，別欄內容一長就會把這一欄擠掉。
+   -------------------------------------------------------------------------- */
+.dt-table.has-act-w>thead>tr>th:last-child,
+.dt-table.has-act-w>tbody>tr:not(.child)>td:last-child,
+.dt-table.has-act-w>tbody>tr:not(.child)>th:last-child {
+    width: var(--act-w);
+    min-width: var(--act-w);
+}

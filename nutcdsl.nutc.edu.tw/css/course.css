@@ -270,6 +270,7 @@
 }
 
 .course-list__item {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -278,6 +279,51 @@
     border: 1px solid var(--c-border);
     border-radius: var(--r-card);
     box-shadow: 0 2px 8px rgba(20, 41, 82, .08);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+/* 整張卡片可點：把標題那條連結撐滿整張卡。
+   用標題的連結而不是另外加一個 <a>，讀屏才不會多唸一個沒有名字的連結。 */
+.course-body__title a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* 收藏鈕與「立即選課」要浮在那層之上，才點得到自己 */
+.btn-fav,
+.btn-cta {
+    position: relative;
+    z-index: 2;
+}
+
+/* 縮圖上的裝飾文字與標籤不吃點擊，讓整張卡片都連到課程頁 */
+.course-media__kicker,
+.course-media__chip,
+.course-media__art {
+    pointer-events: none;
+}
+
+.course-list__item:hover,
+.course-list__item:focus-within {
+    transform: translateY(-3px);
+    border-color: #d5deee;
+    box-shadow: 0 10px 22px rgba(20, 41, 82, .14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .course-list__item,
+    .course-card,
+    .domain-card {
+        transition: none;
+    }
+
+    .course-list__item:hover,
+    .course-list__item:focus-within {
+        transform: none;
+    }
 }
 
 /* 縮圖區 */
@@ -651,3 +697,73 @@
     }
 }
 
+/* --------------------------------------------------------------------------
+   輕量提示（加入／移除我的最愛）
+   元件庫沒有設計好的 toast，這顆沿用站上的 navy 底色與卡片陰影規格。
+   -------------------------------------------------------------------------- */
+.toast-note {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    z-index: 1080;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: calc(100vw - 32px);
+    padding: 12px 20px;
+    font-size: 14.5px;
+    line-height: 20px;
+    color: #fff;
+    background: var(--c-navy);
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(20, 41, 82, .28);
+    /* 收起時不擋點擊，也不該被讀屏當成畫面上的內容 */
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-50%, 12px);
+    transition: opacity .18s ease, transform .18s ease, visibility .18s;
+    pointer-events: none;
+}
+
+.toast-note.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.toast-note__icon {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+}
+
+@media (max-width: 767.98px) {
+    .toast-note {
+        bottom: 20px;
+        padding: 11px 18px;
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .toast-note {
+        transition: none;
+    }
+}
+
+/* 收藏鈕的愛心改用 FontAwesome（實心／線條切 class，見 js/favorite.js） */
+.btn-fav__fa {
+    font-size: 16px;
+    line-height: 1;
+    color: #fff;
+}
+
+.btn-fav[aria-pressed="true"] .btn-fav__fa {
+    color: #e0483f;
+}
+
+@media (max-width: 991.98px) {
+    .btn-fav__fa {
+        font-size: 14px;
+    }
+}
